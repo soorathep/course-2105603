@@ -96,3 +96,4 @@ exclude:
   - migration-manifest.json
   - .archive-preparation/
   - _qa/
+  - compute_results/

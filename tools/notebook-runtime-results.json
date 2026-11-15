@@ -1,0 +1,129 @@
+{
+  "status": "runtime_pass",
+  "tested_on": "2026-11-15",
+  "execution_platform": "M4 macOS arm64, explicitly authorized for this validation",
+  "source_base_commit": "8f9fdf4f4934bb33184277d16d021374a02ab9e5",
+  "provenance": "Baseline downloaded all published notebooks; final candidates ran top to bottom. Published notebooks retain executed outputs with per-cell timing metadata removed and the final Markdown wording merged. Code fingerprints match the final executed candidates.",
+  "python": "3.12.14",
+  "package_versions": {
+    "nbclient": "0.11.0",
+    "nbformat": "5.11.1",
+    "nbconvert": "7.17.2",
+    "ipykernel": "7.4.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "thermo": "0.6.1",
+    "chemicals": "1.5.2"
+  },
+  "toolkit": {
+    "url": "https://soorathep.github.io/course-2105603/teaching/2105603/files/vlekit.zip",
+    "sha256": "1e5f93d62b26f7e5277471071ac04135d9dea4c01bd0f5b32b4d3e9c3bf3bf8b"
+  },
+  "notebook_count": 6,
+  "code_cells_executed": 110,
+  "runtime_errors": 0,
+  "notebooks": [
+    {
+      "filename": "M2_fugacity_and_the_criterion.ipynb",
+      "url": "https://soorathep.github.io/course-2105603/teaching/2105603/files/M2_fugacity_and_the_criterion.ipynb",
+      "sha256": "81ec1d2489fafad0600d3bdc8da5f804a2e0bc9c5069fd40bd57d9ead5312dfa",
+      "tested_code_sha256": "6b0f7968f9ea553301ec8ec099ea0cd7ff916b6513812a75c11a327788561524",
+      "candidate_input_sha256": "3ec492057582b39fbb6eb0d516468fe90670b13ad4c02b873ec1d665f7a22cae",
+      "code_cells": 14,
+      "executed_code_cells": 14,
+      "runtime_errors": 0,
+      "vlekit_download_message_seen": true,
+      "extracted_toolkit_matches_published_zip": true,
+      "figure_outputs": 3,
+      "seconds": 12.168
+    },
+    {
+      "filename": "M3_solution_thermodynamics.ipynb",
+      "url": "https://soorathep.github.io/course-2105603/teaching/2105603/files/M3_solution_thermodynamics.ipynb",
+      "sha256": "f82c594057a55e49709e14f32cc49b62c276f01a7e138d27782a7adf16a14b3c",
+      "tested_code_sha256": "67cab4ff16a4c3e4a5f817568a2adac76af2b73a560ccdb4fb0ba3f5a5251189",
+      "candidate_input_sha256": "db7b5d53d9f4f4752777ee43203906ad0841121793c9cf8e56d84ca00499daa8",
+      "code_cells": 22,
+      "executed_code_cells": 22,
+      "runtime_errors": 0,
+      "vlekit_download_message_seen": true,
+      "extracted_toolkit_matches_published_zip": true,
+      "figure_outputs": 5,
+      "seconds": 2.279
+    },
+    {
+      "filename": "M4B_VLE_case_study.ipynb",
+      "url": "https://soorathep.github.io/course-2105603/teaching/2105603/files/M4B_VLE_case_study.ipynb",
+      "sha256": "f78eb4476df9119ab7b2ea550b6a2ea68339d4b0f0599ad7c13c90c2d7eb4aea",
+      "tested_code_sha256": "7e2becfdd7fef50d63a8764d36765236d68e5ac8e817c3f88c7a595c5ca83ed1",
+      "candidate_input_sha256": "2278affbdb2b41958c667e9108463ff81257e72c89f3f4d673165f8e55711950",
+      "code_cells": 39,
+      "executed_code_cells": 39,
+      "runtime_errors": 0,
+      "vlekit_download_message_seen": true,
+      "extracted_toolkit_matches_published_zip": true,
+      "figure_outputs": 6,
+      "seconds": 22.68
+    },
+    {
+      "filename": "M4_VLE_regression_and_consistency.ipynb",
+      "url": "https://soorathep.github.io/course-2105603/teaching/2105603/files/M4_VLE_regression_and_consistency.ipynb",
+      "sha256": "0b9b293ccfd348fc90adde6ba555b175e7371e43014863cadc5f9806260755b5",
+      "tested_code_sha256": "48dfdc25cd537e02918449e79933f90942a5e1b53bd1aba0298af2f87ebf3309",
+      "candidate_input_sha256": "81cac69dfc09a956adac097527bf98b7bad316743e31047216a80b53b944d1cc",
+      "code_cells": 19,
+      "executed_code_cells": 19,
+      "runtime_errors": 0,
+      "vlekit_download_message_seen": true,
+      "extracted_toolkit_matches_published_zip": true,
+      "figure_outputs": 10,
+      "seconds": 13.041
+    },
+    {
+      "filename": "M5_stability_and_LLE.ipynb",
+      "url": "https://soorathep.github.io/course-2105603/teaching/2105603/files/M5_stability_and_LLE.ipynb",
+      "sha256": "d99d10f664d49cce467fef632cac49f4830df0a29dcf1ed2097773321f9f1ce4",
+      "tested_code_sha256": "644ebdb20fc6a0ea073b2a374d52f53fe36bcc9eeefc369fb1256d26e803917e",
+      "candidate_input_sha256": "b559017e6241af8774ad600e1d2e8ce800704f7679e16a47cf4950b84ecce5ee",
+      "code_cells": 8,
+      "executed_code_cells": 8,
+      "runtime_errors": 0,
+      "vlekit_download_message_seen": true,
+      "extracted_toolkit_matches_published_zip": true,
+      "figure_outputs": 2,
+      "seconds": 6.262
+    },
+    {
+      "filename": "M6_chemical_equilibrium.ipynb",
+      "url": "https://soorathep.github.io/course-2105603/teaching/2105603/files/M6_chemical_equilibrium.ipynb",
+      "sha256": "76bbd71659fc2f296c24a6379f4602af8035e4fbec3984269ade064e5e76a9d2",
+      "tested_code_sha256": "c15a2aec4a90ea897d2ce623b0aeb845d702361f23bcee02866a0d8bf09b243d",
+      "candidate_input_sha256": "7c812418cdf5fd2c78786bfece61f9c15fd342842eec6379802dc2d5b935c7db",
+      "code_cells": 8,
+      "executed_code_cells": 8,
+      "runtime_errors": 0,
+      "vlekit_download_message_seen": true,
+      "extracted_toolkit_matches_published_zip": true,
+      "figure_outputs": 1,
+      "seconds": 109.258
+    }
+  ],
+  "reviewed_internal_checks": {
+    "equal_area_vs_equal_fugacity_relative_difference": 1.5e-11,
+    "Gibbs_Duhem_legal_model_residual": 6.245e-11,
+    "UNIFAC_independent_implementation_max_difference": 7.77e-15,
+    "LLE_max_material_balance_residual": 1.11e-16,
+    "LLE_max_activity_residual": 1.72e-11,
+    "extent_vs_Gibbs_max_ammonia_mole_fraction_difference": 1.61e-08
+  },
+  "scope": "Runtime completion, actual toolkit download integrity, saved outputs and selected printed internal consistency checks. This is not validation of every physical model against experiment.",
+  "known_example_behavior": [
+    "The M4B default UNIQUAC comparison contains non-finite endpoint residuals; the notebook labels it as an invalid fitting setup rather than a usable AIC ranking."
+  ],
+  "not_fully_exported_by_examples": [
+    "Bootstrap successful draw counts",
+    "Every interior EOS convergence flag",
+    "Every Gibbs sweep atom balance and reaction quotient residual"
+  ]
+}

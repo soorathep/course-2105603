@@ -37,3 +37,4 @@ data/raw/
 /vendor/
 /.archive-preparation/
 /_qa/
+/compute_results/
