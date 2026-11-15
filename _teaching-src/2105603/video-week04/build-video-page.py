@@ -444,7 +444,7 @@ TEMPLATE = r'''<!doctype html>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Week 4 narrated thermodynamics lesson: solid equilibria and adsorption, replacing class during the instructor’s ECS meeting, with guided pauses, English captions and actual Lab 10 and Lab 11 demonstrations. Begin with the current questions-first opening. Allow approximately three hours including core activities; H1-H4 is optional.">
 <title>Week 4 video: Solid equilibria and adsorption | 2105603</title>
-<link rel="icon" href="/favicon.png"><link rel="canonical" href="https://www.skhgroup.net/teaching/2105603/week04-video.html">
+<link rel="icon" href="/favicon.png"><link rel="canonical" href="https://soorathep.github.io/course-2105603/teaching/2105603/week04-video.html">
 <link rel="stylesheet" href="labs/assets/palette.css"><style>@@STYLE@@</style>
 </head><body>
 <a class="skip-link" href="#lesson-player">Skip to video lesson</a>

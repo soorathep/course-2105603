@@ -20,7 +20,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 WORKSPACE = HERE.parent
-CANONICAL_URL = "https://www.skhgroup.net/teaching/2105603/lab08-video.html"
+CANONICAL_URL = "https://soorathep.github.io/course-2105603/teaching/2105603/lab08-video.html"
 
 
 def escape(value: object) -> str:

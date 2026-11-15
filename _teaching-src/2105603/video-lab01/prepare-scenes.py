@@ -25,5 +25,5 @@ for n,items in selections.items():
     for file,prefix,label in items:
         if prefix is None: prefix=script[n-1]['narration'].split('.')[0]+'.'
         scenes.append({'slide':n,'file':file,'sentence_prefix':prefix,'label':label,'sha256':hashlib.sha256((ROOT/'demo-frames'/file).read_bytes()).hexdigest()})
-(ROOT/'demo-scenes.json').write_text(json.dumps({'capture_url':'https://www.skhgroup.net/teaching/2105603/labs/#experiment','capture_date':'2026-10-20','capture_viewport':[1280,720],'scenes':scenes},ensure_ascii=False,indent=2)+'\n')
+(ROOT/'demo-scenes.json').write_text(json.dumps({'capture_url':'https://soorathep.github.io/course-2105603/teaching/2105603/labs/#experiment','capture_date':'2026-10-20','capture_viewport':[1280,720],'scenes':scenes},ensure_ascii=False,indent=2)+'\n')
 print(f'{len(scenes)} scene placements in {len(selections)} chapters')

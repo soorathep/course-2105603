@@ -406,7 +406,7 @@ TEMPLATE = r'''<!doctype html>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Optional Gibbs energy and liquid stability review: worked calculations, English male narration, captions, and real-screen Lab 04 demonstrations with pauses to follow along.">
 <title>Gibbs and stability review video | 2105603</title>
-<link rel="icon" href="/favicon.png"><link rel="canonical" href="https://www.skhgroup.net/teaching/2105603/week03-gibbs-review-video.html">
+<link rel="icon" href="/favicon.png"><link rel="canonical" href="https://soorathep.github.io/course-2105603/teaching/2105603/week03-gibbs-review-video.html">
 <link rel="stylesheet" href="labs/assets/palette.css"><style>@@STYLE@@</style>
 </head><body>
 <a class="skip-link" href="#lesson-player">Skip to review video</a>

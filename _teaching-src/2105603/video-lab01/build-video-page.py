@@ -409,7 +409,7 @@ TEMPLATE = r'''<!doctype html>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="A supplemental Week 1 walkthrough of Lab 01: ideal bubble and dew pressures, TP flash, component balances, pressure changes, and saving and reopening a JSON study. English narration and captions.">
 <title>Lab 01 video: Ideal VLE walkthrough | 2105603</title>
-<link rel="icon" href="/favicon.png"><link rel="canonical" href="https://www.skhgroup.net/teaching/2105603/lab01-video.html">
+<link rel="icon" href="/favicon.png"><link rel="canonical" href="https://soorathep.github.io/course-2105603/teaching/2105603/lab01-video.html">
 <link rel="stylesheet" href="labs/assets/palette.css"><style>@@STYLE@@</style>
 </head><body>
 <a class="skip-link" href="#lesson-player">Skip to demonstration</a>

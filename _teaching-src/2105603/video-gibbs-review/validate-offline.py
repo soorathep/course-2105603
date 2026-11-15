@@ -15,7 +15,7 @@ import zipfile
 VIDEO_PAGES = ('week02-video.html', 'week03-video.html', 'week04-video.html',
                'lab08-video.html', 'lab01-video.html', 'week03-gibbs-review-video.html')
 PREFIX = 'thermodynamics-offline/'
-BASE = 'https://www.skhgroup.net/teaching/2105603/'
+BASE = 'https://soorathep.github.io/course-2105603/teaching/2105603/'
 
 
 def sha(data):

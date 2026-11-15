@@ -31,7 +31,7 @@ The PDF is frozen at SHA-256 `ce1931747b20493413893c43f674f4cfd300952afea32230af
       "cue": "An exact complete sentence from that slide's narration.",
       "image": "asynchronous-gibbs-review/demo-frames/17-01-inputs.png",
       "label": "Choose the metastable example",
-      "source_url": "https://www.skhgroup.net/teaching/2105603/labs/stability.html#lle-experiment"
+      "source_url": "https://soorathep.github.io/course-2105603/teaching/2105603/labs/stability.html#lle-experiment"
     }
   ]
 }

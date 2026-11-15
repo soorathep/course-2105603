@@ -79,7 +79,7 @@ def patch(n):
  if n==2:
   f=Frame("Your independent lesson","Core slide 02")
   f.p("Keep your first answers, then add corrections after each check.","body")
-  base="https://www.skhgroup.net/teaching/2105603/"
+  base="https://soorathep.github.io/course-2105603/teaching/2105603/"
   f.p('<link href="'+base+'files/week04-practice.pdf" color="'+skh.C["teal"]+'"><u>Practice worksheet · 6 pages</u></link><br/>Complete A–G and I. H1–H4 is optional.',"body")
   f.p('<link href="'+base+'files/week04-lab-guide.pdf" color="'+skh.C["teal"]+'"><u>Lab guide · 4 pages</u></link><br/>Use the named settings, controls and interpretation checks.',"body")
   f.p('<link href="'+base+'files/week04-solutions.pdf" color="'+skh.C["teal"]+'"><u>Worked solutions</u></link><br/>Open the relevant answer only after your own attempt.',"body")

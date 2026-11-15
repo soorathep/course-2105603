@@ -20,7 +20,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 import qrcode
 
-BASE='https://www.skhgroup.net/teaching/2105603/'
+BASE='https://soorathep.github.io/course-2105603/teaching/2105603/'
 EXIT='https://thermo-2105603-exit-ticket.soorathep-k.chatgpt.site/?session=5'
 C={k:colors.HexColor(v) for k,v in skh.C.items()}
 W,H=595.276,841.89

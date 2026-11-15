@@ -52,10 +52,10 @@ with tempfile.TemporaryDirectory(prefix='thermo-offline-') as temp:
     # No nested archives, private source, credentials or private instructor keys.
     # Student worked solutions are intentionally available after an attempted worksheet.
     if (site/'favicon.png').exists(): shutil.copy2(site/'favicon.png',root/'favicon.png')
-    home='<!doctype html><html lang="en"><meta charset="utf-8"><title>Thermodynamics offline</title><h1>Advanced thermodynamics</h1><p><a href="/teaching/2105603/labs/learning-path.html">Six-session learning path</a></p><p><a href="/teaching/2105603/labs/assessments.html">Assessment sets</a></p><p>External references require internet. Labs and included slides run locally. The six pre-class PDFs are linked from the learning path.</p><p>Session 2 video and narration are not included in this ZIP. <a href="https://www.skhgroup.net/teaching/2105603/week02-video.html">Open the online lesson</a> with internet access, or use its separately downloaded MP4 videos. The slides, worksheet and Labs are included here.</p><p>The <a href="https://www.skhgroup.net/teaching/2105603/lab08-video.html">Lab 08 video walkthrough</a> also requires internet or its separate MP4 download. The Excel workbook, CSV examples and written guide are included locally.</p><p><a href="/teaching/2105603/week03-study.html">Session 3 independent study guide</a>: consistency tests before liquid stability and LLE. The slides, six-page worksheet, four-page worked solutions, four-page Lab guide and optional background PDF are included locally. Follow the same 180-minute route with the included slides and documents. The <a href="https://www.skhgroup.net/teaching/2105603/week03-video.html">Week 3 narrated video</a> is online or a separate MP4 download. The final anonymous exit ticket and feedback require internet.</p><p><a href="https://www.skhgroup.net/teaching/2105603/week04-video.html#opening-01">The Week 4 video now includes the questions-first opening</a>, with a four-minute R1-R3 pause before the core lesson. Use the <a href="/teaching/2105603/week04-questions.html">written opening</a> as the offline alternative, then continue to the core slides. Do not add both reading and watching as separate required activities. The <a href="/teaching/2105603/week04-study.html">ECS replacement lesson route</a> gives the measured video duration and planning total. The opening, slides, six-page worksheet, four-page guide, four-page worked solutions and optional background are included locally. A-G and I, Lab 10 and Lab 11 remain required; H1-H4 is optional. For the video route, add four minutes for R1-R3, 100 minutes for core work and a 10-minute break to the combined recording. The MP4 and player are online or a separate download. Submit the existing Session 4 exit ticket and feedback once; no extra form is added.</p></html>'
-    home=home.replace('</html>','<p>The supplemental <a href="https://www.skhgroup.net/teaching/2105603/lab01-video.html">Week 1 Lab 01 video walkthrough</a> is online or a separate MP4 download. Its <a href="/teaching/2105603/files/week01-lab-guide.pdf">four-page guide</a> is included. This revisits the completed classroom lesson and needs no repeat form submission.</p></html>')
-    home=home.replace('</html>','<p>Optional Gibbs and stability review: the <a href="/teaching/2105603/week03-gibbs-review.html">26-slide review</a>, <a href="/teaching/2105603/files/week03-gibbs-review-guide.pdf">four-page guide</a> and <a href="/teaching/2105603/files/gibbs-review-lab04-study.json">synthetic Lab 04 study JSON</a> are included. The <a href="https://www.skhgroup.net/teaching/2105603/week03-gibbs-review-video.html">narrated review with actual Lab 04 demonstrations</a> is online or a separate MP4 download. It adds no attendance or repeat exit-ticket submission.</p></html>')
-    home=home.replace('</html>', '<p><a href="/teaching/2105603/week05-study.html">Session 5 independent study route</a>: chemical equilibrium and routes to K, replacing class on November 6. Use one <a href="/teaching/2105603/files/week05-practice.pdf">six-page worksheet</a> and <a href="/teaching/2105603/labs/reaction.html">Lab 12</a>. The 32-slide deck, two-page Lab guide and five-page worked solutions are included. Attempt each calculation before opening the solutions. Plan about three hours: the recording plus 128 minutes of activities and a 10-minute break. Stop at each activity budget, note any unresolved question and continue; classroom discussion resumes November 13. There is no extra required preparation or follow-up assignment. The <a href="https://www.skhgroup.net/teaching/2105603/week05-video.html">Week 5 video and actual Lab 12 demonstrations</a> are online or a separate MP4 download. Use the included slides as the offline alternative, rather than adding them as a second required lesson. The existing anonymous Session 5 exit ticket and feedback require internet; submit once.</p></html>')
+    home='<!doctype html><html lang="en"><meta charset="utf-8"><title>Thermodynamics offline</title><h1>Advanced thermodynamics</h1><p><a href="/teaching/2105603/labs/learning-path.html">Six-session learning path</a></p><p><a href="/teaching/2105603/labs/assessments.html">Assessment sets</a></p><p>External references require internet. Labs and included slides run locally. The six pre-class PDFs are linked from the learning path.</p><p>Session 2 video and narration are not included in this ZIP. <a href="https://soorathep.github.io/course-2105603/teaching/2105603/week02-video.html">Open the online lesson</a> with internet access, or use its separately downloaded MP4 videos. The slides, worksheet and Labs are included here.</p><p>The <a href="https://soorathep.github.io/course-2105603/teaching/2105603/lab08-video.html">Lab 08 video walkthrough</a> also requires internet or its separate MP4 download. The Excel workbook, CSV examples and written guide are included locally.</p><p><a href="/teaching/2105603/week03-study.html">Session 3 independent study guide</a>: consistency tests before liquid stability and LLE. The slides, six-page worksheet, four-page worked solutions, four-page Lab guide and optional background PDF are included locally. Follow the same 180-minute route with the included slides and documents. The <a href="https://soorathep.github.io/course-2105603/teaching/2105603/week03-video.html">Week 3 narrated video</a> is online or a separate MP4 download. The final anonymous exit ticket and feedback require internet.</p><p><a href="https://soorathep.github.io/course-2105603/teaching/2105603/week04-video.html#opening-01">The Week 4 video now includes the questions-first opening</a>, with a four-minute R1-R3 pause before the core lesson. Use the <a href="/teaching/2105603/week04-questions.html">written opening</a> as the offline alternative, then continue to the core slides. Do not add both reading and watching as separate required activities. The <a href="/teaching/2105603/week04-study.html">ECS replacement lesson route</a> gives the measured video duration and planning total. The opening, slides, six-page worksheet, four-page guide, four-page worked solutions and optional background are included locally. A-G and I, Lab 10 and Lab 11 remain required; H1-H4 is optional. For the video route, add four minutes for R1-R3, 100 minutes for core work and a 10-minute break to the combined recording. The MP4 and player are online or a separate download. Submit the existing Session 4 exit ticket and feedback once; no extra form is added.</p></html>'
+    home=home.replace('</html>','<p>The supplemental <a href="https://soorathep.github.io/course-2105603/teaching/2105603/lab01-video.html">Week 1 Lab 01 video walkthrough</a> is online or a separate MP4 download. Its <a href="/teaching/2105603/files/week01-lab-guide.pdf">four-page guide</a> is included. This revisits the completed classroom lesson and needs no repeat form submission.</p></html>')
+    home=home.replace('</html>','<p>Optional Gibbs and stability review: the <a href="/teaching/2105603/week03-gibbs-review.html">26-slide review</a>, <a href="/teaching/2105603/files/week03-gibbs-review-guide.pdf">four-page guide</a> and <a href="/teaching/2105603/files/gibbs-review-lab04-study.json">synthetic Lab 04 study JSON</a> are included. The <a href="https://soorathep.github.io/course-2105603/teaching/2105603/week03-gibbs-review-video.html">narrated review with actual Lab 04 demonstrations</a> is online or a separate MP4 download. It adds no attendance or repeat exit-ticket submission.</p></html>')
+    home=home.replace('</html>', '<p><a href="/teaching/2105603/week05-study.html">Session 5 independent study route</a>: chemical equilibrium and routes to K, replacing class on November 6. Use one <a href="/teaching/2105603/files/week05-practice.pdf">six-page worksheet</a> and <a href="/teaching/2105603/labs/reaction.html">Lab 12</a>. The 32-slide deck, two-page Lab guide and five-page worked solutions are included. Attempt each calculation before opening the solutions. Plan about three hours: the recording plus 128 minutes of activities and a 10-minute break. Stop at each activity budget, note any unresolved question and continue; classroom discussion resumes November 13. There is no extra required preparation or follow-up assignment. The <a href="https://soorathep.github.io/course-2105603/teaching/2105603/week05-video.html">Week 5 video and actual Lab 12 demonstrations</a> are online or a separate MP4 download. Use the included slides as the offline alternative, rather than adding them as a second required lesson. The existing anonymous Session 5 exit ticket and feedback require internet; submit once.</p></html>')
     (root/'index.html').write_text(home);(dest/'index.html').write_text(home)
     for file in root.rglob('*.html'):
         s=file.read_text()
@@ -66,7 +66,7 @@ with tempfile.TemporaryDirectory(prefix='thermo-offline-') as temp:
             # Preserve chapter fragments and query strings when the player is omitted.
             pattern = r'href=(["\'])(?:\.\./|\./|/teaching/2105603/)?' + re.escape(video_page) + r'([?#][^"\']*)?\1'
             s = re.sub(pattern, lambda m: 'href=' + m[1] +
-                       'https://www.skhgroup.net/teaching/2105603/' + video_page +
+                       'https://soorathep.github.io/course-2105603/teaching/2105603/' + video_page +
                        (m[2] or '') + m[1], s)
         for name in ('eos','fugacity','solution','vle','stability','reaction'):
             s=s.replace('files/'+name+'-slides.pdf',name+'.html')
@@ -79,9 +79,9 @@ with tempfile.TemporaryDirectory(prefix='thermo-offline-') as temp:
     learning=json.loads(learning_data.read_text())
     for session in learning['sessions']:
         if session.get('video') and not re.match(r'https?://', session['video']):
-            session['video']='https://www.skhgroup.net/teaching/2105603/'+session['video']
+            session['video']='https://soorathep.github.io/course-2105603/teaching/2105603/'+session['video']
         if session.get('supplementalVideo') and not re.match(r'https?://', session['supplementalVideo']):
-            session['supplementalVideo']='https://www.skhgroup.net/teaching/2105603/'+session['supplementalVideo']
+            session['supplementalVideo']='https://soorathep.github.io/course-2105603/teaching/2105603/'+session['supplementalVideo']
     learning_data.write_text(json.dumps(learning,ensure_ascii=False,indent=2)+'\n')
     (root/'serve.py').write_text('''"""Serve this extracted directory on loopback only, using Python standard library."""
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
@@ -112,11 +112,11 @@ duplicating their large figures in PDFs. No private instructor key or student re
 Student-facing worked solutions are included; attempt the worksheet first.
 External literature and other group website pages need internet.
 The supplemental Week 1 Lab 01 walkthrough is available online or as a separate
-MP4 download: https://www.skhgroup.net/teaching/2105603/lab01-video.html
+MP4 download: https://soorathep.github.io/course-2105603/teaching/2105603/lab01-video.html
 Its four-page guide is included. No repeat form submission is required.
 Session 2 video and narration are not included in this ZIP. Use the online
 lesson with internet access or its separately downloaded MP4 videos:
-https://www.skhgroup.net/teaching/2105603/week02-video.html
+https://soorathep.github.io/course-2105603/teaching/2105603/week02-video.html
 The Session 2 slides, four-page worksheet and Labs are included locally.
 Session 3 is an independent holiday lesson: consistency tests
 before liquid stability and LLE. Its study guide, slides, six-page worksheet,
@@ -125,11 +125,11 @@ included locally. Plan approximately180 minutes for the recording or slides,
 independent work, review and a break; actual completion time varies.
 Open teaching/2105603/week03-study.html through the local server to begin.
 The Session 3 narrated video is online or a separate MP4 download:
-https://www.skhgroup.net/teaching/2105603/week03-video.html
+https://soorathep.github.io/course-2105603/teaching/2105603/week03-video.html
 The optional Gibbs and stability review slides, slide PDF, four-page guide
 and synthetic Lab 04 demonstration study JSON are included. The review video
 requires internet or a separate MP4 download:
-https://www.skhgroup.net/teaching/2105603/week03-gibbs-review-video.html
+https://soorathep.github.io/course-2105603/teaching/2105603/week03-gibbs-review-video.html
 The demonstration JSON is synthetic evidence, not a student submission. Restore
 it and recompute in Lab 04. This review adds no attendance or repeat exit ticket.
 The offline slide/document route covers the same activities; video is not
@@ -147,7 +147,7 @@ For the video route, add 4 minutes for R1-R3, 100 minutes for core work and
 hub for its measured duration and conservative planning total.
 Video links preserve the new #opening-01 and existing #slide-16/#slide-30
 chapter anchors. The recording and player remain online or a separate download:
-https://www.skhgroup.net/teaching/2105603/week04-video.html
+https://soorathep.github.io/course-2105603/teaching/2105603/week04-video.html
 Its chapter links preserve the Lab 10 / Lab 11 demonstration anchors.
 Complete the existing Session 4 exit ticket and feedback once, with internet.
 There is no additional form and no repeat Week 3 submission.
@@ -170,7 +170,7 @@ continue. Attempt calculations before opening worked solutions. Keep your
 worksheet and synthetic Lab exports for the November 13 discussion. There is no
 extra required preparation or follow-up assignment.
 Week 5 video and Lab 12 screen demonstrations are online or a separate MP4:
-https://www.skhgroup.net/teaching/2105603/week05-video.html
+https://soorathep.github.io/course-2105603/teaching/2105603/week05-video.html
 Complete the existing anonymous Session 5 exit ticket and feedback once, online:
 https://thermo-2105603-exit-ticket.soorathep-k.chatgpt.site/?session=5
 Do not include your name or student ID in the anonymous form.
@@ -178,7 +178,7 @@ The Lab 08 demonstration includes its synthetic Excel workbook, CSV, saved
 study examples, residual tables and the English walkthrough page.
 The Lab 08 video and audio are not included. Open the narrated walkthrough
 with internet access or download its MP4 separately:
-https://www.skhgroup.net/teaching/2105603/lab08-video.html
+https://soorathep.github.io/course-2105603/teaching/2105603/lab08-video.html
 The exit ticket and feedback form also require internet to submit responses.
 The offline archive does not store or synchronize student responses.
 Optional source toolkit ZIPs are omitted; their links lead to this note.

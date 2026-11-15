@@ -39,7 +39,7 @@ def permitted_html_rewrites(source):
     for name in VIDEO_PAGES:
         pattern = r'href=(["\'])(?:\.\./|\./|/teaching/2105603/)?' + re.escape(name) + r'([?#][^"\']*)?\1'
         source = re.sub(pattern, lambda m: 'href=' + m[1] +
-                        'https://www.skhgroup.net/teaching/2105603/' + name +
+                        'https://soorathep.github.io/course-2105603/teaching/2105603/' + name +
                         (m[2] or '') + m[1], source)
     for name in ('eos', 'fugacity', 'solution', 'vle', 'stability', 'reaction'):
         source = source.replace('files/' + name + '-slides.pdf', name + '.html')
@@ -91,7 +91,7 @@ def main():
             results.append({'file': rel, 'verification': 'exact match after documented offline link rewrites only',
                             'public_sha256': sha(source.encode()), 'offline_sha256': sha(data)})
         hub = z.read(PREFIX + 'teaching/2105603/week04-study.html').decode()
-        anchors = [f'https://www.skhgroup.net/teaching/2105603/week04-video.html#slide-{n}' for n in (16, 30)]
+        anchors = [f'https://soorathep.github.io/course-2105603/teaching/2105603/week04-video.html#slide-{n}' for n in (16, 30)]
         assert all(link in hub for link in anchors)
         relative_player_links = []
         for name in names:
@@ -99,12 +99,12 @@ def main():
                 continue
             text = z.read(name).decode()
             for href in re.findall(r'href=["\']([^"\']+)["\']', text):
-                if any(v in href for v in VIDEO_PAGES) and not href.startswith('https://www.skhgroup.net/teaching/2105603/'):
+                if any(v in href for v in VIDEO_PAGES) and not href.startswith('https://soorathep.github.io/course-2105603/teaching/2105603/'):
                     relative_player_links.append({'file': name[len(PREFIX):], 'href': href})
         assert not relative_player_links, relative_player_links
         learning = json.loads(z.read(PREFIX + 'teaching/2105603/labs/assets/learning-path.json'))
         session = next(s for s in learning['sessions'] if s['number'] == 4)
-        assert session['video'] == 'https://www.skhgroup.net/teaching/2105603/week04-video.html'
+        assert session['video'] == 'https://soorathep.github.io/course-2105603/teaching/2105603/week04-video.html'
         assert session['core'] == ['solids', 'adsorption']
         for lab in ('solids', 'adsorption'):
             assert PREFIX + f'teaching/2105603/labs/{lab}.html' in names

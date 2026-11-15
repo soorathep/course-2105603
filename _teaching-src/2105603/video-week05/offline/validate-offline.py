@@ -8,7 +8,7 @@ import re
 import zipfile
 
 PREFIX = 'thermodynamics-offline/'
-BASE = 'https://www.skhgroup.net/teaching/2105603/'
+BASE = 'https://soorathep.github.io/course-2105603/teaching/2105603/'
 PDFS = {'postmidterm-05-slides.pdf': 32, 'week05-practice.pdf': 6,
         'week05-lab-guide.pdf': 2, 'week05-solutions.pdf': 5,
         'week04-video-slides.pdf': 54, 'postmidterm-04-slides.pdf': 40,

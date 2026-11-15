@@ -16,7 +16,7 @@ from reportlab.platypus import Paragraph, Table, TableStyle
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
-BASE='https://www.skhgroup.net/teaching/2105603/'
+BASE='https://soorathep.github.io/course-2105603/teaching/2105603/'
 C={k:colors.HexColor(v) for k,v in skh.C.items()}
 W,H=595.276,841.89
 M=43

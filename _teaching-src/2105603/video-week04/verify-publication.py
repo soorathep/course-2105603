@@ -7,7 +7,7 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = 'https://www.skhgroup.net/teaching/2105603/'
+BASE = 'https://soorathep.github.io/course-2105603/teaching/2105603/'
 FILES = [
     'week04-video.html', 'week04-study.html', 'postmidterm-04.html',
     'files/postmidterm-04-slides.pdf', 'files/week04-practice.pdf',

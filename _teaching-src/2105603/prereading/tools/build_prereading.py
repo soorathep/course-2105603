@@ -78,7 +78,7 @@ for week,d in enumerate(READINGS,1):
         for _ in range(2):c.line(M,y-10,W-M,y-10);y-=20
         y-=10
     y=para('Optional extension',y,'heading');y=para(d['optional'],y,'small')
-    url='https://www.skhgroup.net/teaching/2105603/labs/'+('' if d['lab']=='index' else d['lab']+'.html')
+    url='https://soorathep.github.io/course-2105603/teaching/2105603/labs/'+('' if d['lab']=='index' else d['lab']+'.html')
     y=para('Continue in the core lab',y,'heading');c.linkURL(url,(M,y-16,W-M,y+5),relative=0,thickness=0)
     y=para(url,y,'small')
     y=para('Reading locator: supplied textbook contents, sections '+d['book']+'.',y,'small')
