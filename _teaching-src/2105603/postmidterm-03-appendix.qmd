@@ -1,0 +1,125 @@
+---
+title: "Appendix: Consistency and liquid stability"
+subtitle: "Session 3 · optional reference"
+author: "Soorathep Kheawhom"
+date: 2026-09-30
+date-format: "D MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, theme/teal-amber.scss]
+    css: assets/postmidterm.css
+    width: 1280
+    height: 720
+    margin: 0.06
+    center: false
+    auto-stretch: false
+    slide-number: c/t
+    show-slide-number: speaker
+    progress: true
+    hash: true
+    history: true
+    transition: none
+    transition-speed: fast
+    menu: false
+    html-math-method: katex
+    title-slide-attributes:
+      data-background-color: "#1C242B"
+---
+
+## Optional reference material
+
+Return to the [Week 3 independent lesson](postmidterm-03.html) or [start page](week03-study.html).
+
+Use these optional details when a question from your investigation needs them. They are outside the required 180-minute holiday lesson. There is no compulsory additional homework.
+
+Possible extensions include NRTL tie-line fitting in Lab 05, paired bootstrap from independent replicates, or feasible three-phase amounts in Lab 06. Complete the core Lab 03 and Lab 04 tasks first.
+
+## Consistency methods and scope
+
+The [Lab 03 definitions](labs/consistency.html) state the equations, thresholds, endpoint assumptions and implementation limits.
+
+- The area and Herington variants require full-range information or explicit endpoint assumptions.
+- The local finite-difference diagnostic differs from the NIST/Kojima Padé slope method.
+- The Van Ness-type fit tests selected-model reproduction. It does not certify experimental accuracy.
+
+Primary references: [NIST area and Herington](https://trc.nist.gov/TDE/Help/TDE103b_v4_0/VLE-DataSets-ConsistencyTests/Herington.htm), [point test](https://trc.nist.gov/TDE/Help/TDE103b_v4_0/VLE-DataSets-ConsistencyTests/Point.htm), [modeling test](https://trc.nist.gov/TDE/Help/TDE103b_v4_0/VLE-DataSets-ConsistencyTests/VanNess.htm).
+
+## Binodal and spinodal
+
+In [Lab 04](labs/stability.html#lle-experiment), select Margules · 1 parameter, A = 3. Choose **Binodal & spinodal map** in the View menu.
+
+The binodal marks coexisting compositions. The spinodal marks zero local curvature. Between a binodal and a spinodal, a homogeneous liquid can have positive curvature while a finite split lowers its Gibbs energy.
+
+These equilibrium constructions do not predict nucleation barriers or separation times.
+
+## Tangent-plane distance
+
+For a trial composition w relative to reference z,
+$$TPD(w;z)=g(w)-g(z)-g'(z)(w-z)$$
+
+A negative value identifies a Gibbs-energy-lowering perturbation. Local curvature examines only the neighborhood of z.
+
+Lab 04 evaluates the binary model; it is not a general multicomponent TPD package.
+
+## Model shape and liquid splitting
+
+Positive activity deviations alone do not guarantee LLE. The mixing Gibbs-energy shape must support a split.
+
+The labs include Margules and NRTL options with different shapes. Standard Wilson behavior is discussed in the reference deck, not implemented as an LLE solver here.
+
+## LLE fitting uses different evidence
+
+Tie-line data constrain the coexistence compositions. Fitting must reproduce distinct phases and a supported common tangent.
+
+A small tie-line error at one T does not establish a unique parameter set or a temperature law.
+
+Lab 05 retains the input observations and checks stability of the fitted result.
+
+## Vapor–liquid–liquid coexistence
+
+$$\hat f_i^V=\hat f_i^{L\alpha}=\hat f_i^{L\beta}$$
+
+For a binary nonreacting system with three phases, the phase rule gives one intensive degree of freedom before imposing T or P.
+
+Phase compositions and phase amounts are different unknowns. Specifying T and P does not always uniquely determine all amounts.
+
+## Three phase amounts can form a family
+
+Given three fixed binary phase compositions,
+$$f_\alpha+f_\beta+f_V=1$$
+$$z_1=f_\alpha x_1^\alpha+f_\beta x_1^\beta+f_Vy_1$$
+
+There are two independent constraints on three fractions. Nonnegativity bounds the feasible family. Another independent extensive constraint may select a member.
+
+## VLLE extension
+
+[Open Lab 06](labs/vlle.html#vl-experiment)
+
+Compare the supported liquid and vapor states. Move within the admissible phase-fraction family and verify the overall balance.
+
+Identify a state where the vapor fraction is constrained by nonnegativity. Explain why equal fugacities alone cannot determine every fraction.
+
+## Where the model can be reused
+
+A fitted liquid model needs a matching component order, parameter convention and temperature before reuse.
+
+VLE also requires pure-component vapor pressures and a vapor model. LLE experimental pressure is not a vapor-pressure correlation.
+
+A new phase calculation brings new assumptions and validation needs.
+
+## Sources and further reading
+
+[Module reference deck](stability.html) · [Lab assumptions and sources](labs/learning-path.html#session-3)
+
+The worked examples use synthetic inputs. Each lab states its supported models and validity limits.
+
+## Partial molar properties from a tangent
+
+For a binary molar property m(x), at fixed T and P:
+$$\bar m_1=m+(1-x)m',\qquad\bar m_2=m-xm'$$
+
+The tangent intercepts at x=1 and x=0 give the two partial molar properties.
+
+Paper exercise: use m(x)=x(1−x), in an arbitrary consistent molar unit, at x=0.25. Compute both intercepts and check $x\bar m_1+(1-x)\bar m_2=m$.
+
+Reading locator: supplied textbook contents, 11.1–11.2 and 14.11.

@@ -1,0 +1,35 @@
+/* Instructions are visible in the browser deck and printable PDF. */
+.reveal .your-action {
+  font-size: .79em;
+  line-height: 1.35;
+  border-top: 1px solid var(--teal);
+  margin: 0 0 .7em;
+  padding-top: .35em;
+}
+.reveal .your-action p { margin: 0; line-height: 1.35; }
+.reveal table { font-size: .86em; }
+.reveal table th, .reveal table td { padding: .22em .35em; }
+.reveal .slides section > p, .reveal .slides section > ul,
+.reveal .slides section > ol { font-size: .91em; }
+.reveal .slides section > .math.display { margin: .45em 0; }
+/* Preserve mathematical symbols inside capitalized table headings. */
+.reveal table th .math, .reveal table th .katex {
+  text-transform: none;
+  letter-spacing: normal;
+}
+/* Keep UI crops illustrative; exact settings and results remain readable text. */
+.reveal .demo-slide .columns { gap: 1.1em; align-items: start; }
+.reveal .demo-slide .column > p { font-size: .88em; margin: .2em 0 .35em; }
+.reveal .demo-slide .column img { margin: .15em 0; }
+.reveal .demo-slide .column figure { margin: .1em 0; }
+.reveal .demo-slide figcaption { display: none; }
+.reveal .demo-slide table { font-size: .79em; }
+.reveal .work-stop .your-action { border-top-width: 3px; }
+
+/* Fit the modeling evidence and its limitations on one physical slide. */
+.reveal #model-fit-and-saved-evidence .column img {
+  height: 180px;
+  width: auto !important;
+  max-width: 100%;
+  object-fit: contain;
+}

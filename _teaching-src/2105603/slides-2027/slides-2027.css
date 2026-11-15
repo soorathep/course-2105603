@@ -1,0 +1,165 @@
+/* 2027 session decks: layout pieces on top of theme/teal-amber.scss */
+@font-face { font-family: "Course Thai"; src: url("../assets/Sarabun-Regular.ttf") format("truetype"); font-weight: 400; }
+/* Quarto writes the theme font stack unquoted, which drops "Source Sans 3"; set it here. */
+.reveal { font-family: "Source Sans 3", "Course Thai", "Helvetica Neue", Arial, sans-serif; }
+.reveal .katex { font-family: KaTeX_Main, "Times New Roman", serif; }
+.fig-pxy text, .reveal svg text { font-family: "Source Sans 3", sans-serif; }
+
+/* route timeline */
+.reveal .route { display: flex; gap: 4px; margin: 1.1em 0 0.9em; }
+.reveal .route .seg { min-width: 92px; border-top: 14px solid var(--seg); padding: 12px 10px 0 0; font-size: 0.56em; line-height: 1.3; }
+.reveal .route .seg p { margin: 0; }
+.reveal .route .seg .t { display: block; color: #66727C; font-variant-numeric: tabular-nums; margin-bottom: 4px; }
+.reveal .route .seg strong { display: block; color: #1C242B; }
+.reveal .route .seg .d { display: block; color: #333F4A; }
+.reveal .route .concept { --seg: #B9C1C6; }
+.reveal .route .act { --seg: #E29A2D; }
+.reveal .route .demo { --seg: #0F6E6B; }
+.reveal .route .break { --seg: #DFC98F; }
+.reveal .route .wrap { --seg: #66727C; }
+.reveal .route-question { font-family: "Source Serif 4", Georgia, serif; font-size: 1.05em; color: #1C242B; margin-top: 1.6em; background: #F3F0EB; padding: 22px 28px; border-radius: 4px; }
+.reveal .route-question p { margin: 0; }
+.reveal .label { display: block; font-family: "Source Sans 3", sans-serif; font-size: 0.5em; letter-spacing: .06em; text-transform: uppercase; color: #66727C; margin-bottom: .3em; }
+.reveal .selfstudy { position: absolute; bottom: 0; left: 0; right: 0; font-size: 0.52em; color: #333F4A; border-left: 3px solid #0F6E6B; padding: .2em 0 .2em .8em; }
+.reveal .selfstudy p { margin: 0; }
+
+/* concept slide */
+.reveal .fig-pxy { width: 100%; margin: 0; }
+.reveal .concept-notes { font-size: 0.62em; }
+.reveal .concept-notes p { margin: 0 0 .5em; }
+.reveal .concept-notes .q { display: block; font-weight: 700; color: #1C242B; margin-top: .6em; }
+.reveal .concept-notes .katex-display { margin: .3em 0 .6em; font-size: 1.05em; text-align: left; }
+.reveal .concept-notes .source { display: block; font-size: .8em; color: #66727C; margin-top: 1.2em; }
+
+/* activity slide */
+.reveal section.activity { border-left: 14px solid #E29A2D; padding-left: 40px !important; box-sizing: border-box; }
+.reveal .act-label { display: block; font-size: 0.55em; font-weight: 700; color: #9a5f10; letter-spacing: .03em; margin-bottom: .6em; }
+.reveal .prompt { font-family: "Source Serif 4", Georgia, serif; font-size: 1.15em; line-height: 1.3; color: #1C242B; margin: .2em 0 .8em; }
+.reveal .choices p { display: flex; gap: 18px; margin: 0 0 1em; }
+.reveal .choices span { border: 2px solid #333F4A; border-radius: 4px; padding: .3em 1.1em; font-size: .8em; color: #1C242B; }
+.reveal section.activity > p { font-size: .7em; }
+
+/* demo slide */
+.reveal #demo-lab ol { font-size: .72em; }
+.reveal .lab-button { display: inline-block; margin-top: .8em; background: #0F6E6B; color: #fff !important; padding: .35em 1em; border-radius: 4px; font-size: .7em; font-weight: 600; }
+.reveal .lab-button:hover { background: #0b5653; }
+.reveal .expect { background: #F3F0EB; padding: 12px 18px; border-radius: 4px; font-size: .55em; }
+.reveal .expect p { margin: 0; }
+.reveal .lab-shot { width: 100%; margin: 0 0 10px; border: 1px solid #B9C1C6; border-radius: 4px; }
+.reveal .expect table { font-size: .6em; width: 100%; margin: 0; }
+.reveal .expect table thead { display: none; }
+.reveal .expect td { padding: .25em .4em; border-bottom: 1px solid #B9C1C6; }
+.reveal .expect td:last-child { font-variant-numeric: tabular-nums; }
+
+@media print { .nr-bar, .nr-caption { display: none !important; } }
+
+.reveal .beforeafter { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 1.4em; font-size: .6em; color: #333F4A; }
+.reveal .beforeafter > div { border-top: 1px solid #B9C1C6; padding-top: .6em; }
+.reveal .beforeafter p { margin: 0; }
+.reveal .beforeafter .label { font-size: .8em; margin-bottom: .35em; }
+
+/* course map */
+.reveal .coursemap { display: grid; grid-template-columns: 1fr 1.25fr; gap: 48px; margin-top: .7em; }
+.reveal .coursemap p { display: flex; flex-direction: column; align-items: stretch; gap: 7px; margin: 0; }
+.reveal .coursemap .label { margin-bottom: .2em; }
+.reveal .coursemap .cm { font-size: .56em; padding: .4em .8em; border-radius: 4px; background: #F3F0EB; color: #333F4A; }
+.reveal .coursemap .done .cm { background: #fff; border: 1px solid #B9C1C6; color: #66727C; }
+.reveal .coursemap .cm.now { background: #0F6E6B; color: #fff; font-weight: 600; }
+.reveal .bridge { margin-top: 1.1em; font-size: .78em; border-left: 4px solid #E29A2D; padding-left: .8em; }
+.reveal .bridge p { margin: 0; }
+/* flash drum */
+.reveal .flash-sketch { width: 100%; height: auto; }
+.reveal .flash-sketch text { font-family: "Source Sans 3", sans-serif; font-size: 19px; fill: #1C242B; }
+.reveal .flash-sketch text.c { text-anchor: middle; fill: #66727C; }
+.reveal .flash-sketch text.a { fill: #9a5f10; font-weight: 600; }
+.reveal .why-notes { font-size: .66em; }
+.reveal .why-notes .source { display: block; font-size: .78em; color: #66727C; margin-top: 1.2em; }
+/* recap chain */
+.reveal .chain { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px; margin-top: 1.2em; }
+.reveal .chain .link { position: relative; background: #F3F0EB; border-radius: 4px; padding: 22px 24px; font-size: .66em; }
+.reveal .chain .link + .link::before { content: "→"; position: absolute; left: -36px; top: 42%; font-size: 1.5em; color: #66727C; }
+.reveal .chain .katex-display { font-size: 1.15em; margin: .6em 0 0; }
+.reveal .chain .link.today { background: #fff; border: 2px solid #0F6E6B; }
+.reveal .chain .link p { margin: 0 0 .4em; }
+.reveal .chain .label { font-size: .85em; }
+.reveal .chain + p { font-size: .6em; color: #66727C; margin-top: 1em; }
+/* outcomes */
+.reveal #outcomes ol { font-size: .8em; margin-top: .2em; position: relative; }
+.reveal #outcomes li { margin-bottom: .9em; padding-right: 230px; position: relative; }
+.reveal #outcomes .where { position: absolute; right: 0; top: 0; width: 210px; font-size: .78em; color: #0F6E6B; border-left: 2px solid #0F6E6B; padding-left: 10px; }
+.reveal #outcomes .where-head { display: block; width: 222px; margin: .5em 142px -.6em auto; font-size: .45em; letter-spacing: .06em; text-transform: uppercase; color: #66727C; }
+
+/* concept build-up */
+.reveal .rule-table table { font-size: .62em; margin-top: .6em; width: 90%; }
+.reveal .rule-table thead { display: none; }
+.reveal .rule-table td { padding: .35em .6em; border-bottom: 1px solid #B9C1C6; }
+.reveal .rule-table td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.reveal .rule-notes { font-size: .7em; }
+.reveal .rule-notes p { margin: 0 0 .7em; }
+.reveal .lever-box { background: #F3F0EB; border-radius: 4px; padding: 16px 22px; font-size: .6em; }
+.reveal .lever-box p { margin: 0 0 .5em; }
+.reveal .lever-box table { font-size: .95em; width: 100%; margin: .2em 0 0; }
+.reveal .lever-box td, .reveal .lever-box th { padding: .25em .4em; border-bottom: 1px solid #B9C1C6; font-variant-numeric: tabular-nums; }
+.reveal #lever .column:first-child, .reveal #rachford-rice .column:first-child { font-size: .7em; }
+.reveal #lever .katex-display, .reveal #rachford-rice .katex-display { margin: .4em 0; }
+.reveal .steps4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: .8em 0 .9em; }
+.reveal .steps4 > div { border-top: 6px solid #0F6E6B; background: #F3F0EB; padding: 14px 16px; font-size: .56em; line-height: 1.45; }
+.reveal .steps4 > div:last-child { border-top-color: #E29A2D; }
+.reveal .steps4 p { margin: 0; }
+.reveal #worked > p { font-size: .6em; color: #333F4A; }
+.reveal .range p { font-family: "Source Serif 4", Georgia, serif; font-size: 1.1em; color: #1C242B; margin: .1em 0 0; }
+.reveal #activity-1-debrief .column:first-child > p { font-size: .72em; }
+.reveal .mistakes { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; margin-top: .8em; }
+.reveal .mistakes > div { border-left: 4px solid #BE654C; padding: 4px 0 4px 16px; font-size: .62em; }
+.reveal .mistakes p { margin: 0; }
+.reveal section.breakslide h2 { margin-top: 2.2em; font-size: 2.1em; }
+.reveal .break-next { font-size: .7em; max-width: 30em; }
+.reveal .a2grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: .5em; }
+.reveal .a2grid > div { border-top: 6px solid #E29A2D; padding-top: 10px; font-size: .56em; line-height: 1.45; }
+.reveal .a2grid p { margin: 0; }
+.reveal #activity-2-check .column:first-child { font-size: .64em; }
+.reveal .summary3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: .6em 0 1em; }
+.reveal .summary3 > div { background: #F3F0EB; border-radius: 4px; padding: 14px 18px; font-size: .6em; }
+.reveal .summary3 p { margin: 0; }
+.reveal #summary > p, .reveal #after-class > p, .reveal #exit-ticket > p { font-size: .66em; }
+
+/* readability pass: larger text in boxes, labels readable inside small containers */
+.reveal .steps4 > div { font-size: .66em; }
+.reveal .steps4 p { line-height: 1.5; }
+.reveal .lever-box { font-size: .7em; }
+.reveal .a2grid > div { font-size: .64em; }
+.reveal .summary3 > div { font-size: .68em; }
+.reveal .mistakes > div { font-size: .7em; }
+.reveal .rule-notes { font-size: .78em; }
+.reveal #lever .column:first-child, .reveal #rachford-rice .column:first-child { font-size: .76em; }
+.reveal #activity-1-debrief .column:first-child > p { font-size: .8em; }
+.reveal #activity-2-check .column:first-child { font-size: .7em; }
+.reveal #worked > p { font-size: .66em; }
+.reveal .act-label { font-size: .62em; }
+.reveal .steps4 .label, .reveal .lever-box .label, .reveal .a2grid .label, .reveal .summary3 .label,
+.reveal .chain .label, .reveal .break-next .label, .reveal #activity-2-check .label { font-size: .78em; }
+.reveal table th { text-transform: none; }
+.reveal .selfstudy { bottom: 46px; }
+
+.reveal .qr-col { text-align: center; font-size: .55em; }
+.reveal .qr-col img.qr { width: 92%; max-width: 300px; margin: 0 auto .4em; display: block; }
+.reveal #exit-ticket .column:first-child > p { font-size: .66em; }
+
+.reveal .coursemap .cm.past { background: #fff; border: 1px solid #0F6E6B; color: #0F6E6B; }
+
+.reveal .label .nt { text-transform: none; }
+.reveal #worked .source { font-size: 16px; display: block; margin-top: 1em; }
+
+/* Session 1 graduate version */
+.reveal #routes-to-k .column:first-child, .reveal #bubble-t .column:first-child, .reveal #rachford-rice .column:first-child,
+.reveal #phase-check .column:first-child, .reveal #nonideal-k .column:first-child { font-size: .85em; }
+.reveal #phase-check table { font-size: .9em; margin-top: .6em; }
+.reveal #phase-check td, .reveal #phase-check th { padding: .3em .6em; border-bottom: 1px solid #B9C1C6; text-transform: none; }
+.reveal .steps-v ol { margin: 0 0 .6em 1.1em; }
+.reveal .steps-v li { margin-bottom: .35em; }
+.reveal #recap .chain + p { font-size: .6em; }
+.reveal #bubble-t .source { display: block; font-size: 15px; margin-top: .8em; color: #66727C; }
+
+.reveal #phase-rule .rule-table thead { display: table-header-group; }
+.reveal #phase-rule .rule-table th { padding: .35em .6em; text-align: right; font-weight: 600; border-bottom: 1px solid #B9C1C6; }
+.reveal #rachford-rice .expect { font-size: .62em; }
