@@ -3,7 +3,7 @@ title: SKH Research Group
 description: Energy Storage Innovation Laboratory, Chulalongkorn University.
 author: Soorathep Kheawhom
 
-baseurl: "/course-2105603"            # site is served at the ROOT of www.skhgroup.net (see CNAME)
+baseurl: "/course-2105603"            # GitHub Pages project site; no course CNAME
 home_url: "index.html"    # the one-pager the nav links back to
 url: "https://soorathep.github.io"
 
@@ -90,5 +90,9 @@ exclude:
   - teaching/seminars/site_libs/revealjs/dist/reveal.js.map
 
   - README.md
+  - AGENTS.md
+  - PUBLISHING.md
   - ARCHIVING.md
   - migration-manifest.json
+  - .archive-preparation/
+  - _qa/
