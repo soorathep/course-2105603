@@ -6,7 +6,7 @@ prefix='/'+repo
 def convert(url):
  if not url.startswith('/') or url.startswith('//') or url in [prefix,prefix+'/']: return url
  if url.startswith(prefix+'/'): url=url[len(prefix):]
- if url.split('?')[0].split('#')[0] in ['/teaching/2105315/slides/exit.html','/teaching/2105603/slides-2027/exit.html']: return 'https://www.skhgroup.net'+url
+ if url.split('?')[0].split('#')[0] in ['/teaching/2105315/slides/exit.html']: return 'https://www.skhgroup.net'+url
  if url.startswith('/teaching/'+code+'/') or url.startswith('/teaching/shared/') or url.startswith('/files/'+code+'/') or url.startswith('/assets/') or url in ['/favicon.png','/og.png','/feed.xml','/sitemap.xml']: return prefix+url
  return 'https://www.skhgroup.net'+url
 for f in site.rglob('*'):
@@ -20,7 +20,8 @@ for f in site.rglob('*'):
  f.write_text(text)
 
 # Keep submission forms on their existing authorized backend origin.
-for route in ['teaching/2105315/slides/exit.html','teaching/2105603/slides-2027/exit.html']:
+# 2105603 serves its own form: the relay allows https://soorathep.github.io (Nov 2026).
+for route in ['teaching/2105315/slides/exit.html']:
  f=site/route
  if f.exists():
   dest='https://www.skhgroup.net/'+route
