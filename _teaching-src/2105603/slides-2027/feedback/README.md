@@ -27,6 +27,11 @@ pace, confidence 1-5, lab worked, still unclear, one change.
 - Repository: `soorathep/course-feedback` (private)
 - Worker: `https://course-feedback-relay.ecs-thailand-election.workers.dev/`
   (Cloudflare account soorathep.k; token expires about November 2027)
+- Allowed form origins: `https://soorathep.github.io`, `https://www.skhgroup.net`
+  and `https://skhgroup.net`. Keep all three in `worker.js` when restoring the
+  deployed service so both the dedicated course site and legacy forms work.
+- The relay is deployed separately from GitHub Pages. Publishing this repository
+  does not redeploy the Worker or move its private response repository.
 
 ## Courses using this relay
 
