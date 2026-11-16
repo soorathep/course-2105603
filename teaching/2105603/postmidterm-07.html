@@ -151,6 +151,8 @@
   #exam-answer col:last-child {width: 93% !important;}
   #exam-answer table {font-size: .72em;}
   #exam-problem ol, #exam-problem p {font-size: .92em;}
+  #phase-check col:first-child, #phase-check-2 col:first-child, #phase-check-3 col:first-child, #set-b-check-2 col:first-child {width: 14% !important;}
+  #phase-check col:last-child, #phase-check-2 col:last-child, #phase-check-3 col:last-child, #set-b-check-2 col:last-child {width: 86% !important;}
   #prepare col:first-child {width: 10% !important;}
   #prepare col:last-child {width: 90% !important;}
   </style>
@@ -197,12 +199,12 @@ Soorathep Kheawhom
 <td>Resolve a question from Week 6.</td>
 </tr>
 <tr class="even">
-<td>10–30</td>
-<td>See the six sessions as one idea: an equilibrium condition plus a balance.</td>
+<td>10–25</td>
+<td>See the six sessions as one idea, and the equations behind it.</td>
 </tr>
 <tr class="odd">
-<td>30–80</td>
-<td><strong>Set A · phases.</strong> Flash, measured activity coefficients, liquid splitting.</td>
+<td>25–80</td>
+<td><strong>Set A · phases.</strong> A nonideal flash, data reduction with its uncertainty, a stability test.</td>
 </tr>
 <tr class="even">
 <td>80–90</td>
@@ -210,7 +212,7 @@ Soorathep Kheawhom
 </tr>
 <tr class="odd">
 <td>90–135</td>
-<td><strong>Set B · other equilibria.</strong> Gas inventory, reaction extent, cell direction.</td>
+<td><strong>Set B · other equilibria.</strong> A vessel with two condensed phases, a reaction in a real gas, a cell with real activities.</td>
 </tr>
 <tr class="even">
 <td>135–160</td>
@@ -226,7 +228,7 @@ Soorathep Kheawhom
 </tr>
 </tbody>
 </table>
-<p>Each problem has a check slide. Try first, then check. The orange <strong>Going further</strong> boxes are for students who finish early.</p>
+<p>Every problem starts from the ideal case you already know, then removes one assumption and asks <strong>how much it matters</strong>. Each has a check slide: try first, then check.</p>
 </section>
 <section id="one-idea" class="slide level2">
 <h2>One idea behind all six sessions</h2>
@@ -249,31 +251,31 @@ Soorathep Kheawhom
 <tbody>
 <tr class="odd">
 <td>1 · VLE, flash</td>
-<td><span class="math inline">y_iP=x_iP_i^{\rm sat}</span> (ideal)</td>
-<td><span class="math inline">z_1=(1-\beta)x_1+\beta y_1</span></td>
+<td><span class="math inline">y_i\Phi_iP=x_i\gamma_iP_i^{\rm sat}</span></td>
+<td><span class="math inline">z_i=(1-\beta)x_i+\beta y_i</span></td>
 <td>Rebuild the feed; <span class="math inline">0\le\beta\le1</span></td>
 </tr>
 <tr class="even">
 <td>2 · Measured VLE</td>
-<td><span class="math inline">y_iP=x_i\gamma_iP_i^{\rm sat}</span></td>
-<td><span class="math inline">P^{\rm sat}</span> from a stated correlation</td>
-<td>Units, log base, range of Antoine</td>
+<td>Same, solved for <span class="math inline">\gamma_i</span></td>
+<td><span class="math inline">P^{\rm sat}</span> and <span class="math inline">\Phi_i</span> from stated models</td>
+<td>Propagated uncertainty; Antoine range</td>
 </tr>
 <tr class="odd">
 <td>3 · Consistency, LLE</td>
 <td>Gibbs–Duhem; <span class="math inline">x_i^\alpha\gamma_i^\alpha=x_i^\beta\gamma_i^\beta</span></td>
 <td>Lever rule</td>
-<td>Common tangent below the curve</td>
+<td>Tangent-plane distance <span class="math inline">\ge0</span></td>
 </tr>
 <tr class="even">
 <td>4 · Solids, adsorption</td>
 <td><span class="math inline">P_A=P_{\rm sub}(T)</span> or <span class="math inline">q(P_A)</span></td>
-<td>Inventory: gas + solid or adsorbed</td>
-<td>Both terms computed independently</td>
+<td>Inventory over all phases</td>
+<td>Phase present or not: test both</td>
 </tr>
 <tr class="odd">
-<td>5 · Reactions</td>
-<td><span class="math inline">Q=K(T)</span></td>
+<td>5–6 · Reactions</td>
+<td><span class="math inline">\prod a_i^{\nu_i}=K(T)</span>, <span class="math inline">a_i=\hat f_i/f_i^\circ</span></td>
 <td>Extent and atom balance</td>
 <td>Recompute <span class="math inline">Q</span>; atoms conserved</td>
 </tr>
@@ -281,7 +283,7 @@ Soorathep Kheawhom
 <td>6 · Electrochemistry</td>
 <td><span class="math inline">\Delta_rG=-nFE</span>, Nernst</td>
 <td>Reaction as written fixes <span class="math inline">Q</span></td>
-<td>Equal activities give <span class="math inline">E=E^\circ</span></td>
+<td><span class="math inline">\partial E/\partial T</span> gives <span class="math inline">\Delta_rS</span></td>
 </tr>
 </tbody>
 </table>
@@ -291,205 +293,270 @@ Soorathep Kheawhom
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Phases</strong></p>
-<p><span class="math display">\mu_i^\alpha=\mu_i^\beta\iff \hat f_i^{\,\alpha}=\hat f_i^{\,\beta}</span></p>
-<p><span class="math display">\gamma_i=\frac{y_iP}{x_iP_i^{\rm sat}}\quad\text{(ideal vapor, no Poynting)}</span></p>
-<p><span class="math display">x_1\,\mathrm d\ln\gamma_1+x_2\,\mathrm d\ln\gamma_2=0\quad(T,P\ \text{fixed})</span></p>
-<p><span class="math display">\frac{G^E}{RT}=Ax_1x_2\;\Rightarrow\;\ln\gamma_1=Ax_2^2</span></p>
+<p><span class="math display">\hat f_i^{\,V}=\hat f_i^{\,L}\;\Rightarrow\;y_i\Phi_iP=x_i\gamma_iP_i^{\rm sat}</span></p>
+<p><span class="math display">\ln\Phi_i\approx\frac{B_{ii}(P-P_i^{\rm sat})}{RT}\quad\text{(virial, no Poynting)}</span></p>
+<p><span class="math display">\sum_i\frac{z_i(K_i-1)}{1+\beta(K_i-1)}=0,\qquad K_i=\frac{\gamma_iP_i^{\rm sat}}{\Phi_iP}</span></p>
+<p><span class="math display">\frac{\mathrm{TPD}(\mathbf w)}{RT}=\sum_iw_i\left[\ln w_i\gamma_i(\mathbf w)-\ln z_i\gamma_i(\mathbf z)\right]</span></p>
 </div><div class="column" style="width:50%;">
 <p><strong>Other equilibria</strong></p>
-<p><span class="math display">q=\frac{q_sbP_A}{1+bP_A}</span></p>
-<p><span class="math display">\Delta_rG=\Delta_rG^\circ+RT\ln Q</span></p>
-<p><span class="math display">\ln K=-\frac{\Delta_rG^\circ}{RT}</span></p>
+<p><span class="math display">K=K_yK_\phi\left(\frac{P}{p^\circ}\right)^{\Delta\nu},\qquad \ln\phi_i\approx\frac{B_iP}{RT}</span></p>
 <p><span class="math display">\ln\frac{K_2}{K_1}=-\frac{\Delta_rH^\circ}{R}\left(\frac1{T_2}-\frac1{T_1}\right)</span></p>
-<p><span class="math display">E=E^\circ-\frac{RT}{nF}\ln Q</span></p>
+<p><span class="math display">E=E^\circ-\frac{RT}{nF}\ln Q,\qquad \Delta_rS=nF\left(\frac{\partial E}{\partial T}\right)_P</span></p>
+<p><span class="math display">\sigma^2_{\ln\gamma_1}\approx\Big(\frac{u_x}{x_1}\Big)^2+\Big(\frac{u_y}{y_1}\Big)^2+\Big(\frac{u_P}{P}\Big)^2</span></p>
 </div></div>
 <p>For each equation, be ready to state <strong>what is assumed</strong> and <strong>which quantity is measured, supplied or calculated</strong>.</p>
 </section>
 <section id="flash-problem" class="slide level2">
-<h2>A1 · Which fraction of the feed becomes vapor?</h2>
-<p>At 350 K, an ideal binary mixture has <span class="math inline">P_1^{\rm sat}=150</span> kPa and <span class="math inline">P_2^{\rm sat}=60</span> kPa. The feed contains <span class="math inline">z_1=0.40</span> and the pressure is 90 kPa.</p>
+<h2>A1 · A flash when K depends on composition</h2>
+<p>The synthetic binary of Lab 01 at 350 K: <span class="math inline">P_1^{\rm sat}=150</span>, <span class="math inline">P_2^{\rm sat}=60</span> kPa. The liquid follows one-parameter Margules with <span class="math inline">A=1</span>; the vapor is ideal. Feed <span class="math inline">z_1=0.40</span>, pressure 110 kPa.</p>
 <ol type="1">
-<li>Find <span class="math inline">x_1</span> and <span class="math inline">y_1</span> from <span class="math inline">P=x_1P_1^{\rm sat}+(1-x_1)P_2^{\rm sat}</span> and <span class="math inline">y_1=x_1P_1^{\rm sat}/P</span>.</li>
-<li>Find the vapor fraction <span class="math inline">\beta=(z_1-x_1)/(y_1-x_1)</span> and rebuild the feed from both phases.</li>
-<li>Calculate the bubble and dew pressures of this feed. Is 90 kPa between them?</li>
+<li><strong>Ideal first.</strong> With <span class="math inline">K_i=P_i^{\rm sat}/P</span>, solve Rachford–Rice. What does the root say about the phase state?</li>
+<li><strong>Real liquid.</strong> Find the bubble and dew pressures of this feed with <span class="math inline">\gamma_i(x)</span>. Is 110 kPa between them?</li>
+<li><strong>Iterate.</strong> Start from the ideal K, solve Rachford–Rice, update <span class="math inline">K_i=\gamma_i(x)P_i^{\rm sat}/P</span>, repeat twice. Then find the converged <span class="math inline">x_1</span>, <span class="math inline">y_1</span>, <span class="math inline">\beta</span> (for a binary, <span class="math inline">x_1</span> follows from the bubble-pressure equation at 110 kPa).</li>
+<li>Why does successive substitution converge slowly here?</li>
 </ol>
-<div class="ext">
-<p><strong>Going further.</strong> Repeat at 100 kPa with <span class="math inline">K_i=P_i^{\rm sat}/P</span> and the Rachford–Rice equation <span class="math inline">\sum z_i(K_i-1)/[1+\beta(K_i-1)]=0</span>. What does the root tell you?</p>
-</div>
-<p><a href="labs/index.html#experiment">Check in Lab 01 · VLE and flash</a></p>
+<p><a href="labs/index.html#experiment">Check in Lab 01 · Margules · 1 parameter</a></p>
 </section>
 <section id="measured-vle" class="slide level2">
-<h2>A2 · What if the compositions came from an experiment?</h2>
-<p>Suppose the measured values at 350 K are <span class="math inline">x_1=1/3</span>, <span class="math inline">y_1=5/9</span> and <span class="math inline">P=90</span> kPa. Assume ideal vapor, negligible Poynting correction and a pure-liquid standard state.</p>
+<h2>A2 · What does one measured point really tell you?</h2>
+<p>At 350 K: <span class="math inline">x_1=1/3</span>, <span class="math inline">y_1=5/9</span>, <span class="math inline">P=90</span> kPa, <span class="math inline">P_1^{\rm sat}=150</span> kPa. Standard uncertainties <span class="math inline">u_x=u_y=0.005</span>.</p>
 <ol type="1">
-<li>Use <span class="math inline">\gamma_1=y_1P/(x_1P_1^{\rm sat})</span> with <span class="math inline">P_1^{\rm sat}=150</span> kPa, then with 120 kPa. Which measured quantity changed?</li>
-<li>Before using an Antoine correlation, list the four things you must check.</li>
-<li>A model fits these data closely. What evidence across compositions would you need before calling the data thermodynamically consistent?</li>
+<li>Calculate <span class="math inline">\gamma_1</span> with an ideal vapor. Then include the vapor correction with <span class="math inline">B_{11}=-1000</span> cm<span class="math inline">^3</span> mol<span class="math inline">^{-1}</span> (illustrative): <span class="math inline">\ln\Phi_1\approx B_{11}(P-P_1^{\rm sat})/RT</span>. Which way does <span class="math inline">\gamma_1</span> move, and why does the sign follow from <span class="math inline">P&lt;P_1^{\rm sat}</span>?</li>
+<li>Propagate <span class="math inline">u_x</span> and <span class="math inline">u_y</span> into <span class="math inline">\sigma_{\ln\gamma_1}</span>. Is the vapor correction larger or smaller than this uncertainty?</li>
+<li>If <span class="math inline">P_1^{\rm sat}</span> came from an Antoine set 3 % too low, how large is the bias in <span class="math inline">\ln\gamma_1</span>, and is it random or systematic?</li>
+<li>The data are <strong>isobaric</strong>. What extra term, and what extra measurement, does an area test need?</li>
 </ol>
 </section>
 <section id="liquid-problem" class="slide level2">
-<h2>A3 · Which fraction forms the second liquid?</h2>
-<p>A different binary mixture follows the one-parameter Margules model with <span class="math inline">A=3</span>. The overall mole fraction is <span class="math inline">z_1=0.18</span>.</p>
+<h2>A3 · Is this liquid stable, and how do you prove it?</h2>
+<p>A binary follows one-parameter Margules with <span class="math inline">A=1050\ \mathrm K/T</span>. Feed <span class="math inline">z_1=0.18</span> at 350 K, so <span class="math inline">A=3</span>.</p>
 <ol type="1">
-<li>In Lab 04 choose <strong>Margules · 1 parameter</strong>, enter <span class="math inline">A=3</span> and <span class="math inline">z_1=0.18</span>, then <strong>Find equilibrium</strong>. Read both liquid compositions.</li>
-<li>Use the lever rule to find the fraction of the feed in the liquid richer in component 1. Rebuild the feed.</li>
-<li>Compare the common tangent with the homogeneous curve at <span class="math inline">z_1=0.18</span>. Which state has the lower Gibbs energy?</li>
+<li><strong>Local test.</strong> Evaluate the scaled curvature <span class="math inline">1-2Az_1z_2</span>. What does its sign tell you, and what does it not?</li>
+<li><strong>Global test.</strong> Evaluate the tangent-plane distance at the trial composition <span class="math inline">w_1=0.929</span>. What does its sign prove?</li>
+<li><strong>Equilibrium.</strong> In Lab 04 find both liquid compositions and the lever-rule split. Rebuild the feed.</li>
+<li><strong>Temperature.</strong> Above which temperature is the liquid stable at every composition? What is that point called?</li>
 </ol>
-<div class="ext">
-<p><strong>Going further.</strong> The scaled curvature <span class="math inline">1-2Ax_1x_2</span> is positive at <span class="math inline">z_1=0.18</span>. Why does the liquid still split? Locate the spinodal.</p>
-</div>
-<p><a href="labs/stability.html#lle-experiment">Check in Lab 04 · Liquid stability</a></p>
+<p><a href="labs/stability.html#lle-experiment">Check in Lab 04 · Margules · 1 parameter</a></p>
 </section>
 <section id="phase-check" class="slide level2">
-<h2>Set A · check your answers</h2>
+<h2>Set A · check A1</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ideal K</td>
+<td><span class="math inline">K_1=1.364</span>, <span class="math inline">K_2=0.545</span>; root <span class="math inline">\beta=-0.77</span>: the ideal model says <strong>subcooled liquid</strong> (ideal bubble pressure 96 kPa)</td>
+</tr>
+<tr class="even">
+<td>Real liquid</td>
+<td>Bubble 128.2 kPa, dew 90.2 kPa: 110 kPa <strong>is</strong> two-phase</td>
+</tr>
+<tr class="odd">
+<td>Iteration</td>
+<td><span class="math inline">\beta</span>: <span class="math inline">-0.77\to0.647\to0.510\to0.527\to\dots</span>; <span class="math inline">x_1</span>: <span class="math inline">0.556\to0.280\to0.241\to0.228\to\dots</span></td>
+</tr>
+<tr class="even">
+<td>Converged</td>
+<td><span class="math inline">x_1=0.2217</span>, <span class="math inline">y_1=0.5541</span>, <span class="math inline">\beta=0.5363</span>; <span class="math inline">\gamma_1=1.833</span>, <span class="math inline">\gamma_2=1.050</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Check.</strong> <span class="math inline">0.4637(0.2217)+0.5363(0.5541)=0.4000</span>.</p>
+<p>Convergence is slow because <span class="math inline">\gamma_1</span> is a strong function of <span class="math inline">x_1</span> in the dilute region, and the first ideal step lands far from it. A model that ignores the nonideality gets the <strong>phase</strong> wrong, not just the numbers.</p>
+</section>
+<section id="phase-check-2" class="slide level2">
+<h2>Set A · check A2</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Problem</th>
 <th>Result</th>
-<th>Independent check</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>A1</td>
-<td><span class="math inline">x_1=0.3333</span>, <span class="math inline">y_1=0.5556</span>, <span class="math inline">\beta=0.3000</span>; bubble 96.0 kPa, dew 78.95 kPa</td>
-<td><span class="math inline">0.70(0.3333)+0.30(0.5556)=0.4000</span></td>
+<td>A2 · 1</td>
+<td>Ideal vapor: <span class="math inline">\gamma_1=1.000</span>. With <span class="math inline">\Phi_1=1.021</span>: <span class="math inline">\gamma_1=1.021</span>. <span class="math inline">P&lt;P_1^{\rm sat}</span> and <span class="math inline">B_{11}&lt;0</span> make <span class="math inline">\ln\Phi_1&gt;0</span>.</td>
 </tr>
 <tr class="even">
-<td>A2</td>
-<td><span class="math inline">\gamma_1=1.00</span> with 150 kPa, <span class="math inline">1.25</span> with 120 kPa; no measured value changed</td>
-<td>Log base, pressure unit, temperature unit, valid range</td>
+<td>A2 · 2</td>
+<td><span class="math inline">\sigma_{\ln\gamma_1}=\sqrt{(0.005/0.333)^2+(0.005/0.556)^2}=0.017</span>. The correction, 0.021, is about the same size.</td>
 </tr>
 <tr class="odd">
-<td>A3</td>
-<td><span class="math inline">x_1=0.07072</span> and <span class="math inline">0.92928</span>; fraction in the richer liquid <span class="math inline">0.1273</span></td>
-<td><span class="math inline">0.8727(0.07072)+0.1273(0.92928)=0.1800</span></td>
+<td>A2 · 3</td>
+<td><span class="math inline">\ln(1/0.97)=+0.030</span> in every row: systematic, it does not average out.</td>
+</tr>
+<tr class="even">
+<td>A2 · 4</td>
+<td><span class="math inline">\int_0^1\ln(\gamma_1/\gamma_2)\,\mathrm dx_1=-\int(H^E/RT^2)(\mathrm dT/\mathrm dx_1)\,\mathrm dx_1</span>: needs <span class="math inline">H^E</span> data.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>A2, item 3.</strong> A small residual shows agreement with the chosen model. Consistency needs a Gibbs–Duhem test suited to the experimental path (isothermal or isobaric) and a look at the local residuals.</p>
-<div class="ext">
-<p><strong>Going further.</strong> A1 at 100 kPa: <span class="math inline">K_1=1.5</span>, <span class="math inline">K_2=0.6</span> give <span class="math inline">\beta=-0.20</span>, a negative flash: the feed is a subcooled liquid, since 100 kPa is above the 96 kPa bubble pressure. A3: the curvature is <span class="math inline">1-6(0.18)(0.82)=0.114&gt;0</span>, so <span class="math inline">z_1=0.18</span> is <strong>metastable</strong>: locally stable, but inside the binodal. The spinodal is at <span class="math inline">x_1=0.211</span> and <span class="math inline">0.789</span>.</p>
-</div>
+</section>
+<section id="phase-check-3" class="slide level2">
+<h2>Set A · check A3</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Problem</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A3 · 1</td>
+<td><span class="math inline">1-6(0.18)(0.82)=0.114&gt;0</span>: locally stable. This does <strong>not</strong> rule out a split.</td>
+</tr>
+<tr class="even">
+<td>A3 · 2</td>
+<td><span class="math inline">\mathrm{TPD}(0.929)/RT=-0.332&lt;0</span>: a second liquid lowers <span class="math inline">G</span>. The feed is <strong>metastable</strong>.</td>
+</tr>
+<tr class="odd">
+<td>A3 · 3</td>
+<td><span class="math inline">x_1=0.07072</span> and <span class="math inline">0.92928</span>; fraction in the richer liquid <span class="math inline">0.1273</span>; <span class="math inline">0.8727(0.07072)+0.1273(0.92928)=0.1800</span>.</td>
+</tr>
+<tr class="even">
+<td>A3 · 4</td>
+<td>Split needs <span class="math inline">A&gt;2</span>, so <span class="math inline">T&lt;525</span> K: an upper critical solution temperature.</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="vessel-problem" class="slide level2">
-<h2>B1 · Can the vessel reach 10 kPa?</h2>
-<p>A closed vessel contains 0.0086712 mol of A at 300 K. The free gas volume is 1.00 L. Treat the gas as ideal and use <span class="math inline">R=8.31446</span> L kPa mol<span class="math inline">^{-1}</span> K<span class="math inline">^{-1}</span>.</p>
-<p><strong>Vessel A.</strong> Pure solid A can sublime, with <span class="math inline">P_{\rm sub}=10.0</span> kPa at this temperature. How many moles are in the gas at that pressure? How many remain as solid?</p>
-<p><strong>Vessel B.</strong> The same inventory can occupy the gas or adsorb on 10.0 g of a separate adsorbent: <span class="math inline">q=q_sbP_A/(1+bP_A)</span>, <span class="math inline">q_s=2.00</span> mol kg<span class="math inline">^{-1}</span>, <span class="math inline">b=0.100</span> kPa<span class="math inline">^{-1}</span>. Test <span class="math inline">P_A=5.00</span> kPa. Does the inventory close?</p>
-<p>Then predict, before calculating, how <span class="math inline">P_A</span> changes when the adsorbent mass doubles to 20 g.</p>
+<h2>B1 · A vessel with two condensed phases</h2>
+<p>A closed 1.00 L vessel at 300 K contains 0.0086712 mol of A in total, <strong>pure solid A</strong> (sublimation pressure 10.0 kPa) <strong>and</strong> 10.0 g of a separate adsorbent with Langmuir uptake <span class="math inline">q=q_sbP_A/(1+bP_A)</span>, <span class="math inline">q_s=2.00</span> mol kg<span class="math inline">^{-1}</span>, <span class="math inline">b=0.100</span> kPa<span class="math inline">^{-1}</span>. Ideal gas, <span class="math inline">R=8.31446</span> L kPa mol<span class="math inline">^{-1}</span> K<span class="math inline">^{-1}</span>.</p>
+<ol type="1">
+<li><strong>Assume solid remains.</strong> Then <span class="math inline">P_A=P_{\rm sub}</span>. How much A is needed in the gas and on the surface? Is the assumption consistent with the inventory?</li>
+<li><strong>Assume no solid.</strong> Solve the inventory balance for <span class="math inline">P_A</span>. Check that <span class="math inline">P_A&lt;P_{\rm sub}</span>.</li>
+<li>What is the smallest total inventory for which solid A survives? Use the phase rule to explain why adding more A then leaves <span class="math inline">P_A</span> unchanged.</li>
+</ol>
 <p><a href="labs/adsorption.html#ad-experiment">Check in Lab 11 · Adsorption</a></p>
 </section>
 <section id="reaction-problem" class="slide level2">
-<h2>B2 · How far does the reaction go at a new temperature?</h2>
-<p>Use the Week 5 reaction <span class="math inline">\mathrm{A_2(g)}\rightleftharpoons 2\mathrm A(\mathrm g)</span>, starting from 1 mol of A<span class="math inline">_2</span>, ideal gas, <span class="math inline">p^\circ=100</span> kPa. At 350 K, <span class="math inline">K=3.9532626</span> and <span class="math inline">\Delta_rH^\circ=50.0</span> kJ mol<span class="math inline">^{-1}</span>, taken as constant.</p>
+<h2>B2 · A reaction in a real gas</h2>
+<p>The Week 5 reaction <span class="math inline">\mathrm{A_2(g)}\rightleftharpoons 2\mathrm A(\mathrm g)</span> from 1 mol of A<span class="math inline">_2</span>, <span class="math inline">p^\circ=100</span> kPa. At 350 K, <span class="math inline">K=3.9532626</span>; <span class="math inline">\Delta_rH^\circ=50.0</span> kJ mol<span class="math inline">^{-1}</span>, taken as constant.</p>
 <ol type="1">
-<li>Calculate <span class="math inline">K</span> at 400 K. Is the reaction endothermic or exothermic, and does the sign of the change agree?</li>
-<li>With <span class="math inline">f=\xi/(1\ \mathrm{mol})</span>, <span class="math inline">K=\dfrac{4f^2}{1-f^2}\dfrac{P}{p^\circ}</span>. Find <span class="math inline">f</span> and <span class="math inline">y_A</span> at 400 K and 100 kPa, then at 200 kPa.</li>
-<li>Recompute <span class="math inline">Q</span> from your mole fractions and check the A-atom balance.</li>
+<li>Calculate <span class="math inline">K</span> at 400 K.</li>
+<li>At 400 K and <strong>2000 kPa</strong>, find <span class="math inline">f=\xi/(1\ \mathrm{mol})</span> and <span class="math inline">y_A</span> for an ideal gas.</li>
+<li>Now use the Week 6 fugacity route with the Lewis rule, <span class="math inline">\ln\phi_i\approx B_iP/RT</span>, and illustrative <span class="math inline">B_{\mathrm A_2}=-300</span>, <span class="math inline">B_{\mathrm A}=-100</span> cm<span class="math inline">^3</span> mol<span class="math inline">^{-1}</span>. Calculate <span class="math inline">K_\phi</span>, then <span class="math inline">f</span> and <span class="math inline">y_A</span> from <span class="math inline">K=K_yK_\phi(P/p^\circ)</span>.</li>
+<li>Does nonideality shift the extent up or down, and by how much? Which assumption in the Lewis rule would you check first?</li>
 </ol>
 <p><a href="labs/reaction.html">Check in Lab 12 · Reaction equilibrium</a></p>
 </section>
 <section id="cell-problem" class="slide level2">
-<h2>B3 · Which electrode would gain metal?</h2>
-<p>At 298.15 K, both electrodes use <span class="math inline">\mathrm{M^{2+}/M}</span>. Take oxidation on the left, reduction on the right, and zero junction potential. Use <span class="math inline">a_L=0.040</span> and <span class="math inline">a_R=0.40</span>.</p>
+<h2>B3 · A cell with real activities</h2>
+<p><span class="math inline">\mathrm{M^{2+}/M}</span> concentration cell at 298.15 K, oxidation on the left, zero junction potential. Molalities <span class="math inline">m_L=0.040</span> and <span class="math inline">m_R=0.40</span> mol kg<span class="math inline">^{-1}</span>. Illustrative activity coefficients: <span class="math inline">\gamma_L=0.40</span>, <span class="math inline">\gamma_R=0.17</span>.</p>
 <ol type="1">
-<li>Write the reaction with each ion in its own compartment. Which activity goes in the numerator of <span class="math inline">Q</span>?</li>
-<li>With <span class="math inline">E^\circ=0</span>, what is <span class="math inline">K</span>? Compare <span class="math inline">Q</span> with <span class="math inline">K</span> and predict which electrode gains metal.</li>
-<li>Calculate <span class="math inline">E=E^\circ-(0.05915935\ {\rm V}/n)\log_{10}Q</span> and <span class="math inline">\Delta_rG=-nFE</span> with <span class="math inline">n=2</span>, <span class="math inline">F=96485</span> C mol<span class="math inline">^{-1}</span>. Then exchange the two activities. What changes?</li>
+<li>With <span class="math inline">a=m</span> (activity coefficients ignored), calculate <span class="math inline">Q</span>, <span class="math inline">E</span> and <span class="math inline">\Delta_rG</span>, with <span class="math inline">n=2</span>.</li>
+<li>Repeat with <span class="math inline">a=\gamma m</span>. How much of the ideal voltage remains? Does the direction change?</li>
+<li>With activities independent of temperature, show that <span class="math inline">(\partial E/\partial T)_P=E/T</span>. Calculate <span class="math inline">\Delta_rS</span> and <span class="math inline">\Delta_rH</span> for the ideal case. What drives this cell?</li>
 </ol>
-<div class="ext">
-<p><strong>Going further.</strong> Repeat at 323.15 K. Which part of the Nernst equation depends on temperature, and does the direction change?</p>
-</div>
 <p><a href="labs/electrochemistry.html#ec-experiment">Check in Lab 13 · Electrochemical equilibrium</a></p>
 </section>
 <section id="set-b-check" class="slide level2">
 <h2>Set B · check B1</h2>
 <table class="caption-top">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 13%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Vessel</th>
+<th>Assumption</th>
 <th style="text-align: right;"><span class="math inline">P_A</span> (kPa)</th>
 <th style="text-align: right;">Gas (mol)</th>
-<th style="text-align: right;">Solid or adsorbed A (mol)</th>
+<th style="text-align: right;">Adsorbed (mol)</th>
+<th style="text-align: right;">Solid (mol)</th>
+<th>Consistent?</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>A · pure solid present</td>
+<td>Solid remains</td>
 <td style="text-align: right;">10.00</td>
 <td style="text-align: right;">0.0040091</td>
-<td style="text-align: right;">0.0046621 in the solid</td>
+<td style="text-align: right;">0.0100000</td>
+<td style="text-align: right;">needs <span class="math inline">\ge0</span></td>
+<td>No: needs 0.0140091 mol</td>
 </tr>
 <tr class="even">
-<td>B · 10 g adsorbent</td>
+<td>No solid</td>
 <td style="text-align: right;">5.000</td>
 <td style="text-align: right;">0.0020045</td>
-<td style="text-align: right;">0.0066667 adsorbed</td>
-</tr>
-<tr class="odd">
-<td>B · 20 g adsorbent</td>
-<td style="text-align: right;">2.389</td>
-<td style="text-align: right;">0.0009578</td>
-<td style="text-align: right;">0.0077134 adsorbed</td>
+<td style="text-align: right;">0.0066667</td>
+<td style="text-align: right;">0</td>
+<td>Yes: sum 0.0086712, <span class="math inline">5.000&lt;10.0</span></td>
 </tr>
 </tbody>
 </table>
-<p>Each row accounts for 0.0086712 mol of A. In vessel B at 10 g, <span class="math inline">q(5.00)=0.6667</span> mol kg<span class="math inline">^{-1}</span>; times 0.0100 kg gives the adsorbed amount.</p>
-<p>Doubling the adsorbent lowers <span class="math inline">P_A</span>, but not by half: the isotherm is nonlinear. While solid remains in vessel A, <span class="math inline">P_{\rm sub}(T)</span> fixes the pressure whatever the inventory.</p>
+<p><strong>Smallest inventory for solid to survive:</strong> 0.0140091 mol. Pure solid A in equilibrium with its vapor has <span class="math inline">C=1</span>, <span class="math inline">\pi=2</span>, so <span class="math inline">F=1</span>: fixing <span class="math inline">T</span> fixes <span class="math inline">P_A=P_{\rm sub}(T)</span>, and with it the adsorbed amount. Any extra A only grows the solid.</p>
+<p>A trial that assumes a phase is present must be checked against the balance, and the alternative trial against the equilibrium condition.</p>
 </section>
 <section id="set-b-check-2" class="slide level2">
 <h2>Set B · check B2 and B3</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Problem</th>
 <th>Result</th>
-<th>Independent check</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>B2 · 400 K</td>
-<td><span class="math inline">\ln K=3.5223</span>, <span class="math inline">K=33.861</span>: larger, as expected for an endothermic reaction</td>
-<td>Sign of <span class="math inline">\Delta_rH^\circ</span></td>
+<td>B2 · 1</td>
+<td><span class="math inline">\ln K=3.5223</span>, <span class="math inline">K=33.861</span> at 400 K</td>
 </tr>
 <tr class="even">
-<td>B2 · 100 kPa</td>
-<td><span class="math inline">f=0.9457</span>, <span class="math inline">y_A=0.9721</span></td>
-<td><span class="math inline">Q=33.861=K</span>; atoms <span class="math inline">2(1-f)+2f=2</span></td>
+<td>B2 · 2</td>
+<td>Ideal: <span class="math inline">K_y=K/20=1.693</span>, <span class="math inline">f=0.5453</span>, <span class="math inline">y_A=0.7058</span></td>
 </tr>
 <tr class="odd">
-<td>B2 · 200 kPa</td>
-<td><span class="math inline">f=0.8994</span>, <span class="math inline">y_A=0.9470</span></td>
-<td>Higher pressure favors fewer gas moles</td>
+<td>B2 · 3</td>
+<td><span class="math inline">\phi_{\mathrm A_2}=0.835</span>, <span class="math inline">\phi_{\mathrm A}=0.942</span>, <span class="math inline">K_\phi=1.062</span>; <span class="math inline">f=0.5338</span>, <span class="math inline">y_A=0.6961</span></td>
 </tr>
 <tr class="even">
-<td>B3</td>
-<td><span class="math inline">Q=a_L/a_R=0.10</span>, <span class="math inline">K=1</span>, <span class="math inline">E=+29.58</span> mV, <span class="math inline">\Delta_rG=-5.708</span> kJ mol<span class="math inline">^{-1}</span>; the right electrode gains metal</td>
-<td><span class="math inline">RT\ln 0.10=-5.708</span> kJ mol<span class="math inline">^{-1}</span></td>
+<td>B2 · 4</td>
+<td>Extent down by 2 %. Lewis rule ignores the mixture’s cross-coefficient <span class="math inline">B_{12}</span>; check it first at this composition.</td>
 </tr>
 <tr class="odd">
-<td>B3 · exchanged</td>
-<td><span class="math inline">Q=10</span>, <span class="math inline">E=-29.58</span> mV; the left electrode gains metal</td>
-<td>Equal activities give <span class="math inline">E=0</span></td>
+<td>B3 · 1</td>
+<td><span class="math inline">Q=0.10</span>, <span class="math inline">E=+29.58</span> mV, <span class="math inline">\Delta_rG=-5.708</span> kJ mol<span class="math inline">^{-1}</span></td>
+</tr>
+<tr class="even">
+<td>B3 · 2</td>
+<td><span class="math inline">Q=(0.40)(0.040)/[(0.17)(0.40)]=0.235</span>, <span class="math inline">E=+18.59</span> mV: 63 % of the ideal value; same direction</td>
+</tr>
+<tr class="odd">
+<td>B3 · 3</td>
+<td><span class="math inline">\partial E/\partial T=0.0992</span> mV K<span class="math inline">^{-1}</span>, <span class="math inline">\Delta_rS=+19.1</span> J mol<span class="math inline">^{-1}</span> K<span class="math inline">^{-1}</span>, <span class="math inline">\Delta_rH=0</span>: the cell is driven by entropy alone</td>
 </tr>
 </tbody>
 </table>
-<div class="ext">
-<p><strong>Going further.</strong> At 323.15 K the prefactor <span class="math inline">RT/nF</span> grows, so <span class="math inline">E=+32.06</span> mV. The direction is unchanged because <span class="math inline">Q</span> and <span class="math inline">K</span> did not change.</p>
-</div>
 </section>
 <section id="exam-problem" class="slide level2">
 <h2>Exam-style problem · one measurement, one phase prediction</h2>

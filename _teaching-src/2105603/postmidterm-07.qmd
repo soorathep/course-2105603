@@ -21,6 +21,8 @@ format:
         #exam-answer col:last-child {width: 93% !important;}
         #exam-answer table {font-size: .72em;}
         #exam-problem ol, #exam-problem p {font-size: .92em;}
+        #phase-check col:first-child, #phase-check-2 col:first-child, #phase-check-3 col:first-child, #set-b-check-2 col:first-child {width: 14% !important;}
+        #phase-check col:last-child, #phase-check-2 col:last-child, #phase-check-3 col:last-child, #set-b-check-2 col:last-child {width: 86% !important;}
         #prepare col:first-child {width: 10% !important;}
         #prepare col:last-child {width: 90% !important;}
         </style>
@@ -59,15 +61,15 @@ Choose a real Week 6 exit-ticket question once responses are available. Ask a st
 | Minutes | Work with a partner |
 |---|---|
 | 0–10 | Resolve a question from Week 6. |
-| 10–30 | See the six sessions as one idea: an equilibrium condition plus a balance. |
-| 30–80 | **Set A · phases.** Flash, measured activity coefficients, liquid splitting. |
+| 10–25 | See the six sessions as one idea, and the equations behind it. |
+| 25–80 | **Set A · phases.** A nonideal flash, data reduction with its uncertainty, a stability test. |
 | 80–90 | Break. |
-| 90–135 | **Set B · other equilibria.** Gas inventory, reaction extent, cell direction. |
+| 90–135 | **Set B · other equilibria.** A vessel with two condensed phases, a reaction in a real gas, a cell with real activities. |
 | 135–160 | **Exam-style problem** that links Weeks 1–3. |
 | 160–172 | How a complete answer is marked, common mistakes, your questions. |
 | 172–180 | Exit ticket (5 min) and after-midterm feedback (3 min). |
 
-Each problem has a check slide. Try first, then check. The orange **Going further** boxes are for students who finish early.
+Every problem starts from the ideal case you already know, then removes one assumption and asks **how much it matters**. Each has a check slide: try first, then check.
 
 ## One idea behind all six sessions {#one-idea}
 
@@ -75,12 +77,12 @@ Every problem after the midterm combined **an equilibrium condition** with **a b
 
 | Week | Equilibrium condition | Balance or constraint | Independent check |
 |---|---|---|---|
-| 1 · VLE, flash | $y_iP=x_iP_i^{\rm sat}$ (ideal) | $z_1=(1-\beta)x_1+\beta y_1$ | Rebuild the feed; $0\le\beta\le1$ |
-| 2 · Measured VLE | $y_iP=x_i\gamma_iP_i^{\rm sat}$ | $P^{\rm sat}$ from a stated correlation | Units, log base, range of Antoine |
-| 3 · Consistency, LLE | Gibbs–Duhem; $x_i^\alpha\gamma_i^\alpha=x_i^\beta\gamma_i^\beta$ | Lever rule | Common tangent below the curve |
-| 4 · Solids, adsorption | $P_A=P_{\rm sub}(T)$ or $q(P_A)$ | Inventory: gas + solid or adsorbed | Both terms computed independently |
-| 5 · Reactions | $Q=K(T)$ | Extent and atom balance | Recompute $Q$; atoms conserved |
-| 6 · Electrochemistry | $\Delta_rG=-nFE$, Nernst | Reaction as written fixes $Q$ | Equal activities give $E=E^\circ$ |
+| 1 · VLE, flash | $y_i\Phi_iP=x_i\gamma_iP_i^{\rm sat}$ | $z_i=(1-\beta)x_i+\beta y_i$ | Rebuild the feed; $0\le\beta\le1$ |
+| 2 · Measured VLE | Same, solved for $\gamma_i$ | $P^{\rm sat}$ and $\Phi_i$ from stated models | Propagated uncertainty; Antoine range |
+| 3 · Consistency, LLE | Gibbs–Duhem; $x_i^\alpha\gamma_i^\alpha=x_i^\beta\gamma_i^\beta$ | Lever rule | Tangent-plane distance $\ge0$ |
+| 4 · Solids, adsorption | $P_A=P_{\rm sub}(T)$ or $q(P_A)$ | Inventory over all phases | Phase present or not: test both |
+| 5–6 · Reactions | $\prod a_i^{\nu_i}=K(T)$, $a_i=\hat f_i/f_i^\circ$ | Extent and atom balance | Recompute $Q$; atoms conserved |
+| 6 · Electrochemistry | $\Delta_rG=-nFE$, Nernst | Reaction as written fixes $Q$ | $\partial E/\partial T$ gives $\Delta_rS$ |
 
 ## Equations to write without notes {#key-equations}
 
@@ -88,142 +90,144 @@ Every problem after the midterm combined **an equilibrium condition** with **a b
 ::: {.column width="50%"}
 **Phases**
 
-$$\mu_i^\alpha=\mu_i^\beta\iff \hat f_i^{\,\alpha}=\hat f_i^{\,\beta}$$
+$$\hat f_i^{\,V}=\hat f_i^{\,L}\;\Rightarrow\;y_i\Phi_iP=x_i\gamma_iP_i^{\rm sat}$$
 
-$$\gamma_i=\frac{y_iP}{x_iP_i^{\rm sat}}\quad\text{(ideal vapor, no Poynting)}$$
+$$\ln\Phi_i\approx\frac{B_{ii}(P-P_i^{\rm sat})}{RT}\quad\text{(virial, no Poynting)}$$
 
-$$x_1\,\mathrm d\ln\gamma_1+x_2\,\mathrm d\ln\gamma_2=0\quad(T,P\ \text{fixed})$$
+$$\sum_i\frac{z_i(K_i-1)}{1+\beta(K_i-1)}=0,\qquad K_i=\frac{\gamma_iP_i^{\rm sat}}{\Phi_iP}$$
 
-$$\frac{G^E}{RT}=Ax_1x_2\;\Rightarrow\;\ln\gamma_1=Ax_2^2$$
+$$\frac{\mathrm{TPD}(\mathbf w)}{RT}=\sum_iw_i\left[\ln w_i\gamma_i(\mathbf w)-\ln z_i\gamma_i(\mathbf z)\right]$$
 :::
 ::: {.column width="50%"}
 **Other equilibria**
 
-$$q=\frac{q_sbP_A}{1+bP_A}$$
-
-$$\Delta_rG=\Delta_rG^\circ+RT\ln Q$$
-
-$$\ln K=-\frac{\Delta_rG^\circ}{RT}$$
+$$K=K_yK_\phi\left(\frac{P}{p^\circ}\right)^{\Delta\nu},\qquad \ln\phi_i\approx\frac{B_iP}{RT}$$
 
 $$\ln\frac{K_2}{K_1}=-\frac{\Delta_rH^\circ}{R}\left(\frac1{T_2}-\frac1{T_1}\right)$$
 
-$$E=E^\circ-\frac{RT}{nF}\ln Q$$
+$$E=E^\circ-\frac{RT}{nF}\ln Q,\qquad \Delta_rS=nF\left(\frac{\partial E}{\partial T}\right)_P$$
+
+$$\sigma^2_{\ln\gamma_1}\approx\Big(\frac{u_x}{x_1}\Big)^2+\Big(\frac{u_y}{y_1}\Big)^2+\Big(\frac{u_P}{P}\Big)^2$$
 :::
 ::::
 
 For each equation, be ready to state **what is assumed** and **which quantity is measured, supplied or calculated**.
 
-## A1 · Which fraction of the feed becomes vapor? {#flash-problem}
+## A1 · A flash when K depends on composition {#flash-problem}
 
-At 350 K, an ideal binary mixture has $P_1^{\rm sat}=150$ kPa and $P_2^{\rm sat}=60$ kPa. The feed contains $z_1=0.40$ and the pressure is 90 kPa.
+The synthetic binary of Lab 01 at 350 K: $P_1^{\rm sat}=150$, $P_2^{\rm sat}=60$ kPa. The liquid follows one-parameter Margules with $A=1$; the vapor is ideal. Feed $z_1=0.40$, pressure 110 kPa.
 
-1. Find $x_1$ and $y_1$ from $P=x_1P_1^{\rm sat}+(1-x_1)P_2^{\rm sat}$ and $y_1=x_1P_1^{\rm sat}/P$.
-2. Find the vapor fraction $\beta=(z_1-x_1)/(y_1-x_1)$ and rebuild the feed from both phases.
-3. Calculate the bubble and dew pressures of this feed. Is 90 kPa between them?
+1. **Ideal first.** With $K_i=P_i^{\rm sat}/P$, solve Rachford–Rice. What does the root say about the phase state?
+2. **Real liquid.** Find the bubble and dew pressures of this feed with $\gamma_i(x)$. Is 110 kPa between them?
+3. **Iterate.** Start from the ideal K, solve Rachford–Rice, update $K_i=\gamma_i(x)P_i^{\rm sat}/P$, repeat twice. Then find the converged $x_1$, $y_1$, $\beta$ (for a binary, $x_1$ follows from the bubble-pressure equation at 110 kPa).
+4. Why does successive substitution converge slowly here?
 
-::: {.ext}
-**Going further.** Repeat at 100 kPa with $K_i=P_i^{\rm sat}/P$ and the Rachford–Rice equation $\sum z_i(K_i-1)/[1+\beta(K_i-1)]=0$. What does the root tell you?
-:::
+[Check in Lab 01 · Margules · 1 parameter](labs/index.html#experiment)
 
-[Check in Lab 01 · VLE and flash](labs/index.html#experiment)
+## A2 · What does one measured point really tell you? {#measured-vle}
 
-## A2 · What if the compositions came from an experiment? {#measured-vle}
+At 350 K: $x_1=1/3$, $y_1=5/9$, $P=90$ kPa, $P_1^{\rm sat}=150$ kPa. Standard uncertainties $u_x=u_y=0.005$.
 
-Suppose the measured values at 350 K are $x_1=1/3$, $y_1=5/9$ and $P=90$ kPa. Assume ideal vapor, negligible Poynting correction and a pure-liquid standard state.
+1. Calculate $\gamma_1$ with an ideal vapor. Then include the vapor correction with $B_{11}=-1000$ cm$^3$ mol$^{-1}$ (illustrative): $\ln\Phi_1\approx B_{11}(P-P_1^{\rm sat})/RT$. Which way does $\gamma_1$ move, and why does the sign follow from $P<P_1^{\rm sat}$?
+2. Propagate $u_x$ and $u_y$ into $\sigma_{\ln\gamma_1}$. Is the vapor correction larger or smaller than this uncertainty?
+3. If $P_1^{\rm sat}$ came from an Antoine set 3 % too low, how large is the bias in $\ln\gamma_1$, and is it random or systematic?
+4. The data are **isobaric**. What extra term, and what extra measurement, does an area test need?
 
-1. Use $\gamma_1=y_1P/(x_1P_1^{\rm sat})$ with $P_1^{\rm sat}=150$ kPa, then with 120 kPa. Which measured quantity changed?
-2. Before using an Antoine correlation, list the four things you must check.
-3. A model fits these data closely. What evidence across compositions would you need before calling the data thermodynamically consistent?
+## A3 · Is this liquid stable, and how do you prove it? {#liquid-problem}
 
-## A3 · Which fraction forms the second liquid? {#liquid-problem}
+A binary follows one-parameter Margules with $A=1050\ \mathrm K/T$. Feed $z_1=0.18$ at 350 K, so $A=3$.
 
-A different binary mixture follows the one-parameter Margules model with $A=3$. The overall mole fraction is $z_1=0.18$.
+1. **Local test.** Evaluate the scaled curvature $1-2Az_1z_2$. What does its sign tell you, and what does it not?
+2. **Global test.** Evaluate the tangent-plane distance at the trial composition $w_1=0.929$. What does its sign prove?
+3. **Equilibrium.** In Lab 04 find both liquid compositions and the lever-rule split. Rebuild the feed.
+4. **Temperature.** Above which temperature is the liquid stable at every composition? What is that point called?
 
-1. In Lab 04 choose **Margules · 1 parameter**, enter $A=3$ and $z_1=0.18$, then **Find equilibrium**. Read both liquid compositions.
-2. Use the lever rule to find the fraction of the feed in the liquid richer in component 1. Rebuild the feed.
-3. Compare the common tangent with the homogeneous curve at $z_1=0.18$. Which state has the lower Gibbs energy?
+[Check in Lab 04 · Margules · 1 parameter](labs/stability.html#lle-experiment)
 
-::: {.ext}
-**Going further.** The scaled curvature $1-2Ax_1x_2$ is positive at $z_1=0.18$. Why does the liquid still split? Locate the spinodal.
-:::
+## Set A · check A1 {#phase-check}
 
-[Check in Lab 04 · Liquid stability](labs/stability.html#lle-experiment)
+| Step | Result |
+|---|---|
+| Ideal K | $K_1=1.364$, $K_2=0.545$; root $\beta=-0.77$: the ideal model says **subcooled liquid** (ideal bubble pressure 96 kPa) |
+| Real liquid | Bubble 128.2 kPa, dew 90.2 kPa: 110 kPa **is** two-phase |
+| Iteration | $\beta$: $-0.77\to0.647\to0.510\to0.527\to\dots$; $x_1$: $0.556\to0.280\to0.241\to0.228\to\dots$ |
+| Converged | $x_1=0.2217$, $y_1=0.5541$, $\beta=0.5363$; $\gamma_1=1.833$, $\gamma_2=1.050$ |
 
-## Set A · check your answers {#phase-check}
+**Check.** $0.4637(0.2217)+0.5363(0.5541)=0.4000$.
 
-| Problem | Result | Independent check |
-|---|---|---|
-| A1 | $x_1=0.3333$, $y_1=0.5556$, $\beta=0.3000$; bubble 96.0 kPa, dew 78.95 kPa | $0.70(0.3333)+0.30(0.5556)=0.4000$ |
-| A2 | $\gamma_1=1.00$ with 150 kPa, $1.25$ with 120 kPa; no measured value changed | Log base, pressure unit, temperature unit, valid range |
-| A3 | $x_1=0.07072$ and $0.92928$; fraction in the richer liquid $0.1273$ | $0.8727(0.07072)+0.1273(0.92928)=0.1800$ |
+Convergence is slow because $\gamma_1$ is a strong function of $x_1$ in the dilute region, and the first ideal step lands far from it. A model that ignores the nonideality gets the **phase** wrong, not just the numbers.
 
-**A2, item 3.** A small residual shows agreement with the chosen model. Consistency needs a Gibbs–Duhem test suited to the experimental path (isothermal or isobaric) and a look at the local residuals.
+## Set A · check A2 {#phase-check-2}
 
-::: {.ext}
-**Going further.** A1 at 100 kPa: $K_1=1.5$, $K_2=0.6$ give $\beta=-0.20$, a negative flash: the feed is a subcooled liquid, since 100 kPa is above the 96 kPa bubble pressure. A3: the curvature is $1-6(0.18)(0.82)=0.114>0$, so $z_1=0.18$ is **metastable**: locally stable, but inside the binodal. The spinodal is at $x_1=0.211$ and $0.789$.
-:::
+| Problem | Result |
+|---|---|
+| A2 · 1 | Ideal vapor: $\gamma_1=1.000$. With $\Phi_1=1.021$: $\gamma_1=1.021$. $P<P_1^{\rm sat}$ and $B_{11}<0$ make $\ln\Phi_1>0$. |
+| A2 · 2 | $\sigma_{\ln\gamma_1}=\sqrt{(0.005/0.333)^2+(0.005/0.556)^2}=0.017$. The correction, 0.021, is about the same size. |
+| A2 · 3 | $\ln(1/0.97)=+0.030$ in every row: systematic, it does not average out. |
+| A2 · 4 | $\int_0^1\ln(\gamma_1/\gamma_2)\,\mathrm dx_1=-\int(H^E/RT^2)(\mathrm dT/\mathrm dx_1)\,\mathrm dx_1$: needs $H^E$ data. |
 
-## B1 · Can the vessel reach 10 kPa? {#vessel-problem}
+## Set A · check A3 {#phase-check-3}
 
-A closed vessel contains 0.0086712 mol of A at 300 K. The free gas volume is 1.00 L. Treat the gas as ideal and use $R=8.31446$ L kPa mol$^{-1}$ K$^{-1}$.
+| Problem | Result |
+|---|---|
+| A3 · 1 | $1-6(0.18)(0.82)=0.114>0$: locally stable. This does **not** rule out a split. |
+| A3 · 2 | $\mathrm{TPD}(0.929)/RT=-0.332<0$: a second liquid lowers $G$. The feed is **metastable**. |
+| A3 · 3 | $x_1=0.07072$ and $0.92928$; fraction in the richer liquid $0.1273$; $0.8727(0.07072)+0.1273(0.92928)=0.1800$. |
+| A3 · 4 | Split needs $A>2$, so $T<525$ K: an upper critical solution temperature. |
 
-**Vessel A.** Pure solid A can sublime, with $P_{\rm sub}=10.0$ kPa at this temperature. How many moles are in the gas at that pressure? How many remain as solid?
+## B1 · A vessel with two condensed phases {#vessel-problem}
 
-**Vessel B.** The same inventory can occupy the gas or adsorb on 10.0 g of a separate adsorbent: $q=q_sbP_A/(1+bP_A)$, $q_s=2.00$ mol kg$^{-1}$, $b=0.100$ kPa$^{-1}$. Test $P_A=5.00$ kPa. Does the inventory close?
+A closed 1.00 L vessel at 300 K contains 0.0086712 mol of A in total, **pure solid A** (sublimation pressure 10.0 kPa) **and** 10.0 g of a separate adsorbent with Langmuir uptake $q=q_sbP_A/(1+bP_A)$, $q_s=2.00$ mol kg$^{-1}$, $b=0.100$ kPa$^{-1}$. Ideal gas, $R=8.31446$ L kPa mol$^{-1}$ K$^{-1}$.
 
-Then predict, before calculating, how $P_A$ changes when the adsorbent mass doubles to 20 g.
+1. **Assume solid remains.** Then $P_A=P_{\rm sub}$. How much A is needed in the gas and on the surface? Is the assumption consistent with the inventory?
+2. **Assume no solid.** Solve the inventory balance for $P_A$. Check that $P_A<P_{\rm sub}$.
+3. What is the smallest total inventory for which solid A survives? Use the phase rule to explain why adding more A then leaves $P_A$ unchanged.
 
 [Check in Lab 11 · Adsorption](labs/adsorption.html#ad-experiment)
 
-## B2 · How far does the reaction go at a new temperature? {#reaction-problem}
+## B2 · A reaction in a real gas {#reaction-problem}
 
-Use the Week 5 reaction $\mathrm{A_2(g)}\rightleftharpoons 2\mathrm A(\mathrm g)$, starting from 1 mol of A$_2$, ideal gas, $p^\circ=100$ kPa. At 350 K, $K=3.9532626$ and $\Delta_rH^\circ=50.0$ kJ mol$^{-1}$, taken as constant.
+The Week 5 reaction $\mathrm{A_2(g)}\rightleftharpoons 2\mathrm A(\mathrm g)$ from 1 mol of A$_2$, $p^\circ=100$ kPa. At 350 K, $K=3.9532626$; $\Delta_rH^\circ=50.0$ kJ mol$^{-1}$, taken as constant.
 
-1. Calculate $K$ at 400 K. Is the reaction endothermic or exothermic, and does the sign of the change agree?
-2. With $f=\xi/(1\ \mathrm{mol})$, $K=\dfrac{4f^2}{1-f^2}\dfrac{P}{p^\circ}$. Find $f$ and $y_A$ at 400 K and 100 kPa, then at 200 kPa.
-3. Recompute $Q$ from your mole fractions and check the A-atom balance.
+1. Calculate $K$ at 400 K.
+2. At 400 K and **2000 kPa**, find $f=\xi/(1\ \mathrm{mol})$ and $y_A$ for an ideal gas.
+3. Now use the Week 6 fugacity route with the Lewis rule, $\ln\phi_i\approx B_iP/RT$, and illustrative $B_{\mathrm A_2}=-300$, $B_{\mathrm A}=-100$ cm$^3$ mol$^{-1}$. Calculate $K_\phi$, then $f$ and $y_A$ from $K=K_yK_\phi(P/p^\circ)$.
+4. Does nonideality shift the extent up or down, and by how much? Which assumption in the Lewis rule would you check first?
 
 [Check in Lab 12 · Reaction equilibrium](labs/reaction.html)
 
-## B3 · Which electrode would gain metal? {#cell-problem}
+## B3 · A cell with real activities {#cell-problem}
 
-At 298.15 K, both electrodes use $\mathrm{M^{2+}/M}$. Take oxidation on the left, reduction on the right, and zero junction potential. Use $a_L=0.040$ and $a_R=0.40$.
+$\mathrm{M^{2+}/M}$ concentration cell at 298.15 K, oxidation on the left, zero junction potential. Molalities $m_L=0.040$ and $m_R=0.40$ mol kg$^{-1}$. Illustrative activity coefficients: $\gamma_L=0.40$, $\gamma_R=0.17$.
 
-1. Write the reaction with each ion in its own compartment. Which activity goes in the numerator of $Q$?
-2. With $E^\circ=0$, what is $K$? Compare $Q$ with $K$ and predict which electrode gains metal.
-3. Calculate $E=E^\circ-(0.05915935\ {\rm V}/n)\log_{10}Q$ and $\Delta_rG=-nFE$ with $n=2$, $F=96485$ C mol$^{-1}$. Then exchange the two activities. What changes?
-
-::: {.ext}
-**Going further.** Repeat at 323.15 K. Which part of the Nernst equation depends on temperature, and does the direction change?
-:::
+1. With $a=m$ (activity coefficients ignored), calculate $Q$, $E$ and $\Delta_rG$, with $n=2$.
+2. Repeat with $a=\gamma m$. How much of the ideal voltage remains? Does the direction change?
+3. With activities independent of temperature, show that $(\partial E/\partial T)_P=E/T$. Calculate $\Delta_rS$ and $\Delta_rH$ for the ideal case. What drives this cell?
 
 [Check in Lab 13 · Electrochemical equilibrium](labs/electrochemistry.html#ec-experiment)
 
 ## Set B · check B1 {#set-b-check}
 
-| Vessel | $P_A$ (kPa) | Gas (mol) | Solid or adsorbed A (mol) |
-|---|---:|---:|---:|
-| A · pure solid present | 10.00 | 0.0040091 | 0.0046621 in the solid |
-| B · 10 g adsorbent | 5.000 | 0.0020045 | 0.0066667 adsorbed |
-| B · 20 g adsorbent | 2.389 | 0.0009578 | 0.0077134 adsorbed |
+| Assumption | $P_A$ (kPa) | Gas (mol) | Adsorbed (mol) | Solid (mol) | Consistent? |
+|---|---:|---:|---:|---:|---|
+| Solid remains | 10.00 | 0.0040091 | 0.0100000 | needs $\ge0$ | No: needs 0.0140091 mol |
+| No solid | 5.000 | 0.0020045 | 0.0066667 | 0 | Yes: sum 0.0086712, $5.000<10.0$ |
 
-Each row accounts for 0.0086712 mol of A. In vessel B at 10 g, $q(5.00)=0.6667$ mol kg$^{-1}$; times 0.0100 kg gives the adsorbed amount.
+**Smallest inventory for solid to survive:** 0.0140091 mol. Pure solid A in equilibrium with its vapor has $C=1$, $\pi=2$, so $F=1$: fixing $T$ fixes $P_A=P_{\rm sub}(T)$, and with it the adsorbed amount. Any extra A only grows the solid.
 
-Doubling the adsorbent lowers $P_A$, but not by half: the isotherm is nonlinear. While solid remains in vessel A, $P_{\rm sub}(T)$ fixes the pressure whatever the inventory.
+A trial that assumes a phase is present must be checked against the balance, and the alternative trial against the equilibrium condition.
 
 ## Set B · check B2 and B3 {#set-b-check-2}
 
-| Problem | Result | Independent check |
-|---|---|---|
-| B2 · 400 K | $\ln K=3.5223$, $K=33.861$: larger, as expected for an endothermic reaction | Sign of $\Delta_rH^\circ$ |
-| B2 · 100 kPa | $f=0.9457$, $y_A=0.9721$ | $Q=33.861=K$; atoms $2(1-f)+2f=2$ |
-| B2 · 200 kPa | $f=0.8994$, $y_A=0.9470$ | Higher pressure favors fewer gas moles |
-| B3 | $Q=a_L/a_R=0.10$, $K=1$, $E=+29.58$ mV, $\Delta_rG=-5.708$ kJ mol$^{-1}$; the right electrode gains metal | $RT\ln 0.10=-5.708$ kJ mol$^{-1}$ |
-| B3 · exchanged | $Q=10$, $E=-29.58$ mV; the left electrode gains metal | Equal activities give $E=0$ |
-
-::: {.ext}
-**Going further.** At 323.15 K the prefactor $RT/nF$ grows, so $E=+32.06$ mV. The direction is unchanged because $Q$ and $K$ did not change.
-:::
+| Problem | Result |
+|---|---|
+| B2 · 1 | $\ln K=3.5223$, $K=33.861$ at 400 K |
+| B2 · 2 | Ideal: $K_y=K/20=1.693$, $f=0.5453$, $y_A=0.7058$ |
+| B2 · 3 | $\phi_{\mathrm A_2}=0.835$, $\phi_{\mathrm A}=0.942$, $K_\phi=1.062$; $f=0.5338$, $y_A=0.6961$ |
+| B2 · 4 | Extent down by 2 %. Lewis rule ignores the mixture's cross-coefficient $B_{12}$; check it first at this composition. |
+| B3 · 1 | $Q=0.10$, $E=+29.58$ mV, $\Delta_rG=-5.708$ kJ mol$^{-1}$ |
+| B3 · 2 | $Q=(0.40)(0.040)/[(0.17)(0.40)]=0.235$, $E=+18.59$ mV: 63 % of the ideal value; same direction |
+| B3 · 3 | $\partial E/\partial T=0.0992$ mV K$^{-1}$, $\Delta_rS=+19.1$ J mol$^{-1}$ K$^{-1}$, $\Delta_rH=0$: the cell is driven by entropy alone |
 
 ## Exam-style problem · one measurement, one phase prediction {#exam-problem}
 
