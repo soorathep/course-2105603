@@ -1,6 +1,6 @@
 ---
-title: "Which equilibrium model fits the evidence?"
-subtitle: "Week 7 · After-midterm problem workshop"
+title: "After the midterm in one view: synthesis and exam preparation"
+subtitle: "Week 7 · Onsite workshop · 20 November 2026 · 180 minutes"
 author: "Soorathep Kheawhom"
 format:
   revealjs:
@@ -9,10 +9,20 @@ format:
     include-in-header:
       text: |
         <style>
-        .reveal .slides table {font-size: .82em;}
+        .reveal .slides table {font-size: .78em;}
         .reveal .slides table th {font-size: .92em; text-transform: none; letter-spacing: normal;}
         #workshop-plan col:first-child {width: 16% !important;}
         #workshop-plan col:last-child {width: 84% !important;}
+        .reveal .ext {border-left: 4px solid #E29A2D; padding: 4px 12px; margin-top: 14px; font-size: .86em;}
+        .reveal .small-note {font-size: .8em; color: #66727C;}
+        #key-equations .katex-display {margin: .25em 0;}
+        #key-equations .column {font-size: .9em;}
+        #exam-answer col:first-child {width: 7% !important;}
+        #exam-answer col:last-child {width: 93% !important;}
+        #exam-answer table {font-size: .72em;}
+        #exam-problem ol, #exam-problem p {font-size: .92em;}
+        #prepare col:first-child {width: 10% !important;}
+        #prepare col:last-child {width: 90% !important;}
         </style>
     width: 1280
     height: 720
@@ -44,154 +54,265 @@ To get started, consider identical electrodes with unequal ion activities. How c
 Choose a real Week 6 exit-ticket question once responses are available. Ask a student to identify the written cell direction. If no specific question is available, use the displayed activity comparison. Explain the sign with the balanced reaction and an equal-activities check.
 :::
 
-## Plan for the workshop {#workshop-plan}
+## Plan for today {#workshop-plan}
 
 | Minutes | Work with a partner |
 |---|---|
-| 0–15 | Resolve a question from Week 6. |
-| 15–50 | Calculate two phase fractions and check which phases coexist. |
-| 50–80 | Account for the gas inventory in two vessels. |
+| 0–10 | Resolve a question from Week 6. |
+| 10–30 | See the six sessions as one idea: an equilibrium condition plus a balance. |
+| 30–80 | **Set A · phases.** Flash, measured activity coefficients, liquid splitting. |
 | 80–90 | Break. |
-| 90–135 | Predict the direction of a cell reaction and check its voltage. |
-| 135–172 | Change one condition, run a lab, and exchange results. |
-| 172–180 | Complete the Week 7 exit ticket (5 min) and the after-midterm feedback survey (3 min). |
+| 90–135 | **Set B · other equilibria.** Gas inventory, reaction extent, cell direction. |
+| 135–160 | **Exam-style problem** that links Weeks 1–3. |
+| 160–172 | How a complete answer is marked, common mistakes, your questions. |
+| 172–180 | Exit ticket (5 min) and after-midterm feedback (3 min). |
 
-## Which fraction of the feed becomes vapor? {#flash-problem}
+Each problem has a check slide. Try first, then check. The orange **Going further** boxes are for students who finish early.
+
+## One idea behind all six sessions {#one-idea}
+
+Every problem after the midterm combined **an equilibrium condition** with **a balance**, then needed **an independent check**.
+
+| Week | Equilibrium condition | Balance or constraint | Independent check |
+|---|---|---|---|
+| 1 · VLE, flash | $y_iP=x_iP_i^{\rm sat}$ (ideal) | $z_1=(1-\beta)x_1+\beta y_1$ | Rebuild the feed; $0\le\beta\le1$ |
+| 2 · Measured VLE | $y_iP=x_i\gamma_iP_i^{\rm sat}$ | $P^{\rm sat}$ from a stated correlation | Units, log base, range of Antoine |
+| 3 · Consistency, LLE | Gibbs–Duhem; $x_i^\alpha\gamma_i^\alpha=x_i^\beta\gamma_i^\beta$ | Lever rule | Common tangent below the curve |
+| 4 · Solids, adsorption | $P_A=P_{\rm sub}(T)$ or $q(P_A)$ | Inventory: gas + solid or adsorbed | Both terms computed independently |
+| 5 · Reactions | $Q=K(T)$ | Extent and atom balance | Recompute $Q$; atoms conserved |
+| 6 · Electrochemistry | $\Delta_rG=-nFE$, Nernst | Reaction as written fixes $Q$ | Equal activities give $E=E^\circ$ |
+
+## Equations to write without notes {#key-equations}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Phases**
+
+$$\mu_i^\alpha=\mu_i^\beta\iff \hat f_i^{\,\alpha}=\hat f_i^{\,\beta}$$
+
+$$\gamma_i=\frac{y_iP}{x_iP_i^{\rm sat}}\quad\text{(ideal vapor, no Poynting)}$$
+
+$$x_1\,\mathrm d\ln\gamma_1+x_2\,\mathrm d\ln\gamma_2=0\quad(T,P\ \text{fixed})$$
+
+$$\frac{G^E}{RT}=Ax_1x_2\;\Rightarrow\;\ln\gamma_1=Ax_2^2$$
+:::
+::: {.column width="50%"}
+**Other equilibria**
+
+$$q=\frac{q_sbP_A}{1+bP_A}$$
+
+$$\Delta_rG=\Delta_rG^\circ+RT\ln Q$$
+
+$$\ln K=-\frac{\Delta_rG^\circ}{RT}$$
+
+$$\ln\frac{K_2}{K_1}=-\frac{\Delta_rH^\circ}{R}\left(\frac1{T_2}-\frac1{T_1}\right)$$
+
+$$E=E^\circ-\frac{RT}{nF}\ln Q$$
+:::
+::::
+
+For each equation, be ready to state **what is assumed** and **which quantity is measured, supplied or calculated**.
+
+## A1 · Which fraction of the feed becomes vapor? {#flash-problem}
 
 At 350 K, an ideal binary mixture has $P_1^{\rm sat}=150$ kPa and $P_2^{\rm sat}=60$ kPa. The feed contains $z_1=0.40$ and the pressure is 90 kPa.
 
-1. Use $P=x_1P_1^{\rm sat}+(1-x_1)P_2^{\rm sat}$ and $y_1=x_1P_1^{\rm sat}/P$ to find the liquid and vapor compositions.
-2. Find the mole fraction of the feed that is vapor, $\beta=(z_1-x_1)/(y_1-x_1)$.
-3. Open **Teaching binary · synthetic** in Lab 01. Its vapor pressures are supplied by the lab. Select the ideal liquid, set the feed and conditions above, and select **Calculate equilibrium**. Verify the overall composition on paper.
+1. Find $x_1$ and $y_1$ from $P=x_1P_1^{\rm sat}+(1-x_1)P_2^{\rm sat}$ and $y_1=x_1P_1^{\rm sat}/P$.
+2. Find the vapor fraction $\beta=(z_1-x_1)/(y_1-x_1)$ and rebuild the feed from both phases.
+3. Calculate the bubble and dew pressures of this feed. Is 90 kPa between them?
 
-[Open Lab 01 · VLE and flash](labs/index.html#experiment)
+::: {.ext}
+**Going further.** Repeat at 100 kPa with $K_i=P_i^{\rm sat}/P$ and the Rachford–Rice equation $\sum z_i(K_i-1)/[1+\beta(K_i-1)]=0$. What does the root tell you?
+:::
 
-## What if the compositions came from an experiment? {#measured-vle}
+[Check in Lab 01 · VLE and flash](labs/index.html#experiment)
 
-Suppose the measured values at 350 K are $x_1=1/3$, $y_1=5/9$ and $P=90$ kPa. Assume ideal vapor, negligible Poynting correction, and a pure-liquid standard state.
+## A2 · What if the compositions came from an experiment? {#measured-vle}
 
-1. Use $\gamma_1=y_1P/(x_1P_1^{\rm sat})$. Compare the values inferred using 150 and 120 kPa for $P_1^{\rm sat}$. Which measured quantity changed?
-2. Before choosing an Antoine correlation, identify its log base, temperature and pressure units, and valid temperature range.
-3. A model fits these data closely. What additional evidence would you seek across compositions to assess thermodynamic consistency?
+Suppose the measured values at 350 K are $x_1=1/3$, $y_1=5/9$ and $P=90$ kPa. Assume ideal vapor, negligible Poynting correction and a pure-liquid standard state.
 
-## Which fraction forms the second liquid? {#liquid-problem}
+1. Use $\gamma_1=y_1P/(x_1P_1^{\rm sat})$ with $P_1^{\rm sat}=150$ kPa, then with 120 kPa. Which measured quantity changed?
+2. Before using an Antoine correlation, list the four things you must check.
+3. A model fits these data closely. What evidence across compositions would you need before calling the data thermodynamically consistent?
 
-Now consider a different binary mixture. The one-parameter Margules model has $A=3$ and the overall mole fraction is $z_1=0.18$.
+## A3 · Which fraction forms the second liquid? {#liquid-problem}
 
-1. In Lab 04 choose **Margules · 1 parameter**, enter $A=3$ and $z_1=0.18$, then select **Find equilibrium**. Read both liquid compositions from the common tangent.
-2. Use the lever rule to calculate the mole fraction of the feed in the liquid richer in component 1. Reconstruct the feed from the two endpoint compositions.
-3. Compare the common tangent with the homogeneous curve at $z_1=0.18$. Which state has lower Gibbs energy?
+A different binary mixture follows the one-parameter Margules model with $A=3$. The overall mole fraction is $z_1=0.18$.
 
-[Open Lab 04 · Liquid stability](labs/stability.html#lle-experiment)
+1. In Lab 04 choose **Margules · 1 parameter**, enter $A=3$ and $z_1=0.18$, then **Find equilibrium**. Read both liquid compositions.
+2. Use the lever rule to find the fraction of the feed in the liquid richer in component 1. Rebuild the feed.
+3. Compare the common tangent with the homogeneous curve at $z_1=0.18$. Which state has the lower Gibbs energy?
 
-## Check the phases against the feed {#phase-check}
+::: {.ext}
+**Going further.** The scaled curvature $1-2Ax_1x_2$ is positive at $z_1=0.18$. Why does the liquid still split? Locate the spinodal.
+:::
 
-| Result | Independent check |
-|---|---|
-| Flash at 90 kPa. $x_1=0.3333$, $y_1=0.5556$, $\beta=0.3000$. | $0.70(0.3333)+0.30(0.5556)\approx0.4000$. |
-| LLE with $A=3$. The liquids have $x_1=0.07072$ and $0.92928$. The fraction in the richer liquid is $0.1273$. | $0.8727(0.07072)+0.1273(0.92928)\approx0.1800$. The common tangent lies below the homogeneous liquid at this feed. |
+[Check in Lab 04 · Liquid stability](labs/stability.html#lle-experiment)
 
-**Week 2–3 data check.** $\gamma_1=1.00$ or $1.25$. The measured $x_1,y_1,P,T$ are the same. A small fitting residual measures agreement with the chosen model. Apply a Gibbs–Duhem consistency test appropriate to the experimental path and inspect the local residuals.
+## Set A · check your answers {#phase-check}
 
-## Can the vessel reach 10 kPa? {#vessel-problem}
+| Problem | Result | Independent check |
+|---|---|---|
+| A1 | $x_1=0.3333$, $y_1=0.5556$, $\beta=0.3000$; bubble 96.0 kPa, dew 78.95 kPa | $0.70(0.3333)+0.30(0.5556)=0.4000$ |
+| A2 | $\gamma_1=1.00$ with 150 kPa, $1.25$ with 120 kPa; no measured value changed | Log base, pressure unit, temperature unit, valid range |
+| A3 | $x_1=0.07072$ and $0.92928$; fraction in the richer liquid $0.1273$ | $0.8727(0.07072)+0.1273(0.92928)=0.1800$ |
+
+**A2, item 3.** A small residual shows agreement with the chosen model. Consistency needs a Gibbs–Duhem test suited to the experimental path (isothermal or isobaric) and a look at the local residuals.
+
+::: {.ext}
+**Going further.** A1 at 100 kPa: $K_1=1.5$, $K_2=0.6$ give $\beta=-0.20$, a negative flash: the feed is a subcooled liquid, since 100 kPa is above the 96 kPa bubble pressure. A3: the curvature is $1-6(0.18)(0.82)=0.114>0$, so $z_1=0.18$ is **metastable**: locally stable, but inside the binodal. The spinodal is at $x_1=0.211$ and $0.789$.
+:::
+
+## B1 · Can the vessel reach 10 kPa? {#vessel-problem}
 
 A closed vessel contains 0.0086712 mol of A at 300 K. The free gas volume is 1.00 L. Treat the gas as ideal and use $R=8.31446$ L kPa mol$^{-1}$ K$^{-1}$.
 
-**Vessel A.** Pure solid A can sublime. Its sublimation pressure is 10.0 kPa at this temperature. Calculate how many moles are needed in the gas to reach this pressure. How many remain as bulk solid?
+**Vessel A.** Pure solid A can sublime, with $P_{\rm sub}=10.0$ kPa at this temperature. How many moles are in the gas at that pressure? How many remain as solid?
 
-**Vessel B.** The inventory of A can occupy the gas or adsorb onto 10.0 g of a separate adsorbent. Use absolute Langmuir uptake $q=q_s bP_A/(1+bP_A)$, with $q_s=2.00$ mol kg$^{-1}$ and $b=0.100$ kPa$^{-1}$. Try $P_A=5.00$ kPa. Does the inventory close?
+**Vessel B.** The same inventory can occupy the gas or adsorb on 10.0 g of a separate adsorbent: $q=q_sbP_A/(1+bP_A)$, $q_s=2.00$ mol kg$^{-1}$, $b=0.100$ kPa$^{-1}$. Test $P_A=5.00$ kPa. Does the inventory close?
 
-## Test what happens when adsorbent mass doubles {#vessel-lab}
+Then predict, before calculating, how $P_A$ changes when the adsorbent mass doubles to 20 g.
 
-In Lab 11, select **Reset synthetic parameters**. Use Langmuir at 300 K, 1 L free gas volume, 10 g adsorbent, 0.0086712 mol total adsorbate, and zero inert gas.
+[Check in Lab 11 · Adsorption](labs/adsorption.html#ad-experiment)
 
-1. Select **Compare & solve vessel** and record $P_A$, the gas moles, and the adsorbed moles.
-2. Predict the pressure at 20 g relative to its value at 10 g. Change only the adsorbent mass, recalculate, and check $n_A^g+m_sq$.
-3. Compare the roles of the two solids. What sets $P_A$ while bulk solid A remains in vessel A? Which equation sets it in vessel B?
+## B2 · How far does the reaction go at a new temperature? {#reaction-problem}
 
-[Open Lab 11 · Adsorption](labs/adsorption.html#ad-experiment)
+Use the Week 5 reaction $\mathrm{A_2(g)}\rightleftharpoons 2\mathrm A(\mathrm g)$, starting from 1 mol of A$_2$, ideal gas, $p^\circ=100$ kPa. At 350 K, $K=3.9532626$ and $\Delta_rH^\circ=50.0$ kJ mol$^{-1}$, taken as constant.
 
-## Follow the material in each vessel {#vessel-check}
+1. Calculate $K$ at 400 K. Is the reaction endothermic or exothermic, and does the sign of the change agree?
+2. With $f=\xi/(1\ \mathrm{mol})$, $K=\dfrac{4f^2}{1-f^2}\dfrac{P}{p^\circ}$. Find $f$ and $y_A$ at 400 K and 100 kPa, then at 200 kPa.
+3. Recompute $Q$ from your mole fractions and check the A-atom balance.
 
-| Vessel | $P_A$ (kPa) | Gas (mol) | Bulk solid or adsorbed A (mol) |
+[Check in Lab 12 · Reaction equilibrium](labs/reaction.html)
+
+## B3 · Which electrode would gain metal? {#cell-problem}
+
+At 298.15 K, both electrodes use $\mathrm{M^{2+}/M}$. Take oxidation on the left, reduction on the right, and zero junction potential. Use $a_L=0.040$ and $a_R=0.40$.
+
+1. Write the reaction with each ion in its own compartment. Which activity goes in the numerator of $Q$?
+2. With $E^\circ=0$, what is $K$? Compare $Q$ with $K$ and predict which electrode gains metal.
+3. Calculate $E=E^\circ-(0.05915935\ {\rm V}/n)\log_{10}Q$ and $\Delta_rG=-nFE$ with $n=2$, $F=96485$ C mol$^{-1}$. Then exchange the two activities. What changes?
+
+::: {.ext}
+**Going further.** Repeat at 323.15 K. Which part of the Nernst equation depends on temperature, and does the direction change?
+:::
+
+[Check in Lab 13 · Electrochemical equilibrium](labs/electrochemistry.html#ec-experiment)
+
+## Set B · check B1 {#set-b-check}
+
+| Vessel | $P_A$ (kPa) | Gas (mol) | Solid or adsorbed A (mol) |
 |---|---:|---:|---:|
-| A · Pure solid present | 10.00 | 0.0040091 | 0.0046621 in the solid |
+| A · pure solid present | 10.00 | 0.0040091 | 0.0046621 in the solid |
 | B · 10 g adsorbent | 5.000 | 0.0020045 | 0.0066667 adsorbed |
 | B · 20 g adsorbent | 2.389 | 0.0009578 | 0.0077134 adsorbed |
 
-For vessel B at 10 g, $q(5.00)=0.6667$ mol kg$^{-1}$. Multiplying by 0.0100 kg gives the amount on the surface. Check that each row accounts for 0.0086712 mol of A.
+Each row accounts for 0.0086712 mol of A. In vessel B at 10 g, $q(5.00)=0.6667$ mol kg$^{-1}$; times 0.0100 kg gives the adsorbed amount.
 
-## Which electrode would gain metal? {#cell-problem}
+Doubling the adsorbent lowers $P_A$, but not by half: the isotherm is nonlinear. While solid remains in vessel A, $P_{\rm sub}(T)$ fixes the pressure whatever the inventory.
 
-At 298.15 K, both electrodes use $\mathrm{M^{2+}/M}$. Take oxidation on the left, reduction on the right, and zero junction potential. If the circuit is closed, deposition can occur at the electrode undergoing reduction. Use $a_L=0.040$ and $a_R=0.40$.
+## Set B · check B2 and B3 {#set-b-check-2}
 
-1. Write the reaction, keeping each species in its own compartment. Which ion activity belongs in the numerator of $Q$?
-2. The standard cell potential is zero. What is $K$? Compare $Q$ with $K$ to predict the direction and which electrode gains metal.
-3. Calculate $E=E^\circ-(0.05915935\ {\rm V}/n)\log_{10}Q$ and $\Delta_rG=-nFE$. Use $n=2$ and $F=96485$ C mol$^{-1}$.
+| Problem | Result | Independent check |
+|---|---|---|
+| B2 · 400 K | $\ln K=3.5223$, $K=33.861$: larger, as expected for an endothermic reaction | Sign of $\Delta_rH^\circ$ |
+| B2 · 100 kPa | $f=0.9457$, $y_A=0.9721$ | $Q=33.861=K$; atoms $2(1-f)+2f=2$ |
+| B2 · 200 kPa | $f=0.8994$, $y_A=0.9470$ | Higher pressure favors fewer gas moles |
+| B3 | $Q=a_L/a_R=0.10$, $K=1$, $E=+29.58$ mV, $\Delta_rG=-5.708$ kJ mol$^{-1}$; the right electrode gains metal | $RT\ln 0.10=-5.708$ kJ mol$^{-1}$ |
+| B3 · exchanged | $Q=10$, $E=-29.58$ mV; the left electrode gains metal | Equal activities give $E=0$ |
 
-## Run the three cell conditions {#cell-lab}
-
-In Lab 13, select **Concentration-cell example**, then **Direct dimensionless activities**. In each $\mathrm{M^{2+}}$ row, edit the **value** column. Keep $\gamma=1$ and the pure-metal entries at 1.
-
-| Case | Left activity | Right activity | Before selecting **Calculate cell** |
-|---|---:|---:|---|
-| Original | 0.040 | 0.40 | Record your predicted sign and voltage. |
-| Exchanged | 0.40 | 0.040 | Predict which electrode now gains metal. |
-| Equal | 0.40 | 0.40 | Predict $Q$ and $E$. |
-
-Compare the lab's potential with your own $RT\ln(Q/K)$ check on the reaction Gibbs energy.
-
-[Open Lab 13 · Electrochemical equilibrium](labs/electrochemistry.html#ec-experiment)
-
-## Check the direction before rounding {#cell-check}
-
-For left oxidation and right reduction, the dissolved ion is produced on the left and consumed on the right, so $Q=a_L/a_R$. Identical electrodes give $E^\circ=0$ and $K=1$.
-
-| Case | $Q$ | $E$ (mV) | $\Delta_rG$ (kJ per mol of reaction as written) | Deposition if the cell runs |
-|---|---:|---:|---:|---|
-| Original | 0.10 | $+29.58$ | $-5.708$ | Right electrode |
-| Exchanged | 10 | $-29.58$ | $+5.708$ | Left electrode |
-| Equal | 1 | 0 | 0 | No net deposition |
-
-For the original case, $RT\ln(0.10)=-5.708$ kJ mol$^{-1}$. Write one sentence connecting that sign to the observed cell polarity.
-
-## Change one condition and exchange your result {#pair-retest}
-
-Choose one case and predict the outcome before touching its controls.
-
-| Choose one lab | Change this condition |
-|---|---|
-| [Lab 01 · Flash](labs/index.html#experiment) | Raise $P$ from 90 to 100 kPa at the same $T$ and $z_1$. Which phase or phases remain? |
-| [Lab 11 · Adsorption](labs/adsorption.html#ad-experiment) | Keep 20 g of adsorbent and double the total inventory. Predict the direction of the pressure change. |
-| [Lab 13 · Cell](labs/electrochemistry.html#ec-experiment) | In the original case, double both ion activities. Does the activity ratio change? Predict the voltage. |
-
-Allow 20 minutes to calculate and test. Use 10 minutes to exchange cases with another pair and reproduce their result. In the final 7 minutes, share one result and one check the class can repeat.
-
-::: {.notes}
-Lab 01 bubble P is 96 kPa and dew P is about 78.95 kPa for z1=0.40. At 100 kPa the feed is a single liquid. Lab 11 pressure increases because both terms in the inventory balance increase with pressure. Lab 13 Q stays 0.10, and E remains +29.58 mV. In Debrief ask the other pair how they would notice a reversed sign or a wrong reference convention.
+::: {.ext}
+**Going further.** At 323.15 K the prefactor $RT/nF$ grows, so $E=+32.06$ mV. The direction is unchanged because $Q$ and $K$ did not change.
 :::
+
+## Exam-style problem · one measurement, one phase prediction {#exam-problem}
+
+The same synthetic binary at 350 K ($P_1^{\rm sat}=150$, $P_2^{\rm sat}=60$ kPa) is measured at $x_1=0.500$: $y_1=0.7143$ and $P=134.82$ kPa.
+
+1. **Infer** $\gamma_1$ and $\gamma_2$. State your assumptions.
+2. **Fit** the one-parameter Margules model, $\ln\gamma_1=Ax_2^2$ and $\ln\gamma_2=Ax_1^2$. Do the two values of $A$ agree? Why must they, for this model, at $x_1=0.5$?
+3. **Predict** whether this liquid can split into two phases.
+4. **Locate** any azeotrope: at an azeotrope $\gamma_1P_1^{\rm sat}=\gamma_2P_2^{\rm sat}$.
+5. **Judge** the prediction: what single additional measurement would test the model away from $x_1=0.5$?
+
+Answer as in the exam: assumptions, equations, numbers with units, one check.
+
+## Exam-style problem · worked answer {#exam-answer}
+
+| Step | Result |
+|---|---|
+| 1 | $\gamma_1=\dfrac{0.7143(134.82)}{0.500(150)}=1.284$, $\gamma_2=\dfrac{0.2857(134.82)}{0.500(60)}=1.284$. Ideal vapor, no Poynting, pure-liquid standard states. |
+| 2 | $A=\ln(1.284)/0.25=1.00$ from both. The model is symmetric, so $\gamma_1=\gamma_2$ at $x_1=0.5$; a large mismatch would signal data or model error. |
+| 3 | Splitting needs $1-2Ax_1x_2<0$ somewhere, which requires $A>2$. With $A=1.00$ the liquid is stable at every composition. |
+| 4 | $\ln(\gamma_1/\gamma_2)=A(1-2x_1)=\ln(60/150)=-0.916$ gives $x_1=0.958$ and $P=150\exp[A(0.042)^2]=150.3$ kPa: a maximum-pressure azeotrope. |
+| 5 | Measure near the azeotrope or at a dilute end. One point at $x_1=0.5$ fixes $A$ but cannot test the model's shape. |
+
+**Check.** $P=x_1\gamma_1P_1^{\rm sat}+x_2\gamma_2P_2^{\rm sat}=0.5(1.284)(150)+0.5(1.284)(60)=134.8$ kPa, as measured.
+
+## How a complete answer is marked {#marking}
+
+:::: {.columns}
+::: {.column width="50%"}
+**A complete answer shows**
+
+1. The equilibrium condition and the balance you used.
+2. Every assumption, stated before it is used.
+3. Numbers with units, or "dimensionless".
+4. One independent check: rebuild the feed, close the inventory, recompute $Q$, or test a limit.
+5. One sentence on what the number means physically.
+:::
+::: {.column width="50%"}
+**Common mistakes after the midterm**
+
+- $\beta$ outside 0–1 reported as an amount.
+- $P^{\rm sat}$ at the wrong temperature, or Antoine outside its range.
+- Positive curvature taken as proof that a liquid will not split.
+- Gas moles found by subtraction, then never checked against the isotherm.
+- Pressure carrying units inside $\ln Q$; $Q$ and $K$ for different reactions as written.
+- A sign of $E$ quoted without stating which electrode is the oxidation side.
+:::
+::::
+
+## Prepare with the material you already have {#prepare}
+
+| Week | Practise with |
+|---|---|
+| 1 | Lab 01: flash, bubble and dew points; Session 1 slides |
+| 2 | Week 2 worksheet and review test; Lab 08 |
+| 3 | Week 3 worksheet (area and local tests, lever rule); Labs 03 and 04 |
+| 4 | Week 4 worksheet (solubility, inventory, Langmuir); Labs 10 and 11 |
+| 5 | Week 5 worksheet (extent, two routes to $K$, $T$ and $P$ effects); Lab 12 |
+| 6 | Session 6 slides (Nernst, concentration cell); Lab 13 |
+
+All worksheets, slides and labs are linked from the [learning path](labs/learning-path.html). Redo one problem per week **without** the worked solution first, then check.
 
 ## Week 7 exit ticket and after-midterm feedback {#exit-ticket}
 
 :::: {.columns}
 ::: {.column width="62%"}
 
-**5 min · Exit ticket for today's workshop**
+**5 min · Exit ticket**
 
-Choose one case from today. Give a result with its units, or state that it is dimensionless. Explain what it means and name an independent check or a limitation.
+Choose one case from today. Give a result with its units, or state that it is dimensionless. Explain what it means and name one independent check or limitation.
+
+In **What is still unclear?**, name the topic you feel least ready for in the exam.
 
 **3 min · Feedback on all of Weeks 1–7**
 
 Rate the overall pace after the midterm. Which resource helped you most? Name one thing to keep or change.
 
-Complete both parts in the same form.
+Complete both parts in the same form. No name or student ID is recorded.
 
 :::
 ::: {.column width="32%"}
 
-[![Scan to open the Week 7 exit ticket and whole after-midterm feedback survey.](assets/exit-qr-07.png){width="96%"}](https://thermo-2105603-exit-ticket.soorathep-k.chatgpt.site/?session=7)
+[![Scan to open the Week 7 exit ticket and after-midterm feedback survey.](assets/exit-qr-07.png){width="96%"}](https://thermo-2105603-exit-ticket.soorathep-k.chatgpt.site/?session=7)
 
 [Open the Week 7 form](https://thermo-2105603-exit-ticket.soorathep-k.chatgpt.site/?session=7)
 
 :::
 ::::
+
+::: {.notes}
+The form's questions are fixed; this slide matches them. Read the "still unclear" answers before the exam review to choose which problem types to revisit.
+:::
