@@ -38,3 +38,6 @@ data/raw/
 /.archive-preparation/
 /_qa/
 /compute_results/
+
+# Quarto Reveal.js libraries for the published 2027 decks
+!teaching/2105603/slides-2027/*_files/libs/revealjs/dist/
