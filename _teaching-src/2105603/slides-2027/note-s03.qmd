@@ -93,4 +93,4 @@ Write short answers. We use them in the first 30 minutes.
 - Renon, H., Prausnitz, J. M. (1968). Local compositions in thermodynamic excess functions for liquid mixtures. *AIChE J.* 14, 135–144.
 - Barbieri, C., De Guido, G., Moioli, S. (2024). *J. Chem. Thermodyn.* 198, 107342. The 2-propanol + water data of Session 2.
 
-[Back to the Session 2 slides](s02.html){.next-link}
+[Session 3 slides →](s03.html){.next-link}

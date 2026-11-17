@@ -273,7 +273,7 @@ function exportStudy() {
   const record = { schema: SCHEMA, graduateVersion: LLE_GRADUATE_VERSION, savedAt: new Date().toISOString(), inputs: study.inputs || readInputs().inputs,
     prediction: $('prediction').value, caseName: $('case-name').value, cases: study.cases, secondT: $('second-T').value,
     bounds: { xAlpha: $('bound-a').value, xBeta: $('bound-b').value }, notes: notes(), reflection: $('reflection').value,
-    investigations: { transfer: Boolean(study.transfer), alpha: Boolean(study.alpha), sensitivity: Boolean(study.sensitivity) } };
+    investigations: { transfer: Boolean(study.transfer), alpha: Boolean(study.alpha), sensitivity: Boolean(study.sensitivity) }, aiCode: window.aiCode?.state() };
   const url = URL.createObjectURL(new Blob([JSON.stringify(withStudent(record), null, 2)], { type: 'application/json' })), a = document.createElement('a');
   a.href = url; a.download = studentFileName('lab05-lle-fit-study.json'); a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
   $('status').textContent = 'Study downloaded. Open it later to restore the cases, settings and notes.';

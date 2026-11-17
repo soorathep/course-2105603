@@ -1,0 +1,488 @@
+{
+ "session": "s03",
+ "voice": "am_michael",
+ "slides": {
+  "title-slide": [
+   {
+    "en": "Welcome to session 3.",
+    "th": "ยินดีต้อนรับสู่คาบที่ 3"
+   },
+   {
+    "en": "Today we ask when one liquid becomes two, and how to test it.",
+    "th": "วันนี้เราจะถามว่าของเหลวหนึ่งเฟสแยกเป็นสองเฟสเมื่อใด และจะทดสอบอย่างไร"
+   },
+   {
+    "en": "The question for the whole session: a liquid passes every local test. When does it still split, and what evidence settles whether a model's split is real?",
+    "th": "คำถามของทั้งคาบนี้คือ ของเหลวที่ผ่านการทดสอบเฉพาะที่ทุกข้อ ยังแยกเฟสได้เมื่อใด และหลักฐานใดตัดสินได้ว่าการแยกเฟสที่แบบจำลองทำนายนั้นเกิดขึ้นจริง"
+   },
+   {
+    "en": "If you are studying on your own, turn on narration and captions with the buttons at the bottom left. Use the arrow keys to move through the slides.",
+    "th": "ถ้าเรียนด้วยตนเอง เปิดเสียงบรรยายและคำบรรยายได้ที่ปุ่มมุมซ้ายล่าง และใช้ปุ่มลูกศรเพื่อเลื่อนสไลด์"
+   }
+  ],
+  "course-map": [
+   {
+    "en": "This is session 3 of 7 after the midterm: liquid stability and liquid-liquid equilibrium.",
+    "th": "นี่คือคาบที่ 3 จาก 7 คาบหลังสอบกลางภาค เรื่องเสถียรภาพของของเหลวและสมดุลของเหลว-ของเหลว"
+   },
+   {
+    "en": "Session 2 ended with a model that fits VLE data well and predicts a liquid split that does not exist.",
+    "th": "คาบที่ 2 จบด้วยแบบจำลองที่เข้ากับข้อมูล VLE ได้ดี แต่ทำนายการแยกเฟสของเหลวที่ไม่มีอยู่จริง"
+   },
+   {
+    "en": "Today we learn how to test whether one liquid is stable, and how to fit a model to liquids that really do split.",
+    "th": "วันนี้เราจะเรียนวิธีทดสอบว่าของเหลวหนึ่งเฟสเสถียรหรือไม่ และวิธี fit แบบจำลองกับของเหลวที่แยกเฟสจริง"
+   }
+  ],
+  "why": [
+   {
+    "en": "Two mixtures. On the left, the weighted NRTL fit from session 2 for 2-propanol and water predicts two liquids at x 1 of 0.088 and 0.237.",
+    "th": "สารผสมสองชุด ด้านซ้ายคือผล fit NRTL แบบถ่วงน้ำหนักจากคาบที่ 2 สำหรับ 2-propanol กับน้ำ ซึ่งทำนายว่ามีของเหลวสองเฟสที่ x₁ เท่ากับ 0.088 และ 0.237",
+    "say": "Two mixtures. On the left, the weighted NRTL fit from session two for two-propanol and water predicts two liquids at x one of zero point zero eight eight and zero point two three seven."
+   },
+   {
+    "en": "The real mixture is fully miscible. A flash with this model would report a decanter that cannot work.",
+    "th": "สารผสมจริงละลายเข้ากันได้ทุกสัดส่วน flash ที่ใช้แบบจำลองนี้จะรายงานถังแยกเฟสที่ใช้งานไม่ได้"
+   },
+   {
+    "en": "On the right, cyclohexane and methanol really do split. At 298.15 kelvin the two liquids are at 0.177 and 0.876.",
+    "th": "ด้านขวาคือ cyclohexane กับ methanol ซึ่งแยกเฟสจริง ที่ 298.15 เคลวิน ของเหลวสองเฟสมีองค์ประกอบ 0.177 และ 0.876",
+    "say": "On the right, cyclohexane and methanol really do split. At two hundred ninety eight point one five kelvin the two liquids are at zero point one seven seven and zero point eight seven six."
+   },
+   {
+    "en": "Both answers come from the same function, the Gibbs energy of mixing. Today is about reading it correctly, and about what data decide it.",
+    "th": "คำตอบทั้งสองมาจากฟังก์ชันเดียวกัน คือพลังงานกิบส์ของการผสม วันนี้เป็นเรื่องการอ่านฟังก์ชันนี้ให้ถูก และข้อมูลใดเป็นตัวกำหนดมัน"
+   }
+  ],
+  "recap": [
+   {
+    "en": "Session 1 left a warning: when K depends on composition, a one-phase flash result must be tested for stability.",
+    "th": "คาบที่ 1 ทิ้งคำเตือนไว้ว่า เมื่อ K ขึ้นกับองค์ประกอบ ผล flash ที่ได้เฟสเดียวต้องทดสอบเสถียรภาพก่อน"
+   },
+   {
+    "en": "Session 2 showed that dilute VLE rows hardly constrain tau 2 1, yet the phase behavior depends strongly on it.",
+    "th": "คาบที่ 2 แสดงว่าข้อมูล VLE ช่วงเจือจางแทบไม่ได้กำหนด τ₂₁ แต่พฤติกรรมของเฟสขึ้นกับค่านี้มาก",
+    "say": "Session two showed that dilute VLE rows hardly constrain tau two one, yet the phase behavior depends strongly on it."
+   },
+   {
+    "en": "Today: local and global stability, the tangent-plane test, and LLE data as the evidence that rules a split in or out.",
+    "th": "วันนี้เราจะเรียนเสถียรภาพเฉพาะที่และแบบรวม การทดสอบระยะถึงระนาบสัมผัส และข้อมูล LLE ในฐานะหลักฐานที่ยืนยันหรือปฏิเสธการแยกเฟส"
+   }
+  ],
+  "outcomes": [
+   {
+    "en": "By the end of today you should be able to do five things.",
+    "th": "เมื่อจบคาบนี้ คุณควรทำได้ห้าอย่าง"
+   },
+   {
+    "en": "Separate local from global stability, and classify a feed as stable, metastable or unstable.",
+    "th": "แยกเสถียรภาพเฉพาะที่ออกจากเสถียรภาพแบบรวม และจำแนกสารป้อนว่าเสถียร กึ่งเสถียร หรือไม่เสถียร"
+   },
+   {
+    "en": "Apply the tangent-plane test, and explain why it needs a search over all trial compositions.",
+    "th": "ใช้การทดสอบระยะถึงระนาบสัมผัส และอธิบายว่าทำไมต้องค้นหาทั่วทุกองค์ประกอบทดลอง"
+   },
+   {
+    "en": "Fit NRTL to a measured tie line, and say what one tie line does and does not determine.",
+    "th": "fit NRTL กับ tie line ที่วัดได้ และบอกได้ว่า tie line เส้นเดียวกำหนดอะไรได้และกำหนดอะไรไม่ได้"
+   },
+   {
+    "en": "Test a temperature dependence of tau on tie lines the fit did not use.",
+    "th": "ทดสอบความขึ้นกับอุณหภูมิของ τ กับ tie line ที่ไม่ได้ใช้ในการ fit"
+   },
+   {
+    "en": "And specify a stability calculation for an AI assistant to code, then verify the code.",
+    "th": "และเขียนข้อกำหนดของการคำนวณเสถียรภาพให้ผู้ช่วย AI เขียนโค้ด แล้วตรวจโค้ดนั้น"
+   }
+  ],
+  "route": [
+   {
+    "en": "This is the plan for the three hours.",
+    "th": "นี่คือแผนของการเรียนสามชั่วโมง"
+   },
+   {
+    "en": "Thirty minutes of concepts: the Gibbs energy of mixing, stability, the tangent-plane distance and tie lines.",
+    "th": "สามสิบนาทีแรกเป็นแนวคิด ได้แก่ พลังงานกิบส์ของการผสม เสถียรภาพ ระยะถึงระนาบสัมผัส และ tie line"
+   },
+   {
+    "en": "Activity 1 asks whether three feeds are stable. Then I demonstrate Lab 04.",
+    "th": "กิจกรรมที่ 1 ถามว่าสารป้อนสามค่าเสถียรหรือไม่ จากนั้นผมจะสาธิต Lab 04"
+   },
+   {
+    "en": "After the break you work in pairs in Lab 05 on fits and their transfer to other temperatures, then on your own code, and we finish by discussing what decides a split.",
+    "th": "หลังพักให้ทำงานเป็นคู่ใน Lab 05 เรื่องการ fit และการใช้พารามิเตอร์ที่อุณหภูมิอื่น ต่อด้วยโค้ดของตัวเอง และปิดท้ายด้วยการอภิปรายว่าอะไรเป็นตัวกำหนดการแยกเฟส"
+   },
+   {
+    "en": "If you are studying on your own, follow the same order and pause at each activity slide.",
+    "th": "ถ้าเรียนด้วยตนเอง ให้ทำตามลำดับเดียวกัน และหยุดที่สไลด์กิจกรรมแต่ละสไลด์"
+   }
+  ],
+  "gmix": [
+   {
+    "en": "The function that decides is the Gibbs energy of mixing: the ideal term plus the excess Gibbs energy.",
+    "th": "ฟังก์ชันที่เป็นตัวตัดสินคือพลังงานกิบส์ของการผสม ซึ่งเท่ากับพจน์อุดมคติบวกพลังงานกิบส์ส่วนเกิน"
+   },
+   {
+    "en": "At fixed temperature and pressure the lowest Gibbs energy wins. A feed splits if a straight line between two compositions lies below the curve at the feed.",
+    "th": "ที่อุณหภูมิและความดันคงที่ สถานะที่มีพลังงานกิบส์ต่ำสุดคือสถานะสมดุล สารป้อนจะแยกเฟสถ้าเส้นตรงระหว่างสององค์ประกอบอยู่ต่ำกว่าเส้นโค้งที่ตำแหน่งสารป้อน"
+   },
+   {
+    "en": "For the Margules model with A equal to 3, the common tangent touches at 0.0707 and 0.9293. The spinodal is at 0.211 and 0.789.",
+    "th": "สำหรับแบบจำลอง Margules ที่ A เท่ากับ 3 เส้นสัมผัสร่วมแตะที่ 0.0707 และ 0.9293 และ spinodal อยู่ที่ 0.211 และ 0.789",
+    "say": "For the Margules model with A equal to three, the common tangent touches at zero point zero seven zero seven and zero point nine two nine three. The spinodal is at zero point two one one and zero point seven eight nine."
+   },
+   {
+    "en": "The feed at 0.12 sits where the curve is still convex, yet it is not the lowest state.",
+    "th": "สารป้อนที่ 0.12 อยู่ในช่วงที่เส้นโค้งยังโค้งหงาย แต่ไม่ใช่สถานะที่ต่ำที่สุด",
+    "say": "The feed at zero point one two sits where the curve is still convex, yet it is not the lowest state."
+   }
+  ],
+  "local-global": [
+   {
+    "en": "Local stability means the curve is convex. The scaled curvature must be positive. It is zero on the spinodal, and for Margules it is 1 minus 2 A x 1 x 2.",
+    "th": "เสถียรภาพเฉพาะที่หมายถึงเส้นโค้งโค้งหงาย ค่าความโค้งที่ปรับสเกลแล้วต้องเป็นบวก ค่านี้เป็นศูนย์บน spinodal และสำหรับ Margules เท่ากับ 1 − 2A x₁x₂",
+    "say": "Local stability means the curve is convex. The scaled curvature must be positive. It is zero on the spinodal, and for Margules it is one minus two A x one x two."
+   },
+   {
+    "en": "Global stability is about the binodal: two liquids with equal chemical potentials, so x i gamma i is the same in both.",
+    "th": "เสถียรภาพแบบรวมเกี่ยวกับ binodal คือของเหลวสองเฟสที่มีศักย์เคมีเท่ากัน ดังนั้น xᵢγᵢ มีค่าเท่ากันในทั้งสองเฟส"
+   },
+   {
+    "en": "Outside the binodal a feed is stable. Between the binodal and the spinodal it is metastable. Inside the spinodal it is unstable.",
+    "th": "นอก binodal สารป้อนเสถียร ระหว่าง binodal กับ spinodal เป็นกึ่งเสถียร และภายใน spinodal ไม่เสถียร"
+   },
+   {
+    "en": "A curvature test alone calls a metastable feed stable. Only a global test finds that it splits.",
+    "th": "การทดสอบความโค้งอย่างเดียวจะบอกว่าสารป้อนกึ่งเสถียรนั้นเสถียร มีเพียงการทดสอบแบบรวมที่พบว่ามันแยกเฟส"
+   }
+  ],
+  "tpd": [
+   {
+    "en": "The practical global test is the tangent-plane distance, from Michelsen in 1982.",
+    "th": "การทดสอบแบบรวมที่ใช้ในทางปฏิบัติคือระยะถึงระนาบสัมผัส ของ Michelsen ปี 1982",
+    "say": "The practical global test is the tangent-plane distance, from Michelsen in nineteen eighty two."
+   },
+   {
+    "en": "If TPD is zero or positive for every trial composition w, the feed is stable. If any w gives a negative value, the feed splits, and that w is a good first guess for the new phase.",
+    "th": "ถ้า TPD เป็นศูนย์หรือบวกสำหรับทุกองค์ประกอบทดลอง w สารป้อนเสถียร ถ้ามี w ใดให้ค่าลบ สารป้อนจะแยกเฟส และ w นั้นเป็นค่าเริ่มต้นที่ดีสำหรับเฟสใหม่"
+   },
+   {
+    "en": "For the feed at 0.12, the minimum is minus 0.245 at w equal to 0.953.",
+    "th": "สำหรับสารป้อนที่ 0.12 ค่าต่ำสุดคือ −0.245 ที่ w เท่ากับ 0.953",
+    "say": "For the feed at zero point one two, the minimum is minus zero point two four five at w equal to zero point nine five three."
+   },
+   {
+    "en": "The trap: w equal to z always gives zero. A local search started at the feed stops there. Search the whole composition range, or from several starts.",
+    "th": "ข้อควรระวังคือ w ที่เท่ากับ z ให้ค่าศูนย์เสมอ การค้นหาเฉพาะที่ที่เริ่มจากสารป้อนจะหยุดที่จุดนั้น ให้ค้นหาทั่วทั้งช่วงองค์ประกอบ หรือเริ่มจากหลายจุด"
+   }
+  ],
+  "models": [
+   {
+    "en": "Not every model can predict a split. The Wilson equation keeps the curvature positive for any parameters, so it cannot describe liquid-liquid equilibrium.",
+    "th": "ไม่ใช่ทุกแบบจำลองที่ทำนายการแยกเฟสได้ สมการ Wilson ให้ความโค้งเป็นบวกเสมอไม่ว่าพารามิเตอร์จะเป็นเท่าใด จึงอธิบายสมดุลของเหลว-ของเหลวไม่ได้"
+   },
+   {
+    "en": "NRTL and UNIQUAC can. That flexibility cuts both ways: a fit to VLE alone can produce a split that does not exist.",
+    "th": "NRTL และ UNIQUAC ทำได้ ความยืดหยุ่นนี้มีทั้งข้อดีและข้อเสีย การ fit กับ VLE อย่างเดียวอาจให้การแยกเฟสที่ไม่มีอยู่จริง"
+   },
+   {
+    "en": "The two session 2 fits differ mainly in tau 2 1. The weighted one predicts a split between 0.088 and 0.237.",
+    "th": "ผล fit สองชุดจากคาบที่ 2 ต่างกันที่ τ₂₁ เป็นหลัก ชุดที่ถ่วงน้ำหนักทำนายการแยกเฟสระหว่าง 0.088 ถึง 0.237",
+    "say": "The two session two fits differ mainly in tau two one. The weighted one predicts a split between zero point zero eight eight and zero point two three seven."
+   },
+   {
+    "en": "A single cloud-point measurement near x 1 of 0.15 would decide between them.",
+    "th": "การวัดจุดขุ่นเพียงครั้งเดียวที่ x₁ ประมาณ 0.15 ก็ตัดสินระหว่างสองชุดนี้ได้",
+    "say": "A single cloud-point measurement near x one of zero point one five would decide between them."
+   }
+  ],
+  "activity-1": [
+   {
+    "en": "Activity 1. Ten minutes, alone, then with a partner.",
+    "th": "กิจกรรมที่ 1 ใช้เวลาสิบนาที ทำคนเดียวก่อน แล้วคุยกับเพื่อน"
+   },
+   {
+    "en": "Margules with A equal to 3. For feeds at 0.05, 0.12 and 0.50, calculate the scaled curvature and classify each feed.",
+    "th": "Margules ที่ A เท่ากับ 3 สำหรับสารป้อนที่ 0.05, 0.12 และ 0.50 ให้คำนวณความโค้งที่ปรับสเกลแล้ว และจำแนกสารป้อนแต่ละค่า",
+    "say": "Margules with A equal to three. For feeds at zero point zero five, zero point one two and zero point five, calculate the scaled curvature and classify each feed."
+   },
+   {
+    "en": "Which feed does a curvature test alone get wrong? For each feed that splits, find the fraction of the x 1 rich liquid with the lever rule.",
+    "th": "สารป้อนใดที่การทดสอบความโค้งอย่างเดียวตัดสินผิด และสำหรับสารป้อนที่แยกเฟส ให้หาสัดส่วนของเฟสที่มี x₁ สูงด้วยกฎคาน"
+   }
+  ],
+  "activity-1-debrief": [
+   {
+    "en": "Check your answer. At 0.05 the curvature is 0.715 and the feed lies outside the binodal: stable.",
+    "th": "ตรวจคำตอบ ที่ 0.05 ความโค้งเท่ากับ 0.715 และสารป้อนอยู่นอก binodal จึงเสถียร",
+    "say": "Check your answer. At zero point zero five the curvature is zero point seven one five and the feed lies outside the binodal: stable."
+   },
+   {
+    "en": "At 0.12 the curvature is still positive, 0.366, but the minimum TPD is minus 0.245. The feed is metastable, and 5.7 percent of it becomes the x 1 rich liquid.",
+    "th": "ที่ 0.12 ความโค้งยังเป็นบวก คือ 0.366 แต่ TPD ต่ำสุดเท่ากับ −0.245 สารป้อนจึงกึ่งเสถียร และ 5.7 เปอร์เซ็นต์ของสารป้อนกลายเป็นเฟสที่มี x₁ สูง",
+    "say": "At zero point one two the curvature is still positive, zero point three six six, but the minimum TPD is minus zero point two four five. The feed is metastable, and five point seven percent of it becomes the x one rich liquid."
+   },
+   {
+    "en": "At 0.50 the curvature is negative: unstable, and half of it goes to each liquid.",
+    "th": "ที่ 0.50 ความโค้งเป็นลบ จึงไม่เสถียร และสารป้อนครึ่งหนึ่งไปอยู่ในแต่ละเฟส",
+    "say": "At zero point five the curvature is negative: unstable, and half of it goes to each liquid."
+   },
+   {
+    "en": "The feed at 0.12 is the one a curvature test gets wrong. The gain from splitting is small, 0.0082 R T per mole, so a metastable liquid can persist until a second phase nucleates.",
+    "th": "สารป้อนที่ 0.12 คือค่าที่การทดสอบความโค้งตัดสินผิด พลังงานที่ลดลงจากการแยกเฟสมีค่าน้อย คือ 0.0082 RT ต่อโมล ของเหลวกึ่งเสถียรจึงอาจคงอยู่ได้จนกว่าเฟสที่สองจะเริ่มก่อตัว",
+    "say": "The feed at zero point one two is the one a curvature test gets wrong. The gain from splitting is small, zero point zero zero eight two R T per mole, so a metastable liquid can persist until a second phase nucleates."
+   }
+  ],
+  "tie-line": [
+   {
+    "en": "Each measured tie line gives two equations. With alpha fixed, the two tau are determined exactly.",
+    "th": "tie line ที่วัดได้แต่ละเส้นให้สมการสองสมการ เมื่อกำหนด α คงที่ τ ทั้งสองค่าจะถูกกำหนดได้พอดี"
+   },
+   {
+    "en": "So a perfect fit to one tie line is not evidence that the model is right. It only shows that the equations had a solution.",
+    "th": "ดังนั้นการ fit tie line เส้นเดียวได้พอดีจึงไม่ใช่หลักฐานว่าแบบจำลองถูก มันแสดงเพียงว่าสมการมีคำตอบ"
+   },
+   {
+    "en": "For cyclohexane and methanol at 298.15 kelvin, alpha of 0.2 and 0.3 both reproduce the tie line exactly, with different tau.",
+    "th": "สำหรับ cyclohexane กับ methanol ที่ 298.15 เคลวิน α เท่ากับ 0.2 และ 0.3 ต่างก็ให้ tie line ได้พอดี โดยมี τ ต่างกัน",
+    "say": "For cyclohexane and methanol at two hundred ninety eight point one five kelvin, alpha of zero point two and zero point three both reproduce the tie line exactly, with different tau."
+   },
+   {
+    "en": "With alpha of 0.47 no exact fit exists, and the best fit splits at the wrong compositions. One tie line cannot identify alpha.",
+    "th": "เมื่อ α เท่ากับ 0.47 ไม่มีคำตอบที่ fit ได้พอดี และผล fit ที่ดีที่สุดแยกเฟสที่องค์ประกอบผิด tie line เส้นเดียวจึงระบุค่า α ไม่ได้",
+    "say": "With alpha of zero point four seven no exact fit exists, and the best fit splits at the wrong compositions. One tie line cannot identify alpha."
+   }
+  ],
+  "tdep": [
+   {
+    "en": "Does tau hold across temperature? The points are the nine measured tie lines.",
+    "th": "τ คงที่ตลอดช่วงอุณหภูมิหรือไม่ จุดในกราฟคือ tie line ที่วัดได้เก้าเส้น"
+   },
+   {
+    "en": "Constant tau from 298.15 kelvin predicts the same compositions at every temperature, and misses the held-out tie lines by 0.077 in composition. None is within its uncertainty.",
+    "th": "τ คงที่จาก 298.15 เคลวิน ทำนายองค์ประกอบเดียวกันทุกอุณหภูมิ และคลาดจาก tie line ที่ไม่ได้ใช้ fit 0.077 ในหน่วยองค์ประกอบ ไม่มีเส้นใดอยู่ในช่วงความไม่แน่นอน",
+    "say": "Constant tau from two hundred ninety eight point one five kelvin predicts the same compositions at every temperature, and misses the held-out tie lines by zero point zero seven seven in composition. None is within its uncertainty."
+   },
+   {
+    "en": "Tau equal to a plus b over T, calibrated at two temperatures, misses by 0.0097, and four of seven are within their uncertainty.",
+    "th": "τ = a + b/T ที่ปรับเทียบจากสองอุณหภูมิ คลาดเพียง 0.0097 และสี่จากเจ็ดเส้นอยู่ในช่วงความไม่แน่นอน",
+    "say": "Tau equal to a plus b over T, calibrated at two temperatures, misses by zero point zero zero nine seven, and four of seven are within their uncertainty."
+   },
+   {
+    "en": "This model closes the gap near 324 kelvin, above the last measured tie line. That is an extrapolation, not a measured critical point.",
+    "th": "แบบจำลองนี้ทำนายว่าช่องว่างการละลายปิดที่ประมาณ 324 เคลวิน ซึ่งสูงกว่า tie line เส้นสุดท้ายที่วัดได้ ค่านี้จึงเป็นการ extrapolate ไม่ใช่จุดวิกฤตที่วัดได้",
+    "say": "This model closes the gap near three hundred twenty four kelvin, above the last measured tie line. That is an extrapolation, not a measured critical point."
+   }
+  ],
+  "vlle": [
+   {
+    "en": "With two liquids and a vapor in a binary, the phase rule leaves one degree of freedom.",
+    "th": "เมื่อมีของเหลวสองเฟสและไอในระบบสององค์ประกอบ กฎเฟสเหลือระดับความเสรีหนึ่ง"
+   },
+   {
+    "en": "At a chosen pressure, the three-phase temperature and all three compositions are fixed. Every feed between the two liquids gives the same three compositions.",
+    "th": "ที่ความดันที่เลือก อุณหภูมิของสามเฟสและองค์ประกอบทั้งสามเฟสถูกกำหนดแล้ว สารป้อนทุกค่าระหว่างของเหลวสองเฟสให้องค์ประกอบสามเฟสเหมือนกัน"
+   },
+   {
+    "en": "The amounts are not fixed: two balances, three unknown amounts. One more specification is needed, such as heat duty or vapor fraction. Lab 06 works through this.",
+    "th": "ปริมาณของแต่ละเฟสยังไม่ถูกกำหนด เพราะมีสมการดุลสองสมการ แต่มีปริมาณที่ไม่ทราบสามค่า ต้องกำหนดเพิ่มอีกหนึ่งค่า เช่นภาระความร้อนหรือสัดส่วนไอ Lab 06 ทำเรื่องนี้"
+   }
+  ],
+  "demo-lab": [
+   {
+    "en": "Now Lab 04. Margules with A equal to 3, feed at 0.50: unstable, two liquids.",
+    "th": "ต่อไปคือ Lab 04 Margules ที่ A เท่ากับ 3 สารป้อนที่ 0.50 ไม่เสถียร และมีของเหลวสองเฟส",
+    "say": "Now Lab 04. Margules with A equal to three, feed at zero point five: unstable, two liquids."
+   },
+   {
+    "en": "Change the feed to 0.12. The curvature is still positive, the TPD is negative: metastable. The tangent lies below the curve at the feed.",
+    "th": "เปลี่ยนสารป้อนเป็น 0.12 ความโค้งยังเป็นบวก แต่ TPD เป็นลบ จึงกึ่งเสถียร เส้นสัมผัสอยู่ต่ำกว่าเส้นโค้งที่ตำแหน่งสารป้อน",
+    "say": "Change the feed to zero point one two. The curvature is still positive, the TPD is negative: metastable. The tangent lies below the curve at the feed."
+   },
+   {
+    "en": "Then switch to NRTL with the weighted fit from session 2, and find where it predicts a split.",
+    "th": "จากนั้นเปลี่ยนเป็น NRTL ด้วยผล fit แบบถ่วงน้ำหนักจากคาบที่ 2 แล้วหาว่าทำนายการแยกเฟสที่ใด"
+   }
+  ],
+  "mistakes": [
+   {
+    "en": "Four common mistakes before you start.",
+    "th": "ข้อผิดพลาดที่พบบ่อยสี่ข้อก่อนเริ่มทำ"
+   },
+   {
+    "en": "One: calling a feed stable from its curvature. A metastable feed has positive curvature and still splits.",
+    "th": "หนึ่ง บอกว่าสารป้อนเสถียรจากความโค้ง ทั้งที่สารป้อนกึ่งเสถียรมีความโค้งเป็นบวกและยังแยกเฟส"
+   },
+   {
+    "en": "Two: accepting the trivial solution. Equal compositions in both phases satisfy the isoactivity equations for any composition.",
+    "th": "สอง ยอมรับคำตอบชัดแจ้ง องค์ประกอบที่เท่ากันในทั้งสองเฟสทำให้สมการ isoactivity เป็นจริงได้ทุกองค์ประกอบ"
+   },
+   {
+    "en": "Three: searching the TPD from the feed only. The negative minimum may be on the other side of the diagram.",
+    "th": "สาม ค้นหา TPD จากสารป้อนเพียงจุดเดียว ค่าต่ำสุดที่เป็นลบอาจอยู่อีกฝั่งของแผนภาพ"
+   },
+   {
+    "en": "Four: treating an exact tie-line fit as validation. Check on tie lines the fit did not use.",
+    "th": "สี่ ถือว่าการ fit tie line ได้พอดีเป็นการยืนยันแบบจำลอง ให้ตรวจกับ tie line ที่ไม่ได้ใช้ fit"
+   }
+  ],
+  "ai-code": [
+   {
+    "en": "As in session 2, you may use an AI assistant to write code. You decide everything else.",
+    "th": "เช่นเดียวกับคาบที่ 2 คุณใช้ผู้ช่วย AI เขียนโค้ดได้ เรื่องอื่นทั้งหมดคุณตัดสินเอง"
+   },
+   {
+    "en": "That means the tie line and alpha, the equations and how a trivial solution is rejected, the starting values, how the spinodal and the TPD minimum are found, and what the result means.",
+    "th": "ได้แก่ tie line และ α สมการและวิธีปฏิเสธคำตอบชัดแจ้ง ค่าเริ่มต้น วิธีหา spinodal และ TPD ต่ำสุด และความหมายของผล"
+   },
+   {
+    "en": "Lab 05 step E recomputes six results from the measured tie line and your tau, independently of your code.",
+    "th": "ขั้น E ของ Lab 05 คำนวณผลหกรายการใหม่จาก tie line ที่วัดได้และ τ ของคุณ โดยไม่ขึ้นกับโค้ดของคุณ"
+   },
+   {
+    "en": "Hand in the specification, the prompt, the final code and what you fixed.",
+    "th": "ส่งข้อกำหนด prompt โค้ดสุดท้าย และสิ่งที่คุณแก้"
+   }
+  ],
+  "break": [
+   {
+    "en": "Take a ten-minute break.",
+    "th": "พักสิบนาที"
+   },
+   {
+    "en": "Next is activity 2, a pair investigation in Lab 05. Check that the lab opens on your device before the break ends.",
+    "th": "ต่อไปคือกิจกรรมที่ 2 ทำงานเป็นคู่ใน Lab 05 ตรวจว่า lab เปิดได้บนอุปกรณ์ของคุณก่อนหมดเวลาพัก"
+   }
+  ],
+  "activity-2": [
+   {
+    "en": "Activity 2 takes seventy minutes, in pairs. One drives Lab 05, the other checks by hand, then swap.",
+    "th": "กิจกรรมที่ 2 ใช้เวลาเจ็ดสิบนาที ทำเป็นคู่ คนหนึ่งใช้ Lab 05 อีกคนตรวจด้วยมือ แล้วสลับกัน"
+   },
+   {
+    "en": "First, by hand: at 298.15 kelvin with alpha 0.3, calculate ln gamma in both liquids and show that x i gamma i is equal.",
+    "th": "ขั้นแรก คำนวณด้วยมือ ที่ 298.15 เคลวิน และ α เท่ากับ 0.3 คำนวณ ln γ ในของเหลวทั้งสองเฟส และแสดงว่า xᵢγᵢ เท่ากัน",
+    "say": "First, by hand: at two hundred ninety eight point one five kelvin with alpha zero point three, calculate ln gamma in both liquids and show that x i gamma i is equal."
+   },
+   {
+    "en": "Then fit 298.15 and 313.15 kelvin, transfer the parameters to the other tie lines in A, and compare alpha in B.",
+    "th": "จากนั้น fit ที่ 298.15 และ 313.15 เคลวิน นำพารามิเตอร์ไปใช้กับ tie line อื่นในขั้น A และเปรียบเทียบ α ในขั้น B",
+    "say": "Then fit two hundred ninety eight point one five and three hundred thirteen point one five kelvin, transfer the parameters to the other tie lines in A, and compare alpha in B."
+   },
+   {
+    "en": "Next, write the specification, use an AI assistant to write the code, run it, and check it in step E.",
+    "th": "ต่อไป เขียนข้อกำหนด ใช้ผู้ช่วย AI เขียนโค้ด รันเอง แล้วตรวจในขั้น E"
+   },
+   {
+    "en": "Finally, explain with numbers why a perfect fit at 298.15 kelvin predicts 313.15 kelvin so poorly.",
+    "th": "สุดท้าย อธิบายด้วยตัวเลขว่าทำไมการ fit ที่พอดีที่ 298.15 เคลวิน จึงทำนาย 313.15 เคลวิน ได้ไม่ดี",
+    "say": "Finally, explain with numbers why a perfect fit at two hundred ninety eight point one five kelvin predicts three hundred thirteen point one five kelvin so poorly."
+   }
+  ],
+  "activity-2-check": [
+   {
+    "en": "This is what to hand in: the Lab 05 study file with the two fits, A, B, D and E, your hand calculation, and two sentences.",
+    "th": "สิ่งที่ต้องส่งคือ ไฟล์ study ของ Lab 05 ที่มีผล fit สองชุด ขั้น A, B, D และ E การคำนวณด้วยมือ และสองประโยค"
+   },
+   {
+    "en": "Use the table to check your results. Constant tau from 298.15 kelvin predicts 0.177 and 0.876 at 313.15 kelvin. The measured values are 0.261 and 0.758.",
+    "th": "ใช้ตารางนี้ตรวจผล τ คงที่จาก 298.15 เคลวิน ทำนาย 0.177 และ 0.876 ที่ 313.15 เคลวิน ค่าที่วัดได้คือ 0.261 และ 0.758",
+    "say": "Use the table to check your results. Constant tau from two hundred ninety eight point one five kelvin predicts zero point one seven seven and zero point eight seven six at three hundred thirteen point one five kelvin. The measured values are zero point two six one and zero point seven five eight."
+   },
+   {
+    "en": "Graduate extension: use C to perturb the tie line within its uncertainty, and see how far tau moves.",
+    "th": "งานเสริมระดับบัณฑิต ใช้ขั้น C เปลี่ยน tie line ภายในช่วงความไม่แน่นอน แล้วดูว่า τ เปลี่ยนไปเท่าใด"
+   }
+  ],
+  "ai-debrief": [
+   {
+    "en": "Here is what the code checks catch.",
+    "th": "นี่คือสิ่งที่การตรวจโค้ดจับได้"
+   },
+   {
+    "en": "A first-draft script with generic starting guesses found the right tau. But its binodal solver, started at 0.4 and 0.6, returned 0.519 in both phases: the trivial solution.",
+    "th": "สคริปต์ร่างแรกที่ใช้ค่าเริ่มต้นทั่วไปได้ τ ถูกต้อง แต่ตัวแก้สมการ binodal ที่เริ่มจาก 0.4 และ 0.6 ให้ 0.519 ในทั้งสองเฟส ซึ่งเป็นคำตอบชัดแจ้ง",
+    "say": "A first-draft script with generic starting guesses found the right tau. But its binodal solver, started at zero point four and zero point six, returned zero point five one nine in both phases: the trivial solution."
+   },
+   {
+    "en": "Its TPD search, started at the feed, returned zero at w equal to z. The lab finds minus 0.0596 at 0.900.",
+    "th": "การค้นหา TPD ที่เริ่มจากสารป้อนให้ค่าศูนย์ที่ w เท่ากับ z ขณะที่ lab พบ −0.0596 ที่ 0.900",
+    "say": "Its TPD search, started at the feed, returned zero at w equal to z. The lab finds minus zero point zero five nine six at zero point nine."
+   },
+   {
+    "en": "Starting the binodal from opposite sides of the spinodal, and scanning the TPD over the whole range, made every check agree.",
+    "th": "การเริ่มแก้ binodal จากคนละฝั่งของ spinodal และการกวาดหา TPD ทั่วทั้งช่วง ทำให้ผ่านการตรวจทุกข้อ"
+   },
+   {
+    "en": "When all checks agree, the code solves your problem. Constant tau still fails at other temperatures.",
+    "th": "เมื่อผ่านทุกข้อ แปลว่าโค้ดแก้ปัญหาตามที่คุณกำหนด แต่ τ คงที่ก็ยังใช้ไม่ได้ที่อุณหภูมิอื่น"
+   }
+  ],
+  "discussion": [
+   {
+    "en": "Discuss in pairs, then with the class.",
+    "th": "อภิปรายเป็นคู่ แล้วอภิปรายร่วมกันทั้งห้อง"
+   },
+   {
+    "en": "Both alpha of 0.2 and 0.3 reproduce the 298.15 kelvin tie line exactly. What data would distinguish them?",
+    "th": "α เท่ากับ 0.2 และ 0.3 ต่างให้ tie line ที่ 298.15 เคลวิน ได้พอดี ข้อมูลใดจะแยกสองค่านี้ได้",
+    "say": "Both alpha of zero point two and zero point three reproduce the two hundred ninety eight point one five kelvin tie line exactly. What data would distinguish them?"
+   },
+   {
+    "en": "The a plus b over T model predicts the gap closes near 324 kelvin. How much would you trust that, and what would you measure?",
+    "th": "แบบจำลอง a + b/T ทำนายว่าช่องว่างการละลายปิดที่ประมาณ 324 เคลวิน คุณเชื่อค่านี้ได้แค่ไหน และจะวัดอะไร",
+    "say": "The a plus b over T model predicts the gap closes near three hundred twenty four kelvin. How much would you trust that, and what would you measure?"
+   },
+   {
+    "en": "For 2-propanol and water, design the cheapest experiment that rules out the predicted split.",
+    "th": "สำหรับ 2-propanol กับน้ำ ให้ออกแบบการทดลองที่ถูกที่สุดเพื่อพิสูจน์ว่าการแยกเฟสที่ทำนายไว้ไม่เกิดขึ้น"
+   }
+  ],
+  "summary": [
+   {
+    "en": "To summarize. Curvature is a local test. A feed splits whenever some trial composition gives a negative TPD, so search the whole range.",
+    "th": "สรุป ความโค้งเป็นการทดสอบเฉพาะที่ สารป้อนจะแยกเฟสเมื่อมีองค์ประกอบทดลองใดให้ TPD เป็นลบ จึงต้องค้นหาทั่วทั้งช่วง"
+   },
+   {
+    "en": "One tie line fixes two parameters exactly. That is calibration, not validation.",
+    "th": "tie line เส้นเดียวกำหนดพารามิเตอร์สองค่าได้พอดี นั่นคือการปรับเทียบ ไม่ใช่การยืนยันความถูกต้อง"
+   },
+   {
+    "en": "Check tau of T on tie lines the fit did not use. Mutual-solubility data decide whether a predicted split is real.",
+    "th": "ตรวจ τ(T) กับ tie line ที่ไม่ได้ใช้ fit และข้อมูลการละลายซึ่งกันและกันเป็นตัวตัดสินว่าการแยกเฟสที่ทำนายไว้เกิดขึ้นจริงหรือไม่"
+   },
+   {
+    "en": "Next session: solids and adsorption.",
+    "th": "คาบหน้า เรื่องของแข็งและการดูดซับ"
+   }
+  ],
+  "exit-ticket": [
+   {
+    "en": "Exit ticket and feedback. Five minutes, on your own.",
+    "th": "exit ticket และความเห็น ใช้เวลาห้านาที ทำคนเดียว"
+   },
+   {
+    "en": "A liquid feed has positive curvature of the Gibbs energy of mixing. Is that enough to call it stable? Which test would you run, and what result would show that it splits?",
+    "th": "สารป้อนของเหลวมีความโค้งของพลังงานกิบส์ของการผสมเป็นบวก เพียงพอหรือไม่ที่จะบอกว่าเสถียร คุณจะใช้การทดสอบใด และผลแบบใดที่แสดงว่ามันแยกเฟส"
+   },
+   {
+    "en": "Scan the QR code or open the link. It is anonymous. Wait until you see Response received.",
+    "th": "สแกน QR code หรือเปิดลิงก์ แบบฟอร์มไม่ระบุตัวตน รอจนขึ้นข้อความ Response received"
+   }
+  ],
+  "after-class": [
+   {
+    "en": "After class, hand in your Lab 05 study file this week, with the two fits, A, B, D and E.",
+    "th": "หลังเลิกเรียน ส่งไฟล์ study ของ Lab 05 ภายในสัปดาห์นี้ พร้อมผล fit สองชุด และขั้น A, B, D และ E"
+   },
+   {
+    "en": "Read the session 4 pre-class note when it is posted.",
+    "th": "อ่านเอกสารเตรียมก่อนเรียนของคาบที่ 4 เมื่อเผยแพร่แล้ว"
+   },
+   {
+    "en": "Graduate students can work through Lab 06 A and B on three-phase equilibrium. See you next session.",
+    "th": "นิสิตบัณฑิตศึกษาทำ Lab 06 ขั้น A และ B เรื่องสมดุลสามเฟสได้ แล้วพบกันคาบหน้า"
+   }
+  ]
+ }
+}
