@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics">
+
+<title>Electrochemical equilibrium: a voltage from activities</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<meta name="robots" content="noindex">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="../site_libs/katex/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+
+<header id="title-block-header">
+<h1 class="title">Electrochemical equilibrium: a voltage from activities</h1>
+<p class="subtitle">Pre-class note for Session 6 · about 20 minutes</p>
+<p class="author">Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics</p>
+
+</header>
+
+
+<div class="draft-note">
+<p>Draft for 2027. If you are taking the course this year, use the current course page.</p>
+</div>
+<div class="purpose">
+<p><strong>Why read this.</strong> Session 5 asked how far a reaction goes. Session 6 holds a reaction at equilibrium with an external voltage and asks what that voltage is. The cell EMF measures Δ<sub>r</sub>G directly, so it is also one of the most precise ways to measure activity coefficients. Work the three questions at the end and bring one question of your own.</p>
+</div>
+<h2 id="emf-and-gibbs-energy">1. EMF and Gibbs energy</h2>
+<p>For a reversible cell transferring n electrons per reaction,</p>
+<p><span class="math display">\Delta_rG=-nFE,\qquad E=E^\circ-\frac{RT}{nF}\ln\prod_i a_i^{\nu_i}.</span></p>
+<p>The Nernst equation is the reaction-equilibrium condition of Session 5 with an electrical work term added. E° is fixed by the standard states; for solutes we use molality with m° = 1 mol/kg.</p>
+<h2 id="mean-ionic-activity">2. Mean ionic activity</h2>
+<p>A single-ion activity cannot be measured: every measurable quantity involves a neutral combination of ions. For a 1:1 salt such as KCl,</p>
+<p><span class="math display">a_{\text{KCl}}=a_{\text{K}^+}a_{\text{Cl}^-}=(m\gamma_\pm)^2.</span></p>
+<p>The square is what makes a KCl cell respond with 2RT/F per unit of ln(mγ±), not RT/F.</p>
+<h2 id="debyehückel-and-its-range">3. Debye–Hückel and its range</h2>
+<p>At low ionic strength I = ½Σm<sub>i</sub>z<sub>i</sub>², long-range Coulomb interactions give the <strong>limiting law</strong></p>
+<p><span class="math display">\log_{10}\gamma_\pm=-A|z_+z_-|\sqrt I,\qquad A=0.509\ (\text{kg/mol})^{1/2}\text{ at }298\ \text{K}.</span></p>
+<p>A is on the log₁₀ basis; on the ln basis it is 1.172. The limiting law is a law of the dilute limit, not a model for 1 mol/kg. An extended form adds an ion-size term and a linear term:</p>
+<p><span class="math display">\ln\gamma_\pm=-\frac{A_{\ln}\sqrt m}{1+b\sqrt m}+c\,m.</span></p>
+<p><strong>Measured data (KCl, 298.2 K).</strong> Nasiri-Lohehsara and Ghalami-Choobar (2018) report γ± from 0.012 to 2.25 mol/kg, with an expanded uncertainty of about 0.03. At 1.0 mol/kg they give 0.597; the limiting law gives 0.310. A fit of the extended form to the twelve rows gives b = 1.135 (kg/mol)<sup>1/2</sup> and c = 0.042 kg/mol, with an RMSE of 0.022 in ln γ±.</p>
+<h2 id="a-concentration-cell">4. A concentration cell</h2>
+<p>Two cells Ag|AgCl|KCl(m)|K⁺-ISE at m₁ and m₂, connected in opposition, cancel E° and leave</p>
+<p><span class="math display">E=\frac{2RT}{F}\ln\frac{m_2\gamma_{\pm,2}}{m_1\gamma_{\pm,1}}.</span></p>
+<p>With m₁ = 0.01 and m₂ = 1.0 mol/kg at 298.15 K, the ideal value is 0.2366 V. With the fitted γ± (0.901 and 0.603) it is 0.2160 V, 21 mV lower. The uncertainty in γ± alone, ±0.03 on each side, carries about ±3 mV into E.</p>
+<p>A cell <strong>with transference</strong>, where the two solutions meet at a liquid junction, has an extra junction potential that depends on ion mobilities. Lab 13 neglects it; Session 6 says when that is acceptable.</p>
+<h2 id="temperature-entropy-and-heat">5. Temperature: entropy and heat</h2>
+<p>From Δ<sub>r</sub>G = −nFE,</p>
+<p><span class="math display">\Delta_rS=nF\Big(\frac{\partial E}{\partial T}\Big)_P,\qquad \Delta_rH=-nF\Big(E-T\frac{\partial E}{\partial T}\Big).</span></p>
+<p>For an ideal concentration cell E is proportional to T, so Δ<sub>r</sub>H = 0: all the electrical work comes from TΔS, heat drawn from the surroundings. With real γ±, ∂ ln γ±/∂T adds the partial molar enthalpies. The KCl data at 298.2 and 308.2 K give γ± at 1 mol/kg of 0.603 and 0.606: a difference of 0.004, far inside the 0.03 uncertainty. These data cannot resolve that derivative; calorimetry can.</p>
+<h2 id="before-session-6">6. Before Session 6</h2>
+<p>Write short answers. We use them in the first 30 minutes.</p>
+<ol type="1">
+<li><strong>Factor 2.</strong> Show from a<sub>KCl</sub> = (mγ±)² that the KCl cell pair gives 2RT/F, not RT/F, and compute the ideal EMF for 0.01 and 1.0 mol/kg at 298.15 K.</li>
+<li><strong>Range.</strong> At 0.0124 mol/kg the data give γ± = 0.927 ± 0.027 and the limiting law 0.878. Is the difference larger than the stated uncertainty? Which would you question first, the lowest row or the law, and why?</li>
+<li><strong>Heat.</strong> An ideal concentration cell delivers 0.2366 V at 298.15 K. How much heat per mole of transferred KCl does it absorb when discharged reversibly, and from where?</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li>Nasiri-Lohehsara, T., Ghalami-Choobar, B. (2018). Thermodynamic study of (KCl + N,N-dimethylformamide + water) system based on potentiometric measurements. <em>J. Chem. Eng. Data</em> 63, 2660–2670. Data via NIST ThermoML.</li>
+<li>Robinson, R. A., Stokes, R. H. (1959). <em>Electrolyte Solutions</em>, 2nd ed.&nbsp;Butterworths. Chapters 2 and 9.</li>
+<li>Newman, J., Balsara, N. P. (2021). <em>Electrochemical Systems</em>, 4th ed.&nbsp;Wiley. Chapters 2 and 3.</li>
+</ul>
+<p><a href="s06.html" class="next-link">Session 6 slides →</a></p>
+
+
+
+
+
+</body></html>

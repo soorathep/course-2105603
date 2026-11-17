@@ -173,7 +173,7 @@ function validInputs(i) { return i && Object.keys(RANGES).every(k => Number.isFi
 function exportStudy() {
   const record = { schema: SCHEMA, engineVersion: engine.ELECTROCHEMISTRY_VERSION ?? null, graduateVersion: CELL_GRADUATE_VERSION, savedAt: new Date().toISOString(),
     inputs: study.inputs || readInputs().inputs, prediction: $('prediction').value, caseName: $('case-name').value, cases: study.cases,
-    notes: notes(), reflection: $('reflection').value, investigations: { activity: Boolean(study.activity), temperature: Boolean(study.temperature), discharge: Boolean(study.discharge) } };
+    notes: notes(), reflection: $('reflection').value, investigations: { activity: Boolean(study.activity), temperature: Boolean(study.temperature), discharge: Boolean(study.discharge) }, aiCode: window.aiCode?.state() };
   const url = URL.createObjectURL(new Blob([JSON.stringify(withStudent(record), null, 2)], { type: 'application/json' })), a = document.createElement('a');
   a.href = url; a.download = studentFileName('lab13-cell-study.json'); a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
   $('status').textContent = 'Study downloaded. Open it later to restore the cases, settings and notes.';

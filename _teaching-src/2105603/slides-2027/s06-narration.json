@@ -1,0 +1,392 @@
+{
+ "session": "s06",
+ "voice": "am_michael",
+ "slides": {
+  "title-slide": [
+   {
+    "en": "Welcome to session 6.",
+    "th": "ยินดีต้อนรับสู่คาบที่ 6"
+   },
+   {
+    "en": "Today a voltage holds a reaction at equilibrium: electrochemical equilibrium.",
+    "th": "วันนี้แรงดันไฟฟ้าเป็นตัวรักษาปฏิกิริยาให้อยู่ที่สมดุล เป็นเรื่องสมดุลเคมีไฟฟ้า"
+   },
+   {
+    "en": "The question for the whole session: a cell voltage is a direct measure of the Gibbs energy change. Which parts of it come from concentration, which from nonideality, and which can the data actually resolve?",
+    "th": "คำถามของทั้งคาบนี้คือ แรงดันของเซลล์เป็นการวัดการเปลี่ยนแปลงพลังงานกิบส์โดยตรง ส่วนใดมาจากความเข้มข้น ส่วนใดมาจากความไม่เป็นอุดมคติ และส่วนใดที่ข้อมูลแยกแยะได้จริง"
+   },
+   {
+    "en": "If you are studying on your own, turn on narration and captions with the buttons at the bottom left. Use the arrow keys to move through the slides.",
+    "th": "ถ้าเรียนด้วยตนเอง เปิดเสียงบรรยายและคำบรรยายได้ที่ปุ่มมุมซ้ายล่าง และใช้ปุ่มลูกศรเพื่อเลื่อนสไลด์"
+   }
+  ],
+  "course-map": [
+   {
+    "en": "This is session 6 of 7 after the midterm: electrochemical equilibrium.",
+    "th": "นี่คือคาบที่ 6 จาก 7 คาบหลังสอบกลางภาค เรื่องสมดุลเคมีไฟฟ้า"
+   },
+   {
+    "en": "The voltage measures the Gibbs energy change. That makes the cell one of the most precise instruments for activity coefficients, and one of the easiest to misread.",
+    "th": "แรงดันวัดการเปลี่ยนแปลงพลังงานกิบส์ เซลล์จึงเป็นเครื่องมือที่แม่นยำที่สุดชนิดหนึ่งสำหรับวัดสัมประสิทธิ์กิจกรรม และเป็นเครื่องมือที่อ่านผิดได้ง่ายชนิดหนึ่งด้วย"
+   }
+  ],
+  "why": [
+   {
+    "en": "Two cells measure potassium chloride at 0.01 and 1.0 moles per kilogram, connected in opposition.",
+    "th": "เซลล์สองเซลล์วัดโพแทสเซียมคลอไรด์ที่ 0.01 และ 1.0 โมลต่อกิโลกรัม ต่อกันแบบหักล้าง",
+    "say": "Two cells measure potassium chloride at zero point zero one and one mole per kilogram, connected in opposition."
+   },
+   {
+    "en": "The ideal voltage is 236.6 millivolts. With the measured activity coefficients it is 216.0.",
+    "th": "แรงดันแบบอุดมคติเท่ากับ 236.6 มิลลิโวลต์ เมื่อใช้สัมประสิทธิ์กิจกรรมที่วัดได้จะเท่ากับ 216.0",
+    "say": "The ideal voltage is two hundred thirty six point six millivolts. With the measured activity coefficients it is two hundred sixteen."
+   },
+   {
+    "en": "21 millivolts is 9 percent of the signal. Writing R T over F where the salt needs 2 R T over F halves the answer.",
+    "th": "21 มิลลิโวลต์คือ 9 เปอร์เซ็นต์ของสัญญาณ ถ้าใช้ RT/F ในกรณีที่เกลือต้องใช้ 2RT/F คำตอบจะลดลงครึ่งหนึ่ง",
+    "say": "Twenty one millivolts is nine percent of the signal. Writing R T over F where the salt needs two R T over F halves the answer."
+   }
+  ],
+  "recap": [
+   {
+    "en": "In session 5, a reaction was at equilibrium when the Gibbs energy change was zero.",
+    "th": "ในคาบที่ 5 ปฏิกิริยาอยู่ที่สมดุลเมื่อการเปลี่ยนแปลงพลังงานกิบส์เป็นศูนย์"
+   },
+   {
+    "en": "Today the same reaction is balanced by electrical work: the Gibbs energy change equals minus n F E.",
+    "th": "วันนี้ปฏิกิริยาเดียวกันถูกสมดุลด้วยงานไฟฟ้า การเปลี่ยนแปลงพลังงานกิบส์เท่ากับ −nFE"
+   },
+   {
+    "en": "That gives the Nernst equation, written in activities on the molality scale.",
+    "th": "ซึ่งให้สมการ Nernst ที่เขียนในรูป activity บนสเกลโมแลลิตี"
+   }
+  ],
+  "outcomes": [
+   {
+    "en": "By the end of today you should be able to do five things.",
+    "th": "เมื่อจบคาบนี้ คุณควรทำได้ห้าอย่าง"
+   },
+   {
+    "en": "Write the Nernst equation with explicit activities and standard states.",
+    "th": "เขียนสมการ Nernst โดยระบุ activity และสถานะมาตรฐานชัดเจน"
+   },
+   {
+    "en": "Use mean ionic activities, and say why single-ion activities are not measured.",
+    "th": "ใช้ activity เฉลี่ยของไอออน และบอกได้ว่าทำไมจึงวัด activity ของไอออนเดี่ยวไม่ได้"
+   },
+   {
+    "en": "Fit an extended Debye-Hückel model to measured data, and state its range.",
+    "th": "fit แบบจำลอง Debye-Hückel แบบขยายกับข้อมูลที่วัดได้ และระบุช่วงที่ใช้ได้"
+   },
+   {
+    "en": "Obtain the entropy and enthalpy changes from d E d T, and judge whether the data can resolve them.",
+    "th": "หาการเปลี่ยนแปลงเอนโทรปีและเอนทาลปีจาก dE/dT และตัดสินว่าข้อมูลแยกแยะค่าเหล่านี้ได้หรือไม่"
+   },
+   {
+    "en": "And specify the calculation for an AI assistant to code, then verify the code.",
+    "th": "และเขียนข้อกำหนดการคำนวณให้ผู้ช่วย AI เขียนโค้ด แล้วตรวจโค้ดนั้น"
+   }
+  ],
+  "route": [
+   {
+    "en": "This is the plan for the three hours.",
+    "th": "นี่คือแผนของการเรียนสามชั่วโมง"
+   },
+   {
+    "en": "Thirty minutes of concepts: Nernst, mean activity, Debye-Hückel, and the temperature derivative.",
+    "th": "สามสิบนาทีแรกเป็นแนวคิด ได้แก่ สมการ Nernst activity เฉลี่ย Debye-Hückel และอนุพันธ์ตามอุณหภูมิ"
+   },
+   {
+    "en": "Activity 1 is about the factor 2. Then I demonstrate Lab 13.",
+    "th": "กิจกรรมที่ 1 เป็นเรื่องตัวประกอบ 2 จากนั้นผมจะสาธิต Lab 13"
+   },
+   {
+    "en": "After the break you work in pairs in Lab 13, then on your own code, and we finish by discussing what a voltage can tell you.",
+    "th": "หลังพักให้ทำงานเป็นคู่ใน Lab 13 ต่อด้วยโค้ดของตัวเอง และปิดท้ายด้วยการอภิปรายว่าแรงดันบอกอะไรได้บ้าง"
+   },
+   {
+    "en": "If you are studying on your own, follow the same order and pause at each activity slide.",
+    "th": "ถ้าเรียนด้วยตนเอง ให้ทำตามลำดับเดียวกัน และหยุดที่สไลด์กิจกรรมแต่ละสไลด์"
+   }
+  ],
+  "mean": [
+   {
+    "en": "Every measurable quantity involves a neutral combination of ions, so single-ion activities are not measured.",
+    "th": "ปริมาณที่วัดได้ทุกตัวเกี่ยวข้องกับไอออนในสัดส่วนที่เป็นกลางทางไฟฟ้า จึงวัด activity ของไอออนเดี่ยวไม่ได้"
+   },
+   {
+    "en": "For a one-to-one salt, the activity of potassium chloride is m gamma plus-minus, squared.",
+    "th": "สำหรับเกลือแบบ 1:1 activity ของโพแทสเซียมคลอไรด์เท่ากับ (mγ±)²"
+   },
+   {
+    "en": "A cell that responds to potassium chloride therefore gives 2 R T over F times the log of the ratio of m gamma.",
+    "th": "เซลล์ที่ตอบสนองต่อโพแทสเซียมคลอไรด์จึงให้ 2RT/F คูณ ln ของอัตราส่วนของ mγ±"
+   },
+   {
+    "en": "The pair of cells cancels the standard potential and avoids a liquid junction.",
+    "th": "การต่อเซลล์สองเซลล์แบบหักล้างตัดศักย์มาตรฐานออก และไม่มีรอยต่อของเหลว"
+   }
+  ],
+  "dh": [
+   {
+    "en": "The Debye-Hückel limiting law uses A equal to 0.509 on the log 10 basis; on the natural-log basis it is 1.172.",
+    "th": "กฎจำกัดของ Debye-Hückel ใช้ A เท่ากับ 0.509 บนฐาน log₁₀ ถ้าใช้ฐาน ln จะเท่ากับ 1.172",
+    "say": "The Debye-Hückel limiting law uses A equal to zero point five zero nine on the log ten basis; on the natural-log basis it is one point one seven two."
+   },
+   {
+    "en": "At 1.0 mole per kilogram the limiting law gives 0.310. The data give 0.597.",
+    "th": "ที่ 1.0 โมลต่อกิโลกรัม กฎจำกัดให้ 0.310 ขณะที่ข้อมูลให้ 0.597",
+    "say": "At one mole per kilogram the limiting law gives zero point three one. The data give zero point five nine seven."
+   },
+   {
+    "en": "An extended form with two fitted constants follows the data to 0.022 in ln gamma, close to their stated uncertainty.",
+    "th": "รูปแบบขยายที่มีค่าคงที่สองตัวที่ fit ได้ ตามข้อมูลได้ภายใน 0.022 ใน ln γ ซึ่งใกล้กับความไม่แน่นอนที่ระบุไว้ของข้อมูล",
+    "say": "An extended form with two fitted constants follows the data to zero point zero two two in ln gamma, close to their stated uncertainty."
+   }
+  ],
+  "temperature": [
+   {
+    "en": "The entropy change is n F times d E d T, and the enthalpy change follows from E and its derivative.",
+    "th": "การเปลี่ยนแปลงเอนโทรปีเท่ากับ nF คูณ dE/dT และการเปลี่ยนแปลงเอนทาลปีหาได้จาก E และอนุพันธ์ของมัน"
+   },
+   {
+    "en": "For an ideal concentration cell, E is proportional to T and the enthalpy change is zero. All the electrical work is heat drawn from the surroundings.",
+    "th": "สำหรับเซลล์ความเข้มข้นแบบอุดมคติ E แปรผันตรงกับ T และการเปลี่ยนแปลงเอนทาลปีเป็นศูนย์ งานไฟฟ้าทั้งหมดมาจากความร้อนที่ดึงจากสิ่งแวดล้อม"
+   },
+   {
+    "en": "The potassium chloride data at two temperatures give activity coefficients at 1 mole per kilogram of 0.603 and 0.606. The difference is far inside the 0.03 uncertainty, so these data cannot resolve the derivative.",
+    "th": "ข้อมูลโพแทสเซียมคลอไรด์ที่สองอุณหภูมิให้สัมประสิทธิ์กิจกรรมที่ 1 โมลต่อกิโลกรัมเท่ากับ 0.603 และ 0.606 ความต่างอยู่ในช่วงความไม่แน่นอน 0.03 ข้อมูลชุดนี้จึงหาอนุพันธ์ไม่ได้",
+    "say": "The potassium chloride data at two temperatures give activity coefficients at one mole per kilogram of zero point six zero three and zero point six zero six. The difference is far inside the zero point zero three uncertainty, so these data cannot resolve the derivative."
+   }
+  ],
+  "batteries": [
+   {
+    "en": "In a battery, the equilibrium part of the concentration loss is a concentration cell inside the battery.",
+    "th": "ในแบตเตอรี่ ส่วนสมดุลของการสูญเสียจากความเข้มข้นคือเซลล์ความเข้มข้นที่อยู่ภายในแบตเตอรี่"
+   },
+   {
+    "en": "With measured activity coefficients it changes by 9 percent in the potassium chloride example and by 37 percent in the week 7 example.",
+    "th": "เมื่อใช้สัมประสิทธิ์กิจกรรมที่วัดได้ ค่านี้เปลี่ยนไป 9 เปอร์เซ็นต์ในตัวอย่างโพแทสเซียมคลอไรด์ และ 37 เปอร์เซ็นต์ในตัวอย่างสัปดาห์ที่ 7",
+    "say": "With measured activity coefficients it changes by nine percent in the potassium chloride example and by thirty seven percent in the week seven example."
+   },
+   {
+    "en": "An ion-selective electrode reads activity, not concentration. Carry gamma through, or a high-ionic-strength sample is misread.",
+    "th": "อิเล็กโทรดเลือกไอออนอ่านค่า activity ไม่ใช่ความเข้มข้น ต้องรวม γ ในการคำนวณ มิฉะนั้นตัวอย่างที่มีความแรงไอออนสูงจะอ่านผิด"
+   }
+  ],
+  "activity-1": [
+   {
+    "en": "Activity 1. Ten minutes, alone, then with a partner.",
+    "th": "กิจกรรมที่ 1 ใช้เวลาสิบนาที ทำคนเดียวก่อน แล้วคุยกับเพื่อน"
+   },
+   {
+    "en": "Use the measured activity coefficients at 0.0124 and 1.0003 moles per kilogram. Compute the cell voltage, ideal and with these values.",
+    "th": "ใช้สัมประสิทธิ์กิจกรรมที่วัดได้ที่ 0.0124 และ 1.0003 โมลต่อกิโลกรัม คำนวณแรงดันของเซลล์ทั้งแบบอุดมคติและแบบใช้ค่าเหล่านี้",
+    "say": "Use the measured activity coefficients at zero point zero one two four and one point zero zero zero three moles per kilogram. Compute the cell voltage, ideal and with these values."
+   },
+   {
+    "en": "Where does the 2 come from? And how large is the uncertainty in E from the uncertainty in gamma?",
+    "th": "ตัวประกอบ 2 มาจากไหน และความไม่แน่นอนของ E ที่มาจากความไม่แน่นอนของ γ มีขนาดเท่าใด"
+   }
+  ],
+  "activity-1-debrief": [
+   {
+    "en": "Check your answer. 2 R T over F is 51.39 millivolts at 298.15 kelvin.",
+    "th": "ตรวจคำตอบ 2RT/F เท่ากับ 51.39 มิลลิโวลต์ ที่ 298.15 เคลวิน",
+    "say": "Check your answer. Two R T over F is fifty one point three nine millivolts at two hundred ninety eight point one five kelvin."
+   },
+   {
+    "en": "The ideal voltage is 225.6 millivolts, and with the measured gamma it is 203.0.",
+    "th": "แรงดันแบบอุดมคติเท่ากับ 225.6 มิลลิโวลต์ และเมื่อใช้ γ ที่วัดได้เท่ากับ 203.0",
+    "say": "The ideal voltage is two hundred twenty five point six millivolts, and with the measured gamma it is two hundred three."
+   },
+   {
+    "en": "The uncertainty from gamma alone is about 3 millivolts, larger than the effect of a 10 kelvin change in these data.",
+    "th": "ความไม่แน่นอนที่มาจาก γ อย่างเดียวประมาณ 3 มิลลิโวลต์ ซึ่งมากกว่าผลของการเปลี่ยนอุณหภูมิ 10 เคลวิน ในข้อมูลชุดนี้",
+    "say": "The uncertainty from gamma alone is about three millivolts, larger than the effect of a ten kelvin change in these data."
+   }
+  ],
+  "demo-lab": [
+   {
+    "en": "Now Lab 13. The teaching cell at 0.01 and 1.0 moles per liter gives 59.2 millivolts with gamma equal to one.",
+    "th": "ต่อไปคือ Lab 13 เซลล์สำหรับการสอนที่ 0.01 และ 1.0 โมลต่อลิตร ให้ 59.2 มิลลิโวลต์ เมื่อ γ เท่ากับหนึ่ง",
+    "say": "Now Lab 13. The teaching cell at zero point zero one and one mole per liter gives fifty nine point two millivolts with gamma equal to one."
+   },
+   {
+    "en": "In A, the limiting law at an ionic strength of 3 gives minus 34.7 millivolts: the wrong sign. The extended form gives 29.9.",
+    "th": "ในขั้น A กฎจำกัดที่ความแรงไอออน 3 ให้ −34.7 มิลลิโวลต์ ซึ่งผิดเครื่องหมาย รูปแบบขยายให้ 29.9",
+    "say": "In A, the limiting law at an ionic strength of three gives minus thirty four point seven millivolts: the wrong sign. The extended form gives twenty nine point nine."
+   },
+   {
+    "en": "In B, E is proportional to T, and the enthalpy change is zero. A law outside its range does not degrade gracefully.",
+    "th": "ในขั้น B E แปรผันตรงกับ T และการเปลี่ยนแปลงเอนทาลปีเป็นศูนย์ กฎที่ใช้นอกช่วงไม่ได้ให้ผลคลาดเพียงเล็กน้อย"
+   }
+  ],
+  "mistakes": [
+   {
+    "en": "Four common mistakes before you start.",
+    "th": "ข้อผิดพลาดที่พบบ่อยสี่ข้อก่อนเริ่มทำ"
+   },
+   {
+    "en": "One: R T over F for a one-to-one salt. Without the square, E is half.",
+    "th": "หนึ่ง ใช้ RT/F กับเกลือแบบ 1:1 ถ้าไม่ยกกำลังสอง E จะเหลือครึ่งหนึ่ง"
+   },
+   {
+    "en": "Two: A of 0.509 used with natural logs. It is a log 10 constant.",
+    "th": "สอง ใช้ A เท่ากับ 0.509 กับ ln ทั้งที่เป็นค่าคงที่บนฐาน log₁₀"
+   },
+   {
+    "en": "Three: the limiting law at high ionic strength.",
+    "th": "สาม ใช้กฎจำกัดที่ความแรงไอออนสูง"
+   },
+   {
+    "en": "Four: reading a temperature derivative from data that cannot resolve it.",
+    "th": "สี่ อ่านอนุพันธ์ตามอุณหภูมิจากข้อมูลที่แยกแยะค่านั้นไม่ได้"
+   }
+  ],
+  "ai-code": [
+   {
+    "en": "As before, you may use an AI assistant to write code. You decide everything else.",
+    "th": "เช่นเดิม คุณใช้ผู้ช่วย AI เขียนโค้ดได้ เรื่องอื่นทั้งหมดคุณตัดสินเอง"
+   },
+   {
+    "en": "That means the model, its basis and units, the rows and the objective, the cell reaction and the activity of the salt.",
+    "th": "ได้แก่ แบบจำลอง ฐานและหน่วย แถวข้อมูลและฟังก์ชันวัตถุประสงค์ ปฏิกิริยาของเซลล์ และ activity ของเกลือ"
+   },
+   {
+    "en": "Lab 13 step E recomputes six results from the measured data, and fits the second temperature for the discussion.",
+    "th": "ขั้น E ของ Lab 13 คำนวณผลหกรายการใหม่จากข้อมูลที่วัดได้ และ fit ข้อมูลที่อุณหภูมิที่สองเพื่อใช้ในการอภิปราย"
+   }
+  ],
+  "break": [
+   {
+    "en": "Take a ten-minute break.",
+    "th": "พักสิบนาที"
+   },
+   {
+    "en": "Next is activity 2, a pair investigation in Lab 13. Check that the lab opens on your device before the break ends.",
+    "th": "ต่อไปคือกิจกรรมที่ 2 ทำงานเป็นคู่ใน Lab 13 ตรวจว่า lab เปิดได้บนอุปกรณ์ของคุณก่อนหมดเวลาพัก"
+   }
+  ],
+  "activity-2": [
+   {
+    "en": "Activity 2 takes seventy minutes, in pairs. One drives Lab 13, the other checks by hand, then swap.",
+    "th": "กิจกรรมที่ 2 ใช้เวลาเจ็ดสิบนาที ทำเป็นคู่ คนหนึ่งใช้ Lab 13 อีกคนตรวจด้วยมือ แล้วสลับกัน"
+   },
+   {
+    "en": "First, by hand: ionic strengths and limiting-law activity coefficients for three salts.",
+    "th": "ขั้นแรก คำนวณด้วยมือ ความแรงไอออนและสัมประสิทธิ์กิจกรรมจากกฎจำกัดของเกลือสามชนิด"
+   },
+   {
+    "en": "Then Lab 13 A and B: activity forms, and E, entropy and enthalpy across temperature.",
+    "th": "จากนั้น Lab 13 ขั้น A และ B เรื่องรูปแบบของสัมประสิทธิ์กิจกรรม และ E เอนโทรปี และเอนทาลปีที่อุณหภูมิต่างๆ"
+   },
+   {
+    "en": "Next, step E with your own code, written by an AI assistant from your specification.",
+    "th": "ต่อไป ขั้น E ด้วยโค้ดของคุณเอง ที่ผู้ช่วย AI เขียนจากข้อกำหนดของคุณ"
+   },
+   {
+    "en": "Finally, explain with numbers how much of the ideal voltage survives nonideality, and how well you know it.",
+    "th": "สุดท้าย อธิบายด้วยตัวเลขว่าแรงดันแบบอุดมคติเหลืออยู่เท่าใดเมื่อคิดความไม่เป็นอุดมคติ และคุณรู้ค่านี้แม่นเพียงใด"
+   }
+  ],
+  "activity-2-check": [
+   {
+    "en": "This is what to hand in: the Lab 13 study file with A, B and E, the hand calculation, and two sentences.",
+    "th": "สิ่งที่ต้องส่งคือ ไฟล์ study ของ Lab 13 ที่มีขั้น A, B และ E การคำนวณด้วยมือ และสองประโยค"
+   },
+   {
+    "en": "Use the table to check your results. The fitted voltage between 0.01 and 1.0 moles per kilogram is 215.99 millivolts.",
+    "th": "ใช้ตารางนี้ตรวจผล แรงดันจากแบบจำลองที่ fit ได้ระหว่าง 0.01 และ 1.0 โมลต่อกิโลกรัม เท่ากับ 215.99 มิลลิโวลต์",
+    "say": "Use the table to check your results. The fitted voltage between zero point zero one and one mole per kilogram is two hundred fifteen point nine nine millivolts."
+   },
+   {
+    "en": "Graduate extension: let b and c vary linearly with temperature, and test whether the slope is distinguishable from zero.",
+    "th": "งานเสริมระดับบัณฑิต ให้ b และ c แปรเชิงเส้นตามอุณหภูมิ แล้วทดสอบว่าความชันต่างจากศูนย์อย่างมีนัยหรือไม่"
+   }
+  ],
+  "ai-debrief": [
+   {
+    "en": "Here is what the code checks catch.",
+    "th": "นี่คือสิ่งที่การตรวจโค้ดจับได้"
+   },
+   {
+    "en": "A first-draft script fitted on the log 10 basis, so its c was smaller by ln 10. Same fit, different units.",
+    "th": "สคริปต์ร่างแรก fit บนฐาน log₁₀ ค่า c จึงเล็กกว่าด้วยตัวประกอบ ln 10 เป็นการ fit เดียวกันแต่หน่วยต่างกัน"
+   },
+   {
+    "en": "It then wrote the cell with n equal to one and the activity as m gamma, missing the square. Every voltage was half.",
+    "th": "จากนั้นเขียนสมการเซลล์ด้วย n เท่ากับหนึ่ง และ activity เท่ากับ mγ โดยไม่ยกกำลังสอง แรงดันทุกค่าจึงเหลือครึ่งหนึ่ง"
+   },
+   {
+    "en": "The fit was right and the chemistry was wrong. A fitting routine cannot know how many ions the salt has.",
+    "th": "การ fit ถูกต้อง แต่เคมีผิด โปรแกรม fit ไม่รู้ว่าเกลือมีไอออนกี่ตัว"
+   }
+  ],
+  "discussion": [
+   {
+    "en": "Discuss in pairs, then with the class.",
+    "th": "อภิปรายเป็นคู่ แล้วอภิปรายร่วมกันทั้งห้อง"
+   },
+   {
+    "en": "At the lowest molality the data sit above the limiting law by more than their uncertainty. Do you question the row or the law?",
+    "th": "ที่โมแลลิตีต่ำสุด ข้อมูลอยู่สูงกว่ากฎจำกัดมากกว่าความไม่แน่นอน คุณจะสงสัยแถวข้อมูลหรือกฎ"
+   },
+   {
+    "en": "You need the temperature derivative of ln gamma at 1 mole per kilogram to ten percent. Design the measurement.",
+    "th": "คุณต้องการอนุพันธ์ของ ln γ ตามอุณหภูมิที่ 1 โมลต่อกิโลกรัม ให้แม่นภายในสิบเปอร์เซ็นต์ ให้ออกแบบการวัด"
+   },
+   {
+    "en": "A battery model uses gamma equal to one. At what concentration would you start to worry, and how would you check?",
+    "th": "แบบจำลองแบตเตอรี่ใช้ γ เท่ากับหนึ่ง คุณจะเริ่มกังวลที่ความเข้มข้นเท่าใด และจะตรวจอย่างไร"
+   }
+  ],
+  "summary": [
+   {
+    "en": "To summarize. The Nernst equation is reaction equilibrium with electrical work, in activities on a stated scale.",
+    "th": "สรุป สมการ Nernst คือสมดุลของปฏิกิริยาที่มีงานไฟฟ้า เขียนในรูป activity บนสเกลที่ระบุ"
+   },
+   {
+    "en": "Only neutral combinations are measured. The limiting law is a dilute limit; fit an extended form to data and state its range.",
+    "th": "วัดได้เฉพาะไอออนในสัดส่วนที่เป็นกลาง กฎจำกัดใช้ได้ที่สภาวะเจือจาง ให้ fit รูปแบบขยายกับข้อมูลและระบุช่วงที่ใช้ได้"
+   },
+   {
+    "en": "Check that the data resolve d E d T before you report an entropy or enthalpy from it.",
+    "th": "ตรวจว่าข้อมูลแยกแยะ dE/dT ได้ ก่อนรายงานเอนโทรปีหรือเอนทาลปีที่คำนวณจากค่านี้"
+   },
+   {
+    "en": "Next session: choosing a model from evidence, a synthesis of sessions 1 to 6.",
+    "th": "คาบหน้า เรื่องการเลือกแบบจำลองจากหลักฐาน ซึ่งเป็นการสังเคราะห์เนื้อหาคาบที่ 1 ถึง 6"
+   }
+  ],
+  "exit-ticket": [
+   {
+    "en": "Exit ticket and feedback. Five minutes, on your own.",
+    "th": "exit ticket และความเห็น ใช้เวลาห้านาที ทำคนเดียว"
+   },
+   {
+    "en": "A potassium chloride concentration cell measures 0.216 volts; the ideal value is 0.237. What does the 21 millivolts tell you, and what would it take to turn it into a temperature derivative of gamma?",
+    "th": "เซลล์ความเข้มข้นโพแทสเซียมคลอไรด์วัดได้ 0.216 โวลต์ ค่าแบบอุดมคติคือ 0.237 21 มิลลิโวลต์บอกอะไรคุณ และต้องทำอะไรจึงจะได้อนุพันธ์ของ γ ตามอุณหภูมิจากค่านี้",
+    "say": "A potassium chloride concentration cell measures zero point two one six volts; the ideal value is zero point two three seven. What does the twenty one millivolts tell you, and what would it take to turn it into a temperature derivative of gamma?"
+   },
+   {
+    "en": "Scan the QR code or open the link. It is anonymous. Wait until you see Response received.",
+    "th": "สแกน QR code หรือเปิดลิงก์ แบบฟอร์มไม่ระบุตัวตน รอจนขึ้นข้อความ Response received"
+   }
+  ],
+  "after-class": [
+   {
+    "en": "After class, hand in your Lab 13 study file this week, with A, B and E.",
+    "th": "หลังเลิกเรียน ส่งไฟล์ study ของ Lab 13 ภายในสัปดาห์นี้ พร้อมขั้น A, B และ E"
+   },
+   {
+    "en": "Before session 7, review the six exit tickets and your lab files.",
+    "th": "ก่อนคาบที่ 7 ให้ทบทวน exit ticket ทั้งหกครั้งและไฟล์ lab ของคุณ"
+   },
+   {
+    "en": "Graduate students can work through Lab 13 C, and repeat step E with temperature-dependent parameters. See you next session.",
+    "th": "นิสิตบัณฑิตศึกษาทำ Lab 13 ขั้น C และทำขั้น E ซ้ำด้วยพารามิเตอร์ที่ขึ้นกับอุณหภูมิได้ แล้วพบกันคาบหน้า"
+   }
+  ]
+ }
+}

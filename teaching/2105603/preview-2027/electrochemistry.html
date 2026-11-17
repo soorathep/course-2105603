@@ -148,6 +148,39 @@
         <div class="graduate-actions"><button id="check-evidence" type="button" class="secondary-button">Check my evidence record</button></div><p id="evidence-status" class="graduate-status" role="status"></p>
         <p class="graduate-note">The record check only confirms that the sections and calculations are present. It is a completeness reminder, not a grade; scientific reasoning still needs instructor review.</p>
       </section>
+
+      <section class="graduate-step" id="ai-code" aria-labelledby="ai-heading">
+        <h3 id="ai-heading">E. Measured activity coefficients: check code that an AI assistant helped you write</h3>
+        <p>A–D use a teaching cell with assumed γ. Here the data are measured: the mean ionic activity coefficient of KCl in water at 298.2 and 308.2 K, from 0.012 to 2.5 mol/kg (Nasiri-Lohehsara and Ghalami-Choobar, <i>J. Chem. Eng. Data</i> 63 (2018) 2660, via NIST ThermoML). You may use an AI assistant to <strong>write code</strong>. You decide everything else: the model, its basis and units, which rows, the cell equation, and what the result means.</p>
+        <ol class="graduate-checklist"><li>Write your specification first, in your own words, before you open the assistant.</li><li>Download the data. Ask the assistant to write Python that: (a) gives the Debye–Hückel limiting-law γ± at 0.0124 mol/kg; (b) fits b and c in ln γ± = −A√m/(1 + b√m) + c·m to the 298.2 K rows by least squares in ln γ±, with A = 0.509 ln 10 (kg/mol)<sup>1/2</sup>; (c) reports the RMSE and γ± at 1.0 mol/kg; (d) computes the EMF at 298.15 K of two cells Ag|AgCl|KCl(m)|K⁺-ISE at m₁ and m₂ connected in opposition, ideal and with your γ±. Run it yourself.</li><li>Enter the outputs and run the checks. When a check disagrees, find the cause, fix it, and rerun.</li><li>Paste your specification, the prompt and the final code. They are saved in the study file.</li></ol>
+        <div class="graduate-actions"><button id="ai-csv" type="button" class="secondary-button" disabled>Download the measured γ± (CSV)</button></div>
+        <p class="graduate-note">Each cell responds to the activity of KCl, a<sub>KCl</sub> = a<sub>K⁺</sub>a<sub>Cl⁻</sub> = (mγ±)² on the molality scale with m° = 1 mol/kg. Two cells in opposition cancel E°. The stated expanded uncertainty of γ± is about 0.03 at 95 %.</p>
+        <label for="ai-spec">Your specification, written before you used the assistant</label><textarea id="ai-spec" rows="5" maxlength="10000" placeholder="Model and basis (ln or log10); A and its units; rows and objective; starting values; the cell reaction, n and the activity of KCl; outputs."></textarea>
+        <div class="graduate-grid"><div><label for="ai-tool">Assistant and version</label><input id="ai-tool" type="text" maxlength="200" placeholder="for example, the name and model"></div></div>
+        <label for="ai-prompt">The prompt or prompts you used</label><textarea id="ai-prompt" rows="4" maxlength="20000"></textarea>
+        <label for="ai-codetext">Final code that produced the outputs below</label><textarea id="ai-codetext" rows="8" maxlength="60000" spellcheck="false" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.78rem"></textarea>
+        <h4>Outputs from your code</h4>
+        <div class="graduate-grid">
+          <div><label for="ai-set">Rows fitted</label><select id="ai-set"><option value="298.2" selected>298.2 K (12 rows)</option><option value="308.2">308.2 K (13 rows)</option><option value="all">Both temperatures</option></select></div>
+          <div><label for="ai-lim">(a) Limiting-law γ± at 0.0124</label><input id="ai-lim" type="number" step="any"></div>
+          <div><label for="ai-b">(b) b</label><div class="quantity-input"><input id="ai-b" type="number" step="any"><span>(kg/mol)<sup>1/2</sup></span></div></div>
+          <div><label for="ai-c">(b) c</label><div class="quantity-input"><input id="ai-c" type="number" step="any"><span>kg/mol</span></div></div>
+          <div><label for="ai-rmse">(c) RMSE in ln γ±</label><input id="ai-rmse" type="number" step="any"></div>
+          <div><label for="ai-g1">(c) γ± at 1.0 mol/kg</label><input id="ai-g1" type="number" step="any"></div>
+          <div><label for="ai-m1">(d) m₁</label><div class="quantity-input"><input id="ai-m1" type="number" step="any" value="0.01"><span>mol/kg</span></div></div>
+          <div><label for="ai-m2">(d) m₂</label><div class="quantity-input"><input id="ai-m2" type="number" step="any" value="1"><span>mol/kg</span></div></div>
+          <div><label for="ai-eid">(d) EMF, ideal</label><div class="quantity-input"><input id="ai-eid" type="number" step="any"><span>V</span></div></div>
+          <div><label for="ai-e">(d) EMF with your γ±</label><div class="quantity-input"><input id="ai-e" type="number" step="any"><span>V</span></div></div>
+        </div>
+        <div class="graduate-actions"><button id="ai-run" type="button" class="primary-button" disabled>Check my outputs</button></div>
+        <p id="ai-status" class="graduate-status" role="status">Enter the outputs from your code, then run the checks.</p>
+        <div id="ai-results" hidden>
+          <div class="table-scroll graduate-table" role="region" aria-label="Checks of your code outputs against the lab" tabindex="0"><table><thead><tr><th scope="col">Check</th><th scope="col">Lab</th><th scope="col">Your code</th><th scope="col">Result</th><th scope="col">Likely cause</th></tr></thead><tbody id="ai-out"></tbody></table></div>
+          <p class="graduate-note">Agreement shows that your code solves the problem you specified. It does not show that the model holds beyond the data, that single-ion activities can be separated, or that the ISE responds ideally. The last row fits the 308.2 K data for the discussion.</p>
+        </div>
+        <label for="ai-found">What disagreed, what was wrong in the code, and how you fixed it</label><textarea id="ai-found" rows="3" maxlength="10000" placeholder="Name the check, the line of code, and the fix. If every check agreed at once, say which check you would trust least and why."></textarea>
+        <label for="ai-own">What you decided yourself, and what these data cannot give</label><textarea id="ai-own" rows="3" maxlength="10000" placeholder="For example: the basis, the cell equation. Then: can the two temperatures give d ln γ±/dT within the uncertainty?"></textarea>
+      </section>
     </section>
 
     <section class="panel comparison-panel" aria-labelledby="comparison-heading">
@@ -166,6 +199,6 @@
   <footer class="site-footer"><span>2105603 · Advanced Chemical Engineering Thermodynamics</span><a href="design-notes.html">2027 design and pilot plan</a></footer>
   <script src="../labs/assets/plotly.min.js" defer></script>
   <script type="module" src="assets/mode.js?v=mode-3"></script>
-  <script type="module" src="assets/electrochemistry-lab.js?v=lab13-1"></script>
+  <script type="module" src="assets/electrochemistry-lab.js?v=lab13-2"></script><script type="module" src="assets/kclcode.js?v=1"></script>
 </body>
 </html>
