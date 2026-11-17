@@ -1,0 +1,479 @@
+---
+title: "Choosing a model from evidence: synthesis and exam preparation"
+subtitle: "Session 7 of 7 · 180 minutes"
+author: "Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics"
+title-slide-attributes:
+  data-background-color: "#1C242B"
+---
+
+## Where this session sits {#course-map}
+
+::: {.coursemap}
+::: {.half .done}
+[Before the midterm]{.label}
+[Equations of state]{.cm} [Fugacity and chemical potential]{.cm} [Solution thermodynamics]{.cm}
+:::
+::: {.half}
+[After the midterm · 7 sessions]{.label}
+[1 · VLE and flash]{.cm .past} [2 · Experimental VLE and consistency]{.cm .past} [3 · Liquid stability and LLE]{.cm .past} [4 · Solids and adsorption]{.cm .past} [5 · Chemical equilibrium]{.cm .past} [6 · Electrochemical equilibrium]{.cm .past} [7 · Choosing a model from evidence]{.cm .now}
+:::
+:::
+
+::: {.bridge}
+Six sessions, one condition: equal chemical potential. Today we ask one question of every result: **what evidence would make you trust it?** Then we practice the kind of problem the exam asks.
+:::
+
+## Why this matters: five results that looked right {#why}
+
+::: {.lever-box}
+[Each session had a result that passed the obvious test, and the evidence that decided it]{.label}
+
+| Session | Looked right | What decided |
+|---|---|---|
+| 2 · VLE | weighted NRTL, RMS(r/σ) = 1.16 | predicts a split at x₁ = 0.088–0.237 in a miscible liquid |
+| 3 · LLE | exact fit to one tie line | held-out tie lines: 0.077 with constant τ, 0.0097 with a + b/T |
+| 4 · SLE | w = +238 J/mol, naphthalene–benzene | other fusion data give w = −522; the prediction is unchanged |
+| 5 · reaction | the solver converged | constant-ΔH K gives 0.498 conversion; correct K gives 0.795 |
+| 6 · cell | γ± fitted to ±0.022 in ln γ | the cell needs (mγ±)²; without the square every EMF is half |
+:::
+
+In each case, a small residual was the wrong test. The question was always which evidence the claim needed.
+
+## By the end of today you can {#outcomes}
+
+[Where you show it]{.where-head}
+
+1. **Place** a claim on the evidence ladder: calibration, consistency, held-out, independent property, different method. [Activity 1]{.where}
+2. **Combine** two sessions in one problem: stability with a flash, solubility with a fit, K with a pressure term. [Activity 2]{.where}
+3. **Audit** a script that runs and is wrong, and name the check that exposes it. [Activity 2, audit]{.where}
+4. **Write** an exam answer that states the equation, the assumptions with their size, the numbers and the limits. [Exam problem]{.where}
+5. **Name** the topic you are least ready for, and what you will do about it. [Exit ticket]{.where}
+
+## The 180-minute route {#route}
+
+::: {.route}
+::: {.seg .concept style="flex:30"}
+[0–30]{.t} **Synthesis** [one condition, six forms, the evidence ladder]{.d}
+:::
+::: {.seg .act style="flex:10"}
+[30–40]{.t} **Activity 1** [where does each claim sit?]{.d}
+:::
+::: {.seg .demo style="flex:20"}
+[40–60]{.t} **Demo** [audit a script in Lab 12]{.d}
+:::
+::: {.seg .break style="flex:10"}
+[60–70]{.t} **Break**
+:::
+::: {.seg .act style="flex:70"}
+[70–140]{.t} **Activity 2 · pairs** [three problems, then two audits]{.d}
+:::
+::: {.seg .wrap style="flex:40"}
+[140–180]{.t} **Exam problem and exit ticket** [how answers are marked]{.d}
+:::
+:::
+
+::: {.route-question}
+[Session question]{.label} Given an equilibrium result and its model, what is the strongest evidence it has, and what would you need to make it stronger?
+:::
+
+::: {.beforeafter}
+::: {}
+[Before class · 30 min]{.label}
+Read the [review guide](note-s07.html){target="_blank"}. Bring the topic you feel least ready for.
+:::
+::: {}
+[After class]{.label}
+Finish the audits you did not reach, and work the exam problem again without notes.
+:::
+:::
+
+::: {.selfstudy}
+**Studying on your own?** Follow the same order. Turn on narration or captions at the bottom left, and pause at each activity slide.
+:::
+
+## One condition, six forms {#forms}
+
+| Session | Working equation | What the model supplies |
+|---|---|---|
+| 1 · VLE, flash | y<sub>i</sub>Φ<sub>i</sub>P = x<sub>i</sub>γ<sub>i</sub>P<sub>i</sub><sup>sat</sup>; Σz<sub>i</sub>(K<sub>i</sub> − 1)/[1 + β(K<sub>i</sub> − 1)] = 0 | γ, P<sup>sat</sup> |
+| 2 · measured VLE | γ<sub>i</sub> = y<sub>i</sub>Φ<sub>i</sub>P/(x<sub>i</sub>P<sub>i</sub><sup>sat</sup>) | G<sup>E</sup> model and its weights |
+| 3 · LLE | x<sub>i</sub><sup>α</sup>γ<sub>i</sub><sup>α</sup> = x<sub>i</sub><sup>β</sup>γ<sub>i</sub><sup>β</sup>; TPD(w) ≥ 0 | τ(T) |
+| 4 · SLE, adsorption | ln(x₁γ₁) = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>); n = PV/RT + mq(P) | fusion data, w; isotherm |
+| 5 · reactions | Π(y<sub>i</sub>φ<sub>i</sub>P/P°)<sup>ν<sub>i</sub></sup> = K(T) | H(T), S(T), K<sub>φ</sub> |
+| 6 · cells | E = −Δ<sub>r</sub>G/nF; a<sub>KCl</sub> = (mγ±)² | γ±(m), its T dependence |
+
+Every row is μ<sub>i</sub> equal across phases, or Σν<sub>i</sub>μ<sub>i</sub> = 0. What changes is the reference state and the model.
+
+## The evidence ladder {#ladder}
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.lever-box}
+[Weakest to strongest]{.label}
+
+| Rung | Course example |
+|---|---|
+| 1 · calibration | one tie line, exactly |
+| 2 · consistency | O/C ratio closes; TPD ≥ 0 at both liquids |
+| 3 · held-out | fit 60 kPa, check 80 kPa: 0.164 |
+| 4 · independent property | LLE data rule out a VLE-fitted split |
+| 5 · different method | calorimetry for ∂ln γ±/∂T |
+:::
+:::
+::: {.column width="48%" .rule-notes}
+A claim is only as strong as the highest rung it reached.
+
+**Extrapolation reaches none:** the a + b/T model's gap closing at 324 K lies beyond the last tie line at 316 K.
+
+**Some claims cannot be reached with the data in hand:** the sign of w for naphthalene–benzene, or dγ±/dT from KCl data with U = 0.03.
+
+[Saying so is part of the answer.]{.q}
+:::
+::::
+
+## Where does each claim sit? {#activity-1 .activity}
+
+[Activity 1 · 10 minutes · alone, then with a partner]{.act-label}
+
+::: {.prompt}
+Place each claim on the ladder, or mark it as an extrapolation or not resolvable with these data:
+:::
+
+1. The weighted 60 kPa NRTL fit is right because RMS(r/σ) = 1.16.
+2. Fit at 60 kPa, the model checks at 80 kPa with RMSE 0.164 in ln γ.
+3. NRTL with α = 0.3 reproduces the 298.15 K tie line exactly.
+4. Cyclohexane and methanol become fully miscible at 324 K.
+5. Naphthalene + benzene deviates positively from ideal.
+6. For KCl, γ± at 1 mol/kg rises by 0.004 between 298 and 308 K.
+
+::: {.selfstudy}
+**On your own:** pause here, write your answer, then go to the next slide.
+:::
+
+## Activity 1: check your answer {#activity-1-debrief}
+
+| Claim | Where it sits | Why |
+|---|---|---|
+| 1 · RMS(r/σ) = 1.16 | calibration | it describes the fitting data; the same fit predicts a false split |
+| 2 · checks at 80 kPa | held-out | different pressure, not used in the fit |
+| 3 · exact tie line | calibration | two equations, two unknowns |
+| 4 · miscible at 324 K | extrapolation | beyond the last tie line at 316.15 K |
+| 5 · positive deviation | not resolvable | the sign follows the fusion data set |
+| 6 · rise of 0.004 | not resolvable | far inside U = 0.03 |
+
+Two of six claims are calibration presented as validation, and two cannot be decided with these data. That ratio is typical of real reports.
+
+## Demonstration · audit a script in Lab 12 {#demo-lab}
+
+:::: {.columns}
+::: {.column width="48%"}
+1. Run [audit_lab12_smr.py](audit/audit_lab12_smr.py){target="_blank"}. It prints "converged True".
+2. Enter its outputs in Lab 12 E: ln K₁ 2.9807, conversion 0.4981.
+3. Read which checks fail, and the likely cause.
+4. Find the lines in the script. Fix them, rerun, recheck.
+
+[Open Lab 12 →](../preview-2027/reaction.html){.lab-button target="_blank"}
+:::
+::: {.column width="50%" .rule-notes}
+The order matters: **predict** what the correct value should be before you look at the lab's number. A check you cannot predict is a check you cannot interpret.
+
+Look first at what the script computes, not at how: K, the pressure term, the balances. The thermodynamics is usually wrong in one line.
+
+[This script is from Session 5's debrief. Today you find the lines yourself.]{.q}
+:::
+::::
+
+## Problem A · a flash that returns one liquid {#problem-a}
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.prompt}
+Cyclohexane (1) + methanol (2) at 298.15 K, NRTL with α = 0.3, τ₁₂ = 1.851, τ₂₁ = 1.433. A flash at z₁ = 0.25 returns one liquid. Is that the equilibrium? If not, what are the phases and their amounts?
+:::
+
+Sessions 1 and 3.
+:::
+::: {.column width="48%" .rule-notes}
+[Hints]{.label}
+
+1. Curvature at z₁: positive or negative?
+2. TPD over the whole range of w, not from the feed.
+3. Binodal from opposite sides of the spinodal.
+4. Lever rule.
+:::
+::::
+
+## Problem B · a crystallizer {#problem-b}
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.prompt}
+Naphthalene in octane, saturated at 298.15 K, is cooled to 285 K. Use the NIST fusion data (353.39 K, 19.0 kJ/mol) and w = 2509 J/mol. What fraction of the dissolved naphthalene crystallizes? What would an ideal-solution design have predicted?
+:::
+
+Session 4.
+:::
+::: {.column width="48%" .rule-notes}
+[Hints]{.label}
+
+1. Solve ln x₁ + (w/RT)(1 − x₁)² = −(ΔH/R)(1/T − 1/T<sub>m</sub>) at both T.
+2. Basis 1 mol of feed; octane does not crystallize.
+3. Is 285 K inside the measured range?
+:::
+::::
+
+## Problem C · which error matters most? {#problem-c}
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.prompt}
+Steam reforming at 1100 K, 2000 kPa, S/C = 3 gives 0.795 CH₄ conversion. Rank by effect on the conversion: (i) K from constant Δ<sub>r</sub>H; (ii) P in kPa with no P°; (iii) S/C raised to 4; (iv) adding K<sub>φ</sub>.
+:::
+
+Then: a KCl cell pair at 0.01 / 1.0 mol/kg is computed with RT/F. By what factor is it wrong?
+
+Sessions 5 and 6.
+:::
+::: {.column width="48%" .rule-notes}
+[Hints]{.label}
+
+1. Use Lab 12 E for each case; change one thing at a time.
+2. K<sub>φ</sub> at 1100 K and 2 MPa: ln K<sub>φ</sub> = 0.011 for R1, 0.005 for R2.
+3. a<sub>KCl</sub> = (mγ±)².
+:::
+::::
+
+## Audit: four scripts that run {#ai-code}
+
+:::: {.columns}
+::: {.column width="50%"}
+Each script runs without errors and prints plausible numbers. Each is wrong.
+
+- [audit_lab05_lle.py](audit/audit_lab05_lle.py){target="_blank"} · Lab 05 E
+- [audit_lab10_sle.py](audit/audit_lab10_sle.py){target="_blank"} · Lab 10 E
+- [audit_lab12_smr.py](audit/audit_lab12_smr.py){target="_blank"} · Lab 12 E
+- [audit_lab13_kcl.py](audit/audit_lab13_kcl.py){target="_blank"} · Lab 13 E
+
+Lab 10 and 13 scripts need the CSV from their lab step E, saved next to the script.
+:::
+::: {.column width="48%" .rule-notes}
+[For each script you audit]{.label}
+
+1. Predict one output from the thermodynamics alone.
+2. Run it; enter its outputs in the lab's step E.
+3. Name the failing check and the line that causes it.
+4. Fix it, rerun, and show all checks agree.
+
+You may use an AI assistant to help read or fix the code. You must say which check proves the fix.
+:::
+::::
+
+## Break · 10 minutes {#break .breakslide}
+
+::: {.break-next}
+[Next]{.label}
+Activity 2: three problems, then two audits, 70 minutes in pairs.
+
+Before you leave your seat, download the four audit scripts and check that Python runs on your device.
+:::
+
+## Activity 2 · problems and audits {#activity-2 .activity}
+
+[Activity 2 · 70 minutes · in pairs: one solves, one checks with the labs, then swap]{.act-label}
+
+::: {.a2grid}
+::: {}
+[25 min · problems A–C]{.label}
+By hand where you can, with the labs to check. Write each answer as equation, numbers, check, limit.
+:::
+::: {}
+[30 min · two audits]{.label}
+One script each, then swap and check your partner's fix. Record the failing check and the line.
+:::
+::: {}
+[15 min · explain]{.label}
+For one problem, place your answer on the evidence ladder. What would raise it one rung?
+:::
+::: {}
+[Hand in]{.label}
+One page per pair: answers A–C, two audits (check, line, fix), the ladder statement. Names and IDs.
+:::
+:::
+
+::: {.selfstudy}
+**On your own:** do both roles yourself. Pause the slides, work through the problems and audits, then continue.
+:::
+
+## Activity 2 · check your answers {#activity-2-check}
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.lever-box}
+[A · cyclohexane + methanol, 298.15 K, z₁ = 0.25]{.label}
+
+Curvature 0.114 > 0, yet TPD = −0.0596 at w₁ = 0.900: metastable, it splits. Liquids 0.177 and 0.876; fraction of the cyclohexane-rich liquid (0.25 − 0.177)/(0.876 − 0.177) = **0.104**.
+:::
+
+::: {.lever-box}
+[B · crystallizer]{.label}
+
+x₁ = 0.1437 at 298.15 K, 0.0878 at 285 K. Crystallized 0.0612 mol per mol feed: **42.6 %**. Ideal design: 0.302 → 0.212, 37.8 %, with a feed 2.1 times richer. 285 K is 2.8 K below the lowest measured row (287.8 K).
+:::
+:::
+::: {.column width="48%"}
+::: {.lever-box}
+[C · ranking, from 0.795]{.label}
+
+| Error | Conversion | Change |
+|---|---:|---:|
+| (i) constant Δ<sub>r</sub>H | 0.498 | −0.297 |
+| (ii) no P° | 0.996 | +0.201 |
+| (iii) S/C = 4 | 0.869 | +0.074 |
+| (iv) with K<sub>φ</sub> | 0.794 | −0.001 |
+
+KCl with RT/F: **half**, 108.0 mV instead of 216.0 mV.
+:::
+:::
+::::
+
+## Audit: what the checks found {#audit-debrief}
+
+| Script | Symptom | Check that fails | Cause |
+|---|---|---|---|
+| Lab 05 | binodal 0.519 / 0.519; TPD 0 at w = z | binodal, TPD minimum | solver started between the phases; TPD searched from the feed only |
+| Lab 10 | x₁(298.15) = 0.108 | prediction; w off the minimum | γ₁ evaluated at x₂ = 1; objective in ln γ, not ln x |
+| Lab 12 | conversion 0.498, converged | ln K₁ and ln K₂ | K from Δ<sub>r</sub>H fixed at 298 K |
+| Lab 13 | EMF 118.3 / 108.0 mV | both EMF checks | a = mγ±, not (mγ±)² |
+
+None of the four failed by crashing or by not converging. Each failed a thermodynamic check that an independent calculation could make.
+
+## Exam-style problem {#exam-problem}
+
+:::: {.columns}
+::: {.column width="58%"}
+::: {.prompt}
+A colleague fits ln γ₁ = (w/RT)x₂² to naphthalene solubility in benzene and reports "w = −522 J/mol: benzene is a better-than-ideal solvent". (a) Reproduce the claim from the data in Lab 10 E. (b) Is the claim supported? (c) What would you report instead, and what one measurement would settle the sign?
+:::
+:::
+::: {.column width="40%" .rule-notes}
+[25 minutes · alone]{.label}
+
+Answer in this order: equation, assumptions with their size, numbers, check, conclusion and its limit.
+
+You may use the labs. State every number you take from them.
+:::
+::::
+
+## Exam-style problem: a model answer {#exam-answer}
+
+:::: {.columns}
+::: {.column width="52%"}
+**(a)** ln(x₁γ₁) = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>), ΔC<sub>p</sub> neglected. With the article's DSC data (355.04 K, 20.87 kJ/mol) and all ten rows, least squares in ln x₁: w = −522 J/mol, RMSE 0.008.
+
+**(b)** No. With the NIST data (353.39 K, 19.0 kJ/mol), w = +238 J/mol. The two fusion sets differ by about their stated uncertainty, and the sign of w follows them. x₁ at 298.15 K is 0.289 or 0.287 either way.
+:::
+::: {.column width="46%" .rule-notes}
+**(c)** Report: near-ideal, |ln γ₁| ≤ 0.13 between 286 and 326 K with either fusion data set; x₁(298.15 K) = 0.288 ± 0.001 for either fusion data set. Do not report the sign of w.
+
+To settle the sign: a measurement that does not pass through the solid, such as H<sup>E</sup> or VLE of liquid naphthalene + benzene, or Δ<sub>fus</sub>H measured to better than ±0.5 kJ/mol.
+
+[The model answer reaches rung 1 for w and rung 3 for the prediction.]{.q}
+:::
+::::
+
+## How answers are marked {#marking}
+
+::: {.mistakes}
+::: {}
+**Equation and reference state (25 %).** The right equilibrium condition, with standard states and units stated.
+:::
+::: {}
+**Assumptions with their size (20 %).** Not "assume ideal", but "Φ = 1 changes ln γ by 0.011".
+:::
+::: {}
+**Numbers that can be checked (25 %).** Intermediate values, units, and a balance or limit that closes.
+:::
+::: {}
+**Conclusion and its limit (30 %).** What the evidence supports, which rung it reached, what would raise it.
+:::
+:::
+
+A correct number with no limit stated earns less than a well-argued answer with an arithmetic slip.
+
+## Preparing for the exam {#prepare}
+
+::: {.summary3}
+::: {}
+[Review]{.label}
+The six working equations, and one worked number for each, without notes.
+:::
+::: {}
+[Practice]{.label}
+Problems A–C again from a blank page. Then one Lab step E with your own code, written from your own specification.
+:::
+::: {}
+[Ask]{.label}
+The topic you named in the exit ticket. Bring a specific question to office hours.
+:::
+:::
+
+The format, date and permitted materials of the exam will be announced separately.
+
+## Summary {#summary}
+
+::: {.summary3}
+::: {}
+[One condition]{.label}
+Equal chemical potential, in six forms. What changes is the reference state and the model.
+:::
+::: {}
+[Evidence]{.label}
+Calibration, consistency, held-out, independent property, different method. A claim is only as strong as its highest rung.
+:::
+::: {}
+[Code]{.label}
+Converging is not checking. Recompute one quantity independently, close a balance, test a limit.
+:::
+:::
+
+**Session question:** the strongest evidence in this course was held-out data and independent properties: tie lines the fit did not use, LLE against a VLE fit, a second fusion data set. Where we had neither, the honest answer was to say what the data cannot decide.
+
+## Exit ticket · 5 minutes {#exit-ticket .activity}
+
+[Exit ticket and feedback · alone · 5 minutes · anonymous]{.act-label}
+
+:::: {.columns}
+::: {.column width="64%"}
+::: {.prompt}
+Pick one result from your own lab files. Which rung of the evidence ladder does it reach, and what one piece of evidence would raise it? Put the topic you feel least ready for in "What is still unclear?".
+:::
+
+Scan the code or open the link. The same form asks three short questions about today: pace, confidence and whether the lab worked.
+
+No name or student ID is recorded. Wait for **"Response received."**
+:::
+::: {.column width="32%" .qr-col}
+![](figures/exit-qr-s07.png){.qr fig-alt="QR code for the Session 7 exit ticket and feedback form"}
+
+[Open the Session 7 form](exit.html?s=7){target="_blank"}
+:::
+::::
+
+## After class {#after-class}
+
+::: {.summary3}
+::: {}
+[Hand in · this week]{.label}
+The one-page pair sheet: answers A–C, two audits, the ladder statement. Names and student IDs.
+:::
+::: {}
+[Practice]{.label}
+The two audits you did not do. The exam-style problem again, without notes.
+:::
+::: {}
+[Optional · graduate]{.label}
+Take one result from your own research and place it on the ladder. What would it take to reach rung 4?
+:::
+:::
+
+[Review guide →](note-s07.html){.lab-button target="_blank"}

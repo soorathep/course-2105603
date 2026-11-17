@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics">
+
+<title>Choosing a model from evidence: review guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<meta name="robots" content="noindex">
+
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+
+<header id="title-block-header">
+<h1 class="title">Choosing a model from evidence: review guide</h1>
+<p class="subtitle">Pre-class note for Session 7 · about 30 minutes</p>
+<p class="author">Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics</p>
+
+</header>
+
+
+<div class="draft-note">
+<p>Draft for 2027. If you are taking the course this year, use the current course page.</p>
+</div>
+<div class="purpose">
+<p><strong>Why read this.</strong> Sessions 1–6 used one condition, equal chemical potential, with six kinds of model and data. Session 7 asks one question of all of them: what evidence would make you trust the result? Use this guide to review, then bring the one topic you feel least ready for.</p>
+</div>
+<h2 id="one-condition-six-forms">1. One condition, six forms</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Session</th>
+<th>Equilibrium</th>
+<th>Working equation</th>
+<th>Model in it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 · VLE, flash</td>
+<td>vapor–liquid</td>
+<td>y<sub>i</sub>Φ<sub>i</sub>P = x<sub>i</sub>γ<sub>i</sub>P<sub>i</sub><sup>sat</sup>; Rachford–Rice</td>
+<td>γ, P<sup>sat</sup></td>
+</tr>
+<tr class="even">
+<td>2 · measured VLE</td>
+<td>same, solved for γ</td>
+<td>γ<sub>i</sub> = y<sub>i</sub>Φ<sub>i</sub>P/(x<sub>i</sub>P<sub>i</sub><sup>sat</sup>)</td>
+<td>G<sup>E</sup> model, weights</td>
+</tr>
+<tr class="odd">
+<td>3 · LLE</td>
+<td>liquid–liquid</td>
+<td>x<sub>i</sub><sup>α</sup>γ<sub>i</sub><sup>α</sup> = x<sub>i</sub><sup>β</sup>γ<sub>i</sub><sup>β</sup>; TPD ≥ 0</td>
+<td>NRTL τ(T)</td>
+</tr>
+<tr class="even">
+<td>4 · solids, surfaces</td>
+<td>solid–liquid; gas–surface</td>
+<td>ln(x₁γ₁) = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>); n = PV/RT + mq</td>
+<td>fusion data, w; isotherm</td>
+</tr>
+<tr class="odd">
+<td>5 · reactions</td>
+<td>chemical</td>
+<td>Πa<sub>i</sub><sup>ν<sub>i</sub></sup> = K(T), ln K = −Δ<sub>r</sub>G°/RT</td>
+<td>H(T), S(T), K<sub>φ</sub></td>
+</tr>
+<tr class="even">
+<td>6 · cells</td>
+<td>electrochemical</td>
+<td>Δ<sub>r</sub>G = −nFE; a<sub>KCl</sub> = (mγ±)²</td>
+<td>Debye–Hückel, b, c</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-decided-each-answer">2. What decided each answer</h2>
+<p>Each session had a result that looked right and was not, and the evidence that showed it.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Session</th>
+<th>Looked right</th>
+<th>Evidence that decided</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>Weighted NRTL fit, RMS(r/σ) = 1.16</td>
+<td>It predicts a liquid split (0.088–0.237) in a miscible mixture</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Exact fit to one tie line</td>
+<td>Held-out tie lines: RMSE 0.077 with constant τ, 0.0097 with τ = a + b/T</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>w = +238 J/mol for naphthalene in benzene</td>
+<td>With the other fusion data, w = −522 J/mol; the solubility prediction is the same</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>A solver that converged</td>
+<td>K from constant Δ<sub>r</sub>H gives 0.498 conversion; the correct K gives 0.795</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>A good fit of γ±</td>
+<td>The cell needs (mγ±)²; with mγ± every EMF is half</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-evidence-ladder">3. The evidence ladder</h2>
+<p>From weakest to strongest:</p>
+<ol type="1">
+<li><strong>Calibration:</strong> the model reproduces the data it was fitted to. Two equations, two parameters: always possible.</li>
+<li><strong>Internal consistency:</strong> Gibbs–Duhem, element balances, TPD ≥ 0 at the fitted phases.</li>
+<li><strong>Held-out data:</strong> same kind of measurement, conditions the fit did not use.</li>
+<li><strong>Independent property:</strong> a different quantity the model also predicts, such as LLE from a VLE fit, or H<sup>E</sup> from τ(T).</li>
+<li><strong>Different method:</strong> calorimetry against EMF, DSC against solubility.</li>
+</ol>
+<p>A claim is only as strong as the highest rung it reached. Extrapolation beyond the data, such as the 324 K closing of the cyclohexane–methanol gap, reaches none.</p>
+<h2 id="checking-code-you-did-not-write-line-by-line">4. Checking code you did not write line by line</h2>
+<p>From Session 2 you have used AI assistants to write code. The checks that caught real errors in this course were:</p>
+<ul>
+<li>a quantity recomputed independently (P<sup>sat</sup>, ln K, an activity);</li>
+<li>a balance that must close (atoms, moles, O/C ratio);</li>
+<li>a limit the answer must satisfy (0 &lt; β &lt; 1, x<sup>α</sup> ≠ x<sup>β</sup>, TPD at w = z equals 0);</li>
+<li>the objective re-evaluated at the reported parameters;</li>
+<li>a known case reproduced (the Lab E reference values).</li>
+</ul>
+<p>Convergence and a small residual check the solver, not the thermodynamics.</p>
+<h2 id="before-session-7">5. Before Session 7</h2>
+<ol type="1">
+<li>For each session, write the one equation you would use first and the one assumption you would check first.</li>
+<li>Pick one result from your own lab files and place it on the evidence ladder.</li>
+<li>Bring the topic you feel least ready for. The exit-ticket form has a field for it.</li>
+</ol>
+<p><a href="s07.html" class="next-link">Session 7 slides →</a></p>
+
+
+
+
+
+</body></html>

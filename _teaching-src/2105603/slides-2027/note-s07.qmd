@@ -1,0 +1,76 @@
+---
+title: "Choosing a model from evidence: review guide"
+subtitle: "Pre-class note for Session 7 · about 30 minutes"
+author: "Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics"
+format:
+  html:
+    minimal: true
+    toc: false
+    css: notes.css
+    html-math-method: katex
+    include-in-header:
+      text: '<meta name="robots" content="noindex">'
+---
+
+::: {.draft-note}
+Draft for 2027. If you are taking the course this year, use the current course page.
+:::
+
+::: {.purpose}
+**Why read this.** Sessions 1–6 used one condition, equal chemical potential, with six kinds of model and data. Session 7 asks one question of all of them: what evidence would make you trust the result? Use this guide to review, then bring the one topic you feel least ready for.
+:::
+
+## 1. One condition, six forms
+
+| Session | Equilibrium | Working equation | Model in it |
+|---|---|---|---|
+| 1 · VLE, flash | vapor–liquid | y<sub>i</sub>Φ<sub>i</sub>P = x<sub>i</sub>γ<sub>i</sub>P<sub>i</sub><sup>sat</sup>; Rachford–Rice | γ, P<sup>sat</sup> |
+| 2 · measured VLE | same, solved for γ | γ<sub>i</sub> = y<sub>i</sub>Φ<sub>i</sub>P/(x<sub>i</sub>P<sub>i</sub><sup>sat</sup>) | G<sup>E</sup> model, weights |
+| 3 · LLE | liquid–liquid | x<sub>i</sub><sup>α</sup>γ<sub>i</sub><sup>α</sup> = x<sub>i</sub><sup>β</sup>γ<sub>i</sub><sup>β</sup>; TPD ≥ 0 | NRTL τ(T) |
+| 4 · solids, surfaces | solid–liquid; gas–surface | ln(x₁γ₁) = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>); n = PV/RT + mq | fusion data, w; isotherm |
+| 5 · reactions | chemical | Πa<sub>i</sub><sup>ν<sub>i</sub></sup> = K(T), ln K = −Δ<sub>r</sub>G°/RT | H(T), S(T), K<sub>φ</sub> |
+| 6 · cells | electrochemical | Δ<sub>r</sub>G = −nFE; a<sub>KCl</sub> = (mγ±)² | Debye–Hückel, b, c |
+
+## 2. What decided each answer
+
+Each session had a result that looked right and was not, and the evidence that showed it.
+
+| Session | Looked right | Evidence that decided |
+|---|---|---|
+| 2 | Weighted NRTL fit, RMS(r/σ) = 1.16 | It predicts a liquid split (0.088–0.237) in a miscible mixture |
+| 3 | Exact fit to one tie line | Held-out tie lines: RMSE 0.077 with constant τ, 0.0097 with τ = a + b/T |
+| 4 | w = +238 J/mol for naphthalene in benzene | With the other fusion data, w = −522 J/mol; the solubility prediction is the same |
+| 5 | A solver that converged | K from constant Δ<sub>r</sub>H gives 0.498 conversion; the correct K gives 0.795 |
+| 6 | A good fit of γ± | The cell needs (mγ±)²; with mγ± every EMF is half |
+
+## 3. The evidence ladder
+
+From weakest to strongest:
+
+1. **Calibration:** the model reproduces the data it was fitted to. Two equations, two parameters: always possible.
+2. **Internal consistency:** Gibbs–Duhem, element balances, TPD ≥ 0 at the fitted phases.
+3. **Held-out data:** same kind of measurement, conditions the fit did not use.
+4. **Independent property:** a different quantity the model also predicts, such as LLE from a VLE fit, or H<sup>E</sup> from τ(T).
+5. **Different method:** calorimetry against EMF, DSC against solubility.
+
+A claim is only as strong as the highest rung it reached. Extrapolation beyond the data, such as the 324 K closing of the cyclohexane–methanol gap, reaches none.
+
+## 4. Checking code you did not write line by line
+
+From Session 2 you have used AI assistants to write code. The checks that caught real errors in this course were:
+
+- a quantity recomputed independently (P<sup>sat</sup>, ln K, an activity);
+- a balance that must close (atoms, moles, O/C ratio);
+- a limit the answer must satisfy (0 &lt; β &lt; 1, x<sup>α</sup> ≠ x<sup>β</sup>, TPD at w = z equals 0);
+- the objective re-evaluated at the reported parameters;
+- a known case reproduced (the Lab E reference values).
+
+Convergence and a small residual check the solver, not the thermodynamics.
+
+## 5. Before Session 7
+
+1. For each session, write the one equation you would use first and the one assumption you would check first.
+2. Pick one result from your own lab files and place it on the evidence ladder.
+3. Bring the topic you feel least ready for. The exit-ticket form has a field for it.
+
+[Session 7 slides →](s07.html){.next-link}

@@ -9,6 +9,7 @@ project:
     - figures/*.png
     - exit.html
     - notes.css
+    - audit/*.py
 
 format:
   revealjs:

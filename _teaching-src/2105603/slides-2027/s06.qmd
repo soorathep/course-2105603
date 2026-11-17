@@ -459,7 +459,7 @@ Your Lab 13 study file with A, B and E, name and student ID.
 :::
 ::: {}
 [Prepare · Session 7]{.label}
-Review the six exit tickets and your lab files. Session 7 is synthesis and exam preparation.
+Read the [review guide](note-s07.html){target="_blank"}. Session 7 is synthesis and exam preparation.
 :::
 ::: {}
 [Optional · graduate]{.label}

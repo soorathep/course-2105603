@@ -1,0 +1,571 @@
+{
+ "title-slide": {
+  "audio": "narration/s07/title-slide.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.15,
+    "en": "Welcome to session 7, the last session.",
+    "th": "ยินดีต้อนรับสู่คาบที่ 7 ซึ่งเป็นคาบสุดท้าย"
+   },
+   {
+    "start": 3.5,
+    "end": 9.18,
+    "en": "Today we bring the six sessions together, and practice the kind of problem the exam asks.",
+    "th": "วันนี้เราจะรวมเนื้อหาทั้งหกคาบเข้าด้วยกัน และฝึกทำโจทย์แบบที่ใช้ในการสอบ"
+   },
+   {
+    "start": 9.53,
+    "end": 19.92,
+    "en": "The question for the whole session: given an equilibrium result and its model, what is the strongest evidence it has, and what would you need to make it stronger?",
+    "th": "คำถามของทั้งคาบนี้คือ เมื่อมีผลสมดุลและแบบจำลองที่ใช้ หลักฐานที่หนักแน่นที่สุดที่ผลนั้นมีคืออะไร และต้องมีอะไรเพิ่มจึงจะหนักแน่นขึ้น"
+   },
+   {
+    "start": 20.27,
+    "end": 29.91,
+    "en": "If you are studying on your own, turn on narration and captions with the buttons at the bottom left. Use the arrow keys to move through the slides.",
+    "th": "ถ้าเรียนด้วยตนเอง เปิดเสียงบรรยายและคำบรรยายได้ที่ปุ่มมุมซ้ายล่าง และใช้ปุ่มลูกศรเพื่อเลื่อนสไลด์"
+   }
+  ]
+ },
+ "course-map": {
+  "audio": "narration/s07/course-map.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.35,
+    "en": "This is session 7 of 7: choosing a model from evidence.",
+    "th": "นี่คือคาบที่ 7 จาก 7 เรื่องการเลือกแบบจำลองจากหลักฐาน"
+   },
+   {
+    "start": 4.7,
+    "end": 14.74,
+    "en": "Six sessions used one condition, equal chemical potential. Today we ask one question of every result: what evidence would make you trust it?",
+    "th": "หกคาบที่ผ่านมาใช้เงื่อนไขเดียว คือศักย์เคมีเท่ากัน วันนี้เราจะถามคำถามเดียวกับทุกผล ว่าหลักฐานใดที่ทำให้คุณเชื่อผลนั้นได้"
+   }
+  ]
+ },
+ "why": {
+  "audio": "narration/s07/why.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.64,
+    "en": "Each session had a result that passed the obvious test.",
+    "th": "แต่ละคาบมีผลที่ผ่านการทดสอบที่เห็นได้ชัด"
+   },
+   {
+    "start": 3.99,
+    "end": 16.73,
+    "en": "A weighted fit close to the stated uncertainty that predicts a false split. An exact tie-line fit that misses the other temperatures. A parameter whose sign follows the fusion data.",
+    "th": "ผล fit แบบถ่วงน้ำหนักที่ใกล้กับความไม่แน่นอนของข้อมูล แต่ทำนายการแยกเฟสที่ไม่มีจริง ผล fit tie line ที่พอดีแต่คลาดที่อุณหภูมิอื่น และพารามิเตอร์ที่เครื่องหมายเปลี่ยนตามข้อมูลการหลอมเหลว"
+   },
+   {
+    "start": 17.08,
+    "end": 23.71,
+    "en": "A converged solver with the wrong K. And a good fit of gamma with a cell equation missing its square.",
+    "th": "ตัวแก้สมการที่ลู่เข้าแต่ใช้ K ที่ผิด และผล fit γ ที่ดีแต่สมการเซลล์ขาดการยกกำลังสอง"
+   },
+   {
+    "start": 24.06,
+    "end": 30.89,
+    "en": "In each case a small residual was the wrong test. The question was which evidence the claim needed.",
+    "th": "ในทุกกรณี ค่า residual ที่เล็กไม่ใช่การทดสอบที่ถูกต้อง คำถามที่ถูกคือข้อกล่าวอ้างนั้นต้องการหลักฐานแบบใด"
+   }
+  ]
+ },
+ "outcomes": {
+  "audio": "narration/s07/outcomes.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.71,
+    "en": "By the end of today you should be able to do five things.",
+    "th": "เมื่อจบคาบนี้ คุณควรทำได้ห้าอย่าง"
+   },
+   {
+    "start": 4.06,
+    "end": 6.34,
+    "en": "Place a claim on the evidence ladder.",
+    "th": "จัดข้อกล่าวอ้างให้อยู่บนขั้นที่ถูกต้องของบันไดหลักฐาน"
+   },
+   {
+    "start": 6.69,
+    "end": 9.1,
+    "en": "Combine two sessions in one problem.",
+    "th": "รวมเนื้อหาสองคาบในโจทย์ข้อเดียว"
+   },
+   {
+    "start": 9.45,
+    "end": 14.21,
+    "en": "Audit a script that runs and is wrong, and name the check that exposes it.",
+    "th": "ตรวจสคริปต์ที่รันได้แต่ผิด และระบุการตรวจที่เปิดเผยความผิดนั้น"
+   },
+   {
+    "start": 14.56,
+    "end": 21.49,
+    "en": "Write an exam answer that states the equation, the assumptions with their size, the numbers and the limits.",
+    "th": "เขียนคำตอบข้อสอบที่ระบุสมการ สมมติฐานพร้อมขนาดของผล ตัวเลข และข้อจำกัด"
+   },
+   {
+    "start": 21.84,
+    "end": 24.61,
+    "en": "And name the topic you are least ready for.",
+    "th": "และระบุหัวข้อที่คุณยังพร้อมน้อยที่สุด"
+   }
+  ]
+ },
+ "route": {
+  "audio": "narration/s07/route.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.51,
+    "en": "This is the plan for the three hours.",
+    "th": "นี่คือแผนของการเรียนสามชั่วโมง"
+   },
+   {
+    "start": 2.86,
+    "end": 8.17,
+    "en": "Thirty minutes of synthesis: one condition in six forms, and the evidence ladder.",
+    "th": "สามสิบนาทีแรกเป็นการสังเคราะห์ เงื่อนไขเดียวในหกรูปแบบ และบันไดหลักฐาน"
+   },
+   {
+    "start": 8.52,
+    "end": 14.58,
+    "en": "Activity 1 places six claims on the ladder. Then I audit a script live in Lab 12.",
+    "th": "กิจกรรมที่ 1 จัดข้อกล่าวอ้างหกข้อบนบันได จากนั้นผมจะตรวจสคริปต์ใน Lab 12 ให้ดู"
+   },
+   {
+    "start": 14.93,
+    "end": 24.19,
+    "en": "After the break you work in pairs on three problems and two audits, and we finish with an exam-style problem and how answers are marked.",
+    "th": "หลังพักให้ทำงานเป็นคู่ กับโจทย์สามข้อและการตรวจสคริปต์สองไฟล์ และปิดท้ายด้วยโจทย์แบบข้อสอบ และวิธีให้คะแนน"
+   }
+  ]
+ },
+ "forms": {
+  "audio": "narration/s07/forms.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.42,
+    "en": "Every working equation in the course is equal chemical potential across phases, or a zero sum of nu mu for a reaction.",
+    "th": "สมการที่ใช้ทั้งหมดในวิชานี้คือศักย์เคมีเท่ากันระหว่างเฟส หรือผลรวมของ νμ เป็นศูนย์สำหรับปฏิกิริยา"
+   },
+   {
+    "start": 9.77,
+    "end": 20.74,
+    "en": "What changes from session to session is the reference state and the model: gamma, the fusion data, the isotherm, K of T, and the activity of an electrolyte.",
+    "th": "สิ่งที่เปลี่ยนไปในแต่ละคาบคือสถานะอ้างอิงและแบบจำลอง ได้แก่ γ ข้อมูลการหลอมเหลว isotherm K(T) และ activity ของอิเล็กโทรไลต์"
+   }
+  ]
+ },
+ "ladder": {
+  "audio": "narration/s07/ladder.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 10.23,
+    "en": "The evidence ladder, from weakest to strongest: calibration, internal consistency, held-out data, an independent property, and a different method.",
+    "th": "บันไดหลักฐานจากอ่อนที่สุดไปถึงแข็งที่สุด ได้แก่ การปรับเทียบ ความสอดคล้องภายใน ข้อมูลที่ไม่ได้ใช้ fit สมบัติอิสระ และวิธีการวัดที่ต่างกัน"
+   },
+   {
+    "start": 10.58,
+    "end": 16.81,
+    "en": "A claim is only as strong as the highest rung it reached. An extrapolation reaches none.",
+    "th": "ข้อกล่าวอ้างแข็งแรงเท่ากับขั้นสูงสุดที่มันไปถึง การ extrapolate ไม่ได้ไปถึงขั้นใดเลย"
+   },
+   {
+    "start": 17.16,
+    "end": 23.12,
+    "en": "Some claims cannot be decided with the data in hand. Saying so is part of the answer.",
+    "th": "ข้อกล่าวอ้างบางข้อตัดสินไม่ได้ด้วยข้อมูลที่มีอยู่ การบอกเช่นนั้นเป็นส่วนหนึ่งของคำตอบ"
+   }
+  ]
+ },
+ "activity-1": {
+  "audio": "narration/s07/activity-1.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.13,
+    "en": "Activity 1. Ten minutes, alone, then with a partner.",
+    "th": "กิจกรรมที่ 1 ใช้เวลาสิบนาที ทำคนเดียวก่อน แล้วคุยกับเพื่อน"
+   },
+   {
+    "start": 4.48,
+    "end": 12.72,
+    "en": "Place each of the six claims on the ladder, or mark it as an extrapolation, or as not resolvable with these data.",
+    "th": "จัดข้อกล่าวอ้างทั้งหกข้อบนบันได หรือระบุว่าเป็นการ extrapolate หรือตัดสินไม่ได้ด้วยข้อมูลที่มี"
+   }
+  ]
+ },
+ "activity-1-debrief": {
+  "audio": "narration/s07/activity-1-debrief.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 5.9,
+    "en": "Check your answer. Claims 1 and 3 are calibration: they describe the fitting data.",
+    "th": "ตรวจคำตอบ ข้อ 1 และ 3 เป็นการปรับเทียบ เพราะอธิบายข้อมูลที่ใช้ fit"
+   },
+   {
+    "start": 6.25,
+    "end": 12.01,
+    "en": "Claim 2 is held-out. Claim 4 is an extrapolation beyond the last tie line.",
+    "th": "ข้อ 2 เป็นข้อมูลที่ไม่ได้ใช้ fit ข้อ 4 เป็นการ extrapolate เลย tie line เส้นสุดท้าย"
+   },
+   {
+    "start": 12.36,
+    "end": 21.07,
+    "en": "Claims 5 and 6 cannot be resolved: the sign follows the fusion data, and the change is far inside the uncertainty.",
+    "th": "ข้อ 5 และ 6 ตัดสินไม่ได้ เพราะเครื่องหมายขึ้นกับข้อมูลการหลอมเหลว และความเปลี่ยนแปลงอยู่ในช่วงความไม่แน่นอน"
+   }
+  ]
+ },
+ "demo-lab": {
+  "audio": "narration/s07/demo-lab.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 5.28,
+    "en": "Now an audit, live, in Lab 12. The script prints converged true.",
+    "th": "ต่อไปคือการตรวจสคริปต์ใน Lab 12 สคริปต์พิมพ์ว่าลู่เข้าแล้ว"
+   },
+   {
+    "start": 5.63,
+    "end": 14.36,
+    "en": "Before entering its outputs, predict what the correct value should be. A check you cannot predict is a check you cannot interpret.",
+    "th": "ก่อนใส่ผลลัพธ์ ให้ทำนายว่าค่าที่ถูกควรเป็นเท่าใด การตรวจที่ทำนายไม่ได้ คือการตรวจที่ตีความไม่ได้"
+   },
+   {
+    "start": 14.71,
+    "end": 18.78,
+    "en": "Then read which checks fail, find the lines, fix them, and recheck.",
+    "th": "จากนั้นอ่านว่าการตรวจข้อใดไม่ผ่าน หาบรรทัดที่ผิด แก้ แล้วตรวจใหม่"
+   }
+  ]
+ },
+ "problem-a": {
+  "audio": "narration/s07/problem-a.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 13.99,
+    "en": "Problem A. A flash for cyclohexane and methanol at 298.15 kelvin returns one liquid at a feed of 0.25. Is that the equilibrium?",
+    "th": "โจทย์ A flash ของ cyclohexane กับ methanol ที่ 298.15 เคลวิน ให้ของเหลวเฟสเดียวที่สารป้อน 0.25 นั่นคือสมดุลหรือไม่"
+   },
+   {
+    "start": 14.34,
+    "end": 21.61,
+    "en": "Check the curvature, then the tangent-plane distance over the whole range, then the binodal and the lever rule.",
+    "th": "ตรวจความโค้ง จากนั้นตรวจระยะถึงระนาบสัมผัสทั่วทั้งช่วง แล้วหา binodal และใช้กฎคาน"
+   }
+  ]
+ },
+ "problem-b": {
+  "audio": "narration/s07/problem-b.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 13.03,
+    "en": "Problem B. Naphthalene in octane, saturated at 298.15 kelvin, is cooled to 285 kelvin. What fraction crystallizes?",
+    "th": "โจทย์ B naphthalene ใน octane อิ่มตัวที่ 298.15 เคลวิน ถูกทำให้เย็นลงถึง 285 เคลวิน มีสัดส่วนเท่าใดที่ตกผลึก"
+   },
+   {
+    "start": 13.38,
+    "end": 21.57,
+    "en": "Compare with an ideal-solution design, and check whether 285 kelvin lies inside the measured range.",
+    "th": "เปรียบเทียบกับการออกแบบที่ใช้สารละลายอุดมคติ และตรวจว่า 285 เคลวิน อยู่ในช่วงที่วัดหรือไม่"
+   }
+  ]
+ },
+ "problem-c": {
+  "audio": "narration/s07/problem-c.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.38,
+    "en": "Problem C. Rank four errors by their effect on the reforming conversion at 1100 kelvin and 2000 kilopascals.",
+    "th": "โจทย์ C เรียงลำดับความผิดพลาดสี่แบบตามผลต่อค่าการเปลี่ยนของการรีฟอร์มที่ 1100 เคลวิน และ 2000 กิโลปาสคาล"
+   },
+   {
+    "start": 9.73,
+    "end": 16.13,
+    "en": "Then find the factor by which a potassium chloride cell computed with R T over F is wrong.",
+    "th": "จากนั้นหาว่าเซลล์โพแทสเซียมคลอไรด์ที่คำนวณด้วย RT/F ผิดไปกี่เท่า"
+   }
+  ]
+ },
+ "ai-code": {
+  "audio": "narration/s07/ai-code.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 5.18,
+    "en": "Four scripts run without errors and print plausible numbers. Each is wrong.",
+    "th": "สคริปต์สี่ไฟล์รันได้โดยไม่มีข้อผิดพลาด และพิมพ์ตัวเลขที่ดูสมเหตุสมผล แต่ทุกไฟล์ผิด"
+   },
+   {
+    "start": 5.53,
+    "end": 15.81,
+    "en": "For each one you audit: predict one output, run it, enter its outputs in the lab step E, name the failing check and the line, then fix and recheck.",
+    "th": "สำหรับแต่ละไฟล์ที่ตรวจ ให้ทำนายผลหนึ่งค่า รันสคริปต์ ใส่ผลลัพธ์ในขั้น E ของ lab ระบุการตรวจที่ไม่ผ่านและบรรทัดที่ผิด แล้วแก้และตรวจใหม่"
+   },
+   {
+    "start": 16.16,
+    "end": 22.82,
+    "en": "You may use an AI assistant to read or fix the code. You must say which check proves the fix.",
+    "th": "คุณใช้ผู้ช่วย AI ช่วยอ่านหรือแก้โค้ดได้ แต่ต้องบอกว่าการตรวจใดยืนยันว่าแก้ถูก"
+   }
+  ]
+ },
+ "break": {
+  "audio": "narration/s07/break.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.02,
+    "en": "Take a ten-minute break.",
+    "th": "พักสิบนาที"
+   },
+   {
+    "start": 2.37,
+    "end": 11.18,
+    "en": "Next is activity 2: three problems, then two audits. Download the four scripts and check that Python runs on your device.",
+    "th": "ต่อไปคือกิจกรรมที่ 2 โจทย์สามข้อ แล้วตรวจสคริปต์สองไฟล์ ดาวน์โหลดสคริปต์ทั้งสี่ไฟล์และตรวจว่า Python รันได้บนอุปกรณ์ของคุณ"
+   }
+  ]
+ },
+ "activity-2": {
+  "audio": "narration/s07/activity-2.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.16,
+    "en": "Activity 2 takes seventy minutes, in pairs. One solves, the other checks with the labs, then swap.",
+    "th": "กิจกรรมที่ 2 ใช้เวลาเจ็ดสิบนาที ทำเป็นคู่ คนหนึ่งแก้โจทย์ อีกคนตรวจด้วย lab แล้วสลับกัน"
+   },
+   {
+    "start": 7.51,
+    "end": 16.13,
+    "en": "Twenty-five minutes on problems A to C, thirty minutes on two audits, and fifteen minutes placing one answer on the evidence ladder.",
+    "th": "ยี่สิบห้านาทีสำหรับโจทย์ A ถึง C สามสิบนาทีสำหรับตรวจสคริปต์สองไฟล์ และสิบห้านาทีสำหรับจัดคำตอบหนึ่งข้อบนบันไดหลักฐาน"
+   },
+   {
+    "start": 16.48,
+    "end": 18.53,
+    "en": "Hand in one page per pair.",
+    "th": "ส่งงานหนึ่งหน้าต่อคู่"
+   }
+  ]
+ },
+ "activity-2-check": {
+  "audio": "narration/s07/activity-2-check.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 8.7,
+    "en": "Check your answers. In A, the feed is metastable and splits: about 10 percent becomes the cyclohexane-rich liquid.",
+    "th": "ตรวจคำตอบ ในข้อ A สารป้อนกึ่งเสถียรและแยกเฟส ประมาณ 10 เปอร์เซ็นต์กลายเป็นเฟสที่มี cyclohexane สูง"
+   },
+   {
+    "start": 9.05,
+    "end": 19.01,
+    "en": "In B, 42.6 percent of the dissolved naphthalene crystallizes. An ideal design would have predicted a feed twice as rich.",
+    "th": "ในข้อ B naphthalene ที่ละลายอยู่ตกผลึก 42.6 เปอร์เซ็นต์ การออกแบบแบบอุดมคติจะทำนายว่าสารป้อนมี naphthalene มากกว่าสองเท่า"
+   },
+   {
+    "start": 19.36,
+    "end": 33.21,
+    "en": "In C, constant enthalpy and a missing standard pressure dominate; the fugacity correction changes the conversion by one thousandth. The potassium chloride cell with R T over F is half.",
+    "th": "ในข้อ C เอนทาลปีคงที่และการไม่ใช้ความดันมาตรฐานมีผลมากที่สุด การแก้ไขด้วย fugacity เปลี่ยนค่าการเปลี่ยนเพียงหนึ่งในพัน และเซลล์โพแทสเซียมคลอไรด์ที่ใช้ RT/F ได้ค่าครึ่งเดียว"
+   }
+  ]
+ },
+ "audit-debrief": {
+  "audio": "narration/s07/audit-debrief.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.36,
+    "en": "Here is what the checks found in the four scripts.",
+    "th": "นี่คือสิ่งที่การตรวจพบในสคริปต์ทั้งสี่ไฟล์"
+   },
+   {
+    "start": 3.71,
+    "end": 16.66,
+    "en": "A trivial binodal and a tangent-plane search from the feed. Gamma evaluated at infinite dilution. K from a constant reaction enthalpy. An activity missing its square.",
+    "th": "binodal ที่เป็นคำตอบชัดแจ้ง และการหาระยะถึงระนาบสัมผัสจากสารป้อนเพียงจุดเดียว γ ที่คำนวณที่สภาวะเจือจางอนันต์ K จากเอนทาลปีของปฏิกิริยาที่ถือว่าคงที่ และ activity ที่ขาดการยกกำลังสอง"
+   },
+   {
+    "start": 17.01,
+    "end": 25.91,
+    "en": "None of the four crashed or failed to converge. Each failed a thermodynamic check that an independent calculation could make.",
+    "th": "ไม่มีไฟล์ใดหยุดทำงานหรือไม่ลู่เข้า แต่ทุกไฟล์ไม่ผ่านการตรวจทางเทอร์โมไดนามิกส์ที่การคำนวณอิสระทำได้"
+   }
+  ]
+ },
+ "exam-problem": {
+  "audio": "narration/s07/exam-problem.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.18,
+    "en": "Now an exam-style problem, twenty-five minutes, alone.",
+    "th": "ต่อไปเป็นโจทย์แบบข้อสอบ ใช้เวลายี่สิบห้านาที ทำคนเดียว"
+   },
+   {
+    "start": 4.53,
+    "end": 17.75,
+    "en": "A colleague reports a negative w for naphthalene in benzene, and calls benzene a better-than-ideal solvent. Reproduce the claim, judge it, and say what you would report instead.",
+    "th": "เพื่อนร่วมงานรายงานค่า w ติดลบสำหรับ naphthalene ใน benzene และบอกว่า benzene เป็นตัวทำละลายที่ดีกว่าอุดมคติ ให้ทำซ้ำข้อกล่าวอ้างนี้ ประเมิน และบอกว่าคุณจะรายงานอะไรแทน"
+   },
+   {
+    "start": 18.1,
+    "end": 24.99,
+    "en": "Answer in this order: equation, assumptions with their size, numbers, check, conclusion and its limit.",
+    "th": "ตอบตามลำดับนี้ สมการ สมมติฐานพร้อมขนาดของผล ตัวเลข การตรวจ ข้อสรุปและข้อจำกัด"
+   }
+  ]
+ },
+ "exam-answer": {
+  "audio": "narration/s07/exam-answer.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 11.32,
+    "en": "A model answer. With the article's fusion data, w is minus 522 joules per mole. With the NIST data it is plus 238.",
+    "th": "คำตอบตัวอย่าง เมื่อใช้ข้อมูลการหลอมเหลวของบทความ w เท่ากับ −522 จูลต่อโมล เมื่อใช้ข้อมูล NIST เท่ากับ +238"
+   },
+   {
+    "start": 11.67,
+    "end": 24.37,
+    "en": "The sign follows the fusion data, so the claim is not supported. The solubility at 298.15 kelvin is 0.288 with either set.",
+    "th": "เครื่องหมายขึ้นกับข้อมูลการหลอมเหลว ข้อกล่าวอ้างจึงไม่มีหลักฐานรองรับ ความสามารถในการละลายที่ 298.15 เคลวิน เท่ากับ 0.288 ไม่ว่าใช้ข้อมูลชุดใด"
+   },
+   {
+    "start": 24.72,
+    "end": 36.79,
+    "en": "Report near-ideal behavior and the solubility. To settle the sign, measure a property that does not pass through the solid, or the enthalpy of fusion more precisely.",
+    "th": "ให้รายงานว่าพฤติกรรมใกล้อุดมคติ พร้อมค่าความสามารถในการละลาย ถ้าต้องการตัดสินเครื่องหมาย ให้วัดสมบัติที่ไม่ผ่านของแข็ง หรือวัดเอนทาลปีการหลอมเหลวให้แม่นขึ้น"
+   }
+  ]
+ },
+ "marking": {
+  "audio": "narration/s07/marking.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 10.02,
+    "en": "How answers are marked: the equation and reference state, the assumptions with their size, numbers that can be checked, and the conclusion with its limit.",
+    "th": "วิธีให้คะแนน ได้แก่ สมการและสถานะอ้างอิง สมมติฐานพร้อมขนาดของผล ตัวเลขที่ตรวจสอบได้ และข้อสรุปพร้อมข้อจำกัด"
+   },
+   {
+    "start": 10.37,
+    "end": 17.07,
+    "en": "A correct number with no limit stated earns less than a well-argued answer with an arithmetic slip.",
+    "th": "ตัวเลขที่ถูกแต่ไม่ระบุข้อจำกัด ได้คะแนนน้อยกว่าคำตอบที่ให้เหตุผลดีแต่คำนวณพลาดเล็กน้อย"
+   }
+  ]
+ },
+ "prepare": {
+  "audio": "narration/s07/prepare.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 6.33,
+    "en": "To prepare: review the six working equations with one worked number each, without notes.",
+    "th": "การเตรียมตัว ให้ทบทวนสมการหลักทั้งหกพร้อมตัวอย่างตัวเลขข้อละหนึ่งค่า โดยไม่ดูเอกสาร"
+   },
+   {
+    "start": 6.68,
+    "end": 12.59,
+    "en": "Practice problems A to C again from a blank page, and one lab step E with your own code.",
+    "th": "ฝึกโจทย์ A ถึง C อีกครั้งจากกระดาษเปล่า และทำขั้น E ของ lab หนึ่งขั้นด้วยโค้ดของคุณเอง"
+   },
+   {
+    "start": 12.94,
+    "end": 18.17,
+    "en": "The format, date and permitted materials of the exam will be announced separately.",
+    "th": "รูปแบบ วัน และสิ่งที่อนุญาตให้ใช้ในการสอบจะแจ้งแยกต่างหาก"
+   }
+  ]
+ },
+ "summary": {
+  "audio": "narration/s07/summary.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 5.41,
+    "en": "To summarize. One condition, equal chemical potential, in six forms.",
+    "th": "สรุป เงื่อนไขเดียว คือศักย์เคมีเท่ากัน ในหกรูปแบบ"
+   },
+   {
+    "start": 5.76,
+    "end": 10.05,
+    "en": "A claim is only as strong as the highest rung of evidence it reached.",
+    "th": "ข้อกล่าวอ้างแข็งแรงเท่ากับขั้นสูงสุดของหลักฐานที่ไปถึง"
+   },
+   {
+    "start": 10.4,
+    "end": 17.4,
+    "en": "Converging is not checking. Recompute one quantity independently, close a balance, and test a limit.",
+    "th": "การลู่เข้าไม่ใช่การตรวจ ให้คำนวณค่าหนึ่งค่าแบบอิสระ ตรวจให้ดุลปิด และทดสอบขีดจำกัด"
+   }
+  ]
+ },
+ "exit-ticket": {
+  "audio": "narration/s07/exit-ticket.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.9,
+    "en": "Exit ticket and feedback. Five minutes, on your own.",
+    "th": "exit ticket และความเห็น ใช้เวลาห้านาที ทำคนเดียว"
+   },
+   {
+    "start": 4.25,
+    "end": 12.82,
+    "en": "Pick one result from your own lab files. Which rung of the evidence ladder does it reach, and what one piece of evidence would raise it?",
+    "th": "เลือกผลหนึ่งผลจากไฟล์ lab ของคุณ ผลนั้นอยู่ที่ขั้นใดของบันไดหลักฐาน และหลักฐานหนึ่งอย่างใดที่จะยกให้สูงขึ้น"
+   },
+   {
+    "start": 13.17,
+    "end": 17.55,
+    "en": "Put the topic you feel least ready for in the field What is still unclear.",
+    "th": "ใส่หัวข้อที่คุณยังพร้อมน้อยที่สุดในช่อง What is still unclear"
+   },
+   {
+    "start": 17.9,
+    "end": 24.92,
+    "en": "Scan the QR code or open the link. It is anonymous. Wait until you see Response received.",
+    "th": "สแกน QR code หรือเปิดลิงก์ แบบฟอร์มไม่ระบุตัวตน รอจนขึ้นข้อความ Response received"
+   }
+  ]
+ },
+ "after-class": {
+  "audio": "narration/s07/after-class.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.0,
+    "en": "After class, hand in the one-page pair sheet this week.",
+    "th": "หลังเลิกเรียน ส่งงานหนึ่งหน้าของคู่ภายในสัปดาห์นี้"
+   },
+   {
+    "start": 4.35,
+    "end": 10.24,
+    "en": "Practice the two audits you did not do, and the exam-style problem again without notes.",
+    "th": "ฝึกตรวจสคริปต์อีกสองไฟล์ที่ยังไม่ได้ทำ และทำโจทย์แบบข้อสอบอีกครั้งโดยไม่ดูเอกสาร"
+   },
+   {
+    "start": 10.59,
+    "end": 14.39,
+    "en": "Thank you for these seven sessions. Good luck with the exam.",
+    "th": "ขอบคุณสำหรับการเรียนทั้งเจ็ดคาบ และขอให้โชคดีในการสอบ"
+   }
+  ]
+ }
+}
