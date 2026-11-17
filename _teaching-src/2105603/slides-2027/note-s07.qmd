@@ -1,7 +1,7 @@
 ---
 title: "Choosing a model from evidence: review guide"
 subtitle: "Pre-class note for Session 7 · about 30 minutes"
-author: "Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics"
+author: "Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics"
 format:
   html:
     minimal: true

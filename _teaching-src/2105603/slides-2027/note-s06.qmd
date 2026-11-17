@@ -1,7 +1,7 @@
 ---
 title: "Electrochemical equilibrium: a voltage from activities"
 subtitle: "Pre-class note for Session 6 · about 20 minutes"
-author: "Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics"
+author: "Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics"
 format:
   html:
     minimal: true

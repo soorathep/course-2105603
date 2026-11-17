@@ -1,7 +1,7 @@
 ---
 title: "VLE and flash calculations"
 subtitle: "Session 1 of 7 · 180 minutes"
-author: "Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics"
+author: "Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics"
 title-slide-attributes:
   data-background-color: "#1C242B"
 ---

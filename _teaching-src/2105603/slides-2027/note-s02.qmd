@@ -1,7 +1,7 @@
 ---
 title: "Activity coefficients from measured VLE data"
 subtitle: "Pre-class note for Session 2 · about 20 minutes"
-author: "Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics"
+author: "Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics"
 format:
   html:
     minimal: true
@@ -24,7 +24,7 @@ Draft for 2027. If you are taking the course this year, use the current course p
 
 Session 1 wrote equal fugacity in the γ–φ form. For component *i* in a liquid in equilibrium with its vapor,
 
-$$y_i\,\Phi_i\,P = x_i\,\gamma_i\,P_i^{\text{sat}},\qquad \Phi_i=\frac{\hat\phi_i^{V}}{\phi_i^{\text{sat}}}\exp\!\left[-\frac{V_i^{L}(P-P_i^{\text{sat}})}{RT}\right].$$
+$$y_i\,\Phi_i\,P = x_i\,\gamma_i\,P_i^{\text{sat}},\qquad \Phi_i=\frac{\hat\varphi_i^{V}}{\varphi_i^{\text{sat}}}\exp\!\left[-\frac{V_i^{L}(P-P_i^{\text{sat}})}{RT}\right].$$
 
 Φ<sub>i</sub> collects every vapor-phase and pressure correction. Solving for the activity coefficient gives the **data-reduction equation**
 

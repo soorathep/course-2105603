@@ -1,7 +1,7 @@
 ---
 title: "Chemical equilibrium: from K to a composition"
 subtitle: "Pre-class note for Session 5 · about 20 minutes"
-author: "Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics"
+author: "Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics"
 format:
   html:
     minimal: true
