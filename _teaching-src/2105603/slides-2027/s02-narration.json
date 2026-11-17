@@ -80,8 +80,8 @@
   ],
   "outcomes": [
    {
-    "en": "By the end of today you should be able to do four things.",
-    "th": "เมื่อจบคาบนี้ คุณควรทำได้สี่อย่าง"
+    "en": "By the end of today you should be able to do five things.",
+    "th": "เมื่อจบคาบนี้ คุณควรทำได้ห้าอย่าง"
    },
    {
     "en": "Reduce a measured state to gamma 1, gamma 2 and the excess Gibbs energy, and state the assumptions with their size.",
@@ -99,6 +99,10 @@
    {
     "en": "And judge what a fit, a check and a consistency test can and cannot establish.",
     "th": "และประเมินได้ว่าการ fit การตรวจสอบ และการทดสอบความสอดคล้อง ยืนยันอะไรได้และยืนยันอะไรไม่ได้"
+   },
+   {
+    "en": "And specify a fit precisely enough for an AI assistant to write the code, then verify that code against independent checks.",
+    "th": "และเขียนข้อกำหนดของการ fit ให้ชัดพอที่ผู้ช่วย AI จะเขียนโค้ดได้ แล้วตรวจโค้ดนั้นกับการตรวจสอบที่เป็นอิสระ"
    }
   ],
   "route": [
@@ -115,8 +119,8 @@
     "th": "กิจกรรมที่ 1 ถามว่าแถวข้อมูลใดเป็นตัวกำหนดผลการ fit จากนั้นผมจะสาธิต Lab 02 รวมถึงการ fit แบบถ่วงน้ำหนักซึ่งเป็นส่วนใหม่"
    },
    {
-    "en": "After the break you work in pairs on three fits and then weighted fits, and we finish by discussing why the checks disagree.",
-    "th": "หลังพักให้ทำงานเป็นคู่ fit สามแบบ แล้วตามด้วยการ fit แบบถ่วงน้ำหนัก และปิดท้ายด้วยการอภิปรายว่าทำไมผลการตรวจสอบจึงไม่ตรงกัน"
+    "en": "After the break you work in pairs on the fits and the weighted fits, then on your own code, and we finish by discussing why the checks disagree.",
+    "th": "หลังพักให้ทำงานเป็นคู่ fit แบบต่างๆ และแบบถ่วงน้ำหนัก ต่อด้วยโค้ดของตัวเอง และปิดท้ายด้วยการอภิปรายว่าทำไมผลการตรวจสอบจึงไม่ตรงกัน"
    },
    {
     "en": "If you are studying on your own, follow the same order and pause at each activity slide.",
@@ -405,6 +409,33 @@
     "th": "สี่ ใช้การทดสอบพื้นที่แบบอุณหภูมิคงที่กับข้อมูลความดันคงที่ หากไม่มีพจน์เอนทาลปี ผลว่าผ่านหรือไม่ผ่านก็บอกอะไรได้น้อย"
    }
   ],
+  "ai-code": [
+   {
+    "en": "From today, you may use an AI assistant to write code. Session 1 stays without it.",
+    "th": "ตั้งแต่วันนี้ คุณใช้ผู้ช่วย AI เขียนโค้ดได้ ส่วนคาบที่ 1 ยังไม่ใช้"
+   },
+   {
+    "en": "You decide everything else: which rows to keep, the vapor pressure equation and its range, the objective and the weights, alpha, the starting values and the bounds, and what the result means.",
+    "th": "เรื่องอื่นทั้งหมดคุณตัดสินเอง ได้แก่ แถวข้อมูลที่ใช้ สมการความดันไอและช่วงที่ใช้ได้ ฟังก์ชันวัตถุประสงค์และน้ำหนัก α ค่าเริ่มต้นและขอบเขต และความหมายของผล"
+   },
+   {
+    "en": "Do not ask the assistant for parameter values, property constants or conclusions.",
+    "th": "อย่าขอค่าพารามิเตอร์ ค่าคงที่ของสมบัติ หรือข้อสรุปจากผู้ช่วย AI"
+   },
+   {
+    "en": "Write the specification before you open the assistant. Two people reading it should write the same objective.",
+    "th": "เขียนข้อกำหนดก่อนเปิดผู้ช่วย AI ถ้าคนสองคนอ่าน ทั้งคู่ควรเขียนฟังก์ชันวัตถุประสงค์ออกมาเหมือนกัน"
+   },
+   {
+    "en": "Then check the code. Lab 02 step G5 recomputes six quantities from the measured data and your tau, independently of your code.",
+    "th": "จากนั้นตรวจโค้ด ขั้น G5 ของ Lab 02 คำนวณหกค่าใหม่จากข้อมูลที่วัดได้และ τ ของคุณ โดยไม่ขึ้นกับโค้ดของคุณ",
+    "say": "Then check the code. Lab 02 step G five recomputes six quantities from the measured data and your tau, independently of your code."
+   },
+   {
+    "en": "Hand in the specification, the prompt, the final code and what you fixed.",
+    "th": "ส่งข้อกำหนด prompt โค้ดสุดท้าย และสิ่งที่คุณแก้"
+   }
+  ],
   "break": [
    {
     "en": "Take a ten-minute break.",
@@ -426,9 +457,14 @@
     "say": "First, by hand: pick an interior row other than row seven, and calculate P sat, both gammas, G E over R T, and sigma."
    },
    {
-    "en": "Then run the three fits, and repeat 60 and 80 in G3, unweighted and weighted, and with a minimum x 1 of 0.02.",
-    "th": "จากนั้น fit สามแบบ แล้วทำซ้ำที่ 60 และ 80 ในขั้น G3 ทั้งแบบไม่ถ่วงน้ำหนักและแบบถ่วงน้ำหนัก และแบบกำหนด x₁ ต่ำสุดเป็น 0.02",
-    "say": "Then run the three fits, and repeat sixty and eighty in G three, unweighted and weighted, and with a minimum x one of zero point zero two."
+    "en": "Then run the three fits, and repeat 60 and 80 in G3, unweighted and weighted.",
+    "th": "จากนั้น fit สามแบบ แล้วทำซ้ำที่ 60 และ 80 ในขั้น G3 ทั้งแบบไม่ถ่วงน้ำหนักและแบบถ่วงน้ำหนัก",
+    "say": "Then run the three fits, and repeat sixty and eighty in G three, unweighted and weighted."
+   },
+   {
+    "en": "Next, write the specification for one G3 fit, use an AI assistant to write the code, run it, and check it in G5. Fix what disagrees.",
+    "th": "ต่อไป เขียนข้อกำหนดของการ fit หนึ่งแบบในขั้น G3 ใช้ผู้ช่วย AI เขียนโค้ด รันเอง แล้วตรวจในขั้น G5 แก้ส่วนที่ไม่ตรง",
+    "say": "Next, write the specification for one G three fit, use an AI assistant to write the code, run it, and check it in G five. Fix what disagrees."
    },
    {
     "en": "Finally, explain with numbers why fit 80 checks worse at 60 kPa than fit 60 checks at 80.",
@@ -437,8 +473,9 @@
   ],
   "activity-2-check": [
    {
-    "en": "This is what to hand in: the Lab 02 study file, your hand calculation, and two sentences.",
-    "th": "สิ่งที่ต้องส่งคือ ไฟล์ study ของ Lab 02 การคำนวณด้วยมือ และสองประโยค"
+    "en": "This is what to hand in: the Lab 02 study file with G5, your hand calculation, and two sentences.",
+    "th": "สิ่งที่ต้องส่งคือ ไฟล์ study ของ Lab 02 ที่มีขั้น G5 การคำนวณด้วยมือ และสองประโยค",
+    "say": "This is what to hand in: the Lab 02 study file with G five, your hand calculation, and two sentences."
    },
    {
     "en": "Use the table to check your results. Without the four rows below x 1 of 0.02, the 80 kPa fit checks at 0.116 on the 60 kPa data.",
@@ -449,6 +486,32 @@
     "en": "Graduate extension: fit with a minimum x 1 of 0.05 at both pressures, and ask whether the two parameter sets agree within their standard deviations.",
     "th": "งานเสริมระดับบัณฑิต fit โดยกำหนด x₁ ต่ำสุดเป็น 0.05 ที่ทั้งสองความดัน แล้วพิจารณาว่าพารามิเตอร์สองชุดตรงกันภายในส่วนเบี่ยงเบนมาตรฐานหรือไม่",
     "say": "Graduate extension: fit with a minimum x one of zero point zero five at both pressures, and ask whether the two parameter sets agree within their standard deviations."
+   }
+  ],
+  "ai-debrief": [
+   {
+    "en": "Here is what the code checks catch.",
+    "th": "นี่คือสิ่งที่การตรวจโค้ดจับได้"
+   },
+   {
+    "en": "A script that keeps every interior row uses 18 rows at 80 kPa, not 17. Its objective is 17 percent above the minimum, and tau 2 1 moves from 2.42 to 2.33.",
+    "th": "สคริปต์ที่เก็บแถวภายในไว้ทุกแถวใช้ 18 แถวที่ 80 กิโลปาสคาล ไม่ใช่ 17 ค่าฟังก์ชันวัตถุประสงค์สูงกว่าค่าต่ำสุด 17 เปอร์เซ็นต์ และ τ₂₁ เปลี่ยนจาก 2.42 เป็น 2.33",
+    "say": "A script that keeps every interior row uses eighteen rows at eighty kilopascals, not seventeen. Its objective is seventeen percent above the minimum, and tau two one moves from two point four two to two point three three."
+   },
+   {
+    "en": "The extra row is at 362.78 kelvin, above the range where both Antoine equations apply. The vapor pressure was extrapolated without a warning.",
+    "th": "แถวที่เกินมาอยู่ที่ 362.78 เคลวิน สูงกว่าช่วงที่สมการ Antoine ทั้งสองใช้ได้ ความดันไอจึงถูก extrapolate โดยไม่มีคำเตือน",
+    "say": "The extra row is at three hundred sixty two point seven eight kelvin, above the range where both Antoine equations apply. The vapor pressure was extrapolated without a warning."
+   },
+   {
+    "en": "The same checks expose vapor pressure in bar, the natural log in place of log ten, an error divided by N instead of 2 N, and an optimizer that stopped early.",
+    "th": "การตรวจชุดเดียวกันจับได้ทั้งความดันไอที่เป็นบาร์ การใช้ ln แทน log₁₀ ความคลาดเคลื่อนที่หารด้วย N แทน 2N และตัวหาค่าเหมาะสมที่หยุดก่อนถึงคำตอบ",
+    "say": "The same checks expose vapor pressure in bar, the natural log in place of log ten, an error divided by N instead of two N, and an optimizer that stopped early."
+   },
+   {
+    "en": "When all six agree, the code solves your problem. The weighted 60 kPa fit passes every code check and still predicts a liquid split. That is the model, not the code.",
+    "th": "เมื่อผ่านทั้งหกข้อ แปลว่าโค้ดแก้ปัญหาตามที่คุณกำหนด ผล fit แบบถ่วงน้ำหนักที่ 60 กิโลปาสคาลผ่านการตรวจโค้ดทุกข้อ แต่ยังทำนายว่าของเหลวแยกเฟส นั่นเป็นข้อจำกัดของแบบจำลอง ไม่ใช่ของโค้ด",
+    "say": "When all six agree, the code solves your problem. The weighted sixty kilopascal fit passes every code check and still predicts a liquid split. That is the model, not the code."
    }
   ],
   "discussion": [
@@ -507,9 +570,9 @@
   ],
   "after-class": [
    {
-    "en": "After class, hand in your Lab 02 study file this week, with the three fits, G3 and G4.",
-    "th": "หลังเลิกเรียน ส่งไฟล์ study ของ Lab 02 ภายในสัปดาห์นี้ พร้อมผล fit สามแบบ ขั้น G3 และ G4",
-    "say": "After class, hand in your Lab 02 study file this week, with the three fits, G three and G four."
+    "en": "After class, hand in your Lab 02 study file this week, with the three fits, G3, G4 and G5.",
+    "th": "หลังเลิกเรียน ส่งไฟล์ study ของ Lab 02 ภายในสัปดาห์นี้ พร้อมผล fit สามแบบ ขั้น G3 G4 และ G5",
+    "say": "After class, hand in your Lab 02 study file this week, with the three fits, G three, G four and G five."
    },
    {
     "en": "Read the note on Gibbs energy of mixing and phase stability before session 3.",

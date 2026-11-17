@@ -208,6 +208,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <li><strong>Propagate</strong> measurement uncertainty into ln γ and say which rows constrain a model. <span class="where">Activity 1, Lab 02 G3</span></li>
 <li><strong>Fit</strong> NRTL with and without weights, and <strong>compare</strong> parameters, their correlation and the checking error. <span class="where">Lab 02 demo, Activity 2</span></li>
 <li><strong>Judge</strong> what a fit, a check and a consistency test can and cannot establish. <span class="where">Discussion, exit ticket</span></li>
+<li><strong>Specify</strong> a fit precisely enough for an AI assistant to code it, then <strong>verify</strong> the code against independent checks. <span class="where">Activity 2, Lab 02 G5</span></li>
 </ol>
 </section>
 <section id="route" class="slide level2">
@@ -226,7 +227,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p><span class="t">60–70</span> <strong>Break</strong></p>
 </div>
 <div class="seg act" style="flex:70">
-<p><span class="t">70–140</span> <strong>Activity 2 · pair investigation</strong> <span class="d">Lab 02: three fits, then weighted fits</span></p>
+<p><span class="t">70–140</span> <strong>Activity 2 · pair investigation</strong> <span class="d">Lab 02 fits and weights, then your own code</span></p>
 </div>
 <div class="seg wrap" style="flex:40">
 <p><span class="t">140–180</span> <strong>Discussion and exit ticket</strong> <span class="d">why the checks disagree</span></p>
@@ -240,7 +241,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p><span class="label">Before class · 15–20 min</span> Read the <a href="note-s02.html" target="_blank">note on activity coefficients</a>. Bring one question.</p>
 </div>
 <div>
-<p><span class="label">After class · 30–40 min</span> Finish the Lab 02 fits including G3, and submit the study file with your name and ID.</p>
+<p><span class="label">After class · 30–40 min</span> Finish the Lab 02 fits including G3 and G5, and submit the study file with your name and ID.</p>
 </div>
 </div>
 <div class="selfstudy">
@@ -553,6 +554,34 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 </div>
 </div>
 </section>
+<section id="ai-code" class="slide level2">
+<h2>From today: AI writes code, you write the problem</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="label">You decide</span></p>
+<ul>
+<li>Which rows to keep, and why</li>
+<li>P<sup>sat</sup> equation, units and range</li>
+<li>Objective and weights, and how σ is computed</li>
+<li>α, starting values, bounds, convergence test</li>
+<li>What the result means, and what it does not show</li>
+</ul>
+<p><span class="label">The assistant may</span></p>
+<p>Write and debug code that does exactly what your specification says. Not parameter values, property constants or conclusions.</p>
+</div><div class="column rule-notes" style="width:48%;">
+<p><strong>Write the specification before you open the assistant.</strong> If two people read it, they should write the same objective.</p>
+<p><strong>Then check the code, not only the plot.</strong> Lab 02 G5 recomputes from the measured data and your τ:</p>
+<ol type="1">
+<li>P<sup>sat</sup> at one stated T</li>
+<li>Number of rows used</li>
+<li>RMSE recomputed from your τ</li>
+<li>Your τ at the minimum of your objective</li>
+<li>Checking error at the other pressure</li>
+<li>Liquid stability of the fitted model</li>
+</ol>
+<p>Hand in the specification, the prompt, the final code and what you fixed. Session 1 stays without AI.</p>
+</div></div>
+</section>
 <section id="break" class="slide level2 breakslide">
 <h2>Break · 10 minutes</h2>
 <div class="break-next">
@@ -568,13 +597,13 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p><span class="label">15 min · by hand</span> Pick an interior row other than row 7. Calculate P<sup>sat</sup>, γ₁, γ₂, g and σ of ln γ₁. Check with the lab.</p>
 </div>
 <div>
-<p><span class="label">20 min · three fits</span> Fit 60 → check 80. Fit 80 → check 60. Fit both. Save each as a case.</p>
+<p><span class="label">25 min · fits and weights</span> Fit 60 → check 80, 80 → check 60, and both; save each case. Then G3 at 60 and 80, unweighted and weighted.</p>
 </div>
 <div>
-<p><span class="label">20 min · G3 weights</span> Repeat 60 and 80 in G3, unweighted and weighted, then with minimum x₁ = 0.02. Record τ, sd, RMS(r/σ) and the liquid curvature.</p>
+<p><span class="label">20 min · G5 your own code</span> Write the specification for one G3 fit. Use an AI assistant to write the code, run it, and check it in G5. Fix what disagrees.</p>
 </div>
 <div>
-<p><span class="label">15 min · explain</span> Two sentences with numbers: why does “fit 80” check worse at 60 kPa than “fit 60” checks at 80? Download the study file with names and IDs.</p>
+<p><span class="label">10 min · explain</span> Two sentences with numbers: why does “fit 80” check worse at 60 kPa than “fit 60” checks at 80? Download the study file with names and IDs.</p>
 </div>
 </div>
 <div class="selfstudy">
@@ -586,7 +615,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <div class="columns">
 <div class="column" style="width:44%;">
 <ol type="1">
-<li>Lab 02 study file with three saved cases, G3 and G4, your name and student ID.</li>
+<li>Lab 02 study file with three saved cases, G3, G4 and G5, your name and student ID.</li>
 <li>One hand calculation of γ₁, γ₂, g and σ.</li>
 <li>Two sentences that answer the activity question with numbers.</li>
 </ol>
@@ -634,6 +663,55 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 </table>
 <p>G3, weighted: 60 kPa τ₂₁ = 2.85, RMS(r/σ) 1.16 / 0.93, min. curvature −0.030 · 80 kPa τ₂₁ = 2.08, RMS(r/σ) 1.59 / 0.42, curvature 0.139 (RMS at 60 / 80 kPa)</p>
 </div>
+</div></div>
+</section>
+<section id="ai-debrief" class="slide level2">
+<h2>What the code checks catch</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
+<div class="lever-box">
+<p><span class="label">Fit 80 kPa unweighted · a script that keeps every interior row</span></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">Lab</th>
+<th style="text-align: right;">Script</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rows used</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="even">
+<td>τ₂₁</td>
+<td style="text-align: right;">2.417</td>
+<td style="text-align: right;">2.335</td>
+</tr>
+<tr class="odd">
+<td>Objective vs lab minimum</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">+17 %</td>
+</tr>
+<tr class="even">
+<td>Checking RMSE at 60 kPa</td>
+<td style="text-align: right;">0.291</td>
+<td style="text-align: right;">0.269</td>
+</tr>
+</tbody>
+</table>
+<p>The extra row is at 362.78 K, above the range where both Antoine equations apply (334–362.41 K). P<sup>sat</sup> was extrapolated without warning.</p>
+</div>
+</div><div class="column rule-notes" style="width:42%;">
+<p><span class="label">Other errors the checks expose</span></p>
+<ul>
+<li>P<sup>sat</sup> in bar, or ln for log₁₀: τ moves by several sd</li>
+<li>RMSE divided by N, not 2N: √2 too large</li>
+<li>Optimizer stopped early: objective above the minimum</li>
+</ul>
+<p><strong>All six agree</strong> shows the code solves your problem. The weighted 60 kPa fit passes every code check and still predicts a liquid split: that is the model, not the code.</p>
 </div></div>
 </section>
 <section id="discussion" class="slide level2">
@@ -685,7 +763,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <h2>After class</h2>
 <div class="summary3">
 <div>
-<p><span class="label">Hand in · this week</span> Your Lab 02 study file with the three fits, G3 and G4, name and student ID.</p>
+<p><span class="label">Hand in · this week</span> Your Lab 02 study file with the three fits, G3, G4 and G5, name and student ID.</p>
 </div>
 <div>
 <p><span class="label">Prepare · Session 3</span> Read the <a href="note-s03.html" target="_blank">note on Gibbs energy of mixing and phase stability</a>. About 20 minutes.</p>

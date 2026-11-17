@@ -71,6 +71,7 @@ $$\gamma_i=\frac{y_i\Phi_iP}{x_iP_i^{\text{sat}}(T)}$$
 2. **Propagate** measurement uncertainty into ln γ and say which rows constrain a model. [Activity 1, Lab 02 G3]{.where}
 3. **Fit** NRTL with and without weights, and **compare** parameters, their correlation and the checking error. [Lab 02 demo, Activity 2]{.where}
 4. **Judge** what a fit, a check and a consistency test can and cannot establish. [Discussion, exit ticket]{.where}
+5. **Specify** a fit precisely enough for an AI assistant to code it, then **verify** the code against independent checks. [Activity 2, Lab 02 G5]{.where}
 
 ## The 180-minute route {#route}
 
@@ -88,7 +89,7 @@ $$\gamma_i=\frac{y_i\Phi_iP}{x_iP_i^{\text{sat}}(T)}$$
 [60–70]{.t} **Break**
 :::
 ::: {.seg .act style="flex:70"}
-[70–140]{.t} **Activity 2 · pair investigation** [Lab 02: three fits, then weighted fits]{.d}
+[70–140]{.t} **Activity 2 · pair investigation** [Lab 02 fits and weights, then your own code]{.d}
 :::
 ::: {.seg .wrap style="flex:40"}
 [140–180]{.t} **Discussion and exit ticket** [why the checks disagree]{.d}
@@ -106,7 +107,7 @@ Read the [note on activity coefficients](note-s02.html){target="_blank"}. Bring 
 :::
 ::: {}
 [After class · 30–40 min]{.label}
-Finish the Lab 02 fits including G3, and submit the study file with your name and ID.
+Finish the Lab 02 fits including G3 and G5, and submit the study file with your name and ID.
 :::
 :::
 
@@ -414,6 +415,38 @@ Unweighted τ₂₁ = 1.7524 ± 0.150 · weighted τ₂₁ = 2.8484 ± 0.152 · 
 :::
 :::
 
+## From today: AI writes code, you write the problem {#ai-code}
+
+:::: {.columns}
+::: {.column width="50%"}
+[You decide]{.label}
+
+- Which rows to keep, and why
+- P<sup>sat</sup> equation, units and range
+- Objective and weights, and how σ is computed
+- α, starting values, bounds, convergence test
+- What the result means, and what it does not show
+
+[The assistant may]{.label}
+
+Write and debug code that does exactly what your specification says. Not parameter values, property constants or conclusions.
+:::
+::: {.column width="48%" .rule-notes}
+**Write the specification before you open the assistant.** If two people read it, they should write the same objective.
+
+**Then check the code, not only the plot.** Lab 02 G5 recomputes from the measured data and your τ:
+
+1. P<sup>sat</sup> at one stated T
+2. Number of rows used
+3. RMSE recomputed from your τ
+4. Your τ at the minimum of your objective
+5. Checking error at the other pressure
+6. Liquid stability of the fitted model
+
+Hand in the specification, the prompt, the final code and what you fixed. Session 1 stays without AI.
+:::
+::::
+
 ## Break · 10 minutes {#break .breakslide}
 
 ::: {.break-next}
@@ -433,15 +466,15 @@ Before you leave your seat, check that Lab 02 opens on your device.
 Pick an interior row other than row 7. Calculate P<sup>sat</sup>, γ₁, γ₂, g and σ of ln γ₁. Check with the lab.
 :::
 ::: {}
-[20 min · three fits]{.label}
-Fit 60 → check 80. Fit 80 → check 60. Fit both. Save each as a case.
+[25 min · fits and weights]{.label}
+Fit 60 → check 80, 80 → check 60, and both; save each case. Then G3 at 60 and 80, unweighted and weighted.
 :::
 ::: {}
-[20 min · G3 weights]{.label}
-Repeat 60 and 80 in G3, unweighted and weighted, then with minimum x₁ = 0.02. Record τ, sd, RMS(r/σ) and the liquid curvature.
+[20 min · G5 your own code]{.label}
+Write the specification for one G3 fit. Use an AI assistant to write the code, run it, and check it in G5. Fix what disagrees.
 :::
 ::: {}
-[15 min · explain]{.label}
+[10 min · explain]{.label}
 Two sentences with numbers: why does "fit 80" check worse at 60 kPa than "fit 60" checks at 80? Download the study file with names and IDs.
 :::
 :::
@@ -454,7 +487,7 @@ Two sentences with numbers: why does "fit 80" check worse at 60 kPa than "fit 60
 
 :::: {.columns}
 ::: {.column width="44%"}
-1. Lab 02 study file with three saved cases, G3 and G4, your name and student ID.
+1. Lab 02 study file with three saved cases, G3, G4 and G5, your name and student ID.
 2. One hand calculation of γ₁, γ₂, g and σ.
 3. Two sentences that answer the activity question with numbers.
 
@@ -473,6 +506,34 @@ Fit with minimum x₁ = 0.05 at both pressures. Do the two parameter sets agree 
 
 G3, weighted: 60 kPa τ₂₁ = 2.85, RMS(r/σ) 1.16 / 0.93, min. curvature −0.030 · 80 kPa τ₂₁ = 2.08, RMS(r/σ) 1.59 / 0.42, curvature 0.139 (RMS at 60 / 80 kPa)
 :::
+:::
+::::
+
+## What the code checks catch {#ai-debrief}
+
+:::: {.columns}
+::: {.column width="56%"}
+::: {.lever-box}
+[Fit 80 kPa unweighted · a script that keeps every interior row]{.label}
+
+| | Lab | Script |
+|---|---:|---:|
+| Rows used | 17 | 18 |
+| τ₂₁ | 2.417 | 2.335 |
+| Objective vs lab minimum | — | +17 % |
+| Checking RMSE at 60 kPa | 0.291 | 0.269 |
+
+The extra row is at 362.78 K, above the range where both Antoine equations apply (334–362.41 K). P<sup>sat</sup> was extrapolated without warning.
+:::
+:::
+::: {.column width="42%" .rule-notes}
+[Other errors the checks expose]{.label}
+
+- P<sup>sat</sup> in bar, or ln for log₁₀: τ moves by several sd
+- RMSE divided by N, not 2N: √2 too large
+- Optimizer stopped early: objective above the minimum
+
+**All six agree** shows the code solves your problem. The weighted 60 kPa fit passes every code check and still predicts a liquid split: that is the model, not the code.
 :::
 ::::
 
@@ -538,7 +599,7 @@ No name or student ID is recorded. Wait for **"Response received."**
 ::: {.summary3}
 ::: {}
 [Hand in · this week]{.label}
-Your Lab 02 study file with the three fits, G3 and G4, name and student ID.
+Your Lab 02 study file with the three fits, G3, G4 and G5, name and student ID.
 :::
 ::: {}
 [Prepare · Session 3]{.label}

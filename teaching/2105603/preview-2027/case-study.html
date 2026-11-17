@@ -152,6 +152,42 @@
           <ul class="graduate-checklist"><li>Name a model, use and supported T/P/composition range.</li><li>Use two numerical comparisons, including the checking-data role.</li><li>Name missing uncertainty/covariance information and a model limitation.</li><li>Propose a measurement that could challenge the conclusion.</li></ul>
           <p class="graduate-note">Finish in Step 5 and download the existing study file. It includes these assumptions, bounds, results and conclusions. Reopening recomputes the investigations from their saved scientific context.</p>
         </section>
+        <section class="graduate-step" id="ai-code" aria-labelledby="ai-heading">
+          <h3 id="ai-heading">G5. Check code that an AI assistant helped you write</h3>
+          <p>From Session 2 you may use an AI assistant to <strong>write code</strong>. You decide everything else: which rows to use, the P<sup>sat</sup> equation and its units, the objective, the weights, α, the starting values and the bounds. You also run the code, check it, and interpret the result. Do not ask the assistant for parameter values, property constants or conclusions.</p>
+          <ol class="graduate-checklist"><li>Write your specification first, in your own words, before you open the assistant. It must be precise enough that two people would write the same objective.</li><li>Download the measured data. Ask the assistant to write Python that fits NRTL with α fixed to these data as you specified, and reports the outputs listed below. Run it yourself (on your computer or in a notebook service).</li><li>Enter the outputs and run the checks. When a check disagrees, find the cause in the code, fix it, and rerun. Record what you changed.</li><li>Paste your specification, the prompt and the final code. They are saved in the study file.</li></ol>
+          <div class="graduate-actions"><button id="ai-csv" type="button" class="secondary-button" disabled>Download the measured data (CSV)</button></div>
+          <p class="graduate-note">The file has every row at 60 and 80 kPa, including the two pure-component rows at each pressure, with the article's average standard uncertainties (expanded uncertainty divided by k = 2). Use the NIST Antoine constants in Step 2: log<sub>10</sub>(P<sup>sat</sup>/bar) = A − B/(T/K + C).</p>
+          <label for="ai-spec">Your specification, written before you used the assistant</label><textarea id="ai-spec" rows="5" maxlength="10000" placeholder="Data and rows kept, P sat equation and units, how ln γ is computed, objective (weighted or not, and how σ is computed), α, start values, bounds, how convergence is judged, outputs to report."></textarea>
+          <div class="graduate-grid case-graduate-bounds">
+            <div><label for="ai-tool">Assistant and version</label><input id="ai-tool" type="text" maxlength="200" placeholder="for example, the name and model"></div>
+          </div>
+          <label for="ai-prompt">The prompt or prompts you used</label><textarea id="ai-prompt" rows="4" maxlength="20000"></textarea>
+          <label for="ai-codetext">Final code that produced the outputs below</label><textarea id="ai-codetext" rows="8" maxlength="60000" spellcheck="false" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.78rem"></textarea>
+          <h4>Outputs from your code</h4>
+          <div class="graduate-grid case-graduate-bounds">
+            <div><label for="ai-train">Training set</label><select id="ai-train"><option value="60" selected>60 kPa</option><option value="80">80 kPa</option><option value="both">60 and 80 kPa</option></select></div>
+            <div><label for="ai-weight">Objective</label><select id="ai-weight"><option value="unweighted" selected>Unweighted Σr²</option><option value="weighted">Weighted Σ(r/σ)²</option></select></div>
+            <div><label for="ai-xmin">Minimum x₁ used</label><div class="quantity-input"><input id="ai-xmin" type="number" min="0" max="0.5" step="any" value="0"><span>mol/mol</span></div></div>
+            <div><label for="ai-alpha">Fixed α</label><input id="ai-alpha" type="number" min="0.01" max="1" step="any" value="0.47"></div>
+            <div><label for="ai-ps1">P₁<sup>sat</sup> at 341.25 K</label><div class="quantity-input"><input id="ai-ps1" type="number" step="any"><span>kPa</span></div></div>
+            <div><label for="ai-ps2">P₂<sup>sat</sup> at 341.25 K</label><div class="quantity-input"><input id="ai-ps2" type="number" step="any"><span>kPa</span></div></div>
+            <div><label for="ai-n">Observations used (N)</label><input id="ai-n" type="number" min="0" step="1"></div>
+            <div><label for="ai-t12">τ₁₂</label><input id="ai-t12" type="number" step="any"></div>
+            <div><label for="ai-t21">τ₂₁</label><input id="ai-t21" type="number" step="any"></div>
+            <div><label for="ai-rmse">Training RMSE in ln γ</label><input id="ai-rmse" type="number" step="any"></div>
+            <div><label for="ai-check">Checking RMSE at the other pressure</label><input id="ai-check" type="number" step="any"></div>
+          </div>
+          <p class="graduate-note">RMSE = √[Σ(r₁² + r₂²)/(2N)] in ln γ, as in Step 3. The lab recomputes each output from the measured data and from your τ, independently of your code.</p>
+          <div class="graduate-actions"><button id="ai-run" type="button" class="primary-button" disabled>Check my outputs</button></div>
+          <p id="ai-status" class="graduate-status" role="status">Enter the outputs from your code, then run the checks.</p>
+          <div id="ai-results" hidden>
+            <div class="table-scroll graduate-table" role="region" aria-label="Checks of your code outputs against the lab" tabindex="0"><table><thead><tr><th scope="col">Check</th><th scope="col">Lab</th><th scope="col">Your code</th><th scope="col">Result</th><th scope="col">Likely cause</th></tr></thead><tbody id="ai-out"></tbody></table></div>
+            <p class="graduate-note">Agreement with the lab shows that your code solves the problem you specified. It does not show that the specification, the model or the data are right. The lab's "likely cause" lists common errors; your code may have another.</p>
+          </div>
+          <label for="ai-found">What disagreed, what was wrong in the code, and how you fixed it</label><textarea id="ai-found" rows="3" maxlength="10000" placeholder="Name the check, the line of code, and the fix. If every check agreed at once, say which check you would trust least and why."></textarea>
+          <label for="ai-own">What you decided yourself, and one thing the checks cannot establish</label><textarea id="ai-own" rows="3" maxlength="10000" placeholder="For example: the weights, the rows, α. Then one limit: identifiability, the constant-τ assumption, or the data."></textarea>
+        </section>
       </section>
 
       <section class="panel case-section" id="compare" aria-labelledby="comparison-heading"><div class="panel-heading"><h2 id="comparison-heading">5. Compare and save</h2></div><ol class="investigation-steps"><li>Fit only 60 kPa and check 80 kPa. Save this comparison before changing the fitting data.</li><li>Reverse the experiment. Fit 80 kPa and check 60 kPa. Compare which model transfers better.</li><li>Fit both pressures. Explain why neither pressure is now held out from the fit.</li><li>Download your study, reopen it, and reproduce a saved comparison.</li></ol><p id="comparison-empty" class="empty-state">Saved model comparisons will appear here.</p><div id="comparison-table-wrap" class="table-scroll" role="region" aria-label="Saved fitting and checking comparisons" tabindex="0" hidden><table><caption class="visually-hidden">Parameters, compositions and RMSE values are dimensionless.</caption><thead><tr><th scope="col">Case</th><th scope="col">Model</th><th scope="col">Fitting data</th><th scope="col">Checking pressure / kPa</th><th scope="col">α</th><th scope="col">τ<sub>12</sub></th><th scope="col">τ<sub>21</sub></th><th scope="col">Fitting RMSE</th><th scope="col">Checking RMSE</th><th scope="col">Reopen</th></tr></thead><tbody id="comparison-body"></tbody></table></div>
@@ -163,6 +199,6 @@
     <noscript><p class="error-summary">Enable JavaScript for calculation and fitting. The starting problem, equations and investigation steps remain available to read.</p></noscript>
   </main><footer class="site-footer"><span>2105603 · Advanced Chemical Engineering Thermodynamics</span><a href="../labs/case-study.html">Original Lab 02 · full consistency case study</a></footer>
   <script src="../labs/assets/plotly.min.js" defer></script><script type="module" src="assets/mode.js?v=mode-3"></script>
-  <script type="module" src="assets/case.js?v=mode-2"></script><script type="module" src="assets/wfit.js?v=2"></script>
+  <script type="module" src="assets/case.js?v=mode-3"></script><script type="module" src="assets/wfit.js?v=2"></script><script type="module" src="assets/aicode.js?v=1"></script>
 </body>
 </html>
