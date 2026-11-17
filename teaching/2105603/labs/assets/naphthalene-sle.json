@@ -1,0 +1,381 @@
+{
+ "version": "1.0.0",
+ "name": "Naphthalene (1) solubility in organic solvents",
+ "solute": "naphthalene",
+ "kind": "experimental",
+ "pressureKPa": 101,
+ "source": {
+  "doi": "10.1021/acs.jced.9b00064",
+  "citation": "Xu, Liu, Pei, Zhao, Zhang, Xia and Zhang, J. Chem. Eng. Data 64 (2019) 3018–3027.",
+  "url": "https://trc.nist.gov/ThermoML/10.1021/acs.jced.9b00064.html",
+  "jsonURL": "https://trc.nist.gov/ThermoML/10.1021/acs.jced.9b00064.json",
+  "license": "https://www.nist.gov/open/license",
+  "retrieved": "2026-11-17"
+ },
+ "convention": "Solid-liquid equilibrium temperature T (K, visual observation, expanded uncertainty UT at 95 %) at a given molality of naphthalene (mol per kg of solvent). Mole fraction x1 = m / (m + 1000/M_solvent). Molar masses: IUPAC standard atomic weights.",
+ "fusion": {
+  "paper": {
+   "Tm": 355.04,
+   "UTm": 2.12,
+   "dH": 20.87,
+   "UdH": 2.05,
+   "unit": "K, kJ/mol",
+   "note": "DSC, this article (ThermoML datasets 1 and 2), expanded uncertainty at 95 %."
+  },
+  "nist": {
+   "Tm": 353.39,
+   "UTm": 0.09,
+   "dH": 19.0,
+   "unit": "K, kJ/mol",
+   "note": "Triple point: NIST WebBook average of 6 values. Enthalpy of fusion: Chirico, Knipmeyer et al. (2002), as listed in the NIST WebBook (accessed 2026-11-17).",
+   "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C91203&Mask=4"
+  }
+ },
+ "solvents": {
+  "octane": {
+   "molarMass": 114.229,
+   "rows": [
+    {
+     "T": 287.8,
+     "UT": 1.01,
+     "molality": 0.87525
+    },
+    {
+     "T": 292.7,
+     "UT": 1.01,
+     "molality": 1.10186
+    },
+    {
+     "T": 296.6,
+     "UT": 1.01,
+     "molality": 1.32174
+    },
+    {
+     "T": 299.6,
+     "UT": 1.01,
+     "molality": 1.55838
+    },
+    {
+     "T": 304,
+     "UT": 1.01,
+     "molality": 1.9176
+    },
+    {
+     "T": 308.3,
+     "UT": 1.01,
+     "molality": 2.38487
+    },
+    {
+     "T": 312.4,
+     "UT": 1.01,
+     "molality": 2.97626
+    },
+    {
+     "T": 316.5,
+     "UT": 1.01,
+     "molality": 3.76926
+    },
+    {
+     "T": 321.1,
+     "UT": 1.01,
+     "molality": 5.11253
+    },
+    {
+     "T": 325.5,
+     "UT": 1.01,
+     "molality": 7.15932
+    },
+    {
+     "T": 329.7,
+     "UT": 1.01,
+     "molality": 10.03073
+    }
+   ]
+  },
+  "dodecane": {
+   "molarMass": 170.335,
+   "rows": [
+    {
+     "T": 284,
+     "UT": 1.01,
+     "molality": 0.64564
+    },
+    {
+     "T": 289.6,
+     "UT": 1.01,
+     "molality": 0.83252
+    },
+    {
+     "T": 293.7,
+     "UT": 1.01,
+     "molality": 0.97674
+    },
+    {
+     "T": 297.8,
+     "UT": 1.01,
+     "molality": 1.15853
+    },
+    {
+     "T": 301.9,
+     "UT": 1.01,
+     "molality": 1.39312
+    },
+    {
+     "T": 306.7,
+     "UT": 1.01,
+     "molality": 1.78879
+    },
+    {
+     "T": 311,
+     "UT": 1.01,
+     "molality": 2.21756
+    },
+    {
+     "T": 315.1,
+     "UT": 1.01,
+     "molality": 2.71526
+    },
+    {
+     "T": 319.5,
+     "UT": 1.01,
+     "molality": 3.52409
+    },
+    {
+     "T": 323.6,
+     "UT": 1.01,
+     "molality": 4.48176
+    },
+    {
+     "T": 327.8,
+     "UT": 1.01,
+     "molality": 5.61846
+    }
+   ]
+  },
+  "trichloromethane": {
+   "molarMass": 119.378,
+   "rows": [
+    {
+     "T": 280.5,
+     "UT": 1.01,
+     "molality": 2.27066
+    },
+    {
+     "T": 285.2,
+     "UT": 1.01,
+     "molality": 2.66984
+    },
+    {
+     "T": 289.6,
+     "UT": 1.01,
+     "molality": 3.10269
+    },
+    {
+     "T": 294.5,
+     "UT": 1.01,
+     "molality": 3.70003
+    },
+    {
+     "T": 299.7,
+     "UT": 1.01,
+     "molality": 4.41513
+    },
+    {
+     "T": 304.1,
+     "UT": 1.01,
+     "molality": 5.19448
+    },
+    {
+     "T": 308.4,
+     "UT": 1.01,
+     "molality": 6.13329
+    },
+    {
+     "T": 313.1,
+     "UT": 1.01,
+     "molality": 7.22724
+    },
+    {
+     "T": 317.4,
+     "UT": 1.01,
+     "molality": 8.59744
+    },
+    {
+     "T": 321.7,
+     "UT": 1.01,
+     "molality": 10.52664
+    },
+    {
+     "T": 325.8,
+     "UT": 1.01,
+     "molality": 12.86751
+    }
+   ]
+  },
+  "tetrachloromethane": {
+   "molarMass": 153.823,
+   "rows": [
+    {
+     "T": 285.8,
+     "UT": 1.01,
+     "molality": 1.2616
+    },
+    {
+     "T": 290.9,
+     "UT": 1.01,
+     "molality": 1.5982
+    },
+    {
+     "T": 295.9,
+     "UT": 1.01,
+     "molality": 2.00666
+    },
+    {
+     "T": 300.3,
+     "UT": 1.01,
+     "molality": 2.42519
+    },
+    {
+     "T": 305,
+     "UT": 1.01,
+     "molality": 2.98591
+    },
+    {
+     "T": 310.1,
+     "UT": 1.01,
+     "molality": 3.79286
+    },
+    {
+     "T": 314.5,
+     "UT": 1.01,
+     "molality": 4.70056
+    },
+    {
+     "T": 318.6,
+     "UT": 1.01,
+     "molality": 5.776
+    },
+    {
+     "T": 322.9,
+     "UT": 1.01,
+     "molality": 7.3472
+    },
+    {
+     "T": 327.4,
+     "UT": 1.01,
+     "molality": 9.61573
+    }
+   ]
+  },
+  "octan-1-ol": {
+   "molarMass": 130.228,
+   "rows": [
+    {
+     "T": 283.3,
+     "UT": 1.01,
+     "molality": 0.60184
+    },
+    {
+     "T": 291.3,
+     "UT": 1.01,
+     "molality": 0.81031
+    },
+    {
+     "T": 296,
+     "UT": 1.01,
+     "molality": 0.96611
+    },
+    {
+     "T": 299.2,
+     "UT": 1.01,
+     "molality": 1.14051
+    },
+    {
+     "T": 303.3,
+     "UT": 1.01,
+     "molality": 1.30576
+    },
+    {
+     "T": 307.4,
+     "UT": 1.01,
+     "molality": 1.51628
+    },
+    {
+     "T": 311.5,
+     "UT": 1.01,
+     "molality": 1.87147
+    },
+    {
+     "T": 317,
+     "UT": 1.01,
+     "molality": 2.51885
+    },
+    {
+     "T": 322.1,
+     "UT": 1.01,
+     "molality": 3.29332
+    },
+    {
+     "T": 326.2,
+     "UT": 1.01,
+     "molality": 4.08024
+    }
+   ]
+  },
+  "benzene": {
+   "molarMass": 78.112,
+   "rows": [
+    {
+     "T": 285.7,
+     "UT": 1.01,
+     "molality": 3.31333
+    },
+    {
+     "T": 290.3,
+     "UT": 1.01,
+     "molality": 3.90306
+    },
+    {
+     "T": 294.5,
+     "UT": 1.01,
+     "molality": 4.52262
+    },
+    {
+     "T": 299.5,
+     "UT": 1.01,
+     "molality": 5.43333
+    },
+    {
+     "T": 303.7,
+     "UT": 1.01,
+     "molality": 6.36683
+    },
+    {
+     "T": 307.9,
+     "UT": 1.01,
+     "molality": 7.4257
+    },
+    {
+     "T": 312.1,
+     "UT": 1.01,
+     "molality": 8.8264
+    },
+    {
+     "T": 317.4,
+     "UT": 1.01,
+     "molality": 11.04207
+    },
+    {
+     "T": 321.5,
+     "UT": 1.01,
+     "molality": 13.18871
+    },
+    {
+     "T": 325.8,
+     "UT": 1.01,
+     "molality": 16.32354
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics">
+
+<title>Solids in liquids, and gases on surfaces</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<meta name="robots" content="noindex">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="../site_libs/katex/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+
+<header id="title-block-header">
+<h1 class="title">Solids in liquids, and gases on surfaces</h1>
+<p class="subtitle">Pre-class note for Session 4 · about 20 minutes</p>
+<p class="author">Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics</p>
+
+</header>
+
+
+<div class="draft-note">
+<p>Draft for 2027. If you are taking the course this year, use the current course page.</p>
+</div>
+<div class="purpose">
+<p><strong>Why read this.</strong> Sessions 1–3 dealt with fluid phases. Session 4 adds a phase whose composition we usually know in advance: a pure solid, either crystallizing from a liquid or holding gas on its surface. The equilibrium condition is the same, equal chemical potential, but the solid supplies a fixed reference. Work the three questions at the end and bring one question of your own.</p>
+</div>
+<h2 id="a-pure-solid-in-equilibrium-with-a-liquid">1. A pure solid in equilibrium with a liquid</h2>
+<p>When component 1 crystallizes as a pure solid (no solid solution), equilibrium requires <span class="math inline">f_1^{\text{s}}=f_1^{\text{l}}</span>, with <span class="math inline">f_1^{\text{l}}=x_1\gamma_1f_1^{\text{l,pure}}</span>. The ratio of the pure-solid to the pure (subcooled) liquid fugacity follows from a path through the melting point:</p>
+<p><span class="math display">\ln(x_1\gamma_1)=-\frac{\Delta_{\text{fus}}H}{R}\left(\frac{1}{T}-\frac{1}{T_m}\right)+\frac{\Delta C_p}{R}\left(\frac{T_m}{T}-1-\ln\frac{T_m}{T}\right)</span></p>
+<p>The ΔC<sub>p</sub> term is small when T is near T<sub>m</sub> and is usually neglected; we do so in Session 4. The equation assumes a pure solid of one crystal form. A solid solution or a polymorph changes the left side.</p>
+<p>With γ₁ = 1 the result is the <strong>ideal solubility</strong>. It depends only on the solute’s fusion properties, not on the solvent. Every solvent that differs from it does so through γ₁.</p>
+<h2 id="fusion-data-decide-the-ideal-solubility">2. Fusion data decide the ideal solubility</h2>
+<p>For naphthalene, two sources give:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Source</th>
+<th style="text-align: right;">T<sub>m</sub> / K</th>
+<th style="text-align: right;">Δ<sub>fus</sub>H / (kJ mol⁻¹)</th>
+<th style="text-align: right;">ideal x₁ at 298.15 K</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NIST WebBook: triple point (average of 6); Δ<sub>fus</sub>H of Chirico et al.&nbsp;(2002)</td>
+<td style="text-align: right;">353.39</td>
+<td style="text-align: right;">19.0</td>
+<td style="text-align: right;">0.302</td>
+</tr>
+<tr class="even">
+<td>DSC in Xu et al.&nbsp;(2019), ±2.12 K and ±2.05 kJ/mol</td>
+<td style="text-align: right;">355.04</td>
+<td style="text-align: right;">20.87</td>
+<td style="text-align: right;">0.260</td>
+</tr>
+</tbody>
+</table>
+<p>At 298.15 K, each 1 kJ/mol in Δ<sub>fus</sub>H changes ln x₁ by 0.063. The two sets differ by 16 % in ideal solubility. Any γ₁ inferred from a measured solubility inherits that difference.</p>
+<h2 id="from-measured-solubility-to-γ₁">3. From measured solubility to γ₁</h2>
+<p>Xu et al.&nbsp;report the saturation temperature at a given <strong>molality</strong> of naphthalene, m in mol per kg of solvent. Convert first:</p>
+<p><span class="math display">x_1=\frac{m}{m+1000/M_{\text{solvent}}}</span></p>
+<p>Then γ₁ = x₁<sup>id</sup>(T)/x₁ at the row’s own temperature.</p>
+<p><strong>Worked example.</strong> In octane (M = 114.229 g/mol), m = 1.3217 mol/kg saturates at 296.6 K. So x₁ = 1.3217/(1.3217 + 8.7544) = 0.1312. With the NIST fusion data, x₁<sup>id</sup>(296.6 K) = 0.290, and γ₁ = 2.21. Octane dissolves naphthalene less than half as well as an ideal solvent would.</p>
+<p>A one-parameter model, ln γ₁ = (w/RT) x₂², then gives an equation in which x₁ appears on both sides. It has to be solved for x₁; it cannot be evaluated once.</p>
+<h2 id="two-solids-the-eutectic">4. Two solids: the eutectic</h2>
+<p>When both components can crystallize, each has its own liquidus curve from Section 1. They meet at the <strong>eutectic</strong>, where liquid coexists with both solids. For a binary at fixed P the phase rule gives F = 2 − 3 + 1 = 0: the eutectic temperature and composition are fixed. Lab 10 builds this diagram and follows a feed as it cools.</p>
+<h2 id="a-gas-on-a-solid-surface">5. A gas on a solid surface</h2>
+<p>Adsorption is also an equality of chemical potential, but between the gas and an adsorbed phase. Its result is an <strong>isotherm</strong>, the amount adsorbed q (mol/kg) as a function of P at fixed T. Two common forms:</p>
+<p><span class="math display">\text{Henry: } q=KP\qquad\text{Langmuir: } q=\frac{q_sbP}{1+bP}</span></p>
+<p>Henry’s law is the low-pressure limit of Langmuir, with K = q<sub>s</sub>b. In a closed vessel of volume V with m kg of adsorbent and n mol of gas, the pressure satisfies</p>
+<p><span class="math display">n=\frac{PV}{RT}+m\,q(P,T).</span></p>
+<p><strong>Example (Lab 11).</strong> V = 1 L, m = 20 g, n = 0.03 mol, 300 K, Langmuir q<sub>s</sub> = 2 mol/kg, b = 0.1 kPa⁻¹: P = 15.0 kPa, q = 1.20 mol/kg (60 % coverage). Without adsorbent, the same gas would give 74.8 kPa. With Henry’s law, K = 0.2 mol kg⁻¹ kPa⁻¹, the answer would be 6.8 kPa, because a linear isotherm never saturates.</p>
+<h2 id="isosteric-heat">6. Isosteric heat</h2>
+<p>At fixed loading q, the Clausius–Clapeyron form applies to the adsorbed phase:</p>
+<p><span class="math display">\left(\frac{\partial\ln P}{\partial(1/T)}\right)_q=-\frac{Q_{\text{st}}}{R}</span></p>
+<p>Isotherms at three temperatures give Q<sub>st</sub> from the slope of ln P against 1/T at each q. In Lab 11’s synthetic data (Q = 25 kJ/mol), three isotherms give 25.1 kJ/mol. Recording the 340 K isotherm as 342 K gives 24.1 kJ/mol: a 2 K error moves the heat by 1 kJ/mol.</p>
+<h2 id="before-session-4">7. Before Session 4</h2>
+<p>Write short answers. We use them in the first 30 minutes.</p>
+<ol type="1">
+<li><strong>Fusion data.</strong> Confirm the two ideal solubilities of naphthalene at 298.15 K in Section 2. Which set would you use, and why?</li>
+<li><strong>γ from data.</strong> In benzene, m = 4.5226 mol/kg saturates at 294.5 K (M = 78.112 g/mol). Find x₁, then γ₁ with each fusion data set. Is the deviation from ideal positive or negative?</li>
+<li><strong>Vessel.</strong> In the Section 5 example, why does Henry’s law give a pressure less than half the Langmuir answer, although the two isotherms agree at low P?</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li>Xu, Y.-S., Liu, X., Pei, K.-K., Zhao, R.-X., Zhang, G.-L., Xia, Q., Zhang, F.-B. (2019). Thermodynamic studies of solubility for naphthalene in 12 solvents from 279 to 330 K. <em>J. Chem. Eng. Data</em> 64, 3018–3027. Data via NIST ThermoML.</li>
+<li>NIST Chemistry WebBook, naphthalene, phase-change data (accessed 17 November 2026): triple point 353.39 ± 0.09 K (average of 6 values); Δ<sub>fus</sub>H = 19.0 kJ/mol from Chirico, Knipmeyer et al.&nbsp;(2002).</li>
+<li>Prausnitz, J. M., Lichtenthaler, R. N., de Azevedo, E. G. (1999). <em>Molecular Thermodynamics of Fluid-Phase Equilibria</em>, 3rd ed.&nbsp;Prentice Hall. Chapter 11.</li>
+<li>Ruthven, D. M. (1984). <em>Principles of Adsorption and Adsorption Processes</em>. Wiley. Chapters 2 and 3.</li>
+</ul>
+<p><a href="s04.html" class="next-link">Session 4 slides →</a></p>
+
+
+
+
+
+</body></html>

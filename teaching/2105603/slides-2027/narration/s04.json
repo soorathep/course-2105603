@@ -1,0 +1,661 @@
+{
+ "title-slide": {
+  "audio": "narration/s04/title-slide.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 1.91,
+    "en": "Welcome to session 4.",
+    "th": "ยินดีต้อนรับสู่คาบที่ 4"
+   },
+   {
+    "start": 2.26,
+    "end": 9.05,
+    "en": "Today one of the phases is a pure solid: a crystal in a solution, or a surface that holds gas.",
+    "th": "วันนี้เฟสหนึ่งเป็นของแข็งบริสุทธิ์ ได้แก่ ผลึกในสารละลาย หรือพื้นผิวที่จับแก๊สไว้"
+   },
+   {
+    "start": 9.4,
+    "end": 20.15,
+    "en": "The question for the whole session: when a model fits measured solubility well, which errors has its parameter quietly absorbed, and which predictions survive?",
+    "th": "คำถามของทั้งคาบนี้คือ เมื่อแบบจำลองเข้ากับข้อมูลการละลายที่วัดได้ดี พารามิเตอร์ของมันดูดซับความคลาดเคลื่อนใดไว้ และการทำนายใดยังเชื่อถือได้"
+   },
+   {
+    "start": 20.5,
+    "end": 30.14,
+    "en": "If you are studying on your own, turn on narration and captions with the buttons at the bottom left. Use the arrow keys to move through the slides.",
+    "th": "ถ้าเรียนด้วยตนเอง เปิดเสียงบรรยายและคำบรรยายได้ที่ปุ่มมุมซ้ายล่าง และใช้ปุ่มลูกศรเพื่อเลื่อนสไลด์"
+   }
+  ]
+ },
+ "course-map": {
+  "audio": "narration/s04/course-map.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.77,
+    "en": "This is session 4 of 7 after the midterm: solids and adsorption.",
+    "th": "นี่คือคาบที่ 4 จาก 7 คาบหลังสอบกลางภาค เรื่องของแข็งและการดูดซับ"
+   },
+   {
+    "start": 5.12,
+    "end": 14.02,
+    "en": "Sessions 1 to 3 balanced fluid phases against each other. Today one phase is a pure solid, and it gives a fixed reference.",
+    "th": "คาบที่ 1 ถึง 3 เป็นสมดุลระหว่างเฟสของไหล วันนี้เฟสหนึ่งเป็นของแข็งบริสุทธิ์ ซึ่งให้จุดอ้างอิงที่คงที่"
+   }
+  ]
+ },
+ "why": {
+  "audio": "narration/s04/why.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 20.47,
+    "en": "Naphthalene at about 299.5 kelvin dissolves to a mole fraction of 0.345 in chloroform, 0.298 in benzene, 0.151 in octane and 0.129 in octan-1-ol.",
+    "th": "naphthalene ที่ประมาณ 299.5 เคลวิน ละลายได้ถึงเศษส่วนโมล 0.345 ใน chloroform, 0.298 ใน benzene, 0.151 ใน octane และ 0.129 ใน octan-1-ol"
+   },
+   {
+    "start": 20.82,
+    "end": 31.26,
+    "en": "The ideal solubility depends only on the solid, yet two published fusion data sets put it at 0.27 or 0.31.",
+    "th": "ความสามารถในการละลายแบบอุดมคติขึ้นกับของแข็งเท่านั้น แต่ข้อมูลการหลอมเหลวสองชุดที่ตีพิมพ์ให้ค่า 0.27 หรือ 0.31"
+   },
+   {
+    "start": 31.61,
+    "end": 41.93,
+    "en": "A crystallizer design needs both the fusion data and the liquid activity coefficient. An error in one is absorbed by the other when you fit.",
+    "th": "การออกแบบเครื่องตกผลึกต้องใช้ทั้งข้อมูลการหลอมเหลวและสัมประสิทธิ์กิจกรรมของของเหลว ความคลาดเคลื่อนในค่าหนึ่งจะถูกดูดซับไว้ในอีกค่าหนึ่งเมื่อ fit"
+   }
+  ]
+ },
+ "recap": {
+  "audio": "narration/s04/recap.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.27,
+    "en": "Sessions 1 to 3 set equal fugacities between fluid phases whose compositions were unknown.",
+    "th": "คาบที่ 1 ถึง 3 ตั้งให้ fugacity เท่ากันระหว่างเฟสของไหลที่ไม่ทราบองค์ประกอบ"
+   },
+   {
+    "start": 7.62,
+    "end": 12.61,
+    "en": "Today the solid is pure, so its fugacity depends on temperature only.",
+    "th": "วันนี้ของแข็งเป็นสารบริสุทธิ์ fugacity ของมันจึงขึ้นกับอุณหภูมิเท่านั้น"
+   },
+   {
+    "start": 12.96,
+    "end": 20.41,
+    "en": "For gas on a surface, the adsorbed amount follows an isotherm, and the vessel balance closes the problem.",
+    "th": "สำหรับแก๊สบนพื้นผิว ปริมาณที่ถูกดูดซับเป็นไปตาม isotherm และสมการดุลมวลของภาชนะทำให้ปัญหาปิด"
+   }
+  ]
+ },
+ "outcomes": {
+  "audio": "narration/s04/outcomes.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.71,
+    "en": "By the end of today you should be able to do five things.",
+    "th": "เมื่อจบคาบนี้ คุณควรทำได้ห้าอย่าง"
+   },
+   {
+    "start": 4.06,
+    "end": 8.6,
+    "en": "Derive the solubility of a pure solid and state its assumptions.",
+    "th": "หาสมการความสามารถในการละลายของของแข็งบริสุทธิ์ และระบุสมมติฐาน"
+   },
+   {
+    "start": 8.95,
+    "end": 15.8,
+    "en": "Infer the activity coefficient from measured solubility, and show how much it depends on the fusion data.",
+    "th": "หาสัมประสิทธิ์กิจกรรมจากความสามารถในการละลายที่วัดได้ และแสดงว่าค่านี้ขึ้นกับข้อมูลการหลอมเหลวมากเพียงใด"
+   },
+   {
+    "start": 16.15,
+    "end": 20.52,
+    "en": "Read a eutectic diagram and apply the phase rule with solids.",
+    "th": "อ่านแผนภาพยูเทกติก และใช้กฎเฟสเมื่อมีของแข็ง"
+   },
+   {
+    "start": 20.87,
+    "end": 26.7,
+    "en": "Solve a closed adsorption vessel, and extract an isosteric heat from isotherms.",
+    "th": "แก้ปัญหาภาชนะปิดที่มีการดูดซับ และหาความร้อนไอโซสเตอริกจาก isotherm"
+   },
+   {
+    "start": 27.05,
+    "end": 33.45,
+    "en": "And specify a solubility fit for an AI assistant to code, then verify the code.",
+    "th": "และเขียนข้อกำหนดของการ fit ความสามารถในการละลายให้ผู้ช่วย AI เขียนโค้ด แล้วตรวจโค้ดนั้น"
+   }
+  ]
+ },
+ "route": {
+  "audio": "narration/s04/route.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.51,
+    "en": "This is the plan for the three hours.",
+    "th": "นี่คือแผนของการเรียนสามชั่วโมง"
+   },
+   {
+    "start": 2.86,
+    "end": 8.71,
+    "en": "Thirty minutes of concepts: solubility, fusion data, the eutectic and isotherms.",
+    "th": "สามสิบนาทีแรกเป็นแนวคิด ได้แก่ ความสามารถในการละลาย ข้อมูลการหลอมเหลว ยูเทกติก และ isotherm"
+   },
+   {
+    "start": 9.06,
+    "end": 17.38,
+    "en": "Activity 1 asks whether naphthalene in benzene is above or below ideal. Then I demonstrate Lab 11.",
+    "th": "กิจกรรมที่ 1 ถามว่า naphthalene ใน benzene สูงหรือต่ำกว่าอุดมคติ จากนั้นผมจะสาธิต Lab 11"
+   },
+   {
+    "start": 17.73,
+    "end": 29.42,
+    "en": "After the break you work in pairs on the isosteric heat in Lab 11, then on your own code in Lab 10, and we finish by discussing what a fitted parameter absorbs.",
+    "th": "หลังพักให้ทำงานเป็นคู่เรื่องความร้อนไอโซสเตอริกใน Lab 11 ต่อด้วยโค้ดของตัวเองใน Lab 10 และปิดท้ายด้วยการอภิปรายว่าพารามิเตอร์ที่ fit ได้ดูดซับอะไรไว้"
+   },
+   {
+    "start": 29.77,
+    "end": 35.68,
+    "en": "If you are studying on your own, follow the same order and pause at each activity slide.",
+    "th": "ถ้าเรียนด้วยตนเอง ให้ทำตามลำดับเดียวกัน และหยุดที่สไลด์กิจกรรมแต่ละสไลด์"
+   }
+  ]
+ },
+ "sle": {
+  "audio": "narration/s04/sle.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.04,
+    "en": "A path through the melting point gives the solubility of a pure solid. The heat capacity term is small near the melting point.",
+    "th": "เส้นทางผ่านจุดหลอมเหลวให้สมการความสามารถในการละลายของของแข็งบริสุทธิ์ พจน์ความจุความร้อนมีค่าน้อยเมื่ออุณหภูมิใกล้จุดหลอมเหลว"
+   },
+   {
+    "start": 9.39,
+    "end": 20.03,
+    "en": "With gamma equal to one, this is the ideal solubility. It depends on the solid alone. Every solvent that differs from it does so through gamma.",
+    "th": "เมื่อ γ เท่ากับหนึ่ง ได้ความสามารถในการละลายแบบอุดมคติ ซึ่งขึ้นกับของแข็งเท่านั้น ตัวทำละลายใดที่ต่างจากค่านี้ ต่างกันผ่าน γ"
+   },
+   {
+    "start": 20.38,
+    "end": 31.09,
+    "en": "The equation assumes a pure solid of one crystal form. It fails when the molecules co-crystallize, or when a polymorph or a solvate forms.",
+    "th": "สมการนี้สมมติว่าของแข็งบริสุทธิ์และมีผลึกรูปแบบเดียว สมการใช้ไม่ได้เมื่อโมเลกุลตกผลึกร่วมกัน หรือเมื่อเกิด polymorph หรือ solvate"
+   }
+  ]
+ },
+ "fusion": {
+  "audio": "narration/s04/fusion.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 17.59,
+    "en": "Two sources give naphthalene different fusion data. The ideal solubility at 298.15 kelvin is 0.302 with the NIST data, and 0.260 with the article's calorimetry.",
+    "th": "แหล่งข้อมูลสองแห่งให้ข้อมูลการหลอมเหลวของ naphthalene ต่างกัน ความสามารถในการละลายแบบอุดมคติที่ 298.15 เคลวิน เท่ากับ 0.302 ด้วยข้อมูล NIST และ 0.260 ด้วยการวัดแคลอรีมิทรีของบทความ"
+   },
+   {
+    "start": 17.94,
+    "end": 30.32,
+    "en": "Each kilojoule per mole in the enthalpy of fusion moves ln x by 0.063. The two sets differ by 16 percent in ideal solubility.",
+    "th": "ทุก 1 กิโลจูลต่อโมลของเอนทาลปีการหลอมเหลวทำให้ ln x เปลี่ยนไป 0.063 ข้อมูลสองชุดนี้ให้ความสามารถในการละลายแบบอุดมคติต่างกัน 16 เปอร์เซ็นต์"
+   },
+   {
+    "start": 30.67,
+    "end": 39.56,
+    "en": "That difference passes into every gamma you infer from a measured solubility. Choose the fusion data first, and say which you used.",
+    "th": "ความต่างนี้ส่งผ่านไปยังทุกค่า γ ที่หาจากความสามารถในการละลายที่วัดได้ ให้เลือกข้อมูลการหลอมเหลวก่อน และระบุว่าใช้ชุดใด"
+   }
+  ]
+ },
+ "gamma": {
+  "audio": "narration/s04/gamma.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 6.93,
+    "en": "The data come as molality, moles per kilogram of solvent. Convert to mole fraction first.",
+    "th": "ข้อมูลอยู่ในรูปโมแลลิตี คือโมลต่อกิโลกรัมของตัวทำละลาย ให้แปลงเป็นเศษส่วนโมลก่อน"
+   },
+   {
+    "start": 7.28,
+    "end": 19.18,
+    "en": "In octane at 296.6 kelvin, the mole fraction is 0.1312, and gamma is 2.21 with the NIST fusion data.",
+    "th": "ใน octane ที่ 296.6 เคลวิน เศษส่วนโมลเท่ากับ 0.1312 และ γ เท่ากับ 2.21 เมื่อใช้ข้อมูลการหลอมเหลวของ NIST"
+   },
+   {
+    "start": 19.53,
+    "end": 26.74,
+    "en": "With a one-parameter model, x appears on both sides. Solve for x. Do not evaluate gamma once.",
+    "th": "เมื่อใช้แบบจำลองพารามิเตอร์เดียว x อยู่ทั้งสองข้างของสมการ ต้องแก้สมการหา x ไม่ใช่คำนวณ γ ครั้งเดียว"
+   },
+   {
+    "start": 27.09,
+    "end": 42.47,
+    "en": "In the table, the fitted parameter w changes with the fusion data, by more than 700 joules per mole for benzene. The predicted solubility at 298.15 kelvin hardly moves.",
+    "th": "ในตาราง พารามิเตอร์ w ที่ fit ได้เปลี่ยนไปตามข้อมูลการหลอมเหลว สำหรับ benzene เปลี่ยนมากกว่า 700 จูลต่อโมล แต่ความสามารถในการละลายที่ทำนายที่ 298.15 เคลวิน แทบไม่เปลี่ยน"
+   }
+  ]
+ },
+ "eutectic": {
+  "audio": "narration/s04/eutectic.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 10.53,
+    "en": "When both components can crystallize, each has its own solubility curve. They meet at the eutectic, where liquid coexists with both solids.",
+    "th": "เมื่อทั้งสององค์ประกอบตกผลึกได้ แต่ละตัวมีเส้นความสามารถในการละลายของตัวเอง สองเส้นมาพบกันที่จุดยูเทกติก ซึ่งของเหลวอยู่ร่วมกับของแข็งทั้งสอง"
+   },
+   {
+    "start": 10.88,
+    "end": 19.91,
+    "en": "For a binary at fixed pressure with three phases, the phase rule leaves no freedom. The eutectic temperature and composition are fixed.",
+    "th": "สำหรับระบบสององค์ประกอบที่ความดันคงที่และมีสามเฟส กฎเฟสไม่เหลือระดับความเสรี อุณหภูมิและองค์ประกอบยูเทกติกจึงถูกกำหนด"
+   },
+   {
+    "start": 20.26,
+    "end": 28.58,
+    "en": "In Lab 10, with an ideal liquid and teaching parameters, the eutectic is at 319.8 kelvin.",
+    "th": "ใน Lab 10 ที่ใช้ของเหลวอุดมคติและพารามิเตอร์สำหรับการสอน จุดยูเทกติกอยู่ที่ 319.8 เคลวิน"
+   }
+  ]
+ },
+ "activity-1": {
+  "audio": "narration/s04/activity-1.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.13,
+    "en": "Activity 1. Ten minutes, alone, then with a partner.",
+    "th": "กิจกรรมที่ 1 ใช้เวลาสิบนาที ทำคนเดียวก่อน แล้วคุยกับเพื่อน"
+   },
+   {
+    "start": 4.48,
+    "end": 18.71,
+    "en": "Naphthalene in benzene: a molality of 4.5226 saturates at 294.5 kelvin. Find the mole fraction, then gamma with each fusion data set.",
+    "th": "naphthalene ใน benzene โมแลลิตี 4.5226 อิ่มตัวที่ 294.5 เคลวิน ให้หาเศษส่วนโมล แล้วหา γ ด้วยข้อมูลการหลอมเหลวแต่ละชุด"
+   },
+   {
+    "start": 19.06,
+    "end": 24.27,
+    "en": "Is the deviation from ideal positive or negative? What would you report?",
+    "th": "การเบี่ยงเบนจากอุดมคติเป็นบวกหรือลบ และคุณจะรายงานอะไร"
+   }
+  ]
+ },
+ "activity-1-debrief": {
+  "audio": "narration/s04/activity-1-debrief.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.94,
+    "en": "Check your answer. The mole fraction is 0.2610.",
+    "th": "ตรวจคำตอบ เศษส่วนโมลเท่ากับ 0.2610"
+   },
+   {
+    "start": 5.29,
+    "end": 16.64,
+    "en": "With the NIST data gamma is 1.051, a positive deviation. With the article's data it is 0.896, a negative one.",
+    "th": "เมื่อใช้ข้อมูล NIST γ เท่ากับ 1.051 เป็นการเบี่ยงเบนเชิงบวก เมื่อใช้ข้อมูลของบทความ γ เท่ากับ 0.896 เป็นการเบี่ยงเบนเชิงลบ"
+   },
+   {
+    "start": 16.99,
+    "end": 25.57,
+    "en": "The sign is not decided by these data. It is decided by the fusion data, which differ by about their own uncertainty.",
+    "th": "ข้อมูลชุดนี้ตัดสินเครื่องหมายไม่ได้ เครื่องหมายขึ้นกับข้อมูลการหลอมเหลว ซึ่งต่างกันประมาณเท่ากับความไม่แน่นอนของตัวมันเอง"
+   },
+   {
+    "start": 25.92,
+    "end": 38.1,
+    "en": "What you can report: the mixture is close to ideal, and the solubility at 298.15 kelvin is about 0.288 with either set.",
+    "th": "สิ่งที่รายงานได้คือ สารผสมนี้ใกล้อุดมคติ และความสามารถในการละลายที่ 298.15 เคลวิน ประมาณ 0.288 ไม่ว่าจะใช้ข้อมูลชุดใด"
+   }
+  ]
+ },
+ "vessel": {
+  "audio": "narration/s04/vessel.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.1,
+    "en": "Now gas on a surface. The Langmuir isotherm and the vessel balance meet at the equilibrium pressure.",
+    "th": "ต่อไปคือแก๊สบนพื้นผิว Langmuir isotherm กับสมการดุลของภาชนะตัดกันที่ความดันสมดุล"
+   },
+   {
+    "start": 7.45,
+    "end": 15.38,
+    "en": "In the Lab 11 starting case the pressure is 15.0 kilopascals, and 80 percent of the gas sits on the solid.",
+    "th": "ในกรณีเริ่มต้นของ Lab 11 ความดันเท่ากับ 15.0 กิโลปาสคาล และแก๊ส 80 เปอร์เซ็นต์อยู่บนของแข็ง"
+   },
+   {
+    "start": 15.73,
+    "end": 28.43,
+    "en": "Henry's law with the same initial slope gives 6.8 kilopascals, because a linear isotherm never saturates. Without adsorbent the pressure would be 74.8.",
+    "th": "กฎของ Henry ที่มีความชันเริ่มต้นเท่ากันให้ 6.8 กิโลปาสคาล เพราะ isotherm เชิงเส้นไม่อิ่มตัว ถ้าไม่มีตัวดูดซับ ความดันจะเป็น 74.8"
+   }
+  ]
+ },
+ "heat": {
+  "audio": "narration/s04/heat.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 6.59,
+    "en": "At fixed loading, the slope of ln P against one over T gives the isosteric heat.",
+    "th": "ที่ปริมาณการดูดซับคงที่ ความชันของ ln P เทียบกับ 1/T ให้ความร้อนไอโซสเตอริก"
+   },
+   {
+    "start": 6.94,
+    "end": 21.4,
+    "en": "Heating the closed vessel from 300 to 400 kelvin releases gas: the loading falls from 1.20 to 0.64, and the pressure rises from 15 to 57 kilopascals.",
+    "th": "การให้ความร้อนแก่ภาชนะปิดจาก 300 ถึง 400 เคลวิน ทำให้แก๊สหลุดออกมา ปริมาณการดูดซับลดจาก 1.20 เป็น 0.64 และความดันเพิ่มจาก 15 เป็น 57 กิโลปาสคาล"
+   },
+   {
+    "start": 21.75,
+    "end": 32.95,
+    "en": "Three isotherms recover 25.1 kilojoules per mole. With one temperature recorded 2 kelvin too high, the answer becomes 24.1.",
+    "th": "isotherm สามชุดให้ค่า 25.1 กิโลจูลต่อโมล เมื่อบันทึกอุณหภูมิชุดหนึ่งสูงเกินไป 2 เคลวิน คำตอบกลายเป็น 24.1"
+   }
+  ]
+ },
+ "demo-lab": {
+  "audio": "narration/s04/demo-lab.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 5.82,
+    "en": "Now Lab 11. Read the pressure, the loading and the share of gas on the solid.",
+    "th": "ต่อไปคือ Lab 11 อ่านค่าความดัน ปริมาณการดูดซับ และสัดส่วนของแก๊สบนของแข็ง"
+   },
+   {
+    "start": 6.17,
+    "end": 9.01,
+    "en": "Switch to Henry's law and see the pressure halve.",
+    "th": "เปลี่ยนเป็นกฎของ Henry แล้วดูความดันลดลงครึ่งหนึ่ง"
+   },
+   {
+    "start": 9.36,
+    "end": 22.39,
+    "en": "In A, a Henry fit to low-loading data predicts 10.1 kilopascals in the vessel, not 15. In B, recover the isosteric heat, then mislabel one temperature.",
+    "th": "ในขั้น A การ fit กฎของ Henry กับข้อมูลช่วงการดูดซับต่ำทำนายความดันในภาชนะเป็น 10.1 กิโลปาสคาล ไม่ใช่ 15 ในขั้น B ให้หาความร้อนไอโซสเตอริก แล้วบันทึกอุณหภูมิชุดหนึ่งผิด"
+   }
+  ]
+ },
+ "mistakes": {
+  "audio": "narration/s04/mistakes.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.77,
+    "en": "Four common mistakes before you start.",
+    "th": "ข้อผิดพลาดที่พบบ่อยสี่ข้อก่อนเริ่มทำ"
+   },
+   {
+    "start": 3.12,
+    "end": 6.21,
+    "en": "One: using molality as a mole fraction.",
+    "th": "หนึ่ง ใช้โมแลลิตีแทนเศษส่วนโมล"
+   },
+   {
+    "start": 6.56,
+    "end": 14.77,
+    "en": "Two: the enthalpy of fusion in kilojoules inside the exponential. The ideal solubility becomes about one.",
+    "th": "สอง ใส่เอนทาลปีการหลอมเหลวเป็นกิโลจูลในเลขชี้กำลัง ความสามารถในการละลายแบบอุดมคติจะได้ประมาณหนึ่ง"
+   },
+   {
+    "start": 15.12,
+    "end": 21.84,
+    "en": "Three: evaluating gamma once at infinite dilution, instead of solving the implicit equation.",
+    "th": "สาม คำนวณ γ ครั้งเดียวที่สภาวะเจือจางอนันต์ แทนการแก้สมการโดยปริยาย"
+   },
+   {
+    "start": 22.19,
+    "end": 26.59,
+    "en": "Four: using a Henry constant outside the range it was fitted to.",
+    "th": "สี่ ใช้ค่าคงที่ของ Henry นอกช่วงที่ใช้ fit"
+   }
+  ]
+ },
+ "ai-code": {
+  "audio": "narration/s04/ai-code.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 6.22,
+    "en": "As before, you may use an AI assistant to write code. You decide everything else.",
+    "th": "เช่นเดิม คุณใช้ผู้ช่วย AI เขียนโค้ดได้ เรื่องอื่นทั้งหมดคุณตัดสินเอง"
+   },
+   {
+    "start": 6.57,
+    "end": 16.54,
+    "en": "That means the solvent and the fusion data, the unit conversions and the equation, how x is solved, the objective, and what the result means.",
+    "th": "ได้แก่ ตัวทำละลายและข้อมูลการหลอมเหลว การแปลงหน่วยและสมการ วิธีแก้หา x ฟังก์ชันวัตถุประสงค์ และความหมายของผล"
+   },
+   {
+    "start": 16.89,
+    "end": 25.06,
+    "en": "Lab 10 step E recomputes six results from the measured data, and refits with the other fusion data for the discussion.",
+    "th": "ขั้น E ของ Lab 10 คำนวณผลหกรายการใหม่จากข้อมูลที่วัดได้ และ fit ใหม่ด้วยข้อมูลการหลอมเหลวอีกชุดเพื่อใช้ในการอภิปราย"
+   }
+  ]
+ },
+ "break": {
+  "audio": "narration/s04/break.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.02,
+    "en": "Take a ten-minute break.",
+    "th": "พักสิบนาที"
+   },
+   {
+    "start": 2.37,
+    "end": 12.25,
+    "en": "Next is activity 2, a pair investigation in Labs 11 and 10. Check that both labs open on your device before the break ends.",
+    "th": "ต่อไปคือกิจกรรมที่ 2 ทำงานเป็นคู่ใน Lab 11 และ Lab 10 ตรวจว่าทั้งสอง lab เปิดได้บนอุปกรณ์ของคุณก่อนหมดเวลาพัก"
+   }
+  ]
+ },
+ "activity-2": {
+  "audio": "narration/s04/activity-2.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.65,
+    "en": "Activity 2 takes seventy minutes, in pairs. One drives the lab, the other checks by hand, then swap.",
+    "th": "กิจกรรมที่ 2 ใช้เวลาเจ็ดสิบนาที ทำเป็นคู่ คนหนึ่งใช้ lab อีกคนตรวจด้วยมือ แล้วสลับกัน"
+   },
+   {
+    "start": 8.0,
+    "end": 15.68,
+    "en": "First, by hand: the octane row at 296.6 kelvin, with both fusion data sets.",
+    "th": "ขั้นแรก คำนวณด้วยมือ แถวของ octane ที่ 296.6 เคลวิน ด้วยข้อมูลการหลอมเหลวทั้งสองชุด"
+   },
+   {
+    "start": 16.03,
+    "end": 20.81,
+    "en": "Then Lab 11 A and B: the fit range, and the isosteric heat.",
+    "th": "จากนั้น Lab 11 ขั้น A และ B เรื่องช่วงข้อมูลที่ใช้ fit และความร้อนไอโซสเตอริก"
+   },
+   {
+    "start": 21.16,
+    "end": 27.95,
+    "en": "Next, Lab 10 step E with your own code, written by an AI assistant from your specification.",
+    "th": "ต่อไป Lab 10 ขั้น E ด้วยโค้ดของคุณเอง ที่ผู้ช่วย AI เขียนจากข้อกำหนดของคุณ"
+   },
+   {
+    "start": 28.3,
+    "end": 36.25,
+    "en": "Finally, explain with numbers why w changes with the fusion data while the predicted solubility hardly moves.",
+    "th": "สุดท้าย อธิบายด้วยตัวเลขว่าทำไม w เปลี่ยนตามข้อมูลการหลอมเหลว ขณะที่ความสามารถในการละลายที่ทำนายแทบไม่เปลี่ยน"
+   }
+  ]
+ },
+ "activity-2-check": {
+  "audio": "narration/s04/activity-2-check.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 6.03,
+    "en": "This is what to hand in: both study files, your hand calculation, and two sentences.",
+    "th": "สิ่งที่ต้องส่งคือ ไฟล์ study ทั้งสองไฟล์ การคำนวณด้วยมือ และสองประโยค"
+   },
+   {
+    "start": 6.38,
+    "end": 22.3,
+    "en": "Use the table to check your results for octane. With the NIST data, w is 2509 joules per mole and the solubility at 298.15 kelvin is 0.144.",
+    "th": "ใช้ตารางนี้ตรวจผลของ octane เมื่อใช้ข้อมูล NIST w เท่ากับ 2509 จูลต่อโมล และความสามารถในการละลายที่ 298.15 เคลวิน เท่ากับ 0.144"
+   },
+   {
+    "start": 22.65,
+    "end": 28.41,
+    "en": "Graduate extension: let w depend on temperature, and see whether the error falls.",
+    "th": "งานเสริมระดับบัณฑิต ให้ w ขึ้นกับอุณหภูมิ แล้วดูว่าความคลาดเคลื่อนลดลงหรือไม่"
+   }
+  ]
+ },
+ "ai-debrief": {
+  "audio": "narration/s04/ai-debrief.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.51,
+    "en": "Here is what the code checks catch.",
+    "th": "นี่คือสิ่งที่การตรวจโค้ดจับได้"
+   },
+   {
+    "start": 2.86,
+    "end": 8.39,
+    "en": "A first-draft script got the ideal solubility, the mole fraction and gamma right.",
+    "th": "สคริปต์ร่างแรกคำนวณความสามารถในการละลายแบบอุดมคติ เศษส่วนโมล และ γ ได้ถูกต้อง"
+   },
+   {
+    "start": 8.74,
+    "end": 22.65,
+    "en": "But it fitted ln gamma instead of ln x, computed its error with the measured x inside gamma, and predicted with gamma at infinite dilution. Its prediction was 24 percent low.",
+    "th": "แต่สคริปต์ fit ln γ แทน ln x คำนวณความคลาดเคลื่อนโดยใส่ x ที่วัดได้ใน γ และทำนายโดยใช้ γ ที่สภาวะเจือจางอนันต์ ผลการทำนายจึงต่ำไป 24 เปอร์เซ็นต์"
+   },
+   {
+    "start": 23.0,
+    "end": 30.55,
+    "en": "Its error looked better than the correct one. A small error from code that computed the wrong thing is not evidence.",
+    "th": "ความคลาดเคลื่อนของสคริปต์ดูดีกว่าค่าที่ถูกต้อง ค่าความคลาดเคลื่อนที่เล็กจากโค้ดที่คำนวณสิ่งที่ผิดไม่ใช่หลักฐาน"
+   },
+   {
+    "start": 30.9,
+    "end": 35.85,
+    "en": "Solving the implicit equation at every temperature made every check agree.",
+    "th": "การแก้สมการโดยปริยายที่ทุกอุณหภูมิทำให้ผ่านการตรวจทุกข้อ"
+   }
+  ]
+ },
+ "discussion": {
+  "audio": "narration/s04/discussion.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.72,
+    "en": "Discuss in pairs, then with the class.",
+    "th": "อภิปรายเป็นคู่ แล้วอภิปรายร่วมกันทั้งห้อง"
+   },
+   {
+    "start": 3.07,
+    "end": 13.87,
+    "en": "Benzene gives w of plus 238 or minus 522. Would you put either value in a database, and what would you write next to it?",
+    "th": "benzene ให้ w เท่ากับ +238 หรือ −522 คุณจะใส่ค่าใดในฐานข้อมูล และจะเขียนอะไรกำกับไว้"
+   },
+   {
+    "start": 14.22,
+    "end": 20.49,
+    "en": "For a new solvent with no data, which uncertainty dominates: the fusion data or gamma?",
+    "th": "สำหรับตัวทำละลายใหม่ที่ไม่มีข้อมูล ความไม่แน่นอนใดมีผลมากกว่า ข้อมูลการหลอมเหลวหรือ γ"
+   },
+   {
+    "start": 20.84,
+    "end": 25.73,
+    "en": "In Lab 11, what single measurement would have warned you about the Henry fit?",
+    "th": "ใน Lab 11 การวัดเพียงครั้งเดียวแบบใดที่จะเตือนคุณเรื่องการ fit ด้วยกฎของ Henry"
+   }
+  ]
+ },
+ "summary": {
+  "audio": "narration/s04/summary.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 6.22,
+    "en": "To summarize. The fusion data set the ideal baseline, and gamma carries the solvent.",
+    "th": "สรุป ข้อมูลการหลอมเหลวกำหนดค่าอุดมคติพื้นฐาน และ γ แทนผลของตัวทำละลาย"
+   },
+   {
+    "start": 6.57,
+    "end": 16.64,
+    "en": "For gas on a surface, the isotherm and the vessel balance give the pressure and the loading. The isosteric heat is sensitive to temperature errors.",
+    "th": "สำหรับแก๊สบนพื้นผิว isotherm กับสมการดุลของภาชนะให้ค่าความดันและปริมาณการดูดซับ ความร้อนไอโซสเตอริกไวต่อความคลาดเคลื่อนของอุณหภูมิ"
+   },
+   {
+    "start": 16.99,
+    "end": 26.91,
+    "en": "A fitted parameter absorbs errors in the fusion data. Report it with the data it was fitted with, and trust predictions inside the fitted range.",
+    "th": "พารามิเตอร์ที่ fit ได้ดูดซับความคลาดเคลื่อนของข้อมูลการหลอมเหลว ให้รายงานพร้อมข้อมูลที่ใช้ fit และเชื่อการทำนายภายในช่วงที่ fit"
+   },
+   {
+    "start": 27.26,
+    "end": 29.89,
+    "en": "Next session: chemical equilibrium.",
+    "th": "คาบหน้า เรื่องสมดุลเคมี"
+   }
+  ]
+ },
+ "exit-ticket": {
+  "audio": "narration/s04/exit-ticket.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.9,
+    "en": "Exit ticket and feedback. Five minutes, on your own.",
+    "th": "exit ticket และความเห็น ใช้เวลาห้านาที ทำคนเดียว"
+   },
+   {
+    "start": 4.25,
+    "end": 22.7,
+    "en": "Two fusion data sets give w of plus 238 and minus 522 for naphthalene in benzene, and the same solubility at 298.15 kelvin. What can you report about the liquid nonideality, and what can you not?",
+    "th": "ข้อมูลการหลอมเหลวสองชุดให้ w เท่ากับ +238 และ −522 จูลต่อโมลสำหรับ naphthalene ใน benzene และให้ความสามารถในการละลายเท่ากันที่ 298.15 เคลวิน คุณรายงานอะไรเกี่ยวกับความไม่เป็นอุดมคติของของเหลวได้ และรายงานอะไรไม่ได้"
+   },
+   {
+    "start": 23.05,
+    "end": 30.07,
+    "en": "Scan the QR code or open the link. It is anonymous. Wait until you see Response received.",
+    "th": "สแกน QR code หรือเปิดลิงก์ แบบฟอร์มไม่ระบุตัวตน รอจนขึ้นข้อความ Response received"
+   }
+  ]
+ },
+ "after-class": {
+  "audio": "narration/s04/after-class.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.5,
+    "en": "After class, hand in the Lab 10 study file with E, and the Lab 11 study file with A and B.",
+    "th": "หลังเลิกเรียน ส่งไฟล์ study ของ Lab 10 ที่มีขั้น E และไฟล์ study ของ Lab 11 ที่มีขั้น A และ B"
+   },
+   {
+    "start": 7.85,
+    "end": 11.59,
+    "en": "Read the session 5 pre-class note when it is posted.",
+    "th": "อ่านเอกสารเตรียมก่อนเรียนของคาบที่ 5 เมื่อเผยแพร่แล้ว"
+   },
+   {
+    "start": 11.94,
+    "end": 18.0,
+    "en": "Graduate students can work through Lab 11 C and Lab 10 C. See you next session.",
+    "th": "นิสิตบัณฑิตศึกษาทำ Lab 11 ขั้น C และ Lab 10 ขั้น C ได้ แล้วพบกันคาบหน้า"
+   }
+  ]
+ }
+}

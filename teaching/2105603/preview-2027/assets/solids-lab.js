@@ -200,7 +200,7 @@ function validInputs(i) {
 function exportStudy() {
   const record = { schema: SCHEMA, engineVersion: so.SOLIDS_VERSION, graduateVersion: SOLIDS_GRADUATE_VERSION, savedAt: new Date().toISOString(),
     inputs: study.inputs || readInputs().inputs, prediction: $('prediction').value, caseName: $('case-name').value, cases: study.cases,
-    notes: notes(), reflection: $('reflection').value, investigations: { cooling: Boolean(study.cooling), models: Boolean(study.models), properties: Boolean(study.properties) } };
+    notes: notes(), reflection: $('reflection').value, investigations: { cooling: Boolean(study.cooling), models: Boolean(study.models), properties: Boolean(study.properties) }, aiCode: window.aiCode?.state() };
   const url = URL.createObjectURL(new Blob([JSON.stringify(withStudent(record), null, 2)], { type: 'application/json' })), a = document.createElement('a');
   a.href = url; a.download = studentFileName('lab10-sle-study.json'); a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
   $('status').textContent = 'Study downloaded. Open it later to restore the cases, settings and notes.';
