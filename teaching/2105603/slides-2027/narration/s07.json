@@ -419,8 +419,8 @@
    {
     "start": 4.53,
     "end": 17.75,
-    "en": "A colleague reports a negative w for naphthalene in benzene, and calls benzene a better-than-ideal solvent. Reproduce the claim, judge it, and say what you would report instead.",
-    "th": "เพื่อนร่วมงานรายงานค่า w ติดลบสำหรับ naphthalene ใน benzene และบอกว่า benzene เป็นตัวทำละลายที่ดีกว่าอุดมคติ ให้ทำซ้ำข้อกล่าวอ้างนี้ ประเมิน และบอกว่าคุณจะรายงานอะไรแทน"
+    "en": "A colleague reports a negative W for naphthalene in benzene, and calls benzene a better-than-ideal solvent. Reproduce the claim, judge it, and say what you would report instead.",
+    "th": "เพื่อนร่วมงานรายงานค่า W ติดลบสำหรับ naphthalene ใน benzene และบอกว่า benzene เป็นตัวทำละลายที่ดีกว่าอุดมคติ ให้ทำซ้ำข้อกล่าวอ้างนี้ ประเมิน และบอกว่าคุณจะรายงานอะไรแทน"
    },
    {
     "start": 18.1,
@@ -436,8 +436,8 @@
    {
     "start": 0.25,
     "end": 11.32,
-    "en": "A model answer. With the article's fusion data, w is minus 522 joules per mole. With the NIST data it is plus 238.",
-    "th": "คำตอบตัวอย่าง เมื่อใช้ข้อมูลการหลอมเหลวของบทความ w เท่ากับ −522 จูลต่อโมล เมื่อใช้ข้อมูล NIST เท่ากับ +238"
+    "en": "A model answer. With the article's fusion data, W is minus 522 joules per mole. With the NIST data it is plus 238.",
+    "th": "คำตอบตัวอย่าง เมื่อใช้ข้อมูลการหลอมเหลวของบทความ W เท่ากับ −522 จูลต่อโมล เมื่อใช้ข้อมูล NIST เท่ากับ +238"
    },
    {
     "start": 11.67,

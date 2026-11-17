@@ -206,12 +206,12 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p><span class="math display">\hat f_i^{\,V}=\hat f_i^{\,L}</span></p>
 </div>
 <div class="link">
-<p><span class="label">γ–φ route</span> Liquid from an activity model, vapor from an EOS.</p>
-<p><span class="math display">y_i\hat\phi_i^{V}P=x_i\gamma_i\phi_i^{\text{sat}}P_i^{\text{sat}}\,\mathcal{P}_i</span></p>
+<p><span class="label"><span class="nt">γ</span>–<span class="nt">φ</span> route</span> Liquid from an activity model, vapor from an EOS.</p>
+<p><span class="math display">y_i\hat\varphi_i^{V}P=x_i\gamma_i\varphi_i^{\text{sat}}P_i^{\text{sat}}\,\mathcal{P}_i</span></p>
 </div>
 <div class="link today">
-<p><span class="label">φ–φ route</span> Both phases from one equation of state.</p>
-<p><span class="math display">y_i\hat\phi_i^{V}=x_i\hat\phi_i^{L}</span></p>
+<p><span class="label"><span class="nt">φ</span>–<span class="nt">φ</span> route</span> Both phases from one equation of state.</p>
+<p><span class="math display">y_i\hat\varphi_i^{V}=x_i\hat\varphi_i^{L}</span></p>
 </div>
 </div>
 <p>𝒫<sub>i</sub> is the Poynting factor. Today: the general structure, then the ideal limit as the worked case. Sessions 2 and 3 bring in real γ.</p>
@@ -221,7 +221,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <div class="columns">
 <div class="column" style="width:52%;">
 <p><span class="math display">K_i\equiv\frac{y_i}{x_i}</span></p>
-<p><span class="math display">K_i^{\gamma\phi}=\frac{\gamma_i\,\phi_i^{\text{sat}}P_i^{\text{sat}}\,\mathcal{P}_i}{\hat\phi_i^{V}P}\qquad K_i^{\phi\phi}=\frac{\hat\phi_i^{L}}{\hat\phi_i^{V}}</span></p>
+<p><span class="math display">K_i^{\gamma\varphi}=\frac{\gamma_i\,\varphi_i^{\text{sat}}P_i^{\text{sat}}\,\mathcal{P}_i}{\hat\varphi_i^{V}P}\qquad K_i^{\varphi\varphi}=\frac{\hat\varphi_i^{L}}{\hat\varphi_i^{V}}</span></p>
 <p>Ideal liquid and ideal vapor at low pressure: <span class="math inline">K_i=P_i^{\text{sat}}/P</span>.</p>
 </div><div class="column" style="width:46%;">
 <div class="lever-box">
@@ -486,9 +486,9 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <div class="column" style="width:50%;">
 <div class="steps-v">
 <ol type="1">
-<li>Guess K (ideal or Wilson).</li>
+<li>Guess K from the ideal limit, K<sub>i</sub> = P<sub>i</sub><sup>sat</sup>/P.</li>
 <li>Solve Rachford–Rice for β, then x and y.</li>
-<li>Update K from γ(x) and φ̂(y) or from the EOS.</li>
+<li>Update K from γ(x) and <span class="math inline">\hat\varphi(y)</span>, or from the EOS.</li>
 <li>Repeat until K stops changing.</li>
 </ol>
 </div>

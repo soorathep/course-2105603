@@ -69,7 +69,7 @@ $$\min G\ \text{ s.t. }\ \sum_i a_{ki}n_i=b_k$$
 [Where you show it]{.where-head}
 
 1. **Write** K with explicit standard states, and the pressure term that goes with them. [Concepts, Lab 12 C]{.where}
-2. **Compute** K(T) from tabulated H and S, and size the error of a constant-ΔH estimate. [Activity 1, Lab 12 A]{.where}
+2. **Compute** K(T) from tabulated H and S, and size the error of a constant-Δ<sub>r</sub>H° estimate. [Activity 1, Lab 12 A]{.where}
 3. **Count** independent reactions from the element matrix. [Concepts, note]{.where}
 4. **Solve** a two-reaction equilibrium and judge when K<sub>φ</sub> matters. [Activity 2, Lab 12 E]{.where}
 5. **Specify** the calculation for an AI assistant to code, and **verify** the code. [Activity 2, Lab 12 E]{.where}
@@ -120,20 +120,22 @@ Finish Lab 12 A, C and E, and submit the study file with your name and ID.
 
 :::: {.columns}
 ::: {.column width="52%"}
-$$\ln K=-\frac{\Delta_rG^\circ(T)}{RT}\qquad a_i=\frac{y_i\varphi_iP}{P^\circ}$$
+$$\ln K=-\frac{\Delta_rG^\circ(T)}{RT}\qquad a_i=\frac{y_i\hat\varphi_iP}{P^\circ}$$
 
 $$K=K_y\,K_\varphi\Big(\frac{P}{P^\circ}\Big)^{\Delta\nu}$$
 
-K depends on T and on the standard states only. P must be divided by the **same** P° that defined Δ<sub>r</sub>G°.
+$K_y=\prod_i y_i^{\nu_i}$, $K_\varphi=\prod_i\hat\varphi_i^{\nu_i}$ with $\hat\varphi_i$ the fugacity coefficient in the mixture (Session 1), and $\Delta\nu=\sum_i\nu_i$. K depends on T and on the standard states only. P must be divided by the **same** P° that defined Δ<sub>r</sub>G°.
 :::
 ::: {.column width="46%"}
 ::: {.lever-box}
-[R1 at 1100 K, S/C = 3, 2000 kPa (Δν = +2)]{.label}
+[R1 at 1100 K, S/C = 3, 2000 kPa ([Δν]{.nt} = +2)]{.label}
 
 | Pressure term used | CH₄ conversion |
 |---|---:|
 | (2000/100)², correct for P° = 1 bar | **0.795** |
 | term omitted, as if 1 bar | 0.996 |
+
+S/C: mol H₂O fed per mol CH₄. Conversion: ξ₁, the extent of R1 per mol CH₄ fed.
 
 Pressure lowers the conversion of a mole-increasing reaction. K itself does not change.
 :::
@@ -174,7 +176,7 @@ Element matrix (rows C, H, O; columns CH₄, H₂O, CO, CO₂, H₂):
 
 $$\begin{pmatrix}1&0&1&1&0\\4&2&0&0&2\\0&1&1&2&0\end{pmatrix}$$
 
-Rank 3, so 5 − 3 = **2** independent reactions. R1 and R2 are one choice. CH₄ + 2H₂O ⇌ CO₂ + 4H₂ is R1 + R2 and adds nothing.
+Rank 3, so 5 − 3 = **2** independent reactions, with extents ξ₁ and ξ₂. R1 and R2 are one choice. CH₄ + 2H₂O ⇌ CO₂ + 4H₂ is R1 + R2 and adds nothing.
 :::
 ::: {.column width="48%" .rule-notes}
 Any independent pair gives the same composition. So does a Gibbs minimization with the element balances as constraints.
@@ -189,11 +191,11 @@ Add solid carbon and the count rises to 3: carbon deposition, for example 2CO �
 
 :::: {.columns}
 ::: {.column width="52%"}
-$$K_\varphi=\prod_i\varphi_i^{\nu_i}$$
+$$K_\varphi=\prod_i\hat\varphi_i^{\nu_i}$$
 
 At 1100 K and 2 MPa, every species is far above its critical temperature. The Pitzer virial correlation gives:
 
-| | ln φ |
+| | $\ln\hat\varphi_i$ |
 |---|---:|
 | CH₄ / H₂O | 0.0045 / −0.0030 |
 | CO / CO₂ / H₂ | 0.0052 / 0.0045 / 0.0024 |
@@ -212,7 +214,7 @@ Not so in Week 7's example at 400 K and 2 MPa: K<sub>φ</sub> = 1.06, a 2 % chan
 [Activity 1 · 10 minutes · alone, then with a partner]{.act-label}
 
 ::: {.prompt}
-R1 at 298.15 K: Δ<sub>r</sub>H° = 206.17 kJ/mol, Δ<sub>r</sub>S° = 212.2 J mol⁻¹ K⁻¹. Estimate ln K₁ at 1000 K with Δ<sub>r</sub>H° held constant.
+R1 at 298.15 K: Δ<sub>r</sub>H° = 206.17 kJ/mol, Δ<sub>r</sub>S° = 212.2 J/(mol K). Estimate ln K₁ at 1000 K with Δ<sub>r</sub>H° held constant.
 :::
 
 The tabulated value is ln K₁(1000 K) = 3.269. Which way is your estimate off, and why? With S/C = 3 at 1 atm, the tabulated K gives 98.5 % conversion; is your error important here?
@@ -317,7 +319,7 @@ Write and debug code that does exactly what your specification says. Not propert
 4. Wet mole fractions
 5. O/C ratio of your mixture
 
-It names constant-ΔH K, P in kPa, a missing pressure term, and negative amounts.
+It names K from constant Δ<sub>r</sub>H°, P in kPa, a missing pressure term, and negative amounts.
 :::
 ::::
 
@@ -444,7 +446,7 @@ Count reactions from the element matrix. Check K<sub>φ</sub> before dropping it
 :::
 :::
 
-**Session question:** at 1100 K, 2000 kPa and S/C = 3, the conversion is 0.795. Constant-ΔH K gives 0.498, omitting the pressure term gives 0.996, raising S/C to 4 gives 0.869, and K<sub>φ</sub> moves it by about 1 %.
+**Session question:** at 1100 K, 2000 kPa and S/C = 3, the conversion is 0.795. K from constant Δ<sub>r</sub>H° gives 0.498, omitting the pressure term gives 0.996, raising S/C to 4 gives 0.869, and K<sub>φ</sub> moves it by about 1 %.
 
 [Next session]{.label} When does a reaction produce a voltage? Electrochemical equilibrium (Lab 13).
 
@@ -478,7 +480,7 @@ Your Lab 12 study file with A, C and E, name and student ID.
 :::
 ::: {}
 [Prepare · Session 6]{.label}
-Read the Session 6 pre-class note when it is posted. About 20 minutes.
+Read the [Session 6 pre-class note](note-s06.html){target="_blank"}. About 20 minutes.
 :::
 ::: {}
 [Optional · graduate]{.label}

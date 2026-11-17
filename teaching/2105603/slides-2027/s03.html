@@ -274,6 +274,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p>Zero on the <strong>spinodal</strong>. For Margules: 1 − 2A x₁x₂.</p>
 <p><strong>Global:</strong> the two liquids of the <strong>binodal</strong> have equal chemical potentials:</p>
 <p><span class="math display">x_i^{\alpha}\gamma_i^{\alpha}=x_i^{\beta}\gamma_i^{\beta}\qquad i=1,2</span></p>
+<p>α is the x₁-poor liquid and β the x₁-rich liquid, as in Labs 04 and 05. (NRTL’s α, below, is a different quantity: the nonrandomness parameter.)</p>
 </div><div class="column" style="width:46%;">
 <div class="lever-box">
 <p><span class="label">Three regions for a feed</span></p>
@@ -314,6 +315,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p><img data-src="figures/s03-tpd.svg" class="fig-pxy" alt="Tangent-plane distance against trial composition for Margules A equal to 3: for the feed 0.05 it stays at or above zero; for the feed 0.12 it reaches a minimum of minus 0.245 at w one 0.953, while the trivial point w equal to z always gives zero"></p>
 </div><div class="column concept-notes" style="width:44%;">
 <p><span class="math display">\frac{\text{TPD}(\mathbf w)}{RT}=\sum_i w_i\big[\ln w_i\gamma_i(\mathbf w)-\ln z_i\gamma_i(\mathbf z)\big]</span></p>
+<p>z is the feed and <strong>w</strong> a trial composition.</p>
 <p><span class="q">Rule</span> TPD ≥ 0 for <strong>every</strong> trial w: stable. Any w with TPD &lt; 0: the feed splits, and w is a good first guess for the new phase (Michelsen, 1982).</p>
 <p><span class="q">Trap</span> w = z always gives TPD = 0. A local search started at the feed stops there. Search the whole composition range, or from several starts.</p>
 </div></div>
@@ -327,7 +329,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p><span class="q">Use LLE or mutual-solubility data when they exist. They are the direct evidence.</span></p>
 </div><div class="column" style="width:48%;">
 <div class="lever-box">
-<p><span class="label">2-Propanol + water · NRTL, α = 0.47 · Session 2 fits at 60 kPa</span></p>
+<p><span class="label">2-Propanol + water · NRTL, <span class="nt">α</span> = 0.47 · Session 2 fits at 60 kPa</span></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -467,7 +469,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p><img data-src="figures/s03-lle.svg" class="fig-pxy" alt="Measured cyclohexane methanol binodal from 278 to 316 K with the constant tau prediction as two vertical lines at 0.177 and 0.876 and the tau equal a plus b over T curve through the measured points closing near 324 K"></p>
 </div><div class="column" style="width:42%;">
 <div class="lever-box">
-<p><span class="label">Held-out tie lines · α = 0.3 · composition RMSE</span></p>
+<p><span class="label">Held-out tie lines · <span class="nt">α</span> = 0.3 · composition RMSE</span></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -495,7 +497,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 </tbody>
 </table>
 </div>
-<p>The a + b/T model closes the gap near 324 K, above the last measured tie line at 316.15 K. That is an extrapolation, not a measured UCST.</p>
+<p>The a + b/T model closes the gap near 324 K, above the last measured tie line at 316.15 K. That is an extrapolation, not a measured upper critical solution temperature (UCST).</p>
 </div></div>
 </section>
 <section id="vlle" class="slide level2">
@@ -613,7 +615,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p><span class="label">Graduate extension</span> Use C to perturb the 298.15 K tie line within its uncertainty. How far do τ₁₂ and τ₂₁ move, and does the predicted gap at 313.15 K stay within U?</p>
 </div><div class="column" style="width:54%;">
 <div class="lever-box">
-<p><span class="label">Check your results · α = 0.3</span></p>
+<p><span class="label">Check your results · <span class="nt">α</span> = 0.3</span></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -654,7 +656,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <div class="columns">
 <div class="column" style="width:56%;">
 <div class="lever-box">
-<p><span class="label">298.15 K, α = 0.3 · a first-draft script: solvers started at generic guesses</span></p>
+<p><span class="label">298.15 K, <span class="nt">α</span> = 0.3 · a first-draft script: solvers started at generic guesses</span></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -745,7 +747,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p><span class="label">Hand in · this week</span> Your Lab 05 study file with the two fits, A, B, D and E, name and student ID.</p>
 </div>
 <div>
-<p><span class="label">Prepare · Session 4</span> Read the Session 4 pre-class note when it is posted. About 20 minutes.</p>
+<p><span class="label">Prepare · Session 4</span> Read the <a href="note-s04.html" target="_blank">Session 4 pre-class note</a>. About 20 minutes.</p>
 </div>
 <div>
 <p><span class="label">Optional · graduate</span> Lab 06 A and B: supply the missing specification for a three-phase state, and sweep P across P₃.</p>

@@ -67,16 +67,16 @@ At equilibrium every component has the same fugacity in every phase.
 $$\hat f_i^{\,V}=\hat f_i^{\,L}$$
 :::
 ::: {.link}
-[γ–φ route]{.label}
+[[γ]{.nt}–[φ]{.nt} route]{.label}
 Liquid from an activity model, vapor from an EOS.
 
-$$y_i\hat\phi_i^{V}P=x_i\gamma_i\phi_i^{\text{sat}}P_i^{\text{sat}}\,\mathcal{P}_i$$
+$$y_i\hat\varphi_i^{V}P=x_i\gamma_i\varphi_i^{\text{sat}}P_i^{\text{sat}}\,\mathcal{P}_i$$
 :::
 ::: {.link .today}
-[φ–φ route]{.label}
+[[φ]{.nt}–[φ]{.nt} route]{.label}
 Both phases from one equation of state.
 
-$$y_i\hat\phi_i^{V}=x_i\hat\phi_i^{L}$$
+$$y_i\hat\varphi_i^{V}=x_i\hat\varphi_i^{L}$$
 :::
 :::
 
@@ -88,7 +88,7 @@ $$y_i\hat\phi_i^{V}=x_i\hat\phi_i^{L}$$
 ::: {.column width="52%"}
 $$K_i\equiv\frac{y_i}{x_i}$$
 
-$$K_i^{\gamma\phi}=\frac{\gamma_i\,\phi_i^{\text{sat}}P_i^{\text{sat}}\,\mathcal{P}_i}{\hat\phi_i^{V}P}\qquad K_i^{\phi\phi}=\frac{\hat\phi_i^{L}}{\hat\phi_i^{V}}$$
+$$K_i^{\gamma\varphi}=\frac{\gamma_i\,\varphi_i^{\text{sat}}P_i^{\text{sat}}\,\mathcal{P}_i}{\hat\varphi_i^{V}P}\qquad K_i^{\varphi\varphi}=\frac{\hat\varphi_i^{L}}{\hat\varphi_i^{V}}$$
 
 Ideal liquid and ideal vapor at low pressure: $K_i=P_i^{\text{sat}}/P$.
 :::
@@ -332,9 +332,9 @@ With constant K the test is exact. When K depends on composition it is not: a on
 :::: {.columns}
 ::: {.column width="50%"}
 ::: {.steps-v}
-1. Guess K (ideal or Wilson).
+1. Guess K from the ideal limit, K<sub>i</sub> = P<sub>i</sub><sup>sat</sup>/P.
 2. Solve Rachford–Rice for β, then x and y.
-3. Update K from γ(x) and φ̂(y) or from the EOS.
+3. Update K from γ(x) and $\hat\varphi(y)$, or from the EOS.
 4. Repeat until K stops changing.
 :::
 

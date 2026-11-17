@@ -26,11 +26,11 @@ For a reaction Σν<sub>i</sub>A<sub>i</sub> = 0 at equilibrium,
 
 $$\prod_i a_i^{\nu_i}=K(T),\qquad \ln K=-\frac{\Delta_rG^\circ(T)}{RT}.$$
 
-K depends on T and on the chosen standard states, never on P or composition. For gases at standard state "ideal gas at P° = 1 bar", a<sub>i</sub> = y<sub>i</sub>φ<sub>i</sub>P/P°, so
+K depends on T and on the chosen standard states, never on P or composition. For gases at standard state "ideal gas at P° = 1 bar", $a_i=y_i\hat\varphi_iP/P^\circ$, with $\hat\varphi_i$ the fugacity coefficient of i in the gas mixture (Session 1), so
 
-$$K=\underbrace{\prod_i y_i^{\nu_i}}_{K_y}\;\underbrace{\prod_i\varphi_i^{\nu_i}}_{K_\varphi}\;\Big(\frac{P}{P^\circ}\Big)^{\Delta\nu}.$$
+$$K=\underbrace{\prod_i y_i^{\nu_i}}_{K_y}\;\underbrace{\prod_i\hat\varphi_i^{\nu_i}}_{K_\varphi}\;\Big(\frac{P}{P^\circ}\Big)^{\Delta\nu}.$$
 
-P must be divided by the same P° that defined Δ<sub>r</sub>G°. Using kPa for P with a K defined at 1 bar changes the pressure term by 100<sup>Δν</sup>.
+Here Δν = Σν<sub>i</sub> over the gas species. P must be divided by the same P° that defined Δ<sub>r</sub>G°. Using kPa for P with a K defined at 1 bar changes the pressure term by 100<sup>Δν</sup>.
 
 ## 2. K at another temperature
 
@@ -57,7 +57,7 @@ With a feed of 1 mol CH₄ and S mol H₂O, the extents ξ₁ and ξ₂ give the
 
 $$\frac{y_{\text{CO}}\,y_{\text{H}_2}^3}{y_{\text{CH}_4}\,y_{\text{H}_2\text{O}}}\Big(\frac{P}{P^\circ}\Big)^2=K_1,\qquad \frac{y_{\text{CO}_2}\,y_{\text{H}_2}}{y_{\text{CO}}\,y_{\text{H}_2\text{O}}}=K_2.$$
 
-R1 increases the number of moles (Δν = +2), so pressure lowers its conversion. With S = 3:
+R1 increases the number of moles (Δν = +2), so pressure lowers its conversion. With S = 3 (the steam-to-carbon ratio, S/C):
 
 | T / K | P / kPa | CH₄ conversion |
 |---:|---:|---:|
@@ -70,7 +70,7 @@ At 1100 K and 2000 kPa, raising S from 2 to 4 raises the conversion from 0.678 t
 
 ## 5. When is the gas ideal enough?
 
-K<sub>φ</sub> = Π φ<sub>i</sub><sup>ν<sub>i</sub></sup> corrects the ideal-gas result. At 1100 K and 2 MPa every species is far above its critical temperature. The Pitzer virial correlation gives ln K<sub>φ</sub> = 0.011 for R1 and 0.005 for R2: about 1 %, below the uncertainty from catalyst approach to equilibrium. The same correction is not small for ammonia synthesis at 20 MPa, or for the Week 7 example at 2 MPa and 400 K, where K<sub>φ</sub> = 1.06.
+$K_\varphi=\prod_i\hat\varphi_i^{\nu_i}$ corrects the ideal-gas result. At 1100 K and 2 MPa every species is far above its critical temperature. The Pitzer virial correlation gives ln K<sub>φ</sub> = 0.011 for R1 and 0.005 for R2: about 1 %, below the uncertainty from catalyst approach to equilibrium. The same correction is not small for ammonia synthesis at 20 MPa, or for the Week 7 example at 2 MPa and 400 K, where K<sub>φ</sub> = 1.06.
 
 ## 6. Before Session 5
 
@@ -78,7 +78,7 @@ Write short answers. We use them in the first 30 minutes.
 
 1. **Standard state.** A student uses P = 2000 (kPa) in the R1 equation with K₁ defined at 1 bar. By what factor is the pressure term wrong, and in which direction does the conversion move?
 2. **Independent reactions.** Add solid carbon to the five species. How many independent reactions are there now? Name one that involves carbon.
-3. **K(T).** Using Section 2, explain in one sentence why the constant-ΔH estimate of K₁ at 1100 K is too low rather than too high.
+3. **K(T).** Using Section 2, explain in one sentence why the constant-Δ<sub>r</sub>H° estimate of K₁ at 1100 K is too low rather than too high.
 
 ## References
 

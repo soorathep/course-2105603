@@ -151,6 +151,8 @@ Zero on the **spinodal**. For Margules: 1 − 2A x₁x₂.
 **Global:** the two liquids of the **binodal** have equal chemical potentials:
 
 $$x_i^{\alpha}\gamma_i^{\alpha}=x_i^{\beta}\gamma_i^{\beta}\qquad i=1,2$$
+
+α is the x₁-poor liquid and β the x₁-rich liquid, as in Labs 04 and 05. (NRTL's α, below, is a different quantity: the nonrandomness parameter.)
 :::
 ::: {.column width="46%"}
 ::: {.lever-box}
@@ -176,6 +178,8 @@ A curvature test alone calls a metastable feed stable. Only a global test finds 
 ::: {.column width="44%" .concept-notes}
 $$\frac{\text{TPD}(\mathbf w)}{RT}=\sum_i w_i\big[\ln w_i\gamma_i(\mathbf w)-\ln z_i\gamma_i(\mathbf z)\big]$$
 
+z is the feed and **w** a trial composition.
+
 [Rule]{.q} TPD ≥ 0 for **every** trial w: stable. Any w with TPD &lt; 0: the feed splits, and w is a good first guess for the new phase (Michelsen, 1982).
 
 [Trap]{.q} w = z always gives TPD = 0. A local search started at the feed stops there. Search the whole composition range, or from several starts.
@@ -194,7 +198,7 @@ $$\frac{\text{TPD}(\mathbf w)}{RT}=\sum_i w_i\big[\ln w_i\gamma_i(\mathbf w)-\ln
 :::
 ::: {.column width="48%"}
 ::: {.lever-box}
-[2-Propanol + water · NRTL, α = 0.47 · Session 2 fits at 60 kPa]{.label}
+[2-Propanol + water · NRTL, [α]{.nt} = 0.47 · Session 2 fits at 60 kPa]{.label}
 
 | Fit | τ₁₂ | τ₂₁ | min. curvature | prediction |
 |---|---:|---:|---:|---|
@@ -274,7 +278,7 @@ One tie line cannot identify α. Some α cannot reproduce it at all.
 :::
 ::: {.column width="42%"}
 ::: {.lever-box}
-[Held-out tie lines · α = 0.3 · composition RMSE]{.label}
+[Held-out tie lines · [α]{.nt} = 0.3 · composition RMSE]{.label}
 
 | τ(T) from | RMSE | within U |
 |---|---:|---:|
@@ -283,7 +287,7 @@ One tie line cannot identify α. Some α cannot reproduce it at all.
 | 298.15 and 313.15 K, a + b/T | 0.0097 | 4 of 7 |
 :::
 
-The a + b/T model closes the gap near 324 K, above the last measured tie line at 316.15 K. That is an extrapolation, not a measured UCST.
+The a + b/T model closes the gap near 324 K, above the last measured tie line at 316.15 K. That is an extrapolation, not a measured upper critical solution temperature (UCST).
 :::
 ::::
 
@@ -424,7 +428,7 @@ Use C to perturb the 298.15 K tie line within its uncertainty. How far do τ₁�
 :::
 ::: {.column width="54%"}
 ::: {.lever-box}
-[Check your results · α = 0.3]{.label}
+[Check your results · [α]{.nt} = 0.3]{.label}
 
 | | 298.15 K | 313.15 K |
 |---|---:|---:|
@@ -443,7 +447,7 @@ Constant τ from 298.15 K predicts 0.177 / 0.876 at 313.15 K; measured 0.261 / 0
 :::: {.columns}
 ::: {.column width="56%"}
 ::: {.lever-box}
-[298.15 K, α = 0.3 · a first-draft script: solvers started at generic guesses]{.label}
+[298.15 K, [α]{.nt} = 0.3 · a first-draft script: solvers started at generic guesses]{.label}
 
 | | Lab | Script |
 |---|---:|---:|
@@ -532,7 +536,7 @@ Your Lab 05 study file with the two fits, A, B, D and E, name and student ID.
 :::
 ::: {}
 [Prepare · Session 4]{.label}
-Read the Session 4 pre-class note when it is posted. About 20 minutes.
+Read the [Session 4 pre-class note](note-s04.html){target="_blank"}. About 20 minutes.
 :::
 ::: {}
 [Optional · graduate]{.label}

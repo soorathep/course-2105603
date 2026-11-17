@@ -177,7 +177,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <div class="column" style="width:58%;">
 <p><img data-src="figures/s06-cell.svg" class="fig-pxy" alt="EMF of a KCl concentration-cell pair against the higher molality with the lower fixed at 0.01 mol per kg: ideal, with fitted activity coefficients giving 216.0 millivolts at 1.0 mol per kg against 236.6 ideal, and a line at half the value from using RT over F"></p>
 </div><div class="column why-notes" style="width:40%;">
-<p>Two cells Ag|AgCl|KCl(m)|K⁺-ISE at 0.01 and 1.0 mol/kg, in opposition:</p>
+<p>Two cells Ag|AgCl|KCl(m)|K⁺-ISE (ion-selective electrode) at 0.01 and 1.0 mol/kg, in opposition:</p>
 <p>ideal <strong>236.6 mV</strong>; with measured γ± <strong>216.0 mV</strong>.</p>
 <p>21 mV is 9 % of the signal. For a battery it is the difference between two states of charge; for a sensor, a factor of 1.5 in concentration.</p>
 <p>Writing RT/F where the salt needs 2RT/F halves the answer.</p>
@@ -258,7 +258,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p>A cell that responds to KCl therefore gives</p>
 <p><span class="math display">E=\frac{RT}{F}\ln\frac{a_{\text{KCl},2}}{a_{\text{KCl},1}}=\frac{2RT}{F}\ln\frac{m_2\gamma_{\pm,2}}{m_1\gamma_{\pm,1}}</span></p>
 </div><div class="column rule-notes" style="width:46%;">
-<p>For a salt M<sub>ν+</sub>X<sub>ν−</sub>, a = (m<sub>±</sub>γ±)<sup>ν</sup> with ν = ν₊ + ν₋.</p>
+<p>For a 2:1 salt such as CaCl₂, a = (m)(2m)²γ±³ = 4m³γ±³: the power is the number of ions.</p>
 <p>The pair of cells in opposition cancels E°: only the ratio of activities is measured.</p>
 <p>A <strong>liquid junction</strong> between the two solutions would add a potential set by ion mobilities. The cell pair avoids it; Lab 13’s teaching cell neglects it.</p>
 </div></div>
@@ -269,7 +269,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <div class="column" style="width:56%;">
 <p><img data-src="figures/s06-gamma.svg" class="fig-pxy" alt="Mean ionic activity coefficient of KCl against the square root of molality at 298.2 and 308.2 K with uncertainty bars, the Debye-Hueckel limiting law falling well below the data above 0.05 mol per kg, and the extended fit"></p>
 </div><div class="column concept-notes" style="width:42%;">
-<p><span class="math display">\log_{10}\gamma_\pm=-A|z_+z_-|\sqrt I</span></p>
+<p><span class="math display">\log_{10}\gamma_\pm=-A|z_+z_-|\sqrt I\qquad I=\tfrac12\sum_i m_iz_i^2</span></p>
 <p><span class="q">A = 0.509</span> (kg/mol)<sup>1/2</sup> at 298 K, <strong>log₁₀ basis</strong>; 1.172 on the ln basis.</p>
 <p><span class="q">Limiting law</span> At 1.0 mol/kg it gives 0.310; the data give 0.597.</p>
 <p><span class="q">Extended</span> ln γ± = −A√m/(1 + b√m) + cm: b = 1.135, c = 0.042, RMSE 0.022 in ln γ±, close to the data’s ±0.03.</p>
@@ -362,7 +362,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <ol type="1">
 <li>Starting case M²⁺ concentration cell, 0.01 and 1.0 mol/L, γ = 1: <strong>59.2 mV</strong>.</li>
 <li>A: Debye–Hückel limiting law at I = 3 mol/L gives <strong>−34.7 mV</strong>, the wrong sign; extended gives 29.9 mV.</li>
-<li>B: E ∝ T, Δ<sub>r</sub>S = 38.3 J mol⁻¹ K⁻¹, Δ<sub>r</sub>H = 0.</li>
+<li>B: E ∝ T, Δ<sub>r</sub>S = 38.3 J/(mol K), Δ<sub>r</sub>H = 0.</li>
 <li>C: discharge until flat, 160 J for 0.1 L.</li>
 </ol>
 <p><a href="../preview-2027/electrochemistry.html" class="lab-button" target="_blank">Open Lab 13 →</a></p>

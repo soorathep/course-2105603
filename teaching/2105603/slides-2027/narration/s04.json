@@ -237,8 +237,8 @@
    {
     "start": 27.09,
     "end": 42.47,
-    "en": "In the table, the fitted parameter w changes with the fusion data, by more than 700 joules per mole for benzene. The predicted solubility at 298.15 kelvin hardly moves.",
-    "th": "ในตาราง พารามิเตอร์ w ที่ fit ได้เปลี่ยนไปตามข้อมูลการหลอมเหลว สำหรับ benzene เปลี่ยนมากกว่า 700 จูลต่อโมล แต่ความสามารถในการละลายที่ทำนายที่ 298.15 เคลวิน แทบไม่เปลี่ยน"
+    "en": "In the table, the fitted parameter W changes with the fusion data, by more than 700 joules per mole for benzene. The predicted solubility at 298.15 kelvin hardly moves.",
+    "th": "ในตาราง พารามิเตอร์ W ที่ fit ได้เปลี่ยนไปตามข้อมูลการหลอมเหลว สำหรับ benzene เปลี่ยนมากกว่า 700 จูลต่อโมล แต่ความสามารถในการละลายที่ทำนายที่ 298.15 เคลวิน แทบไม่เปลี่ยน"
    }
   ]
  },
@@ -491,8 +491,8 @@
    {
     "start": 28.3,
     "end": 36.25,
-    "en": "Finally, explain with numbers why w changes with the fusion data while the predicted solubility hardly moves.",
-    "th": "สุดท้าย อธิบายด้วยตัวเลขว่าทำไม w เปลี่ยนตามข้อมูลการหลอมเหลว ขณะที่ความสามารถในการละลายที่ทำนายแทบไม่เปลี่ยน"
+    "en": "Finally, explain with numbers why W changes with the fusion data while the predicted solubility hardly moves.",
+    "th": "สุดท้าย อธิบายด้วยตัวเลขว่าทำไม W เปลี่ยนตามข้อมูลการหลอมเหลว ขณะที่ความสามารถในการละลายที่ทำนายแทบไม่เปลี่ยน"
    }
   ]
  },
@@ -508,14 +508,14 @@
    {
     "start": 6.38,
     "end": 22.3,
-    "en": "Use the table to check your results for octane. With the NIST data, w is 2509 joules per mole and the solubility at 298.15 kelvin is 0.144.",
-    "th": "ใช้ตารางนี้ตรวจผลของ octane เมื่อใช้ข้อมูล NIST w เท่ากับ 2509 จูลต่อโมล และความสามารถในการละลายที่ 298.15 เคลวิน เท่ากับ 0.144"
+    "en": "Use the table to check your results for octane. With the NIST data, W is 2509 joules per mole and the solubility at 298.15 kelvin is 0.144.",
+    "th": "ใช้ตารางนี้ตรวจผลของ octane เมื่อใช้ข้อมูล NIST W เท่ากับ 2509 จูลต่อโมล และความสามารถในการละลายที่ 298.15 เคลวิน เท่ากับ 0.144"
    },
    {
     "start": 22.65,
     "end": 28.41,
-    "en": "Graduate extension: let w depend on temperature, and see whether the error falls.",
-    "th": "งานเสริมระดับบัณฑิต ให้ w ขึ้นกับอุณหภูมิ แล้วดูว่าความคลาดเคลื่อนลดลงหรือไม่"
+    "en": "Graduate extension: let W depend on temperature, and see whether the error falls.",
+    "th": "งานเสริมระดับบัณฑิต ให้ W ขึ้นกับอุณหภูมิ แล้วดูว่าความคลาดเคลื่อนลดลงหรือไม่"
    }
   ]
  },
@@ -566,8 +566,8 @@
    {
     "start": 3.07,
     "end": 13.87,
-    "en": "Benzene gives w of plus 238 or minus 522. Would you put either value in a database, and what would you write next to it?",
-    "th": "benzene ให้ w เท่ากับ +238 หรือ −522 คุณจะใส่ค่าใดในฐานข้อมูล และจะเขียนอะไรกำกับไว้"
+    "en": "Benzene gives W of plus 238 or minus 522. Would you put either value in a database, and what would you write next to it?",
+    "th": "benzene ให้ W เท่ากับ +238 หรือ −522 คุณจะใส่ค่าใดในฐานข้อมูล และจะเขียนอะไรกำกับไว้"
    },
    {
     "start": 14.22,
@@ -624,8 +624,8 @@
    {
     "start": 4.25,
     "end": 22.7,
-    "en": "Two fusion data sets give w of plus 238 and minus 522 for naphthalene in benzene, and the same solubility at 298.15 kelvin. What can you report about the liquid nonideality, and what can you not?",
-    "th": "ข้อมูลการหลอมเหลวสองชุดให้ w เท่ากับ +238 และ −522 จูลต่อโมลสำหรับ naphthalene ใน benzene และให้ความสามารถในการละลายเท่ากันที่ 298.15 เคลวิน คุณรายงานอะไรเกี่ยวกับความไม่เป็นอุดมคติของของเหลวได้ และรายงานอะไรไม่ได้"
+    "en": "Two fusion data sets give W of plus 238 and minus 522 for naphthalene in benzene, and the same solubility at 298.15 kelvin. What can you report about the liquid nonideality, and what can you not?",
+    "th": "ข้อมูลการหลอมเหลวสองชุดให้ W เท่ากับ +238 และ −522 จูลต่อโมลสำหรับ naphthalene ใน benzene และให้ความสามารถในการละลายเท่ากันที่ 298.15 เคลวิน คุณรายงานอะไรเกี่ยวกับความไม่เป็นอุดมคติของของเหลวได้ และรายงานอะไรไม่ได้"
    },
    {
     "start": 23.05,
@@ -646,13 +646,13 @@
    },
    {
     "start": 7.85,
-    "end": 11.59,
-    "en": "Read the session 5 pre-class note when it is posted.",
-    "th": "อ่านเอกสารเตรียมก่อนเรียนของคาบที่ 5 เมื่อเผยแพร่แล้ว"
+    "end": 11.76,
+    "en": "Read the session 5 pre-class note before the next session.",
+    "th": "อ่านเอกสารเตรียมก่อนเรียนของคาบที่ 5 ก่อนคาบหน้า"
    },
    {
-    "start": 11.94,
-    "end": 18.0,
+    "start": 12.11,
+    "end": 18.17,
     "en": "Graduate students can work through Lab 11 C and Lab 10 C. See you next session.",
     "th": "นิสิตบัณฑิตศึกษาทำ Lab 11 ขั้น C และ Lab 10 ขั้น C ได้ แล้วพบกันคาบหน้า"
    }

@@ -31,6 +31,22 @@
   </style>
   <link rel="stylesheet" href="s07_files/libs/revealjs/dist/theme/quarto-92f192d9b2a7292791bf52680c75ce43.css">
   <link rel="stylesheet" href="slides-2027.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="../site_libs/katex/katex.min.css">
   <link href="s07_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="s07_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="s07_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -185,13 +201,13 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 </tr>
 <tr class="odd">
 <td>4 · SLE</td>
-<td>w = +238 J/mol, naphthalene–benzene</td>
-<td>other fusion data give w = −522; the prediction is unchanged</td>
+<td>W = +238 J/mol, naphthalene–benzene</td>
+<td>other fusion data give W = −522; the prediction is unchanged</td>
 </tr>
 <tr class="even">
 <td>5 · reaction</td>
 <td>the solver converged</td>
-<td>constant-ΔH K gives 0.498 conversion; correct K gives 0.795</td>
+<td>K from constant Δ<sub>r</sub>H° gives 0.498 conversion; correct K gives 0.795</td>
 </tr>
 <tr class="odd">
 <td>6 · cell</td>
@@ -285,11 +301,11 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <tr class="even">
 <td>4 · SLE, adsorption</td>
 <td>ln(x₁γ₁) = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>); n = PV/RT + mq(P)</td>
-<td>fusion data, w; isotherm</td>
+<td>fusion data, W; isotherm</td>
 </tr>
 <tr class="odd">
 <td>5 · reactions</td>
-<td>Π(y<sub>i</sub>φ<sub>i</sub>P/P°)<sup>ν<sub>i</sub></sup> = K(T)</td>
+<td><span class="math inline">\prod_i(y_i\hat\varphi_iP/P^\circ)^{\nu_i}=K(T)</span></td>
 <td>H(T), S(T), K<sub>φ</sub></td>
 </tr>
 <tr class="even">
@@ -341,7 +357,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 </div><div class="column rule-notes" style="width:48%;">
 <p>A claim is only as strong as the highest rung it reached.</p>
 <p><strong>Extrapolation reaches none:</strong> the a + b/T model’s gap closing at 324 K lies beyond the last tie line at 316 K.</p>
-<p><strong>Some claims cannot be reached with the data in hand:</strong> the sign of w for naphthalene–benzene, or dγ±/dT from KCl data with U = 0.03.</p>
+<p><strong>Some claims cannot be reached with the data in hand:</strong> the sign of W for naphthalene–benzene, or dγ±/dT from KCl data with U = 0.03.</p>
 <p><span class="q">Saying so is part of the answer.</span></p>
 </div></div>
 </section>
@@ -453,13 +469,13 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="prompt">
-<p>Naphthalene in octane, saturated at 298.15 K, is cooled to 285 K. Use the NIST fusion data (353.39 K, 19.0 kJ/mol) and w = 2509 J/mol. What fraction of the dissolved naphthalene crystallizes? What would an ideal-solution design have predicted?</p>
+<p>Naphthalene in octane, saturated at 298.15 K, is cooled to 285 K. Use the NIST fusion data (353.39 K, 19.0 kJ/mol) and W = 2509 J/mol. What fraction of the dissolved naphthalene crystallizes? What would an ideal-solution design have predicted?</p>
 </div>
 <p>Session 4.</p>
 </div><div class="column rule-notes" style="width:48%;">
 <p><span class="label">Hints</span></p>
 <ol type="1">
-<li>Solve ln x₁ + (w/RT)(1 − x₁)² = −(ΔH/R)(1/T − 1/T<sub>m</sub>) at both T.</li>
+<li>Solve ln x₁ + (W/RT)(1 − x₁)² = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>) at both T.</li>
 <li>Basis 1 mol of feed; octane does not crystallize.</li>
 <li>Is 285 K inside the measured range?</li>
 </ol>
@@ -611,7 +627,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <tr class="even">
 <td>Lab 10</td>
 <td>x₁(298.15) = 0.108</td>
-<td>prediction; w off the minimum</td>
+<td>prediction; W off the minimum</td>
 <td>γ₁ evaluated at x₂ = 1; objective in ln γ, not ln x</td>
 </tr>
 <tr class="odd">
@@ -635,7 +651,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <div class="columns">
 <div class="column" style="width:58%;">
 <div class="prompt">
-<p>A colleague fits ln γ₁ = (w/RT)x₂² to naphthalene solubility in benzene and reports “w = −522 J/mol: benzene is a better-than-ideal solvent”. (a) Reproduce the claim from the data in Lab 10 E. (b) Is the claim supported? (c) What would you report instead, and what one measurement would settle the sign?</p>
+<p>A colleague fits ln γ₁ = (W/RT)x₂² to naphthalene solubility in benzene and reports “W = −522 J/mol: benzene is a better-than-ideal solvent”. (a) Reproduce the claim from the data in Lab 10 E. (b) Is the claim supported? (c) What would you report instead, and what one measurement would settle the sign?</p>
 </div>
 </div><div class="column rule-notes" style="width:40%;">
 <p><span class="label">25 minutes · alone</span></p>
@@ -647,12 +663,12 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <h2>Exam-style problem: a model answer</h2>
 <div class="columns">
 <div class="column" style="width:52%;">
-<p><strong>(a)</strong> ln(x₁γ₁) = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>), ΔC<sub>p</sub> neglected. With the article’s DSC data (355.04 K, 20.87 kJ/mol) and all ten rows, least squares in ln x₁: w = −522 J/mol, RMSE 0.008.</p>
-<p><strong>(b)</strong> No.&nbsp;With the NIST data (353.39 K, 19.0 kJ/mol), w = +238 J/mol. The two fusion sets differ by about their stated uncertainty, and the sign of w follows them. x₁ at 298.15 K is 0.289 or 0.287 either way.</p>
+<p><strong>(a)</strong> ln(x₁γ₁) = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>), ΔC<sub>p</sub> neglected. With the article’s DSC data (355.04 K, 20.87 kJ/mol) and all ten rows, least squares in ln x₁: W = −522 J/mol, RMSE 0.008.</p>
+<p><strong>(b)</strong> No.&nbsp;With the NIST data (353.39 K, 19.0 kJ/mol), W = +238 J/mol. The two fusion sets differ by about their stated uncertainty, and the sign of W follows them. x₁ at 298.15 K is 0.289 or 0.287 either way.</p>
 </div><div class="column rule-notes" style="width:46%;">
-<p><strong>(c)</strong> Report: near-ideal, |ln γ₁| ≤ 0.13 between 286 and 326 K with either fusion data set; x₁(298.15 K) = 0.288 ± 0.001 for either fusion data set. Do not report the sign of w.</p>
+<p><strong>(c)</strong> Report: near-ideal, |ln γ₁| ≤ 0.13 between 286 and 326 K with either fusion data set; x₁(298.15 K) = 0.288 ± 0.001 for either fusion data set. Do not report the sign of W.</p>
 <p>To settle the sign: a measurement that does not pass through the solid, such as H<sup>E</sup> or VLE of liquid naphthalene + benzene, or Δ<sub>fus</sub>H measured to better than ±0.5 kJ/mol.</p>
-<p><span class="q">The model answer reaches rung 1 for w and rung 3 for the prediction.</span></p>
+<p><span class="q">The model answer reaches rung 1 for W and rung 3 for the prediction.</span></p>
 </div></div>
 </section>
 <section id="marking" class="slide level2">

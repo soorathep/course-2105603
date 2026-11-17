@@ -27,7 +27,7 @@ Draft for 2027. If you are taking the course this year, use the current course p
 | 1 · VLE, flash | vapor–liquid | y<sub>i</sub>Φ<sub>i</sub>P = x<sub>i</sub>γ<sub>i</sub>P<sub>i</sub><sup>sat</sup>; Rachford–Rice | γ, P<sup>sat</sup> |
 | 2 · measured VLE | same, solved for γ | γ<sub>i</sub> = y<sub>i</sub>Φ<sub>i</sub>P/(x<sub>i</sub>P<sub>i</sub><sup>sat</sup>) | G<sup>E</sup> model, weights |
 | 3 · LLE | liquid–liquid | x<sub>i</sub><sup>α</sup>γ<sub>i</sub><sup>α</sup> = x<sub>i</sub><sup>β</sup>γ<sub>i</sub><sup>β</sup>; TPD ≥ 0 | NRTL τ(T) |
-| 4 · solids, surfaces | solid–liquid; gas–surface | ln(x₁γ₁) = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>); n = PV/RT + mq | fusion data, w; isotherm |
+| 4 · solids, surfaces | solid–liquid; gas–surface | ln(x₁γ₁) = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>); n = PV/RT + mq | fusion data, W; isotherm |
 | 5 · reactions | chemical | Πa<sub>i</sub><sup>ν<sub>i</sub></sup> = K(T), ln K = −Δ<sub>r</sub>G°/RT | H(T), S(T), K<sub>φ</sub> |
 | 6 · cells | electrochemical | Δ<sub>r</sub>G = −nFE; a<sub>KCl</sub> = (mγ±)² | Debye–Hückel, b, c |
 
@@ -39,7 +39,7 @@ Each session had a result that looked right and was not, and the evidence that s
 |---|---|---|
 | 2 | Weighted NRTL fit, RMS(r/σ) = 1.16 | It predicts a liquid split (0.088–0.237) in a miscible mixture |
 | 3 | Exact fit to one tie line | Held-out tie lines: RMSE 0.077 with constant τ, 0.0097 with τ = a + b/T |
-| 4 | w = +238 J/mol for naphthalene in benzene | With the other fusion data, w = −522 J/mol; the solubility prediction is the same |
+| 4 | W = +238 J/mol for naphthalene in benzene | With the other fusion data, W = −522 J/mol; the solubility prediction is the same |
 | 5 | A solver that converged | K from constant Δ<sub>r</sub>H gives 0.498 conversion; the correct K gives 0.795 |
 | 6 | A good fit of γ± | The cell needs (mγ±)²; with mγ± every EMF is half |
 

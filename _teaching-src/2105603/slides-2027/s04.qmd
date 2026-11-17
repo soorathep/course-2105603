@@ -174,19 +174,19 @@ $$x_1=\frac{m}{m+1000/M_{\text{solvent}}}\qquad \gamma_1=\frac{x_1^{\text{id}}(T
 
 Octane, 296.6 K, m = 1.3217: x₁ = **0.1312**. With NIST fusion data, x₁<sup>id</sup> = 0.290, so γ₁ = **2.21**.
 
-A model such as ln γ₁ = (w/RT)x₂² puts x₁ on both sides. **Solve** for x₁; do not evaluate γ₁ once.
+A model such as ln γ₁ = (W/RT)x₂² puts x₁ on both sides. **Solve** for x₁; do not evaluate γ₁ once.
 :::
 ::: {.column width="48%"}
 ::: {.lever-box}
-[Fitted w, least squares in ln x₁, all rows]{.label}
+[Fitted W, least squares in ln x₁, all rows]{.label}
 
-| Solvent | w (NIST) | w (DSC) | x₁ at 298.15 K |
+| Solvent | W (NIST) | W (DSC) | x₁ at 298.15 K |
 |---|---:|---:|---:|
 | octane | 2509 | 1973 | 0.144 / 0.145 |
 | octan-1-ol | 2979 | 2475 | 0.119 / 0.120 |
 | benzene | **+238** | **−522** | 0.287 / 0.289 |
 
-w in J/mol. The prediction hardly moves with the fusion data; the parameter does.
+W in J/mol. The prediction hardly moves with the fusion data; the parameter does.
 :::
 :::
 ::::
@@ -231,7 +231,7 @@ x₁ = 4.5226 / (4.5226 + 1000/78.112) = **0.2610**
 | NIST | 0.274 | **1.051** | positive |
 | DSC | 0.234 | **0.896** | negative |
 
-Fitting all ten rows: w = +238 J/mol (NIST) or −522 J/mol (DSC).
+Fitting all ten rows: W = +238 J/mol (NIST) or −522 J/mol (DSC).
 :::
 ::: {.column width="46%" .rule-notes}
 The sign of the deviation is **not decided** by these data. It is decided by the fusion data, which differ by about their own stated uncertainty.
@@ -265,11 +265,11 @@ At fixed loading q:
 
 $$\Big(\frac{\partial\ln P}{\partial(1/T)}\Big)_q=-\frac{Q_{\text{st}}}{R}$$
 
-**Heating the closed vessel** from 300 to 400 K (Q = 25 kJ/mol): q falls from 1.20 to 0.64 mol/kg, P rises from 15.0 to 57.4 kPa, and 0.011 mol leaves the solid.
+**Heating the closed vessel** from 300 to 400 K (Q<sub>st</sub> = 25 kJ/mol): q falls from 1.20 to 0.64 mol/kg, P rises from 15.0 to 57.4 kPa, and 0.011 mol leaves the solid.
 :::
 ::: {.column width="48%"}
 ::: {.lever-box}
-[Lab 11 B · synthetic isotherms, true Q = 25 kJ/mol]{.label}
+[Lab 11 B · synthetic isotherms, true Q<sub>st</sub> = 25 kJ/mol]{.label}
 
 | Isotherms used | Q<sub>st</sub> / kJ mol⁻¹ |
 |---|---:|
@@ -298,7 +298,7 @@ A 2 K error in one temperature moves the heat by 1 kJ/mol.
 
 ::: {.expect}
 [Lab 11 should report · starting case]{.label}
-P = 14.99 kPa · q = 1.20 mol/kg · θ = 0.60 · 80 % adsorbed · 74.83 kPa without adsorbent · balance residual 0
+P = 14.99 kPa · q = 1.20 mol/kg · coverage θ = q/q<sub>s</sub> = 0.60 · 80 % adsorbed · 74.83 kPa without adsorbent · balance residual 0
 :::
 :::
 ::::
@@ -341,8 +341,8 @@ Write and debug code that does exactly what your specification says. Not propert
 1. Ideal solubility at 298.15 K
 2. x₁ of a stated row, from its molality
 3. γ₁ of that row
-4. w at the minimum of Σ(Δ ln x₁)²
-5. RMSE in ln x₁ at your w
+4. W at the minimum of Σ(Δ ln x₁)²
+5. RMSE in ln x₁ at your W
 6. Predicted x₁ at 298.15 K
 
 It also refits with the other fusion data, for the discussion.
@@ -377,7 +377,7 @@ One solvent, one fusion data set. Specify, ask an AI assistant for the code, run
 :::
 ::: {}
 [10 min · explain]{.label}
-Two sentences with numbers: why does w change by hundreds of J/mol with the fusion data while x₁ at 298.15 K hardly moves?
+Two sentences with numbers: why does W change by hundreds of J/mol with the fusion data while x₁ at 298.15 K hardly moves?
 :::
 :::
 
@@ -394,7 +394,7 @@ Two sentences with numbers: why does w change by hundreds of J/mol with the fusi
 3. Two sentences that answer the activity question with numbers.
 
 [Graduate extension]{.label}
-Fit octane with w = a + b/T in place of a constant. Does the RMSE in ln x₁ fall below 0.02, and does the 298.15 K prediction change?
+Fit octane with W = a + b/T in place of a constant. Does the RMSE in ln x₁ fall below 0.02, and does the 298.15 K prediction change?
 :::
 ::: {.column width="54%"}
 ::: {.lever-box}
@@ -405,7 +405,7 @@ Fit octane with w = a + b/T in place of a constant. Does the RMSE in ln x₁ fal
 | ideal x₁, 298.15 K | 0.3018 | 0.2595 |
 | x₁ at 296.6 K | 0.1312 | 0.1312 |
 | γ₁ at 296.6 K | 2.210 | 1.892 |
-| w / (J mol⁻¹) | 2509 | 1973 |
+| W / (J mol⁻¹) | 2509 | 1973 |
 | RMSE in ln x₁ | 0.044 | 0.060 |
 | x₁ at 298.15 K | 0.1437 | 0.1450 |
 :::
@@ -422,9 +422,9 @@ Fit octane with w = a + b/T in place of a constant. Does the RMSE in ln x₁ fal
 | | Lab | Script |
 |---|---:|---:|
 | ideal x₁, x₁ and γ₁ of the row | agree | agree |
-| w / (J mol⁻¹) | 2509 | 2540 |
-| RMSE in ln x₁ at the script's w | 0.045 | **0.028** |
-| x₁ at 298.15 K, script's w | 0.142 | **0.108** |
+| W / (J mol⁻¹) | 2509 | 2540 |
+| RMSE in ln x₁ at the script's W | 0.045 | **0.028** |
+| x₁ at 298.15 K, script's W | 0.142 | **0.108** |
 
 The script fitted ln γ₁ in place of ln x₁ (+5.9 % in the objective), computed its RMSE with the measured x₁ inside γ₁, and predicted with γ₁ at x₂ = 1. The prediction was 24 % low.
 :::
@@ -432,11 +432,11 @@ The script fitted ln γ₁ in place of ln x₁ (+5.9 % in the objective), comput
 ::: {.column width="42%" .rule-notes}
 [Fix that made all checks agree]{.label}
 
-Solve ln x₁ + (w/RT)(1 − x₁)² = −(ΔH/R)(1/T − 1/T<sub>m</sub>) for x₁ at every T, in the fit, the RMSE and the prediction.
+Solve ln x₁ + (W/RT)(1 − x₁)² = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>) for x₁ at every T, in the fit, the RMSE and the prediction.
 
 The draft's RMSE looked **better** than the correct one. A small error from code that computed the wrong thing is not evidence.
 
-All checks agree only shows that the code solves your problem. Constant w still leaves 0.044 in ln x₁ for octane.
+All checks agree only shows that the code solves your problem. Constant W still leaves 0.044 in ln x₁ for octane.
 :::
 ::::
 
@@ -449,7 +449,7 @@ All checks agree only shows that the code solves your problem. Constant w still 
 ::: {.column width="42%" .concept-notes}
 [Discuss in pairs, then with the class]{.q}
 
-1. Benzene gives w = +238 or −522 J/mol. Would you put either value in a database? What would you write next to it?
+1. Benzene gives W = +238 or −522 J/mol. Would you put either value in a database? What would you write next to it?
 2. You need x₁ at 320 K in a new solvent with no data. Which uncertainty dominates: fusion data or γ₁?
 3. In Lab 11, a Henry fit to low-loading data gives 10.1 kPa in the vessel. What single measurement would have warned you?
 :::
@@ -460,7 +460,7 @@ All checks agree only shows that the code solves your problem. Constant w still 
 ::: {.summary3}
 ::: {}
 [Solid–liquid]{.label}
-ln(x₁γ₁) = −(ΔH/R)(1/T − 1/T<sub>m</sub>). The fusion data set the ideal baseline; γ₁ carries the solvent.
+ln(x₁γ₁) = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>). The fusion data set the ideal baseline; γ₁ carries the solvent.
 :::
 ::: {}
 [Gas–surface]{.label}
@@ -468,11 +468,11 @@ Isotherm plus vessel balance gives P and q. Q<sub>st</sub> comes from ln P again
 :::
 ::: {}
 [Parameters]{.label}
-A fitted w absorbs errors in the fusion data. Report it with the data it was fitted with; trust predictions inside the fitted range.
+A fitted W absorbs errors in the fusion data. Report it with the data it was fitted with; trust predictions inside the fitted range.
 :::
 :::
 
-**Session question:** for naphthalene in benzene, two fusion data sets give w = +238 and −522 J/mol and the same x₁ = 0.287–0.289 at 298.15 K. The parameter absorbed the 16 % difference in ideal solubility; the interpolated prediction survived.
+**Session question:** for naphthalene in benzene, two fusion data sets give W = +238 and −522 J/mol and the same x₁ = 0.287–0.289 at 298.15 K. The parameter absorbed the 16 % difference in ideal solubility; the interpolated prediction survived.
 
 [Next session]{.label} How far does a reaction go, and what does a nonideal phase do to K? Chemical equilibrium (Lab 12).
 
@@ -483,7 +483,7 @@ A fitted w absorbs errors in the fusion data. Report it with the data it was fit
 :::: {.columns}
 ::: {.column width="64%"}
 ::: {.prompt}
-Two fusion data sets give w = +238 and −522 J/mol for naphthalene in benzene, and the same solubility at 298.15 K. What can you report about the liquid nonideality, and what can you not?
+Two fusion data sets give W = +238 and −522 J/mol for naphthalene in benzene, and the same solubility at 298.15 K. What can you report about the liquid nonideality, and what can you not?
 :::
 
 Scan the code or open the link. The same form asks three short questions about today: pace, confidence and whether the lab worked.
@@ -506,7 +506,7 @@ Lab 10 study file with E, and Lab 11 study file with A and B. Names and student 
 :::
 ::: {}
 [Prepare · Session 5]{.label}
-Read the Session 5 pre-class note when it is posted. About 20 minutes.
+Read the [Session 5 pre-class note](note-s05.html){target="_blank"}. About 20 minutes.
 :::
 ::: {}
 [Optional · graduate]{.label}

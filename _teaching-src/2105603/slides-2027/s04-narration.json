@@ -153,9 +153,9 @@
     "th": "เมื่อใช้แบบจำลองพารามิเตอร์เดียว x อยู่ทั้งสองข้างของสมการ ต้องแก้สมการหา x ไม่ใช่คำนวณ γ ครั้งเดียว"
    },
    {
-    "en": "In the table, the fitted parameter w changes with the fusion data, by more than 700 joules per mole for benzene. The predicted solubility at 298.15 kelvin hardly moves.",
-    "th": "ในตาราง พารามิเตอร์ w ที่ fit ได้เปลี่ยนไปตามข้อมูลการหลอมเหลว สำหรับ benzene เปลี่ยนมากกว่า 700 จูลต่อโมล แต่ความสามารถในการละลายที่ทำนายที่ 298.15 เคลวิน แทบไม่เปลี่ยน",
-    "say": "In the table, the fitted parameter w changes with the fusion data, by more than seven hundred joules per mole for benzene. The predicted solubility at two hundred ninety eight point one five kelvin hardly moves."
+    "en": "In the table, the fitted parameter W changes with the fusion data, by more than 700 joules per mole for benzene. The predicted solubility at 298.15 kelvin hardly moves.",
+    "th": "ในตาราง พารามิเตอร์ W ที่ fit ได้เปลี่ยนไปตามข้อมูลการหลอมเหลว สำหรับ benzene เปลี่ยนมากกว่า 700 จูลต่อโมล แต่ความสามารถในการละลายที่ทำนายที่ 298.15 เคลวิน แทบไม่เปลี่ยน",
+    "say": "In the table, the fitted parameter W changes with the fusion data, by more than seven hundred joules per mole for benzene. The predicted solubility at two hundred ninety eight point one five kelvin hardly moves."
    }
   ],
   "eutectic": [
@@ -321,8 +321,8 @@
     "th": "ต่อไป Lab 10 ขั้น E ด้วยโค้ดของคุณเอง ที่ผู้ช่วย AI เขียนจากข้อกำหนดของคุณ"
    },
    {
-    "en": "Finally, explain with numbers why w changes with the fusion data while the predicted solubility hardly moves.",
-    "th": "สุดท้าย อธิบายด้วยตัวเลขว่าทำไม w เปลี่ยนตามข้อมูลการหลอมเหลว ขณะที่ความสามารถในการละลายที่ทำนายแทบไม่เปลี่ยน"
+    "en": "Finally, explain with numbers why W changes with the fusion data while the predicted solubility hardly moves.",
+    "th": "สุดท้าย อธิบายด้วยตัวเลขว่าทำไม W เปลี่ยนตามข้อมูลการหลอมเหลว ขณะที่ความสามารถในการละลายที่ทำนายแทบไม่เปลี่ยน"
    }
   ],
   "activity-2-check": [
@@ -331,13 +331,13 @@
     "th": "สิ่งที่ต้องส่งคือ ไฟล์ study ทั้งสองไฟล์ การคำนวณด้วยมือ และสองประโยค"
    },
    {
-    "en": "Use the table to check your results for octane. With the NIST data, w is 2509 joules per mole and the solubility at 298.15 kelvin is 0.144.",
-    "th": "ใช้ตารางนี้ตรวจผลของ octane เมื่อใช้ข้อมูล NIST w เท่ากับ 2509 จูลต่อโมล และความสามารถในการละลายที่ 298.15 เคลวิน เท่ากับ 0.144",
-    "say": "Use the table to check your results for octane. With the NIST data, w is two thousand five hundred nine joules per mole and the solubility at two hundred ninety eight point one five kelvin is zero point one four four."
+    "en": "Use the table to check your results for octane. With the NIST data, W is 2509 joules per mole and the solubility at 298.15 kelvin is 0.144.",
+    "th": "ใช้ตารางนี้ตรวจผลของ octane เมื่อใช้ข้อมูล NIST W เท่ากับ 2509 จูลต่อโมล และความสามารถในการละลายที่ 298.15 เคลวิน เท่ากับ 0.144",
+    "say": "Use the table to check your results for octane. With the NIST data, W is two thousand five hundred nine joules per mole and the solubility at two hundred ninety eight point one five kelvin is zero point one four four."
    },
    {
-    "en": "Graduate extension: let w depend on temperature, and see whether the error falls.",
-    "th": "งานเสริมระดับบัณฑิต ให้ w ขึ้นกับอุณหภูมิ แล้วดูว่าความคลาดเคลื่อนลดลงหรือไม่"
+    "en": "Graduate extension: let W depend on temperature, and see whether the error falls.",
+    "th": "งานเสริมระดับบัณฑิต ให้ W ขึ้นกับอุณหภูมิ แล้วดูว่าความคลาดเคลื่อนลดลงหรือไม่"
    }
   ],
   "ai-debrief": [
@@ -369,9 +369,9 @@
     "th": "อภิปรายเป็นคู่ แล้วอภิปรายร่วมกันทั้งห้อง"
    },
    {
-    "en": "Benzene gives w of plus 238 or minus 522. Would you put either value in a database, and what would you write next to it?",
-    "th": "benzene ให้ w เท่ากับ +238 หรือ −522 คุณจะใส่ค่าใดในฐานข้อมูล และจะเขียนอะไรกำกับไว้",
-    "say": "Benzene gives w of plus two hundred thirty eight or minus five hundred twenty two. Would you put either value in a database, and what would you write next to it?"
+    "en": "Benzene gives W of plus 238 or minus 522. Would you put either value in a database, and what would you write next to it?",
+    "th": "benzene ให้ W เท่ากับ +238 หรือ −522 คุณจะใส่ค่าใดในฐานข้อมูล และจะเขียนอะไรกำกับไว้",
+    "say": "Benzene gives W of plus two hundred thirty eight or minus five hundred twenty two. Would you put either value in a database, and what would you write next to it?"
    },
    {
     "en": "For a new solvent with no data, which uncertainty dominates: the fusion data or gamma?",
@@ -406,9 +406,9 @@
     "th": "exit ticket และความเห็น ใช้เวลาห้านาที ทำคนเดียว"
    },
    {
-    "en": "Two fusion data sets give w of plus 238 and minus 522 for naphthalene in benzene, and the same solubility at 298.15 kelvin. What can you report about the liquid nonideality, and what can you not?",
-    "th": "ข้อมูลการหลอมเหลวสองชุดให้ w เท่ากับ +238 และ −522 จูลต่อโมลสำหรับ naphthalene ใน benzene และให้ความสามารถในการละลายเท่ากันที่ 298.15 เคลวิน คุณรายงานอะไรเกี่ยวกับความไม่เป็นอุดมคติของของเหลวได้ และรายงานอะไรไม่ได้",
-    "say": "Two fusion data sets give w of plus two hundred thirty eight and minus five hundred twenty two for naphthalene in benzene, and the same solubility at two hundred ninety eight point one five kelvin. What can you report about the liquid nonideality, and what can you not?"
+    "en": "Two fusion data sets give W of plus 238 and minus 522 for naphthalene in benzene, and the same solubility at 298.15 kelvin. What can you report about the liquid nonideality, and what can you not?",
+    "th": "ข้อมูลการหลอมเหลวสองชุดให้ W เท่ากับ +238 และ −522 จูลต่อโมลสำหรับ naphthalene ใน benzene และให้ความสามารถในการละลายเท่ากันที่ 298.15 เคลวิน คุณรายงานอะไรเกี่ยวกับความไม่เป็นอุดมคติของของเหลวได้ และรายงานอะไรไม่ได้",
+    "say": "Two fusion data sets give W of plus two hundred thirty eight and minus five hundred twenty two for naphthalene in benzene, and the same solubility at two hundred ninety eight point one five kelvin. What can you report about the liquid nonideality, and what can you not?"
    },
    {
     "en": "Scan the QR code or open the link. It is anonymous. Wait until you see Response received.",
@@ -421,8 +421,8 @@
     "th": "หลังเลิกเรียน ส่งไฟล์ study ของ Lab 10 ที่มีขั้น E และไฟล์ study ของ Lab 11 ที่มีขั้น A และ B"
    },
    {
-    "en": "Read the session 5 pre-class note when it is posted.",
-    "th": "อ่านเอกสารเตรียมก่อนเรียนของคาบที่ 5 เมื่อเผยแพร่แล้ว"
+    "en": "Read the session 5 pre-class note before the next session.",
+    "th": "อ่านเอกสารเตรียมก่อนเรียนของคาบที่ 5 ก่อนคาบหน้า"
    },
    {
     "en": "Graduate students can work through Lab 11 C and Lab 10 C. See you next session.",

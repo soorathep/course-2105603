@@ -617,13 +617,13 @@
    },
    {
     "start": 5.78,
-    "end": 9.43,
-    "en": "Read the session 6 pre-class note when it is posted.",
-    "th": "อ่านเอกสารเตรียมก่อนเรียนของคาบที่ 6 เมื่อเผยแพร่แล้ว"
+    "end": 9.71,
+    "en": "Read the session 6 pre-class note before the next session.",
+    "th": "อ่านเอกสารเตรียมก่อนเรียนของคาบที่ 6 ก่อนคาบหน้า"
    },
    {
-    "start": 9.78,
-    "end": 17.82,
+    "start": 10.06,
+    "end": 18.1,
     "en": "Graduate students can work through Lab 12 B, and add the fugacity correction to their code. See you next session.",
     "th": "นิสิตบัณฑิตศึกษาทำ Lab 12 ขั้น B และเพิ่มการแก้ไขด้วย fugacity ในโค้ดได้ แล้วพบกันคาบหน้า"
    }

@@ -335,16 +335,16 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p>The data come as <strong>molality</strong>, m in mol per kg of solvent:</p>
 <p><span class="math display">x_1=\frac{m}{m+1000/M_{\text{solvent}}}\qquad \gamma_1=\frac{x_1^{\text{id}}(T)}{x_1}</span></p>
 <p>Octane, 296.6 K, m = 1.3217: x₁ = <strong>0.1312</strong>. With NIST fusion data, x₁<sup>id</sup> = 0.290, so γ₁ = <strong>2.21</strong>.</p>
-<p>A model such as ln γ₁ = (w/RT)x₂² puts x₁ on both sides. <strong>Solve</strong> for x₁; do not evaluate γ₁ once.</p>
+<p>A model such as ln γ₁ = (W/RT)x₂² puts x₁ on both sides. <strong>Solve</strong> for x₁; do not evaluate γ₁ once.</p>
 </div><div class="column" style="width:48%;">
 <div class="lever-box">
-<p><span class="label">Fitted w, least squares in ln x₁, all rows</span></p>
+<p><span class="label">Fitted W, least squares in ln x₁, all rows</span></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th>Solvent</th>
-<th style="text-align: right;">w (NIST)</th>
-<th style="text-align: right;">w (DSC)</th>
+<th style="text-align: right;">W (NIST)</th>
+<th style="text-align: right;">W (DSC)</th>
 <th style="text-align: right;">x₁ at 298.15 K</th>
 </tr>
 </thead>
@@ -369,7 +369,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 </tr>
 </tbody>
 </table>
-<p>w in J/mol. The prediction hardly moves with the fusion data; the parameter does.</p>
+<p>W in J/mol. The prediction hardly moves with the fusion data; the parameter does.</p>
 </div>
 </div></div>
 </section>
@@ -424,7 +424,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 </tr>
 </tbody>
 </table>
-<p>Fitting all ten rows: w = +238 J/mol (NIST) or −522 J/mol (DSC).</p>
+<p>Fitting all ten rows: W = +238 J/mol (NIST) or −522 J/mol (DSC).</p>
 </div><div class="column rule-notes" style="width:46%;">
 <p>The sign of the deviation is <strong>not decided</strong> by these data. It is decided by the fusion data, which differ by about their own stated uncertainty.</p>
 <p>What you can report: naphthalene + benzene is close to ideal, |ln γ₁| ≤ 0.11 here, and the solubility at 298.15 K is 0.287–0.289 with either set.</p>
@@ -448,10 +448,10 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <div class="column" style="width:50%;">
 <p>At fixed loading q:</p>
 <p><span class="math display">\Big(\frac{\partial\ln P}{\partial(1/T)}\Big)_q=-\frac{Q_{\text{st}}}{R}</span></p>
-<p><strong>Heating the closed vessel</strong> from 300 to 400 K (Q = 25 kJ/mol): q falls from 1.20 to 0.64 mol/kg, P rises from 15.0 to 57.4 kPa, and 0.011 mol leaves the solid.</p>
+<p><strong>Heating the closed vessel</strong> from 300 to 400 K (Q<sub>st</sub> = 25 kJ/mol): q falls from 1.20 to 0.64 mol/kg, P rises from 15.0 to 57.4 kPa, and 0.011 mol leaves the solid.</p>
 </div><div class="column" style="width:48%;">
 <div class="lever-box">
-<p><span class="label">Lab 11 B · synthetic isotherms, true Q = 25 kJ/mol</span></p>
+<p><span class="label">Lab 11 B · synthetic isotherms, true Q<sub>st</sub> = 25 kJ/mol</span></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -492,7 +492,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 </div><div class="column" style="width:54%;">
 <p><img data-src="figures/s04-adsorption-lab.png" class="lab-shot" alt="Lab 11 chart of the isotherm and the vessel balance meeting at 14.99 kilopascals"></p>
 <div class="expect">
-<p><span class="label">Lab 11 should report · starting case</span> P = 14.99 kPa · q = 1.20 mol/kg · θ = 0.60 · 80 % adsorbed · 74.83 kPa without adsorbent · balance residual 0</p>
+<p><span class="label">Lab 11 should report · starting case</span> P = 14.99 kPa · q = 1.20 mol/kg · coverage θ = q/q<sub>s</sub> = 0.60 · 80 % adsorbed · 74.83 kPa without adsorbent · balance residual 0</p>
 </div>
 </div></div>
 </section>
@@ -532,8 +532,8 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <li>Ideal solubility at 298.15 K</li>
 <li>x₁ of a stated row, from its molality</li>
 <li>γ₁ of that row</li>
-<li>w at the minimum of Σ(Δ ln x₁)²</li>
-<li>RMSE in ln x₁ at your w</li>
+<li>W at the minimum of Σ(Δ ln x₁)²</li>
+<li>RMSE in ln x₁ at your W</li>
 <li>Predicted x₁ at 298.15 K</li>
 </ol>
 <p>It also refits with the other fusion data, for the discussion.</p>
@@ -560,7 +560,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p><span class="label">25 min · Lab 10 E your own code</span> One solvent, one fusion data set. Specify, ask an AI assistant for the code, run it, check it in E. Fix what disagrees.</p>
 </div>
 <div>
-<p><span class="label">10 min · explain</span> Two sentences with numbers: why does w change by hundreds of J/mol with the fusion data while x₁ at 298.15 K hardly moves?</p>
+<p><span class="label">10 min · explain</span> Two sentences with numbers: why does W change by hundreds of J/mol with the fusion data while x₁ at 298.15 K hardly moves?</p>
 </div>
 </div>
 <div class="selfstudy">
@@ -576,7 +576,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <li>The hand calculation for octane at 296.6 K.</li>
 <li>Two sentences that answer the activity question with numbers.</li>
 </ol>
-<p><span class="label">Graduate extension</span> Fit octane with w = a + b/T in place of a constant. Does the RMSE in ln x₁ fall below 0.02, and does the 298.15 K prediction change?</p>
+<p><span class="label">Graduate extension</span> Fit octane with W = a + b/T in place of a constant. Does the RMSE in ln x₁ fall below 0.02, and does the 298.15 K prediction change?</p>
 </div><div class="column" style="width:54%;">
 <div class="lever-box">
 <p><span class="label">Check your results · octane</span></p>
@@ -605,7 +605,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <td style="text-align: right;">1.892</td>
 </tr>
 <tr class="even">
-<td>w / (J mol⁻¹)</td>
+<td>W / (J mol⁻¹)</td>
 <td style="text-align: right;">2509</td>
 <td style="text-align: right;">1973</td>
 </tr>
@@ -645,17 +645,17 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <td style="text-align: right;">agree</td>
 </tr>
 <tr class="even">
-<td>w / (J mol⁻¹)</td>
+<td>W / (J mol⁻¹)</td>
 <td style="text-align: right;">2509</td>
 <td style="text-align: right;">2540</td>
 </tr>
 <tr class="odd">
-<td>RMSE in ln x₁ at the script’s w</td>
+<td>RMSE in ln x₁ at the script’s W</td>
 <td style="text-align: right;">0.045</td>
 <td style="text-align: right;"><strong>0.028</strong></td>
 </tr>
 <tr class="even">
-<td>x₁ at 298.15 K, script’s w</td>
+<td>x₁ at 298.15 K, script’s W</td>
 <td style="text-align: right;">0.142</td>
 <td style="text-align: right;"><strong>0.108</strong></td>
 </tr>
@@ -665,9 +665,9 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 </div>
 </div><div class="column rule-notes" style="width:42%;">
 <p><span class="label">Fix that made all checks agree</span></p>
-<p>Solve ln x₁ + (w/RT)(1 − x₁)² = −(ΔH/R)(1/T − 1/T<sub>m</sub>) for x₁ at every T, in the fit, the RMSE and the prediction.</p>
+<p>Solve ln x₁ + (W/RT)(1 − x₁)² = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>) for x₁ at every T, in the fit, the RMSE and the prediction.</p>
 <p>The draft’s RMSE looked <strong>better</strong> than the correct one. A small error from code that computed the wrong thing is not evidence.</p>
-<p>All checks agree only shows that the code solves your problem. Constant w still leaves 0.044 in ln x₁ for octane.</p>
+<p>All checks agree only shows that the code solves your problem. Constant W still leaves 0.044 in ln x₁ for octane.</p>
 </div></div>
 </section>
 <section id="discussion" class="slide level2">
@@ -678,7 +678,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 </div><div class="column concept-notes" style="width:42%;">
 <p><span class="q">Discuss in pairs, then with the class</span></p>
 <ol type="1">
-<li>Benzene gives w = +238 or −522 J/mol. Would you put either value in a database? What would you write next to it?</li>
+<li>Benzene gives W = +238 or −522 J/mol. Would you put either value in a database? What would you write next to it?</li>
 <li>You need x₁ at 320 K in a new solvent with no data. Which uncertainty dominates: fusion data or γ₁?</li>
 <li>In Lab 11, a Henry fit to low-loading data gives 10.1 kPa in the vessel. What single measurement would have warned you?</li>
 </ol>
@@ -688,16 +688,16 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <h2>Summary</h2>
 <div class="summary3">
 <div>
-<p><span class="label">Solid–liquid</span> ln(x₁γ₁) = −(ΔH/R)(1/T − 1/T<sub>m</sub>). The fusion data set the ideal baseline; γ₁ carries the solvent.</p>
+<p><span class="label">Solid–liquid</span> ln(x₁γ₁) = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>). The fusion data set the ideal baseline; γ₁ carries the solvent.</p>
 </div>
 <div>
 <p><span class="label">Gas–surface</span> Isotherm plus vessel balance gives P and q. Q<sub>st</sub> comes from ln P against 1/T at fixed q, and is sensitive to T errors.</p>
 </div>
 <div>
-<p><span class="label">Parameters</span> A fitted w absorbs errors in the fusion data. Report it with the data it was fitted with; trust predictions inside the fitted range.</p>
+<p><span class="label">Parameters</span> A fitted W absorbs errors in the fusion data. Report it with the data it was fitted with; trust predictions inside the fitted range.</p>
 </div>
 </div>
-<p><strong>Session question:</strong> for naphthalene in benzene, two fusion data sets give w = +238 and −522 J/mol and the same x₁ = 0.287–0.289 at 298.15 K. The parameter absorbed the 16 % difference in ideal solubility; the interpolated prediction survived.</p>
+<p><strong>Session question:</strong> for naphthalene in benzene, two fusion data sets give W = +238 and −522 J/mol and the same x₁ = 0.287–0.289 at 298.15 K. The parameter absorbed the 16 % difference in ideal solubility; the interpolated prediction survived.</p>
 <p><span class="label">Next session</span> How far does a reaction go, and what does a nonideal phase do to K? Chemical equilibrium (Lab 12).</p>
 </section>
 <section id="exit-ticket" class="slide level2 activity">
@@ -706,7 +706,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <div class="columns">
 <div class="column" style="width:64%;">
 <div class="prompt">
-<p>Two fusion data sets give w = +238 and −522 J/mol for naphthalene in benzene, and the same solubility at 298.15 K. What can you report about the liquid nonideality, and what can you not?</p>
+<p>Two fusion data sets give W = +238 and −522 J/mol for naphthalene in benzene, and the same solubility at 298.15 K. What can you report about the liquid nonideality, and what can you not?</p>
 </div>
 <p>Scan the code or open the link. The same form asks three short questions about today: pace, confidence and whether the lab worked.</p>
 <p>No name or student ID is recorded. Wait for <strong>“Response received.”</strong></p>
@@ -722,7 +722,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p><span class="label">Hand in · this week</span> Lab 10 study file with E, and Lab 11 study file with A and B. Names and student IDs.</p>
 </div>
 <div>
-<p><span class="label">Prepare · Session 5</span> Read the Session 5 pre-class note when it is posted. About 20 minutes.</p>
+<p><span class="label">Prepare · Session 5</span> Read the <a href="note-s05.html" target="_blank">Session 5 pre-class note</a>. About 20 minutes.</p>
 </div>
 <div>
 <p><span class="label">Optional · graduate</span> Lab 11 C: how much gas does heating release, and how does it depend on Q? Lab 10 C: sensitivity to the fusion data.</p>

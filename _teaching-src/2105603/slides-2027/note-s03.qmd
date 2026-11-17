@@ -38,7 +38,9 @@ This scaled curvature is the quantity reported in Labs 02 and 04. The **spinodal
 
 **Global test.** A positive curvature does not guarantee stability. The equilibrium compositions of the two liquids, the **binodal**, satisfy equal chemical potentials, which for a liquid–liquid split is
 
-$$x_i^{\alpha}\gamma_i^{\alpha}=x_i^{\beta}\gamma_i^{\beta}\qquad(i=1,2).$$
+$$x_i^{\alpha}\gamma_i^{\alpha}=x_i^{\beta}\gamma_i^{\beta}\qquad(i=1,2),$$
+
+where α is the x₁-poor liquid and β the x₁-rich liquid, the labels used in Labs 04 and 05. The NRTL nonrandomness parameter, also written α, is a different quantity.
 
 Graphically this is the common tangent to Δg<sub>mix</sub>. Between the binodal and the spinodal the liquid is **metastable**: locally stable, but a split lowers G.
 

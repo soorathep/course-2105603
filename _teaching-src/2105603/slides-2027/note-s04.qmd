@@ -51,7 +51,7 @@ Then γ₁ = x₁<sup>id</sup>(T)/x₁ at the row's own temperature.
 
 **Worked example.** In octane (M = 114.229 g/mol), m = 1.3217 mol/kg saturates at 296.6 K. So x₁ = 1.3217/(1.3217 + 8.7544) = 0.1312. With the NIST fusion data, x₁<sup>id</sup>(296.6 K) = 0.290, and γ₁ = 2.21. Octane dissolves naphthalene less than half as well as an ideal solvent would.
 
-A one-parameter model, ln γ₁ = (w/RT) x₂², then gives an equation in which x₁ appears on both sides. It has to be solved for x₁; it cannot be evaluated once.
+A one-parameter model, ln γ₁ = (W/RT) x₂², then gives an equation in which x₁ appears on both sides. It has to be solved for x₁; it cannot be evaluated once.
 
 ## 4. Two solids: the eutectic
 
@@ -75,7 +75,7 @@ At fixed loading q, the Clausius–Clapeyron form applies to the adsorbed phase:
 
 $$\left(\frac{\partial\ln P}{\partial(1/T)}\right)_q=-\frac{Q_{\text{st}}}{R}$$
 
-Isotherms at three temperatures give Q<sub>st</sub> from the slope of ln P against 1/T at each q. In Lab 11's synthetic data (Q = 25 kJ/mol), three isotherms give 25.1 kJ/mol. Recording the 340 K isotherm as 342 K gives 24.1 kJ/mol: a 2 K error moves the heat by 1 kJ/mol.
+Isotherms at three temperatures give Q<sub>st</sub> from the slope of ln P against 1/T at each q. In Lab 11's synthetic data (true Q<sub>st</sub> = 25 kJ/mol), three isotherms give 25.1 kJ/mol. Recording the 340 K isotherm as 342 K gives 24.1 kJ/mol: a 2 K error moves the heat by 1 kJ/mol.
 
 ## 7. Before Session 4
 

@@ -404,8 +404,8 @@
     "th": "หลังเลิกเรียน ส่งไฟล์ study ของ Lab 12 ภายในสัปดาห์นี้ พร้อมขั้น A, C และ E"
    },
    {
-    "en": "Read the session 6 pre-class note when it is posted.",
-    "th": "อ่านเอกสารเตรียมก่อนเรียนของคาบที่ 6 เมื่อเผยแพร่แล้ว"
+    "en": "Read the session 6 pre-class note before the next session.",
+    "th": "อ่านเอกสารเตรียมก่อนเรียนของคาบที่ 6 ก่อนคาบหน้า"
    },
    {
     "en": "Graduate students can work through Lab 12 B, and add the fugacity correction to their code. See you next session.",

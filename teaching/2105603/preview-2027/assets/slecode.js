@@ -1,8 +1,8 @@
 // Lab 10 Graduate step E: check code that an AI assistant helped write, on measured naphthalene solubility.
 // Data: Xu et al., J. Chem. Eng. Data 64 (2019) 3018 via NIST ThermoML (molality of naphthalene vs T).
-// Model: pure solid naphthalene, Delta Cp neglected; liquid ln gamma1 = (w/RT) x2^2 (one-parameter regular
+// Model: pure solid naphthalene, Delta Cp neglected; liquid ln gamma1 = (W/RT) x2^2 (one-parameter regular
 // solution). The lab recomputes the ideal solubility, the mole fraction and gamma1 of a stated row, the
-// least-squares w in ln x1, and the predicted solubility at 298.15 K. Saved in the study file as "aiCode".
+// least-squares W in ln x1, and the predicted solubility at 298.15 K. Saved in the study file as "aiCode".
 const $ = (id) => document.getElementById(id);
 const fmt = (v, d = 4) => (Number.isFinite(v) ? v.toFixed(d) : '—');
 const num = (id) => { const v = $(id).value.trim(); return v === '' ? NaN : Number(v); };
@@ -93,21 +93,21 @@ function run() {
     }
 
     const wYou = num('ai-w');
-    if (!Number.isFinite(wYou)) throw new Error('Enter the fitted w from your code, in J/mol.');
+    if (!Number.isFinite(wYou)) throw new Error('Enter the fitted W from your code, in J/mol.');
     const excess = (fit.obj(wYou) - fit.obj(fit.w)) / fit.obj(fit.w);
     const okW = Math.abs(wYou - fit.w) <= Math.max(5, 0.005 * Math.abs(fit.w));
     let whyW = '';
     if (!okW) {
-      if (close(wYou, fit.w / 1000, 0.01)) whyW = 'Your w is in kJ/mol. The checks use J/mol.';
-      else if (excess > 0.01) whyW = `Your w gives a sum of squares ${fmt(100 * excess, 1)} % above the minimum of the objective in ln x₁. A different objective (for example in x₁ or in ln γ₁), a different set of rows, or a stopped optimizer.`;
-      else whyW = 'Your w is near the minimum of a flat objective; report fewer digits, and its uncertainty.';
+      if (close(wYou, fit.w / 1000, 0.01)) whyW = 'Your W is in kJ/mol. The checks use J/mol.';
+      else if (excess > 0.01) whyW = `Your W gives a sum of squares ${fmt(100 * excess, 1)} % above the minimum of the objective in ln x₁. A different objective (for example in x₁ or in ln γ₁), a different set of rows, or a stopped optimizer.`;
+      else whyW = 'Your W is near the minimum of a flat objective; report fewer digits, and its uncertainty.';
     }
-    checks.push({ name: 'Fitted w, minimizing Σ(ln x₁,model − ln x₁,meas)² over all rows', lab: `${fmt(fit.w, 1)} J/mol`, yours: `${fmt(wYou, 1)} J/mol`, ok: okW, why: whyW });
+    checks.push({ name: 'Fitted W, minimizing Σ(ln x₁,model − ln x₁,meas)² over all rows', lab: `${fmt(fit.w, 1)} J/mol`, yours: `${fmt(wYou, 1)} J/mol`, ok: okW, why: whyW });
 
     const rmYou = num('ai-rmse');
     if (Number.isFinite(rmYou)) {
       const rm = Math.sqrt(fit.obj(wYou) / rs.length), ok = close(rmYou, rm, 0.02, 2e-4);
-      checks.push({ name: 'RMSE in ln x₁ at your w', lab: fmt(rm), yours: fmt(rmYou), ok,
+      checks.push({ name: 'RMSE in ln x₁ at your W', lab: fmt(rm), yours: fmt(rmYou), ok,
         why: ok ? '' : close(rmYou, rm * rm, 0.02) ? 'This is the mean square, not its root.' : 'Check that each model x₁ solves the implicit equation at the row\'s T, and that the error is in ln x₁.' });
     }
 
@@ -115,12 +115,12 @@ function run() {
     if (Number.isFinite(xpYou)) {
       const xp = solubility(TREF, wYou, Tm, dH), ok = close(xpYou, xp, 0.003);
       const dilute = idealX(TREF, Tm, dH) * Math.exp(-wYou / (R * TREF));
-      checks.push({ name: `Predicted solubility at ${TREF} K from your w`, lab: fmt(xp), yours: fmt(xpYou), ok,
-        why: ok ? '' : close(xpYou, dilute, 0.003) ? 'Your value uses γ₁ at infinite dilution (x₂ = 1). γ₁ depends on x₁, so x₁ = x₁ᵢᵈ/γ₁(x₁) must be solved, not evaluated once.' : 'Solve ln x₁ + (w/RT)(1 − x₁)² = −(ΔH/R)(1/T − 1/T_m) for x₁.' });
+      checks.push({ name: `Predicted solubility at ${TREF} K from your W`, lab: fmt(xp), yours: fmt(xpYou), ok,
+        why: ok ? '' : close(xpYou, dilute, 0.003) ? 'Your value uses γ₁ at infinite dilution (x₂ = 1). γ₁ depends on x₁, so x₁ = x₁ᵢᵈ/γ₁(x₁) must be solved, not evaluated once.' : 'Solve ln x₁ + (W/RT)(1 − x₁)² = −(ΔH/R)(1/T − 1/T_m) for x₁.' });
     }
 
     const other = $('ai-fusion').value === 'paper' ? 'nist' : 'paper', O = data.fusion[other], fo = fitW(rs, O.Tm, O.dH);
-    checks.push({ name: 'Same data, other fusion data set (for the discussion, not a code check)', lab: `w = ${fmt(fo.w, 0)} J/mol, x₁(${TREF} K) = ${fmt(solubility(TREF, fo.w, O.Tm, O.dH))}`, yours: '—', ok: true, kind: 'info', why: 'Compare w and the prediction. Which one depends on the fusion data, and which does not?' });
+    checks.push({ name: 'Same data, other fusion data set (for the discussion, not a code check)', lab: `W = ${fmt(fo.w, 0)} J/mol, x₁(${TREF} K) = ${fmt(solubility(TREF, fo.w, O.Tm, O.dH))}`, yours: '—', ok: true, kind: 'info', why: 'Compare W and the prediction. Which one depends on the fusion data, and which does not?' });
 
     last = { solvent, fusion: $('ai-fusion').value, row: k, ref: { xid: xidLab, x: xLab, gamma: gLab, w: fit.w, rmse: fit.rmse }, checks };
     render(last);

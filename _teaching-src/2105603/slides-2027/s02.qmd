@@ -61,7 +61,7 @@ $$\gamma_i=\frac{y_i\Phi_iP}{x_iP_i^{\text{sat}}(T)}$$
 :::
 :::
 
-Φ<sub>i</sub> collects the vapor nonideality and the Poynting factor. Every input on the right has an uncertainty, and it passes into γ.
+$\Phi_i=\hat\varphi_i^{V}/(\varphi_i^{\text{sat}}\mathcal{P}_i)$ collects the vapor nonideality and the Poynting factor of Session 1. Every input on the right has an uncertainty, and it passes into γ.
 
 ## By the end of today you can {#outcomes}
 

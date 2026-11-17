@@ -30,7 +30,7 @@ Session 5 asked how far a reaction goes. Today a voltage holds the reaction at e
 ![](figures/s06-cell.svg){.fig-pxy fig-alt="EMF of a KCl concentration-cell pair against the higher molality with the lower fixed at 0.01 mol per kg: ideal, with fitted activity coefficients giving 216.0 millivolts at 1.0 mol per kg against 236.6 ideal, and a line at half the value from using RT over F"}
 :::
 ::: {.column width="40%" .why-notes}
-Two cells Ag|AgCl|KCl(m)|K⁺-ISE at 0.01 and 1.0 mol/kg, in opposition:
+Two cells Ag|AgCl|KCl(m)|K⁺-ISE (ion-selective electrode) at 0.01 and 1.0 mol/kg, in opposition:
 
 ideal **236.6 mV**; with measured γ± **216.0 mV**.
 
@@ -130,7 +130,7 @@ A cell that responds to KCl therefore gives
 $$E=\frac{RT}{F}\ln\frac{a_{\text{KCl},2}}{a_{\text{KCl},1}}=\frac{2RT}{F}\ln\frac{m_2\gamma_{\pm,2}}{m_1\gamma_{\pm,1}}$$
 :::
 ::: {.column width="46%" .rule-notes}
-For a salt M<sub>ν+</sub>X<sub>ν−</sub>, a = (m<sub>±</sub>γ±)<sup>ν</sup> with ν = ν₊ + ν₋.
+For a 2:1 salt such as CaCl₂, a = (m)(2m)²γ±³ = 4m³γ±³: the power is the number of ions.
 
 The pair of cells in opposition cancels E°: only the ratio of activities is measured.
 
@@ -145,7 +145,7 @@ A **liquid junction** between the two solutions would add a potential set by ion
 ![](figures/s06-gamma.svg){.fig-pxy fig-alt="Mean ionic activity coefficient of KCl against the square root of molality at 298.2 and 308.2 K with uncertainty bars, the Debye-Hueckel limiting law falling well below the data above 0.05 mol per kg, and the extended fit"}
 :::
 ::: {.column width="42%" .concept-notes}
-$$\log_{10}\gamma_\pm=-A|z_+z_-|\sqrt I$$
+$$\log_{10}\gamma_\pm=-A|z_+z_-|\sqrt I\qquad I=\tfrac12\sum_i m_iz_i^2$$
 
 [A = 0.509]{.q} (kg/mol)<sup>1/2</sup> at 298 K, **log₁₀ basis**; 1.172 on the ln basis.
 
@@ -244,7 +244,7 @@ That is larger than the effect of a 10 K temperature change on γ± in these dat
 ::: {.column width="50%"}
 1. Starting case M²⁺ concentration cell, 0.01 and 1.0 mol/L, γ = 1: **59.2 mV**.
 2. A: Debye–Hückel limiting law at I = 3 mol/L gives **−34.7 mV**, the wrong sign; extended gives 29.9 mV.
-3. B: E ∝ T, Δ<sub>r</sub>S = 38.3 J mol⁻¹ K⁻¹, Δ<sub>r</sub>H = 0.
+3. B: E ∝ T, Δ<sub>r</sub>S = 38.3 J/(mol K), Δ<sub>r</sub>H = 0.
 4. C: discharge until flat, 160 J for 0.1 L.
 
 [Open Lab 13 →](../preview-2027/electrochemistry.html){.lab-button target="_blank"}
