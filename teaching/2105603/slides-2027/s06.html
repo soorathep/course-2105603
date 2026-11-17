@@ -272,7 +272,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p><span class="math display">\log_{10}\gamma_\pm=-A|z_+z_-|\sqrt I\qquad I=\tfrac12\sum_i m_iz_i^2</span></p>
 <p><span class="q">A = 0.509</span> (kg/mol)<sup>1/2</sup> at 298 K, <strong>log₁₀ basis</strong>; 1.172 on the ln basis.</p>
 <p><span class="q">Limiting law</span> At 1.0 mol/kg it gives 0.310; the data give 0.597.</p>
-<p><span class="q">Extended</span> ln γ± = −A√m/(1 + b√m) + cm: b = 1.135, c = 0.042, RMSE 0.022 in ln γ±, close to the data’s ±0.03.</p>
+<p><span class="q">Extended</span> ln γ± = −A√m/(1 + B√m) + Cm: B = 1.135, C = 0.042, RMSE 0.022 in ln γ±, close to the data’s ±0.03.</p>
 </div></div>
 </section>
 <section id="temperature" class="slide level2">
@@ -295,12 +295,12 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 </thead>
 <tbody>
 <tr class="odd">
-<td>b</td>
+<td>B</td>
 <td style="text-align: right;">1.135</td>
 <td style="text-align: right;">1.145</td>
 </tr>
 <tr class="even">
-<td>c</td>
+<td>C</td>
 <td style="text-align: right;">0.042</td>
 <td style="text-align: right;">0.045</td>
 </tr>
@@ -394,7 +394,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <div class="column" style="width:50%;">
 <p><span class="label">You decide</span></p>
 <ul>
-<li>The model, its basis and the units of A, b, c</li>
+<li>The model, its basis and the units of A, B, C</li>
 <li>Which rows, and the objective</li>
 <li>The cell reaction and the activity of KCl</li>
 <li>What the result means, and what it does not show</li>
@@ -405,7 +405,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p><strong>Lab 13 step E</strong> recomputes from the measured γ±:</p>
 <ol type="1">
 <li>Limiting-law γ± at 0.0124 mol/kg</li>
-<li>Fitted b and c</li>
+<li>Fitted B and C</li>
 <li>RMSE in ln γ±</li>
 <li>γ± at 1.0 mol/kg</li>
 <li>Ideal cell EMF</li>
@@ -451,7 +451,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <li>The ionic strengths and limiting-law γ± by hand.</li>
 <li>Two sentences that answer the activity question with numbers.</li>
 </ol>
-<p><span class="label">Graduate extension</span> Fit the extended form to both temperatures with b(T) and c(T) linear in T. Is the slope of c distinguishable from zero given the stated U?</p>
+<p><span class="label">Graduate extension</span> Fit the extended form to both temperatures with B(T) and C(T) linear in T. Is the slope of C distinguishable from zero given the stated U?</p>
 </div><div class="column" style="width:54%;">
 <div class="lever-box">
 <p><span class="label">Check your results · KCl, 298.2 K</span></p>
@@ -472,7 +472,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <td style="text-align: right;">0.8776</td>
 </tr>
 <tr class="odd">
-<td>b / c (ln basis)</td>
+<td>B / C (ln basis)</td>
 <td style="text-align: right;">1.1346 / 0.0424</td>
 </tr>
 <tr class="even">
@@ -508,12 +508,12 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 </thead>
 <tbody>
 <tr class="odd">
-<td>limiting-law γ±, b, γ± at 1 mol/kg</td>
+<td>limiting-law γ±, B, γ± at 1 mol/kg</td>
 <td style="text-align: right;">agree</td>
 <td style="text-align: right;">agree</td>
 </tr>
 <tr class="even">
-<td>c</td>
+<td>C</td>
 <td style="text-align: right;">0.0424</td>
 <td style="text-align: right;">0.0184</td>
 </tr>
@@ -529,11 +529,11 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 </tr>
 </tbody>
 </table>
-<p>The script fitted on the log₁₀ basis, so its c was c<sub>ln</sub>/ln 10: same fit, different units. It then wrote the cell with n = 1 and a = mγ±, missing the square: every EMF was half.</p>
+<p>The script fitted on the log₁₀ basis, so its C was C<sub>ln</sub>/ln 10: same fit, different units. It then wrote the cell with n = 1 and a = mγ±, missing the square: every EMF was half.</p>
 </div>
 </div><div class="column rule-notes" style="width:42%;">
 <p><span class="label">Fix that made all checks agree</span></p>
-<p>a<sub>KCl</sub> = (mγ±)², so E = (2RT/F) ln(m₂γ₂/m₁γ₁). Report c with its basis.</p>
+<p>a<sub>KCl</sub> = (mγ±)², so E = (2RT/F) ln(m₂γ₂/m₁γ₁). Report C with its basis.</p>
 <p>The fit was right and the chemistry was wrong. A fitting routine cannot know how many ions the salt has.</p>
 <p>All checks agree only shows the code solves your problem. The model is still untested above 2.25 mol/kg and at other T.</p>
 </div></div>
@@ -593,7 +593,7 @@ Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics
 <p><span class="label">Prepare · Session 7</span> Read the <a href="note-s07.html" target="_blank">review guide</a>. Session 7 is synthesis and exam preparation.</p>
 </div>
 <div>
-<p><span class="label">Optional · graduate</span> Lab 13 C: how much work before the cell is flat? Then repeat E with b and c linear in T.</p>
+<p><span class="label">Optional · graduate</span> Lab 13 C: how much work before the cell is flat? Then repeat E with B and C linear in T.</p>
 </div>
 </div>
 <p><a href="../preview-2027/electrochemistry.html" class="lab-button" target="_blank">Open Lab 13 →</a></p>

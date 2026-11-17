@@ -31,7 +31,7 @@ bal = (n - P * 1000 * V / (R * Tk)) / m
 lang = qs * b * P / (1 + b * P); hen = K * P
 fig, ax = plt.subplots(figsize=(7.4, 5.0))
 ax.plot(P, lang, color=TEAL, lw=2.4, label='Langmuir isotherm')
-ax.plot(P, hen, color=TEAL, lw=1.8, ls=(0, (5, 3)), label='Henry, K = q$_s$b')
+ax.plot(P, hen, color=TEAL, lw=1.8, ls=(0, (5, 3)), label='Henry, $K_H = q_sK_L$')
 ax.plot(P, bal, color=AMBER, lw=2.4, label='vessel balance')
 for Pp, qq, t in ((14.987, 1.1996, 'P = 15.0 kPa\nq = 1.20 mol/kg'), (6.817, 1.3634, 'P = 6.8 kPa')):
     ax.plot([Pp], [qq], 'o', color=INK, ms=8, mec='white', mew=1.2)

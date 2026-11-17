@@ -138,10 +138,10 @@ window.Quarto = {
 <p>When both components can crystallize, each has its own liquidus curve from Section 1. They meet at the <strong>eutectic</strong>, where liquid coexists with both solids. For a binary at fixed P the phase rule gives F = 2 − 3 + 1 = 0: the eutectic temperature and composition are fixed. Lab 10 builds this diagram and follows a feed as it cools.</p>
 <h2 id="a-gas-on-a-solid-surface">5. A gas on a solid surface</h2>
 <p>Adsorption is also an equality of chemical potential, but between the gas and an adsorbed phase. Its result is an <strong>isotherm</strong>, the amount adsorbed q (mol/kg) as a function of P at fixed T. Two common forms:</p>
-<p><span class="math display">\text{Henry: } q=KP\qquad\text{Langmuir: } q=\frac{q_sbP}{1+bP}</span></p>
-<p>Henry’s law is the low-pressure limit of Langmuir, with K = q<sub>s</sub>b. In a closed vessel of volume V with m kg of adsorbent and n mol of gas, the pressure satisfies</p>
+<p><span class="math display">\text{Henry: } q=K_HP\qquad\text{Langmuir: } q=\frac{q_sK_LP}{1+K_LP}</span></p>
+<p>Henry’s law is the low-pressure limit of Langmuir, with K<sub>H</sub> = q<sub>s</sub>K<sub>L</sub>. K<sub>H</sub> and K<sub>L</sub> are adsorption constants, not the equilibrium constant K of Session 5. In a closed vessel of volume V with m kg of adsorbent and n mol of gas, the pressure satisfies</p>
 <p><span class="math display">n=\frac{PV}{RT}+m\,q(P,T).</span></p>
-<p><strong>Example (Lab 11).</strong> V = 1 L, m = 20 g, n = 0.03 mol, 300 K, Langmuir q<sub>s</sub> = 2 mol/kg, b = 0.1 kPa⁻¹: P = 15.0 kPa, q = 1.20 mol/kg (60 % coverage). Without adsorbent, the same gas would give 74.8 kPa. With Henry’s law, K = 0.2 mol kg⁻¹ kPa⁻¹, the answer would be 6.8 kPa, because a linear isotherm never saturates.</p>
+<p><strong>Example (Lab 11).</strong> V = 1 L, m = 20 g, n = 0.03 mol, 300 K, Langmuir q<sub>s</sub> = 2 mol/kg, K<sub>L</sub> = 0.1 kPa⁻¹: P = 15.0 kPa, q = 1.20 mol/kg (60 % coverage). Without adsorbent, the same gas would give 74.8 kPa. With Henry’s law, K<sub>H</sub> = 0.2 mol kg⁻¹ kPa⁻¹, the answer would be 6.8 kPa, because a linear isotherm never saturates.</p>
 <h2 id="isosteric-heat">6. Isosteric heat</h2>
 <p>At fixed loading q, the Clausius–Clapeyron form applies to the adsorbed phase:</p>
 <p><span class="math display">\left(\frac{\partial\ln P}{\partial(1/T)}\right)_q=-\frac{Q_{\text{st}}}{R}</span></p>

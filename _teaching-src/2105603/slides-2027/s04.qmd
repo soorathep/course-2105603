@@ -249,11 +249,11 @@ To settle the sign, measure Δ<sub>fus</sub>H more precisely, or use a property 
 ![](figures/s04-vessel.svg){.fig-pxy fig-alt="Langmuir and Henry isotherms crossed by the straight vessel balance line, giving 15.0 kPa with Langmuir and 6.8 kPa with Henry"}
 :::
 ::: {.column width="44%" .concept-notes}
-$$q=\frac{q_sbP}{1+bP}\qquad n=\frac{PV}{RT}+m\,q(P)$$
+$$q=\frac{q_sK_LP}{1+K_LP}\qquad n=\frac{PV}{RT}+m\,q(P)$$
 
-[Lab 11 starting case]{.q} 1 L, 20 g, 0.03 mol, 300 K, q<sub>s</sub> = 2 mol/kg, b = 0.1 kPa⁻¹: **P = 15.0 kPa**, q = 1.20 mol/kg, 80 % of the gas on the solid.
+[Lab 11 starting case]{.q} 1 L, 20 g, 0.03 mol, 300 K, q<sub>s</sub> = 2 mol/kg, K<sub>L</sub> = 0.1 kPa⁻¹: **P = 15.0 kPa**, q = 1.20 mol/kg, 80 % of the gas on the solid.
 
-[Henry, K = q<sub>s</sub>b]{.q} Same slope at P → 0, but no saturation: 6.8 kPa. Without adsorbent: 74.8 kPa.
+[Henry, K<sub>H</sub> = q<sub>s</sub>K<sub>L</sub>]{.q} Same slope at P → 0, but no saturation: 6.8 kPa. Without adsorbent: 74.8 kPa.
 :::
 ::::
 
@@ -287,7 +287,7 @@ A 2 K error in one temperature moves the heat by 1 kJ/mol.
 :::: {.columns}
 ::: {.column width="44%"}
 1. Starting case: read P, q and the share of gas on the solid.
-2. Switch to **Henry**, K = 0.2: why does P halve?
+2. Switch to **Henry**, K<sub>H</sub> = 0.2 mol kg⁻¹ kPa⁻¹: why does P halve?
 3. A: fit Henry to q ≤ 0.8 mol/kg only, and use it in the vessel: **10.1 kPa**, not 15.0.
 4. B: recover Q<sub>st</sub> from three isotherms, then with one T mislabeled.
 

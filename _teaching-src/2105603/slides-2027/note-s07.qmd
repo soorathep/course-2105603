@@ -29,7 +29,7 @@ Draft for 2027. If you are taking the course this year, use the current course p
 | 3 · LLE | liquid–liquid | x<sub>i</sub><sup>α</sup>γ<sub>i</sub><sup>α</sup> = x<sub>i</sub><sup>β</sup>γ<sub>i</sub><sup>β</sup>; TPD ≥ 0 | NRTL τ(T) |
 | 4 · solids, surfaces | solid–liquid; gas–surface | ln(x₁γ₁) = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>); n = PV/RT + mq | fusion data, W; isotherm |
 | 5 · reactions | chemical | Πa<sub>i</sub><sup>ν<sub>i</sub></sup> = K(T), ln K = −Δ<sub>r</sub>G°/RT | H(T), S(T), K<sub>φ</sub> |
-| 6 · cells | electrochemical | Δ<sub>r</sub>G = −nFE; a<sub>KCl</sub> = (mγ±)² | Debye–Hückel, b, c |
+| 6 · cells | electrochemical | Δ<sub>r</sub>G = −nFE; a<sub>KCl</sub> = (mγ±)² | Debye–Hückel, B, C |
 
 ## 2. What decided each answer
 

@@ -56,16 +56,16 @@ function run() {
     }
 
     const b = num('ai-b'), c = num('ai-c');
-    if (!Number.isFinite(b) || !Number.isFinite(c)) throw new Error('Enter the fitted b and c from your code.');
+    if (!Number.isFinite(b) || !Number.isFinite(c)) throw new Error('Enter the fitted B and C from your code.');
     const okB = Math.abs(b - ft.b) <= Math.max(0.01, 0.01 * ft.b);
     const okC = Math.abs(c - ft.c) <= 0.002;
     let whyP = '';
     if (!(okB && okC)) {
-      if (okB && Math.abs(c * Math.LN10 - ft.c) <= 0.002) whyP = 'Your c is on the log₁₀ basis (c_ln = c × ln 10). Same fit, different units: say which you report.';
+      if (okB && Math.abs(c * Math.LN10 - ft.c) <= 0.002) whyP = 'Your C is on the log₁₀ basis (C_ln = C × ln 10). Same fit, different units: say which you report.';
       else if (set !== 'all') { const fa = fit(rowsFor('all')); if (Math.abs(b - fa.b) <= 0.02) whyP = 'Your parameters match a fit to both temperatures. The specification uses the 298.2 K rows only.'; }
       if (!whyP) whyP = 'Check the model form, the basis (ln), the rows used and that the least squares converged.';
     }
-    checks.push({ name: `Fitted b and c in ln γ± = −A√m/(1 + b√m) + c·m (${rs.length} rows)`, lab: `b = ${fmt(ft.b, 4)}, c = ${fmt(ft.c, 4)}`, yours: `b = ${fmt(b, 4)}, c = ${fmt(c, 4)}`, ok: okB && okC, why: whyP });
+    checks.push({ name: `Fitted B and C in ln γ± = −A√m/(1 + B√m) + C·m (${rs.length} rows)`, lab: `B = ${fmt(ft.b, 4)}, C = ${fmt(ft.c, 4)}`, yours: `B = ${fmt(b, 4)}, C = ${fmt(c, 4)}`, ok: okB && okC, why: whyP });
 
     const rm = num('ai-rmse');
     if (Number.isFinite(rm)) {
@@ -95,7 +95,7 @@ function run() {
     }
 
     const lab308 = fit(rowsFor('308.2'));
-    checks.push({ name: 'Same model fitted to the 308.2 K rows (for the discussion)', lab: `b = ${fmt(lab308.b, 3)}, c = ${fmt(lab308.c, 4)}, RMSE ${fmt(lab308.rmse, 4)}`, yours: '—', ok: true, kind: 'info',
+    checks.push({ name: 'Same model fitted to the 308.2 K rows (for the discussion)', lab: `B = ${fmt(lab308.b, 3)}, C = ${fmt(lab308.c, 4)}, RMSE ${fmt(lab308.rmse, 4)}`, yours: '—', ok: true, kind: 'info',
       why: 'Compare γ± at 1 mol/kg at the two temperatures with the stated uncertainty, about ±0.03. Can these data give d ln γ±/dT, and so the partial molar enthalpy?' });
 
     last = { set, m1, m2, ref: { b: ft.b, c: ft.c, rmse: ft.rmse, Eideal: eLab }, checks };

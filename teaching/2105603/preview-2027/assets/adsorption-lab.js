@@ -15,18 +15,19 @@ const CASES = {
   heated: { name: 'Heated to 340 K', inputs: { ...BASE, T: 340 } },
   henry: { name: 'Linear isotherm, same initial slope', inputs: { ...BASE, model: 'henry' } },
   co2: { name: 'Real data · CO₂ on zeolite 13X, 300 K', inputs: { ...BASE, n: 0.08, qs: 4.96, b: 0.46212, Q: 37.86 },
-    source: 'Real data: CO₂ on zeolite 13X pellets (Grace MS 544HP), 1.0 L, 20 g, 0.080 mol CO₂. Langmuir model with constant saturation capacity from Son et al., J. Chem. Eng. Data 2018, 63, 1663 (Table S1): qs = 4.960 mol/kg, b = 1.1847×10⁻⁷ exp(4553/T) kPa⁻¹, so b(300 K) = 0.462 kPa⁻¹ and Q = 37.86 kJ/mol. Over 0–200 °C this simple model fits with RMSE 0.37 mol/kg. The authors’ 3-site Langmuir fit (RMSE 0.034 mol/kg) gives 13.3 kPa for this vessel at 300 K instead of 7.5 kPa, and 41.8 instead of 30.0 kPa at 340 K: the isotherm model matters more than the arithmetic.' },
+    source: 'Real data: CO₂ on zeolite 13X pellets (Grace MS 544HP), 1.0 L, 20 g, 0.080 mol CO₂. Langmuir model with constant saturation capacity from Son et al., J. Chem. Eng. Data 2018, 63, 1663 (Table S1): qs = 4.960 mol/kg, K_L = 1.1847×10⁻⁷ exp(4553/T) kPa⁻¹, so K_L(300 K) = 0.462 kPa⁻¹ and Q_st = 37.86 kJ/mol. Over 0–200 °C this simple model fits with RMSE 0.37 mol/kg. The authors’ 3-site Langmuir fit (RMSE 0.034 mol/kg) gives 13.3 kPa for this vessel at 300 K instead of 7.5 kPa, and 41.8 instead of 30.0 kPa at 340 K: the isotherm model matters more than the arithmetic.' },
 };
 const RANGES = { T: [250, 450], V: [0.01, 100], m: [0, 10000], n: [0.0001, 100], qs: [0.01, 50], b: [0.0001, 100], K: [0.0001, 100], Q: [0, 100] };
-const LABELS = { T: 'Temperature', V: 'Free gas volume', m: 'Adsorbent mass', n: 'Gas inventory', qs: 'qs', b: 'b', K: 'K', Q: 'Q' };
+const LABELS = { T: 'Temperature', V: 'Free gas volume', m: 'Adsorbent mass', n: 'Gas inventory', qs: 'qs', b: 'K_L', K: 'K_H', Q: 'Q_st' };
 const KEYS = { langmuir: ['qs', 'b'], henry: ['K'] };
 const NOTE_IDS = { concept1: 'note-concept1', concept2: 'note-concept2', concept3: 'note-concept3', fits: 'note-fits', heat: 'note-heat', swing: 'note-swing', decision: 'note-decision' };
 const MODEL_NAMES = { henry: 'Henry (linear)', langmuir: 'Langmuir', freundlich: 'Freundlich' };
 const study = { inputs: null, result: null, cases: [], fits: null, heat: null, swing: null };
 
 function cell(t) { const td = document.createElement('td'); td.textContent = t; return td; }
+function cellH(h) { const td = document.createElement('td'); td.innerHTML = h; return td; }
 function li(h) { const e = document.createElement('li'); e.innerHTML = h; return e; }
-const isoText = i => i.model === 'henry' ? 'Linear, K = ' + num(i.K) : 'Langmuir, qs = ' + num(i.qs) + ', b = ' + num(i.b);
+const isoText = i => i.model === 'henry' ? 'Linear, K<sub>H</sub> = ' + num(i.K) : 'Langmuir, q<sub>s</sub> = ' + num(i.qs) + ', K<sub>L</sub> = ' + num(i.b);
 
 function showControls() { const m = $('model').value; $('langmuir-control').hidden = m !== 'langmuir'; $('henry-control').hidden = m !== 'henry'; }
 function applyInputs(i) { $('model').value = i.model; for (const k of Object.keys(RANGES)) if (i[k] !== undefined) $(k).value = String(i[k]); showControls(); }
@@ -75,7 +76,7 @@ function calculate({ quiet = false } = {}) {
   $('diagram-panel').hidden = false;
   renderResult(); renderPaper(); renderChart();
   for (const id of ['save-case', 'run-fits', 'run-heat', 'run-swing', 'export-study']) $(id).disabled = false;
-  $('graduate-baseline').textContent = 'Current vessel: ' + num(inputs.V) + ' L, ' + num(inputs.m) + ' g, ' + num(inputs.n) + ' mol at ' + num(inputs.T, 5) + ' K, ' + isoText(inputs) + ', Q = ' + num(inputs.Q) + ' kJ mol⁻¹ · P = ' + num(s.r.P, 4) + ' kPa.';
+  $('graduate-baseline').innerHTML = 'Current vessel: ' + num(inputs.V) + ' L, ' + num(inputs.m) + ' g, ' + num(inputs.n) + ' mol at ' + num(inputs.T, 5) + ' K, ' + isoText(inputs) + ', Q<sub>st</sub> = ' + num(inputs.Q) + ' kJ mol⁻¹ · P = ' + num(s.r.P, 4) + ' kPa.';
   if (!quiet) $('status').textContent = 'Calculated. Add the result to the comparison before changing a setting.';
   return true;
 }
@@ -92,16 +93,16 @@ function renderResult() {
   $('result-q').textContent = i.m === 0 ? 'No adsorbent' : num(r.q, 4) + ' mol kg⁻¹';
   $('result-theta').textContent = i.m === 0 ? '—' : s.coverage == null ? 'Not defined for a linear isotherm' : num(s.coverage, 3);
   $('result-empty').textContent = num(s.Pempty, 4) + ' kPa';
-  $('result-param').textContent = i.model === 'henry' ? 'K = ' + num(s.params.K, 4) + ' mol kg⁻¹ kPa⁻¹' : 'b = ' + num(s.params.b, 4) + ' kPa⁻¹';
+  $('result-param').innerHTML = i.model === 'henry' ? 'K<sub>H</sub> = ' + num(s.params.K, 4) + ' mol kg⁻¹ kPa⁻¹' : 'K<sub>L</sub> = ' + num(s.params.b, 4) + ' kPa⁻¹';
   $('result-res').textContent = Math.abs(r.balance).toExponential(2);
 }
 
 function renderPaper() {
   const s = study.result, r = s.r, i = study.inputs, list = $('calc-steps');
   list.replaceChildren();
-  if (i.T !== 300) list.append(li('Temperature factor: exp[(Q/R)(1/T − 1/300)] = exp[(' + num(i.Q * 1000) + '/' + num(R, 5) + ')(1/' + num(i.T, 5) + ' − 1/300)] = ' + num(tFactor(i.T, i.Q * 1000), 4) + ', so ' + (i.model === 'henry' ? 'K = ' + num(s.params.K, 4) : 'b = ' + num(s.params.b, 4) + ' kPa⁻¹') + '.'));
+  if (i.T !== 300) list.append(li('Temperature factor: exp[(Q<sub>st</sub>/R)(1/T − 1/300)] = exp[(' + num(i.Q * 1000) + '/' + num(R, 5) + ')(1/' + num(i.T, 5) + ' − 1/300)] = ' + num(tFactor(i.T, i.Q * 1000), 4) + ', so ' + (i.model === 'henry' ? 'K<sub>H</sub> = ' + num(s.params.K, 4) : 'K<sub>L</sub> = ' + num(s.params.b, 4) + ' kPa⁻¹') + '.'));
   list.append(li('Free gas at P = ' + num(r.P, 5) + ' kPa: PV/RT = (' + num(r.P * 1000, 5) + ' Pa)(' + num(i.V / 1000) + ' m³)/(' + num(R, 5) + ' × ' + num(i.T, 5) + ') = ' + num(r.gas, 4) + ' mol.'));
-  if (i.m > 0) list.append(li(i.model === 'henry' ? 'Uptake: q = KP = ' + num(s.params.K, 4) + ' × ' + num(r.P, 5) + ' = ' + num(r.q, 4) + ' mol kg⁻¹; adsorbed m q = ' + num(i.m / 1000) + ' × ' + num(r.q, 4) + ' = ' + num(r.adsorbed, 4) + ' mol.' : 'Uptake: bP = ' + num(s.params.b * r.P, 4) + ', q = q<sub>s</sub>bP/(1 + bP) = ' + num(r.q, 4) + ' mol kg⁻¹; adsorbed m q = ' + num(i.m / 1000) + ' × ' + num(r.q, 4) + ' = ' + num(r.adsorbed, 4) + ' mol.'));
+  if (i.m > 0) list.append(li(i.model === 'henry' ? 'Uptake: q = K<sub>H</sub>P = ' + num(s.params.K, 4) + ' × ' + num(r.P, 5) + ' = ' + num(r.q, 4) + ' mol kg⁻¹; adsorbed m q = ' + num(i.m / 1000) + ' × ' + num(r.q, 4) + ' = ' + num(r.adsorbed, 4) + ' mol.' : 'Uptake: K<sub>L</sub>P = ' + num(s.params.b * r.P, 4) + ', q = q<sub>s</sub>K<sub>L</sub>P/(1 + K<sub>L</sub>P) = ' + num(r.q, 4) + ' mol kg⁻¹; adsorbed m q = ' + num(i.m / 1000) + ' × ' + num(r.q, 4) + ' = ' + num(r.adsorbed, 4) + ' mol.'));
   list.append(li('Balance: ' + num(r.gas, 4) + ' + ' + num(r.adsorbed, 4) + ' = ' + num(r.gas + r.adsorbed, 4) + ' mol = n. Without adsorbent, P = nRT/V = ' + num(s.Pempty, 4) + ' kPa.'));
 }
 
@@ -128,8 +129,8 @@ async function renderChart() {
 function runFits() {
   if (!study.result) return;
   const s = fitRangeStudy(study.inputs); study.fits = true;
-  const par = (m, p) => m === 'henry' ? 'K = ' + num(p.K, 3) : m === 'langmuir' ? 'qs = ' + num(p.qs, 3) + ', b = ' + num(p.b, 3) : 'K = ' + num(p.K, 3) + ', m = ' + num(p.m, 3);
-  $('fits-body').replaceChildren(...s.rows.map(r => { const tr = document.createElement('tr'); tr.append(cell(r.range), cell(MODEL_NAMES[r.model]), cell(r.status === 'ok' ? par(r.model, r.parameters) : 'Failed: ' + r.reason), cell(num(r.RMSE, 3)), cell(r.vesselP == null ? (r.reason ? friendly(r.reason) : '—') : num(r.vesselP, 4)), cell(num(r.q60, 3))); return tr; }));
+  const par = (m, p) => m === 'henry' ? 'K<sub>H</sub> = ' + num(p.K, 3) : m === 'langmuir' ? 'q<sub>s</sub> = ' + num(p.qs, 3) + ', K<sub>L</sub> = ' + num(p.b, 3) : 'K<sub>F</sub> = ' + num(p.K, 3) + ', 1/n = ' + num(p.m, 3);
+  $('fits-body').replaceChildren(...s.rows.map(r => { const tr = document.createElement('tr'); tr.append(cell(r.range), cell(MODEL_NAMES[r.model]), (r.status === 'ok' ? cellH(par(r.model, r.parameters)) : cell('Failed: ' + r.reason)), cell(num(r.RMSE, 3)), cell(r.vesselP == null ? (r.reason ? friendly(r.reason) : '—') : num(r.vesselP, 4)), cell(num(r.q60, 3))); return tr; }));
   $('fits-wrap').hidden = false;
   $('fits-status').textContent = 'The low-loading points reach ' + num(s.rows[0].Pmax, 3) + ' kPa and all points reach ' + num(s.rows[3].Pmax, 3) + ' kPa. The vessel uses the current volume, mass and inventory at 300 K; 60 kPa lies outside both data ranges.';
 }
@@ -139,7 +140,7 @@ function runHeat() {
   const rows = heatStudy(); study.heat = true;
   $('heat-body').replaceChildren(...rows.map(r => { const tr = document.createElement('tr'); tr.append(cell(r.label), cell(r.status === 'ok' ? num(r.min, 4) + '–' + num(r.max, 4) : 'Failed: ' + r.reason), cell(num(r.mean, 4)), cell(r.lnPRMSE == null ? '—' : r.lnPRMSE.toExponential(1)), cell(r.warning || '')); return tr; }));
   $('heat-wrap').hidden = false;
-  $('heat-status').textContent = 'Synthetic isotherms generated with Q = 25 kJ mol⁻¹. Qst is evaluated at nine loadings inside the shared loading range; the misfit column is the RMSE of ln P about the line in 1/T.';
+  $('heat-status').textContent = 'Synthetic isotherms generated with Q_st = 25 kJ mol⁻¹. Q_st is evaluated at nine loadings inside the shared loading range; the misfit column is the RMSE of ln P about the line in 1/T.';
 }
 
 function runSwing() {
@@ -149,7 +150,7 @@ function runSwing() {
   $('swing-body').replaceChildren(...temps.map((T, k) => { const tr = document.createElement('tr'); tr.append(cell(num(T)), ...sets.map(s => cell(s.rows[k].status === 'ok' ? num(s.rows[k].P, 4) : 'Refused')), ...sets.map(s => cell(s.rows[k].status === 'ok' ? num(1000 * s.rows[k].released, 3) : '—'))); return tr; }));
   $('swing-wrap').hidden = false;
   const r25 = sets[1].rows.find(r => r.T === 380);
-  $('swing-status').textContent = 'Start: the current vessel at 300 K. Released = adsorbed amount at 300 K minus adsorbed amount at T.' + (r25?.status === 'ok' ? ' At 380 K with Q = 25 kJ mol⁻¹, ' + pct(r25.gasFraction) + ' of the gas is in the free volume.' : '');
+  $('swing-status').innerHTML = 'Start: the current vessel at 300 K. Released = adsorbed amount at 300 K minus adsorbed amount at T.' + (r25?.status === 'ok' ? ' At 380 K with Q<sub>st</sub> = 25 kJ mol⁻¹, ' + pct(r25.gasFraction) + ' of the gas is in the free volume.' : '');
 }
 
 function notes() { return Object.fromEntries(Object.entries(NOTE_IDS).map(([k, id]) => [k, $(id).value])); }
@@ -166,7 +167,7 @@ function renderCases() {
   $('comparison-empty').hidden = study.cases.length > 0; $('comparison-table-wrap').hidden = !study.cases.length;
   $('comparison-body').replaceChildren(...study.cases.map(s => {
     const tr = document.createElement('tr'), m = s.summary;
-    tr.append(cell(s.name), cell(num(s.inputs.T, 5)), cell(num(s.inputs.m)), cell(isoText(s.inputs)), cell(num(m.P, 4)), cell(num(m.q, 4)), cell(pct(m.adsorbedShare)));
+    tr.append(cell(s.name), cell(num(s.inputs.T, 5)), cell(num(s.inputs.m)), cellH(isoText(s.inputs)), cell(num(m.P, 4)), cell(num(m.q, 4)), cell(pct(m.adsorbedShare)));
     const td = document.createElement('td'), b = document.createElement('button');
     b.type = 'button'; b.className = 'secondary-button'; b.textContent = 'Reopen'; b.setAttribute('aria-label', 'Reopen ' + s.name);
     b.addEventListener('click', () => { applyInputs(s.inputs); $('case-name').value = s.name; calculate({ quiet: true }); $('status').textContent = 'Reopened and recalculated “' + s.name + '”.'; $('results').scrollIntoView({ behavior: 'smooth', block: 'start' }); });

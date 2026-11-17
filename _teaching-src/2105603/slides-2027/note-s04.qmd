@@ -61,13 +61,13 @@ When both components can crystallize, each has its own liquidus curve from Secti
 
 Adsorption is also an equality of chemical potential, but between the gas and an adsorbed phase. Its result is an **isotherm**, the amount adsorbed q (mol/kg) as a function of P at fixed T. Two common forms:
 
-$$\text{Henry: } q=KP\qquad\text{Langmuir: } q=\frac{q_sbP}{1+bP}$$
+$$\text{Henry: } q=K_HP\qquad\text{Langmuir: } q=\frac{q_sK_LP}{1+K_LP}$$
 
-Henry's law is the low-pressure limit of Langmuir, with K = q<sub>s</sub>b. In a closed vessel of volume V with m kg of adsorbent and n mol of gas, the pressure satisfies
+Henry's law is the low-pressure limit of Langmuir, with K<sub>H</sub> = q<sub>s</sub>K<sub>L</sub>. K<sub>H</sub> and K<sub>L</sub> are adsorption constants, not the equilibrium constant K of Session 5. In a closed vessel of volume V with m kg of adsorbent and n mol of gas, the pressure satisfies
 
 $$n=\frac{PV}{RT}+m\,q(P,T).$$
 
-**Example (Lab 11).** V = 1 L, m = 20 g, n = 0.03 mol, 300 K, Langmuir q<sub>s</sub> = 2 mol/kg, b = 0.1 kPa⁻¹: P = 15.0 kPa, q = 1.20 mol/kg (60 % coverage). Without adsorbent, the same gas would give 74.8 kPa. With Henry's law, K = 0.2 mol kg⁻¹ kPa⁻¹, the answer would be 6.8 kPa, because a linear isotherm never saturates.
+**Example (Lab 11).** V = 1 L, m = 20 g, n = 0.03 mol, 300 K, Langmuir q<sub>s</sub> = 2 mol/kg, K<sub>L</sub> = 0.1 kPa⁻¹: P = 15.0 kPa, q = 1.20 mol/kg (60 % coverage). Without adsorbent, the same gas would give 74.8 kPa. With Henry's law, K<sub>H</sub> = 0.2 mol kg⁻¹ kPa⁻¹, the answer would be 6.8 kPa, because a linear isotherm never saturates.
 
 ## 6. Isosteric heat
 

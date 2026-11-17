@@ -301,8 +301,8 @@
     "say": "Use the table to check your results. The fitted voltage between zero point zero one and one mole per kilogram is two hundred fifteen point nine nine millivolts."
    },
    {
-    "en": "Graduate extension: let b and c vary linearly with temperature, and test whether the slope is distinguishable from zero.",
-    "th": "งานเสริมระดับบัณฑิต ให้ b และ c แปรเชิงเส้นตามอุณหภูมิ แล้วทดสอบว่าความชันต่างจากศูนย์อย่างมีนัยหรือไม่"
+    "en": "Graduate extension: let B and C vary linearly with temperature, and test whether the slope is distinguishable from zero.",
+    "th": "งานเสริมระดับบัณฑิต ให้ B และ C แปรเชิงเส้นตามอุณหภูมิ แล้วทดสอบว่าความชันต่างจากศูนย์อย่างมีนัยหรือไม่"
    }
   ],
   "ai-debrief": [
@@ -311,8 +311,8 @@
     "th": "นี่คือสิ่งที่การตรวจโค้ดจับได้"
    },
    {
-    "en": "A first-draft script fitted on the log 10 basis, so its c was smaller by ln 10. Same fit, different units.",
-    "th": "สคริปต์ร่างแรก fit บนฐาน log₁₀ ค่า c จึงเล็กกว่าด้วยตัวประกอบ ln 10 เป็นการ fit เดียวกันแต่หน่วยต่างกัน"
+    "en": "A first-draft script fitted on the log 10 basis, so its C was smaller by ln 10. Same fit, different units.",
+    "th": "สคริปต์ร่างแรก fit บนฐาน log₁₀ ค่า C จึงเล็กกว่าด้วยตัวประกอบ ln 10 เป็นการ fit เดียวกันแต่หน่วยต่างกัน"
    },
    {
     "en": "It then wrote the cell with n equal to one and the activity as m gamma, missing the square. Every voltage was half.",

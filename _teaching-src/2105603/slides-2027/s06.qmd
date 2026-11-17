@@ -151,7 +151,7 @@ $$\log_{10}\gamma_\pm=-A|z_+z_-|\sqrt I\qquad I=\tfrac12\sum_i m_iz_i^2$$
 
 [Limiting law]{.q} At 1.0 mol/kg it gives 0.310; the data give 0.597.
 
-[Extended]{.q} ln γ± = −A√m/(1 + b√m) + cm: b = 1.135, c = 0.042, RMSE 0.022 in ln γ±, close to the data's ±0.03.
+[Extended]{.q} ln γ± = −A√m/(1 + B√m) + Cm: B = 1.135, C = 0.042, RMSE 0.022 in ln γ±, close to the data's ±0.03.
 :::
 ::::
 
@@ -171,8 +171,8 @@ With real γ±, ∂ln γ±/∂T adds partial molar enthalpies.
 
 | | 298.2 K | 308.2 K |
 |---|---:|---:|
-| b | 1.135 | 1.145 |
-| c | 0.042 | 0.045 |
+| B | 1.135 | 1.145 |
+| C | 0.042 | 0.045 |
 | γ± at 1 mol/kg | 0.603 | 0.606 |
 
 Difference 0.004; uncertainty of each value ±0.03. These data **cannot** resolve ∂ln γ±/∂T. Calorimetry (heats of dilution) can.
@@ -279,7 +279,7 @@ The teaching cell uses n = 2 for M²⁺/M and molar concentration with c° = 1 m
 ::: {.column width="50%"}
 [You decide]{.label}
 
-- The model, its basis and the units of A, b, c
+- The model, its basis and the units of A, B, C
 - Which rows, and the objective
 - The cell reaction and the activity of KCl
 - What the result means, and what it does not show
@@ -292,7 +292,7 @@ Write and debug code that does exactly what your specification says. Not propert
 **Lab 13 step E** recomputes from the measured γ±:
 
 1. Limiting-law γ± at 0.0124 mol/kg
-2. Fitted b and c
+2. Fitted B and C
 3. RMSE in ln γ±
 4. γ± at 1.0 mol/kg
 5. Ideal cell EMF
@@ -347,7 +347,7 @@ Two sentences with numbers: how much of the 236.6 mV ideal EMF survives nonideal
 3. Two sentences that answer the activity question with numbers.
 
 [Graduate extension]{.label}
-Fit the extended form to both temperatures with b(T) and c(T) linear in T. Is the slope of c distinguishable from zero given the stated U?
+Fit the extended form to both temperatures with B(T) and C(T) linear in T. Is the slope of C distinguishable from zero given the stated U?
 :::
 ::: {.column width="54%"}
 ::: {.lever-box}
@@ -357,7 +357,7 @@ Fit the extended form to both temperatures with b(T) and c(T) linear in T. Is th
 |---|---:|
 | ionic strength, 0.1 mol/kg KCl / CaCl₂ / MgSO₄ | 0.1 / 0.3 / 0.4 |
 | limiting-law γ± at 0.0124 mol/kg (KCl) | 0.8776 |
-| b / c (ln basis) | 1.1346 / 0.0424 |
+| B / C (ln basis) | 1.1346 / 0.0424 |
 | RMSE in ln γ± | 0.0221 |
 | γ± at 1.0 mol/kg | 0.6025 |
 | EMF 0.01 / 1.0 mol/kg: ideal / fitted | 236.64 / 215.99 mV |
@@ -374,18 +374,18 @@ Fit the extended form to both temperatures with b(T) and c(T) linear in T. Is th
 
 | | Lab | Script |
 |---|---:|---:|
-| limiting-law γ±, b, γ± at 1 mol/kg | agree | agree |
-| c | 0.0424 | 0.0184 |
+| limiting-law γ±, B, γ± at 1 mol/kg | agree | agree |
+| C | 0.0424 | 0.0184 |
 | EMF, ideal | 236.6 mV | **118.3 mV** |
 | EMF with γ± | 216.0 mV | **108.0 mV** |
 
-The script fitted on the log₁₀ basis, so its c was c<sub>ln</sub>/ln 10: same fit, different units. It then wrote the cell with n = 1 and a = mγ±, missing the square: every EMF was half.
+The script fitted on the log₁₀ basis, so its C was C<sub>ln</sub>/ln 10: same fit, different units. It then wrote the cell with n = 1 and a = mγ±, missing the square: every EMF was half.
 :::
 :::
 ::: {.column width="42%" .rule-notes}
 [Fix that made all checks agree]{.label}
 
-a<sub>KCl</sub> = (mγ±)², so E = (2RT/F) ln(m₂γ₂/m₁γ₁). Report c with its basis.
+a<sub>KCl</sub> = (mγ±)², so E = (2RT/F) ln(m₂γ₂/m₁γ₁). Report C with its basis.
 
 The fit was right and the chemistry was wrong. A fitting routine cannot know how many ions the salt has.
 
@@ -463,7 +463,7 @@ Read the [review guide](note-s07.html){target="_blank"}. Session 7 is synthesis 
 :::
 ::: {}
 [Optional · graduate]{.label}
-Lab 13 C: how much work before the cell is flat? Then repeat E with b and c linear in T.
+Lab 13 C: how much work before the cell is flat? Then repeat E with B and C linear in T.
 :::
 :::
 

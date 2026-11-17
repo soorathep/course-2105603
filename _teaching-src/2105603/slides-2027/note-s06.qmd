@@ -44,7 +44,7 @@ $$\log_{10}\gamma_\pm=-A|z_+z_-|\sqrt I,\qquad A=0.509\ (\text{kg/mol})^{1/2}\te
 
 A is on the log₁₀ basis; on the ln basis it is 1.172. The limiting law is a law of the dilute limit, not a model for 1 mol/kg. An extended form adds an ion-size term and a linear term:
 
-$$\ln\gamma_\pm=-\frac{A_{\ln}\sqrt m}{1+b\sqrt m}+c\,m.$$
+$$\ln\gamma_\pm=-\frac{A_{\ln}\sqrt m}{1+B\sqrt m}+C\,m.$$
 
 **Measured data (KCl, 298.2 K).** Nasiri-Lohehsara and Ghalami-Choobar (2018) report γ± from 0.012 to 2.25 mol/kg, with an expanded uncertainty of about 0.03. At 1.0 mol/kg they give 0.597; the limiting law gives 0.310. A fit of the extended form to the twelve rows gives b = 1.135 (kg/mol)<sup>1/2</sup> and c = 0.042 kg/mol, with an RMSE of 0.022 in ln γ±.
 
