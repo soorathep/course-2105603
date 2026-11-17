@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="s05_files/libs/clipboard/clipboard.min.js"></script>
+<script src="s05_files/libs/quarto-html/tabby.min.js"></script>
+<script src="s05_files/libs/quarto-html/popper.min.js"></script>
+<script src="s05_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="s05_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="s05_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="s05_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics">
+  <title>Chemical equilibrium: how far a reaction goes</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="s05_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="s05_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="s05_files/libs/revealjs/dist/theme/quarto-92f192d9b2a7292791bf52680c75ce43.css">
+  <link rel="stylesheet" href="slides-2027.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="../site_libs/katex/katex.min.css">
+  <link href="s05_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="s05_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="s05_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="s05_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <meta name="robots" content="noindex">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#1C242B" class="quarto-title-block center">
+  <h1 class="title">Chemical equilibrium: how far a reaction goes</h1>
+  <p class="subtitle">Session 5 of 7 · 180 minutes</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics 
+</div>
+</div>
+</div>
+
+</section>
+<section id="course-map" class="slide level2">
+<h2>Where this session sits</h2>
+<div class="coursemap">
+<div class="half done">
+<p><span class="label">Before the midterm</span> <span class="cm">Equations of state</span> <span class="cm">Fugacity and chemical potential</span> <span class="cm">Solution thermodynamics</span></p>
+</div>
+<div class="half">
+<p><span class="label">After the midterm · 7 sessions</span> <span class="cm past">1 · VLE and flash</span> <span class="cm past">2 · Experimental VLE and consistency</span> <span class="cm past">3 · Liquid stability and LLE</span> <span class="cm past">4 · Solids and adsorption</span> <span class="cm now">5 · Chemical equilibrium</span> <span class="cm">6 · Electrochemical equilibrium</span> <span class="cm">7 · Choosing a model from evidence</span></p>
+</div>
+</div>
+<div class="bridge">
+<p>Sessions 1–4 moved molecules between phases. Today they change identity. The condition is still a minimum of G, now constrained by the <strong>element balances</strong>. The usual errors are in K(T), the standard state and the number of reactions.</p>
+</div>
+</section>
+<section id="why" class="slide level2">
+<h2>Why this matters: a factor of 16 in K</h2>
+<div class="columns">
+<div class="column" style="width:58%;">
+<p><img data-src="figures/s05-lnk.svg" class="fig-pxy" alt="ln K against temperature from 600 to 1200 K for methane steam reforming and the water-gas shift, computed from NIST-JANAF H and S and from a constant reaction enthalpy at 298 K; at 1100 K ln K1 is 5.74 against 2.98"></p>
+</div><div class="column why-notes" style="width:40%;">
+<p>Steam methane reforming, the main industrial route to H₂:</p>
+<p>R1 CH₄ + H₂O ⇌ CO + 3H₂<br> R2 CO + H₂O ⇌ CO₂ + H₂</p>
+<p>At 1100 K, K₁ from tabulated H(T) and S(T) is <strong>16 times</strong> the van ’t Hoff value with Δ<sub>r</sub>H° fixed at 298 K. At 2000 kPa that is the difference between 80 % and 50 % CH₄ conversion.</p>
+<p><span class="source">Data: Chase (1998), NIST-JANAF Tables, Shomate coefficients via the NIST Chemistry WebBook. Lab 12 E uses them.</span></p>
+</div></div>
+</section>
+<section id="recap" class="slide level2">
+<h2>From phase equilibrium to reaction equilibrium</h2>
+<div class="chain">
+<div class="link">
+<p><span class="label">Sessions 1–4</span> Equal chemical potential of each species in every phase.</p>
+<p><span class="math display">\mu_i^{\alpha}=\mu_i^{\beta}</span></p>
+</div>
+<div class="link today">
+<p><span class="label">Today</span> Zero Gibbs energy change along each independent reaction.</p>
+<p><span class="math display">\sum_i\nu_{ij}\mu_i=0\ \Rightarrow\ \prod_i a_i^{\nu_{ij}}=K_j(T)</span></p>
+</div>
+<div class="link">
+<p><span class="label">Same thing</span> Minimum of total G subject to the element balances.</p>
+<p><span class="math display">\min G\ \text{ s.t. }\ \sum_i a_{ki}n_i=b_k</span></p>
+</div>
+</div>
+</section>
+<section id="outcomes" class="slide level2">
+<h2>By the end of today you can</h2>
+<p><span class="where-head">Where you show it</span></p>
+<ol type="1">
+<li><strong>Write</strong> K with explicit standard states, and the pressure term that goes with them. <span class="where">Concepts, Lab 12 C</span></li>
+<li><strong>Compute</strong> K(T) from tabulated H and S, and size the error of a constant-ΔH estimate. <span class="where">Activity 1, Lab 12 A</span></li>
+<li><strong>Count</strong> independent reactions from the element matrix. <span class="where">Concepts, note</span></li>
+<li><strong>Solve</strong> a two-reaction equilibrium and judge when K<sub>φ</sub> matters. <span class="where">Activity 2, Lab 12 E</span></li>
+<li><strong>Specify</strong> the calculation for an AI assistant to code, and <strong>verify</strong> the code. <span class="where">Activity 2, Lab 12 E</span></li>
+</ol>
+</section>
+<section id="route" class="slide level2">
+<h2>The 180-minute route</h2>
+<div class="route">
+<div class="seg concept" style="flex:30">
+<p><span class="t">0–30</span> <strong>Essential concepts</strong> <span class="d">K and P°, K(T), independent reactions, K<sub>φ</sub></span></p>
+</div>
+<div class="seg act" style="flex:10">
+<p><span class="t">30–40</span> <strong>Activity 1</strong> <span class="d">K₁ two ways</span></p>
+</div>
+<div class="seg demo" style="flex:20">
+<p><span class="t">40–60</span> <strong>Demo</strong> <span class="d">Lab 12</span></p>
+</div>
+<div class="seg break" style="flex:10">
+<p><span class="t">60–70</span> <strong>Break</strong></p>
+</div>
+<div class="seg act" style="flex:70">
+<p><span class="t">70–140</span> <strong>Activity 2 · pair investigation</strong> <span class="d">Lab 12 A and C, then E with your own code</span></p>
+</div>
+<div class="seg wrap" style="flex:40">
+<p><span class="t">140–180</span> <strong>Discussion and exit ticket</strong> <span class="d">what fixes the composition</span></p>
+</div>
+</div>
+<div class="route-question">
+<p><span class="label">Session question</span> Which inputs actually decide an equilibrium composition, and which mistakes change it by more than any model refinement?</p>
+</div>
+<div class="beforeafter">
+<div>
+<p><span class="label">Before class · 15–20 min</span> Read the <a href="note-s05.html" target="_blank">note on chemical equilibrium</a>. Answer its three questions.</p>
+</div>
+<div>
+<p><span class="label">After class · 30–40 min</span> Finish Lab 12 A, C and E, and submit the study file with your name and ID.</p>
+</div>
+</div>
+<div class="selfstudy">
+<p><strong>Studying on your own?</strong> Follow the same order. Turn on narration or captions at the bottom left, and pause at each activity slide.</p>
+</div>
+</section>
+<section id="standard" class="slide level2">
+<h2>K belongs to a standard state</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<p><span class="math display">\ln K=-\frac{\Delta_rG^\circ(T)}{RT}\qquad a_i=\frac{y_i\varphi_iP}{P^\circ}</span></p>
+<p><span class="math display">K=K_y\,K_\varphi\Big(\frac{P}{P^\circ}\Big)^{\Delta\nu}</span></p>
+<p>K depends on T and on the standard states only. P must be divided by the <strong>same</strong> P° that defined Δ<sub>r</sub>G°.</p>
+</div><div class="column" style="width:46%;">
+<div class="lever-box">
+<p><span class="label">R1 at 1100 K, S/C = 3, 2000 kPa (Δν = +2)</span></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Pressure term used</th>
+<th style="text-align: right;">CH₄ conversion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(2000/100)², correct for P° = 1 bar</td>
+<td style="text-align: right;"><strong>0.795</strong></td>
+</tr>
+<tr class="even">
+<td>term omitted, as if 1 bar</td>
+<td style="text-align: right;">0.996</td>
+</tr>
+</tbody>
+</table>
+<p>Pressure lowers the conversion of a mole-increasing reaction. K itself does not change.</p>
+</div>
+</div></div>
+</section>
+<section id="kT" class="slide level2">
+<h2>K at another temperature</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>van ’t Hoff is exact:</p>
+<p><span class="math display">\frac{\mathrm d\ln K}{\mathrm dT}=\frac{\Delta_rH^\circ(T)}{RT^2}</span></p>
+<p>Holding Δ<sub>r</sub>H° at 298 K is the approximation. For R1, Δ<sub>r</sub>H° rises from 206.2 to 226.6 kJ/mol between 298 and 1100 K.</p>
+<p>Safer: Δ<sub>r</sub>G°(T) = Σν<sub>i</sub>[H<sub>i</sub>(T) − TS<sub>i</sub>(T)] from tabulated data.</p>
+</div><div class="column" style="width:48%;">
+<div class="lever-box">
+<p><span class="label">ln K at 1100 K · NIST-JANAF</span></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">H(T), S(T)</th>
+<th style="text-align: right;">Δ<sub>r</sub>H° fixed</th>
+<th style="text-align: right;">ratio of K</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>R1</td>
+<td style="text-align: right;">5.742</td>
+<td style="text-align: right;">2.981</td>
+<td style="text-align: right;">15.8</td>
+</tr>
+<tr class="even">
+<td>R2</td>
+<td style="text-align: right;">−0.013</td>
+<td style="text-align: right;">−0.555</td>
+<td style="text-align: right;">1.7</td>
+</tr>
+</tbody>
+</table>
+<p>The error grows with |T − 298 K| and with ΔC<sub>p</sub>. It is not a rounding issue.</p>
+</div>
+</div></div>
+</section>
+<section id="rank" class="slide level2">
+<h2>How many reactions?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Element matrix (rows C, H, O; columns CH₄, H₂O, CO, CO₂, H₂):</p>
+<p><span class="math display">\begin{pmatrix}1&amp;0&amp;1&amp;1&amp;0\\4&amp;2&amp;0&amp;0&amp;2\\0&amp;1&amp;1&amp;2&amp;0\end{pmatrix}</span></p>
+<p>Rank 3, so 5 − 3 = <strong>2</strong> independent reactions. R1 and R2 are one choice. CH₄ + 2H₂O ⇌ CO₂ + 4H₂ is R1 + R2 and adds nothing.</p>
+</div><div class="column rule-notes" style="width:48%;">
+<p>Any independent pair gives the same composition. So does a Gibbs minimization with the element balances as constraints.</p>
+<p>Add solid carbon and the count rises to 3: carbon deposition, for example 2CO ⇌ C + CO₂, becomes possible. The extents method only finds what its reaction list allows.</p>
+<p><span class="q">That is a modeling decision, not a coding one.</span></p>
+</div></div>
+</section>
+<section id="kphi" class="slide level2">
+<h2>Is the gas ideal enough?</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<p><span class="math display">K_\varphi=\prod_i\varphi_i^{\nu_i}</span></p>
+<p>At 1100 K and 2 MPa, every species is far above its critical temperature. The Pitzer virial correlation gives:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">ln φ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CH₄ / H₂O</td>
+<td style="text-align: right;">0.0045 / −0.0030</td>
+</tr>
+<tr class="even">
+<td>CO / CO₂ / H₂</td>
+<td style="text-align: right;">0.0052 / 0.0045 / 0.0024</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column rule-notes" style="width:46%;">
+<p>ln K<sub>φ</sub> = <strong>0.011</strong> for R1 and 0.005 for R2: about 1 %, smaller than the uncertainty from how close a real catalyst bed gets to equilibrium.</p>
+<p>Not so in Week 7’s example at 400 K and 2 MPa: K<sub>φ</sub> = 1.06, a 2 % change in extent. Nor in ammonia synthesis at 20 MPa.</p>
+<p><span class="q">Check K<sub>φ</sub> before you use it or drop it.</span></p>
+</div></div>
+</section>
+<section id="activity-1" class="slide level2 activity">
+<h2>K₁ two ways</h2>
+<p><span class="act-label">Activity 1 · 10 minutes · alone, then with a partner</span></p>
+<div class="prompt">
+<p>R1 at 298.15 K: Δ<sub>r</sub>H° = 206.17 kJ/mol, Δ<sub>r</sub>S° = 212.2 J mol⁻¹ K⁻¹. Estimate ln K₁ at 1000 K with Δ<sub>r</sub>H° held constant.</p>
+</div>
+<p>The tabulated value is ln K₁(1000 K) = 3.269. Which way is your estimate off, and why? With S/C = 3 at 1 atm, the tabulated K gives 98.5 % conversion; is your error important here?</p>
+<div class="selfstudy">
+<p><strong>On your own:</strong> pause here, write your answer, then go to the next slide.</p>
+</div>
+</section>
+<section id="activity-1-debrief" class="slide level2">
+<h2>Activity 1: check your answer</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<p>Δ<sub>r</sub>G°(298.15) = 206.17 − 298.15 × 0.2122 = 142.9 kJ/mol, so ln K₁(298.15) = −57.64.</p>
+<p>ln K₁(1000) ≈ −57.64 − (206 170/8.314)(1/1000 − 1/298.15) = <strong>0.73</strong></p>
+<p>Tabulated: 3.27. K is underestimated by a factor of 13, because Δ<sub>r</sub>H° grows with T.</p>
+</div><div class="column rule-notes" style="width:46%;">
+<p>At 1 atm the error hardly matters: conversion is near 1 either way.</p>
+<p>At 2000 kPa it decides the answer: at 1100 K the two K values give 0.795 and 0.498.</p>
+<p><span class="q">The same error can be harmless in one design and decisive in another. Test it where you use it.</span></p>
+</div></div>
+</section>
+<section id="conditions" class="slide level2">
+<h2>Pressure, steam and temperature</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
+<p><img data-src="figures/s05-conv.svg" class="fig-pxy" alt="Equilibrium methane conversion against temperature from 800 to 1200 K at 1 atm with steam to carbon 3, and at 2000 kPa with steam to carbon 2, 3 and 4"></p>
+</div><div class="column concept-notes" style="width:42%;">
+<p><span class="q">Pressure</span> At 1000 K, S/C = 3: 98.5 % at 1 atm, 54.6 % at 2000 kPa. Plants still run at 2–3 MPa, for downstream use, and pay with higher T.</p>
+<p><span class="q">Steam</span> At 1100 K, 2000 kPa: S/C = 2, 3, 4 gives 0.678, 0.795, 0.869.</p>
+<p><span class="q">Shift</span> R2 is exothermic. Its K falls with T, so CO₂ forms at lower T and CO at higher T.</p>
+</div></div>
+</section>
+<section id="demo-lab" class="slide level2">
+<h2>Demonstration · Lab 12</h2>
+<div class="columns">
+<div class="column" style="width:44%;">
+<ol type="1">
+<li>Starting case A₂ ⇌ 2A, 350 K, 100 kPa: ln K = 1.375, conversion 0.705.</li>
+<li>Read G(ξ): the minimum is the equilibrium.</li>
+<li>C: pressure × 10 gives 0.300; 4 mol inert gas at 100 kPa gives 0.870.</li>
+<li>Load the real-data preset, N₂O₄ ⇌ 2NO₂, and compare.</li>
+</ol>
+<p><a href="../preview-2027/reaction.html" class="lab-button" target="_blank">Open Lab 12 →</a></p>
+</div><div class="column" style="width:54%;">
+<p><img data-src="figures/s05-lab12.png" class="lab-shot" alt="Lab 12 chart of the Gibbs energy along the extent of reaction, with the minimum at 0.705 at 100 kPa and a second curve at 1000 kPa"></p>
+<div class="expect">
+<p><span class="label">Lab 12 should report · starting case</span> ln K = 1.3745 · K = 3.953 · ξ = 0.7050 · y(A) = 0.827 · teal: 100 kPa, amber: 1000 kPa</p>
+</div>
+</div></div>
+</section>
+<section id="mistakes" class="slide level2">
+<h2>Four common mistakes</h2>
+<div class="mistakes">
+<div>
+<p><strong>P in kPa with K defined at 1 bar.</strong> The pressure term is off by 100<sup>Δν</sup>.</p>
+</div>
+<div>
+<p><strong>Δ<sub>r</sub>H° held at 298 K over hundreds of kelvin.</strong> ln K₁ at 1100 K: 2.98 instead of 5.74.</p>
+</div>
+<div>
+<p><strong>One reaction too few.</strong> The composition can only use the reactions you wrote down.</p>
+</div>
+<div>
+<p><strong>Accepting the solver’s output unchecked.</strong> A start with CO = 0 or residuals in K, not ln K, can return an unconverged or negative answer.</p>
+</div>
+</div>
+</section>
+<section id="ai-code" class="slide level2">
+<h2>AI writes code, you write the problem</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="label">You decide</span></p>
+<ul>
+<li>How K depends on T, and its standard state</li>
+<li>The independent reactions and the balances</li>
+<li>Residual form, starting point, convergence test</li>
+<li>What the result means, and what it does not show</li>
+</ul>
+<p><span class="label">The assistant may</span></p>
+<p>Write and debug code that does exactly what your specification says. Not property values or conclusions.</p>
+</div><div class="column rule-notes" style="width:48%;">
+<p><strong>Lab 12 step E</strong> recomputes from the NIST-JANAF data:</p>
+<ol type="1">
+<li>ln K₁ at your T</li>
+<li>ln K₂ at your T</li>
+<li>CH₄ conversion</li>
+<li>Wet mole fractions</li>
+<li>O/C ratio of your mixture</li>
+</ol>
+<p>It names constant-ΔH K, P in kPa, a missing pressure term, and negative amounts.</p>
+</div></div>
+</section>
+<section id="break" class="slide level2 breakslide">
+<h2>Break · 10 minutes</h2>
+<div class="break-next">
+<p><span class="label">Next</span> Activity 2: a pair investigation in Lab 12, 70 minutes.</p>
+<p>Before you leave your seat, check that Lab 12 opens on your device.</p>
+</div>
+</section>
+<section id="activity-2" class="slide level2 activity">
+<h2>Activity 2 · what fixes the composition?</h2>
+<p><span class="act-label">Activity 2 · 70 minutes · in pairs: one drives Lab 12, one checks by hand, then swap</span></p>
+<div class="a2grid">
+<div>
+<p><span class="label">15 min · by hand</span> Element matrix and its rank for the five SMR species. Then with solid carbon added. Name the extra reaction.</p>
+</div>
+<div>
+<p><span class="label">20 min · Lab 12 A and C</span> Carry K to other T with ΔC<sub>p</sub> = 0 and ≠ 0. Then pressure, inert gas and the 1 bar / 1 atm standard state. Save the study.</p>
+</div>
+<div>
+<p><span class="label">25 min · E your own code</span> SMR at 1100 K, 2000 kPa, S/C = 3, then a case of your own. Specify, ask an AI assistant for the code, run it, check it in E.</p>
+</div>
+<div>
+<p><span class="label">10 min · explain</span> Two sentences with numbers: which single input changes the 1100 K, 2000 kPa conversion most, and by how much?</p>
+</div>
+</div>
+<div class="selfstudy">
+<p><strong>On your own:</strong> do both roles yourself. Pause the slides, work in Lab 12, then continue.</p>
+</div>
+</section>
+<section id="activity-2-check" class="slide level2">
+<h2>Activity 2 · what to hand in</h2>
+<div class="columns">
+<div class="column" style="width:44%;">
+<ol type="1">
+<li>Lab 12 study file with A, C and E, your name and student ID.</li>
+<li>The element matrices and ranks, with and without carbon.</li>
+<li>Two sentences that answer the activity question with numbers.</li>
+</ol>
+<p><span class="label">Graduate extension</span> Add K<sub>φ</sub> from the Pitzer correlation to your code at 1100 K and 2000 kPa. How much does the conversion move? At what pressure would it move by 0.01?</p>
+</div><div class="column" style="width:54%;">
+<div class="lever-box">
+<p><span class="label">Check your results · 1100 K, 2000 kPa, S/C = 3</span></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ln K₁ / ln K₂</td>
+<td style="text-align: right;">5.7422 / −0.0131</td>
+</tr>
+<tr class="even">
+<td>CH₄ conversion</td>
+<td style="text-align: right;">0.7953</td>
+</tr>
+<tr class="odd">
+<td>y H₂ / CO / CO₂ / CH₄</td>
+<td style="text-align: right;">0.4846 / 0.0844 / 0.0578 / 0.0366</td>
+</tr>
+<tr class="even">
+<td>y H₂O</td>
+<td style="text-align: right;">0.3365</td>
+</tr>
+</tbody>
+</table>
+<p>At 1000 K and 1 atm: conversion 0.9850, y H₂ 0.5623.</p>
+</div>
+</div></div>
+</section>
+<section id="ai-debrief" class="slide level2">
+<h2>What the code checks catch</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
+<div class="lever-box">
+<p><span class="label">1100 K, 2000 kPa, S/C = 3 · a first-draft script and two revisions</span></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Version</th>
+<th style="text-align: right;">ln K₁</th>
+<th style="text-align: right;">conversion</th>
+<th style="text-align: right;">y CO₂</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>start ξ₁ = ξ₂ = 0.5</td>
+<td style="text-align: right;">2.981</td>
+<td style="text-align: right;">0.500</td>
+<td style="text-align: right;">0.100, the start</td>
+</tr>
+<tr class="even">
+<td>residuals in K, not ln K</td>
+<td style="text-align: right;">2.981</td>
+<td style="text-align: right;">0.996</td>
+<td style="text-align: right;"><strong>−0.463</strong></td>
+</tr>
+<tr class="odd">
+<td>ln K residuals</td>
+<td style="text-align: right;">2.981</td>
+<td style="text-align: right;">0.498</td>
+<td style="text-align: right;">0.043</td>
+</tr>
+<tr class="even">
+<td>lab</td>
+<td style="text-align: right;">5.742</td>
+<td style="text-align: right;"><strong>0.795</strong></td>
+<td style="text-align: right;">0.058</td>
+</tr>
+</tbody>
+</table>
+<p>The first start put CO at zero and divided by it; the script printed the starting guess. The second did not converge and left the physical region.</p>
+</div>
+</div><div class="column rule-notes" style="width:42%;">
+<p><span class="label">What made all checks agree</span></p>
+<ul>
+<li>K from H(T) and S(T), not constant Δ<sub>r</sub>H°</li>
+<li>Residuals in ln K, every amount kept positive</li>
+<li>A start with every species present, and a convergence test</li>
+</ul>
+<p>The third version converged cleanly and was still wrong by 0.30 in conversion. Convergence checks the solver, not the thermodynamics.</p>
+</div></div>
+</section>
+<section id="discussion" class="slide level2">
+<h2>Discussion: what fixes the composition?</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
+<p><img data-src="figures/s05-conv.svg" class="fig-pxy" alt="Equilibrium methane conversion against temperature at several pressures and steam ratios"></p>
+</div><div class="column concept-notes" style="width:42%;">
+<p><span class="q">Discuss in pairs, then with the class</span></p>
+<ol type="1">
+<li>Rank these by their effect on the 1100 K, 2000 kPa conversion: K(T) method, K<sub>φ</sub>, S/C from 3 to 4, P in kPa.</li>
+<li>Your extents code cannot form carbon. How would you find out whether carbon deposits at S/C = 2?</li>
+<li>A reactor outlet shows 70 % conversion where equilibrium says 79.5 %. What does that tell you, and what does it not?</li>
+</ol>
+</div></div>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<div class="summary3">
+<div>
+<p><span class="label">K</span> ln K = −Δ<sub>r</sub>G°(T)/RT for stated standard states. P enters as P/P°, with the same P°.</p>
+</div>
+<div>
+<p><span class="label">K(T)</span> Use H(T) and S(T). Constant Δ<sub>r</sub>H° from 298 K misses ln K₁ at 1100 K by 2.8.</p>
+</div>
+<div>
+<p><span class="label">Composition</span> Count reactions from the element matrix. Check K<sub>φ</sub> before dropping it. Check convergence and positivity before believing a solver.</p>
+</div>
+</div>
+<p><strong>Session question:</strong> at 1100 K, 2000 kPa and S/C = 3, the conversion is 0.795. Constant-ΔH K gives 0.498, omitting the pressure term gives 0.996, raising S/C to 4 gives 0.869, and K<sub>φ</sub> moves it by about 1 %.</p>
+<p><span class="label">Next session</span> When does a reaction produce a voltage? Electrochemical equilibrium (Lab 13).</p>
+</section>
+<section id="exit-ticket" class="slide level2 activity">
+<h2>Exit ticket · 5 minutes</h2>
+<p><span class="act-label">Exit ticket and feedback · alone · 5 minutes · anonymous</span></p>
+<div class="columns">
+<div class="column" style="width:64%;">
+<div class="prompt">
+<p>Your SMR code converges and gives 50 % CH₄ conversion at 1100 K and 2000 kPa. The lab gives 79.5 %. Name two causes you would check first, and the evidence that would separate them.</p>
+</div>
+<p>Scan the code or open the link. The same form asks three short questions about today: pace, confidence and whether the lab worked.</p>
+<p>No name or student ID is recorded. Wait for <strong>“Response received.”</strong></p>
+</div><div class="column qr-col" style="width:32%;">
+<p><img data-src="figures/exit-qr-s05.png" class="qr" alt="QR code for the Session 5 exit ticket and feedback form"></p>
+<p><a href="exit.html?s=5" target="_blank">Open the Session 5 form</a></p>
+</div></div>
+</section>
+<section id="after-class" class="slide level2">
+<h2>After class</h2>
+<div class="summary3">
+<div>
+<p><span class="label">Hand in · this week</span> Your Lab 12 study file with A, C and E, name and student ID.</p>
+</div>
+<div>
+<p><span class="label">Prepare · Session 6</span> Read the Session 6 pre-class note when it is posted. About 20 minutes.</p>
+</div>
+<div>
+<p><span class="label">Optional · graduate</span> Lab 12 B: which way will a sample react? Then add K<sub>φ</sub> to your E code.</p>
+</div>
+</div>
+<p><a href="../preview-2027/reaction.html" class="lab-button" target="_blank">Open Lab 12 →</a></p>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="s05_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="s05_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="s05_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="s05_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="s05_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="s05_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="s05_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="s05_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="s05_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'visible',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 6.0e-2,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <!-- Click anywhere on a slide to advance.
+
+         Reveal.js has no built-in click-to-advance, so this adds it. Going back is
+         the ← key, or the arrow at the left edge of the screen
+         (controlsLayout: edges in _quarto.yml).
+
+         It deliberately does nothing when the click means something else: a link or
+         control, a double-click, a modified click, the overview (O), a drag that
+         selected text, or the click that dismisses a selection. Without those
+         guards a student trying to select a sentence would skip a slide instead.
+
+         Note the selection is checked on mousedown, not on click — the browser
+         clears the selection before the click event fires. -->
+    <script>
+    (function () {
+      var IGNORE = 'a, button, input, select, textarea, label, summary, video, audio,' +
+                   ' iframe, .controls, .slide-menu, .slide-menu-button, .progress,' +
+                   ' .speaker-controls, .pdf-page';
+      var DRAG_PX = 6;
+      var downX = 0, downY = 0, hadSelection = false;
+
+      document.addEventListener('mousedown', function (e) {
+        downX = e.clientX;
+        downY = e.clientY;
+        var s = window.getSelection();
+        hadSelection = !!(s && String(s).length > 0);
+      }, true);
+
+      function ready(fn) {
+        if (typeof Reveal !== 'undefined' && Reveal.isReady && Reveal.isReady()) return fn();
+        setTimeout(function () { ready(fn); }, 120);
+      }
+
+      ready(function () {
+        document.addEventListener('click', function (e) {
+          if (e.button !== 0) return;                        // left button only
+          if (e.detail > 1) return;                          // ignore double-clicks
+          if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
+          if (e.target.closest && e.target.closest(IGNORE)) return;
+          if (Reveal.isOverview() || Reveal.isPaused()) return;
+          if (Math.abs(e.clientX - downX) > DRAG_PX ||
+              Math.abs(e.clientY - downY) > DRAG_PX) return; // that was a drag
+          if (hadSelection) { hadSelection = false; return; } // that click cleared a selection
+          Reveal.next();
+        }, false);
+      });
+    })();
+    </script>
+    <!-- Narration and captions for 2027 decks.
+         Loads narration/<deck>.json (built by build_narration.py): per slide, an MP3 and
+         sentence cues with English and Thai text. Controls at the bottom left:
+         narration on/off, pause/resume and replay while narration is on,
+         captions off/English/Thai, auto-advance on/off.
+         With narration off and captions on, the slide's full text is shown to read. -->
+    <style>
+    .nr-bar { position: fixed; left: 12px; bottom: 10px; z-index: 40; display: flex; gap: 6px; font: 600 14px/1 "Source Sans 3", "Course Thai", sans-serif; }
+    .nr-bar button { border: 1.5px solid #0F6E6B; background: #fff; color: #0F6E6B; border-radius: 4px; padding: 8px 12px; cursor: pointer; }
+    .nr-bar button[aria-pressed="true"] { background: #0F6E6B; border-color: #0F6E6B; color: #fff; }
+    .nr-bar button:focus-visible { outline: 2px solid #E29A2D; outline-offset: 2px; }
+    /* When captions show, the slide area shrinks by --cc-band so captions never cover slide text. */
+    .reveal { height: calc(100% - var(--cc-band, 0px)) !important; }
+    .nr-caption { position: fixed; left: 50%; bottom: 56px; transform: translateX(-50%); z-index: 39; width: min(1100px, 92vw); max-height: 22vh; overflow-y: auto;
+      background: rgba(28,36,43,.9); color: #fff; border-radius: 4px; padding: 10px 16px; font: 400 21px/1.45 "Source Sans 3", "Course Thai", sans-serif; text-align: center; }
+    .nr-caption.transcript { text-align: left; font-size: 18px; }
+    .nr-caption.transcript p { margin: 0 0 .4em; }
+    .nr-caption[lang="th"] { font-family: "Course Thai", "Sarabun", sans-serif; }
+    .reveal-viewport.dark-slide .nr-bar button:not([aria-pressed="true"]) { background: rgba(255,255,255,.85); }
+    .draft-mark { align-self: center; margin-left: 8px; font: 400 12px/1 "Source Sans 3", sans-serif; color: #66727C !important; text-decoration: none; }
+    .draft-mark:hover { text-decoration: underline; }
+    @media print { .draft-mark { display: none; } }
+    </style>
+    <div class="nr-bar" role="toolbar" aria-label="Narration and captions">
+      <button type="button" id="nr-sound" aria-pressed="false">Narration (EN): off</button>
+      <button type="button" id="nr-pause" hidden="">Pause</button>
+      <button type="button" id="nr-replay" hidden="">Replay slide</button>
+      <button type="button" id="nr-cc" aria-pressed="false">Captions: off</button>
+      <button type="button" id="nr-auto" aria-pressed="false">Auto-advance: off</button>
+      <a class="draft-mark" href="../index.html">Draft for 2027 · current class: course page</a>
+    </div>
+    <div class="nr-caption" id="nr-caption" aria-live="polite" hidden=""></div>
+    <script>
+    (function () {
+      const deck = location.pathname.split('/').pop().replace(/\.html$/, '') || 'index';
+      const store = { get(k, d) { try { return localStorage.getItem('nr-' + k) ?? d; } catch { return d; } },
+                      set(k, v) { try { localStorage.setItem('nr-' + k, v); } catch {} } };
+      const state = { sound: store.get('sound', 'off') === 'on', cc: store.get('cc', 'off'), auto: store.get('auto', 'off') === 'on' };
+      const CC_NEXT = { off: 'en', en: 'th', th: 'off' }, CC_LABEL = { off: 'Captions: off', en: 'Captions: English', th: 'Captions: ไทย' };
+      const audio = new Audio(); audio.preload = 'auto';
+      const box = document.getElementById('nr-caption');
+      const $ = (id) => document.getElementById(id);
+      let data = {}, slide = null, band = -1;
+
+      // Reserve a band under the slide for the caption box and re-lay out the slide.
+      function setBand() {
+        const h = box.hidden ? 0 : box.offsetHeight + 64;
+        if (h === band) return;
+        band = h;
+        document.documentElement.style.setProperty('--cc-band', h + 'px');
+        if (window.Reveal && Reveal.isReady()) Reveal.layout();
+      }
+      new ResizeObserver(setBand).observe(box);
+
+      function paintButtons() {
+        $('nr-sound').textContent = 'Narration (EN): ' + (state.sound ? 'on' : 'off'); $('nr-sound').setAttribute('aria-pressed', state.sound);
+        $('nr-pause').hidden = !state.sound; $('nr-replay').hidden = !state.sound;
+        $('nr-pause').textContent = audio.paused && audio.currentTime > 0 && !audio.ended ? 'Resume' : 'Pause';
+        $('nr-cc').textContent = CC_LABEL[state.cc]; $('nr-cc').setAttribute('aria-pressed', state.cc !== 'off');
+        $('nr-auto').textContent = 'Auto-advance: ' + (state.auto ? 'on' : 'off'); $('nr-auto').setAttribute('aria-pressed', state.auto);
+      }
+      function show(html, transcript) {
+        if (state.cc === 'off' || !html) { box.hidden = true; return; }
+        box.lang = state.cc; box.classList.toggle('transcript', !!transcript); box.innerHTML = html; box.hidden = false;
+      }
+      const esc = (s) => s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]);
+      function transcript() {
+        const cues = slide?.cues || [];
+        show(cues.map((c) => '<p>' + esc(c[state.cc] || '') + '</p>').join(''), true);
+      }
+      function syncCaption() {
+        const cues = slide?.cues || [], t = audio.currentTime;
+        const cue = cues.find((c) => t >= c.start && t < c.end + 0.3) || null;
+        if (cue) show(esc(cue[state.cc] || ''), false);
+      }
+      function load() {
+        const id = Reveal.getCurrentSlide()?.id;
+        slide = data[id] || null;
+        audio.pause();
+        if (!slide) { box.hidden = true; return; }
+        if (state.sound) {
+          audio.src = slide.audio; audio.currentTime = 0;
+          audio.play().catch(() => { state.sound = false; paintButtons(); transcript(); });
+          box.hidden = true;
+        } else transcript();
+      }
+      audio.addEventListener('play', paintButtons);
+      audio.addEventListener('pause', paintButtons);
+      $('nr-pause').addEventListener('click', (e) => {
+        if (audio.paused) audio.play().catch(() => {}); else audio.pause();
+        e.currentTarget.blur();
+      });
+      $('nr-replay').addEventListener('click', (e) => {
+        if (slide) { audio.currentTime = 0; audio.play().catch(() => {}); }
+        e.currentTarget.blur();
+      });
+      audio.addEventListener('timeupdate', () => { if (state.sound) syncCaption(); });
+      audio.addEventListener('ended', () => { if (state.auto && !Reveal.isLastSlide()) Reveal.next(); });
+
+      $('nr-sound').addEventListener('click', (e) => { state.sound = !state.sound; store.set('sound', state.sound ? 'on' : 'off'); paintButtons(); load(); e.currentTarget.blur(); });
+      $('nr-cc').addEventListener('click', (e) => { state.cc = CC_NEXT[state.cc]; store.set('cc', state.cc); paintButtons();
+        if (state.sound && !audio.paused) syncCaption(); else if (state.sound) box.hidden = true; else transcript(); e.currentTarget.blur(); });
+      $('nr-auto').addEventListener('click', (e) => { state.auto = !state.auto; store.set('auto', state.auto ? 'on' : 'off'); paintButtons(); e.currentTarget.blur(); });
+
+      paintButtons();
+      fetch('narration/' + deck + '.json').then((r) => r.ok ? r.json() : {}).then((d) => {
+        data = d;
+        if (Reveal.isReady()) load(); else Reveal.on('ready', load);
+        Reveal.on('slidechanged', load);
+      }).catch(() => { document.querySelector('.nr-bar').hidden = true; });
+    })();
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

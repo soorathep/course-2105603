@@ -1,0 +1,416 @@
+{
+ "session": "s05",
+ "voice": "am_michael",
+ "slides": {
+  "title-slide": [
+   {
+    "en": "Welcome to session 5.",
+    "th": "ยินดีต้อนรับสู่คาบที่ 5"
+   },
+   {
+    "en": "Today molecules change identity: chemical reaction equilibrium.",
+    "th": "วันนี้โมเลกุลเปลี่ยนชนิด เป็นเรื่องสมดุลของปฏิกิริยาเคมี"
+   },
+   {
+    "en": "The question for the whole session: which inputs actually decide an equilibrium composition, and which mistakes change it by more than any model refinement?",
+    "th": "คำถามของทั้งคาบนี้คือ ข้อมูลใดเป็นตัวกำหนดองค์ประกอบที่สมดุลจริง และความผิดพลาดใดเปลี่ยนคำตอบมากกว่าการปรับปรุงแบบจำลองใดๆ"
+   },
+   {
+    "en": "If you are studying on your own, turn on narration and captions with the buttons at the bottom left. Use the arrow keys to move through the slides.",
+    "th": "ถ้าเรียนด้วยตนเอง เปิดเสียงบรรยายและคำบรรยายได้ที่ปุ่มมุมซ้ายล่าง และใช้ปุ่มลูกศรเพื่อเลื่อนสไลด์"
+   }
+  ],
+  "course-map": [
+   {
+    "en": "This is session 5 of 7 after the midterm: chemical equilibrium.",
+    "th": "นี่คือคาบที่ 5 จาก 7 คาบหลังสอบกลางภาค เรื่องสมดุลเคมี"
+   },
+   {
+    "en": "The condition is still a minimum of the Gibbs energy, now constrained by the element balances. The usual errors are in K of T, the standard state and the number of reactions.",
+    "th": "เงื่อนไขยังคงเป็นค่าต่ำสุดของพลังงานกิบส์ แต่มีสมการดุลธาตุเป็นข้อจำกัด ความผิดพลาดที่พบบ่อยอยู่ที่ K(T) สถานะมาตรฐาน และจำนวนปฏิกิริยา"
+   }
+  ],
+  "why": [
+   {
+    "en": "Steam methane reforming is the main industrial route to hydrogen. Two reactions: reforming and the water-gas shift.",
+    "th": "การรีฟอร์มมีเทนด้วยไอน้ำเป็นวิธีหลักในอุตสาหกรรมสำหรับผลิตไฮโดรเจน มีสองปฏิกิริยา คือการรีฟอร์ม และปฏิกิริยา water-gas shift"
+   },
+   {
+    "en": "At 1100 kelvin, K 1 from tabulated enthalpy and entropy is 16 times the van 't Hoff value with the reaction enthalpy fixed at 298 kelvin.",
+    "th": "ที่ 1100 เคลวิน K₁ ที่คำนวณจากเอนทาลปีและเอนโทรปีที่ตีพิมพ์ มีค่าเป็น 16 เท่าของค่าจากสมการ van 't Hoff ที่ถือว่าเอนทาลปีของปฏิกิริยาคงที่ที่ 298 เคลวิน",
+    "say": "At eleven hundred kelvin, K one from tabulated enthalpy and entropy is sixteen times the van 't Hoff value with the reaction enthalpy fixed at two hundred ninety eight kelvin."
+   },
+   {
+    "en": "At 2000 kilopascals, that is the difference between 80 and 50 percent methane conversion.",
+    "th": "ที่ 2000 กิโลปาสคาล ความต่างนี้คือความต่างระหว่างการเปลี่ยนมีเทน 80 กับ 50 เปอร์เซ็นต์",
+    "say": "At two thousand kilopascals, that is the difference between eighty and fifty percent methane conversion."
+   }
+  ],
+  "recap": [
+   {
+    "en": "In sessions 1 to 4, each species had equal chemical potential in every phase.",
+    "th": "ในคาบที่ 1 ถึง 4 แต่ละสารมีศักย์เคมีเท่ากันในทุกเฟส"
+   },
+   {
+    "en": "Today, the Gibbs energy change along each independent reaction is zero, which gives the product of activities equal to K.",
+    "th": "วันนี้ การเปลี่ยนแปลงพลังงานกิบส์ตามแต่ละปฏิกิริยาอิสระเป็นศูนย์ ทำให้ผลคูณของ activity เท่ากับ K"
+   },
+   {
+    "en": "Equivalently, the total Gibbs energy is a minimum subject to the element balances.",
+    "th": "กล่าวอีกแบบหนึ่ง พลังงานกิบส์รวมมีค่าต่ำสุดภายใต้สมการดุลธาตุ"
+   }
+  ],
+  "outcomes": [
+   {
+    "en": "By the end of today you should be able to do five things.",
+    "th": "เมื่อจบคาบนี้ คุณควรทำได้ห้าอย่าง"
+   },
+   {
+    "en": "Write K with explicit standard states, and the pressure term that goes with them.",
+    "th": "เขียน K โดยระบุสถานะมาตรฐานชัดเจน พร้อมพจน์ความดันที่สอดคล้องกัน"
+   },
+   {
+    "en": "Compute K of T from tabulated enthalpy and entropy, and size the error of a constant-enthalpy estimate.",
+    "th": "คำนวณ K(T) จากเอนทาลปีและเอนโทรปีที่ตีพิมพ์ และประเมินขนาดความคลาดเคลื่อนของการประมาณแบบเอนทาลปีคงที่"
+   },
+   {
+    "en": "Count independent reactions from the element matrix.",
+    "th": "นับจำนวนปฏิกิริยาอิสระจากเมทริกซ์ธาตุ"
+   },
+   {
+    "en": "Solve a two-reaction equilibrium, and judge when the fugacity correction matters.",
+    "th": "แก้สมดุลสองปฏิกิริยา และตัดสินว่าเมื่อใดการแก้ไขด้วย fugacity มีความสำคัญ"
+   },
+   {
+    "en": "And specify the calculation for an AI assistant to code, then verify the code.",
+    "th": "และเขียนข้อกำหนดการคำนวณให้ผู้ช่วย AI เขียนโค้ด แล้วตรวจโค้ดนั้น"
+   }
+  ],
+  "route": [
+   {
+    "en": "This is the plan for the three hours.",
+    "th": "นี่คือแผนของการเรียนสามชั่วโมง"
+   },
+   {
+    "en": "Thirty minutes of concepts: K and the standard state, K of T, independent reactions and the fugacity correction.",
+    "th": "สามสิบนาทีแรกเป็นแนวคิด ได้แก่ K กับสถานะมาตรฐาน K(T) ปฏิกิริยาอิสระ และการแก้ไขด้วย fugacity"
+   },
+   {
+    "en": "Activity 1 computes K 1 two ways. Then I demonstrate Lab 12.",
+    "th": "กิจกรรมที่ 1 คำนวณ K₁ สองวิธี จากนั้นผมจะสาธิต Lab 12",
+    "say": "Activity 1 computes K one two ways. Then I demonstrate Lab 12."
+   },
+   {
+    "en": "After the break you work in pairs in Lab 12, then on your own code, and we finish by discussing what fixes the composition.",
+    "th": "หลังพักให้ทำงานเป็นคู่ใน Lab 12 ต่อด้วยโค้ดของตัวเอง และปิดท้ายด้วยการอภิปรายว่าอะไรเป็นตัวกำหนดองค์ประกอบ"
+   },
+   {
+    "en": "If you are studying on your own, follow the same order and pause at each activity slide.",
+    "th": "ถ้าเรียนด้วยตนเอง ให้ทำตามลำดับเดียวกัน และหยุดที่สไลด์กิจกรรมแต่ละสไลด์"
+   }
+  ],
+  "standard": [
+   {
+    "en": "K depends on temperature and on the standard states only. For a gas, the activity is y phi P over P naught.",
+    "th": "K ขึ้นกับอุณหภูมิและสถานะมาตรฐานเท่านั้น สำหรับแก๊ส activity เท่ากับ yφP/P°"
+   },
+   {
+    "en": "P must be divided by the same P naught that defined the standard Gibbs energy change.",
+    "th": "ต้องหาร P ด้วย P° ตัวเดียวกับที่ใช้นิยามการเปลี่ยนแปลงพลังงานกิบส์มาตรฐาน"
+   },
+   {
+    "en": "For reforming at 1100 kelvin and 2000 kilopascals, the correct pressure term gives 0.795 conversion. Leaving it out gives 0.996.",
+    "th": "สำหรับการรีฟอร์มที่ 1100 เคลวิน และ 2000 กิโลปาสคาล พจน์ความดันที่ถูกต้องให้การเปลี่ยน 0.795 ถ้าตัดพจน์นี้ออก ได้ 0.996",
+    "say": "For reforming at eleven hundred kelvin and two thousand kilopascals, the correct pressure term gives zero point seven nine five conversion. Leaving it out gives zero point nine nine six."
+   },
+   {
+    "en": "Pressure lowers the conversion of a reaction that increases the number of moles. K itself does not change.",
+    "th": "ความดันลดการเปลี่ยนของปฏิกิริยาที่เพิ่มจำนวนโมล แต่ K ไม่เปลี่ยน"
+   }
+  ],
+  "kT": [
+   {
+    "en": "The van 't Hoff equation is exact. Holding the reaction enthalpy at its 298 kelvin value is the approximation.",
+    "th": "สมการ van 't Hoff เป็นสมการที่แม่นตรง การถือว่าเอนทาลปีของปฏิกิริยาคงที่ที่ค่า 298 เคลวิน คือการประมาณ"
+   },
+   {
+    "en": "For reforming, the reaction enthalpy rises from 206 to 227 kilojoules per mole between 298 and 1100 kelvin.",
+    "th": "สำหรับการรีฟอร์ม เอนทาลปีของปฏิกิริยาเพิ่มจาก 206 เป็น 227 กิโลจูลต่อโมล ระหว่าง 298 ถึง 1100 เคลวิน",
+    "say": "For reforming, the reaction enthalpy rises from two hundred six to two hundred twenty seven kilojoules per mole between two hundred ninety eight and eleven hundred kelvin."
+   },
+   {
+    "en": "At 1100 kelvin, ln K 1 is 5.74 from tabulated data and 2.98 with constant enthalpy: a factor of 16 in K.",
+    "th": "ที่ 1100 เคลวิน ln K₁ เท่ากับ 5.74 จากข้อมูลที่ตีพิมพ์ และ 2.98 เมื่อถือว่าเอนทาลปีคงที่ ต่างกัน 16 เท่าใน K",
+    "say": "At eleven hundred kelvin, ln K one is five point seven four from tabulated data and two point nine eight with constant enthalpy: a factor of sixteen in K."
+   }
+  ],
+  "rank": [
+   {
+    "en": "The element matrix for carbon, hydrogen and oxygen across the five species has rank 3. So there are two independent reactions.",
+    "th": "เมทริกซ์ธาตุของคาร์บอน ไฮโดรเจน และออกซิเจน สำหรับสารห้าชนิดมี rank เท่ากับ 3 จึงมีปฏิกิริยาอิสระสองปฏิกิริยา"
+   },
+   {
+    "en": "Any independent pair gives the same composition, and so does a Gibbs minimization with the element balances.",
+    "th": "ปฏิกิริยาอิสระคู่ใดก็ให้องค์ประกอบเดียวกัน และการหาค่าต่ำสุดของพลังงานกิบส์ภายใต้สมการดุลธาตุก็ให้ผลเดียวกัน"
+   },
+   {
+    "en": "Add solid carbon and the count rises to three. The extents method only finds what its reaction list allows. That is a modeling decision, not a coding one.",
+    "th": "ถ้าเพิ่มคาร์บอนของแข็ง จำนวนจะเพิ่มเป็นสาม วิธี extent พบได้เฉพาะสิ่งที่รายการปฏิกิริยาอนุญาต นี่คือการตัดสินใจเชิงแบบจำลอง ไม่ใช่เรื่องการเขียนโค้ด"
+   }
+  ],
+  "kphi": [
+   {
+    "en": "At 1100 kelvin and 2 megapascals, every species is far above its critical temperature. The Pitzer correlation gives fugacity coefficients within half a percent of one.",
+    "th": "ที่ 1100 เคลวิน และ 2 เมกะปาสคาล ทุกสารอยู่สูงกว่าอุณหภูมิวิกฤตมาก correlation ของ Pitzer ให้สัมประสิทธิ์ fugacity ต่างจากหนึ่งไม่เกินครึ่งเปอร์เซ็นต์",
+    "say": "At eleven hundred kelvin and two megapascals, every species is far above its critical temperature. The Pitzer correlation gives fugacity coefficients within half a percent of one."
+   },
+   {
+    "en": "The correction to K 1 is about one percent, smaller than the uncertainty in how close a real catalyst bed gets to equilibrium.",
+    "th": "การแก้ไข K₁ มีค่าประมาณหนึ่งเปอร์เซ็นต์ ซึ่งน้อยกว่าความไม่แน่นอนว่าเบดตัวเร่งปฏิกิริยาจริงเข้าใกล้สมดุลได้เพียงใด",
+    "say": "The correction to K one is about one percent, smaller than the uncertainty in how close a real catalyst bed gets to equilibrium."
+   },
+   {
+    "en": "That is not true for the week 7 example at 400 kelvin, or for ammonia synthesis at 20 megapascals. Check the correction before you use it or drop it.",
+    "th": "สิ่งนี้ไม่เป็นจริงสำหรับตัวอย่างในสัปดาห์ที่ 7 ที่ 400 เคลวิน หรือการสังเคราะห์แอมโมเนียที่ 20 เมกะปาสคาล ให้ตรวจขนาดของการแก้ไขก่อนจะใช้หรือตัดทิ้ง",
+    "say": "That is not true for the week seven example at four hundred kelvin, or for ammonia synthesis at twenty megapascals. Check the correction before you use it or drop it."
+   }
+  ],
+  "activity-1": [
+   {
+    "en": "Activity 1. Ten minutes, alone, then with a partner.",
+    "th": "กิจกรรมที่ 1 ใช้เวลาสิบนาที ทำคนเดียวก่อน แล้วคุยกับเพื่อน"
+   },
+   {
+    "en": "Estimate ln K 1 at 1000 kelvin from the 298 kelvin data, with the reaction enthalpy held constant.",
+    "th": "ประมาณค่า ln K₁ ที่ 1000 เคลวิน จากข้อมูลที่ 298 เคลวิน โดยถือว่าเอนทาลปีของปฏิกิริยาคงที่",
+    "say": "Estimate ln K one at one thousand kelvin from the two hundred ninety eight kelvin data, with the reaction enthalpy held constant."
+   },
+   {
+    "en": "The tabulated value is 3.269. Which way is your estimate off, and does it matter at one atmosphere?",
+    "th": "ค่าที่ตีพิมพ์คือ 3.269 ค่าประมาณของคุณคลาดไปทางใด และสำคัญหรือไม่ที่หนึ่งบรรยากาศ",
+    "say": "The tabulated value is three point two six nine. Which way is your estimate off, and does it matter at one atmosphere?"
+   }
+  ],
+  "activity-1-debrief": [
+   {
+    "en": "Check your answer. ln K 1 at 298 kelvin is minus 57.6, and the constant-enthalpy estimate at 1000 kelvin is 0.73.",
+    "th": "ตรวจคำตอบ ln K₁ ที่ 298 เคลวิน เท่ากับ −57.6 และค่าประมาณแบบเอนทาลปีคงที่ที่ 1000 เคลวิน เท่ากับ 0.73",
+    "say": "Check your answer. ln K one at two hundred ninety eight kelvin is minus fifty seven point six, and the constant-enthalpy estimate at one thousand kelvin is zero point seven three."
+   },
+   {
+    "en": "That is too low by a factor of 13 in K, because the reaction enthalpy grows with temperature.",
+    "th": "ค่านี้ต่ำเกินไป 13 เท่าใน K เพราะเอนทาลปีของปฏิกิริยาเพิ่มขึ้นตามอุณหภูมิ",
+    "say": "That is too low by a factor of thirteen in K, because the reaction enthalpy grows with temperature."
+   },
+   {
+    "en": "At one atmosphere it hardly matters: conversion is near one either way. At 2000 kilopascals and 1100 kelvin it decides the answer: 0.795 against 0.498.",
+    "th": "ที่หนึ่งบรรยากาศแทบไม่มีผล เพราะการเปลี่ยนใกล้หนึ่งทั้งสองกรณี แต่ที่ 2000 กิโลปาสคาล และ 1100 เคลวิน ความต่างนี้ตัดสินคำตอบ คือ 0.795 เทียบกับ 0.498",
+    "say": "At one atmosphere it hardly matters: conversion is near one either way. At two thousand kilopascals and eleven hundred kelvin it decides the answer: zero point seven nine five against zero point four nine eight."
+   }
+  ],
+  "conditions": [
+   {
+    "en": "At 1000 kelvin and a steam ratio of 3, conversion is 98.5 percent at one atmosphere and 54.6 percent at 2000 kilopascals.",
+    "th": "ที่ 1000 เคลวิน และอัตราส่วนไอน้ำต่อคาร์บอนเท่ากับ 3 การเปลี่ยนเท่ากับ 98.5 เปอร์เซ็นต์ที่หนึ่งบรรยากาศ และ 54.6 เปอร์เซ็นต์ที่ 2000 กิโลปาสคาล",
+    "say": "At one thousand kelvin and a steam ratio of three, conversion is ninety eight point five percent at one atmosphere and fifty four point six percent at two thousand kilopascals."
+   },
+   {
+    "en": "Plants still run at two to three megapascals for downstream use, and pay with a higher temperature.",
+    "th": "โรงงานยังคงเดินที่สองถึงสามเมกะปาสคาลเพื่อกระบวนการถัดไป และชดเชยด้วยอุณหภูมิที่สูงขึ้น"
+   },
+   {
+    "en": "More steam raises conversion. The shift reaction is exothermic, so carbon dioxide forms at lower temperature and carbon monoxide at higher temperature.",
+    "th": "ไอน้ำที่มากขึ้นเพิ่มการเปลี่ยน ปฏิกิริยา shift คายความร้อน คาร์บอนไดออกไซด์จึงเกิดมากที่อุณหภูมิต่ำ และคาร์บอนมอนอกไซด์เกิดมากที่อุณหภูมิสูง"
+   }
+  ],
+  "demo-lab": [
+   {
+    "en": "Now Lab 12. The starting case is one teaching reaction, A 2 to 2 A, at 350 kelvin: conversion 0.705.",
+    "th": "ต่อไปคือ Lab 12 กรณีเริ่มต้นเป็นปฏิกิริยาสำหรับการสอน A₂ ⇌ 2A ที่ 350 เคลวิน การเปลี่ยนเท่ากับ 0.705",
+    "say": "Now Lab 12. The starting case is one teaching reaction, A two to two A, at three hundred fifty kelvin: conversion zero point seven zero five."
+   },
+   {
+    "en": "The Gibbs energy along the extent has its minimum at equilibrium. Ten times the pressure gives 0.300. Four moles of inert gas give 0.870.",
+    "th": "พลังงานกิบส์ตาม extent มีค่าต่ำสุดที่สมดุล ความดันสิบเท่าให้ 0.300 แก๊สเฉื่อยสี่โมลให้ 0.870",
+    "say": "The Gibbs energy along the extent has its minimum at equilibrium. Ten times the pressure gives zero point three. Four moles of inert gas give zero point eight seven."
+   },
+   {
+    "en": "Then load the real-data preset, dinitrogen tetroxide to nitrogen dioxide, and compare.",
+    "th": "จากนั้นโหลดชุดข้อมูลจริง N₂O₄ ⇌ 2NO₂ แล้วเปรียบเทียบ"
+   }
+  ],
+  "mistakes": [
+   {
+    "en": "Four common mistakes before you start.",
+    "th": "ข้อผิดพลาดที่พบบ่อยสี่ข้อก่อนเริ่มทำ"
+   },
+   {
+    "en": "One: pressure in kilopascals with K defined at one bar.",
+    "th": "หนึ่ง ใช้ความดันเป็นกิโลปาสคาลกับ K ที่นิยามที่หนึ่งบาร์"
+   },
+   {
+    "en": "Two: the reaction enthalpy held at 298 kelvin over hundreds of kelvin.",
+    "th": "สอง ถือเอนทาลปีของปฏิกิริยาคงที่ที่ 298 เคลวิน ข้ามช่วงอุณหภูมิหลายร้อยเคลวิน"
+   },
+   {
+    "en": "Three: one reaction too few. The composition can only use the reactions you wrote down.",
+    "th": "สาม ปฏิกิริยาขาดไปหนึ่ง องค์ประกอบใช้ได้เฉพาะปฏิกิริยาที่คุณเขียนไว้"
+   },
+   {
+    "en": "Four: accepting the solver output unchecked.",
+    "th": "สี่ ยอมรับผลจากตัวแก้สมการโดยไม่ตรวจ"
+   }
+  ],
+  "ai-code": [
+   {
+    "en": "As before, you may use an AI assistant to write code. You decide everything else.",
+    "th": "เช่นเดิม คุณใช้ผู้ช่วย AI เขียนโค้ดได้ เรื่องอื่นทั้งหมดคุณตัดสินเอง"
+   },
+   {
+    "en": "That means how K depends on temperature and its standard state, the independent reactions and the balances, the residual form, the starting point and the convergence test.",
+    "th": "ได้แก่ วิธีหา K ตามอุณหภูมิและสถานะมาตรฐาน ปฏิกิริยาอิสระและสมการดุล รูปแบบของ residual จุดเริ่มต้น และเกณฑ์การลู่เข้า"
+   },
+   {
+    "en": "Lab 12 step E recomputes both K values, the conversion, the mole fractions and the oxygen to carbon ratio from the NIST-JANAF data.",
+    "th": "ขั้น E ของ Lab 12 คำนวณ K ทั้งสองค่า การเปลี่ยน เศษส่วนโมล และอัตราส่วนออกซิเจนต่อคาร์บอนใหม่จากข้อมูล NIST-JANAF"
+   }
+  ],
+  "break": [
+   {
+    "en": "Take a ten-minute break.",
+    "th": "พักสิบนาที"
+   },
+   {
+    "en": "Next is activity 2, a pair investigation in Lab 12. Check that the lab opens on your device before the break ends.",
+    "th": "ต่อไปคือกิจกรรมที่ 2 ทำงานเป็นคู่ใน Lab 12 ตรวจว่า lab เปิดได้บนอุปกรณ์ของคุณก่อนหมดเวลาพัก"
+   }
+  ],
+  "activity-2": [
+   {
+    "en": "Activity 2 takes seventy minutes, in pairs. One drives Lab 12, the other checks by hand, then swap.",
+    "th": "กิจกรรมที่ 2 ใช้เวลาเจ็ดสิบนาที ทำเป็นคู่ คนหนึ่งใช้ Lab 12 อีกคนตรวจด้วยมือ แล้วสลับกัน"
+   },
+   {
+    "en": "First, by hand: the element matrix and its rank, without and with solid carbon.",
+    "th": "ขั้นแรก คำนวณด้วยมือ เมทริกซ์ธาตุและ rank ทั้งกรณีไม่มีและมีคาร์บอนของแข็ง"
+   },
+   {
+    "en": "Then Lab 12 A and C: K at other temperatures, and pressure, inert gas and the standard state.",
+    "th": "จากนั้น Lab 12 ขั้น A และ C เรื่อง K ที่อุณหภูมิอื่น ความดัน แก๊สเฉื่อย และสถานะมาตรฐาน"
+   },
+   {
+    "en": "Next, step E with your own code, for reforming at 1100 kelvin, 2000 kilopascals and a steam ratio of 3.",
+    "th": "ต่อไป ขั้น E ด้วยโค้ดของคุณเอง สำหรับการรีฟอร์มที่ 1100 เคลวิน 2000 กิโลปาสคาล และอัตราส่วนไอน้ำเท่ากับ 3",
+    "say": "Next, step E with your own code, for reforming at eleven hundred kelvin, two thousand kilopascals and a steam ratio of three."
+   },
+   {
+    "en": "Finally, explain with numbers which single input changes that conversion most.",
+    "th": "สุดท้าย อธิบายด้วยตัวเลขว่าข้อมูลใดเพียงตัวเดียวที่เปลี่ยนค่าการเปลี่ยนนั้นมากที่สุด"
+   }
+  ],
+  "activity-2-check": [
+   {
+    "en": "This is what to hand in: the Lab 12 study file with A, C and E, the element matrices, and two sentences.",
+    "th": "สิ่งที่ต้องส่งคือ ไฟล์ study ของ Lab 12 ที่มีขั้น A, C และ E เมทริกซ์ธาตุ และสองประโยค"
+   },
+   {
+    "en": "Use the table to check your results. At 1100 kelvin and 2000 kilopascals the conversion is 0.7953, and the hydrogen mole fraction is 0.485.",
+    "th": "ใช้ตารางนี้ตรวจผล ที่ 1100 เคลวิน และ 2000 กิโลปาสคาล การเปลี่ยนเท่ากับ 0.7953 และเศษส่วนโมลของไฮโดรเจนเท่ากับ 0.485",
+    "say": "Use the table to check your results. At eleven hundred kelvin and two thousand kilopascals the conversion is zero point seven nine five three, and the hydrogen mole fraction is zero point four eight five."
+   },
+   {
+    "en": "Graduate extension: add the fugacity correction to your code, and find the pressure at which it moves the conversion by 0.01.",
+    "th": "งานเสริมระดับบัณฑิต เพิ่มการแก้ไขด้วย fugacity ในโค้ด และหาความดันที่ทำให้การเปลี่ยนต่างไป 0.01"
+   }
+  ],
+  "ai-debrief": [
+   {
+    "en": "Here is what the code checks catch, from a first-draft script and two revisions.",
+    "th": "นี่คือสิ่งที่การตรวจโค้ดจับได้ จากสคริปต์ร่างแรกและฉบับแก้สองครั้ง"
+   },
+   {
+    "en": "The first draft started with carbon monoxide at zero, divided by it, and printed the starting guess.",
+    "th": "ร่างแรกเริ่มจากจุดที่คาร์บอนมอนอกไซด์เป็นศูนย์ หารด้วยศูนย์ และพิมพ์ค่าเริ่มต้นออกมา"
+   },
+   {
+    "en": "The second wrote the residuals in K rather than ln K. It did not converge, and returned a negative mole fraction.",
+    "th": "ฉบับที่สองเขียน residual ในรูป K แทน ln K ไม่ลู่เข้า และให้เศษส่วนโมลติดลบ"
+   },
+   {
+    "en": "The third converged cleanly and was still wrong by 0.30 in conversion, because K came from a constant reaction enthalpy.",
+    "th": "ฉบับที่สามลู่เข้าเรียบร้อย แต่ยังผิด 0.30 ในค่าการเปลี่ยน เพราะ K มาจากเอนทาลปีของปฏิกิริยาที่ถือว่าคงที่",
+    "say": "The third converged cleanly and was still wrong by zero point three in conversion, because K came from a constant reaction enthalpy."
+   },
+   {
+    "en": "Convergence checks the solver, not the thermodynamics.",
+    "th": "การลู่เข้าตรวจตัวแก้สมการ ไม่ได้ตรวจเทอร์โมไดนามิกส์"
+   }
+  ],
+  "discussion": [
+   {
+    "en": "Discuss in pairs, then with the class.",
+    "th": "อภิปรายเป็นคู่ แล้วอภิปรายร่วมกันทั้งห้อง"
+   },
+   {
+    "en": "Rank these by their effect on the conversion: the K of T method, the fugacity correction, more steam, and pressure in kilopascals.",
+    "th": "เรียงลำดับผลต่อค่าการเปลี่ยน ได้แก่ วิธีหา K(T) การแก้ไขด้วย fugacity ไอน้ำที่มากขึ้น และความดันในหน่วยกิโลปาสคาล"
+   },
+   {
+    "en": "Your extents code cannot form carbon. How would you find out whether carbon deposits at a steam ratio of 2?",
+    "th": "โค้ด extent ของคุณสร้างคาร์บอนไม่ได้ คุณจะตรวจอย่างไรว่าคาร์บอนเกาะที่อัตราส่วนไอน้ำเท่ากับ 2"
+   },
+   {
+    "en": "A reactor outlet shows 70 percent where equilibrium says 79.5. What does that tell you, and what does it not?",
+    "th": "ทางออกของเครื่องปฏิกรณ์แสดง 70 เปอร์เซ็นต์ ขณะที่สมดุลให้ 79.5 สิ่งนี้บอกอะไร และไม่ได้บอกอะไร",
+    "say": "A reactor outlet shows seventy percent where equilibrium says seventy nine point five. What does that tell you, and what does it not?"
+   }
+  ],
+  "summary": [
+   {
+    "en": "To summarize. ln K is minus the standard Gibbs energy change over R T, for stated standard states. Pressure enters as P over P naught.",
+    "th": "สรุป ln K = −Δ_rG°(T)/RT สำหรับสถานะมาตรฐานที่ระบุ และความดันเข้ามาในรูป P/P°"
+   },
+   {
+    "en": "Use tabulated enthalpy and entropy for K of T.",
+    "th": "ใช้เอนทาลปีและเอนโทรปีที่ตีพิมพ์ในการหา K(T)"
+   },
+   {
+    "en": "Count reactions from the element matrix, check the fugacity correction, and check convergence and positivity before believing a solver.",
+    "th": "นับจำนวนปฏิกิริยาจากเมทริกซ์ธาตุ ตรวจการแก้ไขด้วย fugacity และตรวจการลู่เข้าและค่าบวกก่อนเชื่อผลจากตัวแก้สมการ"
+   },
+   {
+    "en": "Next session: electrochemical equilibrium.",
+    "th": "คาบหน้า เรื่องสมดุลเคมีไฟฟ้า"
+   }
+  ],
+  "exit-ticket": [
+   {
+    "en": "Exit ticket and feedback. Five minutes, on your own.",
+    "th": "exit ticket และความเห็น ใช้เวลาห้านาที ทำคนเดียว"
+   },
+   {
+    "en": "Your reforming code converges and gives 50 percent conversion at 1100 kelvin and 2000 kilopascals. The lab gives 79.5. Name two causes you would check first, and the evidence that would separate them.",
+    "th": "โค้ดการรีฟอร์มของคุณลู่เข้า และให้การเปลี่ยน 50 เปอร์เซ็นต์ที่ 1100 เคลวิน และ 2000 กิโลปาสคาล lab ให้ 79.5 ระบุสองสาเหตุที่คุณจะตรวจก่อน และหลักฐานที่จะแยกสองสาเหตุนั้นออกจากกัน",
+    "say": "Your reforming code converges and gives fifty percent conversion at eleven hundred kelvin and two thousand kilopascals. The lab gives seventy nine point five. Name two causes you would check first, and the evidence that would separate them."
+   },
+   {
+    "en": "Scan the QR code or open the link. It is anonymous. Wait until you see Response received.",
+    "th": "สแกน QR code หรือเปิดลิงก์ แบบฟอร์มไม่ระบุตัวตน รอจนขึ้นข้อความ Response received"
+   }
+  ],
+  "after-class": [
+   {
+    "en": "After class, hand in your Lab 12 study file this week, with A, C and E.",
+    "th": "หลังเลิกเรียน ส่งไฟล์ study ของ Lab 12 ภายในสัปดาห์นี้ พร้อมขั้น A, C และ E"
+   },
+   {
+    "en": "Read the session 6 pre-class note when it is posted.",
+    "th": "อ่านเอกสารเตรียมก่อนเรียนของคาบที่ 6 เมื่อเผยแพร่แล้ว"
+   },
+   {
+    "en": "Graduate students can work through Lab 12 B, and add the fugacity correction to their code. See you next session.",
+    "th": "นิสิตบัณฑิตศึกษาทำ Lab 12 ขั้น B และเพิ่มการแก้ไขด้วย fugacity ในโค้ดได้ แล้วพบกันคาบหน้า"
+   }
+  ]
+ }
+}

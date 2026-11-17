@@ -146,6 +146,39 @@
         <div class="graduate-actions"><button id="check-evidence" type="button" class="secondary-button">Check my evidence record</button></div><p id="evidence-status" class="graduate-status" role="status"></p>
         <p class="graduate-note">The record check only confirms that the sections and calculations are present. It is a completeness reminder, not a grade; scientific reasoning still needs instructor review.</p>
       </section>
+
+      <section class="graduate-step" id="ai-code" aria-labelledby="ai-heading">
+        <h3 id="ai-heading">E. Two real reactions: check code that an AI assistant helped you write</h3>
+        <p>A–D use one teaching reaction. Here the system is steam methane reforming with NIST-JANAF data: R1 CH₄ + H₂O ⇌ CO + 3H₂ and R2 CO + H₂O ⇌ CO₂ + H₂, ideal gas, standard state 1 bar. You may use an AI assistant to <strong>write code</strong>. You decide everything else: how K depends on T, the independent reactions, the balances, the solver and its starting point, and what the result means.</p>
+        <ol class="graduate-checklist"><li>Write your specification first, in your own words, before you open the assistant.</li><li>Download the data (Shomate coefficients, Δ<sub>f</sub>H° and S° at 298.15 K). Ask the assistant to write Python that, for a feed of 1 mol CH₄ and S/C mol H₂O at T and P: (a) computes ln K₁ and ln K₂ from H(T) and S(T); (b) solves the two extents; (c) reports the CH₄ conversion and the wet mole fractions. Run it yourself at 1100 K, 2000 kPa and S/C = 3, then at a case of your own.</li><li>Enter the outputs and run the checks. When a check disagrees, find the cause, fix it, and rerun.</li><li>Paste your specification, the prompt and the final code. They are saved in the study file.</li></ol>
+        <div class="graduate-actions"><button id="ai-csv" type="button" class="secondary-button" disabled>Download the NIST-JANAF data (CSV)</button></div>
+        <p class="graduate-note">Shomate form (NIST WebBook): t = T/1000; H° − H°(298.15) = At + Bt²/2 + Ct³/3 + Dt⁴/4 − E/t + F − H in kJ/mol; S° = A ln t + Bt + Ct²/2 + Dt³/3 − E/(2t²) + G in J mol⁻¹ K⁻¹. H(T) = Δ<sub>f</sub>H°(298.15) + [H° − H°(298.15)]. The common valid range of this set is 500–1200 K. Source: Chase (1998), NIST-JANAF Tables, via the <a href="https://webbook.nist.gov/chemistry/">NIST Chemistry WebBook</a>.</p>
+        <label for="ai-spec">Your specification, written before you used the assistant</label><textarea id="ai-spec" rows="5" maxlength="10000" placeholder="Reactions and why two; K(T) and units; standard state and the pressure term; mole balance and total moles; residual form; starting values and bounds; convergence test; outputs."></textarea>
+        <div class="graduate-grid"><div><label for="ai-tool">Assistant and version</label><input id="ai-tool" type="text" maxlength="200" placeholder="for example, the name and model"></div></div>
+        <label for="ai-prompt">The prompt or prompts you used</label><textarea id="ai-prompt" rows="4" maxlength="20000"></textarea>
+        <label for="ai-codetext">Final code that produced the outputs below</label><textarea id="ai-codetext" rows="8" maxlength="60000" spellcheck="false" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.78rem"></textarea>
+        <h4>Outputs from your code</h4>
+        <div class="graduate-grid">
+          <div><label for="ai-T">T</label><div class="quantity-input"><input id="ai-T" type="number" step="any" value="1100"><span>K</span></div></div>
+          <div><label for="ai-P">P</label><div class="quantity-input"><input id="ai-P" type="number" step="any" value="2000"><span>kPa</span></div></div>
+          <div><label for="ai-SC">S/C (mol H₂O per mol CH₄)</label><input id="ai-SC" type="number" step="any" value="3"></div>
+          <div><label for="ai-k1">(a) ln K₁</label><input id="ai-k1" type="number" step="any"></div>
+          <div><label for="ai-k2">(a) ln K₂</label><input id="ai-k2" type="number" step="any"></div>
+          <div><label for="ai-X">(c) CH₄ conversion</label><input id="ai-X" type="number" step="any"></div>
+          <div><label for="ai-yh2">(c) y H₂</label><input id="ai-yh2" type="number" step="any"></div>
+          <div><label for="ai-yco">(c) y CO</label><input id="ai-yco" type="number" step="any"></div>
+          <div><label for="ai-yco2">(c) y CO₂</label><input id="ai-yco2" type="number" step="any"></div>
+          <div><label for="ai-ych4">(c) y CH₄</label><input id="ai-ych4" type="number" step="any"></div>
+        </div>
+        <div class="graduate-actions"><button id="ai-run" type="button" class="primary-button" disabled>Check my outputs</button></div>
+        <p id="ai-status" class="graduate-status" role="status">Enter the outputs from your code, then run the checks.</p>
+        <div id="ai-results" hidden>
+          <div class="table-scroll graduate-table" role="region" aria-label="Checks of your code outputs against the lab" tabindex="0"><table><thead><tr><th scope="col">Check</th><th scope="col">Lab</th><th scope="col">Your code</th><th scope="col">Result</th><th scope="col">Likely cause</th></tr></thead><tbody id="ai-out"></tbody></table></div>
+          <p class="graduate-note">Agreement shows that your code solves the problem you specified. It does not show that the gas is ideal at your P, that the catalyst reaches equilibrium, or that no carbon deposits. The "likely cause" lists common errors; your code may have another.</p>
+        </div>
+        <label for="ai-found">What disagreed, what was wrong in the code, and how you fixed it</label><textarea id="ai-found" rows="3" maxlength="10000" placeholder="Name the check, the line of code, and the fix. If every check agreed at once, say which check you would trust least and why."></textarea>
+        <label for="ai-own">What you decided yourself, and one thing the checks cannot establish</label><textarea id="ai-own" rows="3" maxlength="10000" placeholder="For example: the K(T) method, the residual form, the starting point. Then one limit."></textarea>
+      </section>
     </section>
 
     <section class="panel comparison-panel" aria-labelledby="comparison-heading">
@@ -164,6 +197,6 @@
   <footer class="site-footer"><span>2105603 · Advanced Chemical Engineering Thermodynamics</span><a href="design-notes.html">2027 design and pilot plan</a></footer>
   <script src="../labs/assets/plotly.min.js" defer></script>
   <script type="module" src="assets/mode.js?v=mode-3"></script>
-  <script type="module" src="assets/reaction-lab.js?v=lab12-1"></script>
+  <script type="module" src="assets/reaction-lab.js?v=lab12-2"></script><script type="module" src="assets/smrcode.js?v=1"></script>
 </body>
 </html>

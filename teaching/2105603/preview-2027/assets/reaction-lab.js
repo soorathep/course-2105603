@@ -193,7 +193,7 @@ function validInputs(i) { return i && Object.keys(RANGES).every(k => Number.isFi
 function exportStudy() {
   const record = { schema: SCHEMA, engineVersion: rx.REACTION_VERSION, graduateVersion: REACTION_GRADUATE_VERSION, savedAt: new Date().toISOString(),
     inputs: study.inputs || readInputs().inputs, prediction: $('prediction').value, caseName: $('case-name').value, cases: study.cases, view: $('view').value,
-    notes: notes(), reflection: $('reflection').value, investigations: { temperature: Boolean(study.temperature), driving: Boolean(study.driving), pressure: Boolean(study.pressure) } };
+    notes: notes(), reflection: $('reflection').value, investigations: { temperature: Boolean(study.temperature), driving: Boolean(study.driving), pressure: Boolean(study.pressure) }, aiCode: window.aiCode?.state() };
   const url = URL.createObjectURL(new Blob([JSON.stringify(withStudent(record), null, 2)], { type: 'application/json' })), a = document.createElement('a');
   a.href = url; a.download = studentFileName('lab12-reaction-study.json'); a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
   $('status').textContent = 'Study downloaded. Open it later to restore the cases, settings and notes.';

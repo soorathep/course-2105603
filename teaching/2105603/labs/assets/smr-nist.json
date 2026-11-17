@@ -1,0 +1,145 @@
+{
+ "version": "1.0.0",
+ "name": "Steam methane reforming: NIST-JANAF gas-phase data",
+ "kind": "reference data",
+ "source": {
+  "citation": "Chase, M. W., Jr., NIST-JANAF Thermochemical Tables, 4th ed., J. Phys. Chem. Ref. Data Monograph 9 (1998), via the NIST Chemistry WebBook (Shomate coefficients, ideal gas at 1 bar). Enthalpies of formation and entropies at 298.15 K: CODATA (Cox, Wagman and Medvedev, 1984) where listed, otherwise JANAF, as given in the WebBook.",
+  "accessed": "2026-11-17",
+  "license": "https://www.nist.gov/open/license"
+ },
+ "convention": "Shomate rows: [Tmin, Tmax, A, B, C, D, E, F, G, H]; t = T/1000; H° − H°(298.15) = A t + B t²/2 + C t³/3 + D t⁴/4 − E/t + F − H (kJ/mol); S° = A ln t + B t + C t²/2 + D t³/3 − E/(2t²) + G (J/mol/K). Standard state: ideal gas at 1 bar. Common valid range of the set: 500–1200 K.",
+ "reactions": {
+  "R1": {
+   "equation": "CH4 + H2O = CO + 3 H2",
+   "nu": {
+    "CH4": -1,
+    "H2O": -1,
+    "CO": 1,
+    "H2": 3
+   }
+  },
+  "R2": {
+   "equation": "CO + H2O = CO2 + H2",
+   "nu": {
+    "CO": -1,
+    "H2O": -1,
+    "CO2": 1,
+    "H2": 1
+   }
+  }
+ },
+ "species": {
+  "CH4": {
+   "name": "methane",
+   "dfH298": -74.87,
+   "S298": 188.66,
+   "shomate": [
+    [
+     298,
+     1300,
+     -0.703029,
+     108.4773,
+     -42.52157,
+     5.862788,
+     0.678565,
+     -76.84376,
+     158.7163,
+     -74.8731
+    ]
+   ],
+   "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C74828&Units=SI&Mask=1"
+  },
+  "H2O": {
+   "name": "water (gas)",
+   "dfH298": -241.826,
+   "S298": 188.835,
+   "shomate": [
+    [
+     500,
+     1700,
+     30.092,
+     6.832514,
+     6.793435,
+     -2.53448,
+     0.082139,
+     -250.881,
+     223.3967,
+     -241.8264
+    ]
+   ],
+   "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Units=SI&Mask=1"
+  },
+  "CO": {
+   "name": "carbon monoxide",
+   "dfH298": -110.53,
+   "S298": 197.66,
+   "shomate": [
+    [
+     298,
+     1300,
+     25.56759,
+     6.09613,
+     4.054656,
+     -2.671301,
+     0.131021,
+     -118.0089,
+     227.3665,
+     -110.5271
+    ]
+   ],
+   "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C630080&Units=SI&Mask=1"
+  },
+  "CO2": {
+   "name": "carbon dioxide",
+   "dfH298": -393.51,
+   "S298": 213.785,
+   "shomate": [
+    [
+     298,
+     1200,
+     24.99735,
+     55.18696,
+     -33.69137,
+     7.948387,
+     -0.136638,
+     -403.6075,
+     228.2431,
+     -393.5224
+    ]
+   ],
+   "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C124389&Units=SI&Mask=1"
+  },
+  "H2": {
+   "name": "hydrogen",
+   "dfH298": 0.0,
+   "S298": 130.68,
+   "shomate": [
+    [
+     298,
+     1000,
+     33.066178,
+     -11.363417,
+     11.432816,
+     -2.772874,
+     -0.158558,
+     -9.980797,
+     172.707974,
+     0.0
+    ],
+    [
+     1000,
+     2500,
+     18.563083,
+     12.257357,
+     -2.859786,
+     0.268238,
+     1.97799,
+     -1.147438,
+     156.288133,
+     0.0
+    ]
+   ],
+   "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C1333740&Units=SI&Mask=1"
+  }
+ }
+}

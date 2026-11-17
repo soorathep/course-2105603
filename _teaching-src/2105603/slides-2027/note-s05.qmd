@@ -1,0 +1,89 @@
+---
+title: "Chemical equilibrium: from K to a composition"
+subtitle: "Pre-class note for Session 5 · about 20 minutes"
+author: "Soorathep Kheawhom · 2105603 Advanced Chemical Engineering Thermodynamics"
+format:
+  html:
+    minimal: true
+    toc: false
+    css: notes.css
+    html-math-method: katex
+    include-in-header:
+      text: '<meta name="robots" content="noindex">'
+---
+
+::: {.draft-note}
+Draft for 2027. If you are taking the course this year, use the current course page.
+:::
+
+::: {.purpose}
+**Why read this.** Sessions 1–4 moved molecules between phases. Session 5 lets them change identity. The equilibrium condition is still a minimum of G, now with the element balances as constraints. Most errors in practice are not in that idea but in K(T), the standard state and the number of independent reactions. Work the three questions at the end and bring one question of your own.
+:::
+
+## 1. K, activities and the standard state
+
+For a reaction Σν<sub>i</sub>A<sub>i</sub> = 0 at equilibrium,
+
+$$\prod_i a_i^{\nu_i}=K(T),\qquad \ln K=-\frac{\Delta_rG^\circ(T)}{RT}.$$
+
+K depends on T and on the chosen standard states, never on P or composition. For gases at standard state "ideal gas at P° = 1 bar", a<sub>i</sub> = y<sub>i</sub>φ<sub>i</sub>P/P°, so
+
+$$K=\underbrace{\prod_i y_i^{\nu_i}}_{K_y}\;\underbrace{\prod_i\varphi_i^{\nu_i}}_{K_\varphi}\;\Big(\frac{P}{P^\circ}\Big)^{\Delta\nu}.$$
+
+P must be divided by the same P° that defined Δ<sub>r</sub>G°. Using kPa for P with a K defined at 1 bar changes the pressure term by 100<sup>Δν</sup>.
+
+## 2. K at another temperature
+
+The van 't Hoff equation, d ln K/dT = Δ<sub>r</sub>H°/RT², is exact. Holding Δ<sub>r</sub>H° at its 298.15 K value is an approximation that fails when ΔC<sub>p</sub> is not small and T is far from 298 K. The safe route is to compute Δ<sub>r</sub>G°(T) = Σν<sub>i</sub>[H<sub>i</sub>(T) − TS<sub>i</sub>(T)] from tabulated H and S, for example the NIST-JANAF Shomate equations.
+
+**Example: steam methane reforming,** R1 CH₄ + H₂O ⇌ CO + 3H₂. At 1100 K:
+
+| Method | ln K₁ |
+|---|---:|
+| H(T), S(T) from NIST-JANAF Shomate | 5.742 |
+| van 't Hoff with Δ<sub>r</sub>H° fixed at 206.2 kJ/mol | 2.981 |
+
+The difference is a factor of 16 in K. Δ<sub>r</sub>H° itself rises from 206 kJ/mol at 298 K to 227 kJ/mol at 1100 K.
+
+## 3. How many reactions?
+
+With N species made of M elements, the number of independent reactions is N minus the rank of the element matrix. For CH₄, H₂O, CO, CO₂ and H₂ (elements C, H and O, rank 3), that is 5 − 3 = **2**. Any two independent reactions give the same equilibrium, for example R1 and the water–gas shift R2, CO + H₂O ⇌ CO₂ + H₂. A third reaction such as CH₄ + 2H₂O ⇌ CO₂ + 4H₂ is R1 + R2 and adds no information.
+
+Equivalently, the equilibrium composition minimizes the total Gibbs energy subject to the element balances. The extents of two reactions and a Gibbs minimization with Lagrange multipliers give the same answer.
+
+## 4. Pressure, inert gas and steam
+
+With a feed of 1 mol CH₄ and S mol H₂O, the extents ξ₁ and ξ₂ give the amounts CH₄ 1 − ξ₁, H₂O S − ξ₁ − ξ₂, CO ξ₁ − ξ₂, CO₂ ξ₂, H₂ 3ξ₁ + ξ₂, and a total of 1 + S + 2ξ₁. For an ideal gas the two equilibrium equations are
+
+$$\frac{y_{\text{CO}}\,y_{\text{H}_2}^3}{y_{\text{CH}_4}\,y_{\text{H}_2\text{O}}}\Big(\frac{P}{P^\circ}\Big)^2=K_1,\qquad \frac{y_{\text{CO}_2}\,y_{\text{H}_2}}{y_{\text{CO}}\,y_{\text{H}_2\text{O}}}=K_2.$$
+
+R1 increases the number of moles (Δν = +2), so pressure lowers its conversion. With S = 3:
+
+| T / K | P / kPa | CH₄ conversion |
+|---:|---:|---:|
+| 1000 | 101.325 | 0.985 |
+| 1000 | 2000 | 0.546 |
+| 1100 | 2000 | 0.795 |
+| 1200 | 2000 | 0.947 |
+
+At 1100 K and 2000 kPa, raising S from 2 to 4 raises the conversion from 0.678 to 0.869.
+
+## 5. When is the gas ideal enough?
+
+K<sub>φ</sub> = Π φ<sub>i</sub><sup>ν<sub>i</sub></sup> corrects the ideal-gas result. At 1100 K and 2 MPa every species is far above its critical temperature. The Pitzer virial correlation gives ln K<sub>φ</sub> = 0.011 for R1 and 0.005 for R2: about 1 %, below the uncertainty from catalyst approach to equilibrium. The same correction is not small for ammonia synthesis at 20 MPa, or for the Week 7 example at 2 MPa and 400 K, where K<sub>φ</sub> = 1.06.
+
+## 6. Before Session 5
+
+Write short answers. We use them in the first 30 minutes.
+
+1. **Standard state.** A student uses P = 2000 (kPa) in the R1 equation with K₁ defined at 1 bar. By what factor is the pressure term wrong, and in which direction does the conversion move?
+2. **Independent reactions.** Add solid carbon to the five species. How many independent reactions are there now? Name one that involves carbon.
+3. **K(T).** Using Section 2, explain in one sentence why the constant-ΔH estimate of K₁ at 1100 K is too low rather than too high.
+
+## References
+
+- Chase, M. W., Jr. (1998). NIST-JANAF Thermochemical Tables, 4th ed. *J. Phys. Chem. Ref. Data*, Monograph 9. Shomate coefficients via the NIST Chemistry WebBook (accessed 17 November 2026).
+- Smith, J. M., Van Ness, H. C., Abbott, M. M., Swihart, M. T. (2018). *Introduction to Chemical Engineering Thermodynamics*, 8th ed. McGraw-Hill. Chapters 3 (virial correlation) and 14 (chemical-reaction equilibria).
+- Rawlings, J. B., Ekerdt, J. G. (2002). *Chemical Reactor Analysis and Design Fundamentals*. Nob Hill. Chapter 3.
+
+[Session 5 slides →](s05.html){.next-link}
