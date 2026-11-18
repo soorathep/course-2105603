@@ -1,9 +1,12 @@
 # Session 7 audit exercise (2105603, 2027). This script runs without errors.
 # Use Lab 13 step E (298.2 K rows, cells at 0.01 and 1.0 mol/kg) to find what is wrong with its outputs, then fix it.
-# Data: download the CSV in Lab 13 step E and save it next to this script as kcl.csv.
+# Data: press 'Download the measured γ± (CSV)' in Lab 13 step E and save the file in the same folder,
+# keeping its name: lab13-kcl-activity.csv
+# Run: put this file in a folder, then in a terminal in that folder type  python audit_lab13_kcl.py
+# Needs Python 3.9 or later with numpy, pandas and scipy (install once: pip install numpy pandas scipy).
 import numpy as np, pandas as pd
 from scipy.optimize import curve_fit
-d = pd.read_csv('kcl.csv'); d = d[d.T_K == 298.2]
+d = pd.read_csv('lab13-kcl-activity.csv'); d = d[d.T_K == 298.2]
 m, g = d.molality_mol_per_kg.values, d.gamma_pm.values
 A = 0.509
 lim = 10 ** (-A * np.sqrt(0.0124))

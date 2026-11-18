@@ -1,6 +1,8 @@
 # Session 7 audit exercise (2105603, 2027). This script runs without errors.
 # Use Lab 12 step E (1100 K, 2000 kPa, S/C = 3) to find what is wrong with its outputs, then fix it.
 # No data file is needed.
+# Run: put this file in a folder, then in a terminal in that folder type  python audit_lab12_smr.py
+# Needs Python 3.9 or later with numpy and scipy (install once: pip install numpy scipy).
 import numpy as np
 from scipy.optimize import fsolve
 R = 8.314

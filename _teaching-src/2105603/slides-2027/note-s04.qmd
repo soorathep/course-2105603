@@ -26,7 +26,7 @@ When component 1 crystallizes as a pure solid (no solid solution), equilibrium r
 
 $$\ln(x_1\gamma_1)=-\frac{\Delta_{\text{fus}}H}{R}\left(\frac{1}{T}-\frac{1}{T_m}\right)+\frac{\Delta C_p}{R}\left(\frac{T_m}{T}-1-\ln\frac{T_m}{T}\right)$$
 
-The ΔC<sub>p</sub> term is small when T is near T<sub>m</sub> and is usually neglected; we do so in Session 4. The equation assumes a pure solid of one crystal form. A solid solution or a polymorph changes the left side.
+Here ΔC<sub>p</sub> = C<sub>p</sub><sup>liquid</sup> − C<sub>p</sub><sup>solid</sup> of pure 1 (liquid minus solid). The ΔC<sub>p</sub> term is small when T is near T<sub>m</sub> and is usually neglected; we do so in Session 4. The equation assumes a pure solid of one crystal form. A solid solution or a polymorph changes the left side.
 
 With γ₁ = 1 the result is the **ideal solubility**. It depends only on the solute's fusion properties, not on the solvent. Every solvent that differs from it does so through γ₁.
 

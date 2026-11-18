@@ -40,14 +40,14 @@ The first half gave you the **condition** for phase equilibrium. From today we *
   <line x1="290" y1="335" x2="430" y2="335" stroke="#333F4A" stroke-width="3" marker-end="url(#ah)"/>
   <text x="20" y="146" class="s">Feed · 350 K</text><text x="20" y="172" class="s">z = 0.40 benzene</text>
   <text x="140" y="232" class="s c">valve</text>
-  <text x="291" y="148" class="s c">50 kPa</text>
+  <text x="291" y="136" class="s c">350 K</text><text x="291" y="162" class="s c">50 kPa</text>
   <text x="440" y="34" class="s">Vapor</text><text x="440" y="58" class="a">how much? y = ?</text>
   <text x="440" y="329" class="s">Liquid</text><text x="440" y="353" class="a">x = ?</text>
 </svg>
 ```
 :::
 ::: {.column width="42%" .why-notes}
-A hot benzene + toluene liquid is let down to 50 kPa. Part of it boils.
+A hot benzene + toluene liquid is let down to 50 kPa. Part of it boils. The drum is held at **350 K** (heat is supplied to it), so this is a TP flash. If only the feed temperature were known, the drum temperature would come from an energy balance: an adiabatic flash (Lab 07).
 
 To size the drum and the equipment after it, you need **how much vapor** forms and **what each stream contains**.
 
@@ -296,7 +296,7 @@ With $x_i=z_i/[1+\beta(K_i-1)]$ and $y_i=K_ix_i$, require $\sum(y_i-x_i)=0$:
 
 $$f(\beta)=\sum_i\frac{z_i(K_i-1)}{1+\beta(K_i-1)}=0$$
 
-$f'(\beta)<0$ between the asymptotes $\beta=1/(1-K_{\max})$ and $1/(1-K_{\min})$, so there is **exactly one root** there. Bracket it there, then use Newton.
+If at least one K<sub>i</sub> &gt; 1 and one K<sub>i</sub> &lt; 1, $f'(\beta)<0$ between the asymptotes $\beta=1/(1-K_{\max})$ and $1/(1-K_{\min})$, so there is **exactly one root** there, and only there are all x<sub>i</sub> and y<sub>i</sub> positive. Bracket it there, then use Newton.
 :::
 ::: {.column width="52%"}
 ![](figures/s01-rr-lab.png){.lab-shot fig-alt="Rachford-Rice function for the three-component feed at 30 kPa with the root at beta 0.6013"}
@@ -321,7 +321,7 @@ $$f(0)=\sum_i z_iK_i-1\qquad f(1)=1-\sum_i\frac{z_i}{K_i}$$
 | both &gt; 1 | two phases, 0 &lt; β &lt; 1 |
 :::
 ::: {.column width="48%" .rule-notes}
-If the test says one phase, Rachford–Rice still has a root, outside 0–1. This **negative flash** is the extrapolated tie line, not a physical amount.
+If the test says one phase and the K<sub>i</sub> straddle 1, the root lies outside 0–1. This **negative flash** is the extrapolated tie line, not a physical amount. If every K<sub>i</sub> is on the same side of 1, there is no root with positive compositions at all.
 
 With constant K the test is exact. When K depends on composition it is not: a one-phase answer must be confirmed by a **stability test** (tangent-plane distance, Session 3).
 :::
@@ -369,7 +369,7 @@ At 350 K and 45 kPa, the feed z = 0.3 / 0.3 / 0.4 (benzene, toluene, p-xylene) h
 Decide with Σ z<sub>i</sub>K<sub>i</sub> and Σ z<sub>i</sub>/K<sub>i</sub> only. Then predict the sign of the Rachford–Rice root and compare with your partner.
 
 ::: {.selfstudy}
-**On your own:** pause here, write your answer, then go to the next slide.
+**On your own:** pause here and write your answer. In place of a partner, compare it with the next slide and write one sentence on any difference and its cause.
 :::
 
 ## Activity 1: check your answer {#activity-1-debrief}
@@ -402,7 +402,7 @@ The negative root still means something: it is where the feed lies on the extens
 3. Find the new bubble and dew pressures. Explain the shift.
 4. Graduate view, **step D**: solve the 30 kPa three-component preset, then 45 kPa.
 
-[Open Lab 01 →](../preview-2027/vle.html){.lab-button target="_blank"}
+[Open Lab 01 in the Graduate view →](../preview-2027/vle.html?mode=graduate){.lab-button target="_blank"}
 :::
 ::: {.column width="54%"}
 ![](figures/s01-lab01.png){.lab-shot fig-alt="Lab 01 phase diagram at 95 kPa with the tie line from x1 0.389 to y1 0.614"}
@@ -464,7 +464,7 @@ Two sentences with numbers answering the session question. Download the study fi
 :::
 
 ::: {.selfstudy}
-**On your own:** do both roles yourself. Pause the slides, work in Lab 01, then continue.
+**On your own:** do both roles yourself: work in Lab 01, then check one value by hand before you trust it. Pause the slides while you work; the next slide lists what to hand in.
 :::
 
 ## Activity 2 · what to hand in {#activity-2-check}
@@ -499,7 +499,7 @@ Replace K = P<sup>sat</sup>/P with a composition-dependent K and describe the ou
 ![](figures/s01-beta3.svg){.fig-pxy fig-alt="Rachford-Rice root against pressure for the three-component feed, physical between the dew and bubble pressures and negative above the bubble pressure"}
 :::
 ::: {.column width="40%" .concept-notes}
-[Discuss in pairs, then with the class]{.q}
+[Discuss in pairs, then with the class. On your own: write two or three sentences for each question.]{.q}
 
 1. Why does the root leave 0–1 exactly at the dew and bubble pressures?
 2. Margules A = 1 turned two phases into one at 95 kPa. Which assumption in the ideal flash failed?
@@ -554,7 +554,7 @@ No name or student ID is recorded. Wait for **"Response received."**
 ::: {.summary3}
 ::: {}
 [Hand in · this week]{.label}
-Your Lab 01 study file with step D and the model comparison, name and student ID.
+Your Lab 01 study file with step D and the model comparison, name and student ID. Upload it to **myCourseVille**, in the assignment for that lab.
 :::
 ::: {}
 [Prepare · Session 2]{.label}
@@ -566,4 +566,6 @@ Sketch the full nonideal flash algorithm with a convergence test, and add it to 
 :::
 :::
 
-[Open Lab 01 →](../preview-2027/vle.html){.lab-button target="_blank"}
+[Open Lab 01 in the Graduate view →](../preview-2027/vle.html?mode=graduate#mc-flash){.lab-button target="_blank"}
+
+[Starts at **D. Beyond two components: the Rachford–Rice flash**. First button: **Load the preset**. The model comparison is in step 1 above it.]{.howto}

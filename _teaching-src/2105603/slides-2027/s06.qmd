@@ -56,6 +56,8 @@ $$\Delta_rG=\Delta_rG^\circ+RT\ln\prod_i a_i^{\nu_i}=0$$
 The same reaction balanced by electrical work:
 
 $$\Delta_rG=-nFE$$
+
+n: electrons transferred per reaction. F = 96 485 C/mol, the Faraday constant (charge per mole of electrons).
 :::
 ::: {.link}
 [Nernst]{.label}
@@ -123,14 +125,16 @@ Finish Lab 13 A, B and E, and submit the study file with your name and ID.
 ::: {.column width="52%"}
 Every measurable quantity involves a neutral combination of ions, so single-ion activities are not measured. For a 1:1 salt:
 
-$$a_{\text{KCl}}=a_{\text{K}^+}a_{\text{Cl}^-}=(m\gamma_\pm)^2$$
+$$a_{\text{KCl}}=a_{\text{K}^+}a_{\text{Cl}^-}=\Big(\frac{m}{m^\circ}\gamma_\pm\Big)^2,\qquad m^\circ=1\ \text{mol/kg}$$
+
+Activities are dimensionless. From here on, m in an activity means the number m/m°, so a<sub>KCl</sub> = (mγ±)² is shorthand.
 
 A cell that responds to KCl therefore gives
 
 $$E=\frac{RT}{F}\ln\frac{a_{\text{KCl},2}}{a_{\text{KCl},1}}=\frac{2RT}{F}\ln\frac{m_2\gamma_{\pm,2}}{m_1\gamma_{\pm,1}}$$
 :::
 ::: {.column width="46%" .rule-notes}
-For a 2:1 salt such as CaCl₂, a = (m)(2m)²γ±³ = 4m³γ±³: the power is the number of ions.
+For a 2:1 salt such as CaCl₂, a = (m)(2m)²γ±³ = 4m³γ±³ (m in units of m°): the power is the number of ions.
 
 The pair of cells in opposition cancels E°: only the ratio of activities is measured.
 
@@ -145,13 +149,15 @@ A **liquid junction** between the two solutions would add a potential set by ion
 ![](figures/s06-gamma.svg){.fig-pxy fig-alt="Mean ionic activity coefficient of KCl against the square root of molality at 298.2 and 308.2 K with uncertainty bars, the Debye-Hueckel limiting law falling well below the data above 0.05 mol per kg, and the extended fit"}
 :::
 ::: {.column width="42%" .concept-notes}
-$$\log_{10}\gamma_\pm=-A|z_+z_-|\sqrt I\qquad I=\tfrac12\sum_i m_iz_i^2$$
+$$\log_{10}\gamma_\pm=-A_{10}|z_+z_-|\sqrt I\qquad I=\tfrac12\sum_i m_iz_i^2$$
 
-[A = 0.509]{.q} (kg/mol)<sup>1/2</sup> at 298 K, **log₁₀ basis**; 1.172 on the ln basis.
+Here **z<sub>i</sub> is the signed charge number** of ion i (+1 for K⁺, −1 for Cl⁻), not the feed mole fraction of Sessions 1–3, and m<sub>i</sub> is the molality of ion i.
+
+[A₁₀ = 0.509]{.q} (kg/mol)<sup>1/2</sup> at 298 K, **log₁₀ basis**. On the ln basis A<sub>ln</sub> = (ln 10)A₁₀ = 1.172.
 
 [Limiting law]{.q} At 1.0 mol/kg it gives 0.310; the data give 0.597.
 
-[Extended]{.q} ln γ± = −A√m/(1 + B√m) + Cm: B = 1.135, C = 0.042, RMSE 0.022 in ln γ±, close to the data's ±0.03.
+[Extended]{.q} ln γ± = −A<sub>ln</sub>√m/(1 + B√m) + Cm: B = 1.135 (kg/mol)<sup>1/2</sup>, C = 0.042 kg/mol, RMSE 0.022 in ln γ±. The data's expanded uncertainty U(γ±) = 0.03 (95 %, k ≈ 2) is a standard uncertainty u(ln γ±) = U/(kγ±) ≈ 0.025 at γ± ≈ 0.6, so the residual is at the level of the data.
 :::
 ::::
 
@@ -175,7 +181,7 @@ With real γ±, ∂ln γ±/∂T adds partial molar enthalpies.
 | C | 0.042 | 0.045 |
 | γ± at 1 mol/kg | 0.603 | 0.606 |
 
-Difference 0.004; uncertainty of each value ±0.03. These data **cannot** resolve ∂ln γ±/∂T. Calorimetry (heats of dilution) can.
+Difference 0.004; expanded uncertainty of each value U = 0.03 (95 %). These data **cannot** resolve ∂ln γ±/∂T. Calorimetry (heats of dilution) can.
 :::
 :::
 ::::
@@ -211,17 +217,17 @@ How much work before the cell is flat: the discharge study integrates E as the t
 From the measured KCl data at 298.2 K: γ± = 0.9267 at 0.0124 mol/kg and 0.5974 at 1.0003 mol/kg. Compute the EMF of the cell pair at 298.15 K, ideal and with these γ±.
 :::
 
-Then: where does the 2 in 2RT/F come from? How large is the uncertainty in E from ±0.03 in each γ±?
+Then: where does the 2 in 2RT/F come from? How large is the uncertainty in E from U = 0.03 in each γ±?
 
 ::: {.selfstudy}
-**On your own:** pause here, write your answer, then go to the next slide.
+**On your own:** pause here and write your answer. In place of a partner, compare it with the next slide and write one sentence on any difference and its cause.
 :::
 
 ## Activity 1: check your answer {#activity-1-debrief}
 
 :::: {.columns}
 ::: {.column width="52%"}
-2RT/F = 0.05139 V at 298.15 K.
+2RT/F = 0.05139 V at 298.15 K (F = 96 485 C/mol).
 
 Ideal: 0.05139 ln(1.0003/0.0124) = **225.6 mV**
 
@@ -230,7 +236,7 @@ With γ±: 0.05139 ln(1.0003 × 0.5974 / (0.0124 × 0.9267)) = **203.0 mV**
 The 2 comes from (mγ±)²: two ions per formula unit.
 :::
 ::: {.column width="46%" .rule-notes}
-Uncertainty from γ± alone: 0.05139 × √[(0.03/0.597)² + (0.03/0.927)²] ≈ **3 mV**.
+Expanded uncertainty from γ± alone, taking U = 0.03 (95 %) for each and the two errors as **independent**: 0.05139 × √[(0.03/0.597)² + (0.03/0.927)²] ≈ **3 mV** (95 %), a standard uncertainty of about 1.5 mV. Errors shared by both solutions (same apparatus, same reference) would partly cancel in the ratio.
 
 That is larger than the effect of a 10 K temperature change on γ± in these data. Precision, not the model, sets what the cell can tell you.
 
@@ -247,7 +253,7 @@ That is larger than the effect of a 10 K temperature change on γ± in these dat
 3. B: E ∝ T, Δ<sub>r</sub>S = 38.3 J/(mol K), Δ<sub>r</sub>H = 0.
 4. C: discharge until flat, 160 J for 0.1 L.
 
-[Open Lab 13 →](../preview-2027/electrochemistry.html){.lab-button target="_blank"}
+[Open Lab 13 in the Graduate view →](../preview-2027/electrochemistry.html?mode=graduate){.lab-button target="_blank"}
 :::
 ::: {.column width="48%" .rule-notes}
 The limiting law at I = 3 is not a small error. It reverses the cell. A law outside its range does not degrade gracefully.
@@ -263,13 +269,13 @@ The teaching cell uses n = 2 for M²⁺/M and molar concentration with c° = 1 m
 **RT/F for a 1:1 salt.** a<sub>KCl</sub> = (mγ±)². Without the square, E is half.
 :::
 ::: {}
-**A = 0.509 used with ln.** It is a log₁₀ constant; on the ln basis it is 1.172.
+**A₁₀ = 0.509 used with ln.** It is a log₁₀ constant; on the ln basis A<sub>ln</sub> = 1.172.
 :::
 ::: {}
 **The limiting law at high ionic strength.** At I = 3 mol/L it reversed Lab 13's cell.
 :::
 ::: {}
-**Reading dE/dT from data that cannot resolve it.** A difference of 0.004 in γ± against ±0.03 is noise.
+**Reading dE/dT from data that cannot resolve it.** A difference of 0.004 in γ± against U = 0.03 is noise.
 :::
 :::
 
@@ -335,7 +341,7 @@ Two sentences with numbers: how much of the 236.6 mV ideal EMF survives nonideal
 :::
 
 ::: {.selfstudy}
-**On your own:** do both roles yourself. Pause the slides, work in Lab 13, then continue.
+**On your own:** do both roles yourself: work in Lab 13, then check one value by hand before you trust it. Pause the slides while you work; the next slide lists what to hand in.
 :::
 
 ## Activity 2 · what to hand in {#activity-2-check}
@@ -400,7 +406,7 @@ All checks agree only shows the code solves your problem. The model is still unt
 ![](figures/s06-gamma.svg){.fig-pxy fig-alt="Mean ionic activity coefficient of KCl with the limiting law and the extended fit"}
 :::
 ::: {.column width="42%" .concept-notes}
-[Discuss in pairs, then with the class]{.q}
+[Discuss in pairs, then with the class. On your own: write two or three sentences for each question.]{.q}
 
 1. At 0.0124 mol/kg the data give 0.927 ± 0.027 and the limiting law 0.878. Do you question the lowest row or the law?
 2. You need ∂ln γ±/∂T for KCl at 1 mol/kg to ±10 %. Design the measurement.
@@ -455,7 +461,7 @@ No name or student ID is recorded. Wait for **"Response received."**
 ::: {.summary3}
 ::: {}
 [Hand in · this week]{.label}
-Your Lab 13 study file with A, B and E, name and student ID.
+Your Lab 13 study file with A, B and E, name and student ID. Upload it to **myCourseVille**, in the assignment for that lab.
 :::
 ::: {}
 [Prepare · Session 7]{.label}
@@ -467,4 +473,6 @@ Lab 13 C: how much work before the cell is flat? Then repeat E with B and C line
 :::
 :::
 
-[Open Lab 13 →](../preview-2027/electrochemistry.html){.lab-button target="_blank"}
+[Open Lab 13 in the Graduate view →](../preview-2027/electrochemistry.html?mode=graduate#graduate-investigation){.lab-button target="_blank"}
+
+[Starts at **4. Investigate the cell evidence**. **A**: first button **Compare activity models**. **B**: **Run the temperature study**. **E**: **Download the measured γ± (CSV)**.]{.howto}

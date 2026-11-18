@@ -47,7 +47,7 @@ The difference is a factor of 16 in K. Δ<sub>r</sub>H° itself rises from 206 k
 
 ## 3. How many reactions?
 
-With N species made of M elements, the number of independent reactions is N minus the rank of the element matrix. For CH₄, H₂O, CO, CO₂ and H₂ (elements C, H and O, rank 3), that is 5 − 3 = **2**. Any two independent reactions give the same equilibrium, for example R1 and the water–gas shift R2, CO + H₂O ⇌ CO₂ + H₂. A third reaction such as CH₄ + 2H₂O ⇌ CO₂ + 4H₂ is R1 + R2 and adds no information.
+With N species made of M elements, the number of independent reactions is N minus the rank of the element matrix A, whose entry A<sub>ki</sub> is the number of atoms of element k in species i. For CH₄, H₂O, CO, CO₂ and H₂ (elements C, H and O, rank 3), that is 5 − 3 = **2**. Any two independent reactions give the same equilibrium, for example R1 and the water–gas shift R2, CO + H₂O ⇌ CO₂ + H₂. A third reaction such as CH₄ + 2H₂O ⇌ CO₂ + 4H₂ is R1 + R2 and adds no information.
 
 Equivalently, the equilibrium composition minimizes the total Gibbs energy subject to the element balances. The extents of two reactions and a Gibbs minimization with Lagrange multipliers give the same answer.
 
@@ -70,7 +70,7 @@ At 1100 K and 2000 kPa, raising S from 2 to 4 raises the conversion from 0.678 t
 
 ## 5. When is the gas ideal enough?
 
-$K_\varphi=\prod_i\hat\varphi_i^{\nu_i}$ corrects the ideal-gas result. At 1100 K and 2 MPa every species is far above its critical temperature. The Pitzer virial correlation gives ln K<sub>φ</sub> = 0.011 for R1 and 0.005 for R2: about 1 %, below the uncertainty from catalyst approach to equilibrium. The same correction is not small for ammonia synthesis at 20 MPa, or for the Week 7 example at 2 MPa and 400 K, where K<sub>φ</sub> = 1.06.
+$K_\varphi=\prod_i\hat\varphi_i^{\nu_i}$ corrects the ideal-gas result. At 1100 K and 2 MPa every species is far above its critical temperature. The Pitzer virial correlation gives ln K<sub>φ</sub> = 0.011 for R1 and 0.005 for R2. The equilibrium factor changes by about 1 %, but the CH₄ conversion changes only from 0.795 to 0.794 (by 0.001), below the uncertainty from catalyst approach to equilibrium. The same correction is not small for ammonia synthesis at 20 MPa, or for the Week 7 example at 2 MPa and 400 K, where K<sub>φ</sub> = 1.06.
 
 ## 6. Before Session 5
 

@@ -253,13 +253,13 @@
    },
    {
     "start": 13.31,
-    "end": 22.66,
-    "en": "The correction to K 1 is about one percent, smaller than the uncertainty in how close a real catalyst bed gets to equilibrium.",
-    "th": "การแก้ไข K₁ มีค่าประมาณหนึ่งเปอร์เซ็นต์ ซึ่งน้อยกว่าความไม่แน่นอนว่าเบดตัวเร่งปฏิกิริยาจริงเข้าใกล้สมดุลได้เพียงใด"
+    "end": 36.4,
+    "en": "The correction changes the equilibrium factor of R1 by about one percent. That is not a one percent change in conversion: the methane conversion moves from 0.795 to 0.794. Both are smaller than the uncertainty in how close a real catalyst bed gets to equilibrium.",
+    "th": "การปรับแก้นี้เปลี่ยนตัวประกอบสมดุลของ R1 ประมาณหนึ่งเปอร์เซ็นต์ แต่ไม่ได้ทำให้ conversion เปลี่ยนหนึ่งเปอร์เซ็นต์ conversion ของมีเทนเปลี่ยนจาก 0.795 เป็น 0.794 เท่านั้น ทั้งสองค่าน้อยกว่าความไม่แน่นอนว่าเบดตัวเร่งปฏิกิริยาจริงเข้าใกล้สมดุลได้เพียงใด"
    },
    {
-    "start": 23.01,
-    "end": 34.76,
+    "start": 36.75,
+    "end": 48.5,
     "en": "That is not true for the week 7 example at 400 kelvin, or for ammonia synthesis at 20 megapascals. Check the correction before you use it or drop it.",
     "th": "สิ่งนี้ไม่เป็นจริงสำหรับตัวอย่างในสัปดาห์ที่ 7 ที่ 400 เคลวิน หรือการสังเคราะห์แอมโมเนียที่ 20 เมกะปาสคาล ให้ตรวจขนาดของการแก้ไขก่อนจะใช้หรือตัดทิ้ง"
    }

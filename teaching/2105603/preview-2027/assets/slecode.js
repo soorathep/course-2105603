@@ -3,12 +3,14 @@
 // Model: pure solid naphthalene, Delta Cp neglected; liquid ln gamma1 = (W/RT) x2^2 (one-parameter regular
 // solution). The lab recomputes the ideal solubility, the mole fraction and gamma1 of a stated row, the
 // least-squares W in ln x1, and the predicted solubility at 298.15 K. Saved in the study file as "aiCode".
+import { statusLine, completeness, incompleteNote } from './aicomplete.js?v=2';
 const $ = (id) => document.getElementById(id);
 const fmt = (v, d = 4) => (Number.isFinite(v) ? v.toFixed(d) : '—');
 const num = (id) => { const v = $(id).value.trim(); return v === '' ? NaN : Number(v); };
 export const R = 8.314462618, TREF = 298.15;
 let data = null, last = null;
 const TEXT = ['ai-spec', 'ai-tool', 'ai-prompt', 'ai-codetext', 'ai-found', 'ai-own'];
+const OUT = ['ai-xid', 'ai-x', 'ai-g', 'ai-w', 'ai-rmse', 'ai-xp'];   // outputs a complete step must report
 const INPUT = ['ai-solvent', 'ai-fusion', 'ai-row', 'ai-xid', 'ai-x', 'ai-g', 'ai-w', 'ai-rmse', 'ai-xp'];
 
 export const moleFraction = (m, M) => m / (m + 1000 / M);
@@ -124,18 +126,18 @@ function run() {
 
     last = { solvent, fusion: $('ai-fusion').value, row: k, ref: { xid: xidLab, x: xLab, gamma: gLab, w: fit.w, rmse: fit.rmse }, checks };
     render(last);
-  } catch (e) { last = null; $('ai-results').hidden = true; $('ai-status').textContent = e.message; }
+  } catch (e) { last = null; $('ai-results').hidden = true; $('ai-status').textContent = e.message + incompleteNote(OUT); }
 }
 
 function render(res) {
   $('ai-out').innerHTML = res.checks.map((c) => `<tr><th scope="row">${c.name}</th><td>${c.lab}</td><td>${c.yours}</td><td class="${c.ok ? '' : 'warn'}">${c.kind === 'info' ? 'compare' : c.ok ? 'agrees' : 'check'}</td><td style="text-align:left">${c.why}</td></tr>`).join('');
   const code = res.checks.filter((c) => !c.kind), bad = code.filter((c) => !c.ok).length;
-  $('ai-status').textContent = bad ? `${bad} of ${code.length} code checks disagree with the lab. Find the cause in the code, fix it, rerun, and enter the new outputs.` : `All ${code.length} code checks agree. Now explain what the checks do not establish.`;
+  $('ai-status').textContent = statusLine(code.length, bad, OUT);
   $('ai-results').hidden = false;
 }
 
 function state() {
-  const s = { result: last };
+  const s = { result: last, completeness: completeness(OUT) };
   for (const id of [...TEXT, ...INPUT]) s[id] = $(id)?.value ?? '';
   return s;
 }

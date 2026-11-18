@@ -194,6 +194,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="link today">
 <p><span class="label">Today</span> The same reaction balanced by electrical work:</p>
 <p><span class="math display">\Delta_rG=-nFE</span></p>
+<p>n: electrons transferred per reaction. F = 96 485 C/mol, the Faraday constant (charge per mole of electrons).</p>
 </div>
 <div class="link">
 <p><span class="label">Nernst</span> <span class="math display">E=E^\circ-\frac{RT}{nF}\ln\prod_i a_i^{\nu_i}</span></p>
@@ -254,11 +255,12 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:52%;">
 <p>Every measurable quantity involves a neutral combination of ions, so single-ion activities are not measured. For a 1:1 salt:</p>
-<p><span class="math display">a_{\text{KCl}}=a_{\text{K}^+}a_{\text{Cl}^-}=(m\gamma_\pm)^2</span></p>
+<p><span class="math display">a_{\text{KCl}}=a_{\text{K}^+}a_{\text{Cl}^-}=\Big(\frac{m}{m^\circ}\gamma_\pm\Big)^2,\qquad m^\circ=1\ \text{mol/kg}</span></p>
+<p>Activities are dimensionless. From here on, m in an activity means the number m/m°, so a<sub>KCl</sub> = (mγ±)² is shorthand.</p>
 <p>A cell that responds to KCl therefore gives</p>
 <p><span class="math display">E=\frac{RT}{F}\ln\frac{a_{\text{KCl},2}}{a_{\text{KCl},1}}=\frac{2RT}{F}\ln\frac{m_2\gamma_{\pm,2}}{m_1\gamma_{\pm,1}}</span></p>
 </div><div class="column rule-notes" style="width:46%;">
-<p>For a 2:1 salt such as CaCl₂, a = (m)(2m)²γ±³ = 4m³γ±³: the power is the number of ions.</p>
+<p>For a 2:1 salt such as CaCl₂, a = (m)(2m)²γ±³ = 4m³γ±³ (m in units of m°): the power is the number of ions.</p>
 <p>The pair of cells in opposition cancels E°: only the ratio of activities is measured.</p>
 <p>A <strong>liquid junction</strong> between the two solutions would add a potential set by ion mobilities. The cell pair avoids it; Lab 13’s teaching cell neglects it.</p>
 </div></div>
@@ -269,10 +271,11 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="column" style="width:56%;">
 <p><img data-src="figures/s06-gamma.svg" class="fig-pxy" alt="Mean ionic activity coefficient of KCl against the square root of molality at 298.2 and 308.2 K with uncertainty bars, the Debye-Hueckel limiting law falling well below the data above 0.05 mol per kg, and the extended fit"></p>
 </div><div class="column concept-notes" style="width:42%;">
-<p><span class="math display">\log_{10}\gamma_\pm=-A|z_+z_-|\sqrt I\qquad I=\tfrac12\sum_i m_iz_i^2</span></p>
-<p><span class="q">A = 0.509</span> (kg/mol)<sup>1/2</sup> at 298 K, <strong>log₁₀ basis</strong>; 1.172 on the ln basis.</p>
+<p><span class="math display">\log_{10}\gamma_\pm=-A_{10}|z_+z_-|\sqrt I\qquad I=\tfrac12\sum_i m_iz_i^2</span></p>
+<p>Here <strong>z<sub>i</sub> is the signed charge number</strong> of ion i (+1 for K⁺, −1 for Cl⁻), not the feed mole fraction of Sessions 1–3, and m<sub>i</sub> is the molality of ion i.</p>
+<p><span class="q">A₁₀ = 0.509</span> (kg/mol)<sup>1/2</sup> at 298 K, <strong>log₁₀ basis</strong>. On the ln basis A<sub>ln</sub> = (ln 10)A₁₀ = 1.172.</p>
 <p><span class="q">Limiting law</span> At 1.0 mol/kg it gives 0.310; the data give 0.597.</p>
-<p><span class="q">Extended</span> ln γ± = −A√m/(1 + B√m) + Cm: B = 1.135, C = 0.042, RMSE 0.022 in ln γ±, close to the data’s ±0.03.</p>
+<p><span class="q">Extended</span> ln γ± = −A<sub>ln</sub>√m/(1 + B√m) + Cm: B = 1.135 (kg/mol)<sup>1/2</sup>, C = 0.042 kg/mol, RMSE 0.022 in ln γ±. The data’s expanded uncertainty U(γ±) = 0.03 (95 %, k ≈ 2) is a standard uncertainty u(ln γ±) = U/(kγ±) ≈ 0.025 at γ± ≈ 0.6, so the residual is at the level of the data.</p>
 </div></div>
 </section>
 <section id="temperature" class="slide level2">
@@ -311,7 +314,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </tr>
 </tbody>
 </table>
-<p>Difference 0.004; uncertainty of each value ±0.03. These data <strong>cannot</strong> resolve ∂ln γ±/∂T. Calorimetry (heats of dilution) can.</p>
+<p>Difference 0.004; expanded uncertainty of each value U = 0.03 (95 %). These data <strong>cannot</strong> resolve ∂ln γ±/∂T. Calorimetry (heats of dilution) can.</p>
 </div>
 </div></div>
 </section>
@@ -336,21 +339,21 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="prompt">
 <p>From the measured KCl data at 298.2 K: γ± = 0.9267 at 0.0124 mol/kg and 0.5974 at 1.0003 mol/kg. Compute the EMF of the cell pair at 298.15 K, ideal and with these γ±.</p>
 </div>
-<p>Then: where does the 2 in 2RT/F come from? How large is the uncertainty in E from ±0.03 in each γ±?</p>
+<p>Then: where does the 2 in 2RT/F come from? How large is the uncertainty in E from U = 0.03 in each γ±?</p>
 <div class="selfstudy">
-<p><strong>On your own:</strong> pause here, write your answer, then go to the next slide.</p>
+<p><strong>On your own:</strong> pause here and write your answer. In place of a partner, compare it with the next slide and write one sentence on any difference and its cause.</p>
 </div>
 </section>
 <section id="activity-1-debrief" class="slide level2">
 <h2>Activity 1: check your answer</h2>
 <div class="columns">
 <div class="column" style="width:52%;">
-<p>2RT/F = 0.05139 V at 298.15 K.</p>
+<p>2RT/F = 0.05139 V at 298.15 K (F = 96 485 C/mol).</p>
 <p>Ideal: 0.05139 ln(1.0003/0.0124) = <strong>225.6 mV</strong></p>
 <p>With γ±: 0.05139 ln(1.0003 × 0.5974 / (0.0124 × 0.9267)) = <strong>203.0 mV</strong></p>
 <p>The 2 comes from (mγ±)²: two ions per formula unit.</p>
 </div><div class="column rule-notes" style="width:46%;">
-<p>Uncertainty from γ± alone: 0.05139 × √[(0.03/0.597)² + (0.03/0.927)²] ≈ <strong>3 mV</strong>.</p>
+<p>Expanded uncertainty from γ± alone, taking U = 0.03 (95 %) for each and the two errors as <strong>independent</strong>: 0.05139 × √[(0.03/0.597)² + (0.03/0.927)²] ≈ <strong>3 mV</strong> (95 %), a standard uncertainty of about 1.5 mV. Errors shared by both solutions (same apparatus, same reference) would partly cancel in the ratio.</p>
 <p>That is larger than the effect of a 10 K temperature change on γ± in these data. Precision, not the model, sets what the cell can tell you.</p>
 <p><span class="q">The fitted model gives 216.0 mV for exactly 0.01 and 1.0 mol/kg.</span></p>
 </div></div>
@@ -365,7 +368,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <li>B: E ∝ T, Δ<sub>r</sub>S = 38.3 J/(mol K), Δ<sub>r</sub>H = 0.</li>
 <li>C: discharge until flat, 160 J for 0.1 L.</li>
 </ol>
-<p><a href="../preview-2027/electrochemistry.html" class="lab-button" target="_blank">Open Lab 13 →</a></p>
+<p><a href="../preview-2027/electrochemistry.html?mode=graduate" class="lab-button" target="_blank">Open Lab 13 in the Graduate view →</a></p>
 </div><div class="column rule-notes" style="width:48%;">
 <p>The limiting law at I = 3 is not a small error. It reverses the cell. A law outside its range does not degrade gracefully.</p>
 <p>The teaching cell uses n = 2 for M²⁺/M and molar concentration with c° = 1 mol/L. Step E switches to measured KCl data on the molality scale.</p>
@@ -378,13 +381,13 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><strong>RT/F for a 1:1 salt.</strong> a<sub>KCl</sub> = (mγ±)². Without the square, E is half.</p>
 </div>
 <div>
-<p><strong>A = 0.509 used with ln.</strong> It is a log₁₀ constant; on the ln basis it is 1.172.</p>
+<p><strong>A₁₀ = 0.509 used with ln.</strong> It is a log₁₀ constant; on the ln basis A<sub>ln</sub> = 1.172.</p>
 </div>
 <div>
 <p><strong>The limiting law at high ionic strength.</strong> At I = 3 mol/L it reversed Lab 13’s cell.</p>
 </div>
 <div>
-<p><strong>Reading dE/dT from data that cannot resolve it.</strong> A difference of 0.004 in γ± against ±0.03 is noise.</p>
+<p><strong>Reading dE/dT from data that cannot resolve it.</strong> A difference of 0.004 in γ± against U = 0.03 is noise.</p>
 </div>
 </div>
 </section>
@@ -439,7 +442,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div>
 </div>
 <div class="selfstudy">
-<p><strong>On your own:</strong> do both roles yourself. Pause the slides, work in Lab 13, then continue.</p>
+<p><strong>On your own:</strong> do both roles yourself: work in Lab 13, then check one value by hand before you trust it. Pause the slides while you work; the next slide lists what to hand in.</p>
 </div>
 </section>
 <section id="activity-2-check" class="slide level2">
@@ -544,7 +547,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="column" style="width:56%;">
 <p><img data-src="figures/s06-gamma.svg" class="fig-pxy" alt="Mean ionic activity coefficient of KCl with the limiting law and the extended fit"></p>
 </div><div class="column concept-notes" style="width:42%;">
-<p><span class="q">Discuss in pairs, then with the class</span></p>
+<p><span class="q">Discuss in pairs, then with the class. On your own: write two or three sentences for each question.</span></p>
 <ol type="1">
 <li>At 0.0124 mol/kg the data give 0.927 ± 0.027 and the limiting law 0.878. Do you question the lowest row or the law?</li>
 <li>You need ∂ln γ±/∂T for KCl at 1 mol/kg to ±10 %. Design the measurement.</li>
@@ -587,7 +590,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <h2>After class</h2>
 <div class="summary3">
 <div>
-<p><span class="label">Hand in · this week</span> Your Lab 13 study file with A, B and E, name and student ID.</p>
+<p><span class="label">Hand in · this week</span> Your Lab 13 study file with A, B and E, name and student ID. Upload it to <strong>myCourseVille</strong>, in the assignment for that lab.</p>
 </div>
 <div>
 <p><span class="label">Prepare · Session 7</span> Read the <a href="note-s07.html" target="_blank">review guide</a>. Session 7 is synthesis and exam preparation.</p>
@@ -596,7 +599,8 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="label">Optional · graduate</span> Lab 13 C: how much work before the cell is flat? Then repeat E with B and C linear in T.</p>
 </div>
 </div>
-<p><a href="../preview-2027/electrochemistry.html" class="lab-button" target="_blank">Open Lab 13 →</a></p>
+<p><a href="../preview-2027/electrochemistry.html?mode=graduate#graduate-investigation" class="lab-button" target="_blank">Open Lab 13 in the Graduate view →</a></p>
+<p><span class="howto">Starts at <strong>4. Investigate the cell evidence</strong>. <strong>A</strong>: first button <strong>Compare activity models</strong>. <strong>B</strong>: <strong>Run the temperature study</strong>. <strong>E</strong>: <strong>Download the measured γ± (CSV)</strong>.</span></p>
 
 </section>
     </div>
@@ -847,7 +851,8 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
          Loads narration/<deck>.json (built by build_narration.py): per slide, an MP3 and
          sentence cues with English and Thai text. Controls at the bottom left:
          narration on/off, pause/resume and replay while narration is on,
-         captions off/English/Thai, auto-advance on/off.
+         captions off/English/Thai, auto-advance on/off. Auto-advance stops on activity, demonstration
+         and break slides and shows a Continue button, so a timed activity is never skipped.
          With narration off and captions on, the slide's full text is shown to read. -->
     <style>
     .nr-bar { position: fixed; left: 12px; bottom: 10px; z-index: 40; display: flex; gap: 6px; font: 600 14px/1 "Source Sans 3", "Course Thai", sans-serif; }
@@ -862,6 +867,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
     .nr-caption.transcript p { margin: 0 0 .4em; }
     .nr-caption[lang="th"] { font-family: "Course Thai", "Sarabun", sans-serif; }
     .reveal-viewport.dark-slide .nr-bar button:not([aria-pressed="true"]) { background: rgba(255,255,255,.85); }
+    .nr-bar #nr-continue { background: #E29A2D; border-color: #E29A2D; color: #1C242B; }
     .draft-mark { align-self: center; margin-left: 8px; font: 400 12px/1 "Source Sans 3", sans-serif; color: #66727C !important; text-decoration: none; }
     .draft-mark:hover { text-decoration: underline; }
     @media print { .draft-mark { display: none; } }
@@ -872,6 +878,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
       <button type="button" id="nr-replay" hidden="">Replay slide</button>
       <button type="button" id="nr-cc" aria-pressed="false">Captions: off</button>
       <button type="button" id="nr-auto" aria-pressed="false">Auto-advance: off</button>
+      <button type="button" id="nr-continue" hidden="">Done with the activity: continue →</button>
       <a class="draft-mark" href="../index.html">Draft for 2027 · current class: course page</a>
     </div>
     <div class="nr-caption" id="nr-caption" aria-live="polite" hidden=""></div>
@@ -940,7 +947,14 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
         e.currentTarget.blur();
       });
       audio.addEventListener('timeupdate', () => { if (state.sound) syncCaption(); });
-      audio.addEventListener('ended', () => { if (state.auto && !Reveal.isLastSlide()) Reveal.next(); });
+      // Activity, demonstration and break slides need the student's time: stop and wait for Continue.
+      const holds = (el) => !!el && (el.classList.contains('activity') || el.classList.contains('breakslide') || /^demo/.test(el.id || ''));
+      audio.addEventListener('ended', () => {
+        if (!state.auto || Reveal.isLastSlide()) return;
+        if (holds(Reveal.getCurrentSlide())) { $('nr-continue').hidden = false; $('nr-continue').focus(); return; }
+        Reveal.next();
+      });
+      $('nr-continue').addEventListener('click', (e) => { e.currentTarget.hidden = true; e.currentTarget.blur(); Reveal.next(); });
 
       $('nr-sound').addEventListener('click', (e) => { state.sound = !state.sound; store.set('sound', state.sound ? 'on' : 'off'); paintButtons(); load(); e.currentTarget.blur(); });
       $('nr-cc').addEventListener('click', (e) => { state.cc = CC_NEXT[state.cc]; store.set('cc', state.cc); paintButtons();
@@ -951,7 +965,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
       fetch('narration/' + deck + '.json').then((r) => r.ok ? r.json() : {}).then((d) => {
         data = d;
         if (Reveal.isReady()) load(); else Reveal.on('ready', load);
-        Reveal.on('slidechanged', load);
+        Reveal.on('slidechanged', () => { $('nr-continue').hidden = true; load(); });
       }).catch(() => { document.querySelector('.nr-bar').hidden = true; });
     })();
     </script>

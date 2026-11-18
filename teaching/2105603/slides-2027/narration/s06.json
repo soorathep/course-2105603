@@ -178,19 +178,19 @@
    },
    {
     "start": 8.75,
-    "end": 15.13,
-    "en": "For a one-to-one salt, the activity of potassium chloride is m gamma plus-minus, squared.",
-    "th": "สำหรับเกลือแบบ 1:1 activity ของโพแทสเซียมคลอไรด์เท่ากับ (mγ±)²"
+    "end": 23.34,
+    "en": "For a one-to-one salt, the activity of potassium chloride is m gamma plus-minus, squared, with m divided by the standard molality of one mole per kilogram so that the activity has no units.",
+    "th": "สำหรับเกลือแบบ 1:1 activity ของโพแทสเซียมคลอไรด์เท่ากับ (mγ±)² โดย m หารด้วยโมลาลิตีมาตรฐาน 1 โมลต่อกิโลกรัม เพื่อให้ activity ไม่มีหน่วย"
    },
    {
-    "start": 15.48,
-    "end": 23.82,
+    "start": 23.69,
+    "end": 32.03,
     "en": "A cell that responds to potassium chloride therefore gives 2 R T over F times the log of the ratio of m gamma.",
     "th": "เซลล์ที่ตอบสนองต่อโพแทสเซียมคลอไรด์จึงให้ 2RT/F คูณ ln ของอัตราส่วนของ mγ±"
    },
    {
-    "start": 24.17,
-    "end": 29.35,
+    "start": 32.38,
+    "end": 37.57,
     "en": "The pair of cells cancels the standard potential and avoids a liquid junction.",
     "th": "การต่อเซลล์สองเซลล์แบบหักล้างตัดศักย์มาตรฐานออก และไม่มีรอยต่อของเหลว"
    }
@@ -201,21 +201,21 @@
   "cues": [
    {
     "start": 0.25,
-    "end": 12.28,
-    "en": "The Debye-Hückel limiting law uses A equal to 0.509 on the log 10 basis; on the natural-log basis it is 1.172.",
-    "th": "กฎจำกัดของ Debye-Hückel ใช้ A เท่ากับ 0.509 บนฐาน log₁₀ ถ้าใช้ฐาน ln จะเท่ากับ 1.172"
+    "end": 18.04,
+    "en": "The Debye-Hückel limiting law uses A ten equal to 0.509 on the log 10 basis. On the natural-log basis, A l n is ln 10 times that, 1.172. Use the one that matches your logarithm.",
+    "th": "กฎจำกัดของ Debye-Hückel ใช้ A₁₀ เท่ากับ 0.509 บนฐาน log₁₀ บนฐาน ln ค่า A_ln เท่ากับ ln 10 คูณค่านั้น คือ 1.172 ต้องใช้ค่าที่ตรงกับฐานลอการิทึมที่ใช้"
    },
    {
-    "start": 12.63,
-    "end": 21.04,
+    "start": 18.39,
+    "end": 26.8,
     "en": "At 1.0 mole per kilogram the limiting law gives 0.310. The data give 0.597.",
     "th": "ที่ 1.0 โมลต่อกิโลกรัม กฎจำกัดให้ 0.310 ขณะที่ข้อมูลให้ 0.597"
    },
    {
-    "start": 21.39,
-    "end": 31.84,
-    "en": "An extended form with two fitted constants follows the data to 0.022 in ln gamma, close to their stated uncertainty.",
-    "th": "รูปแบบขยายที่มีค่าคงที่สองตัวที่ fit ได้ ตามข้อมูลได้ภายใน 0.022 ใน ln γ ซึ่งใกล้กับความไม่แน่นอนที่ระบุไว้ของข้อมูล"
+    "start": 27.15,
+    "end": 51.38,
+    "en": "An extended form with two fitted constants, B and C, follows the data to 0.022 in ln gamma. Compare it on the same basis: the expanded uncertainty of 0.03 in gamma is a standard uncertainty of about 0.025 in ln gamma near gamma of 0.6.",
+    "th": "รูปแบบขยายที่มีค่าคงที่ที่ fit สองตัวคือ B และ C ตามข้อมูลได้ภายใน 0.022 ใน ln γ เมื่อเทียบบนฐานเดียวกัน ความไม่แน่นอนขยาย 0.03 ใน γ เท่ากับความไม่แน่นอนมาตรฐานประมาณ 0.025 ใน ln γ ที่ γ ประมาณ 0.6"
    }
   ]
  },
@@ -236,9 +236,9 @@
    },
    {
     "start": 20.28,
-    "end": 41.12,
-    "en": "The potassium chloride data at two temperatures give activity coefficients at 1 mole per kilogram of 0.603 and 0.606. The difference is far inside the 0.03 uncertainty, so these data cannot resolve the derivative.",
-    "th": "ข้อมูลโพแทสเซียมคลอไรด์ที่สองอุณหภูมิให้สัมประสิทธิ์กิจกรรมที่ 1 โมลต่อกิโลกรัมเท่ากับ 0.603 และ 0.606 ความต่างอยู่ในช่วงความไม่แน่นอน 0.03 ข้อมูลชุดนี้จึงหาอนุพันธ์ไม่ได้"
+    "end": 42.17,
+    "en": "The potassium chloride data at two temperatures give activity coefficients at 1 mole per kilogram of 0.603 and 0.606. The difference is far inside the expanded uncertainty of 0.03, so these data cannot resolve the derivative.",
+    "th": "ข้อมูลโพแทสเซียมคลอไรด์ที่สองอุณหภูมิให้สัมประสิทธิ์กิจกรรมที่ 1 โมลต่อกิโลกรัมเท่ากับ 0.603 และ 0.606 ความต่างอยู่ภายในความไม่แน่นอนขยาย 0.03 ข้อมูลชุดนี้จึงหาอนุพันธ์ไม่ได้"
    }
   ]
  },
@@ -305,9 +305,9 @@
    },
    {
     "start": 18.29,
-    "end": 26.64,
-    "en": "The uncertainty from gamma alone is about 3 millivolts, larger than the effect of a 10 kelvin change in these data.",
-    "th": "ความไม่แน่นอนที่มาจาก γ อย่างเดียวประมาณ 3 มิลลิโวลต์ ซึ่งมากกว่าผลของการเปลี่ยนอุณหภูมิ 10 เคลวิน ในข้อมูลชุดนี้"
+    "end": 30.75,
+    "en": "Treating the two gamma errors as independent, the expanded uncertainty from gamma alone is about 3 millivolts, larger than the effect of a 10 kelvin change in these data.",
+    "th": "เมื่อถือว่าความคลาดเคลื่อนของ γ ทั้งสองค่าเป็นอิสระต่อกัน ความไม่แน่นอนขยายที่มาจาก γ อย่างเดียวประมาณ 3 มิลลิโวลต์ ซึ่งมากกว่าผลของการเปลี่ยนอุณหภูมิ 10 เคลวินในข้อมูลชุดนี้"
    }
   ]
  },

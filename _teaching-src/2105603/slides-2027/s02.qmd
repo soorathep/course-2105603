@@ -107,7 +107,7 @@ Read the [note on activity coefficients](note-s02.html){target="_blank"}. Bring 
 :::
 ::: {}
 [After class · 30–40 min]{.label}
-Finish the Lab 02 fits including G3 and G5, and submit the study file with your name and ID.
+Finish the Lab 02 fits and G3, G4 and G5 (required; G1 and G2 are optional), and submit the study file with your name and ID.
 :::
 :::
 
@@ -131,9 +131,9 @@ At a pure endpoint the absent component gives 0/0, so those rows carry no γ.
 ::: {.lever-box}
 [Assumptions, with their size here]{.label}
 
-| Assumption | Effect on ln γ |
+| Assumption | Error in inferred ln γ |
 |---|---|
-| Φ<sub>i</sub> = 1, for B = −1000 cm³ mol⁻¹ | −0.011 (water), −0.0015 (2-propanol) |
+| Φ<sub>i</sub> = 1, for B = −1000 cm³ mol⁻¹ | +0.011 (water), +0.0015 (2-propanol) |
 | Antoine set 3 % low | +0.030, same sign in every row |
 | Pure-liquid standard state | γ<sub>i</sub> → 1 as x<sub>i</sub> → 1 |
 
@@ -178,7 +178,7 @@ Both exceed 1: each component escapes to the vapor more readily than in an ideal
 ![](figures/s02-lngamma.svg){.fig-pxy fig-alt="ln gamma of 2-propanol and water from 18 measured pairs at 60 kPa, both positive, with the NRTL fit"}
 :::
 ::: {.column width="40%" .concept-notes}
-[Positive deviation]{.q} ln γ &gt; 0 for both components at every composition. Unlike pairs (2-propanol with water) attract less than like pairs.
+[Positive deviation]{.q} ln γ &gt; 0 for both components at every composition: G<sup>E</sup> &gt; 0. γ measures excess chemical potential, which has enthalpic and entropic parts (G<sup>E</sup> = H<sup>E</sup> − TS<sup>E</sup>). Weaker unlike-pair attraction is one interpretation, not something γ alone shows.
 
 [Largest when dilute]{.q} ln γ₁ reaches about 2 as x₁ → 0, so γ₁ ≈ 8: a little 2-propanol in water is very volatile.
 
@@ -215,7 +215,7 @@ $$\ln\gamma_1=x_2^2\left[\tau_{21}\Big(\frac{G_{21}}{x_1+x_2G_{21}}\Big)^2+\frac
 
 $$G_{ij}=\exp(-\alpha\,\tau_{ij})$$
 
-ln γ₂ follows by swapping 1 and 2. In general τ<sub>ij</sub> = a<sub>ij</sub> + b<sub>ij</sub>/T. With α = 0.47 (from the article) and constant τ, two parameters are fitted.
+ln γ₂ follows by swapping 1 and 2. τ<sub>ij</sub> = (g<sub>ij</sub> − g<sub>jj</sub>)/RT is a dimensionless interaction parameter; in general τ<sub>ij</sub> = a<sub>ij</sub> + b<sub>ij</sub>/T with a<sub>ij</sub> dimensionless and b<sub>ij</sub> in K. With α = 0.47 (from the article) and constant τ, two parameters are fitted.
 :::
 ::: {.column width="42%"}
 ::: {.lever-box}
@@ -261,7 +261,7 @@ Local test: **not assessed**, H<sup>E</sup> is not available.
 
 :::: {.columns}
 ::: {.column width="50%"}
-Propagate the standard uncertainties u = U/k (article averages, k = 2):
+U is the expanded uncertainty the article reports and k = 2 its coverage factor (about 95 %). Propagate the standard uncertainties u = U/k (article averages) to the standard uncertainty σ of ln γ₁:
 
 $$\sigma_{\ln\gamma_1}^2\approx\Big(\frac{u_x}{x_1}\Big)^2+\Big(\frac{u_y}{y_1}\Big)^2+\Big(\frac{u_P}{P}\Big)^2+\Big(\frac{\mathrm{d}\ln P_1^{\text{sat}}}{\mathrm{d}T}u_T\Big)^2$$
 
@@ -308,7 +308,7 @@ The 80 kPa set loses its most dilute row: at 362.78 K it is outside the 2-propan
 
 :::: {.columns}
 ::: {.column width="46%"}
-Unweighted: minimize $\sum r^2$. Weighted: minimize $\sum (r/\sigma)^2$.
+Residual r = model ln γ − measured ln γ, as before. Unweighted: minimize $\sum r^2$. Weighted: minimize $\sum (r/\sigma)^2$.
 
 RMS(r/σ) ≈ 1 means the misfit matches the stated uncertainty.
 
@@ -357,7 +357,7 @@ At 60 kPa, u<sub>x</sub> = 0.0107 and u<sub>y</sub> = 0.0139. Estimate σ of ln 
 Then predict: in an unweighted fit, which of the two rows has more influence on τ₂₁? Is that what you want? Compare with your partner.
 
 ::: {.selfstudy}
-**On your own:** pause here, write your answer, then go to the next slide.
+**On your own:** pause here and write your answer. In place of a partner, compare it with the next slide and write one sentence on any difference and its cause.
 :::
 
 ## Activity 1: check your estimate {#activity-1-debrief}
@@ -386,7 +386,7 @@ A weighted fit lets each row count in proportion to what was measured.
 3. Graduate view, **G3**: fit 60 kPa unweighted and weighted. Compare τ₂₁ and RMS(r/σ).
 4. Set the minimum x₁ to 0.05 and refit. What changes?
 
-[Open Lab 02 →](../preview-2027/case-study.html){.lab-button target="_blank"}
+[Open Lab 02 in the Graduate view →](../preview-2027/case-study.html?mode=graduate){.lab-button target="_blank"}
 :::
 ::: {.column width="54%"}
 ![](figures/s02-wf-lab.png){.lab-shot fig-alt="Lab 02 G3 residual plot of ln gamma one against x one on a log scale for the unweighted and weighted fits with two-sigma bars"}
@@ -480,7 +480,7 @@ Two sentences with numbers: why does "fit 80" check worse at 60 kPa than "fit 60
 :::
 
 ::: {.selfstudy}
-**On your own:** do both roles yourself. Pause the slides, work in Lab 02, then continue.
+**On your own:** do both roles yourself: work in Lab 02, then check one value by hand before you trust it. Pause the slides while you work; the next slide lists what to hand in.
 :::
 
 ## Activity 2 · what to hand in {#activity-2-check}
@@ -544,7 +544,7 @@ The extra row is at 362.78 K, above the range where both Antoine equations apply
 ![](figures/s02-resid.svg){.fig-pxy fig-alt="Residuals in ln gamma one at 60 kPa against x one on a log scale for the fits trained at 60 and 80 kPa, with two-sigma bars that grow large below x one equal to 0.02"}
 :::
 ::: {.column width="40%" .concept-notes}
-[Discuss in pairs, then with the class]{.q}
+[Discuss in pairs, then with the class. On your own: write two or three sentences for each question.]{.q}
 
 1. Without the four rows below x₁ = 0.02, the 80 kPa fit checks at 0.116 on 60 kPa data. What was the 0.291 measuring?
 2. The weighted 60 kPa fit is closer to the stated uncertainty, yet predicts that a fully miscible liquid splits. Is it the better model?
@@ -599,7 +599,7 @@ No name or student ID is recorded. Wait for **"Response received."**
 ::: {.summary3}
 ::: {}
 [Hand in · this week]{.label}
-Your Lab 02 study file with the three fits, G3, G4 and G5, name and student ID.
+Your Lab 02 study file with the three fits, G3, G4 and G5, name and student ID. Upload it to **myCourseVille**, in the assignment for that lab.
 :::
 ::: {}
 [Prepare · Session 3]{.label}
@@ -611,4 +611,6 @@ Run Lab 03 on the measured 60 kPa data and explain each "not assessed" result in
 :::
 :::
 
-[Open Lab 02 →](../preview-2027/case-study.html){.lab-button target="_blank"}
+[Open Lab 02 in the Graduate view →](../preview-2027/case-study.html?mode=graduate#graduate-investigations){.lab-button target="_blank"}
+
+[Starts at **Graduate analysis**. Required: **G3** (first button **Fit unweighted and weighted**), **G4**, and **G5** (first button **Download the measured data (CSV)**).]{.howto}

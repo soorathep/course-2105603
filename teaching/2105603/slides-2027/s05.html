@@ -196,9 +196,10 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div>
 <div class="link">
 <p><span class="label">Same thing</span> Minimum of total G subject to the element balances.</p>
-<p><span class="math display">\min G\ \text{ s.t. }\ \sum_i a_{ki}n_i=b_k</span></p>
+<p><span class="math display">\min G\ \text{ s.t. }\ \sum_i A_{ki}n_i=b_k</span></p>
 </div>
 </div>
+<p><span class="howto">ν<sub>ij</sub>: coefficient of species i in reaction j (products +). a<sub>i</sub>: activity of i. n<sub>i</sub>: moles of species i. A<sub>ki</sub>: atoms of element k in one molecule of i (the element matrix, not an activity). b<sub>k</sub>: moles of element k fed.</span></p>
 </section>
 <section id="outcomes" class="slide level2">
 <h2>By the end of today you can</h2>
@@ -324,7 +325,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <h2>How many reactions?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>Element matrix (rows C, H, O; columns CH₄, H₂O, CO, CO₂, H₂):</p>
+<p>Element matrix <strong>A</strong> (rows k = C, H, O; columns i = CH₄, H₂O, CO, CO₂, H₂):</p>
 <p><span class="math display">\begin{pmatrix}1&amp;0&amp;1&amp;1&amp;0\\4&amp;2&amp;0&amp;0&amp;2\\0&amp;1&amp;1&amp;2&amp;0\end{pmatrix}</span></p>
 <p>Rank 3, so 5 − 3 = <strong>2</strong> independent reactions, with extents ξ₁ and ξ₂. R1 and R2 are one choice. CH₄ + 2H₂O ⇌ CO₂ + 4H₂ is R1 + R2 and adds nothing.</p>
 </div><div class="column rule-notes" style="width:48%;">
@@ -358,8 +359,8 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </tbody>
 </table>
 </div><div class="column rule-notes" style="width:46%;">
-<p>ln K<sub>φ</sub> = <strong>0.011</strong> for R1 and 0.005 for R2: about 1 %, smaller than the uncertainty from how close a real catalyst bed gets to equilibrium.</p>
-<p>Not so in Week 7’s example at 400 K and 2 MPa: K<sub>φ</sub> = 1.06, a 2 % change in extent. Nor in ammonia synthesis at 20 MPa.</p>
+<p>ln K<sub>φ</sub> = <strong>0.011</strong> for R1 and 0.005 for R2: the equilibrium factor changes by about 1 %. That is <strong>not</strong> a 1 % change in conversion: CH₄ conversion moves from 0.795 to 0.794, by 0.001. Both are smaller than the uncertainty from how close a real catalyst bed gets to equilibrium.</p>
+<p>Not so in Week 7’s example at 400 K and 2 MPa: K<sub>φ</sub> = 1.06, which moves the extent by 2 %. Nor in ammonia synthesis at 20 MPa.</p>
 <p><span class="q">Check K<sub>φ</sub> before you use it or drop it.</span></p>
 </div></div>
 </section>
@@ -371,7 +372,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div>
 <p>The tabulated value is ln K₁(1000 K) = 3.269. Which way is your estimate off, and why? With S/C = 3 at 1 atm, the tabulated K gives 98.5 % conversion; is your error important here?</p>
 <div class="selfstudy">
-<p><strong>On your own:</strong> pause here, write your answer, then go to the next slide.</p>
+<p><strong>On your own:</strong> pause here and write your answer. In place of a partner, compare it with the next slide and write one sentence on any difference and its cause.</p>
 </div>
 </section>
 <section id="activity-1-debrief" class="slide level2">
@@ -408,7 +409,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <li>C: pressure × 10 gives 0.300; 4 mol inert gas at 100 kPa gives 0.870.</li>
 <li>Load the real-data preset, N₂O₄ ⇌ 2NO₂, and compare.</li>
 </ol>
-<p><a href="../preview-2027/reaction.html" class="lab-button" target="_blank">Open Lab 12 →</a></p>
+<p><a href="../preview-2027/reaction.html?mode=graduate" class="lab-button" target="_blank">Open Lab 12 in the Graduate view →</a></p>
 </div><div class="column" style="width:54%;">
 <p><img data-src="figures/s05-lab12.png" class="lab-shot" alt="Lab 12 chart of the Gibbs energy along the extent of reaction, with the minimum at 0.705 at 100 kPa and a second curve at 1000 kPa"></p>
 <div class="expect">
@@ -483,7 +484,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div>
 </div>
 <div class="selfstudy">
-<p><strong>On your own:</strong> do both roles yourself. Pause the slides, work in Lab 12, then continue.</p>
+<p><strong>On your own:</strong> do both roles yourself: work in Lab 12, then check one value by hand before you trust it. Pause the slides while you work; the next slide lists what to hand in.</p>
 </div>
 </section>
 <section id="activity-2-check" class="slide level2">
@@ -589,7 +590,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="column" style="width:56%;">
 <p><img data-src="figures/s05-conv.svg" class="fig-pxy" alt="Equilibrium methane conversion against temperature at several pressures and steam ratios"></p>
 </div><div class="column concept-notes" style="width:42%;">
-<p><span class="q">Discuss in pairs, then with the class</span></p>
+<p><span class="q">Discuss in pairs, then with the class. On your own: write two or three sentences for each question.</span></p>
 <ol type="1">
 <li>Rank these by their effect on the 1100 K, 2000 kPa conversion: K(T) method, K<sub>φ</sub>, S/C from 3 to 4, P in kPa.</li>
 <li>Your extents code cannot form carbon. How would you find out whether carbon deposits at S/C = 2?</li>
@@ -632,7 +633,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <h2>After class</h2>
 <div class="summary3">
 <div>
-<p><span class="label">Hand in · this week</span> Your Lab 12 study file with A, C and E, name and student ID.</p>
+<p><span class="label">Hand in · this week</span> Your Lab 12 study file with A, C and E, name and student ID. Upload it to <strong>myCourseVille</strong>, in the assignment for that lab.</p>
 </div>
 <div>
 <p><span class="label">Prepare · Session 6</span> Read the <a href="note-s06.html" target="_blank">Session 6 pre-class note</a>. About 20 minutes.</p>
@@ -641,7 +642,8 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="label">Optional · graduate</span> Lab 12 B: which way will a sample react? Then add K<sub>φ</sub> to your E code.</p>
 </div>
 </div>
-<p><a href="../preview-2027/reaction.html" class="lab-button" target="_blank">Open Lab 12 →</a></p>
+<p><a href="../preview-2027/reaction.html?mode=graduate#graduate-investigation" class="lab-button" target="_blank">Open Lab 12 in the Graduate view →</a></p>
+<p><span class="howto">Starts at <strong>4. Investigate the equilibrium evidence</strong>. <strong>A</strong>: first button <strong>Run the temperature study</strong>. <strong>C</strong>: <strong>Run the pressure study</strong>. <strong>E</strong>: <strong>Download the NIST-JANAF data (CSV)</strong>.</span></p>
 
 </section>
     </div>
@@ -892,7 +894,8 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
          Loads narration/<deck>.json (built by build_narration.py): per slide, an MP3 and
          sentence cues with English and Thai text. Controls at the bottom left:
          narration on/off, pause/resume and replay while narration is on,
-         captions off/English/Thai, auto-advance on/off.
+         captions off/English/Thai, auto-advance on/off. Auto-advance stops on activity, demonstration
+         and break slides and shows a Continue button, so a timed activity is never skipped.
          With narration off and captions on, the slide's full text is shown to read. -->
     <style>
     .nr-bar { position: fixed; left: 12px; bottom: 10px; z-index: 40; display: flex; gap: 6px; font: 600 14px/1 "Source Sans 3", "Course Thai", sans-serif; }
@@ -907,6 +910,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
     .nr-caption.transcript p { margin: 0 0 .4em; }
     .nr-caption[lang="th"] { font-family: "Course Thai", "Sarabun", sans-serif; }
     .reveal-viewport.dark-slide .nr-bar button:not([aria-pressed="true"]) { background: rgba(255,255,255,.85); }
+    .nr-bar #nr-continue { background: #E29A2D; border-color: #E29A2D; color: #1C242B; }
     .draft-mark { align-self: center; margin-left: 8px; font: 400 12px/1 "Source Sans 3", sans-serif; color: #66727C !important; text-decoration: none; }
     .draft-mark:hover { text-decoration: underline; }
     @media print { .draft-mark { display: none; } }
@@ -917,6 +921,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
       <button type="button" id="nr-replay" hidden="">Replay slide</button>
       <button type="button" id="nr-cc" aria-pressed="false">Captions: off</button>
       <button type="button" id="nr-auto" aria-pressed="false">Auto-advance: off</button>
+      <button type="button" id="nr-continue" hidden="">Done with the activity: continue →</button>
       <a class="draft-mark" href="../index.html">Draft for 2027 · current class: course page</a>
     </div>
     <div class="nr-caption" id="nr-caption" aria-live="polite" hidden=""></div>
@@ -985,7 +990,14 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
         e.currentTarget.blur();
       });
       audio.addEventListener('timeupdate', () => { if (state.sound) syncCaption(); });
-      audio.addEventListener('ended', () => { if (state.auto && !Reveal.isLastSlide()) Reveal.next(); });
+      // Activity, demonstration and break slides need the student's time: stop and wait for Continue.
+      const holds = (el) => !!el && (el.classList.contains('activity') || el.classList.contains('breakslide') || /^demo/.test(el.id || ''));
+      audio.addEventListener('ended', () => {
+        if (!state.auto || Reveal.isLastSlide()) return;
+        if (holds(Reveal.getCurrentSlide())) { $('nr-continue').hidden = false; $('nr-continue').focus(); return; }
+        Reveal.next();
+      });
+      $('nr-continue').addEventListener('click', (e) => { e.currentTarget.hidden = true; e.currentTarget.blur(); Reveal.next(); });
 
       $('nr-sound').addEventListener('click', (e) => { state.sound = !state.sound; store.set('sound', state.sound ? 'on' : 'off'); paintButtons(); load(); e.currentTarget.blur(); });
       $('nr-cc').addEventListener('click', (e) => { state.cc = CC_NEXT[state.cc]; store.set('cc', state.cc); paintButtons();
@@ -996,7 +1008,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
       fetch('narration/' + deck + '.json').then((r) => r.ok ? r.json() : {}).then((d) => {
         data = d;
         if (Reveal.isReady()) load(); else Reveal.on('ready', load);
-        Reveal.on('slidechanged', load);
+        Reveal.on('slidechanged', () => { $('nr-continue').hidden = true; load(); });
       }).catch(() => { document.querySelector('.nr-bar').hidden = true; });
     })();
     </script>

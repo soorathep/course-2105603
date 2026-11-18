@@ -91,23 +91,24 @@ window.Quarto = {
 <p><strong>Why read this.</strong> Session 5 asked how far a reaction goes. Session 6 holds a reaction at equilibrium with an external voltage and asks what that voltage is. The cell EMF measures Δ<sub>r</sub>G directly, so it is also one of the most precise ways to measure activity coefficients. Work the three questions at the end and bring one question of your own.</p>
 </div>
 <h2 id="emf-and-gibbs-energy">1. EMF and Gibbs energy</h2>
-<p>For a reversible cell transferring n electrons per reaction,</p>
+<p>For a reversible cell transferring n electrons per reaction, with F = 96 485 C/mol the Faraday constant (the charge of one mole of electrons),</p>
 <p><span class="math display">\Delta_rG=-nFE,\qquad E=E^\circ-\frac{RT}{nF}\ln\prod_i a_i^{\nu_i}.</span></p>
 <p>The Nernst equation is the reaction-equilibrium condition of Session 5 with an electrical work term added. E° is fixed by the standard states; for solutes we use molality with m° = 1 mol/kg.</p>
 <h2 id="mean-ionic-activity">2. Mean ionic activity</h2>
 <p>A single-ion activity cannot be measured: every measurable quantity involves a neutral combination of ions. For a 1:1 salt such as KCl,</p>
-<p><span class="math display">a_{\text{KCl}}=a_{\text{K}^+}a_{\text{Cl}^-}=(m\gamma_\pm)^2.</span></p>
+<p><span class="math display">a_{\text{KCl}}=a_{\text{K}^+}a_{\text{Cl}^-}=\Big(\frac{m}{m^\circ}\gamma_\pm\Big)^2,\qquad m^\circ=1\ \text{mol/kg}.</span></p>
+<p>Activities are dimensionless. In the rest of this note m inside an activity stands for the number m/m°.</p>
 <p>The square is what makes a KCl cell respond with 2RT/F per unit of ln(mγ±), not RT/F.</p>
 <h2 id="debyehückel-and-its-range">3. Debye–Hückel and its range</h2>
-<p>At low ionic strength I = ½Σm<sub>i</sub>z<sub>i</sub>², long-range Coulomb interactions give the <strong>limiting law</strong></p>
-<p><span class="math display">\log_{10}\gamma_\pm=-A|z_+z_-|\sqrt I,\qquad A=0.509\ (\text{kg/mol})^{1/2}\text{ at }298\ \text{K}.</span></p>
-<p>A is on the log₁₀ basis; on the ln basis it is 1.172. The limiting law is a law of the dilute limit, not a model for 1 mol/kg. An extended form adds an ion-size term and a linear term:</p>
+<p>At low ionic strength I = ½Σm<sub>i</sub>z<sub>i</sub>², where m<sub>i</sub> is the molality of ion i and z<sub>i</sub> its signed charge number (not a mole fraction, as z<sub>i</sub> was in Sessions 1–3), long-range Coulomb interactions give the <strong>limiting law</strong></p>
+<p><span class="math display">\log_{10}\gamma_\pm=-A_{10}|z_+z_-|\sqrt I,\qquad A_{10}=0.509\ (\text{kg/mol})^{1/2}\text{ at }298\ \text{K}.</span></p>
+<p>A₁₀ is on the log₁₀ basis; on the ln basis A<sub>ln</sub> = (ln 10)A₁₀ = 1.172. The limiting law is a law of the dilute limit, not a model for 1 mol/kg. An extended form adds an ion-size term and a linear term:</p>
 <p><span class="math display">\ln\gamma_\pm=-\frac{A_{\ln}\sqrt m}{1+B\sqrt m}+C\,m.</span></p>
-<p><strong>Measured data (KCl, 298.2 K).</strong> Nasiri-Lohehsara and Ghalami-Choobar (2018) report γ± from 0.012 to 2.25 mol/kg, with an expanded uncertainty of about 0.03. At 1.0 mol/kg they give 0.597; the limiting law gives 0.310. A fit of the extended form to the twelve rows gives b = 1.135 (kg/mol)<sup>1/2</sup> and c = 0.042 kg/mol, with an RMSE of 0.022 in ln γ±.</p>
+<p><strong>Measured data (KCl, 298.2 K).</strong> Nasiri-Lohehsara and Ghalami-Choobar (2018) report γ± from 0.012 to 2.25 mol/kg, with an expanded uncertainty of about 0.03. At 1.0 mol/kg they give 0.597; the limiting law gives 0.310. A fit of the extended form to the twelve rows gives B = 1.135 (kg/mol)<sup>1/2</sup> and C = 0.042 kg/mol, with an RMSE of 0.022 in ln γ±. To compare it with the data, convert the expanded uncertainty to the same basis: U(γ±) = 0.03 at 95 % (k ≈ 2) is a standard uncertainty u(ln γ±) = U/(kγ±) ≈ 0.025 at γ± ≈ 0.6.</p>
 <h2 id="a-concentration-cell">4. A concentration cell</h2>
 <p>Two cells Ag|AgCl|KCl(m)|K⁺-ISE at m₁ and m₂, connected in opposition, cancel E° and leave</p>
 <p><span class="math display">E=\frac{2RT}{F}\ln\frac{m_2\gamma_{\pm,2}}{m_1\gamma_{\pm,1}}.</span></p>
-<p>With m₁ = 0.01 and m₂ = 1.0 mol/kg at 298.15 K, the ideal value is 0.2366 V. With the fitted γ± (0.901 and 0.603) it is 0.2160 V, 21 mV lower. The uncertainty in γ± alone, ±0.03 on each side, carries about ±3 mV into E.</p>
+<p>With m₁ = 0.01 and m₂ = 1.0 mol/kg at 298.15 K, the ideal value is 0.2366 V. With the fitted γ± (0.901 and 0.603) it is 0.2160 V, 21 mV lower. The uncertainty in γ± alone, U = 0.03 (95 %) on each side and treated as independent, carries an expanded uncertainty of about 3 mV into E (standard uncertainty about 1.5 mV).</p>
 <p>A cell <strong>with transference</strong>, where the two solutions meet at a liquid junction, has an extra junction potential that depends on ion mobilities. Lab 13 neglects it; Session 6 says when that is acceptable.</p>
 <h2 id="temperature-entropy-and-heat">5. Temperature: entropy and heat</h2>
 <p>From Δ<sub>r</sub>G = −nFE,</p>

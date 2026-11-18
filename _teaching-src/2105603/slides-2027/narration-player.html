@@ -2,7 +2,8 @@
      Loads narration/<deck>.json (built by build_narration.py): per slide, an MP3 and
      sentence cues with English and Thai text. Controls at the bottom left:
      narration on/off, pause/resume and replay while narration is on,
-     captions off/English/Thai, auto-advance on/off.
+     captions off/English/Thai, auto-advance on/off. Auto-advance stops on activity, demonstration
+     and break slides and shows a Continue button, so a timed activity is never skipped.
      With narration off and captions on, the slide's full text is shown to read. -->
 <style>
 .nr-bar { position: fixed; left: 12px; bottom: 10px; z-index: 40; display: flex; gap: 6px; font: 600 14px/1 "Source Sans 3", "Course Thai", sans-serif; }
@@ -17,6 +18,7 @@
 .nr-caption.transcript p { margin: 0 0 .4em; }
 .nr-caption[lang="th"] { font-family: "Course Thai", "Sarabun", sans-serif; }
 .reveal-viewport.dark-slide .nr-bar button:not([aria-pressed="true"]) { background: rgba(255,255,255,.85); }
+.nr-bar #nr-continue { background: #E29A2D; border-color: #E29A2D; color: #1C242B; }
 .draft-mark { align-self: center; margin-left: 8px; font: 400 12px/1 "Source Sans 3", sans-serif; color: #66727C !important; text-decoration: none; }
 .draft-mark:hover { text-decoration: underline; }
 @media print { .draft-mark { display: none; } }
@@ -27,6 +29,7 @@
   <button type="button" id="nr-replay" hidden>Replay slide</button>
   <button type="button" id="nr-cc" aria-pressed="false">Captions: off</button>
   <button type="button" id="nr-auto" aria-pressed="false">Auto-advance: off</button>
+  <button type="button" id="nr-continue" hidden>Done with the activity: continue →</button>
   <a class="draft-mark" href="../index.html">Draft for 2027 · current class: course page</a>
 </div>
 <div class="nr-caption" id="nr-caption" aria-live="polite" hidden></div>
@@ -95,7 +98,14 @@
     e.currentTarget.blur();
   });
   audio.addEventListener('timeupdate', () => { if (state.sound) syncCaption(); });
-  audio.addEventListener('ended', () => { if (state.auto && !Reveal.isLastSlide()) Reveal.next(); });
+  // Activity, demonstration and break slides need the student's time: stop and wait for Continue.
+  const holds = (el) => !!el && (el.classList.contains('activity') || el.classList.contains('breakslide') || /^demo/.test(el.id || ''));
+  audio.addEventListener('ended', () => {
+    if (!state.auto || Reveal.isLastSlide()) return;
+    if (holds(Reveal.getCurrentSlide())) { $('nr-continue').hidden = false; $('nr-continue').focus(); return; }
+    Reveal.next();
+  });
+  $('nr-continue').addEventListener('click', (e) => { e.currentTarget.hidden = true; e.currentTarget.blur(); Reveal.next(); });
 
   $('nr-sound').addEventListener('click', (e) => { state.sound = !state.sound; store.set('sound', state.sound ? 'on' : 'off'); paintButtons(); load(); e.currentTarget.blur(); });
   $('nr-cc').addEventListener('click', (e) => { state.cc = CC_NEXT[state.cc]; store.set('cc', state.cc); paintButtons();
@@ -106,7 +116,7 @@
   fetch('narration/' + deck + '.json').then((r) => r.ok ? r.json() : {}).then((d) => {
     data = d;
     if (Reveal.isReady()) load(); else Reveal.on('ready', load);
-    Reveal.on('slidechanged', load);
+    Reveal.on('slidechanged', () => { $('nr-continue').hidden = true; load(); });
   }).catch(() => { document.querySelector('.nr-bar').hidden = true; });
 })();
 </script>

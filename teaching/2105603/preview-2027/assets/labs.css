@@ -581,3 +581,6 @@
 .mc-plot { width: 100%; min-width: 520px; height: auto; font: 13px "Source Sans 3", sans-serif; fill: #1C242B; }
 #mc-out tr.sum td { border-top: 2px solid var(--border); font-weight: 600; }
 #wf-out td.warn { color: #BE654C; font-weight: 600; }
+
+/* where to submit the study file */
+.submit-note { margin: 12px 0 0; padding: 10px 14px; border-left: 4px solid var(--amber, #E29A2D); background: #fff; }

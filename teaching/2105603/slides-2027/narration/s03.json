@@ -202,9 +202,9 @@
    },
    {
     "start": 36.52,
-    "end": 43.26,
-    "en": "The feed at 0.12 sits where the curve is still convex, yet it is not the lowest state.",
-    "th": "สารป้อนที่ 0.12 อยู่ในช่วงที่เส้นโค้งยังโค้งหงาย แต่ไม่ใช่สถานะที่ต่ำที่สุด"
+    "end": 49.79,
+    "en": "The feed at 0.12 sits where the curve is still convex, but its Gibbs energy of mixing lies above the common tangent. Splitting into the two tangent compositions lowers G.",
+    "th": "สารป้อนที่ 0.12 อยู่ในช่วงที่เส้นโค้งยังโค้งหงาย แต่พลังงานกิบส์ของการผสมที่จุดนี้อยู่สูงกว่าเส้นสัมผัสร่วม การแยกเป็นของเหลวสองเฟสที่จุดสัมผัสจึงลดพลังงานกิบส์ได้"
    }
   ]
  },
@@ -352,25 +352,25 @@
   "cues": [
    {
     "start": 0.25,
-    "end": 7.27,
-    "en": "Each measured tie line gives two equations. With alpha fixed, the two tau are determined exactly.",
-    "th": "tie line ที่วัดได้แต่ละเส้นให้สมการสองสมการ เมื่อกำหนด α คงที่ τ ทั้งสองค่าจะถูกกำหนดได้พอดี"
+    "end": 12.03,
+    "en": "Each measured tie line gives two equations. With alpha fixed, they are two constraints on the two tau. Check that an acceptable solution exists and that it is unique.",
+    "th": "tie line ที่วัดได้แต่ละเส้นให้สมการสองสมการ เมื่อกำหนด α คงที่ สมการทั้งสองเป็นข้อจำกัดสองข้อของ τ สองค่า ต้องตรวจว่ามีคำตอบที่ยอมรับได้และมีคำตอบเดียวหรือไม่"
    },
    {
-    "start": 7.62,
-    "end": 16.45,
+    "start": 12.38,
+    "end": 21.21,
     "en": "So a perfect fit to one tie line is not evidence that the model is right. It only shows that the equations had a solution.",
     "th": "ดังนั้นการ fit tie line เส้นเดียวได้พอดีจึงไม่ใช่หลักฐานว่าแบบจำลองถูก มันแสดงเพียงว่าสมการมีคำตอบ"
    },
    {
-    "start": 16.8,
-    "end": 30.73,
+    "start": 21.56,
+    "end": 35.49,
     "en": "For cyclohexane and methanol at 298.15 kelvin, alpha of 0.2 and 0.3 both reproduce the tie line exactly, with different tau.",
     "th": "สำหรับ cyclohexane กับ methanol ที่ 298.15 เคลวิน α เท่ากับ 0.2 และ 0.3 ต่างก็ให้ tie line ได้พอดี โดยมี τ ต่างกัน"
    },
    {
-    "start": 31.08,
-    "end": 42.73,
+    "start": 35.84,
+    "end": 47.49,
     "en": "With alpha of 0.47 no exact fit exists, and the best fit splits at the wrong compositions. One tie line cannot identify alpha.",
     "th": "เมื่อ α เท่ากับ 0.47 ไม่มีคำตอบที่ fit ได้พอดี และผล fit ที่ดีที่สุดแยกเฟสที่องค์ประกอบผิด tie line เส้นเดียวจึงระบุค่า α ไม่ได้"
    }
@@ -665,19 +665,19 @@
    },
    {
     "start": 11.25,
-    "end": 17.56,
-    "en": "One tie line fixes two parameters exactly. That is calibration, not validation.",
-    "th": "tie line เส้นเดียวกำหนดพารามิเตอร์สองค่าได้พอดี นั่นคือการปรับเทียบ ไม่ใช่การยืนยันความถูกต้อง"
+    "end": 22.23,
+    "en": "One tie line gives two constraints on two parameters. A solution may not exist, or may not be unique. A fit to it is calibration, not validation.",
+    "th": "tie line เส้นเดียวให้ข้อจำกัดสองข้อสำหรับพารามิเตอร์สองค่า คำตอบอาจไม่มี หรือมีมากกว่าหนึ่ง การฟิตกับ tie line เส้นเดียวจึงเป็นการปรับเทียบ ไม่ใช่การยืนยันความถูกต้อง"
    },
    {
-    "start": 17.91,
-    "end": 26.81,
+    "start": 22.58,
+    "end": 31.48,
     "en": "Check tau of T on tie lines the fit did not use. Mutual-solubility data decide whether a predicted split is real.",
     "th": "ตรวจ τ(T) กับ tie line ที่ไม่ได้ใช้ fit และข้อมูลการละลายซึ่งกันและกันเป็นตัวตัดสินว่าการแยกเฟสที่ทำนายไว้เกิดขึ้นจริงหรือไม่"
    },
    {
-    "start": 27.16,
-    "end": 29.82,
+    "start": 31.83,
+    "end": 34.49,
     "en": "Next session: solids and adsorption.",
     "th": "คาบหน้า เรื่องของแข็งและการดูดซับ"
    }

@@ -134,7 +134,7 @@ $$\frac{\Delta g_{\text{mix}}}{RT}=\sum_i x_i\ln x_i+\frac{G^E}{RT}$$
 
 [Margules, A = 3]{.q} G<sup>E</sup>/RT = A x₁x₂. Binodal 0.0707 and 0.9293; spinodal 0.211 and 0.789.
 
-The feed z₁ = 0.12 sits where the curve is still convex, yet below the tangent line it is not the lowest state.
+The feed z₁ = 0.12 sits where the curve is still convex, but its Δg<sub>mix</sub> lies **above** the common tangent. Splitting into 0.0707 and 0.9293 lowers G.
 :::
 ::::
 
@@ -144,7 +144,7 @@ The feed z₁ = 0.12 sits where the curve is still convex, yet below the tangent
 ::: {.column width="52%"}
 **Local:** stable against small changes when
 
-$$x_1x_2\,\frac{\partial^2(\Delta g_{\text{mix}}/RT)}{\partial x_1^2}=1+x_1x_2\frac{\partial^2 g}{\partial x_1^2}>0$$
+$$x_1x_2\,\frac{\partial^2(\Delta g_{\text{mix}}/RT)}{\partial x_1^2}=1+x_1x_2\frac{\partial^2 (G^E/RT)}{\partial x_1^2}>0$$
 
 Zero on the **spinodal**. For Margules: 1 − 2A x₁x₂.
 
@@ -176,7 +176,7 @@ A curvature test alone calls a metastable feed stable. Only a global test finds 
 ![](figures/s03-tpd.svg){.fig-pxy fig-alt="Tangent-plane distance against trial composition for Margules A equal to 3: for the feed 0.05 it stays at or above zero; for the feed 0.12 it reaches a minimum of minus 0.245 at w one 0.953, while the trivial point w equal to z always gives zero"}
 :::
 ::: {.column width="44%" .concept-notes}
-$$\frac{\text{TPD}(\mathbf w)}{RT}=\sum_i w_i\big[\ln w_i\gamma_i(\mathbf w)-\ln z_i\gamma_i(\mathbf z)\big]$$
+$$\frac{\text{TPD}(\mathbf w)}{RT}=\sum_i w_i\big[\ln\!\big(w_i\gamma_i(\mathbf w)\big)-\ln\!\big(z_i\gamma_i(\mathbf z)\big)\big]$$
 
 z is the feed and **w** a trial composition.
 
@@ -221,7 +221,7 @@ Margules, A = 3: binodal x₁ = 0.0707 and 0.9293. For z₁ = 0.05, 0.12 and 0.5
 Then: which feed does a curvature test alone get wrong? For each feed that splits, find the fraction of the x₁-rich liquid with the lever rule.
 
 ::: {.selfstudy}
-**On your own:** pause here, write your answer, then go to the next slide.
+**On your own:** pause here and write your answer. In place of a partner, compare it with the next slide and write one sentence on any difference and its cause.
 :::
 
 ## Activity 1: check your answer {#activity-1-debrief}
@@ -249,7 +249,7 @@ The Gibbs energy gained by splitting is small, 0.0082 RT per mole of feed. A met
 
 :::: {.columns}
 ::: {.column width="50%"}
-Each measured tie line gives two equations, x<sub>i</sub><sup>α</sup>γ<sub>i</sub><sup>α</sup> = x<sub>i</sub><sup>β</sup>γ<sub>i</sub><sup>β</sup>. With α fixed, two τ are **determined exactly**.
+Each measured tie line gives two equations, x<sub>i</sub><sup>α</sup>γ<sub>i</sub><sup>α</sup> = x<sub>i</sub><sup>β</sup>γ<sub>i</sub><sup>β</sup>. With α fixed, they are two **constraints** on two τ. Check that an acceptable solution exists and that it is unique.
 
 So a perfect fit to one tie line is not evidence that the model is right. It only shows that the equations had a solution.
 
@@ -321,7 +321,7 @@ Lab 06 works through this: the pressure sweep across P₃, the missing specifica
 3. Read the construction: the tangent lies below the curve at the feed.
 4. Switch to NRTL, τ₁₂ = 0.337, τ₂₁ = 2.848, α = 0.47: the Session 2 weighted fit. Where is the split?
 
-[Open Lab 04 →](../preview-2027/stability.html){.lab-button target="_blank"}
+[Open Lab 04 in the Graduate view →](../preview-2027/stability.html?mode=graduate){.lab-button target="_blank"}
 :::
 ::: {.column width="54%"}
 ![](figures/s03-lab04.png){.lab-shot fig-alt="Lab 04 Gibbs-energy construction for Margules A equal to 3 with the feed at 0.12, the common tangent through 0.0707 and 0.9293, and the spinodal lines"}
@@ -412,7 +412,7 @@ Two sentences with numbers: why does a perfect fit at 298.15 K predict 313.15 K 
 :::
 
 ::: {.selfstudy}
-**On your own:** do both roles yourself. Pause the slides, work in Lab 05, then continue.
+**On your own:** do both roles yourself: work in Lab 05, then check one value by hand before you trust it. Pause the slides while you work; the next slide lists what to hand in.
 :::
 
 ## Activity 2 · what to hand in {#activity-2-check}
@@ -477,7 +477,7 @@ All checks agree only shows that the code solves your problem. Constant τ still
 ![](figures/s03-lle.svg){.fig-pxy fig-alt="Measured cyclohexane methanol binodal with the constant tau and a plus b over T predictions"}
 :::
 ::: {.column width="42%" .concept-notes}
-[Discuss in pairs, then with the class]{.q}
+[Discuss in pairs, then with the class. On your own: write two or three sentences for each question.]{.q}
 
 1. Both α = 0.2 and α = 0.3 reproduce the 298.15 K tie line exactly. What data would distinguish them?
 2. The a + b/T model predicts the gap closes near 324 K. How much would you trust that, and what would you measure?
@@ -494,7 +494,7 @@ Curvature is a local test. A feed splits whenever some trial composition gives T
 :::
 ::: {}
 [Tie lines]{.label}
-One tie line fixes two parameters exactly. That is calibration, not validation.
+One tie line gives two constraints on two parameters. A solution may not exist, or may not be unique. A fit to it is calibration, not validation.
 :::
 ::: {}
 [Evidence]{.label}
@@ -532,7 +532,7 @@ No name or student ID is recorded. Wait for **"Response received."**
 ::: {.summary3}
 ::: {}
 [Hand in · this week]{.label}
-Your Lab 05 study file with the two fits, A, B, D and E, name and student ID.
+Your Lab 05 study file with the two fits, A, B, D and E, name and student ID. Upload it to **myCourseVille**, in the assignment for that lab.
 :::
 ::: {}
 [Prepare · Session 4]{.label}
@@ -544,4 +544,6 @@ Lab 06 A and B: supply the missing specification for a three-phase state, and sw
 :::
 :::
 
-[Open Lab 05 →](../preview-2027/lle-fit.html){.lab-button target="_blank"}
+[Open Lab 05 in the Graduate view →](../preview-2027/lle-fit.html?mode=graduate#graduate-investigation){.lab-button target="_blank"}
+
+[Starts at **4. Investigate what the fit can support**. **A**: first button **Predict the held-out tie lines**. **B**: **Compare α = 0.2, 0.3 and 0.47**. **E**: **Download the measured tie lines (CSV)**.]{.howto}

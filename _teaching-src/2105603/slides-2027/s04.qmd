@@ -135,7 +135,7 @@ With γ₁ = 1: the **ideal solubility**. It depends on the solid alone. Every s
 | one crystal form | a polymorph or solvate forms |
 | ΔC<sub>p</sub> term neglected | T is far below T<sub>m</sub> |
 
-Today: naphthalene, 279–330 K, T<sub>m</sub> ≈ 353 K. The ΔC<sub>p</sub> term is neglected throughout.
+ΔC<sub>p</sub> = C<sub>p</sub><sup>liquid</sup> − C<sub>p</sub><sup>solid</sup> of pure 1. Today: naphthalene, 279–330 K, T<sub>m</sub> ≈ 353 K. The ΔC<sub>p</sub> term is neglected throughout.
 :::
 :::
 ::::
@@ -217,7 +217,7 @@ Naphthalene in benzene: m = 4.5226 mol/kg saturates at 294.5 K (M = 78.112 g/mol
 Is the deviation from ideal positive or negative? What would you report as the answer?
 
 ::: {.selfstudy}
-**On your own:** pause here, write your answer, then go to the next slide.
+**On your own:** pause here and write your answer. In place of a partner, compare it with the next slide and write one sentence on any difference and its cause.
 :::
 
 ## Activity 1: check your answer {#activity-1-debrief}
@@ -291,7 +291,7 @@ A 2 K error in one temperature moves the heat by 1 kJ/mol.
 3. A: fit Henry to q ≤ 0.8 mol/kg only, and use it in the vessel: **10.1 kPa**, not 15.0.
 4. B: recover Q<sub>st</sub> from three isotherms, then with one T mislabeled.
 
-[Open Lab 11 →](../preview-2027/adsorption.html){.lab-button target="_blank"}
+[Open Lab 11 in the Graduate view →](../preview-2027/adsorption.html?mode=graduate){.lab-button target="_blank"}
 :::
 ::: {.column width="54%"}
 ![](figures/s04-adsorption-lab.png){.lab-shot fig-alt="Lab 11 chart of the isotherm and the vessel balance meeting at 14.99 kilopascals"}
@@ -382,7 +382,7 @@ Two sentences with numbers: why does W change by hundreds of J/mol with the fusi
 :::
 
 ::: {.selfstudy}
-**On your own:** do both roles yourself. Pause the slides, work in the labs, then continue.
+**On your own:** do both roles yourself: work in the labs, then check one value by hand before you trust it. Pause the slides while you work; the next slide lists what to hand in.
 :::
 
 ## Activity 2 · what to hand in {#activity-2-check}
@@ -447,7 +447,7 @@ All checks agree only shows that the code solves your problem. Constant W still 
 ![](figures/s04-solubility.svg){.fig-pxy fig-alt="Measured naphthalene solubility in four solvents with two ideal-solubility lines"}
 :::
 ::: {.column width="42%" .concept-notes}
-[Discuss in pairs, then with the class]{.q}
+[Discuss in pairs, then with the class. On your own: write two or three sentences for each question.]{.q}
 
 1. Benzene gives W = +238 or −522 J/mol. Would you put either value in a database? What would you write next to it?
 2. You need x₁ at 320 K in a new solvent with no data. Which uncertainty dominates: fusion data or γ₁?
@@ -502,7 +502,7 @@ No name or student ID is recorded. Wait for **"Response received."**
 ::: {.summary3}
 ::: {}
 [Hand in · this week]{.label}
-Lab 10 study file with E, and Lab 11 study file with A and B. Names and student IDs.
+Lab 10 study file with E, and Lab 11 study file with A and B. Names and student IDs. Upload each to **myCourseVille**, in the assignment for that lab.
 :::
 ::: {}
 [Prepare · Session 5]{.label}
@@ -514,4 +514,6 @@ Lab 11 C: how much gas does heating release, and how does it depend on Q? Lab 10
 :::
 :::
 
-[Open Lab 10 →](../preview-2027/solids.html){.lab-button target="_blank"}
+[Open Lab 10 in the Graduate view →](../preview-2027/solids.html?mode=graduate#ai-code){.lab-button target="_blank"}
+
+[Starts at Lab 10 **E. Measured solubility**: first button **Download the measured solubility (CSV)**. For Lab 11 A and B, open [Lab 11 in the Graduate view](../preview-2027/adsorption.html?mode=graduate#graduate-investigation){target="_blank"}: first button **Run the fit-range study**.]{.howto}

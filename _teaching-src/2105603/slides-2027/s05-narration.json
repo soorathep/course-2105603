@@ -165,9 +165,9 @@
     "say": "At eleven hundred kelvin and two megapascals, every species is far above its critical temperature. The Pitzer correlation gives fugacity coefficients within half a percent of one."
    },
    {
-    "en": "The correction to K 1 is about one percent, smaller than the uncertainty in how close a real catalyst bed gets to equilibrium.",
-    "th": "การแก้ไข K₁ มีค่าประมาณหนึ่งเปอร์เซ็นต์ ซึ่งน้อยกว่าความไม่แน่นอนว่าเบดตัวเร่งปฏิกิริยาจริงเข้าใกล้สมดุลได้เพียงใด",
-    "say": "The correction to K one is about one percent, smaller than the uncertainty in how close a real catalyst bed gets to equilibrium."
+    "en": "The correction changes the equilibrium factor of R1 by about one percent. That is not a one percent change in conversion: the methane conversion moves from 0.795 to 0.794. Both are smaller than the uncertainty in how close a real catalyst bed gets to equilibrium.",
+    "th": "การปรับแก้นี้เปลี่ยนตัวประกอบสมดุลของ R1 ประมาณหนึ่งเปอร์เซ็นต์ แต่ไม่ได้ทำให้ conversion เปลี่ยนหนึ่งเปอร์เซ็นต์ conversion ของมีเทนเปลี่ยนจาก 0.795 เป็น 0.794 เท่านั้น ทั้งสองค่าน้อยกว่าความไม่แน่นอนว่าเบดตัวเร่งปฏิกิริยาจริงเข้าใกล้สมดุลได้เพียงใด",
+    "say": "The correction changes the equilibrium factor of R one by about one percent. That is not a one percent change in conversion: the methane conversion moves from zero point seven nine five to zero point seven nine four. Both are smaller than the uncertainty in how close a real catalyst bed gets to equilibrium."
    },
    {
     "en": "That is not true for the week 7 example at 400 kelvin, or for ammonia synthesis at 20 megapascals. Check the correction before you use it or drop it.",

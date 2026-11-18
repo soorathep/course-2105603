@@ -60,9 +60,11 @@ $$\sum_i\nu_{ij}\mu_i=0\ \Rightarrow\ \prod_i a_i^{\nu_{ij}}=K_j(T)$$
 [Same thing]{.label}
 Minimum of total G subject to the element balances.
 
-$$\min G\ \text{ s.t. }\ \sum_i a_{ki}n_i=b_k$$
+$$\min G\ \text{ s.t. }\ \sum_i A_{ki}n_i=b_k$$
 :::
 :::
+
+[ν<sub>ij</sub>: coefficient of species i in reaction j (products +). a<sub>i</sub>: activity of i. n<sub>i</sub>: moles of species i. A<sub>ki</sub>: atoms of element k in one molecule of i (the element matrix, not an activity). b<sub>k</sub>: moles of element k fed.]{.howto}
 
 ## By the end of today you can {#outcomes}
 
@@ -172,7 +174,7 @@ The error grows with |T − 298 K| and with ΔC<sub>p</sub>. It is not a roundin
 
 :::: {.columns}
 ::: {.column width="50%"}
-Element matrix (rows C, H, O; columns CH₄, H₂O, CO, CO₂, H₂):
+Element matrix **A** (rows k = C, H, O; columns i = CH₄, H₂O, CO, CO₂, H₂):
 
 $$\begin{pmatrix}1&0&1&1&0\\4&2&0&0&2\\0&1&1&2&0\end{pmatrix}$$
 
@@ -201,9 +203,9 @@ At 1100 K and 2 MPa, every species is far above its critical temperature. The Pi
 | CO / CO₂ / H₂ | 0.0052 / 0.0045 / 0.0024 |
 :::
 ::: {.column width="46%" .rule-notes}
-ln K<sub>φ</sub> = **0.011** for R1 and 0.005 for R2: about 1 %, smaller than the uncertainty from how close a real catalyst bed gets to equilibrium.
+ln K<sub>φ</sub> = **0.011** for R1 and 0.005 for R2: the equilibrium factor changes by about 1 %. That is **not** a 1 % change in conversion: CH₄ conversion moves from 0.795 to 0.794, by 0.001. Both are smaller than the uncertainty from how close a real catalyst bed gets to equilibrium.
 
-Not so in Week 7's example at 400 K and 2 MPa: K<sub>φ</sub> = 1.06, a 2 % change in extent. Nor in ammonia synthesis at 20 MPa.
+Not so in Week 7's example at 400 K and 2 MPa: K<sub>φ</sub> = 1.06, which moves the extent by 2 %. Nor in ammonia synthesis at 20 MPa.
 
 [Check K<sub>φ</sub> before you use it or drop it.]{.q}
 :::
@@ -220,7 +222,7 @@ R1 at 298.15 K: Δ<sub>r</sub>H° = 206.17 kJ/mol, Δ<sub>r</sub>S° = 212.2 J/(
 The tabulated value is ln K₁(1000 K) = 3.269. Which way is your estimate off, and why? With S/C = 3 at 1 atm, the tabulated K gives 98.5 % conversion; is your error important here?
 
 ::: {.selfstudy}
-**On your own:** pause here, write your answer, then go to the next slide.
+**On your own:** pause here and write your answer. In place of a partner, compare it with the next slide and write one sentence on any difference and its cause.
 :::
 
 ## Activity 1: check your answer {#activity-1-debrief}
@@ -266,7 +268,7 @@ At 2000 kPa it decides the answer: at 1100 K the two K values give 0.795 and 0.4
 3. C: pressure × 10 gives 0.300; 4 mol inert gas at 100 kPa gives 0.870.
 4. Load the real-data preset, N₂O₄ ⇌ 2NO₂, and compare.
 
-[Open Lab 12 →](../preview-2027/reaction.html){.lab-button target="_blank"}
+[Open Lab 12 in the Graduate view →](../preview-2027/reaction.html?mode=graduate){.lab-button target="_blank"}
 :::
 ::: {.column width="54%"}
 ![](figures/s05-lab12.png){.lab-shot fig-alt="Lab 12 chart of the Gibbs energy along the extent of reaction, with the minimum at 0.705 at 100 kPa and a second curve at 1000 kPa"}
@@ -356,7 +358,7 @@ Two sentences with numbers: which single input changes the 1100 K, 2000 kPa conv
 :::
 
 ::: {.selfstudy}
-**On your own:** do both roles yourself. Pause the slides, work in Lab 12, then continue.
+**On your own:** do both roles yourself: work in Lab 12, then check one value by hand before you trust it. Pause the slides while you work; the next slide lists what to hand in.
 :::
 
 ## Activity 2 · what to hand in {#activity-2-check}
@@ -421,7 +423,7 @@ The third version converged cleanly and was still wrong by 0.30 in conversion. C
 ![](figures/s05-conv.svg){.fig-pxy fig-alt="Equilibrium methane conversion against temperature at several pressures and steam ratios"}
 :::
 ::: {.column width="42%" .concept-notes}
-[Discuss in pairs, then with the class]{.q}
+[Discuss in pairs, then with the class. On your own: write two or three sentences for each question.]{.q}
 
 1. Rank these by their effect on the 1100 K, 2000 kPa conversion: K(T) method, K<sub>φ</sub>, S/C from 3 to 4, P in kPa.
 2. Your extents code cannot form carbon. How would you find out whether carbon deposits at S/C = 2?
@@ -476,7 +478,7 @@ No name or student ID is recorded. Wait for **"Response received."**
 ::: {.summary3}
 ::: {}
 [Hand in · this week]{.label}
-Your Lab 12 study file with A, C and E, name and student ID.
+Your Lab 12 study file with A, C and E, name and student ID. Upload it to **myCourseVille**, in the assignment for that lab.
 :::
 ::: {}
 [Prepare · Session 6]{.label}
@@ -488,4 +490,6 @@ Lab 12 B: which way will a sample react? Then add K<sub>φ</sub> to your E code.
 :::
 :::
 
-[Open Lab 12 →](../preview-2027/reaction.html){.lab-button target="_blank"}
+[Open Lab 12 in the Graduate view →](../preview-2027/reaction.html?mode=graduate#graduate-investigation){.lab-button target="_blank"}
+
+[Starts at **4. Investigate the equilibrium evidence**. **A**: first button **Run the temperature study**. **C**: **Run the pressure study**. **E**: **Download the NIST-JANAF data (CSV)**.]{.howto}

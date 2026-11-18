@@ -74,25 +74,25 @@
    },
    {
     "start": 6.55,
-    "end": 14.25,
-    "en": "A hot liquid mixture of benzene and toluene passes a valve, and the pressure drops to 50 kPa.",
-    "th": "ของผสมเบนซีนกับโทลูอีนที่ร้อนไหลผ่านวาล์ว และความดันลดลงเหลือ 50 กิโลปาสคาล"
+    "end": 26.5,
+    "en": "A hot liquid mixture of benzene and toluene passes a valve into a drum held at 350 kelvin and 50 kPa. Because the drum temperature is fixed, this is a TP flash. Knowing only the feed temperature would need an energy balance, an adiabatic flash.",
+    "th": "ของผสมของเหลวร้อนเบนซีนกับโทลูอีนไหลผ่านวาล์วเข้าถังที่ควบคุมไว้ที่ 350 เคลวินและ 50 กิโลปาสคาล เมื่อกำหนดอุณหภูมิของถังไว้ ปัญหานี้จึงเป็น TP flash ถ้ารู้เพียงอุณหภูมิของสารป้อน ต้องใช้ดุลพลังงาน ซึ่งเป็น adiabatic flash"
    },
    {
-    "start": 14.6,
-    "end": 19.81,
+    "start": 26.85,
+    "end": 32.05,
     "en": "Part of the liquid boils. Vapor leaves at the top and liquid leaves at the bottom.",
     "th": "ของเหลวส่วนหนึ่งเดือด ไอออกทางด้านบน ของเหลวออกทางด้านล่าง"
    },
    {
-    "start": 20.16,
-    "end": 28.97,
+    "start": 32.4,
+    "end": 41.21,
     "en": "To size the drum and everything after it, an engineer needs two answers: how much vapor forms, and what each stream contains.",
     "th": "การออกแบบขนาดถังและอุปกรณ์ที่ตามมา วิศวกรต้องรู้สองคำตอบ คือเกิดไอเท่าไร และแต่ละกระแสมีองค์ประกอบเท่าไร"
    },
    {
-    "start": 29.32,
-    "end": 35.53,
+    "start": 41.56,
+    "end": 47.77,
     "en": "By the end of this session you can get both answers by hand, and check them in Lab 01.",
     "th": "เมื่อจบคาบนี้ คุณจะหาคำตอบทั้งสองได้ด้วยมือ และตรวจสอบกับ Lab 01 ได้"
    }
@@ -453,13 +453,13 @@
    },
    {
     "start": 16.05,
-    "end": 25.44,
-    "en": "Its derivative is negative everywhere between the two asymptotes, so there is exactly one root there. Bracket it there, then use Newton.",
-    "th": "อนุพันธ์ของมันเป็นลบตลอดช่วงระหว่างเส้นกำกับทั้งสอง จึงมีรากเพียงหนึ่งเดียวในช่วงนั้น ให้หาช่วงที่ครอบรากก่อน แล้วใช้วิธีของนิวตัน"
+    "end": 32.65,
+    "en": "If at least one K is above one and one is below one, the derivative is negative everywhere between the two asymptotes, so there is exactly one root there, and only there are all compositions positive. Bracket it there, then use Newton.",
+    "th": "ถ้ามีค่า K อย่างน้อยหนึ่งค่ามากกว่าหนึ่ง และอย่างน้อยหนึ่งค่าน้อยกว่าหนึ่ง อนุพันธ์จะเป็นลบตลอดช่วงระหว่างเส้นกำกับทั้งสอง จึงมีรากเพียงหนึ่งเดียวในช่วงนั้น และเฉพาะในช่วงนั้นที่ทุกองค์ประกอบเป็นบวก ให้หาช่วงที่ครอบรากก่อน แล้วใช้วิธีของนิวตัน"
    },
    {
-    "start": 25.79,
-    "end": 33.49,
+    "start": 33.0,
+    "end": 40.7,
     "en": "For the three-component feed at 30 kPa, the root is beta equals 0.6013.",
     "th": "สำหรับสารป้อนสามองค์ประกอบที่ 30 กิโลปาสคาล รากคือ β = 0.6013"
    }
@@ -482,13 +482,13 @@
    },
    {
     "start": 21.73,
-    "end": 31.97,
-    "en": "For a single phase, Rachford-Rice still has a root, outside zero to one. This negative flash is an extrapolated tie line, not an amount.",
-    "th": "เมื่อเป็นเฟสเดียว สมการ Rachford–Rice ยังมีรากอยู่ แต่จะอยู่นอกช่วงศูนย์ถึงหนึ่ง negative flash นี้คือการต่อเส้นเชื่อมออกไป ไม่ใช่ปริมาณจริง"
+    "end": 40.05,
+    "en": "For a single phase with K values on both sides of one, the root lies outside zero to one. This negative flash is an extrapolated tie line, not an amount. If every K is on the same side of one, there is no root with positive compositions.",
+    "th": "เมื่อเป็นเฟสเดียวและค่า K อยู่ทั้งสองฝั่งของหนึ่ง รากจะอยู่นอกช่วงศูนย์ถึงหนึ่ง negative flash นี้คือการต่อเส้นเชื่อมออกไป ไม่ใช่ปริมาณจริง ถ้าค่า K ทุกตัวอยู่ฝั่งเดียวกันของหนึ่ง จะไม่มีรากที่ให้องค์ประกอบเป็นบวกเลย"
    },
    {
-    "start": 32.32,
-    "end": 43.58,
+    "start": 40.4,
+    "end": 51.67,
     "en": "With constant K the test is exact. When K depends on composition, a one-phase answer must be confirmed by a stability test, which we meet in session 3.",
     "th": "เมื่อ K คงที่ การตรวจนี้แม่นยำ แต่เมื่อ K ขึ้นกับองค์ประกอบ คำตอบว่าเป็นเฟสเดียวต้องยืนยันด้วยการทดสอบเสถียรภาพ ซึ่งจะเรียนในคาบที่ 3"
    }

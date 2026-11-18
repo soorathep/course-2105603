@@ -357,7 +357,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div><div class="column rule-notes" style="width:48%;">
 <p>A claim is only as strong as the highest rung it reached.</p>
 <p><strong>Extrapolation reaches none:</strong> the a + b/T model’s gap closing at 324 K lies beyond the last tie line at 316 K.</p>
-<p><strong>Some claims cannot be reached with the data in hand:</strong> the sign of W for naphthalene–benzene, or dγ±/dT from KCl data with U = 0.03.</p>
+<p><strong>Some claims cannot be reached with the data in hand:</strong> the sign of W for naphthalene–benzene, or dγ±/dT from KCl data with expanded uncertainty U = 0.03.</p>
 <p><span class="q">Saying so is part of the answer.</span></p>
 </div></div>
 </section>
@@ -376,7 +376,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <li>For KCl, γ± at 1 mol/kg rises by 0.004 between 298 and 308 K.</li>
 </ol>
 <div class="selfstudy">
-<p><strong>On your own:</strong> pause here, write your answer, then go to the next slide.</p>
+<p><strong>On your own:</strong> pause here and write your answer. In place of a partner, compare it with the next slide and write one sentence on any difference and its cause.</p>
 </div>
 </section>
 <section id="activity-1-debrief" class="slide level2">
@@ -439,7 +439,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <li>Read which checks fail, and the likely cause.</li>
 <li>Find the lines in the script. Fix them, rerun, recheck.</li>
 </ol>
-<p><a href="../preview-2027/reaction.html" class="lab-button" target="_blank">Open Lab 12 →</a></p>
+<p><a href="../preview-2027/reaction.html?mode=graduate#ai-code" class="lab-button" target="_blank">Open Lab 12 in the Graduate view →</a></p>
 </div><div class="column rule-notes" style="width:50%;">
 <p>The order matters: <strong>predict</strong> what the correct value should be before you look at the lab’s number. A check you cannot predict is a check you cannot interpret.</p>
 <p>Look first at what the script computes, not at how: K, the pressure term, the balances. The thermodynamics is usually wrong in one line.</p>
@@ -486,7 +486,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="prompt">
-<p>Steam reforming at 1100 K, 2000 kPa, S/C = 3 gives 0.795 CH₄ conversion. Rank by effect on the conversion: (i) K from constant Δ<sub>r</sub>H; (ii) P in kPa with no P°; (iii) S/C raised to 4; (iv) adding K<sub>φ</sub>.</p>
+<p>Steam reforming at 1100 K, 2000 kPa, S/C = 3 gives 0.795 CH₄ conversion. Rank by effect on the conversion: (i) K from constant Δ<sub>r</sub>H; (ii) the pressure term (P/P°)<sup>Δν</sup> omitted, as if P = P°; (iii) S/C raised to 4; (iv) adding K<sub>φ</sub>.</p>
 </div>
 <p>Then: a KCl cell pair at 0.01 / 1.0 mol/kg is computed with RT/F. By what factor is it wrong?</p>
 <p>Sessions 5 and 6.</p>
@@ -510,7 +510,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <li><a href="audit/audit_lab12_smr.py" target="_blank">audit_lab12_smr.py</a> · Lab 12 E</li>
 <li><a href="audit/audit_lab13_kcl.py" target="_blank">audit_lab13_kcl.py</a> · Lab 13 E</li>
 </ul>
-<p>Lab 10 and 13 scripts need the CSV from their lab step E, saved next to the script.</p>
+<p>Run each in its own folder: <code>python audit_lab10_sle.py</code>. Needs numpy, scipy, pandas. Lab 10 and 13 also need the step E CSV in that folder, <strong>with its downloaded name</strong>. Each script’s first lines say how.</p>
 </div><div class="column rule-notes" style="width:48%;">
 <p><span class="label">For each script you audit</span></p>
 <ol type="1">
@@ -537,7 +537,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="label">25 min · problems A–C</span> By hand where you can, with the labs to check. Write each answer as equation, numbers, check, limit.</p>
 </div>
 <div>
-<p><span class="label">30 min · two audits</span> One script each, then swap and check your partner’s fix. Record the failing check and the line.</p>
+<p><span class="label">30 min · two audits</span> One script each, then swap and check your partner’s fix (on your own: audit all four). Record the failing check and the line.</p>
 </div>
 <div>
 <p><span class="label">15 min · explain</span> For one problem, place your answer on the evidence ladder. What would raise it one rung?</p>
@@ -547,7 +547,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div>
 </div>
 <div class="selfstudy">
-<p><strong>On your own:</strong> do both roles yourself. Pause the slides, work through the problems and audits, then continue.</p>
+<p><strong>On your own:</strong> do both roles yourself: work through the problems and audits, then check one value by hand before you trust it. Pause the slides while you work; the next slide lists what to hand in.</p>
 </div>
 </section>
 <section id="activity-2-check" class="slide level2">
@@ -580,7 +580,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <td style="text-align: right;">−0.297</td>
 </tr>
 <tr class="even">
-<td>(ii) no P°</td>
+<td>(ii) pressure term omitted</td>
 <td style="text-align: right;">0.996</td>
 <td style="text-align: right;">+0.201</td>
 </tr>
@@ -666,9 +666,9 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><strong>(a)</strong> ln(x₁γ₁) = −(Δ<sub>fus</sub>H/R)(1/T − 1/T<sub>m</sub>), ΔC<sub>p</sub> neglected. With the article’s DSC data (355.04 K, 20.87 kJ/mol) and all ten rows, least squares in ln x₁: W = −522 J/mol, RMSE 0.008.</p>
 <p><strong>(b)</strong> No.&nbsp;With the NIST data (353.39 K, 19.0 kJ/mol), W = +238 J/mol. The two fusion sets differ by about their stated uncertainty, and the sign of W follows them. x₁ at 298.15 K is 0.289 or 0.287 either way.</p>
 </div><div class="column rule-notes" style="width:46%;">
-<p><strong>(c)</strong> Report: near-ideal, |ln γ₁| ≤ 0.13 between 286 and 326 K with either fusion data set; x₁(298.15 K) = 0.288 ± 0.001 for either fusion data set. Do not report the sign of W.</p>
+<p><strong>(c)</strong> Report: near-ideal, |ln γ₁| ≤ 0.13 between 286 and 326 K with either fusion data set; x₁(298.15 K) = 0.287 to 0.289. That spread is the <strong>difference between the two fusion data sets considered</strong>, not a full uncertainty: the solubility data and the model form add to it. Do not report the sign of W.</p>
 <p>To settle the sign: a measurement that does not pass through the solid, such as H<sup>E</sup> or VLE of liquid naphthalene + benzene, or Δ<sub>fus</sub>H measured to better than ±0.5 kJ/mol.</p>
-<p><span class="q">The model answer reaches rung 1 for W and rung 3 for the prediction.</span></p>
+<p><span class="q">Both W and x₁(298.15 K) come from a fit to all ten rows, and 298.15 K lies inside the data range. That is calibration (rung 1), not held-out validation. A held-out check would refit without some rows and predict them.</span></p>
 </div></div>
 </section>
 <section id="marking" class="slide level2">
@@ -720,14 +720,14 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><strong>Session question:</strong> the strongest evidence in this course was held-out data and independent properties: tie lines the fit did not use, LLE against a VLE fit, a second fusion data set. Where we had neither, the honest answer was to say what the data cannot decide.</p>
 </section>
 <section id="exit-ticket" class="slide level2 activity">
-<h2>Exit ticket · 5 minutes</h2>
-<p><span class="act-label">Exit ticket and feedback · alone · 5 minutes · anonymous</span></p>
+<h2>Exit ticket · 10 minutes</h2>
+<p><span class="act-label">Exit ticket and feedback · alone · 10 minutes · anonymous</span></p>
 <div class="columns">
 <div class="column" style="width:64%;">
 <div class="prompt">
 <p>Pick one result from your own lab files. Which rung of the evidence ladder does it reach, and what one piece of evidence would raise it? Put the topic you feel least ready for in “What is still unclear?”.</p>
 </div>
-<p>Scan the code or open the link. The same form asks three short questions about today: pace, confidence and whether the lab worked.</p>
+<p>Scan the code or open the link. The form first asks about today: pace, confidence and whether the lab worked. A second part asks about the <strong>whole post-midterm half</strong>, Sessions 1–7: pace, the quality of the slides, narration, captions and notes, and the quality of the labs.</p>
 <p>No name or student ID is recorded. Wait for <strong>“Response received.”</strong></p>
 </div><div class="column qr-col" style="width:32%;">
 <p><img data-src="figures/exit-qr-s07.png" class="qr" alt="QR code for the Session 7 exit ticket and feedback form"></p>
@@ -738,7 +738,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <h2>After class</h2>
 <div class="summary3">
 <div>
-<p><span class="label">Hand in · this week</span> The one-page pair sheet: answers A–C, two audits, the ladder statement. Names and student IDs.</p>
+<p><span class="label">Hand in · this week</span> The one-page pair sheet: answers A–C, two audits, the ladder statement. Names and student IDs. Upload it to <strong>myCourseVille</strong> (Session 7). On your own: one sheet with all four audits.</p>
 </div>
 <div>
 <p><span class="label">Practice</span> The two audits you did not do. The exam-style problem again, without notes.</p>
@@ -998,7 +998,8 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
          Loads narration/<deck>.json (built by build_narration.py): per slide, an MP3 and
          sentence cues with English and Thai text. Controls at the bottom left:
          narration on/off, pause/resume and replay while narration is on,
-         captions off/English/Thai, auto-advance on/off.
+         captions off/English/Thai, auto-advance on/off. Auto-advance stops on activity, demonstration
+         and break slides and shows a Continue button, so a timed activity is never skipped.
          With narration off and captions on, the slide's full text is shown to read. -->
     <style>
     .nr-bar { position: fixed; left: 12px; bottom: 10px; z-index: 40; display: flex; gap: 6px; font: 600 14px/1 "Source Sans 3", "Course Thai", sans-serif; }
@@ -1013,6 +1014,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
     .nr-caption.transcript p { margin: 0 0 .4em; }
     .nr-caption[lang="th"] { font-family: "Course Thai", "Sarabun", sans-serif; }
     .reveal-viewport.dark-slide .nr-bar button:not([aria-pressed="true"]) { background: rgba(255,255,255,.85); }
+    .nr-bar #nr-continue { background: #E29A2D; border-color: #E29A2D; color: #1C242B; }
     .draft-mark { align-self: center; margin-left: 8px; font: 400 12px/1 "Source Sans 3", sans-serif; color: #66727C !important; text-decoration: none; }
     .draft-mark:hover { text-decoration: underline; }
     @media print { .draft-mark { display: none; } }
@@ -1023,6 +1025,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
       <button type="button" id="nr-replay" hidden="">Replay slide</button>
       <button type="button" id="nr-cc" aria-pressed="false">Captions: off</button>
       <button type="button" id="nr-auto" aria-pressed="false">Auto-advance: off</button>
+      <button type="button" id="nr-continue" hidden="">Done with the activity: continue →</button>
       <a class="draft-mark" href="../index.html">Draft for 2027 · current class: course page</a>
     </div>
     <div class="nr-caption" id="nr-caption" aria-live="polite" hidden=""></div>
@@ -1091,7 +1094,14 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
         e.currentTarget.blur();
       });
       audio.addEventListener('timeupdate', () => { if (state.sound) syncCaption(); });
-      audio.addEventListener('ended', () => { if (state.auto && !Reveal.isLastSlide()) Reveal.next(); });
+      // Activity, demonstration and break slides need the student's time: stop and wait for Continue.
+      const holds = (el) => !!el && (el.classList.contains('activity') || el.classList.contains('breakslide') || /^demo/.test(el.id || ''));
+      audio.addEventListener('ended', () => {
+        if (!state.auto || Reveal.isLastSlide()) return;
+        if (holds(Reveal.getCurrentSlide())) { $('nr-continue').hidden = false; $('nr-continue').focus(); return; }
+        Reveal.next();
+      });
+      $('nr-continue').addEventListener('click', (e) => { e.currentTarget.hidden = true; e.currentTarget.blur(); Reveal.next(); });
 
       $('nr-sound').addEventListener('click', (e) => { state.sound = !state.sound; store.set('sound', state.sound ? 'on' : 'off'); paintButtons(); load(); e.currentTarget.blur(); });
       $('nr-cc').addEventListener('click', (e) => { state.cc = CC_NEXT[state.cc]; store.set('cc', state.cc); paintButtons();
@@ -1102,7 +1112,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
       fetch('narration/' + deck + '.json').then((r) => r.ok ? r.json() : {}).then((d) => {
         data = d;
         if (Reveal.isReady()) load(); else Reveal.on('ready', load);
-        Reveal.on('slidechanged', load);
+        Reveal.on('slidechanged', () => { $('nr-continue').hidden = true; load(); });
       }).catch(() => { document.querySelector('.nr-bar').hidden = true; });
     })();
     </script>

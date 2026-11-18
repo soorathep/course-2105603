@@ -48,9 +48,9 @@
     "th": "ทำไมเรื่องนี้สำคัญ ลองดู flash drum ซึ่งเป็นหน่วยที่พบบ่อยที่สุดหน่วยหนึ่งในโรงงานเคมี"
    },
    {
-    "en": "A hot liquid mixture of benzene and toluene passes a valve, and the pressure drops to 50 kPa.",
-    "th": "ของผสมเบนซีนกับโทลูอีนที่ร้อนไหลผ่านวาล์ว และความดันลดลงเหลือ 50 กิโลปาสคาล",
-    "say": "A hot liquid mixture of benzene and toluene passes a valve, and the pressure drops to fifty kilopascals."
+    "en": "A hot liquid mixture of benzene and toluene passes a valve into a drum held at 350 kelvin and 50 kPa. Because the drum temperature is fixed, this is a TP flash. Knowing only the feed temperature would need an energy balance, an adiabatic flash.",
+    "th": "ของผสมของเหลวร้อนเบนซีนกับโทลูอีนไหลผ่านวาล์วเข้าถังที่ควบคุมไว้ที่ 350 เคลวินและ 50 กิโลปาสคาล เมื่อกำหนดอุณหภูมิของถังไว้ ปัญหานี้จึงเป็น TP flash ถ้ารู้เพียงอุณหภูมิของสารป้อน ต้องใช้ดุลพลังงาน ซึ่งเป็น adiabatic flash",
+    "say": "A hot liquid mixture of benzene and toluene passes a valve into a drum held at three hundred fifty kelvin and fifty kilopascals. Because the drum temperature is fixed, this is a T P flash. Knowing only the feed temperature would need an energy balance, an adiabatic flash."
    },
    {
     "en": "Part of the liquid boils. Vapor leaves at the top and liquid leaves at the bottom.",
@@ -299,8 +299,8 @@
     "th": "จะได้สมการ Rachford–Rice เป็นสมการเดียวในตัวแปร β ไม่ว่าจะมีกี่องค์ประกอบ"
    },
    {
-    "en": "Its derivative is negative everywhere between the two asymptotes, so there is exactly one root there. Bracket it there, then use Newton.",
-    "th": "อนุพันธ์ของมันเป็นลบตลอดช่วงระหว่างเส้นกำกับทั้งสอง จึงมีรากเพียงหนึ่งเดียวในช่วงนั้น ให้หาช่วงที่ครอบรากก่อน แล้วใช้วิธีของนิวตัน"
+    "en": "If at least one K is above one and one is below one, the derivative is negative everywhere between the two asymptotes, so there is exactly one root there, and only there are all compositions positive. Bracket it there, then use Newton.",
+    "th": "ถ้ามีค่า K อย่างน้อยหนึ่งค่ามากกว่าหนึ่ง และอย่างน้อยหนึ่งค่าน้อยกว่าหนึ่ง อนุพันธ์จะเป็นลบตลอดช่วงระหว่างเส้นกำกับทั้งสอง จึงมีรากเพียงหนึ่งเดียวในช่วงนั้น และเฉพาะในช่วงนั้นที่ทุกองค์ประกอบเป็นบวก ให้หาช่วงที่ครอบรากก่อน แล้วใช้วิธีของนิวตัน"
    },
    {
     "en": "For the three-component feed at 30 kPa, the root is beta equals 0.6013.",
@@ -319,8 +319,8 @@
     "say": "If the sum of z i K i is at most one, the feed is liquid. If the sum of z i over K i is at most one, it is vapor. Otherwise there are two phases."
    },
    {
-    "en": "For a single phase, Rachford-Rice still has a root, outside zero to one. This negative flash is an extrapolated tie line, not an amount.",
-    "th": "เมื่อเป็นเฟสเดียว สมการ Rachford–Rice ยังมีรากอยู่ แต่จะอยู่นอกช่วงศูนย์ถึงหนึ่ง negative flash นี้คือการต่อเส้นเชื่อมออกไป ไม่ใช่ปริมาณจริง"
+    "en": "For a single phase with K values on both sides of one, the root lies outside zero to one. This negative flash is an extrapolated tie line, not an amount. If every K is on the same side of one, there is no root with positive compositions.",
+    "th": "เมื่อเป็นเฟสเดียวและค่า K อยู่ทั้งสองฝั่งของหนึ่ง รากจะอยู่นอกช่วงศูนย์ถึงหนึ่ง negative flash นี้คือการต่อเส้นเชื่อมออกไป ไม่ใช่ปริมาณจริง ถ้าค่า K ทุกตัวอยู่ฝั่งเดียวกันของหนึ่ง จะไม่มีรากที่ให้องค์ประกอบเป็นบวกเลย"
    },
    {
     "en": "With constant K the test is exact. When K depends on composition, a one-phase answer must be confirmed by a stability test, which we meet in session 3.",

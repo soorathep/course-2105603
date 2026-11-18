@@ -47,7 +47,7 @@ Each session had a result that looked right and was not, and the evidence that s
 
 From weakest to strongest:
 
-1. **Calibration:** the model reproduces the data it was fitted to. Two equations, two parameters: always possible.
+1. **Calibration:** the model reproduces the data it was fitted to. Two equations, two parameters: often possible, but a solution may not exist (Session 3, α = 0.47) or may not be unique.
 2. **Internal consistency:** Gibbs–Duhem, element balances, TPD ≥ 0 at the fitted phases.
 3. **Held-out data:** same kind of measurement, conditions the fit did not use.
 4. **Independent property:** a different quantity the model also predicts, such as LLE from a VLE fit, or H<sup>E</sup> from τ(T).

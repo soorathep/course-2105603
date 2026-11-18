@@ -38,7 +38,7 @@ Three inputs carry the result, and each has its own error:
 | P<sub>i</sub><sup>sat</sup>(T) | a correlation (Antoine) | wrong constants, units or range |
 | Φ<sub>i</sub> | a vapor model (ideal gas or virial) | neglected nonideality |
 
-**When is Φ<sub>i</sub> ≈ 1 acceptable?** With the second virial coefficient and the Poynting term neglected, $\ln\Phi_i\approx B_{ii}(P-P_i^{\text{sat}})/RT$. For an illustrative $B_{ii}=-1000\ \text{cm}^3\,\text{mol}^{-1}$ at 341 K and 60 kPa, the correction to ln γ is −0.011 for a component with P<sup>sat</sup> = 28.7 kPa and −0.0015 for one with P<sup>sat</sup> = 55.9 kPa. A 1 % shift is small next to the scatter of most data, but it is **systematic**: it has the same sign in every row, so it can bias a consistency test even when it is invisible in a plot.
+**When is Φ<sub>i</sub> ≈ 1 acceptable?** With the vapor described by the pure-component second virial coefficient (cross coefficients neglected) and the Poynting term neglected, $\ln\Phi_i\approx B_{ii}(P-P_i^{\text{sat}})/RT$. For an illustrative $B_{ii}=-1000\ \text{cm}^3\,\text{mol}^{-1}$ at 341 K and 60 kPa, including Φ<sub>i</sub> changes ln γ by −0.011 for a component with P<sup>sat</sup> = 28.7 kPa and by −0.0015 for one with P<sup>sat</sup> = 55.9 kPa. Setting Φ<sub>i</sub> = 1 therefore makes the inferred ln γ too **high** by +0.011 and +0.0015. A 1 % shift is small next to the scatter of most data, but it is **systematic**: it has the same sign in every row, so it can bias a consistency test even when it is invisible in a plot.
 
 ## 2. Reducing one measured row
 
@@ -94,11 +94,11 @@ Two points are easy to miss. First, NRTL parameters are strongly **correlated**:
 
 ## 5. Consistency tests: what they can and cannot show
 
-Measured T, P, x and y over-determine the problem, so Gibbs–Duhem can be used to test the data. The **area test** (Redlich and Kister, 1948; Herington, 1951) integrates it over the composition range. For **isothermal** data,
+Measured T, P, x and y over-determine the problem, so Gibbs–Duhem can be used to test the data. The **area test** (Redlich and Kister, 1948; Herington, 1951) integrates it over the composition range. Writing g = G<sup>E</sup>/RT = x₁ln γ₁ + x₂ln γ₂, using the Gibbs–Duhem equation Σx<sub>i</sub> d ln γ<sub>i</sub> = −(H<sup>E</sup>/RT²)dT + (V<sup>E</sup>/RT)dP, and noting that g = 0 at both ends gives
 
-$$\int_0^1\ln\frac{\gamma_1}{\gamma_2}\,\mathrm{d}x_1=0.$$
+$$\int_0^1\ln\frac{\gamma_1}{\gamma_2}\,\mathrm{d}x_1=\int_0^1\frac{H^{E}}{RT^2}\frac{\mathrm{d}T}{\mathrm{d}x_1}\,\mathrm{d}x_1-\int_0^1\frac{V^{E}}{RT}\frac{\mathrm{d}P}{\mathrm{d}x_1}\,\mathrm{d}x_1 .$$
 
-For **isobaric** data the temperature changes along the integral, and the right-hand side becomes a heat-of-mixing term, $-\int_0^1 \frac{H^{E}}{RT^2}\frac{\mathrm{d}T}{\mathrm{d}x_1}\,\mathrm{d}x_1$, which is not zero. Applying the isothermal form to isobaric data can fail good data. **Point tests** compare the measured y with the y predicted from T, P, x through a G<sup>E</sup> model, row by row.
+For **isothermal** data the enthalpy term vanishes, and the pressure term is neglected because V<sup>E</sup>/RT is small at low pressure, so the integral of ln(γ₁/γ₂) should be zero. For **isobaric** data the pressure term vanishes, but T changes along the path and the enthalpy term, with a **positive** sign as written, is not zero (Kang et al., 2010). Applying the isothermal form to isobaric data can fail good data. **Point tests** compare the measured y with the y predicted from T, P, x through a G<sup>E</sup> model, row by row.
 
 Passing a test does not certify the data. It shows that the data are consistent with Gibbs–Duhem within the tolerance chosen, under the assumed Φ<sub>i</sub> and P<sup>sat</sup>. Failing a test can mean bad data, a wrong P<sup>sat</sup> correlation or a neglected vapor correction.
 
@@ -132,6 +132,7 @@ Write short answers. We use them in the first 30 minutes.
 - Barbieri, C., De Guido, G., Moioli, S. (2024). *J. Chem. Thermodyn.* 198, 107342. Data for 2-propanol + water at 60 and 80 kPa (Lab 02).
 - Barker, J. A. (1953). Determination of activity coefficients from total pressure measurements. *Aust. J. Chem.* 6, 207–210.
 - Herington, E. F. G. (1951). Tests for the consistency of experimental isobaric vapour–liquid equilibrium data. *J. Inst. Petrol.* 37, 457–470.
+- Kang, J. W., Diky, V., Chirico, R. D., Magee, J. W., Muzny, C. D., Abdulagatov, I., Kazakov, A. F., and Frenkel, M. (2010). Quality assessment algorithm for vapor–liquid equilibrium data. *J. Chem. Eng. Data* 55, 3631–3640.
 - NIST Chemistry WebBook, SRD 69, phase-change data for each compound (Antoine equation parameters).
 - Prausnitz, J. M., Lichtenthaler, R. N., de Azevedo, E. G. (1999). *Molecular Thermodynamics of Fluid-Phase Equilibria*, 3rd ed. Prentice Hall. Chapters 6 and 7.
 - Redlich, O., Kister, A. T. (1948). Algebraic representation of thermodynamic properties and the classification of solutions. *Ind. Eng. Chem.* 40, 345–348.

@@ -9,7 +9,10 @@ from pathlib import Path
 import csv
 import json
 
-FIELDS = ['received', 'mode', 'exit_ticket', 'pace', 'confidence', 'lab', 'unclear', 'change']
+FIELDS = ['received', 'mode', 'exit_ticket', 'pace', 'confidence', 'lab', 'unclear', 'change',
+          # post-midterm overview, asked in the last session only
+          'review_pace', 'review_media', 'review_media_comment', 'review_labs', 'review_labs_work',
+          'review_labs_comment', 'review_change']
 root = Path('responses')
 out = Path('summary'); out.mkdir(exist_ok=True)
 for session_dir in sorted(p for p in root.glob('*/s*') if p.is_dir()):

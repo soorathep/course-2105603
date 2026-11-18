@@ -9,7 +9,13 @@ each response as one JSON file in a private repository:
 
 No name, student ID, e-mail or IP address is stored. The page and the Worker
 both accept only these answers: session, in class or on my own, exit ticket,
-pace, confidence 1-5, lab worked, still unclear, one change.
+pace, confidence 1-5, lab worked, still unclear, one change. In the last session
+(2105603 Session 7) the form adds an optional overview of the whole post-midterm
+half: overall pace, quality of the slides/narration/captions/notes (1-5) with a
+comment, quality of the labs (1-5), whether the labs worked reliably, a lab comment
+and one change for next year. These `review_*` fields are saved only when answered.
+They need the updated `worker.js` deployed in Cloudflare; the older Worker ignores
+them and still saves the rest of the response.
 
 ## One-time setup
 

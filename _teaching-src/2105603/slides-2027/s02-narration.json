@@ -133,9 +133,9 @@
     "th": "แก้สมการ γ–φ หาค่า γ โดยคำนวณ P^sat ที่อุณหภูมิที่วัดได้ของแต่ละแถว ด้วยค่าคงที่ Antoine ของรายวิชา"
    },
    {
-    "en": "Each assumption has a size. Setting phi to one shifts ln gamma by about minus 0.011 for water, for a second virial coefficient of minus 1000 cubic centimetres per mole.",
-    "th": "สมมติฐานแต่ละข้อมีขนาดของผลกระทบ การกำหนดให้ Φ เท่ากับหนึ่งทำให้ ln γ ของน้ำเลื่อนไปประมาณ −0.011 เมื่อสัมประสิทธิ์ไวเรียลตัวที่สองเท่ากับ −1000 ลูกบาศก์เซนติเมตรต่อโมล",
-    "say": "Each assumption has a size. Setting phi to one shifts ln gamma by about minus zero point zero one one for water, for a second virial coefficient of minus one thousand cubic centimetres per mole."
+    "en": "Each assumption has a size. For a second virial coefficient of minus 1000 cubic centimetres per mole, including phi lowers ln gamma of water by 0.011. Setting phi to one therefore makes the inferred ln gamma too high by about 0.011.",
+    "th": "สมมติฐานแต่ละข้อมีขนาดของผลกระทบ เมื่อสัมประสิทธิ์ไวเรียลตัวที่สองเท่ากับ −1000 ลูกบาศก์เซนติเมตรต่อโมล การรวม Φ ทำให้ ln γ ของน้ำลดลง 0.011 ดังนั้นการกำหนดให้ Φ เท่ากับหนึ่งทำให้ ln γ ที่คำนวณได้สูงเกินไปประมาณ +0.011",
+    "say": "Each assumption has a size. For a second virial coefficient of minus one thousand cubic centimetres per mole, including phi lowers ln gamma of water by zero point zero one one. Setting phi to one therefore makes the inferred ln gamma too high by about zero point zero one one."
    },
    {
     "en": "An Antoine set that is 3 percent low adds 0.03 to ln gamma, in every row.",

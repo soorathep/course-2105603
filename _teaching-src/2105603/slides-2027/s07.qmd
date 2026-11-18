@@ -125,7 +125,7 @@ A claim is only as strong as the highest rung it reached.
 
 **Extrapolation reaches none:** the a + b/T model's gap closing at 324 K lies beyond the last tie line at 316 K.
 
-**Some claims cannot be reached with the data in hand:** the sign of W for naphthalene–benzene, or dγ±/dT from KCl data with U = 0.03.
+**Some claims cannot be reached with the data in hand:** the sign of W for naphthalene–benzene, or dγ±/dT from KCl data with expanded uncertainty U = 0.03.
 
 [Saying so is part of the answer.]{.q}
 :::
@@ -147,7 +147,7 @@ Place each claim on the ladder, or mark it as an extrapolation or not resolvable
 6. For KCl, γ± at 1 mol/kg rises by 0.004 between 298 and 308 K.
 
 ::: {.selfstudy}
-**On your own:** pause here, write your answer, then go to the next slide.
+**On your own:** pause here and write your answer. In place of a partner, compare it with the next slide and write one sentence on any difference and its cause.
 :::
 
 ## Activity 1: check your answer {#activity-1-debrief}
@@ -172,7 +172,7 @@ Two of six claims are calibration presented as validation, and two cannot be dec
 3. Read which checks fail, and the likely cause.
 4. Find the lines in the script. Fix them, rerun, recheck.
 
-[Open Lab 12 →](../preview-2027/reaction.html){.lab-button target="_blank"}
+[Open Lab 12 in the Graduate view →](../preview-2027/reaction.html?mode=graduate#ai-code){.lab-button target="_blank"}
 :::
 ::: {.column width="50%" .rule-notes}
 The order matters: **predict** what the correct value should be before you look at the lab's number. A check you cannot predict is a check you cannot interpret.
@@ -227,7 +227,7 @@ Session 4.
 :::: {.columns}
 ::: {.column width="50%"}
 ::: {.prompt}
-Steam reforming at 1100 K, 2000 kPa, S/C = 3 gives 0.795 CH₄ conversion. Rank by effect on the conversion: (i) K from constant Δ<sub>r</sub>H; (ii) P in kPa with no P°; (iii) S/C raised to 4; (iv) adding K<sub>φ</sub>.
+Steam reforming at 1100 K, 2000 kPa, S/C = 3 gives 0.795 CH₄ conversion. Rank by effect on the conversion: (i) K from constant Δ<sub>r</sub>H; (ii) the pressure term (P/P°)<sup>Δν</sup> omitted, as if P = P°; (iii) S/C raised to 4; (iv) adding K<sub>φ</sub>.
 :::
 
 Then: a KCl cell pair at 0.01 / 1.0 mol/kg is computed with RT/F. By what factor is it wrong?
@@ -254,7 +254,7 @@ Each script runs without errors and prints plausible numbers. Each is wrong.
 - [audit_lab12_smr.py](audit/audit_lab12_smr.py){target="_blank"} · Lab 12 E
 - [audit_lab13_kcl.py](audit/audit_lab13_kcl.py){target="_blank"} · Lab 13 E
 
-Lab 10 and 13 scripts need the CSV from their lab step E, saved next to the script.
+Run each in its own folder: `python audit_lab10_sle.py`. Needs numpy, scipy, pandas. Lab 10 and 13 also need the step E CSV in that folder, **with its downloaded name**. Each script's first lines say how.
 :::
 ::: {.column width="48%" .rule-notes}
 [For each script you audit]{.label}
@@ -288,7 +288,7 @@ By hand where you can, with the labs to check. Write each answer as equation, nu
 :::
 ::: {}
 [30 min · two audits]{.label}
-One script each, then swap and check your partner's fix. Record the failing check and the line.
+One script each, then swap and check your partner's fix (on your own: audit all four). Record the failing check and the line.
 :::
 ::: {}
 [15 min · explain]{.label}
@@ -301,7 +301,7 @@ One page per pair: answers A–C, two audits (check, line, fix), the ladder stat
 :::
 
 ::: {.selfstudy}
-**On your own:** do both roles yourself. Pause the slides, work through the problems and audits, then continue.
+**On your own:** do both roles yourself: work through the problems and audits, then check one value by hand before you trust it. Pause the slides while you work; the next slide lists what to hand in.
 :::
 
 ## Activity 2 · check your answers {#activity-2-check}
@@ -327,7 +327,7 @@ x₁ = 0.1437 at 298.15 K, 0.0878 at 285 K. Crystallized 0.0612 mol per mol feed
 | Error | Conversion | Change |
 |---|---:|---:|
 | (i) constant Δ<sub>r</sub>H | 0.498 | −0.297 |
-| (ii) no P° | 0.996 | +0.201 |
+| (ii) pressure term omitted | 0.996 | +0.201 |
 | (iii) S/C = 4 | 0.869 | +0.074 |
 | (iv) with K<sub>φ</sub> | 0.794 | −0.001 |
 
@@ -373,11 +373,11 @@ You may use the labs. State every number you take from them.
 **(b)** No. With the NIST data (353.39 K, 19.0 kJ/mol), W = +238 J/mol. The two fusion sets differ by about their stated uncertainty, and the sign of W follows them. x₁ at 298.15 K is 0.289 or 0.287 either way.
 :::
 ::: {.column width="46%" .rule-notes}
-**(c)** Report: near-ideal, |ln γ₁| ≤ 0.13 between 286 and 326 K with either fusion data set; x₁(298.15 K) = 0.288 ± 0.001 for either fusion data set. Do not report the sign of W.
+**(c)** Report: near-ideal, |ln γ₁| ≤ 0.13 between 286 and 326 K with either fusion data set; x₁(298.15 K) = 0.287 to 0.289. That spread is the **difference between the two fusion data sets considered**, not a full uncertainty: the solubility data and the model form add to it. Do not report the sign of W.
 
 To settle the sign: a measurement that does not pass through the solid, such as H<sup>E</sup> or VLE of liquid naphthalene + benzene, or Δ<sub>fus</sub>H measured to better than ±0.5 kJ/mol.
 
-[The model answer reaches rung 1 for W and rung 3 for the prediction.]{.q}
+[Both W and x₁(298.15 K) come from a fit to all ten rows, and 298.15 K lies inside the data range. That is calibration (rung 1), not held-out validation. A held-out check would refit without some rows and predict them.]{.q}
 :::
 ::::
 
@@ -438,9 +438,9 @@ Converging is not checking. Recompute one quantity independently, close a balanc
 
 **Session question:** the strongest evidence in this course was held-out data and independent properties: tie lines the fit did not use, LLE against a VLE fit, a second fusion data set. Where we had neither, the honest answer was to say what the data cannot decide.
 
-## Exit ticket · 5 minutes {#exit-ticket .activity}
+## Exit ticket · 10 minutes {#exit-ticket .activity}
 
-[Exit ticket and feedback · alone · 5 minutes · anonymous]{.act-label}
+[Exit ticket and feedback · alone · 10 minutes · anonymous]{.act-label}
 
 :::: {.columns}
 ::: {.column width="64%"}
@@ -448,7 +448,7 @@ Converging is not checking. Recompute one quantity independently, close a balanc
 Pick one result from your own lab files. Which rung of the evidence ladder does it reach, and what one piece of evidence would raise it? Put the topic you feel least ready for in "What is still unclear?".
 :::
 
-Scan the code or open the link. The same form asks three short questions about today: pace, confidence and whether the lab worked.
+Scan the code or open the link. The form first asks about today: pace, confidence and whether the lab worked. A second part asks about the **whole post-midterm half**, Sessions 1–7: pace, the quality of the slides, narration, captions and notes, and the quality of the labs.
 
 No name or student ID is recorded. Wait for **"Response received."**
 :::
@@ -464,7 +464,7 @@ No name or student ID is recorded. Wait for **"Response received."**
 ::: {.summary3}
 ::: {}
 [Hand in · this week]{.label}
-The one-page pair sheet: answers A–C, two audits, the ladder statement. Names and student IDs.
+The one-page pair sheet: answers A–C, two audits, the ladder statement. Names and student IDs. Upload it to **myCourseVille** (Session 7). On your own: one sheet with all four audits.
 :::
 ::: {}
 [Practice]{.label}

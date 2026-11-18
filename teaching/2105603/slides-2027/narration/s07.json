@@ -378,9 +378,9 @@
    },
    {
     "start": 19.36,
-    "end": 33.21,
-    "en": "In C, constant enthalpy and a missing standard pressure dominate; the fugacity correction changes the conversion by one thousandth. The potassium chloride cell with R T over F is half.",
-    "th": "ในข้อ C เอนทาลปีคงที่และการไม่ใช้ความดันมาตรฐานมีผลมากที่สุด การแก้ไขด้วย fugacity เปลี่ยนค่าการเปลี่ยนเพียงหนึ่งในพัน และเซลล์โพแทสเซียมคลอไรด์ที่ใช้ RT/F ได้ค่าครึ่งเดียว"
+    "end": 33.27,
+    "en": "In C, constant enthalpy and an omitted pressure term dominate; the fugacity correction changes the conversion by one thousandth. The potassium chloride cell with R T over F is half.",
+    "th": "ในข้อ C ผลจากการใช้เอนทัลปีคงที่และการตัดพจน์ความดันทิ้งมีขนาดใหญ่ที่สุด การปรับแก้ด้วย fugacity เปลี่ยน conversion เพียง 0.001 และเซลล์โพแทสเซียมคลอไรด์ที่คำนวณด้วย RT/F ให้ค่าเพียงครึ่งเดียว"
    }
   ]
  },
@@ -521,27 +521,27 @@
   "cues": [
    {
     "start": 0.25,
-    "end": 3.9,
-    "en": "Exit ticket and feedback. Five minutes, on your own.",
-    "th": "exit ticket และความเห็น ใช้เวลาห้านาที ทำคนเดียว"
+    "end": 3.79,
+    "en": "Exit ticket and feedback. Ten minutes, on your own.",
+    "th": "ตอบคำถามท้ายคาบและให้ความเห็น สิบนาที ทำคนเดียว"
    },
    {
-    "start": 4.25,
-    "end": 12.82,
+    "start": 4.14,
+    "end": 12.72,
     "en": "Pick one result from your own lab files. Which rung of the evidence ladder does it reach, and what one piece of evidence would raise it?",
     "th": "เลือกผลหนึ่งผลจากไฟล์ lab ของคุณ ผลนั้นอยู่ที่ขั้นใดของบันไดหลักฐาน และหลักฐานหนึ่งอย่างใดที่จะยกให้สูงขึ้น"
    },
    {
-    "start": 13.17,
-    "end": 17.55,
+    "start": 13.07,
+    "end": 17.44,
     "en": "Put the topic you feel least ready for in the field What is still unclear.",
     "th": "ใส่หัวข้อที่คุณยังพร้อมน้อยที่สุดในช่อง What is still unclear"
    },
    {
-    "start": 17.9,
-    "end": 24.92,
-    "en": "Scan the QR code or open the link. It is anonymous. Wait until you see Response received.",
-    "th": "สแกน QR code หรือเปิดลิงก์ แบบฟอร์มไม่ระบุตัวตน รอจนขึ้นข้อความ Response received"
+    "start": 17.79,
+    "end": 35.11,
+    "en": "Scan the QR code or open the link. It is anonymous. The first part is about today. The second part is about the whole half after the midterm: the pace, the slides and narration, and the labs. Wait until you see Response received.",
+    "th": "สแกน QR code หรือเปิดลิงก์ แบบฟอร์มไม่ระบุตัวตน ส่วนแรกถามเกี่ยวกับคาบนี้ ส่วนที่สองถามภาพรวมทั้งช่วงหลัง midterm ได้แก่ ความเร็ว สไลด์และเสียงบรรยาย และ lab รอจนเห็นข้อความ Response received"
    }
   ]
  },

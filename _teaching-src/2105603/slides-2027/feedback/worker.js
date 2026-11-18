@@ -15,7 +15,13 @@ const CHOICES = {
   pace: ['Too slow', 'About right', 'Too fast'],
   confidence: ['1', '2', '3', '4', '5'],
   lab: ['Yes', 'Partly', 'No, I need help', 'Not used'],
+  // optional overview of a whole block of sessions (2105603 Session 7: the post-midterm half)
+  review_pace: ['Too slow', 'About right', 'Too fast'],
+  review_media: ['1', '2', '3', '4', '5'],
+  review_labs: ['1', '2', '3', '4', '5'],
+  review_labs_work: ['Always', 'Mostly', 'Often not'],
 };
+const REVIEW_TEXT = ['review_media_comment', 'review_labs_comment', 'review_change'];
 const TEXT_LIMIT = 3000;
 
 function cors(origin) {
@@ -46,6 +52,10 @@ export function clean(d) {
     pace: pick('pace'), confidence: pick('confidence'), lab: pick('lab'),
     unclear: text(d.unclear), change: text(d.change),
   };
+  const review = {};
+  for (const k of ['review_pace', 'review_media', 'review_labs', 'review_labs_work']) if (pick(k)) review[k] = pick(k);
+  for (const k of REVIEW_TEXT) if (text(d[k])) review[k] = text(d[k]);
+  Object.assign(out, review);                                     // only present when answered
   if (!out.exit_ticket) throw new Error('The exit-ticket answer is empty.');
   return out;
 }

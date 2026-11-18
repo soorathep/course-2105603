@@ -8,12 +8,14 @@ import * as engine from '../../labs/assets/case-study.js';
 // Same specifier as the page's script tag, so the page and this module share one wfit instance.
 import { points, fitPair, score } from './wfit.js?v=2';
 
+import { statusLine, completeness, incompleteNote } from './aicomplete.js?v=2';
 const $ = (id) => document.getElementById(id);
 const fmt = (v, d = 3) => (Number.isFinite(v) ? v.toFixed(d) : '—');
 const num = (id) => { const v = $(id).value.trim(); return v === '' ? NaN : Number(v); };
 const TREF = 341.25;   // row 7 at 60 kPa
 let data = null, last = null;
 const TEXT = ['ai-spec', 'ai-tool', 'ai-prompt', 'ai-codetext', 'ai-found', 'ai-own'];
+const OUT = ['ai-ps1', 'ai-ps2', 'ai-n', 'ai-t12', 'ai-t21', 'ai-rmse', 'ai-check'];   // outputs a complete step must report
 const INPUT = ['ai-train', 'ai-weight', 'ai-xmin', 'ai-alpha', 'ai-ps1', 'ai-ps2', 'ai-n', 'ai-t12', 'ai-t21', 'ai-rmse', 'ai-check'];
 
 function csv() {
@@ -128,19 +130,19 @@ function run() {
 
     last = { settings: s, tau, ref: { tau: ref.tau, sd: ref.sd, f: fLab }, nLab: tr.length, checks };
     render(last);
-  } catch (e) { last = null; $('ai-results').hidden = true; $('ai-status').textContent = e.message; }
+  } catch (e) { last = null; $('ai-results').hidden = true; $('ai-status').textContent = e.message + incompleteNote(OUT); }
 }
 
 function render(res) {
   $('ai-out').innerHTML = res.checks.map((c) => `<tr><th scope="row">${c.name}</th><td>${c.lab}</td><td>${c.yours}</td><td class="${c.ok ? '' : 'warn'}">${c.ok ? 'agrees' : c.kind === 'model' ? 'model limit' : 'check'}</td><td style="text-align:left">${c.why}</td></tr>`).join('');
   const code = res.checks.filter((c) => c.kind !== 'model'), bad = code.filter((c) => !c.ok).length;
   const limit = res.checks.some((c) => c.kind === 'model' && !c.ok) ? ' The fitted model also predicts a liquid split: that is a limit of the model, not of your code.' : '';
-  $('ai-status').textContent = (bad ? `${bad} of ${code.length} code checks disagree with the lab. Find the cause in the code, fix it, rerun, and enter the new outputs.` : `All ${code.length} code checks agree. Now explain what the checks do not establish.`) + limit;
+  $('ai-status').textContent = statusLine(code.length, bad, OUT) + limit;
   $('ai-results').hidden = false;
 }
 
 function state() {
-  const s = { result: last };
+  const s = { result: last, completeness: completeness(OUT) };
   for (const id of [...TEXT, ...INPUT]) s[id] = $(id)?.value ?? '';
   return s;
 }

@@ -2,12 +2,14 @@
 // R1 CH4 + H2O = CO + 3H2, R2 CO + H2O = CO2 + H2, ideal gas, standard state 1 bar.
 // The lab computes ln K from Shomate H(T) and S(T), solves the two extents by nested bisection, and checks
 // the student's outputs. Saved in the study file as "aiCode".
+import { statusLine, completeness, incompleteNote } from './aicomplete.js?v=2';
 const $ = (id) => document.getElementById(id);
 const fmt = (v, d = 4) => (Number.isFinite(v) ? v.toFixed(d) : '—');
 const num = (id) => { const v = $(id).value.trim(); return v === '' ? NaN : Number(v); };
 export const R = 8.314462618;
 let data = null, last = null;
 const TEXT = ['ai-spec', 'ai-tool', 'ai-prompt', 'ai-codetext', 'ai-found', 'ai-own'];
+const OUT = ['ai-k1', 'ai-k2', 'ai-X', 'ai-yh2', 'ai-yco', 'ai-yco2', 'ai-ych4'];   // outputs a complete step must report
 const INPUT = ['ai-T', 'ai-P', 'ai-SC', 'ai-k1', 'ai-k2', 'ai-X', 'ai-yh2', 'ai-yco', 'ai-yco2', 'ai-ych4'];
 const SP = ['CH4', 'H2O', 'CO', 'CO2', 'H2'];
 
@@ -116,18 +118,18 @@ function run() {
 
     last = { T, P, SC, ref: { lnK1: k1, lnK2: k2, X: eq.e1, y: eq.y }, checks };
     render(last);
-  } catch (e) { last = null; $('ai-results').hidden = true; $('ai-status').textContent = e.message; }
+  } catch (e) { last = null; $('ai-results').hidden = true; $('ai-status').textContent = e.message + incompleteNote(OUT); }
 }
 
 function render(res) {
   $('ai-out').innerHTML = res.checks.map((c) => `<tr><th scope="row">${c.name}</th><td>${c.lab}</td><td>${c.yours}</td><td class="${c.ok ? '' : 'warn'}">${c.ok ? 'agrees' : 'check'}</td><td style="text-align:left">${c.why}</td></tr>`).join('');
   const bad = res.checks.filter((c) => !c.ok).length;
-  $('ai-status').textContent = bad ? `${bad} of ${res.checks.length} checks disagree with the lab. Find the cause in the code, fix it, rerun, and enter the new outputs.` : `All ${res.checks.length} checks agree. Now explain what the checks do not establish.`;
+  $('ai-status').textContent = statusLine(res.checks.length, bad, OUT);
   $('ai-results').hidden = false;
 }
 
 function state() {
-  const s = { result: last };
+  const s = { result: last, completeness: completeness(OUT) };
   for (const id of [...TEXT, ...INPUT]) s[id] = $(id)?.value ?? '';
   return s;
 }

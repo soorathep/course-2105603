@@ -132,9 +132,9 @@
     "say": "For the Margules model with A equal to three, the common tangent touches at zero point zero seven zero seven and zero point nine two nine three. The spinodal is at zero point two one one and zero point seven eight nine."
    },
    {
-    "en": "The feed at 0.12 sits where the curve is still convex, yet it is not the lowest state.",
-    "th": "สารป้อนที่ 0.12 อยู่ในช่วงที่เส้นโค้งยังโค้งหงาย แต่ไม่ใช่สถานะที่ต่ำที่สุด",
-    "say": "The feed at zero point one two sits where the curve is still convex, yet it is not the lowest state."
+    "en": "The feed at 0.12 sits where the curve is still convex, but its Gibbs energy of mixing lies above the common tangent. Splitting into the two tangent compositions lowers G.",
+    "th": "สารป้อนที่ 0.12 อยู่ในช่วงที่เส้นโค้งยังโค้งหงาย แต่พลังงานกิบส์ของการผสมที่จุดนี้อยู่สูงกว่าเส้นสัมผัสร่วม การแยกเป็นของเหลวสองเฟสที่จุดสัมผัสจึงลดพลังงานกิบส์ได้",
+    "say": "The feed at zero point one two sits where the curve is still convex, but its Gibbs energy of mixing lies above the common tangent. Splitting into the two tangent compositions lowers G."
    }
   ],
   "local-global": [
@@ -235,8 +235,8 @@
   ],
   "tie-line": [
    {
-    "en": "Each measured tie line gives two equations. With alpha fixed, the two tau are determined exactly.",
-    "th": "tie line ที่วัดได้แต่ละเส้นให้สมการสองสมการ เมื่อกำหนด α คงที่ τ ทั้งสองค่าจะถูกกำหนดได้พอดี"
+    "en": "Each measured tie line gives two equations. With alpha fixed, they are two constraints on the two tau. Check that an acceptable solution exists and that it is unique.",
+    "th": "tie line ที่วัดได้แต่ละเส้นให้สมการสองสมการ เมื่อกำหนด α คงที่ สมการทั้งสองเป็นข้อจำกัดสองข้อของ τ สองค่า ต้องตรวจว่ามีคำตอบที่ยอมรับได้และมีคำตอบเดียวหรือไม่"
    },
    {
     "en": "So a perfect fit to one tie line is not evidence that the model is right. It only shows that the equations had a solution.",
@@ -444,8 +444,8 @@
     "th": "สรุป ความโค้งเป็นการทดสอบเฉพาะที่ สารป้อนจะแยกเฟสเมื่อมีองค์ประกอบทดลองใดให้ TPD เป็นลบ จึงต้องค้นหาทั่วทั้งช่วง"
    },
    {
-    "en": "One tie line fixes two parameters exactly. That is calibration, not validation.",
-    "th": "tie line เส้นเดียวกำหนดพารามิเตอร์สองค่าได้พอดี นั่นคือการปรับเทียบ ไม่ใช่การยืนยันความถูกต้อง"
+    "en": "One tie line gives two constraints on two parameters. A solution may not exist, or may not be unique. A fit to it is calibration, not validation.",
+    "th": "tie line เส้นเดียวให้ข้อจำกัดสองข้อสำหรับพารามิเตอร์สองค่า คำตอบอาจไม่มี หรือมีมากกว่าหนึ่ง การฟิตกับ tie line เส้นเดียวจึงเป็นการปรับเทียบ ไม่ใช่การยืนยันความถูกต้อง"
    },
    {
     "en": "Check tau of T on tie lines the fit did not use. Mutual-solubility data decide whether a predicted split is real.",

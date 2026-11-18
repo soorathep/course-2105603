@@ -1,6 +1,8 @@
 # Session 7 audit exercise (2105603, 2027). This script runs without errors.
 # Use Lab 05 step E to find what is wrong with its outputs, then fix it.
 # No data file is needed.
+# Run: put this file in a folder, then in a terminal in that folder type  python audit_lab05_lle.py
+# Needs Python 3.9 or later with numpy and scipy (install once: pip install numpy scipy).
 # First-draft style: fsolve for tau from the tie line, fsolve for binodal from a symmetric guess,
 # local minimize of TPD from the feed.
 import numpy as np

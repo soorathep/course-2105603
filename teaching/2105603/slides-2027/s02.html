@@ -241,7 +241,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="label">Before class · 15–20 min</span> Read the <a href="note-s02.html" target="_blank">note on activity coefficients</a>. Bring one question.</p>
 </div>
 <div>
-<p><span class="label">After class · 30–40 min</span> Finish the Lab 02 fits including G3 and G5, and submit the study file with your name and ID.</p>
+<p><span class="label">After class · 30–40 min</span> Finish the Lab 02 fits and G3, G4 and G5 (required; G1 and G2 are optional), and submit the study file with your name and ID.</p>
 </div>
 </div>
 <div class="selfstudy">
@@ -267,13 +267,13 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <thead>
 <tr class="header">
 <th>Assumption</th>
-<th>Effect on ln γ</th>
+<th>Error in inferred ln γ</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Φ<sub>i</sub> = 1, for B = −1000 cm³ mol⁻¹</td>
-<td>−0.011 (water), −0.0015 (2-propanol)</td>
+<td>+0.011 (water), +0.0015 (2-propanol)</td>
 </tr>
 <tr class="even">
 <td>Antoine set 3 % low</td>
@@ -314,7 +314,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="column" style="width:58%;">
 <p><img data-src="figures/s02-lngamma.svg" class="fig-pxy" alt="ln gamma of 2-propanol and water from 18 measured pairs at 60 kPa, both positive, with the NRTL fit"></p>
 </div><div class="column concept-notes" style="width:40%;">
-<p><span class="q">Positive deviation</span> ln γ &gt; 0 for both components at every composition. Unlike pairs (2-propanol with water) attract less than like pairs.</p>
+<p><span class="q">Positive deviation</span> ln γ &gt; 0 for both components at every composition: G<sup>E</sup> &gt; 0. γ measures excess chemical potential, which has enthalpic and entropic parts (G<sup>E</sup> = H<sup>E</sup> − TS<sup>E</sup>). Weaker unlike-pair attraction is one interpretation, not something γ alone shows.</p>
 <p><span class="q">Largest when dilute</span> ln γ₁ reaches about 2 as x₁ → 0, so γ₁ ≈ 8: a little 2-propanol in water is very volatile.</p>
 <p><span class="q">Azeotrope</span> Where y<sub>i</sub> = x<sub>i</sub>:</p>
 <p><span class="math display">\frac{\gamma_1}{\gamma_2}=\frac{P_2^{\text{sat}}}{P_1^{\text{sat}}}</span></p>
@@ -339,7 +339,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="column" style="width:56%;">
 <p><span class="math display">\ln\gamma_1=x_2^2\left[\tau_{21}\Big(\frac{G_{21}}{x_1+x_2G_{21}}\Big)^2+\frac{\tau_{12}G_{12}}{(x_2+x_1G_{12})^2}\right]</span></p>
 <p><span class="math display">G_{ij}=\exp(-\alpha\,\tau_{ij})</span></p>
-<p>ln γ₂ follows by swapping 1 and 2. In general τ<sub>ij</sub> = a<sub>ij</sub> + b<sub>ij</sub>/T. With α = 0.47 (from the article) and constant τ, two parameters are fitted.</p>
+<p>ln γ₂ follows by swapping 1 and 2. τ<sub>ij</sub> = (g<sub>ij</sub> − g<sub>jj</sub>)/RT is a dimensionless interaction parameter; in general τ<sub>ij</sub> = a<sub>ij</sub> + b<sub>ij</sub>/T with a<sub>ij</sub> dimensionless and b<sub>ij</sub> in K. With α = 0.47 (from the article) and constant τ, two parameters are fitted.</p>
 </div><div class="column" style="width:42%;">
 <div class="lever-box">
 <p><span class="label">What “fit” means here</span></p>
@@ -370,7 +370,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <h2>How well is ln γ₁ known in each row?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>Propagate the standard uncertainties u = U/k (article averages, k = 2):</p>
+<p>U is the expanded uncertainty the article reports and k = 2 its coverage factor (about 95 %). Propagate the standard uncertainties u = U/k (article averages) to the standard uncertainty σ of ln γ₁:</p>
 <p><span class="math display">\sigma_{\ln\gamma_1}^2\approx\Big(\frac{u_x}{x_1}\Big)^2+\Big(\frac{u_y}{y_1}\Big)^2+\Big(\frac{u_P}{P}\Big)^2+\Big(\frac{\mathrm{d}\ln P_1^{\text{sat}}}{\mathrm{d}T}u_T\Big)^2</span></p>
 <p>At 60 kPa: u<sub>x</sub> = 0.0107, u<sub>y</sub> = 0.0139, u<sub>P</sub> = 0.25 kPa, u<sub>T</sub> = 0.037 K.</p>
 </div><div class="column" style="width:48%;">
@@ -437,7 +437,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <h2>The objective is part of the model</h2>
 <div class="columns">
 <div class="column" style="width:46%;">
-<p>Unweighted: minimize <span class="math inline">\sum r^2</span>. Weighted: minimize <span class="math inline">\sum (r/\sigma)^2</span>.</p>
+<p>Residual r = model ln γ − measured ln γ, as before. Unweighted: minimize <span class="math inline">\sum r^2</span>. Weighted: minimize <span class="math inline">\sum (r/\sigma)^2</span>.</p>
 <p>RMS(r/σ) ≈ 1 means the misfit matches the stated uncertainty.</p>
 <p>The ± values are from the linearized covariance at the minimum. The unweighted fit at 60 kPa has τ₁₂ and τ₂₁ correlated at −0.86: many pairs fit almost equally well.</p>
 </div><div class="column" style="width:52%;">
@@ -504,7 +504,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div>
 <p>Then predict: in an unweighted fit, which of the two rows has more influence on τ₂₁? Is that what you want? Compare with your partner.</p>
 <div class="selfstudy">
-<p><strong>On your own:</strong> pause here, write your answer, then go to the next slide.</p>
+<p><strong>On your own:</strong> pause here and write your answer. In place of a partner, compare it with the next slide and write one sentence on any difference and its cause.</p>
 </div>
 </section>
 <section id="activity-1-debrief" class="slide level2">
@@ -529,7 +529,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <li>Graduate view, <strong>G3</strong>: fit 60 kPa unweighted and weighted. Compare τ₂₁ and RMS(r/σ).</li>
 <li>Set the minimum x₁ to 0.05 and refit. What changes?</li>
 </ol>
-<p><a href="../preview-2027/case-study.html" class="lab-button" target="_blank">Open Lab 02 →</a></p>
+<p><a href="../preview-2027/case-study.html?mode=graduate" class="lab-button" target="_blank">Open Lab 02 in the Graduate view →</a></p>
 </div><div class="column" style="width:54%;">
 <p><img data-src="figures/s02-wf-lab.png" class="lab-shot" alt="Lab 02 G3 residual plot of ln gamma one against x one on a log scale for the unweighted and weighted fits with two-sigma bars"></p>
 <div class="expect">
@@ -607,7 +607,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div>
 </div>
 <div class="selfstudy">
-<p><strong>On your own:</strong> do both roles yourself. Pause the slides, work in Lab 02, then continue.</p>
+<p><strong>On your own:</strong> do both roles yourself: work in Lab 02, then check one value by hand before you trust it. Pause the slides while you work; the next slide lists what to hand in.</p>
 </div>
 </section>
 <section id="activity-2-check" class="slide level2">
@@ -720,7 +720,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="column" style="width:58%;">
 <p><img data-src="figures/s02-resid.svg" class="fig-pxy" alt="Residuals in ln gamma one at 60 kPa against x one on a log scale for the fits trained at 60 and 80 kPa, with two-sigma bars that grow large below x one equal to 0.02"></p>
 </div><div class="column concept-notes" style="width:40%;">
-<p><span class="q">Discuss in pairs, then with the class</span></p>
+<p><span class="q">Discuss in pairs, then with the class. On your own: write two or three sentences for each question.</span></p>
 <ol type="1">
 <li>Without the four rows below x₁ = 0.02, the 80 kPa fit checks at 0.116 on 60 kPa data. What was the 0.291 measuring?</li>
 <li>The weighted 60 kPa fit is closer to the stated uncertainty, yet predicts that a fully miscible liquid splits. Is it the better model?</li>
@@ -763,7 +763,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <h2>After class</h2>
 <div class="summary3">
 <div>
-<p><span class="label">Hand in · this week</span> Your Lab 02 study file with the three fits, G3, G4 and G5, name and student ID.</p>
+<p><span class="label">Hand in · this week</span> Your Lab 02 study file with the three fits, G3, G4 and G5, name and student ID. Upload it to <strong>myCourseVille</strong>, in the assignment for that lab.</p>
 </div>
 <div>
 <p><span class="label">Prepare · Session 3</span> Read the <a href="note-s03.html" target="_blank">note on Gibbs energy of mixing and phase stability</a>. About 20 minutes.</p>
@@ -772,7 +772,8 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="label">Optional · graduate</span> Run Lab 03 on the measured 60 kPa data and explain each “not assessed” result in the study file.</p>
 </div>
 </div>
-<p><a href="../preview-2027/case-study.html" class="lab-button" target="_blank">Open Lab 02 →</a></p>
+<p><a href="../preview-2027/case-study.html?mode=graduate#graduate-investigations" class="lab-button" target="_blank">Open Lab 02 in the Graduate view →</a></p>
+<p><span class="howto">Starts at <strong>Graduate analysis</strong>. Required: <strong>G3</strong> (first button <strong>Fit unweighted and weighted</strong>), <strong>G4</strong>, and <strong>G5</strong> (first button <strong>Download the measured data (CSV)</strong>).</span></p>
 
 </section>
     </div>
@@ -1023,7 +1024,8 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
          Loads narration/<deck>.json (built by build_narration.py): per slide, an MP3 and
          sentence cues with English and Thai text. Controls at the bottom left:
          narration on/off, pause/resume and replay while narration is on,
-         captions off/English/Thai, auto-advance on/off.
+         captions off/English/Thai, auto-advance on/off. Auto-advance stops on activity, demonstration
+         and break slides and shows a Continue button, so a timed activity is never skipped.
          With narration off and captions on, the slide's full text is shown to read. -->
     <style>
     .nr-bar { position: fixed; left: 12px; bottom: 10px; z-index: 40; display: flex; gap: 6px; font: 600 14px/1 "Source Sans 3", "Course Thai", sans-serif; }
@@ -1038,6 +1040,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
     .nr-caption.transcript p { margin: 0 0 .4em; }
     .nr-caption[lang="th"] { font-family: "Course Thai", "Sarabun", sans-serif; }
     .reveal-viewport.dark-slide .nr-bar button:not([aria-pressed="true"]) { background: rgba(255,255,255,.85); }
+    .nr-bar #nr-continue { background: #E29A2D; border-color: #E29A2D; color: #1C242B; }
     .draft-mark { align-self: center; margin-left: 8px; font: 400 12px/1 "Source Sans 3", sans-serif; color: #66727C !important; text-decoration: none; }
     .draft-mark:hover { text-decoration: underline; }
     @media print { .draft-mark { display: none; } }
@@ -1048,6 +1051,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
       <button type="button" id="nr-replay" hidden="">Replay slide</button>
       <button type="button" id="nr-cc" aria-pressed="false">Captions: off</button>
       <button type="button" id="nr-auto" aria-pressed="false">Auto-advance: off</button>
+      <button type="button" id="nr-continue" hidden="">Done with the activity: continue →</button>
       <a class="draft-mark" href="../index.html">Draft for 2027 · current class: course page</a>
     </div>
     <div class="nr-caption" id="nr-caption" aria-live="polite" hidden=""></div>
@@ -1116,7 +1120,14 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
         e.currentTarget.blur();
       });
       audio.addEventListener('timeupdate', () => { if (state.sound) syncCaption(); });
-      audio.addEventListener('ended', () => { if (state.auto && !Reveal.isLastSlide()) Reveal.next(); });
+      // Activity, demonstration and break slides need the student's time: stop and wait for Continue.
+      const holds = (el) => !!el && (el.classList.contains('activity') || el.classList.contains('breakslide') || /^demo/.test(el.id || ''));
+      audio.addEventListener('ended', () => {
+        if (!state.auto || Reveal.isLastSlide()) return;
+        if (holds(Reveal.getCurrentSlide())) { $('nr-continue').hidden = false; $('nr-continue').focus(); return; }
+        Reveal.next();
+      });
+      $('nr-continue').addEventListener('click', (e) => { e.currentTarget.hidden = true; e.currentTarget.blur(); Reveal.next(); });
 
       $('nr-sound').addEventListener('click', (e) => { state.sound = !state.sound; store.set('sound', state.sound ? 'on' : 'off'); paintButtons(); load(); e.currentTarget.blur(); });
       $('nr-cc').addEventListener('click', (e) => { state.cc = CC_NEXT[state.cc]; store.set('cc', state.cc); paintButtons();
@@ -1127,7 +1138,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
       fetch('narration/' + deck + '.json').then((r) => r.ok ? r.json() : {}).then((d) => {
         data = d;
         if (Reveal.isReady()) load(); else Reveal.on('ready', load);
-        Reveal.on('slidechanged', load);
+        Reveal.on('slidechanged', () => { $('nr-continue').hidden = true; load(); });
       }).catch(() => { document.querySelector('.nr-bar').hidden = true; });
     })();
     </script>

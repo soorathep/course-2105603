@@ -115,8 +115,8 @@
     "th": "ปริมาณที่วัดได้ทุกตัวเกี่ยวข้องกับไอออนในสัดส่วนที่เป็นกลางทางไฟฟ้า จึงวัด activity ของไอออนเดี่ยวไม่ได้"
    },
    {
-    "en": "For a one-to-one salt, the activity of potassium chloride is m gamma plus-minus, squared.",
-    "th": "สำหรับเกลือแบบ 1:1 activity ของโพแทสเซียมคลอไรด์เท่ากับ (mγ±)²"
+    "en": "For a one-to-one salt, the activity of potassium chloride is m gamma plus-minus, squared, with m divided by the standard molality of one mole per kilogram so that the activity has no units.",
+    "th": "สำหรับเกลือแบบ 1:1 activity ของโพแทสเซียมคลอไรด์เท่ากับ (mγ±)² โดย m หารด้วยโมลาลิตีมาตรฐาน 1 โมลต่อกิโลกรัม เพื่อให้ activity ไม่มีหน่วย"
    },
    {
     "en": "A cell that responds to potassium chloride therefore gives 2 R T over F times the log of the ratio of m gamma.",
@@ -129,9 +129,9 @@
   ],
   "dh": [
    {
-    "en": "The Debye-Hückel limiting law uses A equal to 0.509 on the log 10 basis; on the natural-log basis it is 1.172.",
-    "th": "กฎจำกัดของ Debye-Hückel ใช้ A เท่ากับ 0.509 บนฐาน log₁₀ ถ้าใช้ฐาน ln จะเท่ากับ 1.172",
-    "say": "The Debye-Hückel limiting law uses A equal to zero point five zero nine on the log ten basis; on the natural-log basis it is one point one seven two."
+    "en": "The Debye-Hückel limiting law uses A ten equal to 0.509 on the log 10 basis. On the natural-log basis, A l n is ln 10 times that, 1.172. Use the one that matches your logarithm.",
+    "th": "กฎจำกัดของ Debye-Hückel ใช้ A₁₀ เท่ากับ 0.509 บนฐาน log₁₀ บนฐาน ln ค่า A_ln เท่ากับ ln 10 คูณค่านั้น คือ 1.172 ต้องใช้ค่าที่ตรงกับฐานลอการิทึมที่ใช้",
+    "say": "The Debye-Hückel limiting law uses A ten equal to zero point five zero nine on the log ten basis. On the natural-log basis, A l n is l n ten times that, one point one seven two. Use the one that matches your logarithm."
    },
    {
     "en": "At 1.0 mole per kilogram the limiting law gives 0.310. The data give 0.597.",
@@ -139,9 +139,9 @@
     "say": "At one mole per kilogram the limiting law gives zero point three one. The data give zero point five nine seven."
    },
    {
-    "en": "An extended form with two fitted constants follows the data to 0.022 in ln gamma, close to their stated uncertainty.",
-    "th": "รูปแบบขยายที่มีค่าคงที่สองตัวที่ fit ได้ ตามข้อมูลได้ภายใน 0.022 ใน ln γ ซึ่งใกล้กับความไม่แน่นอนที่ระบุไว้ของข้อมูล",
-    "say": "An extended form with two fitted constants follows the data to zero point zero two two in ln gamma, close to their stated uncertainty."
+    "en": "An extended form with two fitted constants, B and C, follows the data to 0.022 in ln gamma. Compare it on the same basis: the expanded uncertainty of 0.03 in gamma is a standard uncertainty of about 0.025 in ln gamma near gamma of 0.6.",
+    "th": "รูปแบบขยายที่มีค่าคงที่ที่ fit สองตัวคือ B และ C ตามข้อมูลได้ภายใน 0.022 ใน ln γ เมื่อเทียบบนฐานเดียวกัน ความไม่แน่นอนขยาย 0.03 ใน γ เท่ากับความไม่แน่นอนมาตรฐานประมาณ 0.025 ใน ln γ ที่ γ ประมาณ 0.6",
+    "say": "An extended form with two fitted constants, B and C, follows the data to zero point zero two two in ln gamma. Compare it on the same basis: the expanded uncertainty of zero point zero three in gamma is a standard uncertainty of about zero point zero two five in ln gamma near gamma of zero point six."
    }
   ],
   "temperature": [
@@ -154,9 +154,9 @@
     "th": "สำหรับเซลล์ความเข้มข้นแบบอุดมคติ E แปรผันตรงกับ T และการเปลี่ยนแปลงเอนทาลปีเป็นศูนย์ งานไฟฟ้าทั้งหมดมาจากความร้อนที่ดึงจากสิ่งแวดล้อม"
    },
    {
-    "en": "The potassium chloride data at two temperatures give activity coefficients at 1 mole per kilogram of 0.603 and 0.606. The difference is far inside the 0.03 uncertainty, so these data cannot resolve the derivative.",
-    "th": "ข้อมูลโพแทสเซียมคลอไรด์ที่สองอุณหภูมิให้สัมประสิทธิ์กิจกรรมที่ 1 โมลต่อกิโลกรัมเท่ากับ 0.603 และ 0.606 ความต่างอยู่ในช่วงความไม่แน่นอน 0.03 ข้อมูลชุดนี้จึงหาอนุพันธ์ไม่ได้",
-    "say": "The potassium chloride data at two temperatures give activity coefficients at one mole per kilogram of zero point six zero three and zero point six zero six. The difference is far inside the zero point zero three uncertainty, so these data cannot resolve the derivative."
+    "en": "The potassium chloride data at two temperatures give activity coefficients at 1 mole per kilogram of 0.603 and 0.606. The difference is far inside the expanded uncertainty of 0.03, so these data cannot resolve the derivative.",
+    "th": "ข้อมูลโพแทสเซียมคลอไรด์ที่สองอุณหภูมิให้สัมประสิทธิ์กิจกรรมที่ 1 โมลต่อกิโลกรัมเท่ากับ 0.603 และ 0.606 ความต่างอยู่ภายในความไม่แน่นอนขยาย 0.03 ข้อมูลชุดนี้จึงหาอนุพันธ์ไม่ได้",
+    "say": "The potassium chloride data at two temperatures give activity coefficients at one mole per kilogram of zero point six zero three and zero point six zero six. The difference is far inside the expanded uncertainty of zero point zero three, so these data cannot resolve the derivative."
    }
   ],
   "batteries": [
@@ -201,9 +201,9 @@
     "say": "The ideal voltage is two hundred twenty five point six millivolts, and with the measured gamma it is two hundred three."
    },
    {
-    "en": "The uncertainty from gamma alone is about 3 millivolts, larger than the effect of a 10 kelvin change in these data.",
-    "th": "ความไม่แน่นอนที่มาจาก γ อย่างเดียวประมาณ 3 มิลลิโวลต์ ซึ่งมากกว่าผลของการเปลี่ยนอุณหภูมิ 10 เคลวิน ในข้อมูลชุดนี้",
-    "say": "The uncertainty from gamma alone is about three millivolts, larger than the effect of a ten kelvin change in these data."
+    "en": "Treating the two gamma errors as independent, the expanded uncertainty from gamma alone is about 3 millivolts, larger than the effect of a 10 kelvin change in these data.",
+    "th": "เมื่อถือว่าความคลาดเคลื่อนของ γ ทั้งสองค่าเป็นอิสระต่อกัน ความไม่แน่นอนขยายที่มาจาก γ อย่างเดียวประมาณ 3 มิลลิโวลต์ ซึ่งมากกว่าผลของการเปลี่ยนอุณหภูมิ 10 เคลวินในข้อมูลชุดนี้",
+    "say": "Treating the two gamma errors as independent, the expanded uncertainty from gamma alone is about three millivolts, larger than the effect of a ten kelvin change in these data."
    }
   ],
   "demo-lab": [

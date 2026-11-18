@@ -119,7 +119,7 @@ window.Quarto = {
 </table>
 <p>The difference is a factor of 16 in K. Δ<sub>r</sub>H° itself rises from 206 kJ/mol at 298 K to 227 kJ/mol at 1100 K.</p>
 <h2 id="how-many-reactions">3. How many reactions?</h2>
-<p>With N species made of M elements, the number of independent reactions is N minus the rank of the element matrix. For CH₄, H₂O, CO, CO₂ and H₂ (elements C, H and O, rank 3), that is 5 − 3 = <strong>2</strong>. Any two independent reactions give the same equilibrium, for example R1 and the water–gas shift R2, CO + H₂O ⇌ CO₂ + H₂. A third reaction such as CH₄ + 2H₂O ⇌ CO₂ + 4H₂ is R1 + R2 and adds no information.</p>
+<p>With N species made of M elements, the number of independent reactions is N minus the rank of the element matrix A, whose entry A<sub>ki</sub> is the number of atoms of element k in species i. For CH₄, H₂O, CO, CO₂ and H₂ (elements C, H and O, rank 3), that is 5 − 3 = <strong>2</strong>. Any two independent reactions give the same equilibrium, for example R1 and the water–gas shift R2, CO + H₂O ⇌ CO₂ + H₂. A third reaction such as CH₄ + 2H₂O ⇌ CO₂ + 4H₂ is R1 + R2 and adds no information.</p>
 <p>Equivalently, the equilibrium composition minimizes the total Gibbs energy subject to the element balances. The extents of two reactions and a Gibbs minimization with Lagrange multipliers give the same answer.</p>
 <h2 id="pressure-inert-gas-and-steam">4. Pressure, inert gas and steam</h2>
 <p>With a feed of 1 mol CH₄ and S mol H₂O, the extents ξ₁ and ξ₂ give the amounts CH₄ 1 − ξ₁, H₂O S − ξ₁ − ξ₂, CO ξ₁ − ξ₂, CO₂ ξ₂, H₂ 3ξ₁ + ξ₂, and a total of 1 + S + 2ξ₁. For an ideal gas the two equilibrium equations are</p>
@@ -158,7 +158,7 @@ window.Quarto = {
 </table>
 <p>At 1100 K and 2000 kPa, raising S from 2 to 4 raises the conversion from 0.678 to 0.869.</p>
 <h2 id="when-is-the-gas-ideal-enough">5. When is the gas ideal enough?</h2>
-<p><span class="math inline">K_\varphi=\prod_i\hat\varphi_i^{\nu_i}</span> corrects the ideal-gas result. At 1100 K and 2 MPa every species is far above its critical temperature. The Pitzer virial correlation gives ln K<sub>φ</sub> = 0.011 for R1 and 0.005 for R2: about 1 %, below the uncertainty from catalyst approach to equilibrium. The same correction is not small for ammonia synthesis at 20 MPa, or for the Week 7 example at 2 MPa and 400 K, where K<sub>φ</sub> = 1.06.</p>
+<p><span class="math inline">K_\varphi=\prod_i\hat\varphi_i^{\nu_i}</span> corrects the ideal-gas result. At 1100 K and 2 MPa every species is far above its critical temperature. The Pitzer virial correlation gives ln K<sub>φ</sub> = 0.011 for R1 and 0.005 for R2. The equilibrium factor changes by about 1 %, but the CH₄ conversion changes only from 0.795 to 0.794 (by 0.001), below the uncertainty from catalyst approach to equilibrium. The same correction is not small for ammonia synthesis at 20 MPa, or for the Week 7 example at 2 MPa and 400 K, where K<sub>φ</sub> = 1.06.</p>
 <h2 id="before-session-5">6. Before Session 5</h2>
 <p>Write short answers. We use them in the first 30 minutes.</p>
 <ol type="1">

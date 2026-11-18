@@ -262,7 +262,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="math display">\frac{\Delta g_{\text{mix}}}{RT}=\sum_i x_i\ln x_i+\frac{G^E}{RT}</span></p>
 <p><span class="q">Lowest G wins</span> At fixed T and P, a feed splits if a straight line between two compositions lies <strong>below</strong> the curve at the feed.</p>
 <p><span class="q">Margules, A = 3</span> G<sup>E</sup>/RT = A x₁x₂. Binodal 0.0707 and 0.9293; spinodal 0.211 and 0.789.</p>
-<p>The feed z₁ = 0.12 sits where the curve is still convex, yet below the tangent line it is not the lowest state.</p>
+<p>The feed z₁ = 0.12 sits where the curve is still convex, but its Δg<sub>mix</sub> lies <strong>above</strong> the common tangent. Splitting into 0.0707 and 0.9293 lowers G.</p>
 </div></div>
 </section>
 <section id="local-global" class="slide level2">
@@ -270,7 +270,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:52%;">
 <p><strong>Local:</strong> stable against small changes when</p>
-<p><span class="math display">x_1x_2\,\frac{\partial^2(\Delta g_{\text{mix}}/RT)}{\partial x_1^2}=1+x_1x_2\frac{\partial^2 g}{\partial x_1^2}&gt;0</span></p>
+<p><span class="math display">x_1x_2\,\frac{\partial^2(\Delta g_{\text{mix}}/RT)}{\partial x_1^2}=1+x_1x_2\frac{\partial^2 (G^E/RT)}{\partial x_1^2}&gt;0</span></p>
 <p>Zero on the <strong>spinodal</strong>. For Margules: 1 − 2A x₁x₂.</p>
 <p><strong>Global:</strong> the two liquids of the <strong>binodal</strong> have equal chemical potentials:</p>
 <p><span class="math display">x_i^{\alpha}\gamma_i^{\alpha}=x_i^{\beta}\gamma_i^{\beta}\qquad i=1,2</span></p>
@@ -314,7 +314,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="column" style="width:54%;">
 <p><img data-src="figures/s03-tpd.svg" class="fig-pxy" alt="Tangent-plane distance against trial composition for Margules A equal to 3: for the feed 0.05 it stays at or above zero; for the feed 0.12 it reaches a minimum of minus 0.245 at w one 0.953, while the trivial point w equal to z always gives zero"></p>
 </div><div class="column concept-notes" style="width:44%;">
-<p><span class="math display">\frac{\text{TPD}(\mathbf w)}{RT}=\sum_i w_i\big[\ln w_i\gamma_i(\mathbf w)-\ln z_i\gamma_i(\mathbf z)\big]</span></p>
+<p><span class="math display">\frac{\text{TPD}(\mathbf w)}{RT}=\sum_i w_i\big[\ln\!\big(w_i\gamma_i(\mathbf w)\big)-\ln\!\big(z_i\gamma_i(\mathbf z)\big)\big]</span></p>
 <p>z is the feed and <strong>w</strong> a trial composition.</p>
 <p><span class="q">Rule</span> TPD ≥ 0 for <strong>every</strong> trial w: stable. Any w with TPD &lt; 0: the feed splits, and w is a good first guess for the new phase (Michelsen, 1982).</p>
 <p><span class="q">Trap</span> w = z always gives TPD = 0. A local search started at the feed stops there. Search the whole composition range, or from several starts.</p>
@@ -369,7 +369,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div>
 <p>Then: which feed does a curvature test alone get wrong? For each feed that splits, find the fraction of the x₁-rich liquid with the lever rule.</p>
 <div class="selfstudy">
-<p><strong>On your own:</strong> pause here, write your answer, then go to the next slide.</p>
+<p><strong>On your own:</strong> pause here and write your answer. In place of a partner, compare it with the next slide and write one sentence on any difference and its cause.</p>
 </div>
 </section>
 <section id="activity-1-debrief" class="slide level2">
@@ -422,7 +422,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <h2>From a tie line to parameters</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>Each measured tie line gives two equations, x<sub>i</sub><sup>α</sup>γ<sub>i</sub><sup>α</sup> = x<sub>i</sub><sup>β</sup>γ<sub>i</sub><sup>β</sup>. With α fixed, two τ are <strong>determined exactly</strong>.</p>
+<p>Each measured tie line gives two equations, x<sub>i</sub><sup>α</sup>γ<sub>i</sub><sup>α</sup> = x<sub>i</sub><sup>β</sup>γ<sub>i</sub><sup>β</sup>. With α fixed, they are two <strong>constraints</strong> on two τ. Check that an acceptable solution exists and that it is unique.</p>
 <p>So a perfect fit to one tie line is not evidence that the model is right. It only shows that the equations had a solution.</p>
 <p>At 298.15 K with α = 0.3: ln γ₁ = 1.651 and 0.052, x₁γ₁ = <strong>0.9225</strong> in both liquids; x₂γ₂ = <strong>0.8914</strong> in both.</p>
 </div><div class="column" style="width:48%;">
@@ -524,7 +524,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <li>Read the construction: the tangent lies below the curve at the feed.</li>
 <li>Switch to NRTL, τ₁₂ = 0.337, τ₂₁ = 2.848, α = 0.47: the Session 2 weighted fit. Where is the split?</li>
 </ol>
-<p><a href="../preview-2027/stability.html" class="lab-button" target="_blank">Open Lab 04 →</a></p>
+<p><a href="../preview-2027/stability.html?mode=graduate" class="lab-button" target="_blank">Open Lab 04 in the Graduate view →</a></p>
 </div><div class="column" style="width:54%;">
 <p><img data-src="figures/s03-lab04.png" class="lab-shot" alt="Lab 04 Gibbs-energy construction for Margules A equal to 3 with the feed at 0.12, the common tangent through 0.0707 and 0.9293, and the spinodal lines"></p>
 <div class="expect">
@@ -600,7 +600,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div>
 </div>
 <div class="selfstudy">
-<p><strong>On your own:</strong> do both roles yourself. Pause the slides, work in Lab 05, then continue.</p>
+<p><strong>On your own:</strong> do both roles yourself: work in Lab 05, then check one value by hand before you trust it. Pause the slides while you work; the next slide lists what to hand in.</p>
 </div>
 </section>
 <section id="activity-2-check" class="slide level2">
@@ -701,7 +701,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="column" style="width:56%;">
 <p><img data-src="figures/s03-lle.svg" class="fig-pxy" alt="Measured cyclohexane methanol binodal with the constant tau and a plus b over T predictions"></p>
 </div><div class="column concept-notes" style="width:42%;">
-<p><span class="q">Discuss in pairs, then with the class</span></p>
+<p><span class="q">Discuss in pairs, then with the class. On your own: write two or three sentences for each question.</span></p>
 <ol type="1">
 <li>Both α = 0.2 and α = 0.3 reproduce the 298.15 K tie line exactly. What data would distinguish them?</li>
 <li>The a + b/T model predicts the gap closes near 324 K. How much would you trust that, and what would you measure?</li>
@@ -716,7 +716,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="label">Stability</span> Curvature is a local test. A feed splits whenever some trial composition gives TPD &lt; 0; search the whole range.</p>
 </div>
 <div>
-<p><span class="label">Tie lines</span> One tie line fixes two parameters exactly. That is calibration, not validation.</p>
+<p><span class="label">Tie lines</span> One tie line gives two constraints on two parameters. A solution may not exist, or may not be unique. A fit to it is calibration, not validation.</p>
 </div>
 <div>
 <p><span class="label">Evidence</span> Check τ(T) on tie lines the fit did not use. Mutual-solubility data decide whether a predicted split is real.</p>
@@ -744,7 +744,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <h2>After class</h2>
 <div class="summary3">
 <div>
-<p><span class="label">Hand in · this week</span> Your Lab 05 study file with the two fits, A, B, D and E, name and student ID.</p>
+<p><span class="label">Hand in · this week</span> Your Lab 05 study file with the two fits, A, B, D and E, name and student ID. Upload it to <strong>myCourseVille</strong>, in the assignment for that lab.</p>
 </div>
 <div>
 <p><span class="label">Prepare · Session 4</span> Read the <a href="note-s04.html" target="_blank">Session 4 pre-class note</a>. About 20 minutes.</p>
@@ -753,7 +753,8 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="label">Optional · graduate</span> Lab 06 A and B: supply the missing specification for a three-phase state, and sweep P across P₃.</p>
 </div>
 </div>
-<p><a href="../preview-2027/lle-fit.html" class="lab-button" target="_blank">Open Lab 05 →</a></p>
+<p><a href="../preview-2027/lle-fit.html?mode=graduate#graduate-investigation" class="lab-button" target="_blank">Open Lab 05 in the Graduate view →</a></p>
+<p><span class="howto">Starts at <strong>4. Investigate what the fit can support</strong>. <strong>A</strong>: first button <strong>Predict the held-out tie lines</strong>. <strong>B</strong>: <strong>Compare α = 0.2, 0.3 and 0.47</strong>. <strong>E</strong>: <strong>Download the measured tie lines (CSV)</strong>.</span></p>
 
 </section>
     </div>
@@ -1004,7 +1005,8 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
          Loads narration/<deck>.json (built by build_narration.py): per slide, an MP3 and
          sentence cues with English and Thai text. Controls at the bottom left:
          narration on/off, pause/resume and replay while narration is on,
-         captions off/English/Thai, auto-advance on/off.
+         captions off/English/Thai, auto-advance on/off. Auto-advance stops on activity, demonstration
+         and break slides and shows a Continue button, so a timed activity is never skipped.
          With narration off and captions on, the slide's full text is shown to read. -->
     <style>
     .nr-bar { position: fixed; left: 12px; bottom: 10px; z-index: 40; display: flex; gap: 6px; font: 600 14px/1 "Source Sans 3", "Course Thai", sans-serif; }
@@ -1019,6 +1021,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
     .nr-caption.transcript p { margin: 0 0 .4em; }
     .nr-caption[lang="th"] { font-family: "Course Thai", "Sarabun", sans-serif; }
     .reveal-viewport.dark-slide .nr-bar button:not([aria-pressed="true"]) { background: rgba(255,255,255,.85); }
+    .nr-bar #nr-continue { background: #E29A2D; border-color: #E29A2D; color: #1C242B; }
     .draft-mark { align-self: center; margin-left: 8px; font: 400 12px/1 "Source Sans 3", sans-serif; color: #66727C !important; text-decoration: none; }
     .draft-mark:hover { text-decoration: underline; }
     @media print { .draft-mark { display: none; } }
@@ -1029,6 +1032,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
       <button type="button" id="nr-replay" hidden="">Replay slide</button>
       <button type="button" id="nr-cc" aria-pressed="false">Captions: off</button>
       <button type="button" id="nr-auto" aria-pressed="false">Auto-advance: off</button>
+      <button type="button" id="nr-continue" hidden="">Done with the activity: continue →</button>
       <a class="draft-mark" href="../index.html">Draft for 2027 · current class: course page</a>
     </div>
     <div class="nr-caption" id="nr-caption" aria-live="polite" hidden=""></div>
@@ -1097,7 +1101,14 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
         e.currentTarget.blur();
       });
       audio.addEventListener('timeupdate', () => { if (state.sound) syncCaption(); });
-      audio.addEventListener('ended', () => { if (state.auto && !Reveal.isLastSlide()) Reveal.next(); });
+      // Activity, demonstration and break slides need the student's time: stop and wait for Continue.
+      const holds = (el) => !!el && (el.classList.contains('activity') || el.classList.contains('breakslide') || /^demo/.test(el.id || ''));
+      audio.addEventListener('ended', () => {
+        if (!state.auto || Reveal.isLastSlide()) return;
+        if (holds(Reveal.getCurrentSlide())) { $('nr-continue').hidden = false; $('nr-continue').focus(); return; }
+        Reveal.next();
+      });
+      $('nr-continue').addEventListener('click', (e) => { e.currentTarget.hidden = true; e.currentTarget.blur(); Reveal.next(); });
 
       $('nr-sound').addEventListener('click', (e) => { state.sound = !state.sound; store.set('sound', state.sound ? 'on' : 'off'); paintButtons(); load(); e.currentTarget.blur(); });
       $('nr-cc').addEventListener('click', (e) => { state.cc = CC_NEXT[state.cc]; store.set('cc', state.cc); paintButtons();
@@ -1108,7 +1119,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
       fetch('narration/' + deck + '.json').then((r) => r.ok ? r.json() : {}).then((d) => {
         data = d;
         if (Reveal.isReady()) load(); else Reveal.on('ready', load);
-        Reveal.on('slidechanged', load);
+        Reveal.on('slidechanged', () => { $('nr-continue').hidden = true; load(); });
       }).catch(() => { document.querySelector('.nr-bar').hidden = true; });
     })();
     </script>

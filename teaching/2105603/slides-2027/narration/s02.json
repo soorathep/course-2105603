@@ -202,19 +202,19 @@
    },
    {
     "start": 9.62,
-    "end": 24.94,
-    "en": "Each assumption has a size. Setting phi to one shifts ln gamma by about minus 0.011 for water, for a second virial coefficient of minus 1000 cubic centimetres per mole.",
-    "th": "สมมติฐานแต่ละข้อมีขนาดของผลกระทบ การกำหนดให้ Φ เท่ากับหนึ่งทำให้ ln γ ของน้ำเลื่อนไปประมาณ −0.011 เมื่อสัมประสิทธิ์ไวเรียลตัวที่สองเท่ากับ −1000 ลูกบาศก์เซนติเมตรต่อโมล"
+    "end": 31.41,
+    "en": "Each assumption has a size. For a second virial coefficient of minus 1000 cubic centimetres per mole, including phi lowers ln gamma of water by 0.011. Setting phi to one therefore makes the inferred ln gamma too high by about 0.011.",
+    "th": "สมมติฐานแต่ละข้อมีขนาดของผลกระทบ เมื่อสัมประสิทธิ์ไวเรียลตัวที่สองเท่ากับ −1000 ลูกบาศก์เซนติเมตรต่อโมล การรวม Φ ทำให้ ln γ ของน้ำลดลง 0.011 ดังนั้นการกำหนดให้ Φ เท่ากับหนึ่งทำให้ ln γ ที่คำนวณได้สูงเกินไปประมาณ +0.011"
    },
    {
-    "start": 25.29,
-    "end": 32.31,
+    "start": 31.76,
+    "end": 38.77,
     "en": "An Antoine set that is 3 percent low adds 0.03 to ln gamma, in every row.",
     "th": "ค่าคงที่ Antoine ที่ให้ค่าต่ำไป 3 เปอร์เซ็นต์ จะเพิ่ม ln γ ขึ้น 0.03 ในทุกแถว"
    },
    {
-    "start": 32.66,
-    "end": 38.27,
+    "start": 39.12,
+    "end": 44.73,
     "en": "These are small next to the scatter, but they are systematic, so they do not average out.",
     "th": "ผลเหล่านี้เล็กเมื่อเทียบกับการกระจายของข้อมูล แต่เป็นความคลาดเคลื่อนเชิงระบบ จึงไม่หักล้างกันเมื่อเฉลี่ย"
    }

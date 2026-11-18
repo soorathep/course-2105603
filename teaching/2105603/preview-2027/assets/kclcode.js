@@ -2,12 +2,14 @@
 // check code that an AI assistant helped write. Data: Nasiri-Lohehsara and Ghalami-Choobar (2018) via
 // NIST ThermoML. Model: ln γ± = −A√m/(1 + b√m) + c m, A = 0.509 ln 10, fitted by least squares in ln γ±.
 // Cell pair Ag|AgCl|KCl(m)|K-ISE at m1 and m2 in opposition: E = (2RT/F) ln(m2γ2/(m1γ1)). Saved as "aiCode".
+import { statusLine, completeness, incompleteNote } from './aicomplete.js?v=2';
 const $ = (id) => document.getElementById(id);
 const fmt = (v, d = 4) => (Number.isFinite(v) ? v.toFixed(d) : '—');
 const num = (id) => { const v = $(id).value.trim(); return v === '' ? NaN : Number(v); };
 export const R = 8.314462618, F = 96485.33212;
 let data = null, last = null;
 const TEXT = ['ai-spec', 'ai-tool', 'ai-prompt', 'ai-codetext', 'ai-found', 'ai-own'];
+const OUT = ['ai-lim', 'ai-b', 'ai-c', 'ai-rmse', 'ai-g1', 'ai-eid', 'ai-e'];   // outputs a complete step must report
 const INPUT = ['ai-set', 'ai-lim', 'ai-b', 'ai-c', 'ai-rmse', 'ai-g1', 'ai-m1', 'ai-m2', 'ai-eid', 'ai-e'];
 
 const Aln = () => data.debyeHuckel.A10 * Math.LN10;
@@ -56,27 +58,30 @@ function run() {
     }
 
     const b = num('ai-b'), c = num('ai-c');
-    if (!Number.isFinite(b) || !Number.isFinite(c)) throw new Error('Enter the fitted B and C from your code.');
+    const haveP = Number.isFinite(b) && Number.isFinite(c);
     const okB = Math.abs(b - ft.b) <= Math.max(0.01, 0.01 * ft.b);
     const okC = Math.abs(c - ft.c) <= 0.002;
+    // Convert C to the ln basis only when the log10 basis is the diagnosed cause; otherwise check the C entered.
+    const logBasis = !okC && okB && Math.abs(c * Math.LN10 - ft.c) <= 0.002;
+    const cLn = logBasis ? c * Math.LN10 : c;
     let whyP = '';
-    if (!(okB && okC)) {
-      if (okB && Math.abs(c * Math.LN10 - ft.c) <= 0.002) whyP = 'Your C is on the log₁₀ basis (C_ln = C × ln 10). Same fit, different units: say which you report.';
-      else if (set !== 'all') { const fa = fit(rowsFor('all')); if (Math.abs(b - fa.b) <= 0.02) whyP = 'Your parameters match a fit to both temperatures. The specification uses the 298.2 K rows only.'; }
+    if (haveP && !(okB && okC)) {
+      if (logBasis) whyP = 'Your C is on the log₁₀ basis (C_ln = C × ln 10). Same fit, different units: say which you report.';
+      else if (set !== 'all') { const fa = fit(rowsFor('all')); if (Math.abs(b - fa.b) <= 0.02 && Math.abs(c - fa.c) <= 0.002) whyP = 'Your parameters match a fit to both temperatures. The specification uses the 298.2 K rows only.'; }
       if (!whyP) whyP = 'Check the model form, the basis (ln), the rows used and that the least squares converged.';
     }
-    checks.push({ name: `Fitted B and C in ln γ± = −A√m/(1 + B√m) + C·m (${rs.length} rows)`, lab: `B = ${fmt(ft.b, 4)}, C = ${fmt(ft.c, 4)}`, yours: `B = ${fmt(b, 4)}, C = ${fmt(c, 4)}`, ok: okB && okC, why: whyP });
+    if (haveP) checks.push({ name: `Fitted B and C in ln γ± = −A√m/(1 + B√m) + C·m (${rs.length} rows)`, lab: `B = ${fmt(ft.b, 4)}, C = ${fmt(ft.c, 4)}`, yours: `B = ${fmt(b, 4)}, C = ${fmt(c, 4)}`, ok: okB && okC, why: whyP });
 
     const rm = num('ai-rmse');
-    if (Number.isFinite(rm)) {
-      const own = Math.sqrt(rs.reduce((a, r) => a + (lnG(r.m, b, okC ? c : c * Math.LN10) - Math.log(r.g)) ** 2, 0) / rs.length);
+    if (haveP && Number.isFinite(rm)) {
+      const own = Math.sqrt(rs.reduce((a, r) => a + (lnG(r.m, b, cLn) - Math.log(r.g)) ** 2, 0) / rs.length);
       const ok = close(rm, own, 0.03, 3e-4);
       checks.push({ name: 'RMSE in ln γ± at your parameters', lab: fmt(own), yours: fmt(rm), ok,
         why: ok ? '' : close(rm, own / Math.LN10, 0.03) ? 'This is the RMSE in log₁₀ γ±. The check uses ln γ±.' : 'Check that the error is in ln γ± over the same rows as the fit.' });
     }
 
-    const g1 = num('ai-g1'), cLn = okC ? c : (okB && Math.abs(c * Math.LN10 - ft.c) <= 0.002 ? c * Math.LN10 : c);
-    if (Number.isFinite(g1)) {
+    const g1 = num('ai-g1');
+    if (haveP && Number.isFinite(g1)) {
       const lab = Math.exp(lnG(1.0, b, cLn)), ok = close(g1, lab, 0.003);
       checks.push({ name: 'γ± at 1.0 mol/kg from your parameters', lab: fmt(lab), yours: fmt(g1), ok, why: ok ? '' : 'Evaluate your fitted model at m = 1.0 mol/kg, on the same basis you fitted.' });
     }
@@ -88,7 +93,7 @@ function run() {
         why: ok ? '' : close(eid, eLab / 2, 0.002) ? 'Half the lab value: the activity of KCl is (mγ±)², two ions per formula unit. E = (2RT/F) ln(m₂γ₂/m₁γ₁), or RT/F with the squared activities.' : close(eid, -eLab, 0.002) ? 'The sign is reversed: which molality is at which electrode?' : 'Check E = (2RT/F) ln(m₂/m₁) with R in J/(mol K) and F in C/mol.' });
     }
     const eYou = num('ai-e');
-    if (Number.isFinite(eYou)) {
+    if (haveP && Number.isFinite(eYou)) {
       const lab = cellE(T, m1, Math.exp(lnG(m1, b, cLn)), m2, Math.exp(lnG(m2, b, cLn))), ok = close(eYou, lab, 0.002);
       checks.push({ name: 'Cell EMF with your fitted γ±', lab: `${fmt(lab, 5)} V`, yours: `${fmt(eYou, 5)} V`, ok,
         why: ok ? '' : close(eYou, lab / 2, 0.003) ? 'Half the lab value: the factor 2 for the two ions is missing.' : 'Use γ± from your fit at each molality, not γ = 1 on one side.' });
@@ -96,22 +101,22 @@ function run() {
 
     const lab308 = fit(rowsFor('308.2'));
     checks.push({ name: 'Same model fitted to the 308.2 K rows (for the discussion)', lab: `B = ${fmt(lab308.b, 3)}, C = ${fmt(lab308.c, 4)}, RMSE ${fmt(lab308.rmse, 4)}`, yours: '—', ok: true, kind: 'info',
-      why: 'Compare γ± at 1 mol/kg at the two temperatures with the stated uncertainty, about ±0.03. Can these data give d ln γ±/dT, and so the partial molar enthalpy?' });
+      why: 'Compare γ± at 1 mol/kg at the two temperatures with the stated expanded uncertainty, U = 0.03 (95 %). Can these data give d ln γ±/dT, and so the partial molar enthalpy?' });
 
     last = { set, m1, m2, ref: { b: ft.b, c: ft.c, rmse: ft.rmse, Eideal: eLab }, checks };
     render(last);
-  } catch (e) { last = null; $('ai-results').hidden = true; $('ai-status').textContent = e.message; }
+  } catch (e) { last = null; $('ai-results').hidden = true; $('ai-status').textContent = e.message + incompleteNote(OUT); }
 }
 
 function render(res) {
   $('ai-out').innerHTML = res.checks.map((c) => `<tr><th scope="row">${c.name}</th><td>${c.lab}</td><td>${c.yours}</td><td class="${c.ok ? '' : 'warn'}">${c.kind === 'info' ? 'compare' : c.ok ? 'agrees' : 'check'}</td><td style="text-align:left">${c.why}</td></tr>`).join('');
   const code = res.checks.filter((c) => !c.kind), bad = code.filter((c) => !c.ok).length;
-  $('ai-status').textContent = bad ? `${bad} of ${code.length} code checks disagree with the lab. Find the cause in the code, fix it, rerun, and enter the new outputs.` : `All ${code.length} code checks agree. Now explain what the checks do not establish.`;
+  $('ai-status').textContent = statusLine(code.length, bad, OUT);
   $('ai-results').hidden = false;
 }
 
 function state() {
-  const s = { result: last };
+  const s = { result: last, completeness: completeness(OUT) };
   for (const id of [...TEXT, ...INPUT]) s[id] = $(id)?.value ?? '';
   return s;
 }

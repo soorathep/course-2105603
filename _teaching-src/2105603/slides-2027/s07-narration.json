@@ -237,8 +237,8 @@
     "say": "In B, forty two point six percent of the dissolved naphthalene crystallizes. An ideal design would have predicted a feed twice as rich."
    },
    {
-    "en": "In C, constant enthalpy and a missing standard pressure dominate; the fugacity correction changes the conversion by one thousandth. The potassium chloride cell with R T over F is half.",
-    "th": "ในข้อ C เอนทาลปีคงที่และการไม่ใช้ความดันมาตรฐานมีผลมากที่สุด การแก้ไขด้วย fugacity เปลี่ยนค่าการเปลี่ยนเพียงหนึ่งในพัน และเซลล์โพแทสเซียมคลอไรด์ที่ใช้ RT/F ได้ค่าครึ่งเดียว"
+    "en": "In C, constant enthalpy and an omitted pressure term dominate; the fugacity correction changes the conversion by one thousandth. The potassium chloride cell with R T over F is half.",
+    "th": "ในข้อ C ผลจากการใช้เอนทัลปีคงที่และการตัดพจน์ความดันทิ้งมีขนาดใหญ่ที่สุด การปรับแก้ด้วย fugacity เปลี่ยน conversion เพียง 0.001 และเซลล์โพแทสเซียมคลอไรด์ที่คำนวณด้วย RT/F ให้ค่าเพียงครึ่งเดียว"
    }
   ],
   "audit-debrief": [
@@ -325,8 +325,8 @@
   ],
   "exit-ticket": [
    {
-    "en": "Exit ticket and feedback. Five minutes, on your own.",
-    "th": "exit ticket และความเห็น ใช้เวลาห้านาที ทำคนเดียว"
+    "en": "Exit ticket and feedback. Ten minutes, on your own.",
+    "th": "ตอบคำถามท้ายคาบและให้ความเห็น สิบนาที ทำคนเดียว"
    },
    {
     "en": "Pick one result from your own lab files. Which rung of the evidence ladder does it reach, and what one piece of evidence would raise it?",
@@ -337,8 +337,8 @@
     "th": "ใส่หัวข้อที่คุณยังพร้อมน้อยที่สุดในช่อง What is still unclear"
    },
    {
-    "en": "Scan the QR code or open the link. It is anonymous. Wait until you see Response received.",
-    "th": "สแกน QR code หรือเปิดลิงก์ แบบฟอร์มไม่ระบุตัวตน รอจนขึ้นข้อความ Response received"
+    "en": "Scan the QR code or open the link. It is anonymous. The first part is about today. The second part is about the whole half after the midterm: the pace, the slides and narration, and the labs. Wait until you see Response received.",
+    "th": "สแกน QR code หรือเปิดลิงก์ แบบฟอร์มไม่ระบุตัวตน ส่วนแรกถามเกี่ยวกับคาบนี้ ส่วนที่สองถามภาพรวมทั้งช่วงหลัง midterm ได้แก่ ความเร็ว สไลด์และเสียงบรรยาย และ lab รอจนเห็นข้อความ Response received"
    }
   ],
   "after-class": [

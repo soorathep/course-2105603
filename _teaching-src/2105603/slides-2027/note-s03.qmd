@@ -78,7 +78,7 @@ The weighted fit is the closer of the two to the stated measurement uncertainty 
 
 ## 5. From tie lines to parameters
 
-When LLE is measured, each tie line gives two equations, $x_i^{\alpha}\gamma_i^{\alpha}=x_i^{\beta}\gamma_i^{\beta}$, so a single tie line at one temperature fixes two parameters. That is why a two-parameter fit can reproduce one tie line exactly, and why that is not evidence of a good model. Tie lines at several temperatures test whether constant τ is adequate; often it is not, and τ<sub>ij</sub>(T) is needed. Lab 05 works through this.
+When LLE is measured, each tie line gives two equations, $x_i^{\alpha}\gamma_i^{\alpha}=x_i^{\beta}\gamma_i^{\beta}$, so a single tie line at one temperature gives two constraints on two parameters. An acceptable solution may not exist (Session 3 shows α = 0.47 cannot reproduce the 298.15 K tie line) and, when one exists, it must be checked for uniqueness. A two-parameter fit that reproduces one tie line exactly is therefore not evidence of a good model. Tie lines at several temperatures test whether constant τ is adequate; often it is not, and τ<sub>ij</sub>(T) is needed. Lab 05 works through this.
 
 ## 6. Before Session 3
 
