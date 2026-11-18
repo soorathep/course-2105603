@@ -84,31 +84,31 @@ form > .status.err { background: #fbeee9; border-left: 4px solid #BE654C; paddin
       <p class="lede">The questions above are about today. These are about the whole second half: the sessions, the slides with narration and captions, the notes, and the labs.</p>
       <fieldset>
         <legend>Overall pace of Sessions 1–7 <span class="th">ความเร็วโดยรวมของคาบที่ 1–7</span></legend>
-        <div class="opts"><label><input type="radio" name="review_pace" value="Too slow"> Too slow</label><label><input type="radio" name="review_pace" value="About right"> About right</label><label><input type="radio" name="review_pace" value="Too fast"> Too fast</label></div>
+        <div class="opts"><label><input type="radio" name="course_pace" value="Too slow"> Too slow</label><label><input type="radio" name="course_pace" value="About right"> About right</label><label><input type="radio" name="course_pace" value="Too fast"> Too fast</label></div>
       </fieldset>
       <fieldset>
         <legend>Quality of the slides, narration, captions and notes for learning <span class="th">คุณภาพของสไลด์ เสียงบรรยาย คำบรรยาย และเอกสารอ่าน สำหรับการเรียน (1 = ไม่ช่วยเลย, 5 = ช่วยมาก)</span></legend>
-        <div class="opts"><label><input type="radio" name="review_media" value="1"> 1</label><label><input type="radio" name="review_media" value="2"> 2</label><label><input type="radio" name="review_media" value="3"> 3</label><label><input type="radio" name="review_media" value="4"> 4</label><label><input type="radio" name="review_media" value="5"> 5</label></div>
+        <div class="opts"><label><input type="radio" name="course_slides" value="1"> 1</label><label><input type="radio" name="course_slides" value="2"> 2</label><label><input type="radio" name="course_slides" value="3"> 3</label><label><input type="radio" name="course_slides" value="4"> 4</label><label><input type="radio" name="course_slides" value="5"> 5</label></div>
       </fieldset>
       <div>
-        <label class="q" for="review_media_comment">What in the slides, narration, captions or notes should be fixed or kept? <span class="optional">optional</span> <span class="th">สื่อส่วนใดควรแก้ หรือควรคงไว้</span></label>
-        <textarea id="review_media_comment" name="review_media_comment" maxlength="3000"></textarea>
+        <label class="q" for="course_slides_comment">What in the slides, narration, captions or notes should be fixed or kept? <span class="optional">optional</span> <span class="th">สื่อส่วนใดควรแก้ หรือควรคงไว้</span></label>
+        <textarea id="course_slides_comment" name="course_slides_comment" maxlength="3000"></textarea>
       </div>
       <fieldset>
         <legend>Quality of the labs for learning <span class="th">คุณภาพของ lab สำหรับการเรียน (1 = ไม่ช่วยเลย, 5 = ช่วยมาก)</span></legend>
-        <div class="opts"><label><input type="radio" name="review_labs" value="1"> 1</label><label><input type="radio" name="review_labs" value="2"> 2</label><label><input type="radio" name="review_labs" value="3"> 3</label><label><input type="radio" name="review_labs" value="4"> 4</label><label><input type="radio" name="review_labs" value="5"> 5</label></div>
+        <div class="opts"><label><input type="radio" name="course_labs" value="1"> 1</label><label><input type="radio" name="course_labs" value="2"> 2</label><label><input type="radio" name="course_labs" value="3"> 3</label><label><input type="radio" name="course_labs" value="4"> 4</label><label><input type="radio" name="course_labs" value="5"> 5</label></div>
       </fieldset>
       <fieldset>
         <legend>Over the seven sessions, did the labs work reliably? <span class="th">ตลอดเจ็ดคาบ lab ทำงานได้เสถียรไหม</span></legend>
-        <div class="opts"><label><input type="radio" name="review_labs_work" value="Always"> Always</label><label><input type="radio" name="review_labs_work" value="Mostly"> Mostly</label><label><input type="radio" name="review_labs_work" value="Often not"> Often not</label></div>
+        <div class="opts"><label><input type="radio" name="course_labs_work" value="Always"> Always</label><label><input type="radio" name="course_labs_work" value="Mostly"> Mostly</label><label><input type="radio" name="course_labs_work" value="Often not"> Often not</label></div>
       </fieldset>
       <div>
-        <label class="q" for="review_labs_comment">Which lab helped most, and which needs work? Why? <span class="optional">optional</span> <span class="th">lab ไหนช่วยได้มากที่สุด และ lab ไหนควรปรับ เพราะอะไร</span></label>
-        <textarea id="review_labs_comment" name="review_labs_comment" maxlength="3000"></textarea>
+        <label class="q" for="course_labs_comment">Which lab helped most, and which needs work? Why? <span class="optional">optional</span> <span class="th">lab ไหนช่วยได้มากที่สุด และ lab ไหนควรปรับ เพราะอะไร</span></label>
+        <textarea id="course_labs_comment" name="course_labs_comment" maxlength="3000"></textarea>
       </div>
       <div>
-        <label class="q" for="review_change">One change for next year's second half <span class="optional">optional</span> <span class="th">อยากให้ปรับอะไรหนึ่งอย่างสำหรับช่วงหลัง midterm ปีหน้า</span></label>
-        <textarea id="review_change" name="review_change" maxlength="3000"></textarea>
+        <label class="q" for="course_improve">One change for next year's second half <span class="optional">optional</span> <span class="th">อยากให้ปรับอะไรหนึ่งอย่างสำหรับช่วงหลัง midterm ปีหน้า</span></label>
+        <textarea id="course_improve" name="course_improve" maxlength="3000"></textarea>
       </div>
     </section>
     <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -147,7 +147,7 @@ $('f').addEventListener('submit', async (e) => {
   const fd = new FormData(e.target);
   const body = Object.fromEntries(fd.entries());
   body.course = COURSE; body.session = Number(body.session);
-  if (body.session !== REVIEW_SESSION) for (const k of Object.keys(body)) if (k.startsWith('review_')) delete body[k];
+  if (body.session !== REVIEW_SESSION) for (const k of Object.keys(body)) if (k.startsWith('course_')) delete body[k];
   if (!body.exit_ticket.trim()) { status('Please answer the exit-ticket question first.', 'err'); $('exit_ticket').focus(); return; }
   if (!RELAY_URL) { status('This form is not connected yet. Please tell the instructor.', 'err'); return; }
   $('send').disabled = true; status('Sending…');

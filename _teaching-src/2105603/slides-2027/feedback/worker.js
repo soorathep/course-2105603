@@ -9,19 +9,24 @@
 // No name, ID, e-mail or IP address is stored.
 
 const ALLOWED_ORIGINS = ['https://www.skhgroup.net', 'https://skhgroup.net', 'https://soorathep.github.io'];
-const COURSES = { '2105603': 7, '2105315': 14 };        // course code -> number of sessions
+const COURSES = { '2105603': 8, '2105315': 15, '2105601': 8, '2105620': 15, '2105623': 15, '2105717': 8, '2182209': 8 };        // course code -> number of sessions
 const CHOICES = {
   mode: ['In class', 'On my own'],
   pace: ['Too slow', 'About right', 'Too fast'],
   confidence: ['1', '2', '3', '4', '5'],
   lab: ['Yes', 'Partly', 'No, I need help', 'Not used'],
-  // optional overview of a whole block of sessions (2105603 Session 7: the post-midterm half)
-  review_pace: ['Too slow', 'About right', 'Too fast'],
-  review_media: ['1', '2', '3', '4', '5'],
-  review_labs: ['1', '2', '3', '4', '5'],
-  review_labs_work: ['Always', 'Mostly', 'Often not'],
+  // Whole-course questions, asked only on a course's last session; optional.
+  course_overall: ['1', '2', '3', '4', '5'],
+  course_skill: ['1', '2', '3', '4', '5'],
+  course_slides: ['1', '2', '3', '4', '5'],
+  course_labs: ['1', '2', '3', '4', '5'],
+  course_workload: ['Too light', 'About right', 'Too heavy'],
+  course_pace: ['Too slow', 'About right', 'Too fast'],
+  course_labs_work: ['Always', 'Mostly', 'Often not'],
 };
-const REVIEW_TEXT = ['review_media_comment', 'review_labs_comment', 'review_change'];
+// Session that carries the whole-course questions when it is not the course's last allowed session.
+// 2105603 (2027): Session 7 closes the post-midterm half.
+const WHOLE_AT = { '2105603': 7 };
 const TEXT_LIMIT = 3000;
 
 function cors(origin) {
@@ -52,11 +57,15 @@ export function clean(d) {
     pace: pick('pace'), confidence: pick('confidence'), lab: pick('lab'),
     unclear: text(d.unclear), change: text(d.change),
   };
-  const review = {};
-  for (const k of ['review_pace', 'review_media', 'review_labs', 'review_labs_work']) if (pick(k)) review[k] = pick(k);
-  for (const k of REVIEW_TEXT) if (text(d[k])) review[k] = text(d[k]);
-  Object.assign(out, review);                                     // only present when answered
   if (!out.exit_ticket) throw new Error('The exit-ticket answer is empty.');
+  if (session === (WHOLE_AT[course] || COURSES[course])) {          // whole-course answers, kept only when given
+    const whole = { course_overall: pick('course_overall'), course_skill: pick('course_skill'), course_workload: pick('course_workload'),
+      course_slides: pick('course_slides'), course_labs: pick('course_labs'),
+      course_pace: pick('course_pace'), course_labs_work: pick('course_labs_work'),
+      course_slides_comment: text(d.course_slides_comment), course_labs_comment: text(d.course_labs_comment),
+      course_best: text(d.course_best), course_weak: text(d.course_weak), course_improve: text(d.course_improve) };
+    for (const [k, v] of Object.entries(whole)) if (v) out[k] = v;
+  }
   return out;
 }
 

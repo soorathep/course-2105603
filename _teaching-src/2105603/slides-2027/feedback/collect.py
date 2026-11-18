@@ -11,8 +11,9 @@ import json
 
 FIELDS = ['received', 'mode', 'exit_ticket', 'pace', 'confidence', 'lab', 'unclear', 'change',
           # post-midterm overview, asked in the last session only
-          'review_pace', 'review_media', 'review_media_comment', 'review_labs', 'review_labs_work',
-          'review_labs_comment', 'review_change']
+          'course_pace', 'course_slides', 'course_slides_comment', 'course_labs', 'course_labs_work',
+          'course_labs_comment', 'course_improve', 'course_overall', 'course_skill', 'course_workload',
+          'course_best', 'course_weak']
 root = Path('responses')
 out = Path('summary'); out.mkdir(exist_ok=True)
 for session_dir in sorted(p for p in root.glob('*/s*') if p.is_dir()):
