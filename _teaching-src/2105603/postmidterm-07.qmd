@@ -164,7 +164,7 @@ Convergence is slow because $\gamma_1$ is a strong function of $x_1$ in the dilu
 | A2 · 1 | Ideal vapor: $\gamma_1=1.000$. With $\Phi_1=1.021$: $\gamma_1=1.021$. $P<P_1^{\rm sat}$ and $B_{11}<0$ make $\ln\Phi_1>0$. |
 | A2 · 2 | $\sigma_{\ln\gamma_1}=\sqrt{(0.005/0.333)^2+(0.005/0.556)^2}=0.017$. The correction, 0.021, is about the same size. |
 | A2 · 3 | $\ln(1/0.97)=+0.030$ in every row: systematic, it does not average out. |
-| A2 · 4 | $\int_0^1\ln(\gamma_1/\gamma_2)\,\mathrm dx_1=-\int(H^E/RT^2)(\mathrm dT/\mathrm dx_1)\,\mathrm dx_1$: needs $H^E$ data. |
+| A2 · 4 | $\int_0^1\ln(\gamma_1/\gamma_2)\,\mathrm dx_1=+\int_0^1(H^E/RT^2)(\mathrm dT/\mathrm dx_1)\,\mathrm dx_1$: needs $H^E$ data. |
 
 ## Set A · check A3 {#phase-check-3}
 
