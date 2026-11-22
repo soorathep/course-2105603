@@ -1,0 +1,537 @@
+{
+ "title-slide": {
+  "audio": "narration/p05/title-slide.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 6.8,
+    "en": "Welcome to session P5: mixtures, partial molar properties and component fugacity.",
+    "th": "ยินดีต้อนรับสู่คาบ P5 ของผสม partial molar properties และ fugacity ขององค์ประกอบ"
+   },
+   {
+    "start": 7.15,
+    "end": 10.88,
+    "en": "Today we ask what one component contributes to a mixture.",
+    "th": "วันนี้เราจะถามว่าองค์ประกอบหนึ่งมีส่วนต่อสมบัติของของผสมอย่างไร"
+   }
+  ]
+ },
+ "course-map": {
+  "audio": "narration/p05/course-map.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.87,
+    "en": "Sessions P1 to P4 treated pure fluids. Every separation and every reaction involves mixtures.",
+    "th": "คาบ P1 ถึง P4 พิจารณาสารบริสุทธิ์ แต่การแยกและปฏิกิริยาทุกอย่างเกี่ยวข้องกับของผสม"
+   },
+   {
+    "start": 8.22,
+    "end": 16.98,
+    "en": "Today: partial molar properties, the Gibbs-Duhem equation that links them, and the fugacity of a component in a gas mixture.",
+    "th": "วันนี้เราจะดู partial molar properties สมการ Gibbs–Duhem ที่เชื่อมโยงกัน และ fugacity ขององค์ประกอบในของผสมแก๊ส"
+   }
+  ]
+ },
+ "why": {
+  "audio": "narration/p05/why.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 12.94,
+    "en": "Why does this matter? Mix 50 millilitres of ethanol with 50 millilitres of water at 298 kelvin. The measured densities give 96.6 millilitres.",
+    "th": "ทำไมเรื่องนี้จึงสำคัญ ผสมเอทานอล 50 มิลลิลิตรกับน้ำ 50 มิลลิลิตรที่ 298 เคลวิน ความหนาแน่นที่วัดได้ให้ปริมาตรรวม 96.6 มิลลิลิตร"
+   },
+   {
+    "start": 13.29,
+    "end": 20.85,
+    "en": "The excess volume is negative everywhere. A component does not bring its pure-component volume into the mixture.",
+    "th": "excess volume เป็นลบทุกองค์ประกอบ องค์ประกอบหนึ่งไม่ได้นำปริมาตรของสารบริสุทธิ์ของมันเข้ามาในของผสม"
+   },
+   {
+    "start": 21.2,
+    "end": 34.1,
+    "en": "The same holds for fugacity: two percent carbon dioxide in methane at 60 bar has a fugacity coefficient eight percent away from that of pure carbon dioxide.",
+    "th": "เรื่องนี้เป็นจริงกับ fugacity ด้วย คาร์บอนไดออกไซด์สองเปอร์เซ็นต์ในมีเทนที่ 60 บาร์ มี fugacity coefficient ต่างจากของคาร์บอนไดออกไซด์บริสุทธิ์แปดเปอร์เซ็นต์"
+   }
+  ]
+ },
+ "outcomes": {
+  "audio": "narration/p05/outcomes.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.11,
+    "en": "By the end of today you can do four things.",
+    "th": "เมื่อจบคาบนี้ คุณจะทำได้สี่อย่าง"
+   },
+   {
+    "start": 3.46,
+    "end": 10.75,
+    "en": "Define partial molar properties, compute them by the tangent-intercept rule, and apply Gibbs-Duhem.",
+    "th": "นิยาม partial molar properties คำนวณด้วยกฎ tangent-intercept และใช้สมการ Gibbs–Duhem"
+   },
+   {
+    "start": 11.1,
+    "end": 17.36,
+    "en": "Extract partial molar volumes from measured densities, and say which values the data fix.",
+    "th": "หา partial molar volume จากความหนาแน่นที่วัดได้ และบอกได้ว่าข้อมูลกำหนดค่าใดได้จริง"
+   },
+   {
+    "start": 17.71,
+    "end": 27.75,
+    "en": "Compute component fugacity coefficients, and judge the combining rules and the Lewis-Randall rule against measured cross virial coefficients.",
+    "th": "คำนวณ fugacity coefficient ขององค์ประกอบ และประเมินกฎการรวมและกฎ Lewis–Randall เทียบกับสัมประสิทธิ์ virial ข้ามที่วัดได้"
+   }
+  ]
+ },
+ "route": {
+  "audio": "narration/p05/route.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.15,
+    "en": "Here is the 180-minute route.",
+    "th": "นี่คือเส้นทางของคาบ 180 นาที"
+   },
+   {
+    "start": 3.5,
+    "end": 13.59,
+    "en": "Thirty minutes of concepts, a short hand calculation, a demonstration in Lab P5, a break, and a 70-minute pair investigation.",
+    "th": "สามสิบนาทีแรกเป็นแนวคิด คำนวณด้วยมือสั้น ๆ สาธิต Lab P5 พัก และทำงานเป็นคู่ 70 นาที"
+   },
+   {
+    "start": 13.94,
+    "end": 23.86,
+    "en": "The session question: what does one component contribute to the properties of a mixture, and when can we replace that contribution by its pure-component value?",
+    "th": "คำถามของคาบนี้คือ องค์ประกอบหนึ่งมีส่วนต่อสมบัติของของผสมอย่างไร และเมื่อใดที่เราใช้ค่าของสารบริสุทธิ์แทนได้"
+   }
+  ]
+ },
+ "partial": {
+  "audio": "narration/p05/partial.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.89,
+    "en": "A partial molar property is the change of the total property when one mole of i is added at fixed temperature, pressure and other amounts.",
+    "th": "partial molar property คือการเปลี่ยนแปลงของสมบัติรวมเมื่อเติมสาร i หนึ่งโมล ที่อุณหภูมิ ความดัน และปริมาณสารอื่นคงที่"
+   },
+   {
+    "start": 10.24,
+    "end": 18.39,
+    "en": "The mixture property is the mole-fraction average of the partial molar properties, and in a binary the tangent gives both.",
+    "th": "สมบัติของของผสมคือค่าเฉลี่ยตามเศษส่วนโมลของ partial molar properties และในของผสมสองชนิด เส้นสัมผัสให้ค่าทั้งสอง"
+   },
+   {
+    "start": 18.74,
+    "end": 34.04,
+    "en": "For ethanol and water at x equal to 0.5, the partial molar volume of ethanol is 57.88 cubic centimetres per mole, against 58.68 for the pure liquid.",
+    "th": "สำหรับเอทานอลและน้ำที่ x เท่ากับ 0.5 partial molar volume ของเอทานอลเท่ากับ 57.88 ลูกบาศก์เซนติเมตรต่อโมล เทียบกับ 58.68 ของเอทานอลบริสุทธิ์"
+   },
+   {
+    "start": 34.39,
+    "end": 38.31,
+    "en": "The partial molar Gibbs energy is the chemical potential.",
+    "th": "partial molar Gibbs energy คือศักย์เคมี"
+   }
+  ]
+ },
+ "gibbs-duhem": {
+  "audio": "narration/p05/gibbs-duhem.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 10.32,
+    "en": "At fixed temperature and pressure, the mole-fraction-weighted changes of the partial molar properties sum to zero. When one rises, the other falls.",
+    "th": "ที่อุณหภูมิและความดันคงที่ ผลรวมของการเปลี่ยนแปลงของ partial molar properties ถ่วงด้วยเศษส่วนโมลเท่ากับศูนย์ เมื่อค่าหนึ่งเพิ่ม อีกค่าต้องลด"
+   },
+   {
+    "start": 10.67,
+    "end": 22.68,
+    "en": "The densities fix the partial molar volumes in the middle: across two to five fit terms, the value at x equal to 0.5 moves by 0.05.",
+    "th": "ความหนาแน่นกำหนด partial molar volume ในช่วงกลางได้ดี ถ้าใช้พจน์ 2 ถึง 5 พจน์ ค่าที่ x เท่ากับ 0.5 เปลี่ยนเพียง 0.05"
+   },
+   {
+    "start": 23.03,
+    "end": 32.42,
+    "en": "At infinite dilution it moves by 1.1, because below x equal to 0.095 there are no data.",
+    "th": "แต่ที่การเจือจางอนันต์ ค่าเปลี่ยนไป 1.1 เพราะต่ำกว่า x เท่ากับ 0.095 ไม่มีข้อมูล"
+   }
+  ]
+ },
+ "fhat": {
+  "audio": "narration/p05/fhat.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 6.35,
+    "en": "The fugacity of a component in a mixture extends the pure-fluid definition of P4.",
+    "th": "fugacity ขององค์ประกอบในของผสมขยายนิยามสำหรับสารบริสุทธิ์จากคาบ P4"
+   },
+   {
+    "start": 6.7,
+    "end": 14.91,
+    "en": "Its log is a partial molar quantity: the derivative of n times G R over RT with respect to n i.",
+    "th": "ln ของมันเป็นปริมาณ partial molar คืออนุพันธ์ของ nG^R/RT เทียบกับ n_i"
+   },
+   {
+    "start": 15.26,
+    "end": 23.12,
+    "en": "Phase equilibrium of a mixture requires equal component fugacity in every phase, for every component.",
+    "th": "สมดุลเฟสของของผสมต้องการให้ fugacity ขององค์ประกอบเท่ากันในทุกเฟส สำหรับทุกองค์ประกอบ"
+   }
+  ]
+ },
+ "ideal-solution": {
+  "audio": "narration/p05/ideal-solution.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 10.94,
+    "en": "In an ideal solution each component fugacity is its mole fraction times the fugacity of the pure component at the same temperature and pressure.",
+    "th": "ในสารละลายอุดมคติ fugacity ขององค์ประกอบเท่ากับเศษส่วนโมลคูณ fugacity ของสารบริสุทธิ์ที่อุณหภูมิและความดันเดียวกัน"
+   },
+   {
+    "start": 11.29,
+    "end": 22.25,
+    "en": "That is the Lewis-Randall rule. The volume and enthalpy of mixing are zero, and the entropy of mixing is minus R times the sum of x ln x.",
+    "th": "นี่คือกฎ Lewis–Randall ปริมาตรและเอนทัลปีของการผสมเป็นศูนย์ และเอนโทรปีของการผสมคือ −R Σ x ln x"
+   },
+   {
+    "start": 22.6,
+    "end": 31.82,
+    "en": "It ignores how unlike molecules interact. P6 measures the departure of a liquid from it with the activity coefficient.",
+    "th": "กฎนี้ละเลยว่าโมเลกุลต่างชนิดมีอันตรกิริยากันอย่างไร คาบ P6 วัดการเบี่ยงเบนของของเหลวจากกฎนี้ด้วย activity coefficient"
+   }
+  ]
+ },
+ "virial-mix": {
+  "audio": "narration/p05/virial-mix.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.63,
+    "en": "For a gas mixture the virial equation needs one new number per pair: the cross coefficient B12.",
+    "th": "สำหรับของผสมแก๊ส สมการ virial ต้องการตัวเลขใหม่หนึ่งค่าต่อคู่ คือสัมประสิทธิ์ข้าม B12"
+   },
+   {
+    "start": 7.98,
+    "end": 16.86,
+    "en": "The Lewis-Randall rule is the same as delta 12 equal to zero, or B12 equal to the mean of the pure coefficients.",
+    "th": "กฎ Lewis–Randall เทียบเท่ากับ δ12 เท่ากับศูนย์ หรือ B12 เท่ากับค่าเฉลี่ยของสัมประสิทธิ์ของสารบริสุทธิ์"
+   },
+   {
+    "start": 17.21,
+    "end": 34.25,
+    "en": "For carbon dioxide and methane the measured B12 is minus 64.8, against a mean of minus 82.8. The common rules are 11 to 37 percent too negative for the carbon dioxide pairs.",
+    "th": "สำหรับคาร์บอนไดออกไซด์กับมีเทน B12 ที่วัดได้คือ ลบ 64.8 เทียบกับค่าเฉลี่ย ลบ 82.8 กฎที่ใช้กันทั่วไปให้ค่าลบมากเกินไป 11 ถึง 37 เปอร์เซ็นต์สำหรับคู่ที่มีคาร์บอนไดออกไซด์"
+   }
+  ]
+ },
+ "cubic-mix": {
+  "audio": "narration/p05/cubic-mix.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 8.8,
+    "en": "A cubic equation becomes a mixture model through mixing rules for a and b, with one binary parameter k12 per pair.",
+    "th": "สมการกำลังสามกลายเป็นแบบจำลองของผสมผ่านกฎการผสมของ a และ b โดยมีพารามิเตอร์คู่ k12 หนึ่งค่าต่อคู่"
+   },
+   {
+    "start": 9.15,
+    "end": 24.51,
+    "en": "To reproduce the measured B12, Pitzer-Prausnitz needs k12 of 0.04 to 0.10 for the carbon dioxide pairs; Peng-Robinson needs about 0.2.",
+    "th": "เพื่อให้ได้ B12 ตามที่วัด Pitzer–Prausnitz ต้องการ k12 ประมาณ 0.04 ถึง 0.10 สำหรับคู่ที่มีคาร์บอนไดออกไซด์ ส่วน Peng–Robinson ต้องการประมาณ 0.2"
+   },
+   {
+    "start": 24.86,
+    "end": 37.62,
+    "en": "Peng-Robinson pure B values are too negative, so its k12 corrects them too. A k12 fitted to B12 is not a k12 fitted to vapor-liquid equilibrium.",
+    "th": "ค่า B ของสารบริสุทธิ์จาก Peng–Robinson เป็นลบมากเกินไป k12 จึงต้องชดเชยส่วนนี้ด้วย k12 ที่ปรับจาก B12 จึงไม่ใช่ k12 ที่ปรับจากสมดุลไอ–ของเหลว"
+   }
+  ]
+ },
+ "lr-fails": {
+  "audio": "narration/p05/lr-fails.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 11.36,
+    "en": "The error of the Lewis-Randall rule is P over RT times y2 squared times delta 12: largest for a dilute component at high pressure.",
+    "th": "ความคลาดเคลื่อนของกฎ Lewis–Randall คือ (P/RT) y2² δ12 จึงมากที่สุดสำหรับองค์ประกอบที่เจือจางที่ความดันสูง"
+   },
+   {
+    "start": 11.71,
+    "end": 23.13,
+    "en": "For two percent carbon dioxide in methane, Lewis-Randall is 4.1 percent low at 30 bar and 8.0 percent low at 60 bar.",
+    "th": "สำหรับคาร์บอนไดออกไซด์สองเปอร์เซ็นต์ในมีเทน กฎ Lewis–Randall ต่ำไป 4.1 เปอร์เซ็นต์ที่ 30 บาร์ และ 8.0 เปอร์เซ็นต์ที่ 60 บาร์"
+   },
+   {
+    "start": 23.48,
+    "end": 30.56,
+    "en": "As the mole fraction of carbon dioxide approaches one, every model meets pure carbon dioxide.",
+    "th": "เมื่อเศษส่วนโมลของคาร์บอนไดออกไซด์เข้าใกล้หนึ่ง ทุกแบบจำลองให้ค่าเท่ากับคาร์บอนไดออกไซด์บริสุทธิ์"
+   }
+  ]
+ },
+ "activity-1": {
+  "audio": "narration/p05/activity-1.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.09,
+    "en": "Activity 1, ten minutes. Two short calculations.",
+    "th": "กิจกรรมที่ 1 สิบนาที การคำนวณสั้น ๆ สองข้อ"
+   },
+   {
+    "start": 4.44,
+    "end": 14.04,
+    "en": "First, the partial molar volumes of ethanol and water at x equal to 0.5 from three Redlich-Kister coefficients.",
+    "th": "ข้อแรก partial molar volume ของเอทานอลและน้ำที่ x เท่ากับ 0.5 จากสัมประสิทธิ์ Redlich–Kister สามตัว"
+   },
+   {
+    "start": 14.39,
+    "end": 23.18,
+    "en": "Second, the fugacity coefficient of five percent carbon dioxide in methane at 30 bar, and the Lewis-Randall value.",
+    "th": "ข้อสอง fugacity coefficient ของคาร์บอนไดออกไซด์ห้าเปอร์เซ็นต์ในมีเทนที่ 30 บาร์ และค่าจากกฎ Lewis–Randall"
+   }
+  ]
+ },
+ "activity-1-debrief": {
+  "audio": "narration/p05/activity-1-debrief.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 14.82,
+    "en": "Check your answer. At x equal to 0.5, the excess volume is A0 over four, minus 1.078, and its slope is A1 over two, 0.568.",
+    "th": "ตรวจคำตอบ ที่ x เท่ากับ 0.5 excess volume เท่ากับ A0/4 คือ ลบ 1.078 และความชันเท่ากับ A1/2 คือ 0.568"
+   },
+   {
+    "start": 15.17,
+    "end": 24.79,
+    "en": "So the partial molar volumes are 0.794 below pure ethanol and 1.362 below pure water.",
+    "th": "ดังนั้น partial molar volume ต่ำกว่าเอทานอลบริสุทธิ์ 0.794 และต่ำกว่าน้ำบริสุทธิ์ 1.362"
+   },
+   {
+    "start": 25.14,
+    "end": 38.22,
+    "en": "For the gas, delta 12 is plus 36.1, so phi hat of carbon dioxide is 0.896 against 0.862 from Lewis-Randall.",
+    "th": "สำหรับแก๊ส δ12 เท่ากับ บวก 36.1 ดังนั้น φ̂ ของคาร์บอนไดออกไซด์เท่ากับ 0.896 เทียบกับ 0.862 จากกฎ Lewis–Randall"
+   }
+  ]
+ },
+ "demo-lab": {
+  "audio": "narration/p05/demo-lab.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.0,
+    "en": "Now a demonstration in Lab P5.",
+    "th": "ต่อไปเป็นการสาธิตใน Lab P5"
+   },
+   {
+    "start": 3.35,
+    "end": 12.03,
+    "en": "Ethanol and water with three terms: read the residuals and the partial molar volumes, then change the number of terms.",
+    "th": "เอทานอลและน้ำด้วยสามพจน์ อ่านค่าคลาดเคลื่อนตกค้างและ partial molar volume แล้วเปลี่ยนจำนวนพจน์"
+   },
+   {
+    "start": 12.38,
+    "end": 23.8,
+    "en": "Then carbon dioxide and methane at 30 bar: compare the measured B12 with Lewis-Randall and Peng-Robinson, and in investigation B the combining rules.",
+    "th": "จากนั้นคาร์บอนไดออกไซด์กับมีเทนที่ 30 บาร์ เทียบ B12 ที่วัดได้กับ Lewis–Randall และ Peng–Robinson และในการสืบค้น B เทียบกับกฎการรวม"
+   }
+  ]
+ },
+ "mistakes": {
+  "audio": "narration/p05/mistakes.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 1.91,
+    "en": "Four common mistakes.",
+    "th": "ข้อผิดพลาดที่พบบ่อยสี่ข้อ"
+   },
+   {
+    "start": 2.26,
+    "end": 11.63,
+    "en": "Reading a partial molar volume as the size of a molecule, and reporting an infinite-dilution value from a fit as if it were data.",
+    "th": "การตีความ partial molar volume ว่าเป็นขนาดของโมเลกุล และการรายงานค่าที่การเจือจางอนันต์จากการปรับเส้นโค้งเหมือนเป็นข้อมูลวัด"
+   },
+   {
+    "start": 11.98,
+    "end": 20.45,
+    "en": "Using Lewis-Randall for a dilute gas component at high pressure, and a binary parameter outside the data it was fitted to.",
+    "th": "การใช้กฎ Lewis–Randall กับองค์ประกอบแก๊สที่เจือจางที่ความดันสูง และการใช้พารามิเตอร์คู่นอกขอบเขตข้อมูลที่ใช้ปรับค่า"
+   }
+  ]
+ },
+ "break": {
+  "audio": "narration/p05/break.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.02,
+    "en": "Take a ten-minute break.",
+    "th": "พักสิบนาที"
+   },
+   {
+    "start": 2.37,
+    "end": 9.97,
+    "en": "Next is a 70-minute pair investigation in Lab P5. Check that the lab opens on your device.",
+    "th": "ต่อไปเป็นการทำงานเป็นคู่ 70 นาทีใน Lab P5 ตรวจสอบว่าแล็บเปิดได้บนอุปกรณ์ของคุณ"
+   }
+  ]
+ },
+ "activity-2": {
+  "audio": "narration/p05/activity-2.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.15,
+    "en": "Activity 2, seventy minutes, in pairs.",
+    "th": "กิจกรรมที่ 2 เจ็ดสิบนาที ทำเป็นคู่"
+   },
+   {
+    "start": 3.5,
+    "end": 10.69,
+    "en": "First the fit order study for the partial molar volumes, then the three gas pairs against the combining rules.",
+    "th": "ส่วนแรกศึกษาจำนวนพจน์ของการปรับเส้นสำหรับ partial molar volume จากนั้นเทียบแก๊สสามคู่กับกฎการรวม"
+   },
+   {
+    "start": 11.04,
+    "end": 18.12,
+    "en": "Then map where Lewis-Randall is within one percent, and finish with two sentences that answer the session question.",
+    "th": "จากนั้นหาว่ากฎ Lewis–Randall คลาดไม่เกินหนึ่งเปอร์เซ็นต์ที่ใด และปิดท้ายด้วยสองประโยคที่ตอบคำถามของคาบ"
+   }
+  ]
+ },
+ "activity-2-check": {
+  "audio": "narration/p05/activity-2-check.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.0,
+    "en": "Here is what to hand in, and the numbers to check against.",
+    "th": "นี่คือสิ่งที่ต้องส่ง และตัวเลขสำหรับตรวจผล"
+   },
+   {
+    "start": 4.35,
+    "end": 15.87,
+    "en": "Three terms reduce the residual to 0.017 cubic centimetres per mole; more terms change the infinite-dilution value but not the middle.",
+    "th": "สามพจน์ลดค่าคลาดเคลื่อนตกค้างเหลือ 0.017 ลูกบาศก์เซนติเมตรต่อโมล การเพิ่มพจน์เปลี่ยนค่าที่การเจือจางอนันต์ แต่ไม่เปลี่ยนค่าตรงกลาง"
+   },
+   {
+    "start": 16.22,
+    "end": 30.2,
+    "en": "The combining rules with k12 equal to zero are 11 to 37 percent too negative for the carbon dioxide pairs, and Pitzer-Prausnitz is within two percent for methane and ethane.",
+    "th": "กฎการรวมที่ k12 เท่ากับศูนย์ให้ค่าลบมากเกินไป 11 ถึง 37 เปอร์เซ็นต์สำหรับคู่ที่มีคาร์บอนไดออกไซด์ และ Pitzer–Prausnitz คลาดไม่เกินสองเปอร์เซ็นต์สำหรับมีเทนกับอีเทน"
+   }
+  ]
+ },
+ "discussion": {
+  "audio": "narration/p05/discussion.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 1.91,
+    "en": "Discuss three questions.",
+    "th": "อภิปรายสามคำถาม"
+   },
+   {
+    "start": 2.26,
+    "end": 7.92,
+    "en": "Why do the fits agree in the middle but not at infinite dilution, and what would you measure?",
+    "th": "ทำไมการปรับเส้นจึงให้ค่าตรงกันในช่วงกลาง แต่ไม่ตรงกันที่การเจือจางอนันต์ และคุณจะวัดอะไรเพิ่ม"
+   },
+   {
+    "start": 8.27,
+    "end": 15.12,
+    "en": "What does a positive k12 for the carbon dioxide pairs say about unlike interactions?",
+    "th": "k12 ที่เป็นบวกสำหรับคู่ที่มีคาร์บอนไดออกไซด์บอกอะไรเกี่ยวกับอันตรกิริยาระหว่างโมเลกุลต่างชนิด"
+   },
+   {
+    "start": 15.47,
+    "end": 20.39,
+    "en": "And where in a natural-gas plant would the Lewis-Randall rule be unsafe?",
+    "th": "และในโรงงานก๊าซธรรมชาติ จุดใดที่การใช้กฎ Lewis–Randall ไม่ปลอดภัย"
+   }
+  ]
+ },
+ "summary": {
+  "audio": "narration/p05/summary.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.61,
+    "en": "To summarize. A partial molar property is a derivative of the mixture property, and Gibbs-Duhem links them.",
+    "th": "สรุป partial molar property คืออนุพันธ์ของสมบัติของของผสม และสมการ Gibbs–Duhem เชื่อมโยงค่าเหล่านี้"
+   },
+   {
+    "start": 7.96,
+    "end": 18.26,
+    "en": "The component fugacity coefficient needs one cross coefficient per pair in the virial equation, or a mixing rule with k12 in a cubic.",
+    "th": "fugacity coefficient ขององค์ประกอบต้องการสัมประสิทธิ์ข้ามหนึ่งค่าต่อคู่ในสมการ virial หรือกฎการผสมที่มี k12 ในสมการกำลังสาม"
+   },
+   {
+    "start": 18.61,
+    "end": 28.11,
+    "en": "The ideal solution, or Lewis-Randall rule, fails for a dilute component when delta 12 P over RT is not small.",
+    "th": "สารละลายอุดมคติหรือกฎ Lewis–Randall ใช้ไม่ได้กับองค์ประกอบที่เจือจางเมื่อ δ12P/RT ไม่น้อย"
+   },
+   {
+    "start": 28.46,
+    "end": 33.19,
+    "en": "Next session, P6: excess properties and activity coefficients.",
+    "th": "คาบหน้า P6 excess properties และ activity coefficient"
+   }
+  ]
+ },
+ "exit-ticket": {
+  "audio": "narration/p05/exit-ticket.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.92,
+    "en": "Exit ticket, five minutes, anonymous.",
+    "th": "Exit ticket ห้านาที ไม่ระบุชื่อ"
+   },
+   {
+    "start": 3.27,
+    "end": 10.63,
+    "en": "For carbon dioxide and methane, the measured B12 is less negative than the mean of the pure coefficients.",
+    "th": "สำหรับคาร์บอนไดออกไซด์กับมีเทน B12 ที่วัดได้เป็นลบน้อยกว่าค่าเฉลี่ยของสัมประสิทธิ์ของสารบริสุทธิ์"
+   },
+   {
+    "start": 10.98,
+    "end": 20.7,
+    "en": "Will Lewis-Randall overestimate or underestimate the fugacity of dilute carbon dioxide, and why does the error grow with pressure?",
+    "th": "กฎ Lewis–Randall จะประมาณ fugacity ของคาร์บอนไดออกไซด์ที่เจือจางสูงหรือต่ำเกินไป และทำไมความคลาดเคลื่อนจึงเพิ่มตามความดัน"
+   }
+  ]
+ },
+ "after-class": {
+  "audio": "narration/p05/after-class.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 5.9,
+    "en": "After class, finish Lab P5 and upload the study file to myCourseVille.",
+    "th": "หลังเลิกเรียน ทำ Lab P5 ให้เสร็จ และอัปโหลดไฟล์ study ไปที่ myCourseVille"
+   },
+   {
+    "start": 6.25,
+    "end": 10.52,
+    "en": "Read the pre-class note for session P6, about twenty minutes.",
+    "th": "อ่าน pre-class note ของคาบ P6 ใช้เวลาประมาณยี่สิบนาที"
+   },
+   {
+    "start": 10.87,
+    "end": 17.16,
+    "en": "Graduate students can write the Redlich-Kister fit with an AI assistant and check it in step E.",
+    "th": "นิสิตระดับบัณฑิตศึกษาสามารถเขียนโปรแกรมปรับเส้น Redlich–Kister ด้วยผู้ช่วย AI แล้วตรวจสอบในขั้นตอน E"
+   }
+  ]
+ }
+}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Activity coefficients · Thermodynamics Labs 2027 preview</title>
+  <meta name="description" content="Lab P6: activity coefficients and G^E from measured VLE of 2-propanol + water, five activity-coefficient models, infinite dilution, Henry’s law and liquid stability.">
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="assets/labs.css?v=r8">
+</head>
+<body data-mode="core">
+<div class="draft-banner" role="note">Draft for 2027. If you are taking 2105603 this year, use the <a href="../index.html">current course page</a>.</div>
+  <a class="skip-link" href="#experiment">Skip to the experiment</a>
+  <header class="site-header"><a class="brand" href="index.html">SKH <span>Thermodynamics Labs</span></a><nav aria-label="Course navigation"><a href="activity.html">Lab P6</a><a href="index.html#sessions">All 2027 labs</a><a href="../slides-2027/index.html">Slides</a><a href="../">Course</a></nav></header>
+  <main class="page" id="experiment">
+    <div class="page-intro">
+      <div><p class="eyebrow">Lab P6 · Excess Gibbs energy and activity coefficients</p><h1>How far is a liquid mixture from ideal, and which model says so?</h1><p class="intro-copy">Measured VLE of 2-propanol (1) + water (2) at 60 and 80 kPa give activity coefficients through modified Raoult's law. The lab fits five G<sup>E</sup> models to the 60 kPa data, predicts both data sets, and reports infinite dilution, Henry's constants and the curvature that decides whether the liquid would split.</p></div>
+      <p class="preview-note">2027 prototype<br>Session P6</p>
+    </div>
+    <fieldset class="mode-switch"><legend>View</legend><div class="mode-options"><label><input type="radio" name="lab-mode" value="core" checked><span>Core concepts</span></label><label><input type="radio" name="lab-mode" value="graduate"><span>Graduate investigation</span></label></div><p class="core-only">Core: predict, compute γ from the data, fit a model and check it on paper.</p><p class="grad-only">Graduate: compare fitting objectives, test predictions at 80 kPa, examine infinite dilution and Henry's law, test stability, and check code written with an AI assistant.</p></fieldset>
+    <p class="graduate-note grad-only"><strong>Graduate route.</strong> Fit all five models with both objectives, then run A–C and E. <a href="#graduate-investigation">Go to the graduate investigation</a>.</p>
+    <section class="starter" aria-label="Starting problems">
+      <div class="starter-label"><strong>Choose a model</strong><span>Fitted to the 60 kPa data.</span></div>
+      <div class="case-buttons"><button type="button" data-case="m2" aria-pressed="true">Margules, two parameters</button><button type="button" data-case="vl" aria-pressed="false">van Laar</button><button type="button" data-case="wilson" aria-pressed="false">Wilson</button><button type="button" data-case="nrtl" aria-pressed="false">NRTL, α = 0.3</button></div>
+      <p class="source-note">Data: Barbieri, C. et al., J. Chem. Thermodyn. 198 (2024) 107342, Tables 4 and 5 (expanded uncertainty, k = 2: x 0.02–0.03, y 0.03, T 0.04–0.07 K). Vapor pressures: NIST WebBook Antoine fits, used only inside their ranges. Ideal vapor and no Poynting correction (Session P4 shows both are within 1% at 60–80 kPa). The same data are used in Session 2 after the midterm.</p>
+    </section>
+    <figure class="panel phase-picture" aria-labelledby="picture-heading">
+      <div class="panel-heading"><h2 id="picture-heading">From fugacity to activity</h2><span class="section-help">The departure from the ideal solution</span></div>
+      <svg class="eq-sketch" viewBox="0 0 900 190" role="img" aria-labelledby="eq-title"><title id="eq-title">Activity coefficient, excess Gibbs energy and modified Raoult's law</title>
+        <g class="eq-main" style="font-size:20px"><text x="450" y="44">γᵢ = f̂ᵢ/(xᵢ fᵢ°),   ln γᵢ = ∂(nG<tspan baseline-shift="super" font-size="70%">E</tspan>/RT)/∂nᵢ,   G<tspan baseline-shift="super" font-size="70%">E</tspan>/RT = Σ xᵢ ln γᵢ</text><text x="450" y="96" class="eq-amber-text">VLE at low pressure:  yᵢP = xᵢγᵢPᵢ<tspan baseline-shift="super" font-size="70%">sat</tspan>(T)</text><text x="450" y="148">Henry: f̂₁ → x₁H₁ as x₁ → 0, with H₁ = γ₁<tspan baseline-shift="super" font-size="70%">∞</tspan>P₁<tspan baseline-shift="super" font-size="70%">sat</tspan>;  stability: 1 + x₁x₂ ∂²(G<tspan baseline-shift="super" font-size="70%">E</tspan>/RT)/∂x₁² &gt; 0</text></g></svg>
+      <figcaption>Models: Margules ln γ₁ = x₂²[A₁₂ + 2(A₂₁ − A₁₂)x₁]; van Laar; Wilson (Λ₁₂, Λ₂₁ &gt; 0); NRTL (τ₁₂, τ₂₁, α). Parameters are held constant in T across each isobaric data set.</figcaption>
+    </figure>
+    <div class="experiment-grid vle-experiment-grid">
+      <section class="panel setup-panel" aria-labelledby="setup-heading">
+        <div class="panel-heading"><h2 id="setup-heading">1. Choose the model and the objective</h2><span class="condition">Fit at 60 kPa</span></div>
+        <div id="form-error" class="error-summary" role="alert" tabindex="-1" hidden></div>
+        <form id="act-form" novalidate>
+          <label for="model">Model</label><select id="model"><option value="m1">Margules, one parameter</option><option value="m2" selected>Margules, two parameters</option><option value="vl">van Laar</option><option value="wilson">Wilson</option><option value="nrtl">NRTL</option></select>
+          <label for="alpha">NRTL α</label><select id="alpha"><option value="0.2">0.2</option><option value="0.3" selected>0.3</option><option value="0.47">0.47</option></select>
+          <label for="objective">What the fit minimizes</label><select id="objective"><option value="lng" selected>Residuals of ln γ₁ and ln γ₂</option><option value="gE">Residuals of G<sup>E</sup>/RT</option></select>
+          <label for="xh">x₁ for the paper check and the Raoult/Henry comparison</label><input id="xh" type="number" min="0.001" max="0.999" step="any" value="0.3">
+          <div class="prediction-row"><label for="prediction">Before calculating: how large is γ of 2-propanol at infinite dilution in water near 345 K?</label><select id="prediction"><option value="">Not sure yet</option><option value="low">Below 3</option><option value="mid">3–15</option><option value="high">Above 15</option></select></div>
+          <button id="calculate" class="primary-button calculate-button" type="button">Fit and predict</button>
+          <p class="input-help">Add a calculated result to the comparison before changing a setting.</p>
+        </form>
+      </section>
+      <section class="panel result-panel" aria-labelledby="result-heading">
+        <div class="panel-heading"><h2 id="result-heading">2. Compare with the data</h2></div>
+        <div id="result-placeholder" class="result-placeholder"><p>Calculate to see the fitted parameters, the predictions and the infinite-dilution values.</p></div>
+        <div id="results" hidden>
+          <p id="result-phase" class="phase-result"></p><p id="phase-interpretation" class="section-help"></p><p id="prediction-feedback" class="prediction-feedback" aria-live="polite"></p>
+          <div class="table-scroll" role="region" aria-label="Fit summary" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">Quantity</th><th scope="col">Value</th></tr></thead><tbody id="sum-body"></tbody></table></div>
+          <h3 class="table-title">Data and model at 60 kPa</h3>
+          <div class="table-scroll" role="region" aria-label="Experimental and model activity coefficients" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">x₁</th><th scope="col">T / K</th><th scope="col">γ₁ data / model</th><th scope="col">γ₂ data / model</th><th scope="col">G<sup>E</sup>/RT data / model</th><th scope="col">y₁ data / bubble</th></tr></thead><tbody id="pt-body"></tbody></table></div>
+          <div class="calculation-check"><h3>Check the calculation on paper</h3><ol id="calc-steps"></ol></div>
+        </div>
+        <div class="save-case-row"><label for="case-name">Name this case</label><input id="case-name" type="text" value="Margules, two parameters" maxlength="80"><button id="save-case" class="secondary-button" type="button" disabled>Add result to comparison</button></div>
+      </section>
+    </div>
+    <section id="diagram-panel" class="panel diagram-panel" aria-labelledby="diagram-heading" hidden>
+      <div class="panel-heading"><h2 id="diagram-heading">3. Read the curves</h2></div>
+      <div class="chart-toolbar"><label for="view">Show</label><select id="view"><option value="lng">ln γ₁ and ln γ₂ against x₁</option><option value="ge">G<sup>E</sup>/(RT x₁x₂) against x₁</option><option value="xy">y₁ against x₁ at 60 and 80 kPa</option></select></div>
+      <div id="act-chart" class="vle-chart" role="img" aria-label="Activity plot. Numbers are listed in Step 2."></div>
+      <div id="chart-legend" class="plot-legend"></div><p id="chart-note" class="chart-note"></p>
+    </section>
+    <section id="concept-check" class="panel core-only" aria-labelledby="concept-heading">
+      <div class="panel-heading"><h2 id="concept-heading">4. Check your understanding</h2><span class="section-help">Write first, then compare</span></div>
+      <div class="concept-question"><h3>A. Why does γ₁ grow so much more at the dilute end than γ₂?</h3><p>Read γ∞ of both components for the two-parameter Margules fit.</p><label for="note-concept1" class="visually-hidden">Answer A</label><textarea id="note-concept1" rows="3" maxlength="10000"></textarea><details><summary>Compare with an explanation</summary><p>A 2-propanol molecule surrounded by water breaks hydrogen bonds between water molecules and cannot replace them fully; its escaping tendency is about 7–8 times the ideal-solution value. A water molecule in 2-propanol finds hydrogen-bonding partners, so γ₂∞ is only about 2–3.4. G<sup>E</sup> models capture this asymmetry with two parameters; the one-parameter Margules model forces γ₁∞ = γ₂∞.</p></details></div>
+      <div class="concept-question"><h3>B. Why does the choice of objective change γ∞ so much?</h3><p>Fit NRTL with each objective and compare γ₁∞.</p><label for="note-concept2" class="visually-hidden">Answer B</label><textarea id="note-concept2" rows="3" maxlength="10000"></textarea><details><summary>Compare with an explanation</summary><p>G<sup>E</sup>/RT = x₁ ln γ₁ + x₂ ln γ₂ vanishes at both ends, so a G<sup>E</sup> fit is decided by the middle of the range and leaves the dilute ends free: γ₁∞ comes out 13–47 depending on the model. Fitting ln γ₁ and ln γ₂ gives the dilute points their weight: γ₁∞ ≈ 7.6–7.9 for every two-parameter model. What you fit decides what the model is good for.</p></details></div>
+      <div class="concept-question"><h3>C. Can the fitted model predict a liquid split that does not occur?</h3><p>Read the minimum scaled curvature for each model and objective.</p><label for="note-concept3" class="visually-hidden">Answer C</label><textarea id="note-concept3" rows="3" maxlength="10000"></textarea><details><summary>Compare with an explanation</summary><p>2-propanol and water are fully miscible. With the G<sup>E</sup> objective, two-parameter Margules, van Laar and NRTL give a negative curvature near x₁ = 0.2–0.3: they predict a split. With the ln γ objective all curvatures stay positive. Wilson cannot predict a split for any parameters. Session 3 after the midterm treats stability in full.</p></details></div>
+    </section>
+    <section id="graduate-investigation" class="panel graduate-section grad-only" aria-labelledby="graduate-heading">
+      <div class="panel-heading"><h2 id="graduate-heading">4. Investigate what the activity data can support</h2><span class="condition">Graduate work</span></div>
+      <p id="graduate-baseline" class="graduate-note">Calculate in Step 1 first.</p>
+      <aside class="graduate-limits"><h3>What these results can and cannot show</h3><ul><li>The stated composition uncertainty (0.02–0.03) is comparable with the dilute compositions themselves, so γ₁ below x₁ = 0.05 carries large uncertainty. Session 2 propagates it.</li><li>Constant parameters ignore the 18 K temperature span of each isobar; H<sup>E</sup> data would fix the temperature dependence.</li><li>A good fit at 60 kPa is a calibration; 80 kPa is the held-out test.</li></ul></aside>
+      <section class="graduate-step"><h3>A. Objectives, models and the held-out data</h3>
+        <ol class="graduate-checklist"><li>Fit all five models with both objectives.</li><li>Compare the bubble-point errors at 60 kPa (fitted) and 80 kPa (held out).</li><li>Say which objective you would use for a distillation design and why.</li></ol>
+        <div class="graduate-actions"><button id="run-all" class="primary-button" type="button" disabled>Fit every model both ways</button></div><p id="all-status" class="graduate-status" role="status"></p>
+        <div id="all-wrap" class="table-scroll graduate-table" hidden><table><thead><tr><th>Model</th><th>Objective</th><th>Parameters</th><th>γ₁∞, γ₂∞</th><th>60 kPa: RMS T / K, y₁</th><th>80 kPa: RMS T / K, y₁</th><th>Min curvature</th></tr></thead><tbody id="all-body"></tbody></table></div>
+        <label for="note-all">Claim 1 · what the objective decides</label><textarea id="note-all" rows="3" maxlength="10000"></textarea>
+      </section>
+      <section class="graduate-step"><h3>B. Standard states: Raoult and Henry</h3>
+        <ol class="graduate-checklist"><li>Compute Henry's constant of 2-propanol in water, H₁ = γ₁∞P₁<sup>sat</sup>, at 345 and 355 K for each model.</li><li>Compare the activity of 2-propanol at x₁ = 0.01 in the Raoult and Henry conventions.</li><li>Explain why the Henry convention suits a dilute solute.</li></ol>
+        <div class="graduate-actions"><button id="run-henry" class="primary-button" type="button" disabled>Compare the standard states</button></div><p id="henry-status" class="graduate-status" role="status"></p>
+        <div id="henry-wrap" class="table-scroll graduate-table" hidden><table><thead><tr><th>Model, objective</th><th>γ₁∞</th><th>H₁ at 345 K / kPa</th><th>H₁ at 355 K / kPa</th><th>x₁ = 0.01: γ₁ (Raoult), γ₁* = γ₁/γ₁∞ (Henry)</th></tr></thead><tbody id="henry-body"></tbody></table></div>
+        <label for="note-henry">Claim 2 · infinite dilution</label><textarea id="note-henry" rows="3" maxlength="10000"></textarea>
+      </section>
+      <section class="graduate-step"><h3>C. Stability of the fitted models</h3>
+        <ol class="graduate-checklist"><li>For NRTL, scan α = 0.2, 0.3 and 0.47 with both objectives.</li><li>Find which fits predict a split and where.</li><li>Name the measurement that would rule a spurious split out.</li></ol>
+        <div class="graduate-actions"><button id="run-stab" class="primary-button" type="button" disabled>Test stability</button></div><p id="stab-status" class="graduate-status" role="status"></p>
+        <div id="stab-wrap" class="table-scroll graduate-table" hidden><table><thead><tr><th>α</th><th>Objective</th><th>τ₁₂, τ₂₁</th><th>RMS ln γ</th><th>Min curvature (at x₁)</th></tr></thead><tbody id="stab-body"></tbody></table></div>
+        <label for="note-stab">Claim 3 · a model that splits</label><textarea id="note-stab" rows="3" maxlength="10000"></textarea>
+      </section>
+      <section class="graduate-step"><h3>D. Defend a limited conclusion</h3>
+        <label for="note-decision">Decision and next evidence</label><textarea id="note-decision" rows="3" maxlength="10000" placeholder="State the model and objective you would use, what it cannot establish, and the measurement that would test it."></textarea>
+        <div class="graduate-actions"><button id="check-evidence" type="button" class="secondary-button">Check my evidence record</button></div><p id="evidence-status" class="graduate-status" role="status"></p>
+      </section>
+      <section class="graduate-step" id="ai-code"><h3>E. Check code that an AI assistant helped you write</h3>
+        <p>You may use an AI assistant to <strong>write code</strong>. You decide the equations, the data treatment, the objective and the checks. Do not ask the assistant for numbers or conclusions.</p>
+        <ol class="graduate-checklist"><li>Write your specification first.</li><li>Download the 60 kPa data. Ask for Python that: (a) computes γ₁, γ₂ and G<sup>E</sup>/RT with modified Raoult's law and the Antoine constants given; (b) fits the two-parameter Margules model to G<sup>E</sup>/RT by linear least squares in the form G<sup>E</sup>/(RT x₁x₂) = A₂₁x₁ + A₁₂x₂; (c) reports γ₁∞, γ₂∞ and ln γ₁ at x₁ = 0.3. Run it yourself.</li><li>Enter the outputs, run the checks, fix and rerun.</li></ol>
+        <div class="graduate-actions"><button id="ai-csv" type="button" class="secondary-button" disabled>Download the 60 kPa data (CSV)</button></div>
+        <label for="ai-spec">Your specification, written before you used the assistant</label><textarea id="ai-spec" rows="4" maxlength="10000"></textarea>
+        <div class="graduate-grid"><div><label for="ai-tool">Assistant and version</label><input id="ai-tool" type="text" maxlength="200"></div></div>
+        <label for="ai-prompt">The prompt or prompts you used</label><textarea id="ai-prompt" rows="3" maxlength="20000"></textarea>
+        <label for="ai-codetext">Final code that produced the outputs below</label><textarea id="ai-codetext" rows="6" maxlength="60000" spellcheck="false" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.78rem"></textarea>
+        <div class="graduate-grid"><div><label for="ai-a12">A₁₂</label><input id="ai-a12" type="number" step="any"></div><div><label for="ai-a21">A₂₁</label><input id="ai-a21" type="number" step="any"></div><div><label for="ai-g1">γ₁∞</label><input id="ai-g1" type="number" step="any"></div><div><label for="ai-g2">γ₂∞</label><input id="ai-g2" type="number" step="any"></div><div><label for="ai-l03">ln γ₁ at x₁ = 0.3</label><input id="ai-l03" type="number" step="any"></div></div>
+        <div class="graduate-actions"><button id="ai-run" type="button" class="primary-button" disabled>Check my outputs</button></div>
+        <p id="ai-status" class="graduate-status" role="status">Enter the outputs from your code, then run the checks.</p>
+        <div id="ai-results" hidden><div class="table-scroll graduate-table"><table><thead><tr><th>Check</th><th>Lab</th><th>Your code</th><th>Result</th><th>Likely cause</th></tr></thead><tbody id="ai-out"></tbody></table></div><p class="graduate-note">Agreement shows that the code does what you specified, not that Margules or this objective is right for the mixture: that is what A–C test.</p></div>
+        <label for="ai-found">What disagreed, what was wrong in the code, and how you fixed it</label><textarea id="ai-found" rows="3" maxlength="10000"></textarea>
+        <label for="ai-own">What you decided yourself, and one thing the checks cannot establish</label><textarea id="ai-own" rows="3" maxlength="10000"></textarea>
+      </section>
+    </section>
+    <section class="panel comparison-panel" aria-labelledby="comparison-heading">
+      <div class="panel-heading"><h2 id="comparison-heading">5. Compare and save</h2></div>
+      <ol class="investigation-steps"><li>Fit and save the four starting models with the ln γ objective, and NRTL with the G<sup>E</sup> objective.</li><li>Answer A–C (core) or complete A–C and E (graduate).</li><li>Download the study, reopen it, and reproduce a saved case.</li></ol>
+      <p id="comparison-empty" class="empty-state">Your calculated cases will appear here after you add them.</p>
+      <div id="comparison-table-wrap" class="table-scroll" hidden><table><thead><tr><th>Case</th><th>Model, objective</th><th>γ₁∞, γ₂∞</th><th>RMS y₁ at 60 / 80 kPa</th><th>Min curvature</th><th>Reopen</th></tr></thead><tbody id="comparison-body"></tbody></table></div>
+      <label for="reflection" class="reflection-label">Optional additional note</label><textarea id="reflection" rows="3" maxlength="10000"></textarea>
+      <fieldset class="student-fields"><legend>Your details <span>(optional)</span></legend><div class="student-grid"><div><label for="student-first-name">First name</label><input id="student-first-name" type="text" maxlength="80" autocomplete="given-name"></div><div><label for="student-last-name">Last name</label><input id="student-last-name" type="text" maxlength="80" autocomplete="family-name"></div><div><label for="student-id">Student ID</label><input id="student-id" type="text" maxlength="20" inputmode="numeric" autocomplete="off"></div></div></fieldset>
+      <div class="study-actions"><button id="export-study" class="primary-button" type="button" disabled>Download my study</button><div class="file-control"><label for="import-study">Open a saved study</label><input id="import-study" type="file" accept=".json,application/json"></div></div>
+      <p class="submit-note"><strong>To submit:</strong> upload the downloaded .json file to <strong>myCourseVille</strong>, in the assignment for Lab P6. Keep the file name: it carries your name and student ID.</p>
+      <p id="status" class="study-status" role="status" aria-live="polite">Loading the data…</p><p class="privacy-note">Your inputs and notes stay in this page until you download the study file.</p>
+    </section>
+    <noscript><p class="error-summary">Enable JavaScript to calculate.</p></noscript>
+  </main>
+  <footer class="site-footer"><span>2105603 · Advanced Chemical Engineering Thermodynamics</span><a href="index.html#sessions">All 2027 labs</a></footer>
+  <script src="../labs/assets/plotly.min.js" defer></script>
+  <script type="module" src="assets/mode.js?v=mode-3"></script>
+  <script type="module" src="assets/activity-lab.js?v=p6-1"></script>
+  <script type="module" src="assets/actcode.js?v=p6-1"></script>
+</body>
+</html>

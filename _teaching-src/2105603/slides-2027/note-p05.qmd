@@ -1,0 +1,82 @@
+---
+title: "Mixtures: partial molar properties and the fugacity of a component"
+subtitle: "Pre-class note for Session P5 · about 20 minutes"
+author: "Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics"
+format:
+  html:
+    minimal: true
+    toc: false
+    css: notes.css
+    html-math-method: katex
+    include-in-header:
+      text: '<meta name="robots" content="noindex">'
+---
+
+::: {.draft-note}
+Draft for 2027. If you are taking the course this year, use the current course page.
+:::
+
+::: {.purpose}
+**Why read this.** Sessions P1–P4 built the thermodynamics of pure fluids. In a mixture each property depends on composition, and the equilibrium condition becomes equal **component** fugacity in every phase. This note introduces the tools for that step: partial molar properties, the Gibbs–Duhem equation, the component fugacity coefficient and the ideal solution. Work the three questions at the end and bring one question of your own.
+:::
+
+## 1. Partial molar properties
+
+For an extensive property nM of a mixture at fixed T and P, the partial molar property of component i is
+
+$$\bar M_i=\Big(\frac{\partial(nM)}{\partial n_i}\Big)_{T,P,n_{j\neq i}}.$$
+
+Because nM is homogeneous of degree one in the amounts (Euler's theorem), M = Σ x<sub>i</sub>M̄<sub>i</sub>. For a binary, the partial molar properties are the intercepts of the tangent to M(x<sub>1</sub>):
+
+$$\bar M_1=M+x_2\frac{dM}{dx_1},\qquad\bar M_2=M-x_1\frac{dM}{dx_1}.$$
+
+The most important one is Ḡ<sub>i</sub> = μ<sub>i</sub>. A partial molar property is a derivative, not the property of one molecule: V̄ of MgSO₄ in very dilute water is negative.
+
+## 2. The Gibbs–Duhem equation
+
+Differentiating M = Σ x<sub>i</sub>M̄<sub>i</sub> and comparing with dM at fixed T and P gives
+
+$$\sum_ix_i\,d\bar M_i=0\qquad(T,P\ \text{fixed}).$$
+
+The partial molar properties of a binary are therefore not independent: if one increases with x<sub>1</sub>, the other decreases. For M = G this is the relation used in Session 2 after the midterm to test measured activity coefficients.
+
+**Worked example.** Ethanol (1) + water (2) at 298.15 K. Densities measured by Pires et al. (2007) give an excess volume V<sup>E</sup> = V − x<sub>1</sub>V<sub>1</sub>* − x<sub>2</sub>V<sub>2</sub>* that is negative everywhere, with a minimum near −1.1 cm³/mol. A three-term Redlich–Kister fit, V<sup>E</sup> = x<sub>1</sub>x<sub>2</sub>[A<sub>0</sub> + A<sub>1</sub>(x<sub>1</sub> − x<sub>2</sub>) + A<sub>2</sub>(x<sub>1</sub> − x<sub>2</sub>)²], gives A = −4.313, 1.136 and −1.274 cm³/mol. At x<sub>1</sub> = 0.5, V̄<sub>1</sub> = 57.88 and V̄<sub>2</sub> = 16.71 cm³/mol, against 58.68 and 18.07 for the pure liquids. Mixing 50 mL of each gives 96.6 mL.
+
+## 3. The fugacity of a component
+
+Extending the definition of Session P4 to component i of a mixture at fixed T:
+
+$$d\mu_i=RT\,d\ln\hat f_i,\qquad\hat\varphi_i=\frac{\hat f_i}{y_iP},\qquad\ln\hat\varphi_i=\int_0^P\big(\bar Z_i-1\big)\frac{dP}{P}.$$
+
+ln φ̂<sub>i</sub> is the partial molar property of G<sup>R</sup>/RT. Equilibrium between phases α and β of a mixture requires f̂<sub>i</sub><sup>α</sup> = f̂<sub>i</sub><sup>β</sup> for every component.
+
+For a binary gas described by the truncated virial equation, B<sub>mix</sub> = y<sub>1</sub>²B<sub>11</sub> + 2y<sub>1</sub>y<sub>2</sub>B<sub>12</sub> + y<sub>2</sub>²B<sub>22</sub>, and
+
+$$\ln\hat\varphi_1=\frac{P}{RT}\big(B_{11}+y_2^2\delta_{12}\big),\qquad\delta_{12}=2B_{12}-B_{11}-B_{22}.$$
+
+The cross coefficient B<sub>12</sub> describes the interaction of one molecule of 1 with one of 2. It can be measured, or estimated with a combining rule.
+
+## 4. The ideal solution and the Lewis–Randall rule
+
+In an **ideal solution**, f̂<sub>i</sub> = x<sub>i</sub>f<sub>i</sub>, where f<sub>i</sub> is the fugacity of pure i at the same T and P (the Lewis–Randall rule). It follows that ΔV<sub>mix</sub> = 0, ΔH<sub>mix</sub> = 0, ΔS<sub>mix</sub> = −RΣx<sub>i</sub> ln x<sub>i</sub> and ΔG<sub>mix</sub> = RTΣx<sub>i</sub> ln x<sub>i</sub>. For a virial gas the rule is equivalent to δ<sub>12</sub> = 0. It is exact as x<sub>i</sub> → 1 and fails for a dilute component whose unlike interactions differ from its like ones. The activity coefficient of Session P6 measures that failure in a liquid.
+
+## 5. Mixing rules for cubic equations
+
+A cubic equation of state describes a mixture with the van der Waals one-fluid rules, a = ΣΣy<sub>i</sub>y<sub>j</sub>√(a<sub>i</sub>a<sub>j</sub>)(1 − k<sub>ij</sub>) and b = Σy<sub>i</sub>b<sub>i</sub>. The binary parameter k<sub>ij</sub> is fitted to mixture data. The same equation then gives φ̂<sub>i</sub> of every phase, the basis of the φ–φ method in Session 1 after the midterm.
+
+## 6. Before Session P5
+
+Write short answers. We use them in the first 30 minutes.
+
+1. **Tangent intercept.** Show that, with the Redlich–Kister form above, dV<sup>E</sup>/dx<sub>1</sub> = A<sub>1</sub>/2 at x<sub>1</sub> = 0.5. Use it to check the two partial molar volumes in Section 2.
+2. **Gibbs–Duhem.** If V̄<sub>1</sub> of ethanol increases by 0.3 cm³/mol between x<sub>1</sub> = 0.30 and 0.31, by roughly how much does V̄<sub>2</sub> change?
+3. **Lewis–Randall.** For CO₂ (1) + methane (2) at 298.15 K, B<sub>11</sub> = −122.9, B<sub>22</sub> = −42.8 and the measured B<sub>12</sub> = −64.8 cm³/mol. Compute δ<sub>12</sub>. Will the Lewis–Randall rule give too high or too low a fugacity for dilute CO₂?
+
+## References
+
+- Pires, R. M., Costa, H. F., Ferreira, A. G. M., Fonseca, I. M. A. (2007). Viscosity and density of water + ethyl acetate + ethanol mixtures at 298.15 and 318.15 K and atmospheric pressure. *J. Chem. Eng. Data* 52, 1240–1245.
+- Katayama, T., Ohgaki, K., Ohmori, H. (1980). Measurement of interaction second virial coefficients with high accuracy. *J. Chem. Eng. Jpn.* 13, 257–262.
+- Smith, J. M., Van Ness, H. C., Abbott, M. M., Swihart, M. T. (2018). *Introduction to Chemical Engineering Thermodynamics*, 8th ed. McGraw-Hill. Chapter 10.
+- Prausnitz, J. M., Lichtenthaler, R. N., de Azevedo, E. G. (1999). *Molecular Thermodynamics of Fluid-Phase Equilibria*, 3rd ed. Prentice Hall. Chapters 5 and 6.
+
+[Session P5 slides →](p05.html){.next-link}
