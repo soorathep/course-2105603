@@ -142,7 +142,7 @@ B⁰ = 0.083 − 0.422/T<sub>r</sub><sup>1.6</sup>, B¹ = 0.139 − 0.172/T<sub>
 ::: {.column width="46%" .rule-notes}
 **Use the truncated form** where BP/RT is small, roughly V<sub>r</sub> = V/V<sub>c</sub> &gt; 2. It has no liquid branch.
 
-[Methane, 300 K:]{.q} Pitzer B = −41.3 cm³/mol; from the NIST data −42.2 (2% apart).
+[Methane, 300 K:]{.q} Pitzer B = −41.3 cm³/mol; from the NIST data −42.1 (2% apart).
 
 At 100 bar the truncated equation gives Z = 0.834 against 0.856 (−2.5%). Up to the critical density (about 211 bar) the mean error is 5.7%: the C/V² terms matter.
 

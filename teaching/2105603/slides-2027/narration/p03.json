@@ -218,13 +218,13 @@
    },
    {
     "start": 14.77,
-    "end": 17.23,
-    "en": "That slope was never fitted to anything.",
-    "th": "ความชันนี้ไม่เคยถูก fit กับข้อมูลใดเลย"
+    "end": 19.34,
+    "en": "That slope was fitted only through vapor pressures, never to enthalpies.",
+    "th": "ความชันนี้ถูก fit ทางอ้อมผ่านความดันไอเท่านั้น ไม่เคย fit กับเอนทาลปี"
    },
    {
-    "start": 17.58,
-    "end": 31.79,
+    "start": 19.69,
+    "end": 33.9,
     "en": "For methane at 100 bar, Peng-Robinson gives Z within 2.5 percent but the residual enthalpy 9.6 percent too negative. SRK is within 2.2 percent.",
     "th": "สำหรับมีเทนที่ 100 บาร์ Peng–Robinson ให้ Z คลาดไม่เกิน 2.5 เปอร์เซ็นต์ แต่ H^R เป็นลบมากเกินไป 9.6 เปอร์เซ็นต์ ส่วน SRK คลาดไม่เกิน 2.2 เปอร์เซ็นต์"
    }

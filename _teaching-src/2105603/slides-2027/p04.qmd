@@ -243,7 +243,7 @@ Below the melting point T<sub>m</sub> the stable phase is the solid. Neglecting 
 
 $$\ln\frac{f^{\text{s}}}{f^{\text{l}}}=-\frac{\Delta_{\text{fus}}H}{R}\Big(\frac{1}{T}-\frac{1}{T_m}\Big)$$
 
-f<sub>l</sub> is the fugacity of the **subcooled liquid**, a metastable reference state. Session 4 after the midterm uses this for solubility and freezing.
+f<sup>l</sup> is the fugacity of the **subcooled liquid**, a metastable reference state. Session 4 after the midterm uses this for solubility and freezing.
 :::
 ::: {.column width="48%"}
 ::: {.lever-box}
@@ -333,7 +333,7 @@ CO₂, 280 K: NIST 41.607 bar · PR 41.584 bar, V<sup>L</sup> 51.67 cm³/mol, φ
 **φ<sup>sat</sup> = 1 at high pressure.** For CO₂ at 280 K φ<sup>sat</sup> = 0.748. Setting it to 1 makes f<sup>sat</sup> 34% too high before any Poynting factor.
 :::
 ::: {}
-**Clausius–Clapeyron near T<sub>c</sub>.** It assumes an ideal vapor and negligible V<sup>L</sup>. For propane at T<sub>r</sub> = 0.95 it doubles Δ<sub>vap</sub>H. Use Clapeyron with ΔV.
+**Clausius–Clapeyron near T<sub>c</sub>.** It assumes an ideal vapor and negligible V<sup>L</sup>. For propane at T<sub>r</sub> = 0.95 it more than doubles Δ<sub>vap</sub>H (+122%). Use Clapeyron with ΔV.
 :::
 ::: {}
 **Poynting with P in place of P − P<sup>sat</sup>.** The exponent starts at saturation. A constant V<sup>L</sup> fails for a compressible liquid near T<sub>c</sub>.

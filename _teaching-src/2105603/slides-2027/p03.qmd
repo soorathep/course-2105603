@@ -169,7 +169,7 @@ $$\frac{H^R}{RT}=Z-1+\Big[\frac{d\ln\alpha}{d\ln T_r}-1\Big]qI$$
 $$\frac{S^R}{R}=\ln(Z-\beta)+\frac{d\ln\alpha}{d\ln T_r}\,qI$$
 :::
 ::: {.column width="48%"}
-[van der Waals: I = β/Z. d ln α/d ln T<sub>r</sub>: vdW 0; RK −½; SRK, PR −m√T<sub>r</sub>/[1 + m(1 − √T<sub>r</sub>)]. Z uses a(T) at one T; H<sup>R</sup> and S<sup>R</sup> also use **da/dT**, which α(T<sub>r</sub>, ω) was never fitted to.]{.howto}
+[van der Waals: I = β/Z. d ln α/d ln T<sub>r</sub>: vdW 0; RK −½; SRK, PR −m√T<sub>r</sub>/[1 + m(1 − √T<sub>r</sub>)]. Z uses a(T) at one T; H<sup>R</sup> and S<sup>R</sup> also use **da/dT**. α(T<sub>r</sub>, ω) was fitted to vapor pressures, never to enthalpies.]{.howto}
 
 ::: {.lever-box}
 [Methane, 300 K, 100 bar · error against NIST]{.label}

@@ -115,9 +115,9 @@
     "th": "สำหรับแก๊สไม่มีขั้ว สหสัมพันธ์ของ Pitzer ให้ค่า B จากค่าคงที่วิกฤตและ acentric factor"
    },
    {
-    "en": "For methane at 300 kelvin, Pitzer gives minus 41.3 cubic centimetres per mole, and the NIST data give minus 42.2.",
-    "th": "สำหรับมีเทนที่ 300 เคลวิน Pitzer ให้ค่า ลบ 41.3 ลูกบาศก์เซนติเมตรต่อโมล และข้อมูล NIST ให้ ลบ 42.2",
-    "say": "For methane at three hundred kelvin, Pitzer gives minus forty one point three cubic centimetres per mole, and the N I S T data give minus forty two point two."
+    "en": "For methane at 300 kelvin, Pitzer gives minus 41.3 cubic centimetres per mole, and the NIST data give minus 42.1.",
+    "th": "สำหรับมีเทนที่ 300 เคลวิน Pitzer ให้ค่า ลบ 41.3 ลูกบาศก์เซนติเมตรต่อโมล และข้อมูล NIST ให้ ลบ 42.1",
+    "say": "For methane at three hundred kelvin, Pitzer gives minus forty one point three cubic centimetres per mole, and the N I S T data give minus forty two point one."
    },
    {
     "en": "Even so, the truncated form has a mean error of 5.7 percent up to the critical density. Use it only where BP over R T is small.",

@@ -152,8 +152,9 @@
     "say": "The residual enthalpy and entropy contain d ln alpha by d ln reduced temperature, the temperature slope of the attraction parameter."
    },
    {
-    "en": "That slope was never fitted to anything.",
-    "th": "ความชันนี้ไม่เคยถูก fit กับข้อมูลใดเลย"
+    "en": "That slope was fitted only through vapor pressures, never to enthalpies.",
+    "th": "ความชันนี้ถูก fit ทางอ้อมผ่านความดันไอเท่านั้น ไม่เคย fit กับเอนทาลปี",
+    "say": "That slope was fitted only through vapor pressures, never to enthalpies."
    },
    {
     "en": "For methane at 100 bar, Peng-Robinson gives Z within 2.5 percent but the residual enthalpy 9.6 percent too negative. SRK is within 2.2 percent.",

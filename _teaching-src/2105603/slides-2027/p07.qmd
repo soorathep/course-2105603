@@ -141,7 +141,7 @@ A claim is only as strong as the highest rung it reached.
 
 **Extrapolation reaches none:** γ₁∞ lies beyond the most dilute point, x₁ = 0.0063.
 
-**Some claims cannot be decided with the data in hand:** γ₁∞ of 2-propanol in water to better than tens of percent, when u(x) = 0.02.
+**Some claims cannot be decided with the data in hand:** γ₁∞ of 2-propanol in water to better than tens of percent, when U(x) = 0.02 (k = 2).
 
 [Saying so is part of the answer. Session 7 after the midterm uses the same ladder.]{.q}
 :::
