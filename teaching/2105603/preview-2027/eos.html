@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Equations of state · Thermodynamics Labs 2027 preview</title>
+  <meta name="description" content="Lab P2: compare the ideal gas, the truncated virial equation and four cubic equations of state with reference isotherms of methane, CO₂, propane and water, and judge where each can be used.">
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="assets/labs.css?v=r8">
+</head>
+<body data-mode="core">
+<div class="draft-banner" role="note">Draft for 2027. If you are taking 2105603 this year, use the <a href="../index.html">current course page</a>.</div>
+  <a class="skip-link" href="#experiment">Skip to the experiment</a>
+  <header class="site-header"><a class="brand" href="index.html">SKH <span>Thermodynamics Labs</span></a><nav aria-label="Course navigation"><a href="eos.html">Lab P2</a><a href="index.html#sessions">All 2027 labs</a><a href="../slides-2027/index.html">Slides</a><a href="../">Course</a></nav></header>
+  <main class="page" id="experiment">
+    <div class="page-intro">
+      <div><p class="eyebrow">Lab P2 · Equations of state against reference data</p><h1>How wrong is an equation of state, and where?</h1><p id="case-description" class="intro-copy">Eight isotherms of four fluids from the NIST reference equations of state. The lab computes Z at every tabulated pressure from the ideal gas, the truncated virial equation with the Pitzer correlation for B, and the van der Waals, Redlich–Kwong, Soave–Redlich–Kwong and Peng–Robinson cubics, then reports the errors in the gas-like and the dense region.</p></div>
+      <p class="preview-note">2027 prototype<br>Session P2</p>
+    </div>
+    <fieldset class="mode-switch"><legend>View</legend><div class="mode-options"><label><input type="radio" name="lab-mode" value="core" checked><span>Core concepts</span></label><label><input type="radio" name="lab-mode" value="graduate"><span>Graduate investigation</span></label></div><p class="core-only">Core: predict, calculate, read the roots and check one cubic on paper.</p><p class="grad-only">Graduate: extract B from the data, test corresponding states, locate the equation's own phase boundary, and check code written with an AI assistant.</p></fieldset>
+    <p class="graduate-note grad-only"><strong>Graduate route.</strong> Complete Steps 1–3 for at least methane at 300 K, CO₂ at 280 K and water at 500 K, then run A–C and E in Step 4. <a href="#graduate-investigation">Go to the graduate investigation</a>.</p>
+
+    <section class="starter" aria-label="Starting problems">
+      <div class="starter-label"><strong>Choose an isotherm</strong><span>All reference values come from the NIST reference equations of state.</span></div>
+      <div class="case-buttons"><button type="button" data-case="ch4_300" aria-pressed="true">Methane · 300 K</button><button type="button" data-case="ch4_tr105" aria-pressed="false">Methane · T<sub>r</sub> = 1.05</button><button type="button" data-case="co2_tr105" aria-pressed="false">CO₂ · T<sub>r</sub> = 1.05</button><button type="button" data-case="c3_tr105" aria-pressed="false">Propane · T<sub>r</sub> = 1.05</button><button type="button" data-case="h2o_tr105" aria-pressed="false">Water · T<sub>r</sub> = 1.05</button><button type="button" data-case="co2_280" aria-pressed="false">CO₂ · 280 K</button><button type="button" data-case="c3_300" aria-pressed="false">Propane · 300 K</button><button type="button" data-case="h2o_500" aria-pressed="false">Water · 500 K</button></div>
+      <p id="case-source" class="source-note">Data: NIST Chemistry WebBook, SRD 69 (Lemmon, McLinden and Friend), from the reference equations of state of Setzmann and Wagner (methane), Span and Wagner (CO₂), Lemmon, McLinden and Wagner (propane) and IAPWS-95 (water). These are computed values with uncertainties in density of about 0.03–0.1% in most of this range, far below the errors of the models tested here. The acentric factor ω is computed from the NIST vapor pressure at T = 0.7 T<sub>c</sub>.</p>
+    </section>
+
+    <figure class="panel phase-picture" aria-labelledby="picture-heading">
+      <div class="panel-heading"><h2 id="picture-heading">One family of cubic equations</h2><span class="section-help">Two constants from T<sub>c</sub> and P<sub>c</sub>, a third through α(T)</span></div>
+      <div class="vlle-figures vr-figures">
+        <div>
+          <svg class="eq-sketch" viewBox="0 0 520 230" role="img" aria-labelledby="eq-title eq-description">
+            <title id="eq-title">The generic cubic equation of state</title>
+            <desc id="eq-description">P equals RT over V minus b, minus a of T over the product of V plus epsilon b and V plus sigma b. The first term is repulsion, set by the co-volume b. The second is attraction, set by a times alpha of reduced temperature.</desc>
+            <g class="eq-note"><text x="170" y="38">repulsion: co-volume b</text><text x="380" y="38">attraction: a α(T<tspan baseline-shift="sub" font-size="70%">r</tspan>, ω)</text></g>
+            <path d="M170 46 V84" class="eq-lead eq-teal"/><path d="M380 46 V84" class="eq-lead eq-amber"/>
+            <g class="eq-main"><text x="60" y="114">P</text><text x="92" y="114">=</text><text x="170" y="114" class="eq-teal-text">RT/(V − b)</text><text x="250" y="114">−</text><text x="380" y="114" class="eq-amber-text">a(T)/[(V + εb)(V + σb)]</text></g>
+            <g class="eq-caption"><text x="260" y="168">vdW: ε = σ = 0 · RK, SRK: ε = 0, σ = 1 · PR: ε, σ = 1 ∓ √2</text><text x="260" y="198">Z<tspan baseline-shift="sub" font-size="70%">c</tspan>: vdW 0.375 · RK, SRK 0.333 · PR 0.307 · real fluids 0.23–0.29</text></g>
+          </svg>
+          <p class="figure-caption">Every cubic reproduces T<sub>c</sub> and P<sub>c</sub> exactly, but each has one fixed Z<sub>c</sub>. SRK and PR tune α(T<sub>r</sub>, ω) to vapor pressures, not to densities.</p>
+        </div>
+        <div>
+          <svg class="energy-sketch" viewBox="0 0 440 230" role="img" aria-labelledby="pv-title pv-description">
+            <title id="pv-title">A subcritical cubic isotherm and its three roots</title>
+            <desc id="pv-description">A pressure-volume isotherm below the critical temperature. A horizontal line at the pressure of interest cuts the curve three times: the smallest volume is the liquid root, the largest the vapor root, and the middle root lies where pressure rises with volume, which is mechanically unstable. The local minimum and maximum of the curve are the spinodal points.</desc>
+            <path d="M40 200 V20 M40 200 H420" class="pxy-axis"/>
+            <path d="M58 20 C70 120 92 190 130 192 C175 194 200 80 250 76 C300 72 340 118 410 150" class="eq-lead eq-teal" fill="none"/>
+            <path d="M40 132 H420" class="eq-lead eq-amber" stroke-dasharray="6 4"/>
+            <circle cx="78" cy="132" r="5" fill="#1C242B"/><circle cx="178" cy="132" r="5" fill="#BE654C"/><circle cx="370" cy="132" r="5" fill="#1C242B"/>
+            <g class="energy-text" style="text-anchor:start"><text x="84" y="124" style="text-anchor:start">liquid</text><text x="186" y="124" style="text-anchor:start">unstable</text><text x="350" y="124" style="text-anchor:start">vapor</text><text x="110" y="214" style="text-anchor:start">spinodal min</text><text x="222" y="66" style="text-anchor:start">spinodal max</text><text x="48" y="18" style="text-anchor:start">P</text><text x="404" y="218" style="text-anchor:start">V</text></g>
+          </svg>
+          <p class="figure-caption">Between the two spinodal pressures a cubic has three real roots. Which of the outer two is the stable phase is decided by the Gibbs energy (Session P4).</p>
+        </div>
+      </div>
+      <figcaption>With A = aP/(RT)² and B = bP/RT the equation becomes a cubic in Z: (Z − B)(Z + εB)(Z + σB) − (Z + εB)(Z + σB) + A(Z − B) = 0. The truncated virial equation is Z = 1 + BP/RT with B from the Pitzer correlation.</figcaption>
+    </figure>
+
+    <div class="experiment-grid vle-experiment-grid">
+      <section class="panel setup-panel" aria-labelledby="setup-heading">
+        <div class="panel-heading"><h2 id="setup-heading">1. Choose the isotherm and the model</h2><span class="condition">Basis · 1 mol</span></div>
+        <div id="form-error" class="error-summary" role="alert" tabindex="-1" hidden></div>
+        <form id="eos-form" novalidate>
+          <label for="case">Isotherm</label><select id="case"></select>
+          <label for="model">Cubic for the roots and the paper check</label><select id="model"><option value="pr">Peng–Robinson</option><option value="srk">Soave–Redlich–Kwong</option><option value="rk">Redlich–Kwong</option><option value="vdw">van der Waals</option></select>
+          <label for="rule">Which root is used at each point</label><select id="rule"><option value="label">The phase of the reference point (vapor: largest; liquid: smallest)</option><option value="gibbs">The root of lower Gibbs energy (the equation decides)</option><option value="largest">Always the largest root</option><option value="smallest">Always the smallest root</option></select>
+          <label for="shift">Volume translation of the cubics</label><select id="shift"><option value="none">None</option><option value="sat">Shift c so that the saturated liquid at this T is exact</option></select>
+          <label for="pinspect">Pressure for the roots and the paper check / bar</label><input id="pinspect" type="number" min="0.1" max="700" step="any" value="100">
+          <div class="prediction-row"><label for="prediction">Before calculating: how large will the Peng–Robinson error in Z be at the dense points (ρ &gt; ρ<sub>c</sub>)?</label><select id="prediction"><option value="">Not sure yet</option><option value="low">Below 2%</option><option value="mid">2–10%</option><option value="high">Above 10%</option></select></div>
+          <button id="calculate" class="primary-button calculate-button" type="button">Compare the equations</button>
+          <p class="input-help">Add a calculated result to the comparison before changing a setting.</p>
+          <details class="advanced"><summary>Data and method</summary><p>Each isotherm carries 200–400 reference points from 0.02 P<sub>c</sub> (or 0.25–1 bar) to 3 P<sub>c</sub> (or 200–250 bar). Errors are 100(Z<sub>model</sub> − Z<sub>ref</sub>)/Z<sub>ref</sub>, averaged as absolute values below and above the critical density ρ<sub>c</sub>. The virial equation is evaluated only for gas points with ρ ≤ ρ<sub>c</sub>. SRK uses m = 0.480 + 1.574ω − 0.176ω²; PR uses m = 0.37464 + 1.54226ω − 0.26992ω²; α = [1 + m(1 − T<sub>r</sub><sup>1/2</sup>)]². R = 8.31446 J/(mol K).</p></details>
+        </form>
+      </section>
+
+      <section class="panel result-panel" aria-labelledby="result-heading">
+        <div class="panel-heading"><h2 id="result-heading">2. Compare with the reference</h2></div>
+        <div id="result-placeholder" class="result-placeholder"><p>Calculate to see the error of every model in the gas-like and the dense region.</p></div>
+        <div id="results" hidden>
+          <p id="result-phase" class="phase-result"></p><p id="phase-interpretation" class="section-help"></p><p id="prediction-feedback" class="prediction-feedback" aria-live="polite"></p>
+          <div class="table-scroll" role="region" aria-label="Errors of each model on this isotherm" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">Model</th><th scope="col">Mean |error| in Z, ρ ≤ ρ<sub>c</sub> / %</th><th scope="col">Mean |error| in Z, ρ &gt; ρ<sub>c</sub> / %</th><th scope="col">Largest |error| / %</th><th scope="col">B implied / (cm³/mol)</th></tr></thead><tbody id="sum-body"></tbody></table></div>
+          <p id="sum-note" class="section-help"></p>
+          <h3 class="table-title">Selected points</h3>
+          <div class="table-scroll" role="region" aria-label="Z at selected pressures" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">P / bar</th><th scope="col">Phase</th><th scope="col">Reference Z</th><th scope="col">PR</th><th scope="col">SRK</th><th scope="col">RK</th><th scope="col">vdW</th><th scope="col">Virial</th></tr></thead><tbody id="pt-body"></tbody></table></div>
+          <h3 class="table-title" id="root-title">Roots at the inspection pressure</h3>
+          <div class="table-scroll" role="region" aria-label="Roots of the cubic at the inspection pressure" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">Root</th><th scope="col">Z</th><th scope="col">V / (cm³/mol)</th><th scope="col">G<sup>R</sup>/RT</th><th scope="col">(∂P/∂V)<sub>T</sub></th><th scope="col">Used</th></tr></thead><tbody id="root-body"></tbody></table></div>
+          <div class="balance-readout"><strong>Three-root window</strong><output id="result-window">—</output><span>Spinodal pressures of the chosen cubic at this T, bar</span></div>
+          <div class="calculation-check"><h3>Check the calculation on paper</h3><ol id="calc-steps"></ol></div>
+        </div>
+        <div class="save-case-row"><label for="case-name">Name this case</label><input id="case-name" type="text" value="Methane · 300 K" maxlength="80"><button id="save-case" class="secondary-button" type="button" disabled>Add result to comparison</button></div>
+      </section>
+    </div>
+
+    <section id="diagram-panel" class="panel diagram-panel" aria-labelledby="diagram-heading" hidden>
+      <div class="panel-heading"><h2 id="diagram-heading">3. Read the isotherm</h2><span class="section-help">Reference points and model curves</span></div>
+      <div class="chart-toolbar"><label for="view">View</label><select id="view"><option value="Z">Z against P</option><option value="err">Error in Z against P</option></select>
+        <fieldset class="model-toggles"><legend>Show</legend><label><input type="checkbox" value="ideal" checked> Ideal gas</label><label><input type="checkbox" value="virial" checked> Virial</label><label><input type="checkbox" value="vdw" checked> vdW</label><label><input type="checkbox" value="rk"> RK</label><label><input type="checkbox" value="srk" checked> SRK</label><label><input type="checkbox" value="pr" checked> PR</label></fieldset></div>
+      <div id="eos-chart" class="vle-chart" role="img" aria-label="Isotherm plot. Numbers are listed in Step 2."></div>
+      <div id="chart-legend" class="plot-legend"></div>
+      <p id="chart-note" class="chart-note"></p>
+    </section>
+
+    <section id="concept-check" class="panel core-only" aria-labelledby="concept-heading">
+      <div class="panel-heading"><h2 id="concept-heading">4. Check your understanding</h2><span class="section-help">Write first, then compare</span></div>
+      <p class="section-help">Use Steps 1–3 to answer each question in your own words. Then open the explanation and compare. Your answers are saved with your study.</p>
+      <div class="concept-question"><h3>A. Why do the cubics fail more for the liquid than for the gas?</h3><p>Calculate CO₂ at 280 K, propane at 300 K and water at 500 K. Compare the errors below and above ρ<sub>c</sub>.</p><label for="note-concept1" class="visually-hidden">Your answer to question A</label><textarea id="note-concept1" rows="3" maxlength="10000" placeholder="Quote the dense-region error of PR and SRK for the three fluids."></textarea><details><summary>Compare with an explanation</summary><p>In a gas the attraction term is a small correction and any reasonable a and b give Z to 1–3%. A liquid volume is set by how b and a(T) balance near the close-packed limit, and each cubic has one fixed critical compressibility (PR 0.307, SRK 0.333) while real fluids have 0.23–0.29. SRK and PR tune α(T) to vapor pressures, not to densities. PR happens to give liquid CO₂ at 280 K to 1.6%, but propane at 300 K is off by 5% and water at 500 K by 23%: a hydrogen-bonded liquid is outside what two constants and ω describe.</p></details></div>
+      <div class="concept-question"><h3>B. Why does the truncated virial equation fail for a dense gas when its B is accurate?</h3><p>Calculate methane at 300 K and at T<sub>r</sub> = 1.05. Compare the virial error with B from the data (graduate A) or with the Pitzer value in the table.</p><label for="note-concept2" class="visually-hidden">Your answer to question B</label><textarea id="note-concept2" rows="3" maxlength="10000" placeholder="Quote the virial error at both temperatures and the B values."></textarea><details><summary>Compare with an explanation</summary><p>Z = 1 + BP/RT keeps only the first density term. The Pitzer B for methane at 300 K is −41.3 cm³/mol against −42.2 from the data, 2% apart, yet the gas-region error is 5.7% because at 100–250 bar the C/V² term and higher terms matter. At T<sub>r</sub> = 1.05 the gas is closer to its critical density and the error doubles. Use the truncated form only where BP/RT is small, roughly V<sub>r</sub> &gt; 2.</p></details></div>
+      <div class="concept-question"><h3>C. What is the middle root?</h3><p>Choose CO₂ at 280 K, Peng–Robinson, and set the inspection pressure to 30 bar. Read the three roots and the sign of (∂P/∂V)<sub>T</sub>.</p><label for="note-concept3" class="visually-hidden">Your answer to question C</label><textarea id="note-concept3" rows="3" maxlength="10000" placeholder="Give the three Z values and say which is vapor, which is liquid and why the third is not a phase."></textarea><details><summary>Compare with an explanation</summary><p>At 30 bar PR gives Z = 0.0689, 0.128 and 0.769. The largest is the vapor (reference 0.779 at this pressure), the smallest the liquid. The middle root has (∂P/∂V)<sub>T</sub> &gt; 0, so κ<sub>T</sub> &lt; 0: compressing it would lower its pressure, which violates the stability condition of Session P1. At 30 bar, below the vapor pressure of 41.6 bar, the vapor root also has the lower G<sup>R</sup>/RT, so it is the stable phase.</p></details></div>
+    </section>
+
+    <section id="graduate-investigation" class="panel graduate-section grad-only" aria-labelledby="graduate-heading">
+      <div class="panel-heading"><h2 id="graduate-heading">4. Investigate what an equation of state can support</h2><span class="condition">Graduate work</span></div>
+      <p id="graduate-baseline" class="graduate-note">Calculate an isotherm in Step 1 before running an investigation.</p>
+      <aside class="graduate-limits" aria-labelledby="eos-limits-heading"><h3 id="eos-limits-heading">What these results can and cannot show</h3><ul><li>The reference values are computed from multiparameter equations fitted to measurements. Their uncertainty (about 0.1% in density here) is small against the errors tested, so they serve as data.</li><li>The cubics use only T<sub>c</sub>, P<sub>c</sub> and ω. A good result on one isotherm does not validate them on another; a bad result on water says nothing about methane.</li><li>Z errors are not the whole story: fugacity and enthalpy depend on integrals of Z and can be better or worse (Sessions P3 and P4).</li></ul></aside>
+
+      <section class="graduate-step" aria-labelledby="b-heading"><h3 id="b-heading">A. The second virial coefficient from the data</h3>
+        <ol class="graduate-checklist"><li>Fit (Z − 1)/ρ = B + Cρ to the gas points with ρ up to the chosen limit, for all eight isotherms.</li><li>Compare B with the Pitzer correlation and with B = b − a/RT implied by each cubic.</li><li>Explain why an equation that predicts Z to 2% can miss B by 20%.</li></ol>
+        <label for="rhomax">Highest density used in the fit</label><select id="rhomax"><option value="0.5">0.5 mol/L</option><option value="1" selected>1 mol/L</option><option value="2">2 mol/L</option></select>
+        <div class="graduate-actions"><button id="run-b" class="primary-button" type="button" disabled>Fit B for every isotherm</button></div>
+        <p id="b-status" class="graduate-status" role="status"></p>
+        <div id="b-wrap" class="table-scroll graduate-table" role="region" aria-label="Second virial coefficients" tabindex="0" hidden><table><thead><tr><th scope="col">Isotherm</th><th scope="col">T / K</th><th scope="col">B from data / (cm³/mol)</th><th scope="col">C / (cm⁶/mol²)</th><th scope="col">Pitzer</th><th scope="col">vdW</th><th scope="col">SRK</th><th scope="col">PR</th></tr></thead><tbody id="b-body"></tbody></table></div>
+        <label for="note-b">Claim 1 · what B tests</label><textarea id="note-b" rows="3" maxlength="10000" placeholder="Quote B from the data, Pitzer and PR for methane at 300 K and for water at 500 K, and explain the pattern."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="csp-heading"><h3 id="csp-heading">B. Corresponding states at T<sub>r</sub> = 1.05</h3>
+        <ol class="graduate-checklist"><li>Compare Z at P<sub>r</sub> = 0.5, 1, 2 and 3 for the four fluids at the same T<sub>r</sub>.</li><li>Compare with van der Waals, which gives one curve for every fluid, and with PR, which uses ω.</li><li>State how far two-parameter corresponding states holds for these fluids and where a third parameter is not enough.</li></ol>
+        <div class="graduate-actions"><button id="run-csp" class="primary-button" type="button" disabled>Compare at the same T<sub>r</sub></button></div>
+        <p id="csp-status" class="graduate-status" role="status"></p>
+        <div id="csp-wrap" class="table-scroll graduate-table" role="region" aria-label="Corresponding states" tabindex="0" hidden><table><thead><tr><th scope="col">Fluid</th><th scope="col">ω</th><th scope="col">Z at P<sub>r</sub> = 0.5: reference, PR</th><th scope="col">P<sub>r</sub> = 1</th><th scope="col">P<sub>r</sub> = 2</th><th scope="col">P<sub>r</sub> = 3</th></tr></thead><tbody id="csp-body"></tbody></table></div>
+        <div id="csp-chart" class="vle-chart" role="img" aria-label="Z against reduced pressure at T_r = 1.05 for four fluids" hidden></div>
+        <label for="note-csp">Claim 2 · corresponding states</label><textarea id="note-csp" rows="3" maxlength="10000" placeholder="Quote the spread of Z at P_r = 2 for the three nonpolar fluids, water, and the van der Waals value."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="sat-heading"><h3 id="sat-heading">C. The equation's own phase boundary and the liquid volume</h3>
+        <ol class="graduate-checklist"><li>For the three subcritical isotherms, find the spinodal pressures and the pressure where the liquid and vapor roots have equal Gibbs energy: the vapor pressure of the equation itself.</li><li>Compare it with the reference vapor pressure, and compare the saturated liquid volume.</li><li>Shift the volume by c so that the saturated liquid is exact, and see what the shift does to the rest of the liquid branch.</li></ol>
+        <div class="graduate-actions"><button id="run-sat" class="primary-button" type="button" disabled>Compare the phase boundaries</button></div>
+        <p id="sat-status" class="graduate-status" role="status"></p>
+        <div id="sat-wrap" class="table-scroll graduate-table" role="region" aria-label="Phase boundary of each cubic" tabindex="0" hidden><table><thead><tr><th scope="col">Isotherm</th><th scope="col">Cubic</th><th scope="col">Spinodals / bar</th><th scope="col">P<sup>sat</sup> equation / reference / bar</th><th scope="col">V<sup>L</sup> sat, equation / reference / (cm³/mol)</th><th scope="col">c / (cm³/mol)</th><th scope="col">Liquid |error|, no shift / shifted / %</th></tr></thead><tbody id="sat-body"></tbody></table></div>
+        <label for="note-sat">Claim 3 · vapor pressure against density</label><textarea id="note-sat" rows="3" maxlength="10000" placeholder="Quote the PR vapor pressure and liquid volume errors for CO₂ and water, and what the shift fixes and what it does not."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="argument-heading"><h3 id="argument-heading">D. Defend a limited conclusion</h3>
+        <label for="note-decision">Decision and next evidence</label><textarea id="note-decision" rows="3" maxlength="10000" placeholder="For one application (pipeline gas, a liquid CO₂ pump, steam), state which equation you would use, the error you expect from these tables, and the measurement that would test it."></textarea>
+        <div class="graduate-actions"><button id="check-evidence" type="button" class="secondary-button">Check my evidence record</button></div><p id="evidence-status" class="graduate-status" role="status"></p>
+        <p class="graduate-note">The record check only confirms that the sections and calculations are present. It is a completeness reminder, not a grade.</p>
+      </section>
+
+      <section class="graduate-step" id="ai-code" aria-labelledby="ai-heading">
+        <h3 id="ai-heading">E. Check code that an AI assistant helped you write</h3>
+        <p>You may use an AI assistant to <strong>write code</strong>. You decide everything else: the equations, the units, how the cubic is solved, which root is which, which points enter the fit, and how you will know a result is right. Do not ask the assistant for numbers or conclusions.</p>
+        <ol class="graduate-checklist"><li>Write your specification first, in your own words, before you open the assistant.</li><li>Download the reference isotherms. Ask the assistant to write Python that: (a) computes the Peng–Robinson a(T) and b for CO₂ at 280 K; (b) solves the cubic in Z at 30 bar and returns the vapor and liquid roots; (c) solves it at 100 bar; (d) computes B = b − a/RT; (e) fits (Z − 1)/ρ = B + Cρ to methane at 300 K with ρ up to a limit you choose. Run it yourself.</li><li>Enter the outputs and run the checks. When a check disagrees, find the cause in the code, fix it, and rerun. Record what you changed.</li></ol>
+        <div class="graduate-actions"><button id="ai-csv" type="button" class="secondary-button" disabled>Download the reference isotherms (CSV)</button></div>
+        <p class="graduate-note">CO₂: T<sub>c</sub> = 304.1282 K, P<sub>c</sub> = 73.773 bar, ω = <span id="ai-omega">0.2249</span>. R = 8.31446261815324 J/(mol K). Report a in Pa m⁶/mol², b in m³/mol, B in cm³/mol.</p>
+        <label for="ai-spec">Your specification, written before you used the assistant</label><textarea id="ai-spec" rows="5" maxlength="10000" placeholder="Equations and constants; units at each step; how the cubic is solved and how roots are sorted and filtered (Z > B); which root is vapor and which liquid; the fit: which points, which variables, how ρ is computed; how you check each result."></textarea>
+        <div class="graduate-grid"><div><label for="ai-tool">Assistant and version</label><input id="ai-tool" type="text" maxlength="200" placeholder="for example, the name and model"></div></div>
+        <label for="ai-prompt">The prompt or prompts you used</label><textarea id="ai-prompt" rows="4" maxlength="20000"></textarea>
+        <label for="ai-codetext">Final code that produced the outputs below</label><textarea id="ai-codetext" rows="8" maxlength="60000" spellcheck="false" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.78rem"></textarea>
+        <h4>Outputs from your code</h4>
+        <div class="graduate-grid">
+          <div><label for="ai-a">a(280 K) / (Pa m⁶/mol²)</label><input id="ai-a" type="number" step="any"></div>
+          <div><label for="ai-b">b / (m³/mol)</label><input id="ai-b" type="number" step="any"></div>
+          <div><label for="ai-zv">Z vapor at 30 bar</label><input id="ai-zv" type="number" step="any"></div>
+          <div><label for="ai-zl">Z liquid at 30 bar</label><input id="ai-zl" type="number" step="any"></div>
+          <div><label for="ai-z100">Z at 100 bar</label><input id="ai-z100" type="number" step="any"></div>
+          <div><label for="ai-bpr">B = b − a/RT / (cm³/mol)</label><input id="ai-bpr" type="number" step="any"></div>
+          <div><label for="ai-rho">Highest ρ in your fit / (mol/L)</label><input id="ai-rho" type="number" min="0.2" max="3" step="any" value="1"></div>
+          <div><label for="ai-bfit">B fitted, methane 300 K / (cm³/mol)</label><input id="ai-bfit" type="number" step="any"></div>
+        </div>
+        <div class="graduate-actions"><button id="ai-run" type="button" class="primary-button" disabled>Check my outputs</button></div>
+        <p id="ai-status" class="graduate-status" role="status">Enter the outputs from your code, then run the checks.</p>
+        <div id="ai-results" hidden>
+          <div class="table-scroll graduate-table" role="region" aria-label="Checks of your code outputs against the lab" tabindex="0"><table><thead><tr><th scope="col">Check</th><th scope="col">Lab</th><th scope="col">Your code</th><th scope="col">Result</th><th scope="col">Likely cause</th></tr></thead><tbody id="ai-out"></tbody></table></div>
+          <p class="graduate-note">Agreement with the lab shows that your code solves the problem you specified. It does not show that Peng–Robinson is right for CO₂: that is what A–C test. The "likely cause" lists common errors; your code may have another.</p>
+        </div>
+        <label for="ai-found">What disagreed, what was wrong in the code, and how you fixed it</label><textarea id="ai-found" rows="3" maxlength="10000" placeholder="Name the check, the line of code, and the fix. If every check agreed at once, say which check you would trust least and why."></textarea>
+        <label for="ai-own">What you decided yourself, and one thing the checks cannot establish</label><textarea id="ai-own" rows="3" maxlength="10000" placeholder="For example: how roots are filtered, which points enter the fit. Then one limit."></textarea>
+      </section>
+    </section>
+
+    <section class="panel comparison-panel" aria-labelledby="comparison-heading">
+      <div class="panel-heading"><h2 id="comparison-heading">5. Compare and save</h2></div>
+      <ol class="investigation-steps core-only"><li>Calculate and save all eight isotherms with Peng–Robinson and the reference phase.</li><li>Save CO₂ at 280 K again with the root of lower Gibbs energy, and with van der Waals.</li><li>Answer questions A–C in Step 4 using the saved comparison.</li><li>Download the complete study, reopen it, and reproduce a saved case.</li></ol>
+      <ol class="investigation-steps grad-only"><li>Calculate and save all eight isotherms with Peng–Robinson and the reference phase.</li><li>Complete investigations A–C and E and write the graduate claims.</li><li>Download the complete study, reopen it, and reproduce a saved case and its investigation record.</li></ol>
+      <p id="comparison-empty" class="empty-state">Your calculated cases will appear here after you add them.</p>
+      <div id="comparison-table-wrap" class="table-scroll" role="region" aria-label="Saved cases" tabindex="0" hidden><table><thead><tr><th scope="col">Case</th><th scope="col">Isotherm</th><th scope="col">Cubic, root rule, shift</th><th scope="col">Cubic |error| ρ ≤ ρ<sub>c</sub> / ρ &gt; ρ<sub>c</sub> / %</th><th scope="col">Virial |error| / %</th><th scope="col">Reopen</th></tr></thead><tbody id="comparison-body"></tbody></table></div>
+      <label for="reflection" class="reflection-label">Optional additional note</label><textarea id="reflection" rows="3" maxlength="10000" placeholder="Add an optional note."></textarea>
+      <fieldset class="student-fields"><legend>Your details <span>(optional)</span></legend><p class="input-help">Saved in the downloaded file so your instructor can identify it. You can download without them.</p><div class="student-grid"><div><label for="student-first-name">First name</label><input id="student-first-name" type="text" maxlength="80" autocomplete="given-name"></div><div><label for="student-last-name">Last name</label><input id="student-last-name" type="text" maxlength="80" autocomplete="family-name"></div><div><label for="student-id">Student ID</label><input id="student-id" type="text" maxlength="20" inputmode="numeric" autocomplete="off"></div></div></fieldset>
+        <div class="study-actions"><button id="export-study" class="primary-button" type="button" disabled>Download my study</button><div class="file-control"><label for="import-study">Open a saved study</label><input id="import-study" type="file" accept=".json,application/json"></div></div>
+        <p class="submit-note"><strong>To submit:</strong> upload the downloaded .json file to <strong>myCourseVille</strong>, in the assignment for Lab P2. Keep the file name: it carries your name and student ID.</p>
+      <p id="status" class="study-status" role="status" aria-live="polite">Loading the reference isotherms…</p><p class="privacy-note">Your inputs, comparisons and explanations are kept in this open page. Download one study file to keep the complete record and reopen it later. Results are recalculated on restore.</p>
+    </section>
+    <noscript><p class="error-summary">Enable JavaScript to calculate. The figures and questions remain available to read.</p></noscript>
+  </main>
+  <footer class="site-footer"><span>2105603 · Advanced Chemical Engineering Thermodynamics</span><a href="index.html#sessions">All 2027 labs</a></footer>
+  <script src="../labs/assets/plotly.min.js" defer></script>
+  <script type="module" src="assets/mode.js?v=mode-3"></script>
+  <script type="module" src="assets/eos-lab.js?v=p2-1"></script>
+  <script type="module" src="assets/eoscode.js?v=p2-1"></script>
+</body>
+</html>

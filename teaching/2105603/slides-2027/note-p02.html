@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics">
+
+<title>Equations of state: the virial expansion and the cubics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<meta name="robots" content="noindex">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="../site_libs/katex/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+
+<header id="title-block-header">
+<h1 class="title">Equations of state: the virial expansion and the cubics</h1>
+<p class="subtitle">Pre-class note for Session P2 · about 20 minutes</p>
+<p class="author">Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics</p>
+
+</header>
+
+
+<div class="draft-note">
+<p>Draft for 2027. If you are taking the course this year, use the current course page.</p>
+</div>
+<div class="purpose">
+<p><strong>Why read this.</strong> Session P1 showed that PVT data and the ideal-gas heat capacity give every thermodynamic property. For methane we used a reference table. Most fluids, and almost every mixture, have no such table, so a calculation needs an equation of state. This note introduces the two families used in this course and the questions to ask of them. Work the three questions at the end and bring one question of your own.</p>
+</div>
+<h2 id="the-compressibility-factor">1. The compressibility factor</h2>
+<p>The departure from the ideal gas is measured by</p>
+<p><span class="math display">Z=\frac{PV}{RT}.</span></p>
+<p>Z = 1 for an ideal gas. Attraction between molecules makes Z &lt; 1 at moderate density; repulsion makes Z &gt; 1 at high density. For methane at 300 K the NIST reference gives Z = 0.983 at 10 bar, 0.856 at 100 bar and 0.828 at 200 bar. The ideal gas is within 1% only up to about 6 bar.</p>
+<h2 id="the-virial-expansion">2. The virial expansion</h2>
+<p>At low density Z can be expanded in powers of the molar density ρ = 1/V:</p>
+<p><span class="math display">Z=1+B\rho+C\rho^2+\dots\qquad\text{or}\qquad Z=1+\frac{BP}{RT}+\dots</span></p>
+<p>The coefficients depend on T only. Statistical mechanics relates B to the interaction energy of a pair of molecules and C to triples. B is negative at low temperature, where attraction dominates, and positive at high temperature. The second form, truncated after B, is used in the vapor-phase corrections of Sessions 1 and 2.</p>
+<p>For nonpolar gases the <strong>Pitzer correlation</strong> estimates B from critical constants:</p>
+<p><span class="math display">\frac{BP_c}{RT_c}=B^0+\omega B^1,\qquad B^0=0.083-\frac{0.422}{T_r^{1.6}},\qquad B^1=0.139-\frac{0.172}{T_r^{4.2}}.</span></p>
+<p><strong>Worked example.</strong> Methane at 300 K: T<sub>c</sub> = 190.564 K, P<sub>c</sub> = 45.992 bar, ω = 0.0114. T<sub>r</sub> = 1.574, B⁰ = −0.1212, B¹ = 0.1134, so BP<sub>c</sub>/RT<sub>c</sub> = −0.1199 and B = −41.3 cm³/mol. At 10 bar, Z = 1 + BP/RT = 1 − 0.0166 = 0.9834, against 0.9832 from NIST. At 100 bar the same equation gives 0.834 against 0.856: higher terms now matter.</p>
+<h2 id="cubic-equations-of-state">3. Cubic equations of state</h2>
+<p>Van der Waals (1873) wrote the pressure as a repulsion term minus an attraction term:</p>
+<p><span class="math display">P=\frac{RT}{V-b}-\frac{a}{V^2}.</span></p>
+<p>The co-volume b is the volume the molecules themselves occupy; a measures their attraction. Requiring the critical isotherm to have an inflection at the critical point, (∂P/∂V)<sub>T</sub> = (∂²P/∂V²)<sub>T</sub> = 0, gives a = 27R²T<sub>c</sub>²/(64P<sub>c</sub>) and b = RT<sub>c</sub>/(8P<sub>c</sub>), and fixes Z<sub>c</sub> = 3/8. Real fluids have Z<sub>c</sub> = 0.23 to 0.29.</p>
+<p>Later equations keep this structure and change the attraction term:</p>
+<p><span class="math display">P=\frac{RT}{V-b}-\frac{a\,\alpha(T_r,\omega)}{(V+\varepsilon b)(V+\sigma b)}.</span></p>
+<p>Redlich–Kwong (1949) used α = T<sub>r</sub><sup>−1/2</sup>. Soave (1972) and Peng and Robinson (1976) used α = [1 + m(1 − T<sub>r</sub><sup>1/2</sup>)]² with m a function of ω, fitted to the vapor pressures of nonpolar fluids. The constants are listed on the Session P2 slides and in Lab P2.</p>
+<p>With A = aαP/(RT)² and B = bP/RT the equation becomes a cubic in Z. Above T<sub>c</sub> it has one real root. Below T<sub>c</sub>, between two <strong>spinodal</strong> pressures, it has three. The smallest is liquid-like and the largest vapor-like. The middle root has (∂P/∂V)<sub>T</sub> &gt; 0, a negative compressibility, so it violates the stability condition of Session P1 and is never a phase. Which of the outer two is stable is decided by the Gibbs energy, the subject of Session P4.</p>
+<h2 id="corresponding-states-and-the-acentric-factor">4. Corresponding states and the acentric factor</h2>
+<p>If every fluid obeyed the same reduced equation, Z would depend only on T<sub>r</sub> = T/T<sub>c</sub> and P<sub>r</sub> = P/P<sub>c</sub>. Simple fluids such as argon nearly do. Pitzer added a third parameter, the <strong>acentric factor</strong>,</p>
+<p><span class="math display">\omega=-1-\log_{10}\left(\frac{P^{\text{sat}}}{P_c}\right)_{T_r=0.7},</span></p>
+<p>which is close to 0 for argon, 0.011 for methane, 0.152 for propane and 0.344 for water. It measures how much faster the vapor pressure falls with temperature than for a simple fluid. Polar and hydrogen-bonded fluids, such as water, depart from corresponding states in ways that ω alone does not capture.</p>
+<h2 id="how-to-judge-an-equation-of-state">5. How to judge an equation of state</h2>
+<p>Every equation of state is a model with a few constants. It must be tested on the property the calculation needs, in the region where it is used. In Session P2 you will compare the equations with reference isotherms and see three patterns worth predicting now:</p>
+<ul>
+<li>the error in the gas is usually much smaller than in the liquid;</li>
+<li>a correct vapor pressure does not guarantee a correct liquid density;</li>
+<li>a correct Z at moderate pressure does not guarantee a correct B.</li>
+</ul>
+<h2 id="before-session-p2">6. Before Session P2</h2>
+<p>Write short answers. We use them in the first 30 minutes.</p>
+<ol type="1">
+<li><strong>Virial.</strong> For CO₂ at 280 K the Pitzer correlation gives B = −144.7 cm³/mol. Estimate Z at 10 bar and at 40 bar with the truncated equation. Which estimate do you trust more, and why?</li>
+<li><strong>Van der Waals.</strong> Show that the two critical conditions give b = RT<sub>c</sub>/(8P<sub>c</sub>). Use it to compute b for CO₂ (T<sub>c</sub> = 304.13 K, P<sub>c</sub> = 73.77 bar) and compare it with the saturated liquid volume at 280 K, 49.8 cm³/mol.</li>
+<li><strong>Roots.</strong> Sketch a subcritical isotherm of a cubic and mark the three roots at a pressure between the spinodals. Which root would you use for a gas pipeline, and which for a liquid pump?</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li>Pitzer, K. S., Curl, R. F. (1957). The volumetric and thermodynamic properties of fluids. III. Empirical equation for the second virial coefficient. <em>J. Am. Chem. Soc.</em> 79, 2369–2370.</li>
+<li>Soave, G. (1972). Equilibrium constants from a modified Redlich–Kwong equation of state. <em>Chem. Eng. Sci.</em> 27, 1197–1203.</li>
+<li>Peng, D.-Y., Robinson, D. B. (1976). A new two-constant equation of state. <em>Ind. Eng. Chem. Fundam.</em> 15, 59–64.</li>
+<li>Smith, J. M., Van Ness, H. C., Abbott, M. M., Swihart, M. T. (2018). <em>Introduction to Chemical Engineering Thermodynamics</em>, 8th ed.&nbsp;McGraw-Hill. Chapter 3.</li>
+<li>Lemmon, E. W., McLinden, M. O., Friend, D. G. NIST Chemistry WebBook, SRD 69: thermophysical properties of fluid systems. The reference values used in Lab P2.</li>
+</ul>
+<p><a href="p02.html" class="next-link">Session P2 slides →</a></p>
+
+
+
+
+
+</body></html>

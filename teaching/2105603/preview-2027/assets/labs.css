@@ -584,3 +584,9 @@
 
 /* where to submit the study file */
 .submit-note { margin: 12px 0 0; padding: 10px 14px; border-left: 4px solid var(--amber, #E29A2D); background: #fff; }
+/* Lab P2: model toggles in the chart toolbar and table titles inside a result panel */
+.model-toggles { display: flex; flex-wrap: wrap; gap: 4px 12px; border: 0; margin: 0; padding: 0; }
+.model-toggles legend { float: left; font-weight: 600; margin-right: 8px; padding: 0; }
+.model-toggles label { display: inline-flex; align-items: center; gap: 4px; font-weight: 400; margin: 0; }
+.model-toggles input { width: auto; margin: 0; }
+.table-title { font-size: 1rem; margin: 18px 0 6px; }

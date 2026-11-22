@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Residual properties · Thermodynamics Labs 2027 preview</title>
+  <meta name="description" content="Lab P3: compute residual enthalpy, entropy and Gibbs energy from the virial and cubic equations of state, compare them with reference data, and use them for a valve and a compressor.">
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="assets/labs.css?v=r8">
+</head>
+<body data-mode="core">
+<div class="draft-banner" role="note">Draft for 2027. If you are taking 2105603 this year, use the <a href="../index.html">current course page</a>.</div>
+  <a class="skip-link" href="#experiment">Skip to the experiment</a>
+  <header class="site-header"><a class="brand" href="index.html">SKH <span>Thermodynamics Labs</span></a><nav aria-label="Course navigation"><a href="residual.html">Lab P3</a><a href="index.html#sessions">All 2027 labs</a><a href="../slides-2027/index.html">Slides</a><a href="../">Course</a></nav></header>
+  <main class="page" id="experiment">
+    <div class="page-intro">
+      <div><p class="eyebrow">Lab P3 · Residual properties and process energy</p><h1>From Z to H, S and G: how much energy does the real fluid need?</h1><p id="case-description" class="intro-copy">An enthalpy or entropy change of a real fluid is an ideal-gas change plus the difference of two residual properties. The lab computes H<sup>R</sup>, S<sup>R</sup> and G<sup>R</sup> from the truncated virial equation and four cubic equations, compares them with the NIST reference, and uses them to find the outlet of two valves and two compressors.</p></div>
+      <p class="preview-note">2027 prototype<br>Session P3</p>
+    </div>
+    <fieldset class="mode-switch"><legend>View</legend><div class="mode-options"><label><input type="radio" name="lab-mode" value="core" checked><span>Core concepts</span></label><label><input type="radio" name="lab-mode" value="graduate"><span>Graduate investigation</span></label></div><p class="core-only">Core: predict, calculate the residuals and one process, and check Peng–Robinson on paper.</p><p class="grad-only">Graduate: obtain residuals from the PVT data alone, split a process error into its sources, rank models by property, and check code written with an AI assistant.</p></fieldset>
+    <p class="graduate-note grad-only"><strong>Graduate route.</strong> Complete Steps 1–3 for the four processes and the five states, then run A–C and E in Step 4. <a href="#graduate-investigation">Go to the graduate investigation</a>.</p>
+
+    <section class="starter" aria-label="Starting problems">
+      <div class="starter-label"><strong>Choose a process</strong><span>Each sets the state in Step 1 to its inlet.</span></div>
+      <div class="case-buttons"><button type="button" data-case="valve_ch4" aria-pressed="true">Methane valve · 100 → 20 bar</button><button type="button" data-case="valve_n2" aria-pressed="false">Nitrogen valve · 200 → 1 bar</button><button type="button" data-case="comp_ch4" aria-pressed="false">Methane compressor · 20 → 100 bar</button><button type="button" data-case="comp_co2" aria-pressed="false">CO₂ compressor · 30 → 100 bar</button></div>
+      <p id="case-source" class="source-note">Data: NIST Chemistry WebBook, SRD 69 (Lemmon, McLinden and Friend), from the reference equations of state of Setzmann and Wagner (methane), Span and Wagner (CO₂) and Span et al. (nitrogen). The ideal-gas reference is the NIST isobar at 0.001 bar. Ideal-gas C<sub>p</sub>: Shomate equations from the NIST WebBook gas-phase data (Chase, 1998). Critical constants and ω as in Lab P2.</p>
+    </section>
+
+    <figure class="panel phase-picture" aria-labelledby="picture-heading">
+      <div class="panel-heading"><h2 id="picture-heading">The ideal-gas path and the residual correction</h2><span class="section-help">Any change of H or S of a real fluid</span></div>
+      <div class="vlle-figures vr-figures">
+        <div>
+          <svg class="energy-sketch" viewBox="0 0 440 230" role="img" aria-labelledby="path-title path-description">
+            <title id="path-title">A real-fluid change as three steps</title>
+            <desc id="path-description">From state 1 the real fluid is first converted to an ideal gas at the same T and P by subtracting the residual property at state 1. The ideal gas then goes from state 1 to state 2 using the ideal-gas heat capacity. Finally the residual property at state 2 is added to return to the real fluid.</desc>
+            <g class="energy-text" style="text-anchor:middle"><text x="70" y="40">real, state 1</text><text x="370" y="40">real, state 2</text><text x="70" y="200">ideal gas, T₁, P₁</text><text x="370" y="200">ideal gas, T₂, P₂</text></g>
+            <path d="M70 52 V180" class="eq-lead eq-amber"/><path d="M110 196 H330" class="eq-lead eq-teal"/><path d="M370 180 V52" class="eq-lead eq-amber"/><path d="M120 36 H320" class="eq-lead eq-slate" stroke-dasharray="6 4"/>
+            <g class="energy-text" style="text-anchor:start"><text x="78" y="120" style="text-anchor:start">−M<tspan baseline-shift="sub" font-size="70%">1</tspan><tspan baseline-shift="super" font-size="70%">R</tspan></text><text x="300" y="120" style="text-anchor:start">+M<tspan baseline-shift="sub" font-size="70%">2</tspan><tspan baseline-shift="super" font-size="70%">R</tspan></text><text x="150" y="186" style="text-anchor:start">ΔM<tspan baseline-shift="super" font-size="70%">ig</tspan> from C<tspan baseline-shift="sub" font-size="70%">p</tspan><tspan baseline-shift="super" font-size="70%">ig</tspan>(T)</text><text x="160" y="28" style="text-anchor:start">ΔM, the quantity wanted</text></g>
+          </svg>
+          <p class="figure-caption">ΔM = M<sub>2</sub><sup>R</sup> − M<sub>1</sub><sup>R</sup> + ΔM<sup>ig</sup>. The ideal-gas step needs C<sub>p</sub><sup>ig</sup>(T); the residual steps need only PVT data or an equation of state.</p>
+        </div>
+        <div>
+          <svg class="eq-sketch" viewBox="0 0 520 230" role="img" aria-labelledby="res-title res-description">
+            <title id="res-title">Residual properties from PVT data</title>
+            <desc id="res-description">G R over RT is the integral of Z minus 1 over P. H R over RT is minus T times the integral of the temperature derivative of Z at constant P, over P. S R over R is their difference.</desc>
+            <g class="eq-main" style="font-size:20px"><text x="260" y="60">G<tspan baseline-shift="super" font-size="70%">R</tspan>/RT = ∫₀<tspan baseline-shift="super" font-size="70%">P</tspan> (Z − 1) dP/P</text><text x="260" y="112">H<tspan baseline-shift="super" font-size="70%">R</tspan>/RT = −T ∫₀<tspan baseline-shift="super" font-size="70%">P</tspan> (∂Z/∂T)<tspan baseline-shift="sub" font-size="70%">P</tspan> dP/P</text><text x="260" y="164">S<tspan baseline-shift="super" font-size="70%">R</tspan>/R = H<tspan baseline-shift="super" font-size="70%">R</tspan>/RT − G<tspan baseline-shift="super" font-size="70%">R</tspan>/RT</text></g>
+            <g class="eq-caption"><text x="260" y="210">at constant T · G<tspan baseline-shift="super" font-size="70%">R</tspan> needs Z; H<tspan baseline-shift="super" font-size="70%">R</tspan> and S<tspan baseline-shift="super" font-size="70%">R</tspan> also need how Z changes with T</text></g>
+          </svg>
+          <p class="figure-caption">For a cubic the integrals have closed forms. H<sup>R</sup> depends on dα/dT, which no Z measurement at one temperature can test.</p>
+        </div>
+      </div>
+      <figcaption>Cubic (Smith, Van Ness and Abbott form): G<sup>R</sup>/RT = Z − 1 − ln(Z − β) − qI, H<sup>R</sup>/RT = Z − 1 + (d ln α/d ln T<sub>r</sub> − 1)qI, S<sup>R</sup>/R = ln(Z − β) + (d ln α/d ln T<sub>r</sub>)qI, with β = bP/RT, q = a/(bRT) and I = ln[(Z + σβ)/(Z + εβ)]/(σ − ε).</figcaption>
+    </figure>
+
+    <div class="experiment-grid vle-experiment-grid">
+      <section class="panel setup-panel" aria-labelledby="setup-heading">
+        <div class="panel-heading"><h2 id="setup-heading">1. Choose the state, the process and the models</h2><span class="condition">Basis · 1 mol</span></div>
+        <div id="form-error" class="error-summary" role="alert" tabindex="-1" hidden></div>
+        <form id="res-form" novalidate>
+          <label for="fluid">Fluid for the residual table</label><select id="fluid"><option value="methane">Methane</option><option value="co2">Carbon dioxide</option><option value="n2">Nitrogen</option></select>
+          <label for="pres">Pressure / bar</label><select id="pres"></select>
+          <label for="temp">Temperature / K</label><input id="temp" type="number" min="250" max="450" step="any" value="300">
+          <label for="proc">Process</label><select id="proc"></select>
+          <label for="model">Cubic for the paper check</label><select id="model"><option value="pr">Peng–Robinson</option><option value="srk">Soave–Redlich–Kwong</option><option value="rk">Redlich–Kwong</option><option value="vdw">van der Waals</option></select>
+          <label for="source">Ideal-gas H and S for the process</label><select id="source"><option value="shomate">Shomate C<sub>p</sub><sup>ig</sup>(T) (what you would use without a table)</option><option value="nist">NIST 0.001 bar isobar (isolates the residual error)</option></select>
+          <div class="prediction-row"><label for="prediction">Before calculating: how much will the ideal gas overestimate the work of the CO₂ compressor?</label><select id="prediction"><option value="">Not sure yet</option><option value="low">Less than 5%</option><option value="mid">5–15%</option><option value="high">More than 15%</option></select></div>
+          <button id="calculate" class="primary-button calculate-button" type="button">Calculate residuals and the process</button>
+          <p class="input-help">Add a calculated result to the comparison before changing a setting.</p>
+          <details class="advanced"><summary>Data and method</summary><p>Reference residuals: H<sup>R</sup> = H(T, P) − H(T, 0.001 bar) and S<sup>R</sup> = S(T, P) − S(T, 0.001 bar) + R ln(P/0.001 bar), from NIST isobars in steps of 0.5 K. The cubics choose the root of lower Gibbs energy except at the tabulated state, where the reference phase is used. The virial equation is Z = 1 + BP/RT with the Pitzer B(T) and dB/dT. Process outlets are found by bisection on H (valve) or S (compressor). The methane and CO₂ Shomate equations are fitted from 298 K; below that they are extrapolated.</p></details>
+        </form>
+      </section>
+
+      <section class="panel result-panel" aria-labelledby="result-heading">
+        <div class="panel-heading"><h2 id="result-heading">2. Compare with the reference</h2></div>
+        <div id="result-placeholder" class="result-placeholder"><p>Calculate to see the residual properties at the state and the outlet of the process.</p></div>
+        <div id="results" hidden>
+          <p id="result-phase" class="phase-result"></p><p id="phase-interpretation" class="section-help"></p><p id="prediction-feedback" class="prediction-feedback" aria-live="polite"></p>
+          <h3 class="table-title" id="state-title">Residual properties at the state</h3>
+          <div class="table-scroll" role="region" aria-label="Residual properties at the state" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">Model</th><th scope="col">Z</th><th scope="col">H<sup>R</sup> / (J/mol)</th><th scope="col">S<sup>R</sup> / (J/(mol K))</th><th scope="col">G<sup>R</sup> / (J/mol)</th></tr></thead><tbody id="state-body"></tbody></table></div>
+          <h3 class="table-title" id="proc-title">Process outlet</h3>
+          <div class="table-scroll" role="region" aria-label="Process outlet" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">Model</th><th scope="col">Outlet T / K</th><th scope="col">Error / K</th><th scope="col">ΔH = work / (J/mol)</th><th scope="col">ΔH<sup>ig</sup> / (J/mol)</th><th scope="col">H<sub>2</sub><sup>R</sup> − H<sub>1</sub><sup>R</sup> / (J/mol)</th></tr></thead><tbody id="proc-body"></tbody></table></div>
+          <p id="proc-note" class="section-help"></p>
+          <div class="calculation-check"><h3>Check the calculation on paper</h3><ol id="calc-steps"></ol></div>
+        </div>
+        <div class="save-case-row"><label for="case-name">Name this case</label><input id="case-name" type="text" value="Methane valve" maxlength="80"><button id="save-case" class="secondary-button" type="button" disabled>Add result to comparison</button></div>
+      </section>
+    </div>
+
+    <section id="diagram-panel" class="panel diagram-panel" aria-labelledby="diagram-heading" hidden>
+      <div class="panel-heading"><h2 id="diagram-heading">3. Read the residuals along the 300 K isotherm</h2><span class="section-help">Reference points and model curves</span></div>
+      <div class="chart-toolbar"><label for="view">Show</label><select id="view"><option value="HR">H<sup>R</sup> against P</option><option value="SR">S<sup>R</sup> against P</option><option value="GR">G<sup>R</sup> against P</option></select></div>
+      <div id="res-chart" class="vle-chart" role="img" aria-label="Residual property against pressure at 300 K. Numbers are listed in Step 2."></div>
+      <div id="chart-legend" class="plot-legend"></div>
+      <p id="chart-note" class="chart-note"></p>
+    </section>
+
+    <section id="concept-check" class="panel core-only" aria-labelledby="concept-heading">
+      <div class="panel-heading"><h2 id="concept-heading">4. Check your understanding</h2><span class="section-help">Write first, then compare</span></div>
+      <p class="section-help">Use Steps 1–3 to answer each question in your own words. Then open the explanation and compare. Your answers are saved with your study.</p>
+      <div class="concept-question"><h3>A. Why does the ideal gas overestimate the work of the CO₂ compressor?</h3><p>Calculate the CO₂ compressor and compare ΔH<sup>ig</sup> with H<sub>2</sub><sup>R</sup> − H<sub>1</sub><sup>R</sup>.</p><label for="note-concept1" class="visually-hidden">Your answer to question A</label><textarea id="note-concept1" rows="3" maxlength="10000" placeholder="Quote the work of the ideal gas, PR and NIST, and the two residuals."></textarea><details><summary>Compare with an explanation</summary><p>The reference work is 2865 J/mol; the ideal gas gives 3430 J/mol, 20% more. At 30 bar the gas already has H<sup>R</sup> = −1.40 kJ/mol; at the outlet, 100 bar and about 400 K, the residual is more negative still. The outlet temperatures differ too: 399.7 K for the real gas and 387.7 K for the ideal gas, because the entropy balance carries S<sup>R</sup> at both ends. Attraction lowers the enthalpy of the compressed gas, so less work is needed than for an ideal gas between the same pressures.</p></details></div>
+      <div class="concept-question"><h3>B. Why can an equation give Z well and H<sup>R</sup> badly?</h3><p>Calculate methane at 300 K and 100 bar. Compare the errors of PR in Z and in H<sup>R</sup>, and of SRK.</p><label for="note-concept2" class="visually-hidden">Your answer to question B</label><textarea id="note-concept2" rows="3" maxlength="10000" placeholder="Quote the errors in Z and H^R for PR and SRK."></textarea><details><summary>Compare with an explanation</summary><p>Z depends on a(T) at one temperature; H<sup>R</sup> also depends on da/dT through d ln α/d ln T<sub>r</sub>. PR gives Z of methane at 100 bar to 2.5% but H<sup>R</sup> = −1758 J/mol against −1604 (−10%), the same bias that makes its B too negative in Lab P2. SRK gives H<sup>R</sup> to 2%. The methane valve outlet follows: SRK 265.2 K, PR 262.9 K, reference 265.6 K.</p></details></div>
+      <div class="concept-question"><h3>C. Why is G<sup>R</sup> small when H<sup>R</sup> and TS<sup>R</sup> are large?</h3><p>Calculate liquid CO₂ at 300 K and 100 bar and compare H<sup>R</sup>, TS<sup>R</sup> and G<sup>R</sup>.</p><label for="note-concept3" class="visually-hidden">Your answer to question C</label><textarea id="note-concept3" rows="3" maxlength="10000" placeholder="Quote H^R, T S^R and G^R from NIST."></textarea><details><summary>Compare with an explanation</summary><p>The reference gives H<sup>R</sup> = −10.85 kJ/mol and TS<sup>R</sup> = −9.07 kJ/mol, so G<sup>R</sup> = −1.78 kJ/mol. Condensing releases energy and orders the molecules; the two effects nearly cancel in G. That is why a liquid can be in equilibrium with its vapor at all: at the vapor pressure the residual Gibbs energies of the two phases are equal (Session P4). A small error in H<sup>R</sup> or S<sup>R</sup> is therefore a large relative error in G<sup>R</sup>.</p></details></div>
+    </section>
+
+    <section id="graduate-investigation" class="panel graduate-section grad-only" aria-labelledby="graduate-heading">
+      <div class="panel-heading"><h2 id="graduate-heading">4. Investigate what the residuals can support</h2><span class="condition">Graduate work</span></div>
+      <p id="graduate-baseline" class="graduate-note">Calculate a state in Step 1 before running an investigation.</p>
+      <aside class="graduate-limits" aria-labelledby="res-limits-heading"><h3 id="res-limits-heading">What these results can and cannot show</h3><ul><li>The reference H and S come from the same fundamental equation as Z, so integrating its Z reproduces its H<sup>R</sup> by construction. The test is of your numerics, and of the claim that PVT data suffice.</li><li>The valves are adiabatic and steady with negligible kinetic energy; the compressors are reversible and adiabatic. Real compressors need an efficiency, which changes the work but not the residual corrections.</li><li>Process errors combine the residual model and C<sub>p</sub><sup>ig</sup>; B separates them.</li></ul></aside>
+
+      <section class="graduate-step" aria-labelledby="int-heading"><h3 id="int-heading">A. Residuals from the PVT data alone</h3>
+        <ol class="graduate-checklist"><li>Integrate (Z − 1)/P along the reference isotherm at 300 K for G<sup>R</sup>, and −T(∂Z/∂T)<sub>P</sub>/P for H<sup>R</sup>, with (∂Z/∂T)<sub>P</sub> from the isotherms at 299 and 301 K.</li><li>Compare with H<sup>R</sup> and S<sup>R</sup> from the tabulated H and S.</li><li>Use every 1st, 4th or 16th point to see how the step changes the result.</li></ol>
+        <label for="every">Points used</label><select id="every"><option value="1">every point (0.25–0.5 bar)</option><option value="4">every 4th point</option><option value="16">every 16th point</option></select>
+        <div class="graduate-actions"><button id="run-int" class="primary-button" type="button" disabled>Integrate the isotherms</button></div>
+        <p id="int-status" class="graduate-status" role="status"></p>
+        <div id="int-wrap" class="table-scroll graduate-table" role="region" aria-label="Residuals integrated from the isotherms" tabindex="0" hidden><table><thead><tr><th scope="col">Fluid</th><th scope="col">P / bar</th><th scope="col">G<sup>R</sup>/RT from ∫</th><th scope="col">H<sup>R</sup>/RT from ∫ / table</th><th scope="col">S<sup>R</sup>/R from ∫ / table</th></tr></thead><tbody id="int-body"></tbody></table></div>
+        <label for="note-int">Claim 1 · what PVT data determine</label><textarea id="note-int" rows="3" maxlength="10000" placeholder="Quote H^R/RT for methane at 100 bar from the integral and from the table, and the effect of the step."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="bud-heading"><h3 id="bud-heading">B. An error budget for the four processes</h3>
+        <ol class="graduate-checklist"><li>Calculate each outlet with Shomate C<sub>p</sub><sup>ig</sup> and with the NIST ideal-gas reference, for the virial equation, SRK and PR.</li><li>The difference between the two columns is the C<sub>p</sub><sup>ig</sup> error; the rest is the residual model.</li><li>State which source dominates for each process.</li></ol>
+        <div class="graduate-actions"><button id="run-bud" class="primary-button" type="button" disabled>Split the process errors</button></div>
+        <p id="bud-status" class="graduate-status" role="status"></p>
+        <div id="bud-wrap" class="table-scroll graduate-table" role="region" aria-label="Error budget" tabindex="0" hidden><table><thead><tr><th scope="col">Process</th><th scope="col">Model</th><th scope="col">T<sub>2</sub> error, Shomate / K</th><th scope="col">T<sub>2</sub> error, NIST ideal gas / K</th><th scope="col">From C<sub>p</sub><sup>ig</sup> / K</th><th scope="col">Work error / %</th></tr></thead><tbody id="bud-body"></tbody></table></div>
+        <label for="note-bud">Claim 2 · where the process error comes from</label><textarea id="note-bud" rows="3" maxlength="10000" placeholder="Quote the residual and Cp contributions for the methane valve and the CO₂ compressor."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="rank-heading"><h3 id="rank-heading">C. The best model depends on the property</h3>
+        <ol class="graduate-checklist"><li>At five states, compare the errors of the virial equation, SRK and PR in Z, H<sup>R</sup> and S<sup>R</sup>.</li><li>Rank the models for each property.</li><li>Explain why the ranking can change from Z to H<sup>R</sup>.</li></ol>
+        <div class="graduate-actions"><button id="run-rank" class="primary-button" type="button" disabled>Rank the models</button></div>
+        <p id="rank-status" class="graduate-status" role="status"></p>
+        <div id="rank-wrap" class="table-scroll graduate-table" role="region" aria-label="Errors by property" tabindex="0" hidden><table><thead><tr><th scope="col">State</th><th scope="col">Model</th><th scope="col">Z error / %</th><th scope="col">H<sup>R</sup> error / %</th><th scope="col">S<sup>R</sup> error / %</th></tr></thead><tbody id="rank-body"></tbody></table></div>
+        <label for="note-rank">Claim 3 · which model for which property</label><textarea id="note-rank" rows="3" maxlength="10000" placeholder="Quote one state where the model best for Z is not best for H^R, with numbers."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="argument-heading"><h3 id="argument-heading">D. Defend a limited conclusion</h3>
+        <label for="note-decision">Decision and next evidence</label><textarea id="note-decision" rows="3" maxlength="10000" placeholder="For one process, state the model you would use for the energy balance, the error you expect, and the measurement (for example a calorimetric H or a speed of sound) that would test it."></textarea>
+        <div class="graduate-actions"><button id="check-evidence" type="button" class="secondary-button">Check my evidence record</button></div><p id="evidence-status" class="graduate-status" role="status"></p>
+        <p class="graduate-note">The record check only confirms that the sections and calculations are present. It is a completeness reminder, not a grade.</p>
+      </section>
+
+      <section class="graduate-step" id="ai-code" aria-labelledby="ai-heading">
+        <h3 id="ai-heading">E. Check code that an AI assistant helped you write</h3>
+        <p>You may use an AI assistant to <strong>write code</strong>. You decide everything else: the equations, the units, the root, the ideal-gas path, the solver for the outlet, and how you will know a result is right. Do not ask the assistant for numbers or conclusions.</p>
+        <ol class="graduate-checklist"><li>Write your specification first, in your own words, before you open the assistant.</li><li>Ask the assistant to write Python that, for the CO₂ compressor (300 K, 30 → 100 bar, isentropic) with Peng–Robinson and the Shomate equation: (a) solves Z at the inlet; (b) computes H<sup>R</sup> and S<sup>R</sup> at the inlet; (c) finds the outlet temperature from S<sub>2</sub> = S<sub>1</sub>; (d) computes the work ΔH. Run it yourself.</li><li>Enter the outputs and run the checks. When a check disagrees, find the cause in the code, fix it, and rerun. Record what you changed.</li></ol>
+        <p class="graduate-note">CO₂: T<sub>c</sub> = 304.1282 K, P<sub>c</sub> = 73.773 bar, ω = 0.22492. Shomate (298–1200 K): A = 24.99735, B = 55.18696, C = −33.69137, D = 7.948387, E = −0.136638 with t = T/1000. R = 8.31446261815324 J/(mol K).</p>
+        <label for="ai-spec">Your specification, written before you used the assistant</label><textarea id="ai-spec" rows="5" maxlength="10000" placeholder="Equations for H^R and S^R, d ln α/d ln T_r, the root, the ideal-gas H and S from the Shomate equation including the pressure term, the outlet solver and its bracket, units, and how you check each result."></textarea>
+        <div class="graduate-grid"><div><label for="ai-tool">Assistant and version</label><input id="ai-tool" type="text" maxlength="200" placeholder="for example, the name and model"></div></div>
+        <label for="ai-prompt">The prompt or prompts you used</label><textarea id="ai-prompt" rows="4" maxlength="20000"></textarea>
+        <label for="ai-codetext">Final code that produced the outputs below</label><textarea id="ai-codetext" rows="8" maxlength="60000" spellcheck="false" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.78rem"></textarea>
+        <h4>Outputs from your code</h4>
+        <div class="graduate-grid">
+          <div><label for="ai-z1">Z at the inlet</label><input id="ai-z1" type="number" step="any"></div>
+          <div><label for="ai-hr1">H<sup>R</sup> at the inlet / (J/mol)</label><input id="ai-hr1" type="number" step="any"></div>
+          <div><label for="ai-sr1">S<sup>R</sup> at the inlet / (J/(mol K))</label><input id="ai-sr1" type="number" step="any"></div>
+          <div><label for="ai-t2">Outlet T / K</label><input id="ai-t2" type="number" step="any"></div>
+          <div><label for="ai-w">Work ΔH / (J/mol)</label><input id="ai-w" type="number" step="any"></div>
+        </div>
+        <div class="graduate-actions"><button id="ai-run" type="button" class="primary-button" disabled>Check my outputs</button></div>
+        <p id="ai-status" class="graduate-status" role="status">Enter the outputs from your code, then run the checks.</p>
+        <div id="ai-results" hidden>
+          <div class="table-scroll graduate-table" role="region" aria-label="Checks of your code outputs against the lab" tabindex="0"><table><thead><tr><th scope="col">Check</th><th scope="col">Lab</th><th scope="col">Your code</th><th scope="col">Result</th><th scope="col">Likely cause</th></tr></thead><tbody id="ai-out"></tbody></table></div>
+          <p class="graduate-note">Agreement with the lab shows that your code solves the problem you specified. It does not show that Peng–Robinson gives the right work: compare with the reference in Step 2. The "likely cause" lists common errors; your code may have another.</p>
+        </div>
+        <label for="ai-found">What disagreed, what was wrong in the code, and how you fixed it</label><textarea id="ai-found" rows="3" maxlength="10000" placeholder="Name the check, the line of code, and the fix. If every check agreed at once, say which check you would trust least and why."></textarea>
+        <label for="ai-own">What you decided yourself, and one thing the checks cannot establish</label><textarea id="ai-own" rows="3" maxlength="10000" placeholder="For example: the sign convention of the residuals, the solver bracket. Then one limit."></textarea>
+      </section>
+    </section>
+
+    <section class="panel comparison-panel" aria-labelledby="comparison-heading">
+      <div class="panel-heading"><h2 id="comparison-heading">5. Compare and save</h2></div>
+      <ol class="investigation-steps core-only"><li>Calculate and save the four processes with the Shomate ideal gas.</li><li>Save liquid CO₂ at 100 bar and methane at 100 bar as states.</li><li>Answer questions A–C in Step 4 using the saved comparison.</li><li>Download the complete study, reopen it, and reproduce a saved case.</li></ol>
+      <ol class="investigation-steps grad-only"><li>Calculate and save the four processes with both ideal-gas sources.</li><li>Complete investigations A–C and E and write the graduate claims.</li><li>Download the complete study, reopen it, and reproduce a saved case and its investigation record.</li></ol>
+      <p id="comparison-empty" class="empty-state">Your calculated cases will appear here after you add them.</p>
+      <div id="comparison-table-wrap" class="table-scroll" role="region" aria-label="Saved cases" tabindex="0" hidden><table><thead><tr><th scope="col">Case</th><th scope="col">State</th><th scope="col">Process, ideal gas</th><th scope="col">PR H<sup>R</sup> / NIST</th><th scope="col">PR outlet T / NIST</th><th scope="col">Reopen</th></tr></thead><tbody id="comparison-body"></tbody></table></div>
+      <label for="reflection" class="reflection-label">Optional additional note</label><textarea id="reflection" rows="3" maxlength="10000" placeholder="Add an optional note."></textarea>
+      <fieldset class="student-fields"><legend>Your details <span>(optional)</span></legend><p class="input-help">Saved in the downloaded file so your instructor can identify it. You can download without them.</p><div class="student-grid"><div><label for="student-first-name">First name</label><input id="student-first-name" type="text" maxlength="80" autocomplete="given-name"></div><div><label for="student-last-name">Last name</label><input id="student-last-name" type="text" maxlength="80" autocomplete="family-name"></div><div><label for="student-id">Student ID</label><input id="student-id" type="text" maxlength="20" inputmode="numeric" autocomplete="off"></div></div></fieldset>
+        <div class="study-actions"><button id="export-study" class="primary-button" type="button" disabled>Download my study</button><div class="file-control"><label for="import-study">Open a saved study</label><input id="import-study" type="file" accept=".json,application/json"></div></div>
+        <p class="submit-note"><strong>To submit:</strong> upload the downloaded .json file to <strong>myCourseVille</strong>, in the assignment for Lab P3. Keep the file name: it carries your name and student ID.</p>
+      <p id="status" class="study-status" role="status" aria-live="polite">Loading the reference tables…</p><p class="privacy-note">Your inputs, comparisons and explanations are kept in this open page. Download one study file to keep the complete record and reopen it later. Results are recalculated on restore.</p>
+    </section>
+    <noscript><p class="error-summary">Enable JavaScript to calculate. The figures and questions remain available to read.</p></noscript>
+  </main>
+  <footer class="site-footer"><span>2105603 · Advanced Chemical Engineering Thermodynamics</span><a href="index.html#sessions">All 2027 labs</a></footer>
+  <script src="../labs/assets/plotly.min.js" defer></script>
+  <script type="module" src="assets/mode.js?v=mode-3"></script>
+  <script type="module" src="assets/residual-lab.js?v=p3-1"></script>
+  <script type="module" src="assets/rescode.js?v=p3-1"></script>
+</body>
+</html>

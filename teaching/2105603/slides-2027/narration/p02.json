@@ -1,0 +1,626 @@
+{
+ "title-slide": {
+  "audio": "narration/p02/title-slide.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 5.35,
+    "en": "Welcome to session P2: PVT behavior and equations of state.",
+    "th": "ยินดีต้อนรับสู่คาบ P2 พฤติกรรม PVT และสมการสภาวะ"
+   },
+   {
+    "start": 5.7,
+    "end": 9.5,
+    "en": "Today we ask how wrong an equation of state is, and where.",
+    "th": "วันนี้เราจะถามว่าสมการสภาวะผิดไปมากแค่ไหน และผิดที่ตรงไหน"
+   }
+  ]
+ },
+ "course-map": {
+  "audio": "narration/p02/course-map.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 6.29,
+    "en": "Session P1 showed that PVT data and the heat capacity give every property.",
+    "th": "คาบ P1 แสดงว่าข้อมูล PVT และความจุความร้อนให้สมบัติได้ทุกตัว"
+   },
+   {
+    "start": 6.64,
+    "end": 13.89,
+    "en": "Most fluids and mixtures have no reference table, so the PVT data must come from an equation of state.",
+    "th": "ของไหลและของผสมส่วนใหญ่ไม่มีตารางอ้างอิง ข้อมูล PVT จึงต้องมาจากสมการสภาวะ"
+   },
+   {
+    "start": 14.24,
+    "end": 22.11,
+    "en": "Today: the virial and cubic equations, which root to use, and how large their errors are against reference data.",
+    "th": "วันนี้เราจะดูสมการ virial และสมการกำลังสาม การเลือกรากที่ถูกต้อง และขนาดของความคลาดเคลื่อนเมื่อเทียบกับข้อมูลอ้างอิง"
+   }
+  ]
+ },
+ "why": {
+  "audio": "narration/p02/why.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.96,
+    "en": "Why does this matter? A one cubic metre vessel holds carbon dioxide at 280 kelvin and 100 bar, a compressed liquid.",
+    "th": "ทำไมเรื่องนี้จึงสำคัญ ถังขนาดหนึ่งลูกบาศก์เมตรบรรจุคาร์บอนไดออกไซด์ที่ 280 เคลวิน และ 100 บาร์ ซึ่งเป็นของเหลวอัด"
+   },
+   {
+    "start": 10.31,
+    "end": 17.05,
+    "en": "The reference holds 938 kilograms. The ideal gas predicts 189.",
+    "th": "ข้อมูลอ้างอิงบอกว่ามี 938 กิโลกรัม แต่แก๊สอุดมคติทำนายได้ 189 กิโลกรัม"
+   },
+   {
+    "start": 17.4,
+    "end": 26.59,
+    "en": "Four cubic equations, each built from the critical temperature and pressure, give 618 to 939 kilograms.",
+    "th": "สมการกำลังสามสี่สมการ ซึ่งสร้างจากอุณหภูมิและความดันวิกฤต ให้ค่าตั้งแต่ 618 ถึง 939 กิโลกรัม"
+   },
+   {
+    "start": 26.94,
+    "end": 38.85,
+    "en": "Peng-Robinson is within 0.1 percent here, and 23 percent off for liquid water at 500 kelvin. By the end of today you can say when to trust each one.",
+    "th": "Peng–Robinson คลาดเคลื่อนไม่เกิน 0.1 เปอร์เซ็นต์ในกรณีนี้ แต่คลาดไป 23 เปอร์เซ็นต์สำหรับน้ำเหลวที่ 500 เคลวิน เมื่อจบคาบคุณจะบอกได้ว่าควรเชื่อสมการใดเมื่อใด"
+   }
+  ]
+ },
+ "outcomes": {
+  "audio": "narration/p02/outcomes.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.11,
+    "en": "By the end of today you can do four things.",
+    "th": "เมื่อจบคาบนี้ คุณจะทำได้สี่อย่าง"
+   },
+   {
+    "start": 3.46,
+    "end": 12.46,
+    "en": "Relate the second virial coefficient to the low-density limit of Z, extract it from data and estimate it with the Pitzer correlation.",
+    "th": "เชื่อมโยงสัมประสิทธิ์ virial ตัวที่สองกับพฤติกรรมของ Z ที่ความหนาแน่นต่ำ หาค่าจากข้อมูล และประมาณด้วยสหสัมพันธ์ของ Pitzer"
+   },
+   {
+    "start": 12.81,
+    "end": 18.04,
+    "en": "Set up a cubic equation of state, solve it for Z and choose the correct root.",
+    "th": "ตั้งสมการสภาวะกำลังสาม แก้หา Z และเลือกรากที่ถูกต้อง"
+   },
+   {
+    "start": 18.39,
+    "end": 26.64,
+    "en": "Use corresponding states and the acentric factor, and judge the error of each equation in the gas and the dense region.",
+    "th": "ใช้หลัก corresponding states และ acentric factor และประเมินความคลาดเคลื่อนของแต่ละสมการทั้งในบริเวณแก๊สและบริเวณหนาแน่น"
+   }
+  ]
+ },
+ "route": {
+  "audio": "narration/p02/route.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.15,
+    "en": "Here is the 180-minute route.",
+    "th": "นี่คือเส้นทางของคาบ 180 นาที"
+   },
+   {
+    "start": 3.5,
+    "end": 13.87,
+    "en": "Thirty minutes of concepts, then Peng-Robinson by hand, a demonstration in Lab P2, a break, and a 70-minute pair investigation.",
+    "th": "สามสิบนาทีแรกเป็นแนวคิด จากนั้นคำนวณ Peng–Robinson ด้วยมือ สาธิต Lab P2 พัก และทำงานเป็นคู่ 70 นาที"
+   },
+   {
+    "start": 14.22,
+    "end": 23.61,
+    "en": "The session question: when no reference table exists, which equation of state gives the PVT data, and how do we know how wrong it is?",
+    "th": "คำถามของคาบนี้คือ เมื่อไม่มีตารางอ้างอิง สมการสภาวะใดให้ข้อมูล PVT ได้ และเราจะรู้ได้อย่างไรว่ามันผิดไปมากแค่ไหน"
+   }
+  ]
+ },
+ "pvt": {
+  "audio": "narration/p02/pvt.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 5.28,
+    "en": "The compressibility factor Z measures the departure from the ideal gas.",
+    "th": "compressibility factor หรือ Z วัดว่าของไหลเบี่ยงเบนจากแก๊สอุดมคติมากเพียงใด"
+   },
+   {
+    "start": 5.63,
+    "end": 14.89,
+    "en": "An equation of state must give Z equal to one at zero pressure, a steep liquid branch, the critical point and two phases below it.",
+    "th": "สมการสภาวะต้องให้ Z เท่ากับหนึ่งที่ความดันศูนย์ ให้กิ่งของเหลวที่ชัน ให้จุดวิกฤต และให้สองเฟสที่อุณหภูมิต่ำกว่าจุดวิกฤต"
+   },
+   {
+    "start": 15.24,
+    "end": 33.42,
+    "en": "Real fluids have a critical compressibility of 0.23 to 0.29. Every two-constant cubic fixes a larger value: 0.375, 0.333 or 0.307.",
+    "th": "ของไหลจริงมี critical compressibility ระหว่าง 0.23 ถึง 0.29 แต่สมการกำลังสามที่มีสองค่าคงที่ทุกสมการกำหนดค่าที่มากกว่า คือ 0.375, 0.333 หรือ 0.307"
+   },
+   {
+    "start": 33.77,
+    "end": 36.86,
+    "en": "So the dense region is where to expect errors.",
+    "th": "ดังนั้นบริเวณที่หนาแน่นคือที่ที่ควรคาดว่าจะมีความคลาดเคลื่อน"
+   }
+  ]
+ },
+ "virial": {
+  "audio": "narration/p02/virial.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 8.46,
+    "en": "The virial equation expands Z in powers of density. B comes from pairs of molecules, C from triples.",
+    "th": "สมการ virial กระจาย Z เป็นอนุกรมกำลังของความหนาแน่น B มาจากอันตรกิริยาของโมเลกุลคู่ และ C มาจากโมเลกุลสามตัว"
+   },
+   {
+    "start": 8.81,
+    "end": 16.17,
+    "en": "For nonpolar gases the Pitzer correlation gives B from the critical constants and the acentric factor.",
+    "th": "สำหรับแก๊สไม่มีขั้ว สหสัมพันธ์ของ Pitzer ให้ค่า B จากค่าคงที่วิกฤตและ acentric factor"
+   },
+   {
+    "start": 16.52,
+    "end": 28.38,
+    "en": "For methane at 300 kelvin, Pitzer gives minus 41.3 cubic centimetres per mole, and the NIST data give minus 42.2.",
+    "th": "สำหรับมีเทนที่ 300 เคลวิน Pitzer ให้ค่า ลบ 41.3 ลูกบาศก์เซนติเมตรต่อโมล และข้อมูล NIST ให้ ลบ 42.2"
+   },
+   {
+    "start": 28.73,
+    "end": 39.57,
+    "en": "Even so, the truncated form has a mean error of 5.7 percent up to the critical density. Use it only where BP over RT is small.",
+    "th": "ถึงอย่างนั้น รูปแบบที่ตัดเหลือสองพจน์ยังมีความคลาดเคลื่อนเฉลี่ย 5.7 เปอร์เซ็นต์จนถึงความหนาแน่นวิกฤต จึงควรใช้เฉพาะเมื่อ BP/RT มีค่าน้อย"
+   }
+  ]
+ },
+ "cubic": {
+  "audio": "narration/p02/cubic.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.02,
+    "en": "The four cubic equations share one form: a repulsion term set by the co-volume b, and an attraction term set by a.",
+    "th": "สมการกำลังสามทั้งสี่มีรูปแบบเดียวกัน คือพจน์แรงผลักที่กำหนดโดย co-volume b และพจน์แรงดึงดูดที่กำหนดโดย a"
+   },
+   {
+    "start": 9.37,
+    "end": 18.5,
+    "en": "Omega a and omega b follow from the two critical conditions, so every cubic reproduces the critical temperature and pressure.",
+    "th": "ค่า Ωa และ Ωb ได้จากเงื่อนไขวิกฤตสองข้อ ดังนั้นสมการกำลังสามทุกสมการให้อุณหภูมิและความดันวิกฤตถูกต้อง"
+   },
+   {
+    "start": 18.85,
+    "end": 26.66,
+    "en": "Soave and Peng-Robinson add alpha of reduced temperature, with a slope m that depends on the acentric factor.",
+    "th": "Soave และ Peng–Robinson เพิ่มฟังก์ชัน α ของอุณหภูมิลดรูป โดยความชัน m ขึ้นกับ acentric factor"
+   },
+   {
+    "start": 27.01,
+    "end": 35.28,
+    "en": "That function was fitted to vapor pressures of nonpolar fluids, not to densities. Remember this when we look at liquids.",
+    "th": "ฟังก์ชันนี้ถูกปรับให้เข้ากับความดันไอของของไหลไม่มีขั้ว ไม่ได้ปรับกับความหนาแน่น ให้จำข้อนี้ไว้เมื่อเราดูของเหลว"
+   }
+  ]
+ },
+ "roots": {
+  "audio": "narration/p02/roots.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.4,
+    "en": "In terms of Z the equation is a cubic, and below the critical temperature it can have three real roots.",
+    "th": "เมื่อเขียนในรูปของ Z สมการจะเป็นสมการกำลังสาม และที่อุณหภูมิต่ำกว่าจุดวิกฤตอาจมีรากจริงสามราก"
+   },
+   {
+    "start": 7.75,
+    "end": 24.94,
+    "en": "For carbon dioxide at 280 kelvin and 30 bar, Peng-Robinson gives 0.0689, 0.128 and 0.769. The reference vapor has 0.779.",
+    "th": "สำหรับคาร์บอนไดออกไซด์ที่ 280 เคลวิน และ 30 บาร์ Peng–Robinson ให้ 0.0689, 0.128 และ 0.769 ส่วนไอจากข้อมูลอ้างอิงมีค่า 0.779"
+   },
+   {
+    "start": 25.29,
+    "end": 32.33,
+    "en": "The middle root has pressure rising with volume, so its compressibility is negative: it is not a phase.",
+    "th": "รากกลางมีความดันเพิ่มขึ้นตามปริมาตร ค่าการอัดตัวจึงเป็นลบ รากนี้จึงไม่ใช่เฟส"
+   },
+   {
+    "start": 32.68,
+    "end": 39.76,
+    "en": "Of the outer two, the stable one has the lower Gibbs energy. Session P4 shows how to compute it.",
+    "th": "ระหว่างรากนอกสองราก รากที่เสถียรคือรากที่มีพลังงานกิบส์ต่ำกว่า คาบ P4 จะแสดงวิธีคำนวณ"
+   }
+  ]
+ },
+ "csp": {
+  "audio": "narration/p02/csp.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 8.25,
+    "en": "Two-parameter corresponding states says that at the same reduced temperature and pressure, every fluid has the same Z.",
+    "th": "หลัก corresponding states แบบสองพารามิเตอร์บอกว่า ที่อุณหภูมิและความดันลดรูปเดียวกัน ของไหลทุกชนิดมี Z เท่ากัน"
+   },
+   {
+    "start": 8.6,
+    "end": 24.73,
+    "en": "At a reduced temperature of 1.05 and a reduced pressure of 2, methane, carbon dioxide and propane give 0.344, 0.336 and 0.338.",
+    "th": "ที่อุณหภูมิลดรูป 1.05 และความดันลดรูป 2 มีเทน คาร์บอนไดออกไซด์ และโพรเพน ให้ Z เท่ากับ 0.344, 0.336 และ 0.338"
+   },
+   {
+    "start": 25.08,
+    "end": 31.2,
+    "en": "Water gives 0.267, and van der Waals 0.440.",
+    "th": "น้ำให้ 0.267 และ van der Waals ให้ 0.440"
+   },
+   {
+    "start": 31.55,
+    "end": 44.63,
+    "en": "The acentric factor comes from the vapor pressure at a reduced temperature of 0.7. For carbon dioxide that point lies below the triple point, so it needs an extrapolation.",
+    "th": "acentric factor ได้จากความดันไอที่อุณหภูมิลดรูป 0.7 สำหรับคาร์บอนไดออกไซด์ จุดนั้นต่ำกว่าจุดร่วมสามสถานะ จึงต้องประมาณค่าภายนอกช่วง"
+   }
+  ]
+ },
+ "how-good": {
+  "audio": "narration/p02/how-good.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 8.68,
+    "en": "How good is each equation? Here is the error in Z along the carbon dioxide isotherm at 280 kelvin.",
+    "th": "แต่ละสมการดีแค่ไหน นี่คือความคลาดเคลื่อนของ Z ตามไอโซเทอร์มของคาร์บอนไดออกไซด์ที่ 280 เคลวิน"
+   },
+   {
+    "start": 9.03,
+    "end": 14.64,
+    "en": "In the vapor every model is within a few percent. On the liquid branch they separate.",
+    "th": "ในบริเวณไอ ทุกแบบจำลองคลาดเคลื่อนไม่กี่เปอร์เซ็นต์ แต่ในกิ่งของเหลวผลจะแยกจากกันชัดเจน"
+   },
+   {
+    "start": 14.99,
+    "end": 25.4,
+    "en": "Across eight isotherms, both SRK and Peng-Robinson stay within 0.2 to 4.3 percent below the critical density.",
+    "th": "จากแปดไอโซเทอร์ม ทั้ง SRK และ Peng–Robinson คลาดเคลื่อน 0.2 ถึง 4.3 เปอร์เซ็นต์ที่ความหนาแน่นต่ำกว่าค่าวิกฤต"
+   },
+   {
+    "start": 25.75,
+    "end": 32.3,
+    "en": "Above it, the errors range from 1.6 to 47 percent, and water is the worst case.",
+    "th": "ที่ความหนาแน่นสูงกว่าค่าวิกฤต ความคลาดเคลื่อนอยู่ระหว่าง 1.6 ถึง 47 เปอร์เซ็นต์ และน้ำเป็นกรณีที่แย่ที่สุด"
+   }
+  ]
+ },
+ "liquid": {
+  "audio": "narration/p02/liquid.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.44,
+    "en": "A cubic has its own vapor pressure: the pressure where its liquid and vapor roots have equal Gibbs energy.",
+    "th": "สมการกำลังสามมีความดันไอของตัวเอง คือความดันที่รากของเหลวและรากไอมีพลังงานกิบส์เท่ากัน"
+   },
+   {
+    "start": 7.79,
+    "end": 18.37,
+    "en": "Peng-Robinson gives the vapor pressure within 1 percent for all three fluids, but the saturated liquid volume of water 23 percent too large.",
+    "th": "Peng–Robinson ให้ความดันไอคลาดเคลื่อนไม่เกิน 1 เปอร์เซ็นต์สำหรับทั้งสามของไหล แต่ปริมาตรของน้ำเหลวอิ่มตัวมากเกินไป 23 เปอร์เซ็นต์"
+   },
+   {
+    "start": 18.72,
+    "end": 29.09,
+    "en": "A volume translation subtracts a constant c from every volume. It changes no phase equilibrium, because it shifts both phases equally.",
+    "th": "volume translation ลบค่าคงที่ c ออกจากทุกปริมาตร ซึ่งไม่เปลี่ยนสมดุลเฟส เพราะเลื่อนทั้งสองเฟสเท่ากัน"
+   },
+   {
+    "start": 29.44,
+    "end": 42.84,
+    "en": "For water it fixes the liquid branch. For carbon dioxide it raises the liquid error from 1.6 to 4.4 percent: c repairs one volume, not the compressibility.",
+    "th": "สำหรับน้ำ วิธีนี้แก้กิ่งของเหลวได้ แต่สำหรับคาร์บอนไดออกไซด์ ความคลาดเคลื่อนของของเหลวเพิ่มจาก 1.6 เป็น 4.4 เปอร์เซ็นต์ เพราะ c แก้ได้เพียงปริมาตรเดียว ไม่ได้แก้ความสามารถในการอัดตัว"
+   }
+  ]
+ },
+ "bdata": {
+  "audio": "narration/p02/bdata.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.04,
+    "en": "The second virial coefficient is a sharper test. Plot Z minus one over density against density: the intercept is B.",
+    "th": "สัมประสิทธิ์ virial ตัวที่สองเป็นการทดสอบที่ละเอียดกว่า ถ้าพล็อต (Z − 1)/ρ กับ ρ จุดตัดแกนคือ B"
+   },
+   {
+    "start": 9.39,
+    "end": 23.23,
+    "en": "For methane at 300 kelvin the data give minus 42.1, Pitzer minus 41.3, and Peng-Robinson minus 54.3, which is 29 percent off.",
+    "th": "สำหรับมีเทนที่ 300 เคลวิน ข้อมูลให้ ลบ 42.1 Pitzer ให้ ลบ 41.3 และ Peng–Robinson ให้ ลบ 54.3 ซึ่งคลาดไป 29 เปอร์เซ็นต์"
+   },
+   {
+    "start": 23.58,
+    "end": 33.76,
+    "en": "The same equation predicts Z at 100 bar to 2.5 percent. Fitting a model on one property does not validate it on another.",
+    "th": "สมการเดียวกันนี้ทำนาย Z ที่ 100 บาร์ คลาดเคลื่อนเพียง 2.5 เปอร์เซ็นต์ การที่แบบจำลองเข้ากับสมบัติหนึ่งไม่ได้ยืนยันว่าจะถูกต้องกับสมบัติอื่น"
+   }
+  ]
+ },
+ "activity-1": {
+  "audio": "narration/p02/activity-1.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 8.36,
+    "en": "Activity 1, ten minutes. Compute Peng-Robinson for methane at 300 kelvin and 100 bar by hand.",
+    "th": "กิจกรรมที่ 1 สิบนาที คำนวณ Peng–Robinson ของมีเทนที่ 300 เคลวิน และ 100 บาร์ ด้วยมือ"
+   },
+   {
+    "start": 8.71,
+    "end": 15.66,
+    "en": "Find alpha, a, b, A and B, then iterate for the vapor root starting from Z equal to one.",
+    "th": "หาค่า α, a, b, A และ B แล้ววนซ้ำหารากไอ โดยเริ่มจาก Z เท่ากับหนึ่ง"
+   },
+   {
+    "start": 16.01,
+    "end": 22.88,
+    "en": "Use SI units: the critical pressure in pascal. Then compare with the virial equation and the reference.",
+    "th": "ใช้หน่วย SI โดยความดันวิกฤตเป็นปาสกาล แล้วเทียบกับสมการ virial และข้อมูลอ้างอิง"
+   }
+  ]
+ },
+ "activity-1-debrief": {
+  "audio": "narration/p02/activity-1-debrief.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 15.84,
+    "en": "Check your answer. Alpha is 0.810, a is 0.202 pascal cubic metre squared per mole squared, and b is 2.68 times ten to the minus five cubic metres per mole.",
+    "th": "ตรวจคำตอบ α เท่ากับ 0.810, a เท่ากับ 0.202 Pa m⁶/mol² และ b เท่ากับ 2.68 × 10⁻⁵ m³/mol"
+   },
+   {
+    "start": 16.19,
+    "end": 21.89,
+    "en": "The iteration converges to 0.8339 in about five steps.",
+    "th": "การวนซ้ำลู่เข้าสู่ 0.8339 ในประมาณห้ารอบ"
+   },
+   {
+    "start": 22.24,
+    "end": 34.57,
+    "en": "The reference is 0.8556, so Peng-Robinson is 2.5 percent low. The virial equation with the Pitzer B gives almost the same value.",
+    "th": "ข้อมูลอ้างอิงคือ 0.8556 ดังนั้น Peng–Robinson ต่ำไป 2.5 เปอร์เซ็นต์ และสมการ virial ที่ใช้ B ของ Pitzer ให้ค่าแทบเท่ากัน"
+   }
+  ]
+ },
+ "demo-lab": {
+  "audio": "narration/p02/demo-lab.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.75,
+    "en": "Now a demonstration in Lab P2.",
+    "th": "ต่อไปเป็นการสาธิตใน Lab P2"
+   },
+   {
+    "start": 3.1,
+    "end": 7.81,
+    "en": "Methane at 300 kelvin: read the error table and the B column.",
+    "th": "มีเทนที่ 300 เคลวิน อ่านตารางความคลาดเคลื่อนและคอลัมน์ B"
+   },
+   {
+    "start": 8.16,
+    "end": 17.55,
+    "en": "Carbon dioxide at 280 kelvin: inspect the three roots at 30 bar, then change the root rule and the volume shift.",
+    "th": "คาร์บอนไดออกไซด์ที่ 280 เคลวิน ดูรากทั้งสามที่ 30 บาร์ แล้วเปลี่ยนกฎการเลือกรากและการเลื่อนปริมาตร"
+   },
+   {
+    "start": 17.9,
+    "end": 23.04,
+    "en": "In the Graduate view, investigation A fits B for all eight isotherms.",
+    "th": "ในมุมมอง Graduate การสืบค้น A หาค่า B ของทั้งแปดไอโซเทอร์ม"
+   }
+  ]
+ },
+ "mistakes": {
+  "audio": "narration/p02/mistakes.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 1.91,
+    "en": "Four common mistakes.",
+    "th": "ข้อผิดพลาดที่พบบ่อยสี่ข้อ"
+   },
+   {
+    "start": 2.26,
+    "end": 9.58,
+    "en": "Taking the middle root, or the real part of a complex root. Sort the real roots with Z greater than B.",
+    "th": "เลือกรากกลาง หรือใช้ส่วนจริงของรากเชิงซ้อน ให้เรียงรากจริงที่มี Z มากกว่า B"
+   },
+   {
+    "start": 9.93,
+    "end": 17.5,
+    "en": "Using the truncated virial equation for a dense fluid, and trusting a cubic liquid density without a check.",
+    "th": "ใช้สมการ virial แบบตัดพจน์กับของไหลหนาแน่น และเชื่อความหนาแน่นของเหลวจากสมการกำลังสามโดยไม่ตรวจสอบ"
+   },
+   {
+    "start": 17.85,
+    "end": 24.13,
+    "en": "And pressure in bar inside A and B. A factor of ten to the five makes every root wrong.",
+    "th": "และใช้ความดันเป็นบาร์ในการคำนวณ A และ B ซึ่งทำให้ผิดไป 10⁵ เท่า และทุกรากผิดหมด"
+   }
+  ]
+ },
+ "break": {
+  "audio": "narration/p02/break.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.02,
+    "en": "Take a ten-minute break.",
+    "th": "พักสิบนาที"
+   },
+   {
+    "start": 2.37,
+    "end": 9.88,
+    "en": "Next is a 70-minute pair investigation in Lab P2. Check that the lab opens on your device.",
+    "th": "ต่อไปเป็นการทำงานเป็นคู่ 70 นาทีใน Lab P2 ตรวจสอบว่าแล็บเปิดได้บนอุปกรณ์ของคุณ"
+   }
+  ]
+ },
+ "activity-2": {
+  "audio": "narration/p02/activity-2.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.15,
+    "en": "Activity 2, seventy minutes, in pairs.",
+    "th": "กิจกรรมที่ 2 เจ็ดสิบนาที ทำเป็นคู่"
+   },
+   {
+    "start": 3.5,
+    "end": 9.94,
+    "en": "First, the error map: all eight isotherms with Peng-Robinson, and two of them with SRK.",
+    "th": "ส่วนแรก แผนที่ความคลาดเคลื่อน คำนวณทั้งแปดไอโซเทอร์มด้วย Peng–Robinson และสองไอโซเทอร์มด้วย SRK"
+   },
+   {
+    "start": 10.29,
+    "end": 19.06,
+    "en": "Then the roots of carbon dioxide at 280 kelvin, and B and the liquid volume in investigations A and C.",
+    "th": "จากนั้นดูรากของคาร์บอนไดออกไซด์ที่ 280 เคลวิน และดูค่า B กับปริมาตรของเหลวในการสืบค้น A และ C"
+   },
+   {
+    "start": 19.41,
+    "end": 23.87,
+    "en": "Finish with two sentences that answer the session question with numbers.",
+    "th": "ปิดท้ายด้วยสองประโยคที่ตอบคำถามของคาบพร้อมตัวเลข"
+   }
+  ]
+ },
+ "activity-2-check": {
+  "audio": "narration/p02/activity-2-check.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.58,
+    "en": "Here is what to hand in, and the numbers to check your results against.",
+    "th": "นี่คือสิ่งที่ต้องส่ง และตัวเลขสำหรับตรวจผลของคุณ"
+   },
+   {
+    "start": 4.93,
+    "end": 16.17,
+    "en": "Peng-Robinson stays within 2.7 percent below the critical density on every isotherm. Above it, water reaches 23 to 35 percent.",
+    "th": "Peng–Robinson คลาดเคลื่อนไม่เกิน 2.7 เปอร์เซ็นต์ที่ความหนาแน่นต่ำกว่าค่าวิกฤตในทุกไอโซเทอร์ม แต่ที่สูงกว่าค่าวิกฤต น้ำคลาดไป 23 ถึง 35 เปอร์เซ็นต์"
+   },
+   {
+    "start": 16.52,
+    "end": 24.61,
+    "en": "The B from Peng-Robinson is 4 to 29 percent away from the data, too negative for every nonpolar fluid.",
+    "th": "ค่า B จาก Peng–Robinson ต่างจากข้อมูล 4 ถึง 29 เปอร์เซ็นต์ และเป็นลบมากเกินไปสำหรับของไหลไม่มีขั้วทุกชนิด"
+   }
+  ]
+ },
+ "discussion": {
+  "audio": "narration/p02/discussion.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 1.91,
+    "en": "Discuss three questions.",
+    "th": "อภิปรายสามคำถาม"
+   },
+   {
+    "start": 2.26,
+    "end": 12.14,
+    "en": "Peng-Robinson gives the vapor pressure of water within 1 percent and its liquid volume 23 percent too large. What was alpha fitted to?",
+    "th": "Peng–Robinson ให้ความดันไอของน้ำคลาดไม่เกิน 1 เปอร์เซ็นต์ แต่ปริมาตรของเหลวมากเกินไป 23 เปอร์เซ็นต์ ฟังก์ชัน α ถูกปรับให้เข้ากับอะไร"
+   },
+   {
+    "start": 12.49,
+    "end": 21.15,
+    "en": "It misses B of methane by 29 percent but Z at 100 bar by 2.5 percent. How can both be true?",
+    "th": "สมการนี้คลาดค่า B ของมีเทนไป 29 เปอร์เซ็นต์ แต่คลาด Z ที่ 100 บาร์เพียง 2.5 เปอร์เซ็นต์ ทั้งสองข้อเป็นจริงพร้อมกันได้อย่างไร"
+   },
+   {
+    "start": 21.5,
+    "end": 27.13,
+    "en": "And up to what pressure would you accept the ideal gas for methane at 300 kelvin?",
+    "th": "และคุณจะยอมรับแก๊สอุดมคติสำหรับมีเทนที่ 300 เคลวินได้จนถึงความดันเท่าใด"
+   }
+  ]
+ },
+ "summary": {
+  "audio": "narration/p02/summary.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.15,
+    "en": "To summarize. The virial equation is exact at low density, and its truncated form needs a small BP over RT.",
+    "th": "สรุป สมการ virial ถูกต้องที่ความหนาแน่นต่ำ และรูปแบบที่ตัดพจน์ต้องใช้เมื่อ BP/RT มีค่าน้อย"
+   },
+   {
+    "start": 9.5,
+    "end": 19.61,
+    "en": "Cubics use the critical constants and the acentric factor. They give gas Z within a few percent, and dense fluids within 2 to 47 percent.",
+    "th": "สมการกำลังสามใช้ค่าคงที่วิกฤตและ acentric factor ให้ Z ของแก๊สคลาดไม่กี่เปอร์เซ็นต์ และของไหลหนาแน่นคลาด 2 ถึง 47 เปอร์เซ็นต์"
+   },
+   {
+    "start": 19.96,
+    "end": 26.49,
+    "en": "A good vapor pressure does not imply a good density. Test the property your calculation uses.",
+    "th": "ความดันไอที่ถูกต้องไม่ได้หมายความว่าความหนาแน่นจะถูกต้อง ให้ทดสอบสมบัติที่การคำนวณของคุณใช้จริง"
+   },
+   {
+    "start": 26.84,
+    "end": 33.6,
+    "en": "Next session, P3: from Z to enthalpy, entropy and Gibbs energy, the residual properties.",
+    "th": "คาบหน้า P3 จาก Z ไปสู่เอนทัลปี เอนโทรปี และพลังงานกิบส์ ผ่าน residual properties"
+   }
+  ]
+ },
+ "exit-ticket": {
+  "audio": "narration/p02/exit-ticket.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.92,
+    "en": "Exit ticket, five minutes, anonymous.",
+    "th": "Exit ticket ห้านาที ไม่ระบุชื่อ"
+   },
+   {
+    "start": 3.27,
+    "end": 12.93,
+    "en": "Peng-Robinson gives the vapor pressure of water at 500 kelvin within 1 percent but its liquid volume 23 percent too large.",
+    "th": "Peng–Robinson ให้ความดันไอของน้ำที่ 500 เคลวินคลาดไม่เกิน 1 เปอร์เซ็นต์ แต่ปริมาตรของเหลวมากเกินไป 23 เปอร์เซ็นต์"
+   },
+   {
+    "start": 13.28,
+    "end": 19.68,
+    "en": "What was the equation tuned to, and what would you check before using it to size a liquid storage tank?",
+    "th": "สมการนี้ถูกปรับให้เข้ากับอะไร และคุณจะตรวจสอบอะไรก่อนใช้มันออกแบบขนาดถังเก็บของเหลว"
+   }
+  ]
+ },
+ "after-class": {
+  "audio": "narration/p02/after-class.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 5.84,
+    "en": "After class, finish Lab P2 and upload the study file to myCourseVille.",
+    "th": "หลังเลิกเรียน ทำ Lab P2 ให้เสร็จ และอัปโหลดไฟล์ study ไปที่ myCourseVille"
+   },
+   {
+    "start": 6.19,
+    "end": 10.54,
+    "en": "Read the pre-class note for session P3, about twenty minutes.",
+    "th": "อ่าน pre-class note ของคาบ P3 ใช้เวลาประมาณยี่สิบนาที"
+   },
+   {
+    "start": 10.89,
+    "end": 17.46,
+    "en": "Graduate students can write a Peng-Robinson solver with an AI assistant and check it in step E.",
+    "th": "นิสิตระดับบัณฑิตศึกษาสามารถเขียนโปรแกรมแก้สมการ Peng–Robinson ด้วยผู้ช่วย AI แล้วตรวจสอบในขั้นตอน E"
+   }
+  ]
+ }
+}

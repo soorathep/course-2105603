@@ -143,7 +143,8 @@ function runInv() {
   const f = (a) => (a.length ? a.map((x) => num(x, 4)).join(', ') : 'none');
   $('inv-body').replaceChildren(...inv.rows.map((r) => { const up = r.T.length ? Math.max(...r.T) : null, vu = r.vdw.length ? Math.max(...r.vdw) : null; const tr = document.createElement('tr'); tr.append(cell(num(r.P, 4)), cell(f(r.T)), cell(f(r.vdw)), cell(up && vu ? signed(pct(vu, up), 1) : '—')); return tr; }));
   $('inv-wrap').hidden = false;
-  $('inv-status').textContent = 'Van der Waals predicts an inversion temperature of ' + num(inv.vdwLowP, 4) + ' K at low pressure (6.75 Tc) and no inversion above ' + num(inv.vdwMaxP, 4) + ' bar (9 Pc). The NIST lower-branch points at high pressure lie in the compressed liquid.';
+  const withInv = inv.rows.filter((r) => r.T.length), maxP = withInv.length ? Math.max(...withInv.map((r) => r.P)) : null;
+  $('inv-status').textContent = 'Van der Waals predicts an inversion temperature of ' + num(inv.vdwLowP, 4) + ' K at low pressure (6.75 Tc) and no inversion above ' + num(inv.vdwMaxP, 4) + ' bar (9 Pc). The NIST tables show inversion up to about ' + (maxP ? num(maxP, 3) : '—') + ' bar, the highest isobar with a sign change in the table. The NIST lower-branch points at high pressure lie in the compressed liquid.';
 }
 
 function notes() { return Object.fromEntries(Object.entries(NOTE_IDS).map(([k, id]) => [k, $(id).value])); }
