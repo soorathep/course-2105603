@@ -144,15 +144,13 @@ The feed z₁ = 0.12 sits where the curve is still convex, but its Δg<sub>mix</
 ::: {.column width="52%"}
 **Local:** stable against small changes when
 
-$$x_1x_2\,\frac{\partial^2(\Delta g_{\text{mix}}/RT)}{\partial x_1^2}=1+x_1x_2\frac{\partial^2 (G^E/RT)}{\partial x_1^2}>0$$
+$$\begin{aligned}&x_1x_2\,\frac{\partial^2(\Delta g_{\text{mix}}/RT)}{\partial x_1^2}\\&\quad=1+x_1x_2\frac{\partial^2 (G^E/RT)}{\partial x_1^2}>0\end{aligned}$$
 
 Zero on the **spinodal**. For Margules: 1 − 2A x₁x₂.
 
 **Global:** the two liquids of the **binodal** have equal chemical potentials:
 
 $$x_i^{\alpha}\gamma_i^{\alpha}=x_i^{\beta}\gamma_i^{\beta}\qquad i=1,2$$
-
-α is the x₁-poor liquid and β the x₁-rich liquid, as in Labs 04 and 05. (NRTL's α, below, is a different quantity: the nonrandomness parameter.)
 :::
 ::: {.column width="46%"}
 ::: {.lever-box}
@@ -166,6 +164,8 @@ $$x_i^{\alpha}\gamma_i^{\alpha}=x_i^{\beta}\gamma_i^{\beta}\qquad i=1,2$$
 
 A curvature test alone calls a metastable feed stable. Only a global test finds that it splits.
 :::
+
+α is the x₁-poor liquid and β the x₁-rich liquid, as in Labs 04 and 05. (NRTL's α, below, is a different quantity: the nonrandomness parameter.)
 :::
 ::::
 

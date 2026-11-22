@@ -121,7 +121,7 @@ Finish Lab 10 E and Lab 11 A–B, and submit both study files with your name and
 ::: {.column width="54%"}
 A path through the melting point gives
 
-$$\ln(x_1\gamma_1)=-\frac{\Delta_{\text{fus}}H}{R}\Big(\frac{1}{T}-\frac{1}{T_m}\Big)+\frac{\Delta C_p}{R}\Big(\frac{T_m}{T}-1-\ln\frac{T_m}{T}\Big)$$
+$$\begin{aligned}\ln(x_1\gamma_1)={}&-\frac{\Delta_{\text{fus}}H}{R}\Big(\frac{1}{T}-\frac{1}{T_m}\Big)\\&+\frac{\Delta C_p}{R}\Big(\frac{T_m}{T}-1-\ln\frac{T_m}{T}\Big)\end{aligned}$$
 
 With γ₁ = 1: the **ideal solubility**. It depends on the solid alone. Every solvent that differs from it does so through γ₁.
 :::
@@ -170,7 +170,7 @@ That difference passes, unchanged, into every γ₁ you infer from a measured so
 ::: {.column width="50%"}
 The data come as **molality**, m in mol per kg of solvent:
 
-$$x_1=\frac{m}{m+1000/M_{\text{solvent}}}\qquad \gamma_1=\frac{x_1^{\text{id}}(T)}{x_1}$$
+$$x_1=\frac{m}{m+1000/M_{\text{solvent}}}\quad \gamma_1=\frac{x_1^{\text{id}}(T)}{x_1}$$
 
 Octane, 296.6 K, m = 1.3217: x₁ = **0.1312**. With NIST fusion data, x₁<sup>id</sup> = 0.290, so γ₁ = **2.21**.
 

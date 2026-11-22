@@ -125,9 +125,9 @@ Finish Lab 13 A, B and E, and submit the study file with your name and ID.
 ::: {.column width="52%"}
 Every measurable quantity involves a neutral combination of ions, so single-ion activities are not measured. For a 1:1 salt:
 
-$$a_{\text{KCl}}=a_{\text{K}^+}a_{\text{Cl}^-}=\Big(\frac{m}{m^\circ}\gamma_\pm\Big)^2,\qquad m^\circ=1\ \text{mol/kg}$$
+$$a_{\text{KCl}}=a_{\text{K}^+}a_{\text{Cl}^-}=\Big(\frac{m}{m^\circ}\gamma_\pm\Big)^2$$
 
-Activities are dimensionless. From here on, m in an activity means the number m/m°, so a<sub>KCl</sub> = (mγ±)² is shorthand.
+with m° = 1 mol/kg. Activities are dimensionless. From here on, m in an activity means the number m/m°, so a<sub>KCl</sub> = (mγ±)² is shorthand.
 
 A cell that responds to KCl therefore gives
 
@@ -165,7 +165,9 @@ Here **z<sub>i</sub> is the signed charge number** of ion i (+1 for K⁺, −1 f
 
 :::: {.columns}
 ::: {.column width="50%"}
-$$\Delta_rS=nF\frac{\partial E}{\partial T},\qquad \Delta_rH=-nF\Big(E-T\frac{\partial E}{\partial T}\Big)$$
+$$\Delta_rS=nF\frac{\partial E}{\partial T}$$
+
+$$\Delta_rH=-nF\Big(E-T\frac{\partial E}{\partial T}\Big)$$
 
 **Ideal concentration cell:** E ∝ T, so Δ<sub>r</sub>H = 0. All the electrical work, 22.8 kJ per mole of KCl at 0.2366 V, is heat drawn from the surroundings.
 

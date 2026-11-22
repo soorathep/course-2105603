@@ -192,7 +192,9 @@ $$\frac{\gamma_1}{\gamma_2}=\frac{P_2^{\text{sat}}}{P_1^{\text{sat}}}$$
 
 :::: {.columns}
 ::: {.column width="50%"}
-$$g\equiv\frac{G^E}{RT}=\sum_i x_i\ln\gamma_i\qquad \ln\gamma_i=\left(\frac{\partial (ng)}{\partial n_i}\right)_{T,P,n_j}$$
+$$g\equiv\frac{G^E}{RT}=\sum_i x_i\ln\gamma_i$$
+
+$$\ln\gamma_i=\left(\frac{\partial (ng)}{\partial n_i}\right)_{T,P,n_j}$$
 
 At constant T and P, **Gibbs–Duhem**:
 
@@ -211,7 +213,7 @@ Measured T, P, x **and** y over-determine the problem. That redundancy is what a
 
 :::: {.columns}
 ::: {.column width="56%"}
-$$\ln\gamma_1=x_2^2\left[\tau_{21}\Big(\frac{G_{21}}{x_1+x_2G_{21}}\Big)^2+\frac{\tau_{12}G_{12}}{(x_2+x_1G_{12})^2}\right]$$
+$$\begin{aligned}\ln\gamma_1=x_2^2\Big[&\tau_{21}\Big(\frac{G_{21}}{x_1+x_2G_{21}}\Big)^2\\&+\frac{\tau_{12}G_{12}}{(x_2+x_1G_{12})^2}\Big]\end{aligned}$$
 
 $$G_{ij}=\exp(-\alpha\,\tau_{ij})$$
 
@@ -263,7 +265,7 @@ Local test: **not assessed**, H<sup>E</sup> is not available.
 ::: {.column width="50%"}
 U is the expanded uncertainty the article reports and k = 2 its coverage factor (about 95 %). Propagate the standard uncertainties u = U/k (article averages) to the standard uncertainty σ of ln γ₁:
 
-$$\sigma_{\ln\gamma_1}^2\approx\Big(\frac{u_x}{x_1}\Big)^2+\Big(\frac{u_y}{y_1}\Big)^2+\Big(\frac{u_P}{P}\Big)^2+\Big(\frac{\mathrm{d}\ln P_1^{\text{sat}}}{\mathrm{d}T}u_T\Big)^2$$
+$$\begin{aligned}\sigma_{\ln\gamma_1}^2\approx{}&\Big(\frac{u_x}{x_1}\Big)^2+\Big(\frac{u_y}{y_1}\Big)^2\\&+\Big(\frac{u_P}{P}\Big)^2+\Big(\frac{\mathrm{d}\ln P_1^{\text{sat}}}{\mathrm{d}T}u_T\Big)^2\end{aligned}$$
 
 At 60 kPa: u<sub>x</sub> = 0.0107, u<sub>y</sub> = 0.0139, u<sub>P</sub> = 0.25 kPa, u<sub>T</sub> = 0.037 K.
 :::
