@@ -1,4 +1,4 @@
-/** Lab P4 · 2027 preview page module: fugacity, the vapor pressure of a cubic, ΔH_vap and condensed-phase fugacity. */
+/** Lab P4 · 2027 preview page module: fugacity, the vapor pressure of a cubic, Δ_vap H and condensed-phase fugacity. */
 import * as fg from './fugacity.js';
 import { MODELS as EOS } from './eos.js';
 import { palette as c } from '../../labs/assets/palette.js';
@@ -75,7 +75,7 @@ function renderSat() {
   const i = study.inputs, { ref, eos, clap } = study.res, fl = data.fluids[i.fluid];
   $('result-placeholder').hidden = true; $('results').hidden = false;
   $('result-phase').textContent = fname(i.fluid) + ' · ' + num(i.T, 5) + ' K';
-  $('phase-interpretation').textContent = 'T_r = ' + num(i.T / fl.Tc, 3) + '. Reference vapor pressure ' + num(ref.P, 5) + ' bar. The Clapeyron equation with the reference ΔV gives ΔH_vap = ' + num(clap.clap, 5) + ' J/mol; the tabulated H^V − H^L is ' + num(clap.ref, 5) + ' J/mol.';
+  $('phase-interpretation').textContent = 'T_r = ' + num(i.T / fl.Tc, 3) + '. Reference vapor pressure ' + num(ref.P, 5) + ' bar. The Clapeyron equation with the reference ΔV gives Δ_vap H = ' + num(clap.clap, 5) + ' J/mol; the tabulated H^V − H^L is ' + num(clap.ref, 5) + ' J/mol.';
   $('sat-title').textContent = 'Saturation of ' + fname(i.fluid).toLowerCase() + ' at ' + num(i.T, 5) + ' K';
   const rows = [['NIST reference', { P: ref.P, VL: ref.VL, VV: ref.VV, phi: null, dH: ref.dH }, true], ...CUBICS.map((m) => [LABEL[m], eos[m], false])];
   $('sat-body').replaceChildren(...rows.map(([name, r, isRef]) => {
@@ -105,8 +105,8 @@ function renderPaper() {
     li('At P = ' + num(e.P, 7) + ' bar: liquid root Z<sup>L</sup> = ' + num(e.ZL, 6) + ', vapor root Z<sup>V</sup> = ' + num(e.ZV, 6) + '.'),
     li('ln φ<sup>L</sup> = Z − 1 − ln(Z − β) − qI = ' + num(e.lnphiL, 7) + '; ln φ<sup>V</sup> = ' + num(e.lnphiV, 7) + '. Equal: this is the vapor pressure.'),
     li('f<sup>sat</sup> = φ<sup>sat</sup>P<sup>sat</sup> = ' + num(e.phi, 5) + ' × ' + num(e.P, 5) + ' = ' + num(e.phi * e.P, 5) + ' bar in both phases.'),
-    li('V<sup>L</sup> = Z<sup>L</sup>RT/P = ' + num(e.VL, 5) + ' and V<sup>V</sup> = ' + num(e.VV, 5) + ' cm³/mol; ΔH<sub>vap</sub> = H<sup>R</sup>(V) − H<sup>R</sup>(L) = ' + num(e.dH, 5) + ' J/mol (reference ' + num(study.res.ref.dH, 5) + ').'),
-    li('Clapeyron check with the equation\'s own values: dP<sup>sat</sup>/dT = ΔH<sub>vap</sub>/(TΔV) = ' + num(e.dH / (i.T * (e.VV - e.VL) * 1e-6) / 1e5, 5) + ' bar/K.'),
+    li('V<sup>L</sup> = Z<sup>L</sup>RT/P = ' + num(e.VL, 5) + ' and V<sup>V</sup> = ' + num(e.VV, 5) + ' cm³/mol; Δ<sub>vap</sub>H = H<sup>R</sup>(V) − H<sup>R</sup>(L) = ' + num(e.dH, 5) + ' J/mol (reference ' + num(study.res.ref.dH, 5) + ').'),
+    li('Clapeyron check with the equation\'s own values: dP<sup>sat</sup>/dT = Δ<sub>vap</sub>H/(TΔV) = ' + num(e.dH / (i.T * (e.VV - e.VL) * 1e-6) / 1e5, 5) + ' bar/K.'),
   );
 }
 
@@ -132,7 +132,7 @@ async function renderChart() {
     traces.push({ x: s.T.map((t) => 1000 / t), y: s.P.map((p) => Math.log(p)), name: 'Reference (NIST)', mode: 'markers', marker: { color: c.teal, size: 4 } });
     for (const m of CUBICS) { const Ts = s.T.filter((t, k) => k % 6 === 0 && t < fl.Tc - 0.5); const pts = Ts.map((t) => [t, fg.satEos(m, fl, t)]).filter((q) => q[1]); traces.push({ x: pts.map((q) => 1000 / q[0]), y: pts.map((q) => Math.log(q[1].P)), name: LABEL[m], mode: 'lines', line: { color: COLOR[m], width: m === i.model ? 3 : 2 } }); }
     layoutX = '1000/T / K⁻¹'; layoutY = 'ln(P^sat / bar)';
-    $('chart-note').textContent = fname(f) + ': ln P^sat is nearly linear in 1/T. By the Clapeyron equation its slope is −ΔH_vap/(R ΔZ), with ΔZ = Z^V − Z^L. Van der Waals has the wrong slope because its a does not depend on T.';
+    $('chart-note').textContent = fname(f) + ': ln P^sat is nearly linear in 1/T. By the Clapeyron equation its slope is −Δ_vap H/(R ΔZ), with ΔZ = Z^V − Z^L. Van der Waals has the wrong slope because its a does not depend on T.';
   }
   const layout = { margin: { l: 70, r: 16, t: 16, b: 56 }, font: { family: 'Source Sans 3, sans-serif', size: 13, color: c.ink }, paper_bgcolor: 'transparent', plot_bgcolor: 'transparent', showlegend: false, hovermode: 'closest',
     xaxis: { title: { text: layoutX }, zeroline: false, linecolor: c.graphite, gridcolor: c.mist }, yaxis: { title: { text: layoutY }, zeroline: false, linecolor: c.graphite, gridcolor: c.mist } };
@@ -177,7 +177,7 @@ function runLiq() {
   $('liq-body').replaceChildren(...rows.map((r) => { const tr = document.createElement('tr'); tr.append(cell(r.label), cell(r.cond), cell(num(r.ref, 5) + r.unit), cell(num(r.approx, 5) + r.unit), cell(signed(pct(r.approx, r.ref), 2))); return tr; }));
   $('liq-wrap').hidden = false;
   const co2 = rows.find((r) => r.k === 'co2_280' && r.cond.includes('200')), ice = rows.find((r) => r.cond.startsWith('263'));
-  $('liq-status').textContent = 'Constant-V^L Poynting for CO₂ at 200 bar: ' + signed(pct(co2.approx, co2.ref), 2) + '%. Ice/liquid ratio at 263.15 K: ' + num(ice.ref, 4) + ' measured, ' + num(ice.approx, 4) + ' from ΔH_fus.';
+  $('liq-status').textContent = 'Constant-V^L Poynting for CO₂ at 200 bar: ' + signed(pct(co2.approx, co2.ref), 2) + '%. Ice/liquid ratio at 263.15 K: ' + num(ice.ref, 4) + ' measured, ' + num(ice.approx, 4) + ' from Δ_fus H.';
 }
 
 /* ---------- Save, restore ---------- */
@@ -210,7 +210,7 @@ function loadCase(f) {
 function evidenceCheck() {
   const n = notes(), issues = [];
   if (!study.curve) issues.push('Test the vapor-pressure curves (A).');
-  if (!study.dh) issues.push('Compare the routes to ΔH_vap (B).');
+  if (!study.dh) issues.push('Compare the routes to Δ_vap H (B).');
   if (!study.liq) issues.push('Test the condensed-phase forms (C).');
   for (const [k, label] of [['curve', 'Claim 1'], ['dh', 'Claim 2'], ['liq', 'Claim 3'], ['decision', 'the decision']]) if ((n[k] || '').trim().length < 40) issues.push('Write ' + label + ' with numbers.');
   return { complete: !issues.length, issues };

@@ -27,9 +27,9 @@ Draft for 2027. If you are taking the course this year, use the current course p
 | P1 · framework | dG = −S dT + V dP; dH = C<sub>p</sub>dT + [V − T(∂V/∂T)<sub>P</sub>]dP | PVT data and C<sub>p</sub><sup>ig</sup> |
 | P2 · PVT | Z = PV/RT; cubic EOS; Z = 1 + BP/RT | T<sub>c</sub>, P<sub>c</sub>, ω, or B(T) |
 | P3 · residuals | H<sup>R</sup>/RT = −T∫₀<sup>P</sup>(∂Z/∂T)<sub>P</sub>dP/P; H = H<sup>ig</sup> + H<sup>R</sup> | Z(T, P) and C<sub>p</sub><sup>ig</sup> |
-| P4 · pure equilibrium | ln φ = ∫₀<sup>P</sup>(Z − 1)dP/P; f<sup>V</sup> = f<sup>L</sup> at P<sup>sat</sup>; Poynting | an EOS, or P<sup>sat</sup> and V<sup>L</sup> |
-| P5 · mixtures | M̄<sub>i</sub>; Σx<sub>i</sub>dM̄<sub>i</sub> = 0; φ̂<sub>i</sub>; f̂<sub>i</sub><sup>id</sup> = x<sub>i</sub>f<sub>i</sub> | B<sub>12</sub> or k<sub>ij</sub> |
-| P6 · activity | γ<sub>i</sub> = f̂<sub>i</sub>/(x<sub>i</sub>f<sub>i</sub>°); y<sub>i</sub>P = x<sub>i</sub>γ<sub>i</sub>P<sub>i</sub><sup>sat</sup>; H<sub>i</sub> = γ<sub>i</sub>∞f<sub>i</sub> | a G<sup>E</sup> model and a standard state |
+| P4 · pure equilibrium | ln φ = ∫₀<sup>P</sup>(Z − 1)dP/P; f<sup>V</sup> = f<sup>L</sup> at P<sup>sat</sup>; $f^L=\varphi^{\text{sat}}P^{\text{sat}}\mathcal{P}$ | an EOS, or P<sup>sat</sup> and V<sup>L</sup> |
+| P5 · mixtures | M̄<sub>i</sub>; Σx<sub>i</sub>dM̄<sub>i</sub> = 0; φ̂<sub>i</sub>; f̂<sub>i</sub><sup>id</sup> = x<sub>i</sub>f<sub>i</sub> | B₁₂ or k<sub>ij</sub> |
+| P6 · activity | γ<sub>i</sub> = f̂<sub>i</sub>/(x<sub>i</sub>f<sub>i</sub>°); y<sub>i</sub>Φ<sub>i</sub>P = x<sub>i</sub>γ<sub>i</sub>P<sub>i</sub><sup>sat</sup>; H<sub>i</sub> = γ<sub>i</sub>∞f<sub>i</sub> | a G<sup>E</sup> model and a standard state |
 
 Each step uses the one before. Session 1 after the midterm joins P4–P6 into the γ–φ and φ–φ forms of vapor–liquid equilibrium.
 
@@ -43,7 +43,7 @@ Each session had a result that looked right, and the evidence that decided it.
 | P2 | Peng–Robinson: CO₂ tank 939 kg against 938 | Liquid water at 500 K: Z off by 23% with the same equation |
 | P3 | Ideal-gas compressor work, 3430 J/mol | Reference 2865 J/mol; outlet 387.7 K against 399.7 K |
 | P4 | PR vapor pressure of propane at 300 K within 0.02% | ω is fitted to P<sup>sat</sup>; the liquid volume is 3.8% low |
-| P5 | Lewis–Randall for 2% CO₂ in methane at 60 bar | φ̂<sub>CO₂</sub> 8% from pure CO₂; combining rules with k<sub>12</sub> = 0 are 11–37% off in B<sub>12</sub> |
+| P5 | Lewis–Randall for 2% CO₂ in methane at 60 bar | φ̂<sub>CO₂</sub> 8% from pure CO₂; combining rules with k₁₂ = 0 are 11–37% off in B₁₂ |
 | P6 | NRTL fitted to G<sup>E</sup>/RT, best prediction at 80 kPa | γ₁∞ = 21 against 7.7, and a liquid split that does not exist |
 
 ## 3. Choosing a property model
@@ -66,7 +66,7 @@ From weakest to strongest:
 2. **Internal consistency:** Gibbs–Duhem on measured γ, a balance that closes, the same H from two paths.
 3. **Held-out data:** the same kind of measurement at conditions the fit did not use, such as 80 kPa VLE from a 60 kPa fit.
 4. **Independent property:** a different quantity the model also predicts, such as the liquid volume from an EOS whose ω was fitted to P<sup>sat</sup>.
-5. **Different method:** a measured B<sub>12</sub> against a combining rule; a directly measured γ∞ against a VLE fit.
+5. **Different method:** a measured B₁₂ against a combining rule; a directly measured γ∞ against a VLE fit.
 
 A claim is only as strong as the highest rung it reached. An extrapolation, such as γ₁∞ beyond the most dilute measured point, reaches none. Some claims cannot be decided with the data in hand; saying so is part of the answer.
 

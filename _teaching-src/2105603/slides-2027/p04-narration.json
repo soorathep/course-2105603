@@ -16,7 +16,7 @@
   "course-map": [
    {
     "en": "Session P1 showed that at equilibrium the chemical potential is equal in every phase. Session P3 gave the residual Gibbs energy.",
-    "th": "คาบ P1 แสดงว่าที่สมดุล ศักย์เคมีเท่ากันในทุกเฟส และคาบ P3 ให้ residual Gibbs energy",
+    "th": "คาบ P1 แสดงว่าที่สมดุล ศักย์เคมีเท่ากันในทุกเฟส และคาบ P3 ให้ G^R",
     "say": "Session P one showed that at equilibrium the chemical potential is equal in every phase. Session P three gave the residual Gibbs energy."
    },
    {
@@ -25,7 +25,7 @@
    },
    {
     "en": "Session 1 after the midterm starts from these.",
-    "th": "คาบที่ 1 หลัง midterm เริ่มจากเรื่องเหล่านี้",
+    "th": "คาบที่ 1 หลังสอบกลางภาค เริ่มจากเรื่องเหล่านี้",
     "say": "Session one after the midterm starts from these."
    }
   ],
@@ -52,11 +52,11 @@
    },
    {
     "en": "Define fugacity and the fugacity coefficient, and compute them from data, the virial equation or a cubic.",
-    "th": "นิยาม fugacity และ fugacity coefficient และคำนวณจากข้อมูล สมการ virial หรือสมการกำลังสาม"
+    "th": "นิยาม fugacity และสัมประสิทธิ์ fugacity และคำนวณจากข้อมูล สมการ virial หรือสมการกำลังสาม"
    },
    {
     "en": "Find the vapor pressure of an equation of state from equal fugacity, and use the Clapeyron equation.",
-    "th": "หาความดันไอของสมการสภาวะจาก fugacity ที่เท่ากัน และใช้สมการ Clapeyron"
+    "th": "หาความดันไอของสมการสถานะจาก fugacity ที่เท่ากัน และใช้สมการ Clapeyron"
    },
    {
     "en": "Compute the fugacity of a compressed liquid and of a solid.",
@@ -76,7 +76,7 @@
    },
    {
     "en": "The session question: what decides when two phases of a pure fluid coexist, and how well do an equation of state and the classical approximations reproduce what we measure?",
-    "th": "คำถามของคาบนี้คือ อะไรกำหนดว่าสองเฟสของสารบริสุทธิ์อยู่ร่วมกันได้ และสมการสภาวะกับการประมาณแบบดั้งเดิมทำนายสิ่งที่วัดได้ดีเพียงใด"
+    "th": "คำถามของคาบนี้คือ อะไรกำหนดว่าสองเฟสของสารบริสุทธิ์อยู่ร่วมกันได้ และสมการสถานะกับการประมาณแบบดั้งเดิมทำนายสิ่งที่วัดได้ดีเพียงใด"
    }
   ],
   "fugacity": [
@@ -86,8 +86,8 @@
     "say": "For an ideal gas at fixed temperature, d mu equals R T d ln P. For any fluid we define the fugacity by the same equation, with f equal to P at zero pressure."
    },
    {
-    "en": "The fugacity coefficient is f over P, and for a pure fluid its log is the residual Gibbs energy over RT.",
-    "th": "fugacity coefficient คือ f/P และสำหรับสารบริสุทธิ์ ln ของมันคือ residual Gibbs energy หารด้วย RT",
+    "en": "The fugacity coefficient is f over P, and for a pure fluid its log is the residual Gibbs energy over R T.",
+    "th": "สัมประสิทธิ์ fugacity คือ f/P และสำหรับสารบริสุทธิ์ ln ของมันคือ G^R หารด้วย RT",
     "say": "The fugacity coefficient is f over P, and for a pure fluid its log is the residual Gibbs energy over R T."
    },
    {
@@ -132,7 +132,7 @@
    },
    {
     "en": "SRK and Peng-Robinson were fitted to vapor pressures, so a good vapor pressure tests the fit. The liquid volume and the enthalpy of vaporization are independent tests.",
-    "th": "SRK และ Peng–Robinson ถูกปรับให้เข้ากับความดันไอ ความดันไอที่ถูกต้องจึงทดสอบเพียงการปรับค่า ส่วนปริมาตรของเหลวและเอนทัลปีการกลายเป็นไอเป็นการทดสอบที่เป็นอิสระ",
+    "th": "SRK และ Peng–Robinson ถูก fit กับความดันไอ ความดันไอที่ถูกต้องจึงทดสอบเพียงการ fit ส่วนปริมาตรของเหลวและเอนทาลปีการกลายเป็นไอเป็นการทดสอบที่เป็นอิสระ",
     "say": "S R K and Peng Robinson were fitted to vapor pressures, so a good vapor pressure tests the fit. The liquid volume and the enthalpy of vaporization are independent tests."
    }
   ],
@@ -159,8 +159,9 @@
   ],
   "isotherm": [
    {
-    "en": "Along an isotherm, d ln f by dP equals V over RT.",
-    "th": "ตามไอโซเทอร์ม d ln f/dP เท่ากับ V/RT"
+    "en": "Along an isotherm, d ln f by dP equals V over R T.",
+    "th": "ตามไอโซเทอร์ม d ln f/dP เท่ากับ V/RT",
+    "say": "Along an isotherm, d ln f by dP equals V over RT."
    },
    {
     "en": "The fugacity is continuous at the vapor pressure because mu is, but its slope drops from the vapor volume to the liquid volume.",
@@ -175,7 +176,7 @@
   "poynting": [
    {
     "en": "Integrating from saturation gives the fugacity of a compressed liquid: phi sat times P sat times the Poynting factor.",
-    "th": "การอินทิเกรตจากจุดอิ่มตัวให้ fugacity ของของเหลวอัด คือ φsat × Psat × Poynting factor",
+    "th": "การอินทิเกรตจากจุดอิ่มตัวให้ fugacity ของของเหลวอัด คือ φ^sat × P^sat × แฟกเตอร์ Poynting",
     "say": "Integrating from saturation gives the fugacity of a compressed liquid: phi sat times P sat times the Poynting factor."
    },
    {
@@ -192,7 +193,7 @@
   "solid": [
    {
     "en": "Below the melting point the solid is stable. Its fugacity relative to the subcooled liquid follows from the enthalpy of fusion.",
-    "th": "ที่อุณหภูมิต่ำกว่าจุดหลอมเหลว ของแข็งเป็นเฟสที่เสถียร fugacity ของมันเทียบกับของเหลวที่เย็นยิ่งยวดได้จากเอนทัลปีการหลอมเหลว"
+    "th": "ที่อุณหภูมิต่ำกว่าจุดหลอมเหลว ของแข็งเป็นเฟสที่เสถียร fugacity ของมันเทียบกับของเหลวที่เย็นยิ่งยวดได้จากเอนทาลปีการหลอมเหลว"
    },
    {
     "en": "For ice at 263 kelvin the equation gives 0.904. The measured vapor pressures of ice and supercooled water give 0.907.",
@@ -201,7 +202,7 @@
    },
    {
     "en": "The error grows at lower temperature because the heat-capacity difference was neglected. Session 4 after the midterm uses this for solubility and freezing.",
-    "th": "ความคลาดเคลื่อนเพิ่มขึ้นที่อุณหภูมิต่ำลง เพราะละเลยผลต่างของความจุความร้อน คาบที่ 4 หลัง midterm ใช้ความสัมพันธ์นี้กับการละลายและการเยือกแข็ง",
+    "th": "ความคลาดเคลื่อนเพิ่มขึ้นที่อุณหภูมิต่ำลง เพราะละเลยผลต่างของความจุความร้อน คาบที่ 4 หลังสอบกลางภาค ใช้ความสัมพันธ์นี้กับการละลายและการเยือกแข็ง",
     "say": "The error grows at lower temperature because the heat-capacity difference was neglected. Session four after the midterm uses this for solubility and freezing."
    }
   ],
@@ -213,7 +214,7 @@
    },
    {
     "en": "First the vapor at 30 bar from the virial equation, then the liquid at 100 bar with the Poynting factor.",
-    "th": "ส่วนแรกคือไอที่ 30 บาร์จากสมการ virial จากนั้นคือของเหลวที่ 100 บาร์ด้วย Poynting factor",
+    "th": "ส่วนแรกคือไอที่ 30 บาร์จากสมการ virial จากนั้นคือของเหลวที่ 100 บาร์ด้วย แฟกเตอร์ Poynting",
     "say": "First the vapor at thirty bar from the virial equation, then the liquid at one hundred bar with the Poynting factor."
    },
    {
@@ -230,12 +231,12 @@
    },
    {
     "en": "For the liquid, the Poynting factor is 1.133 and f is 35.26 bar, 0.4 percent above NIST.",
-    "th": "สำหรับของเหลว Poynting factor เท่ากับ 1.133 และ f เท่ากับ 35.26 บาร์ สูงกว่า NIST 0.4 เปอร์เซ็นต์",
+    "th": "สำหรับของเหลว แฟกเตอร์ Poynting เท่ากับ 1.133 และ f เท่ากับ 35.26 บาร์ สูงกว่า NIST 0.4 เปอร์เซ็นต์",
     "say": "For the liquid, the Poynting factor is one point one three three and f is thirty five point two six bar, zero point four percent above N I S T."
    },
    {
     "en": "Without the Poynting factor the liquid fugacity is 11 percent low; with phi equal to one as well, it is 18 percent high.",
-    "th": "ถ้าไม่ใช้ Poynting factor fugacity ของของเหลวจะต่ำไป 11 เปอร์เซ็นต์ และถ้าให้ φ เท่ากับหนึ่งด้วย จะสูงไป 18 เปอร์เซ็นต์",
+    "th": "ถ้าไม่ใช้ แฟกเตอร์ Poynting fugacity ของของเหลวจะต่ำไป 11 เปอร์เซ็นต์ และถ้าให้ φ เท่ากับหนึ่งด้วย จะสูงไป 18 เปอร์เซ็นต์",
     "say": "Without the Poynting factor the liquid fugacity is eleven percent low; with phi equal to one as well, it is eighteen percent high."
    }
   ],
@@ -247,7 +248,7 @@
    },
    {
     "en": "Carbon dioxide at 280 kelvin: read the vapor pressure, the volumes and the enthalpy of vaporization of the three cubics.",
-    "th": "คาร์บอนไดออกไซด์ที่ 280 เคลวิน อ่านความดันไอ ปริมาตร และเอนทัลปีการกลายเป็นไอของสมการกำลังสามทั้งสาม",
+    "th": "คาร์บอนไดออกไซด์ที่ 280 เคลวิน อ่านความดันไอ ปริมาตร และเอนทาลปีการกลายเป็นไอของสมการกำลังสามทั้งสาม",
     "say": "Carbon dioxide at two hundred eighty kelvin: read the vapor pressure, the volumes and the enthalpy of vaporization of the three cubics."
    },
    {
@@ -271,7 +272,7 @@
    },
    {
     "en": "Setting phi sat to one at high pressure, and using Clausius-Clapeyron near the critical point.",
-    "th": "การให้ φsat เท่ากับหนึ่งที่ความดันสูง และการใช้ Clausius–Clapeyron ใกล้จุดวิกฤต",
+    "th": "การให้ φ^sat เท่ากับหนึ่งที่ความดันสูง และการใช้ Clausius–Clapeyron ใกล้จุดวิกฤต",
     "say": "Setting phi sat to one at high pressure, and using Clausius Clapeyron near the critical point."
    },
    {
@@ -298,7 +299,7 @@
    },
    {
     "en": "First the vapor pressure of four fluids and the whole curve, then three routes to the enthalpy of vaporization.",
-    "th": "ส่วนแรกคือความดันไอของสี่ของไหลและตลอดเส้นความดันไอ จากนั้นคือสามวิธีหาเอนทัลปีการกลายเป็นไอ"
+    "th": "ส่วนแรกคือความดันไอของสี่ของไหลและตลอดเส้นความดันไอ จากนั้นคือสามวิธีหาเอนทาลปีการกลายเป็นไอ"
    },
    {
     "en": "Then the fugacity of liquids and solids in investigation C.",
@@ -358,19 +359,19 @@
    },
    {
     "en": "A liquid has phi sat times P sat times the Poynting factor; a solid follows from the enthalpy of fusion.",
-    "th": "ของเหลวมี fugacity เท่ากับ φsat × Psat × Poynting factor ส่วนของแข็งได้จากเอนทัลปีการหลอมเหลว",
+    "th": "ของเหลวมี fugacity เท่ากับ φ^sat × P^sat × แฟกเตอร์ Poynting ส่วนของแข็งได้จากเอนทาลปีการหลอมเหลว",
     "say": "A liquid has phi sat times P sat times the Poynting factor; a solid follows from the enthalpy of fusion."
    },
    {
     "en": "Next session, P5: mixtures, partial molar properties and the fugacity of a component in a mixture.",
-    "th": "คาบหน้า P5 ของผสม partial molar properties และ fugacity ขององค์ประกอบในของผสม",
+    "th": "คาบหน้า P5 เรื่องของผสม สมบัติโมลาร์ย่อย และ fugacity ขององค์ประกอบในของผสม",
     "say": "Next session, P five: mixtures, partial molar properties and the fugacity of a component in a mixture."
    }
   ],
   "exit-ticket": [
    {
     "en": "Exit ticket, five minutes, anonymous.",
-    "th": "Exit ticket ห้านาที ไม่ระบุชื่อ"
+    "th": "exit ticket ห้านาที ไม่ระบุชื่อ"
    },
    {
     "en": "At 280 kelvin, carbon dioxide vapor and liquid coexist at 41.6 bar, with molar volumes that differ by a factor of seven.",
@@ -379,7 +380,7 @@
    },
    {
     "en": "Name three quantities that are equal in the two phases, and give the fugacity at saturation if phi sat is 0.748.",
-    "th": "ระบุปริมาณสามอย่างที่เท่ากันในสองเฟส และหา fugacity ที่จุดอิ่มตัวถ้า φsat เท่ากับ 0.748",
+    "th": "ระบุปริมาณสามอย่างที่เท่ากันในสองเฟส และหา fugacity ที่จุดอิ่มตัวถ้า φ^sat เท่ากับ 0.748",
     "say": "Name three quantities that are equal in the two phases, and give the fugacity at saturation if phi sat is zero point seven four eight."
    }
   ],
@@ -391,7 +392,7 @@
    },
    {
     "en": "Read the pre-class note for session P5, about twenty minutes.",
-    "th": "อ่าน pre-class note ของคาบ P5 ใช้เวลาประมาณยี่สิบนาที",
+    "th": "อ่านเอกสารก่อนเรียนของคาบ P5 ใช้เวลาประมาณยี่สิบนาที",
     "say": "Read the pre-class note for session P five, about twenty minutes."
    },
    {

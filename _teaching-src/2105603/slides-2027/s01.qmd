@@ -10,8 +10,8 @@ title-slide-attributes:
 
 ::: {.coursemap}
 ::: {.half .done}
-[Before the midterm]{.label}
-[Equations of state]{.cm} [Fugacity and chemical potential]{.cm} [Solution thermodynamics]{.cm}
+[Before the midterm · 7 sessions]{.label}
+[P1 · Framework]{.cm} [P2 · PVT and equations of state]{.cm} [P3 · Residual properties]{.cm} [P4 · Pure-component equilibrium and fugacity]{.cm} [P5 · Mixtures]{.cm} [P6 · Excess properties and activity]{.cm} [P7 · Choosing a property model]{.cm}
 :::
 ::: {.half}
 [After the midterm · 7 sessions]{.label}
@@ -146,7 +146,7 @@ In both, K depends on T, P **and the phase compositions**. Only the ideal limit 
 ::: {.beforeafter}
 ::: {}
 [Before class · 15–20 min]{.label}
-Review fugacity, φ and γ from the first half. Bring one question.
+Review fugacity, φ and γ from Sessions P4–P6. Bring one question.
 :::
 ::: {}
 [After class · 30–40 min]{.label}

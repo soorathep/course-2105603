@@ -5,12 +5,12 @@
   "title-slide": [
    {
     "en": "Welcome to session P2: PVT behavior and equations of state.",
-    "th": "ยินดีต้อนรับสู่คาบ P2 พฤติกรรม PVT และสมการสภาวะ",
+    "th": "ยินดีต้อนรับสู่คาบ P2 พฤติกรรม PVT และสมการสถานะ",
     "say": "Welcome to session P two: P V T behavior and equations of state."
    },
    {
     "en": "Today we ask how wrong an equation of state is, and where.",
-    "th": "วันนี้เราจะถามว่าสมการสภาวะผิดไปมากแค่ไหน และผิดที่ตรงไหน"
+    "th": "วันนี้เราจะถามว่าสมการสถานะผิดไปมากแค่ไหน และผิดที่ตรงไหน"
    }
   ],
   "course-map": [
@@ -21,7 +21,7 @@
    },
    {
     "en": "Most fluids and mixtures have no reference table, so the PVT data must come from an equation of state.",
-    "th": "ของไหลและของผสมส่วนใหญ่ไม่มีตารางอ้างอิง ข้อมูล PVT จึงต้องมาจากสมการสภาวะ",
+    "th": "ของไหลและของผสมส่วนใหญ่ไม่มีตารางอ้างอิง ข้อมูล PVT จึงต้องมาจากสมการสถานะ",
     "say": "Most fluids and mixtures have no reference table, so the P V T data must come from an equation of state."
    },
    {
@@ -62,7 +62,7 @@
    },
    {
     "en": "Set up a cubic equation of state, solve it for Z and choose the correct root.",
-    "th": "ตั้งสมการสภาวะกำลังสาม แก้หา Z และเลือกรากที่ถูกต้อง"
+    "th": "ตั้งสมการสถานะกำลังสาม แก้หา Z และเลือกรากที่ถูกต้อง"
    },
    {
     "en": "Use corresponding states and the acentric factor, and judge the error of each equation in the gas and the dense region.",
@@ -82,7 +82,7 @@
    },
    {
     "en": "The session question: when no reference table exists, which equation of state gives the PVT data, and how do we know how wrong it is?",
-    "th": "คำถามของคาบนี้คือ เมื่อไม่มีตารางอ้างอิง สมการสภาวะใดให้ข้อมูล PVT ได้ และเราจะรู้ได้อย่างไรว่ามันผิดไปมากแค่ไหน",
+    "th": "คำถามของคาบนี้คือ เมื่อไม่มีตารางอ้างอิง สมการสถานะใดให้ข้อมูล PVT ได้ และเราจะรู้ได้อย่างไรว่ามันผิดไปมากแค่ไหน",
     "say": "The session question: when no reference table exists, which equation of state gives the P V T data, and how do we know how wrong it is?"
    }
   ],
@@ -93,7 +93,7 @@
    },
    {
     "en": "An equation of state must give Z equal to one at zero pressure, a steep liquid branch, the critical point and two phases below it.",
-    "th": "สมการสภาวะต้องให้ Z เท่ากับหนึ่งที่ความดันศูนย์ ให้กิ่งของเหลวที่ชัน ให้จุดวิกฤต และให้สองเฟสที่อุณหภูมิต่ำกว่าจุดวิกฤต"
+    "th": "สมการสถานะต้องให้ Z เท่ากับหนึ่งที่ความดันศูนย์ ให้กิ่งของเหลวที่ชัน ให้จุดวิกฤต และให้สองเฟสที่อุณหภูมิต่ำกว่าจุดวิกฤต"
    },
    {
     "en": "Real fluids have a critical compressibility of 0.23 to 0.29. Every two-constant cubic fixes a larger value: 0.375, 0.333 or 0.307.",
@@ -120,7 +120,7 @@
     "say": "For methane at three hundred kelvin, Pitzer gives minus forty one point three cubic centimetres per mole, and the N I S T data give minus forty two point two."
    },
    {
-    "en": "Even so, the truncated form has a mean error of 5.7 percent up to the critical density. Use it only where BP over RT is small.",
+    "en": "Even so, the truncated form has a mean error of 5.7 percent up to the critical density. Use it only where BP over R T is small.",
     "th": "ถึงอย่างนั้น รูปแบบที่ตัดเหลือสองพจน์ยังมีความคลาดเคลื่อนเฉลี่ย 5.7 เปอร์เซ็นต์จนถึงความหนาแน่นวิกฤต จึงควรใช้เฉพาะเมื่อ BP/RT มีค่าน้อย",
     "say": "Even so, the truncated form has a mean error of five point seven percent up to the critical density. Use it only where B P over R T is small."
    }
@@ -142,7 +142,7 @@
    },
    {
     "en": "That function was fitted to vapor pressures of nonpolar fluids, not to densities. Remember this when we look at liquids.",
-    "th": "ฟังก์ชันนี้ถูกปรับให้เข้ากับความดันไอของของไหลไม่มีขั้ว ไม่ได้ปรับกับความหนาแน่น ให้จำข้อนี้ไว้เมื่อเราดูของเหลว"
+    "th": "ฟังก์ชันนี้ถูก fit กับความดันไอของของไหลไม่มีขั้ว ไม่ได้ fit กับความหนาแน่น ให้จำข้อนี้ไว้เมื่อเราดูของเหลว"
    }
   ],
   "roots": [
@@ -370,7 +370,7 @@
    },
    {
     "en": "Peng-Robinson gives the vapor pressure of water within 1 percent and its liquid volume 23 percent too large. What was alpha fitted to?",
-    "th": "Peng–Robinson ให้ความดันไอของน้ำคลาดไม่เกิน 1 เปอร์เซ็นต์ แต่ปริมาตรของเหลวมากเกินไป 23 เปอร์เซ็นต์ ฟังก์ชัน α ถูกปรับให้เข้ากับอะไร",
+    "th": "Peng–Robinson ให้ความดันไอของน้ำคลาดไม่เกิน 1 เปอร์เซ็นต์ แต่ปริมาตรของเหลวมากเกินไป 23 เปอร์เซ็นต์ ฟังก์ชัน α ถูก fit กับอะไร",
     "say": "Peng Robinson gives the vapor pressure of water within one percent and its liquid volume twenty three percent too large. What was alpha fitted to?"
    },
    {
@@ -386,7 +386,7 @@
   ],
   "summary": [
    {
-    "en": "To summarize. The virial equation is exact at low density, and its truncated form needs a small BP over RT.",
+    "en": "To summarize. The virial equation is exact at low density, and its truncated form needs a small BP over R T.",
     "th": "สรุป สมการ virial ถูกต้องที่ความหนาแน่นต่ำ และรูปแบบที่ตัดพจน์ต้องใช้เมื่อ BP/RT มีค่าน้อย",
     "say": "To summarize. The virial equation is exact at low density, and its truncated form needs a small B P over R T."
    },
@@ -401,14 +401,14 @@
    },
    {
     "en": "Next session, P3: from Z to enthalpy, entropy and Gibbs energy, the residual properties.",
-    "th": "คาบหน้า P3 จาก Z ไปสู่เอนทัลปี เอนโทรปี และพลังงานกิบส์ ผ่าน residual properties",
+    "th": "คาบหน้า P3 จาก Z ไปสู่เอนทาลปี เอนโทรปี และพลังงานกิบส์ ผ่านสมบัติ residual",
     "say": "Next session, P three: from Z to enthalpy, entropy and Gibbs energy, the residual properties."
    }
   ],
   "exit-ticket": [
    {
     "en": "Exit ticket, five minutes, anonymous.",
-    "th": "Exit ticket ห้านาที ไม่ระบุชื่อ"
+    "th": "exit ticket ห้านาที ไม่ระบุชื่อ"
    },
    {
     "en": "Peng-Robinson gives the vapor pressure of water at 500 kelvin within 1 percent but its liquid volume 23 percent too large.",
@@ -417,7 +417,7 @@
    },
    {
     "en": "What was the equation tuned to, and what would you check before using it to size a liquid storage tank?",
-    "th": "สมการนี้ถูกปรับให้เข้ากับอะไร และคุณจะตรวจสอบอะไรก่อนใช้มันออกแบบขนาดถังเก็บของเหลว"
+    "th": "สมการนี้ถูก fit กับอะไร และคุณจะตรวจสอบอะไรก่อนใช้มันออกแบบขนาดถังเก็บของเหลว"
    }
   ],
   "after-class": [
@@ -428,7 +428,7 @@
    },
    {
     "en": "Read the pre-class note for session P3, about twenty minutes.",
-    "th": "อ่าน pre-class note ของคาบ P3 ใช้เวลาประมาณยี่สิบนาที",
+    "th": "อ่านเอกสารก่อนเรียนของคาบ P3 ใช้เวลาประมาณยี่สิบนาที",
     "say": "Read the pre-class note for session P three, about twenty minutes."
    },
    {

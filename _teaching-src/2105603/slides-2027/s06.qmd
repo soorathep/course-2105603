@@ -10,8 +10,8 @@ title-slide-attributes:
 
 ::: {.coursemap}
 ::: {.half .done}
-[Before the midterm]{.label}
-[Equations of state]{.cm} [Fugacity and chemical potential]{.cm} [Solution thermodynamics]{.cm}
+[Before the midterm · 7 sessions]{.label}
+[P1 · Framework]{.cm} [P2 · PVT and equations of state]{.cm} [P3 · Residual properties]{.cm} [P4 · Pure-component equilibrium and fugacity]{.cm} [P5 · Mixtures]{.cm} [P6 · Excess properties and activity]{.cm} [P7 · Choosing a property model]{.cm}
 :::
 ::: {.half}
 [After the midterm · 7 sessions]{.label}

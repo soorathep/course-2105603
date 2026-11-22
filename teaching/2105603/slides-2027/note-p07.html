@@ -26,6 +26,49 @@ ul.task-list li input[type="checkbox"] {
 
 <meta name="robots" content="noindex">
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="../site_libs/katex/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="notes.css">
 </head>
@@ -79,17 +122,17 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>P4 · pure equilibrium</td>
-<td>ln φ = ∫₀<sup>P</sup>(Z − 1)dP/P; f<sup>V</sup> = f<sup>L</sup> at P<sup>sat</sup>; Poynting</td>
+<td>ln φ = ∫₀<sup>P</sup>(Z − 1)dP/P; f<sup>V</sup> = f<sup>L</sup> at P<sup>sat</sup>; <span class="math inline">f^L=\varphi^{\text{sat}}P^{\text{sat}}\mathcal{P}</span></td>
 <td>an EOS, or P<sup>sat</sup> and V<sup>L</sup></td>
 </tr>
 <tr class="odd">
 <td>P5 · mixtures</td>
 <td>M̄<sub>i</sub>; Σx<sub>i</sub>dM̄<sub>i</sub> = 0; φ̂<sub>i</sub>; f̂<sub>i</sub><sup>id</sup> = x<sub>i</sub>f<sub>i</sub></td>
-<td>B<sub>12</sub> or k<sub>ij</sub></td>
+<td>B₁₂ or k<sub>ij</sub></td>
 </tr>
 <tr class="even">
 <td>P6 · activity</td>
-<td>γ<sub>i</sub> = f̂<sub>i</sub>/(x<sub>i</sub>f<sub>i</sub>°); y<sub>i</sub>P = x<sub>i</sub>γ<sub>i</sub>P<sub>i</sub><sup>sat</sup>; H<sub>i</sub> = γ<sub>i</sub>∞f<sub>i</sub></td>
+<td>γ<sub>i</sub> = f̂<sub>i</sub>/(x<sub>i</sub>f<sub>i</sub>°); y<sub>i</sub>Φ<sub>i</sub>P = x<sub>i</sub>γ<sub>i</sub>P<sub>i</sub><sup>sat</sup>; H<sub>i</sub> = γ<sub>i</sub>∞f<sub>i</sub></td>
 <td>a G<sup>E</sup> model and a standard state</td>
 </tr>
 </tbody>
@@ -134,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td>P5</td>
 <td>Lewis–Randall for 2% CO₂ in methane at 60 bar</td>
-<td>φ̂<sub>CO₂</sub> 8% from pure CO₂; combining rules with k<sub>12</sub> = 0 are 11–37% off in B<sub>12</sub></td>
+<td>φ̂<sub>CO₂</sub> 8% from pure CO₂; combining rules with k₁₂ = 0 are 11–37% off in B₁₂</td>
 </tr>
 <tr class="even">
 <td>P6</td>
@@ -161,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Internal consistency:</strong> Gibbs–Duhem on measured γ, a balance that closes, the same H from two paths.</li>
 <li><strong>Held-out data:</strong> the same kind of measurement at conditions the fit did not use, such as 80 kPa VLE from a 60 kPa fit.</li>
 <li><strong>Independent property:</strong> a different quantity the model also predicts, such as the liquid volume from an EOS whose ω was fitted to P<sup>sat</sup>.</li>
-<li><strong>Different method:</strong> a measured B<sub>12</sub> against a combining rule; a directly measured γ∞ against a VLE fit.</li>
+<li><strong>Different method:</strong> a measured B₁₂ against a combining rule; a directly measured γ∞ against a VLE fit.</li>
 </ol>
 <p>A claim is only as strong as the highest rung it reached. An extrapolation, such as γ₁∞ beyond the most dilute measured point, reaches none. Some claims cannot be decided with the data in hand; saying so is part of the answer.</p>
 <h2 id="checking-code-you-did-not-write-line-by-line">5. Checking code you did not write line by line</h2>

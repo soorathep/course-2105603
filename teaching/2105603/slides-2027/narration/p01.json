@@ -6,7 +6,7 @@
     "start": 0.25,
     "end": 4.54,
     "en": "Welcome to session P1, the first session before the midterm.",
-    "th": "ยินดีต้อนรับสู่คาบ P1 ซึ่งเป็นคาบแรกของช่วงก่อน midterm"
+    "th": "ยินดีต้อนรับสู่คาบ P1 ซึ่งเป็นคาบแรกของช่วงก่อนสอบกลางภาค"
    },
    {
     "start": 4.89,
@@ -23,13 +23,13 @@
     "start": 0.25,
     "end": 5.18,
     "en": "The course has fourteen sessions: seven before the midterm and seven after.",
-    "th": "วิชานี้มีสิบสี่คาบ เจ็ดคาบก่อน midterm และเจ็ดคาบหลัง midterm"
+    "th": "วิชานี้มีสิบสี่คาบ เจ็ดคาบก่อนสอบกลางภาค และเจ็ดคาบหลังสอบกลางภาค"
    },
    {
     "start": 5.53,
     "end": 15.53,
     "en": "Every later session needs properties that nobody measures directly: enthalpy, entropy, Gibbs energy, chemical potential and fugacity.",
-    "th": "ทุกคาบต่อจากนี้ต้องใช้สมบัติที่ไม่มีใครวัดได้โดยตรง ได้แก่ เอนทัลปี เอนโทรปี พลังงานกิบส์ ศักย์เคมี และ fugacity"
+    "th": "ทุกคาบต่อจากนี้ต้องใช้สมบัติที่ไม่มีใครวัดได้โดยตรง ได้แก่ เอนทาลปี เอนโทรปี พลังงานกิบส์ ศักย์เคมี และ fugacity"
    },
    {
     "start": 15.88,
@@ -52,7 +52,7 @@
     "start": 4.59,
     "end": 15.04,
     "en": "Methane at 300 kelvin and 100 bar passes the valve to 20 bar. There is no heat and no work, so the enthalpy does not change.",
-    "th": "มีเทนที่ 300 เคลวิน และ 100 บาร์ ไหลผ่านวาล์วลงไปที่ 20 บาร์ ไม่มีความร้อนและไม่มีงาน เอนทัลปีจึงไม่เปลี่ยน"
+    "th": "มีเทนที่ 300 เคลวิน และ 100 บาร์ ไหลผ่านวาล์วลงไปที่ 20 บาร์ ไม่มีความร้อนและไม่มีงาน เอนทาลปีจึงไม่เปลี่ยน"
    },
    {
     "start": 15.39,
@@ -151,7 +151,7 @@
     "start": 24.96,
     "end": 36.65,
     "en": "Gibbs-Duhem says that temperature, pressure and the chemical potentials of a phase are not independent. Session 2 uses it to test measured activity coefficients.",
-    "th": "Gibbs–Duhem บอกว่าอุณหภูมิ ความดัน และศักย์เคมีของเฟสหนึ่งไม่เป็นอิสระต่อกัน คาบที่ 2 หลัง midterm ใช้สมการนี้ทดสอบสัมประสิทธิ์แอกทิวิตีที่วัดได้"
+    "th": "Gibbs–Duhem บอกว่าอุณหภูมิ ความดัน และศักย์เคมีของเฟสหนึ่งไม่เป็นอิสระต่อกัน คาบที่ 2 หลังสอบกลางภาคใช้สมการนี้ทดสอบสัมประสิทธิ์แอกทิวิตีที่วัดได้"
    }
   ]
  },
@@ -168,7 +168,7 @@
     "start": 6.85,
     "end": 14.96,
     "en": "Enthalpy uses S and P, the Helmholtz energy uses T and V, and the Gibbs energy uses T and P.",
-    "th": "เอนทัลปีใช้ S กับ P พลังงาน Helmholtz ใช้ T กับ V และพลังงานกิบส์ใช้ T กับ P"
+    "th": "เอนทาลปีใช้ S กับ P พลังงาน Helmholtz ใช้ T กับ V และพลังงานกิบส์ใช้ T กับ P"
    },
    {
     "start": 15.31,
@@ -209,7 +209,7 @@
     "start": 27.71,
     "end": 42.37,
     "en": "A single phase is stable only if the heat capacity at constant volume and the isothermal compressibility are positive. A loop of an equation of state where the compressibility is negative is unstable.",
-    "th": "เฟสเดียวจะเสถียรได้ก็ต่อเมื่อความจุความร้อนที่ปริมาตรคงที่ และ isothermal compressibility เป็นบวก ส่วนของสมการสภาวะที่ compressibility เป็นลบจึงไม่เสถียร"
+    "th": "เฟสเดียวจะเสถียรได้ก็ต่อเมื่อความจุความร้อนที่ปริมาตรคงที่ และ isothermal compressibility เป็นบวก ส่วนของสมการสถานะที่ compressibility เป็นลบจึงไม่เสถียร"
    }
   ]
  },
@@ -255,13 +255,13 @@
     "start": 5.72,
     "end": 18.93,
     "en": "To express a derivative in measurables, bring in temperature and pressure as the variables, remove entropy derivatives with Maxwell and the heat capacity, and write what remains as alpha and kappa.",
-    "th": "การเขียนอนุพันธ์ในรูปที่วัดได้ ให้ใช้อุณหภูมิและความดันเป็นตัวแปร กำจัดอนุพันธ์ของเอนโทรปีด้วย Maxwell และความจุความร้อน แล้วเขียนส่วนที่เหลือเป็น alpha และ kappa"
+    "th": "การเขียนอนุพันธ์ในรูปที่วัดได้ ให้ใช้อุณหภูมิและความดันเป็นตัวแปร กำจัดอนุพันธ์ของเอนโทรปีด้วย Maxwell และความจุความร้อน แล้วเขียนส่วนที่เหลือเป็น α และ κ"
    },
    {
     "start": 19.28,
     "end": 24.63,
     "en": "For example, the pressure derivative at constant volume is alpha over kappa.",
-    "th": "ตัวอย่างเช่น อนุพันธ์ของความดันเทียบกับอุณหภูมิที่ปริมาตรคงที่ เท่ากับ alpha หารด้วย kappa"
+    "th": "ตัวอย่างเช่น อนุพันธ์ของความดันเทียบกับอุณหภูมิที่ปริมาตรคงที่ เท่ากับ α หารด้วย κ"
    }
   ]
  },
@@ -272,13 +272,13 @@
     "start": 0.25,
     "end": 9.66,
     "en": "Three coefficients can be measured: the thermal expansion coefficient alpha, the isothermal compressibility kappa, and the heat capacity.",
-    "th": "มีสัมประสิทธิ์สามตัวที่วัดได้ คือสัมประสิทธิ์การขยายตัวทางความร้อน alpha, isothermal compressibility kappa และความจุความร้อน"
+    "th": "มีสัมประสิทธิ์สามตัวที่วัดได้ คือสัมประสิทธิ์การขยายตัวทางความร้อน α, isothermal compressibility κ และความจุความร้อน"
    },
    {
     "start": 10.01,
     "end": 17.41,
     "en": "From them, C p minus C v equals T V alpha squared over kappa. For an ideal gas it is R.",
-    "th": "จากค่าเหล่านี้ Cp ลบ Cv เท่ากับ T คูณ V คูณ alpha กำลังสอง หารด้วย kappa สำหรับแก๊สอุดมคติมีค่าเท่ากับ R"
+    "th": "จากค่าเหล่านี้ C_p ลบ C_v เท่ากับ T คูณ V คูณ α กำลังสอง หารด้วย κ สำหรับแก๊สอุดมคติมีค่าเท่ากับ R"
    },
    {
     "start": 17.76,
@@ -290,7 +290,7 @@
     "start": 27.35,
     "end": 34.62,
     "en": "So C p minus C v is 19.2 joules per mole kelvin instead of 8.3.",
-    "th": "Cp ลบ Cv จึงเท่ากับ 19.2 จูลต่อโมลต่อเคลวิน แทนที่จะเป็น 8.3"
+    "th": "C_p ลบ C_v จึงเท่ากับ 19.2 จูลต่อโมลต่อเคลวิน แทนที่จะเป็น 8.3"
    }
   ]
  },
@@ -307,13 +307,13 @@
     "start": 9.71,
     "end": 19.82,
     "en": "The brackets need only PVT data. For an ideal gas the pressure term of d H is zero, so the enthalpy depends on temperature alone.",
-    "th": "ส่วนในวงเล็บใช้แค่ข้อมูล PVT สำหรับแก๊สอุดมคติ พจน์ความดันของ dH เป็นศูนย์ เอนทัลปีจึงขึ้นกับอุณหภูมิอย่างเดียว"
+    "th": "ส่วนในวงเล็บใช้แค่ข้อมูล PVT สำหรับแก๊สอุดมคติ พจน์ความดันของ dH เป็นศูนย์ เอนทาลปีจึงขึ้นกับอุณหภูมิอย่างเดียว"
    },
    {
     "start": 20.17,
     "end": 33.59,
     "en": "The plan for P2 and P3: integrate at low pressure where the gas is ideal, then along the real isotherm with an equation of state. The second step is the residual property.",
-    "th": "แผนของ P2 และ P3 คือ อินทิเกรตที่ความดันต่ำซึ่งแก๊สเป็นอุดมคติ แล้วอินทิเกรตตาม isotherm จริงด้วยสมการสภาวะ ขั้นที่สองนี้คือ residual property"
+    "th": "แผนของ P2 และ P3 คือ อินทิเกรตที่ความดันต่ำซึ่งแก๊สเป็นอุดมคติ แล้วอินทิเกรตตาม isotherm จริงด้วยสมการสถานะ ขั้นที่สองนี้คือสมบัติ residual"
    }
   ]
  },
@@ -324,25 +324,25 @@
     "start": 0.25,
     "end": 6.05,
     "en": "At constant enthalpy, d H is zero. That gives the Joule-Thomson coefficient.",
-    "th": "ที่เอนทัลปีคงที่ dH เท่ากับศูนย์ จึงได้สัมประสิทธิ์ Joule–Thomson"
+    "th": "ที่เอนทาลปีคงที่ dH เท่ากับศูนย์ จึงได้สัมประสิทธิ์ Joule–Thomson"
    },
    {
     "start": 6.4,
     "end": 18.75,
     "en": "It equals V times T alpha minus 1, over C p. A pressure drop cools the fluid where T alpha is greater than 1, and warms it where T alpha is less than 1.",
-    "th": "มันเท่ากับ V คูณ (T alpha ลบ 1) หารด้วย Cp การลดความดันทำให้ของไหลเย็นลงเมื่อ T alpha มากกว่า 1 และอุ่นขึ้นเมื่อ T alpha น้อยกว่า 1"
+    "th": "มันเท่ากับ V คูณ (T α ลบ 1) หารด้วย C_p การลดความดันทำให้ของไหลเย็นลงเมื่อ T α มากกว่า 1 และอุ่นขึ้นเมื่อ T α น้อยกว่า 1"
    },
    {
     "start": 19.1,
     "end": 24.4,
     "en": "For an ideal gas T alpha is exactly 1, so the coefficient is zero.",
-    "th": "สำหรับแก๊สอุดมคติ T alpha เท่ากับ 1 พอดี สัมประสิทธิ์จึงเป็นศูนย์"
+    "th": "สำหรับแก๊สอุดมคติ T α เท่ากับ 1 พอดี สัมประสิทธิ์จึงเป็นศูนย์"
    },
    {
     "start": 24.75,
     "end": 35.86,
     "en": "Liquid water has T alpha of 0.077, so it warms on throttling: a 100 bar drop warms it by 2.2 kelvin.",
-    "th": "น้ำของเหลวมีค่า T alpha เท่ากับ 0.077 จึงอุ่นขึ้นเมื่อผ่านวาล์ว การลดความดัน 100 บาร์ทำให้น้ำอุ่นขึ้น 2.2 เคลวิน"
+    "th": "น้ำของเหลวมีค่า T α เท่ากับ 0.077 จึงอุ่นขึ้นเมื่อผ่านวาล์ว การลดความดัน 100 บาร์ทำให้น้ำอุ่นขึ้น 2.2 เคลวิน"
    }
   ]
  },
@@ -428,7 +428,7 @@
     "start": 0.25,
     "end": 9.59,
     "en": "Check your answer. The internal pressure is T alpha over kappa minus P, and d H d P is V times one minus T alpha.",
-    "th": "ตรวจคำตอบ internal pressure เท่ากับ T alpha หารด้วย kappa ลบ P และ dH/dP เท่ากับ V คูณ (1 ลบ T alpha)"
+    "th": "ตรวจคำตอบ internal pressure เท่ากับ T α หารด้วย κ ลบ P และ dH/dP เท่ากับ V คูณ (1 ลบ T α)"
    },
    {
     "start": 9.94,
@@ -486,7 +486,7 @@
     "start": 2.26,
     "end": 11.78,
     "en": "One: using C p minus C v equals R for a dense gas. Two: one Joule-Thomson coefficient for a large pressure drop.",
-    "th": "หนึ่ง ใช้ Cp ลบ Cv เท่ากับ R กับแก๊สความหนาแน่นสูง สอง ใช้สัมประสิทธิ์ Joule–Thomson ค่าเดียวกับการลดความดันมาก ๆ"
+    "th": "หนึ่ง ใช้ C_p ลบ C_v เท่ากับ R กับแก๊สความหนาแน่นสูง สอง ใช้สัมประสิทธิ์ Joule–Thomson ค่าเดียวกับการลดความดันมาก ๆ"
    },
    {
     "start": 12.13,
@@ -555,7 +555,7 @@
     "start": 7.36,
     "end": 20.85,
     "en": "The enthalpy balance gives 265.6 kelvin for methane and 269.2 kelvin for nitrogen. One integration step is already within about one kelvin.",
-    "th": "สมดุลเอนทัลปีให้ 265.6 เคลวินสำหรับมีเทน และ 269.2 เคลวินสำหรับไนโตรเจน การอินทิเกรตเพียงหนึ่งขั้นก็คลาดไม่เกินประมาณหนึ่งเคลวินแล้ว"
+    "th": "สมดุลเอนทาลปีให้ 265.6 เคลวินสำหรับมีเทน และ 269.2 เคลวินสำหรับไนโตรเจน การอินทิเกรตเพียงหนึ่งขั้นก็คลาดไม่เกินประมาณหนึ่งเคลวินแล้ว"
    },
    {
     "start": 21.2,
@@ -607,13 +607,13 @@
     "start": 14.05,
     "end": 26.87,
     "en": "Maxwell relations turn entropy derivatives into PVT derivatives, so alpha, kappa and C p give every property. A derivative from a table is only as good as its step.",
-    "th": "Maxwell relations เปลี่ยนอนุพันธ์ของเอนโทรปีเป็นอนุพันธ์ของ PVT ดังนั้น alpha, kappa และ Cp ให้สมบัติได้ทุกตัว และอนุพันธ์จากตารางจะดีได้เท่ากับขนาดช่วงที่เลือกใช้"
+    "th": "Maxwell relations เปลี่ยนอนุพันธ์ของเอนโทรปีเป็นอนุพันธ์ของ PVT ดังนั้น α, κ และ C_p ให้สมบัติได้ทุกตัว และอนุพันธ์จากตารางจะดีได้เท่ากับขนาดช่วงที่เลือกใช้"
    },
    {
     "start": 27.22,
     "end": 34.24,
     "en": "Next session, P2: where the PVT data come from when there is no table, the equations of state.",
-    "th": "คาบหน้า P2 ข้อมูล PVT มาจากไหนเมื่อไม่มีตาราง นั่นคือสมการสภาวะ"
+    "th": "คาบหน้า P2 ข้อมูล PVT มาจากไหนเมื่อไม่มีตาราง นั่นคือสมการสถานะ"
    }
   ]
  },
@@ -653,7 +653,7 @@
     "start": 9.77,
     "end": 13.95,
     "en": "Read the session P2 pre-class note before the next session.",
-    "th": "อ่าน pre-class note ของคาบ P2 ก่อนคาบหน้า"
+    "th": "อ่านเอกสารก่อนเรียนของคาบ P2 ก่อนคาบหน้า"
    },
    {
     "start": 14.3,

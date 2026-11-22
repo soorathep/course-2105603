@@ -6,13 +6,13 @@
     "start": 0.25,
     "end": 5.35,
     "en": "Welcome to session P2: PVT behavior and equations of state.",
-    "th": "ยินดีต้อนรับสู่คาบ P2 พฤติกรรม PVT และสมการสภาวะ"
+    "th": "ยินดีต้อนรับสู่คาบ P2 พฤติกรรม PVT และสมการสถานะ"
    },
    {
     "start": 5.7,
     "end": 9.5,
     "en": "Today we ask how wrong an equation of state is, and where.",
-    "th": "วันนี้เราจะถามว่าสมการสภาวะผิดไปมากแค่ไหน และผิดที่ตรงไหน"
+    "th": "วันนี้เราจะถามว่าสมการสถานะผิดไปมากแค่ไหน และผิดที่ตรงไหน"
    }
   ]
  },
@@ -29,7 +29,7 @@
     "start": 6.64,
     "end": 13.89,
     "en": "Most fluids and mixtures have no reference table, so the PVT data must come from an equation of state.",
-    "th": "ของไหลและของผสมส่วนใหญ่ไม่มีตารางอ้างอิง ข้อมูล PVT จึงต้องมาจากสมการสภาวะ"
+    "th": "ของไหลและของผสมส่วนใหญ่ไม่มีตารางอ้างอิง ข้อมูล PVT จึงต้องมาจากสมการสถานะ"
    },
    {
     "start": 14.24,
@@ -87,7 +87,7 @@
     "start": 12.81,
     "end": 18.04,
     "en": "Set up a cubic equation of state, solve it for Z and choose the correct root.",
-    "th": "ตั้งสมการสภาวะกำลังสาม แก้หา Z และเลือกรากที่ถูกต้อง"
+    "th": "ตั้งสมการสถานะกำลังสาม แก้หา Z และเลือกรากที่ถูกต้อง"
    },
    {
     "start": 18.39,
@@ -116,7 +116,7 @@
     "start": 14.22,
     "end": 23.61,
     "en": "The session question: when no reference table exists, which equation of state gives the PVT data, and how do we know how wrong it is?",
-    "th": "คำถามของคาบนี้คือ เมื่อไม่มีตารางอ้างอิง สมการสภาวะใดให้ข้อมูล PVT ได้ และเราจะรู้ได้อย่างไรว่ามันผิดไปมากแค่ไหน"
+    "th": "คำถามของคาบนี้คือ เมื่อไม่มีตารางอ้างอิง สมการสถานะใดให้ข้อมูล PVT ได้ และเราจะรู้ได้อย่างไรว่ามันผิดไปมากแค่ไหน"
    }
   ]
  },
@@ -133,7 +133,7 @@
     "start": 5.63,
     "end": 14.89,
     "en": "An equation of state must give Z equal to one at zero pressure, a steep liquid branch, the critical point and two phases below it.",
-    "th": "สมการสภาวะต้องให้ Z เท่ากับหนึ่งที่ความดันศูนย์ ให้กิ่งของเหลวที่ชัน ให้จุดวิกฤต และให้สองเฟสที่อุณหภูมิต่ำกว่าจุดวิกฤต"
+    "th": "สมการสถานะต้องให้ Z เท่ากับหนึ่งที่ความดันศูนย์ ให้กิ่งของเหลวที่ชัน ให้จุดวิกฤต และให้สองเฟสที่อุณหภูมิต่ำกว่าจุดวิกฤต"
    },
    {
     "start": 15.24,
@@ -173,7 +173,7 @@
    {
     "start": 28.73,
     "end": 39.57,
-    "en": "Even so, the truncated form has a mean error of 5.7 percent up to the critical density. Use it only where BP over RT is small.",
+    "en": "Even so, the truncated form has a mean error of 5.7 percent up to the critical density. Use it only where BP over R T is small.",
     "th": "ถึงอย่างนั้น รูปแบบที่ตัดเหลือสองพจน์ยังมีความคลาดเคลื่อนเฉลี่ย 5.7 เปอร์เซ็นต์จนถึงความหนาแน่นวิกฤต จึงควรใช้เฉพาะเมื่อ BP/RT มีค่าน้อย"
    }
   ]
@@ -203,7 +203,7 @@
     "start": 27.01,
     "end": 35.28,
     "en": "That function was fitted to vapor pressures of nonpolar fluids, not to densities. Remember this when we look at liquids.",
-    "th": "ฟังก์ชันนี้ถูกปรับให้เข้ากับความดันไอของของไหลไม่มีขั้ว ไม่ได้ปรับกับความหนาแน่น ให้จำข้อนี้ไว้เมื่อเราดูของเหลว"
+    "th": "ฟังก์ชันนี้ถูก fit กับความดันไอของของไหลไม่มีขั้ว ไม่ได้ fit กับความหนาแน่น ให้จำข้อนี้ไว้เมื่อเราดูของเหลว"
    }
   ]
  },
@@ -532,7 +532,7 @@
     "start": 2.26,
     "end": 12.14,
     "en": "Peng-Robinson gives the vapor pressure of water within 1 percent and its liquid volume 23 percent too large. What was alpha fitted to?",
-    "th": "Peng–Robinson ให้ความดันไอของน้ำคลาดไม่เกิน 1 เปอร์เซ็นต์ แต่ปริมาตรของเหลวมากเกินไป 23 เปอร์เซ็นต์ ฟังก์ชัน α ถูกปรับให้เข้ากับอะไร"
+    "th": "Peng–Robinson ให้ความดันไอของน้ำคลาดไม่เกิน 1 เปอร์เซ็นต์ แต่ปริมาตรของเหลวมากเกินไป 23 เปอร์เซ็นต์ ฟังก์ชัน α ถูก fit กับอะไร"
    },
    {
     "start": 12.49,
@@ -554,7 +554,7 @@
    {
     "start": 0.25,
     "end": 9.15,
-    "en": "To summarize. The virial equation is exact at low density, and its truncated form needs a small BP over RT.",
+    "en": "To summarize. The virial equation is exact at low density, and its truncated form needs a small BP over R T.",
     "th": "สรุป สมการ virial ถูกต้องที่ความหนาแน่นต่ำ และรูปแบบที่ตัดพจน์ต้องใช้เมื่อ BP/RT มีค่าน้อย"
    },
    {
@@ -573,7 +573,7 @@
     "start": 26.84,
     "end": 33.6,
     "en": "Next session, P3: from Z to enthalpy, entropy and Gibbs energy, the residual properties.",
-    "th": "คาบหน้า P3 จาก Z ไปสู่เอนทัลปี เอนโทรปี และพลังงานกิบส์ ผ่าน residual properties"
+    "th": "คาบหน้า P3 จาก Z ไปสู่เอนทาลปี เอนโทรปี และพลังงานกิบส์ ผ่านสมบัติ residual"
    }
   ]
  },
@@ -584,7 +584,7 @@
     "start": 0.25,
     "end": 2.92,
     "en": "Exit ticket, five minutes, anonymous.",
-    "th": "Exit ticket ห้านาที ไม่ระบุชื่อ"
+    "th": "exit ticket ห้านาที ไม่ระบุชื่อ"
    },
    {
     "start": 3.27,
@@ -596,7 +596,7 @@
     "start": 13.28,
     "end": 19.68,
     "en": "What was the equation tuned to, and what would you check before using it to size a liquid storage tank?",
-    "th": "สมการนี้ถูกปรับให้เข้ากับอะไร และคุณจะตรวจสอบอะไรก่อนใช้มันออกแบบขนาดถังเก็บของเหลว"
+    "th": "สมการนี้ถูก fit กับอะไร และคุณจะตรวจสอบอะไรก่อนใช้มันออกแบบขนาดถังเก็บของเหลว"
    }
   ]
  },
@@ -613,7 +613,7 @@
     "start": 6.19,
     "end": 10.54,
     "en": "Read the pre-class note for session P3, about twenty minutes.",
-    "th": "อ่าน pre-class note ของคาบ P3 ใช้เวลาประมาณยี่สิบนาที"
+    "th": "อ่านเอกสารก่อนเรียนของคาบ P3 ใช้เวลาประมาณยี่สิบนาที"
    },
    {
     "start": 10.89,

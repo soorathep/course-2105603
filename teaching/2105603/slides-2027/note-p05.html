@@ -93,31 +93,31 @@ window.Quarto = {
 <h2 id="partial-molar-properties">1. Partial molar properties</h2>
 <p>For an extensive property nM of a mixture at fixed T and P, the partial molar property of component i is</p>
 <p><span class="math display">\bar M_i=\Big(\frac{\partial(nM)}{\partial n_i}\Big)_{T,P,n_{j\neq i}}.</span></p>
-<p>Because nM is homogeneous of degree one in the amounts (Euler’s theorem), M = Σ x<sub>i</sub>M̄<sub>i</sub>. For a binary, the partial molar properties are the intercepts of the tangent to M(x<sub>1</sub>):</p>
+<p>Because nM is homogeneous of degree one in the amounts (Euler’s theorem), M = Σ x<sub>i</sub>M̄<sub>i</sub>. For a binary, the partial molar properties are the intercepts of the tangent to M(x₁):</p>
 <p><span class="math display">\bar M_1=M+x_2\frac{dM}{dx_1},\qquad\bar M_2=M-x_1\frac{dM}{dx_1}.</span></p>
 <p>The most important one is Ḡ<sub>i</sub> = μ<sub>i</sub>. A partial molar property is a derivative, not the property of one molecule: V̄ of MgSO₄ in very dilute water is negative.</p>
 <h2 id="the-gibbsduhem-equation">2. The Gibbs–Duhem equation</h2>
 <p>Differentiating M = Σ x<sub>i</sub>M̄<sub>i</sub> and comparing with dM at fixed T and P gives</p>
 <p><span class="math display">\sum_ix_i\,d\bar M_i=0\qquad(T,P\ \text{fixed}).</span></p>
-<p>The partial molar properties of a binary are therefore not independent: if one increases with x<sub>1</sub>, the other decreases. For M = G this is the relation used in Session 2 after the midterm to test measured activity coefficients.</p>
-<p><strong>Worked example.</strong> Ethanol (1) + water (2) at 298.15 K. Densities measured by Pires et al.&nbsp;(2007) give an excess volume V<sup>E</sup> = V − x<sub>1</sub>V<sub>1</sub>* − x<sub>2</sub>V<sub>2</sub>* that is negative everywhere, with a minimum near −1.1 cm³/mol. A three-term Redlich–Kister fit, V<sup>E</sup> = x<sub>1</sub>x<sub>2</sub>[A<sub>0</sub> + A<sub>1</sub>(x<sub>1</sub> − x<sub>2</sub>) + A<sub>2</sub>(x<sub>1</sub> − x<sub>2</sub>)²], gives A = −4.313, 1.136 and −1.274 cm³/mol. At x<sub>1</sub> = 0.5, V̄<sub>1</sub> = 57.88 and V̄<sub>2</sub> = 16.71 cm³/mol, against 58.68 and 18.07 for the pure liquids. Mixing 50 mL of each gives 96.6 mL.</p>
+<p>The partial molar properties of a binary are therefore not independent: if one increases with x₁, the other decreases. For M = G this is the relation used in Session 2 after the midterm to test measured activity coefficients.</p>
+<p><strong>Worked example.</strong> Ethanol (1) + water (2) at 298.15 K. Densities measured by Pires et al.&nbsp;(2007) give an excess volume V<sup>E</sup> = V − x₁V₁* − x₂V₂* that is negative everywhere, with a minimum near −1.1 cm³/mol. A three-term Redlich–Kister fit, V<sup>E</sup> = x₁x₂[A₀ + A₁(x₁ − x₂) + A₂(x₁ − x₂)²], gives A = −4.313, 1.136 and −1.274 cm³/mol. At x₁ = 0.5, V̄₁ = 57.88 and V̄₂ = 16.71 cm³/mol, against 58.68 and 18.07 for the pure liquids. Mixing 50 mL of each gives 96.6 mL.</p>
 <h2 id="the-fugacity-of-a-component">3. The fugacity of a component</h2>
 <p>Extending the definition of Session P4 to component i of a mixture at fixed T:</p>
 <p><span class="math display">d\mu_i=RT\,d\ln\hat f_i,\qquad\hat\varphi_i=\frac{\hat f_i}{y_iP},\qquad\ln\hat\varphi_i=\int_0^P\big(\bar Z_i-1\big)\frac{dP}{P}.</span></p>
 <p>ln φ̂<sub>i</sub> is the partial molar property of G<sup>R</sup>/RT. Equilibrium between phases α and β of a mixture requires f̂<sub>i</sub><sup>α</sup> = f̂<sub>i</sub><sup>β</sup> for every component.</p>
-<p>For a binary gas described by the truncated virial equation, B<sub>mix</sub> = y<sub>1</sub>²B<sub>11</sub> + 2y<sub>1</sub>y<sub>2</sub>B<sub>12</sub> + y<sub>2</sub>²B<sub>22</sub>, and</p>
+<p>For a binary gas described by the truncated virial equation, B<sub>mix</sub> = y₁²B₁₁ + 2y₁y₂B₁₂ + y₂²B₂₂, and</p>
 <p><span class="math display">\ln\hat\varphi_1=\frac{P}{RT}\big(B_{11}+y_2^2\delta_{12}\big),\qquad\delta_{12}=2B_{12}-B_{11}-B_{22}.</span></p>
-<p>The cross coefficient B<sub>12</sub> describes the interaction of one molecule of 1 with one of 2. It can be measured, or estimated with a combining rule.</p>
+<p>The cross coefficient B₁₂ describes the interaction of one molecule of 1 with one of 2. It can be measured, or estimated with a combining rule.</p>
 <h2 id="the-ideal-solution-and-the-lewisrandall-rule">4. The ideal solution and the Lewis–Randall rule</h2>
-<p>In an <strong>ideal solution</strong>, f̂<sub>i</sub> = x<sub>i</sub>f<sub>i</sub>, where f<sub>i</sub> is the fugacity of pure i at the same T and P (the Lewis–Randall rule). It follows that ΔV<sub>mix</sub> = 0, ΔH<sub>mix</sub> = 0, ΔS<sub>mix</sub> = −RΣx<sub>i</sub> ln x<sub>i</sub> and ΔG<sub>mix</sub> = RTΣx<sub>i</sub> ln x<sub>i</sub>. For a virial gas the rule is equivalent to δ<sub>12</sub> = 0. It is exact as x<sub>i</sub> → 1 and fails for a dilute component whose unlike interactions differ from its like ones. The activity coefficient of Session P6 measures that failure in a liquid.</p>
+<p>In an <strong>ideal solution</strong>, f̂<sub>i</sub> = x<sub>i</sub>f<sub>i</sub>, where f<sub>i</sub> is the fugacity of pure i at the same T and P (the Lewis–Randall rule). It follows that ΔV<sub>mix</sub> = 0, ΔH<sub>mix</sub> = 0, ΔS<sub>mix</sub> = −RΣx<sub>i</sub> ln x<sub>i</sub> and Δg<sub>mix</sub>/RT = Σx<sub>i</sub> ln x<sub>i</sub>, the form used for stability in Session P6 and Session 3 after the midterm. For a virial gas the rule is equivalent to δ₁₂ = 0. It is exact as x<sub>i</sub> → 1 and fails for a dilute component whose unlike interactions differ from its like ones. The activity coefficient of Session P6 measures that failure in a liquid.</p>
 <h2 id="mixing-rules-for-cubic-equations">5. Mixing rules for cubic equations</h2>
 <p>A cubic equation of state describes a mixture with the van der Waals one-fluid rules, a = ΣΣy<sub>i</sub>y<sub>j</sub>√(a<sub>i</sub>a<sub>j</sub>)(1 − k<sub>ij</sub>) and b = Σy<sub>i</sub>b<sub>i</sub>. The binary parameter k<sub>ij</sub> is fitted to mixture data. The same equation then gives φ̂<sub>i</sub> of every phase, the basis of the φ–φ method in Session 1 after the midterm.</p>
 <h2 id="before-session-p5">6. Before Session P5</h2>
 <p>Write short answers. We use them in the first 30 minutes.</p>
 <ol type="1">
-<li><strong>Tangent intercept.</strong> Show that, with the Redlich–Kister form above, dV<sup>E</sup>/dx<sub>1</sub> = A<sub>1</sub>/2 at x<sub>1</sub> = 0.5. Use it to check the two partial molar volumes in Section 2.</li>
-<li><strong>Gibbs–Duhem.</strong> If V̄<sub>1</sub> of ethanol increases by 0.3 cm³/mol between x<sub>1</sub> = 0.30 and 0.31, by roughly how much does V̄<sub>2</sub> change?</li>
-<li><strong>Lewis–Randall.</strong> For CO₂ (1) + methane (2) at 298.15 K, B<sub>11</sub> = −122.9, B<sub>22</sub> = −42.8 and the measured B<sub>12</sub> = −64.8 cm³/mol. Compute δ<sub>12</sub>. Will the Lewis–Randall rule give too high or too low a fugacity for dilute CO₂?</li>
+<li><strong>Tangent intercept.</strong> Show that, with the Redlich–Kister form above, dV<sup>E</sup>/dx₁ = A₁/2 at x₁ = 0.5. Use it to check the two partial molar volumes in Section 2.</li>
+<li><strong>Gibbs–Duhem.</strong> If V̄₁ of ethanol increases by 0.3 cm³/mol between x₁ = 0.30 and 0.31, by roughly how much does V̄₂ change?</li>
+<li><strong>Lewis–Randall.</strong> For CO₂ (1) + methane (2) at 298.15 K, B₁₁ = −122.9, B₂₂ = −42.8 and the measured B₁₂ = −64.8 cm³/mol. Compute δ₁₂. Will the Lewis–Randall rule give too high or too low a fugacity for dilute CO₂?</li>
 </ol>
 <h2 id="references">References</h2>
 <ul>

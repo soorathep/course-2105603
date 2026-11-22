@@ -164,7 +164,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="label">Before the midterm · 7 sessions</span> <span class="cm">P1 · Framework</span> <span class="cm">P2 · PVT and equations of state</span> <span class="cm">P3 · Residual properties</span> <span class="cm">P4 · Pure-component equilibrium and fugacity</span> <span class="cm now">P5 · Mixtures</span> <span class="cm">P6 · Excess properties and activity</span> <span class="cm">P7 · Choosing a property model</span></p>
 </div>
 <div class="half">
-<p><span class="label">After the midterm · 7 sessions</span> <span class="cm">1 · VLE and flash</span> <span class="cm">2 · Experimental VLE</span> <span class="cm">3 · Liquid stability and LLE</span> <span class="cm">4 · Solids and adsorption</span> <span class="cm">5 · Chemical equilibrium</span> <span class="cm">6 · Electrochemical equilibrium</span> <span class="cm">7 · Choosing a model from evidence</span></p>
+<p><span class="label">After the midterm · 7 sessions</span> <span class="cm">1 · VLE and flash</span> <span class="cm">2 · Experimental VLE and consistency</span> <span class="cm">3 · Liquid stability and LLE</span> <span class="cm">4 · Solids and adsorption</span> <span class="cm">5 · Chemical equilibrium</span> <span class="cm">6 · Electrochemical equilibrium</span> <span class="cm">7 · Choosing a model from evidence</span></p>
 </div>
 </div>
 <div class="bridge">
@@ -175,7 +175,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <h2>Why this matters: 50 mL + 50 mL ≠ 100 mL</h2>
 <div class="columns">
 <div class="column" style="width:56%;">
-<p><img data-src="figures/p05-ve.svg" class="fig-pxy" alt="Excess molar volume of ethanol + water at 298.15 K: nine measured points between x = 0.10 and 0.90, all negative with a minimum of −1.1 cm3/mol near x = 0.4, a three-term Redlich–Kister fit, and the tangent at x = 0.3 whose intercepts give the partial molar volumes"></p>
+<p><img data-src="figures/p05-ve.svg" class="fig-pxy" alt="Excess molar volume of ethanol + water at 298.15 K: nine measured points between x = 0.10 and 0.90, all negative with a minimum of −1.1 cm³/mol near x = 0.4, a three-term Redlich–Kister fit, and the tangent at x = 0.3 whose intercepts give the partial molar volumes"></p>
 </div><div class="column why-notes" style="width:42%;">
 <p>Mix 50 mL of ethanol with 50 mL of water at 298.15 K. The measured densities give <strong>96.6 mL</strong>.</p>
 <p>The excess volume is negative everywhere, down to −1.1 cm³/mol. A component’s contribution to a mixture is not its pure-component property.</p>
@@ -235,13 +235,13 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>For any extensive property M = nM<sub>m</sub>(T, P, x):</p>
-<p><span class="math display">\bar M_i=\Big(\frac{\partial (nM)}{\partial n_i}\Big)_{T,P,n_{j\neq i}},\qquad M=\sum_i x_i\bar M_i</span></p>
-<p>For a binary, the <strong>tangent-intercept</strong> rule:</p>
-<p><span class="math display">\bar M_1=M+x_2\frac{dM}{dx_1},\qquad \bar M_2=M-x_1\frac{dM}{dx_1}</span></p>
+<p><span class="math display">\bar M_i=\Big(\frac{\partial (nM)}{\partial n_i}\Big)_{T,P,n_{j\neq i}}</span></p>
+<p>with M = Σx<sub>i</sub>M̄<sub>i</sub>. For a binary, the <strong>tangent-intercept</strong> rule:</p>
+<p><span class="math display">\bar M_1=M+x_2\frac{dM}{dx_1},\quad \bar M_2=M-x_1\frac{dM}{dx_1}</span></p>
 <p><span class="math inline">\bar G_i = \mu_i</span>: the chemical potential is the partial molar Gibbs energy.</p>
 </div><div class="column rule-notes" style="width:48%;">
 <p>A partial molar property is a <strong>derivative</strong> of the mixture property. It is not the property of one molecule and can even be negative.</p>
-<p><span class="q">Ethanol + water, 298.15 K, x = 0.5</span> V̄<sub>ethanol</sub> = 57.88 cm³/mol (pure 58.68); V̄<sub>water</sub> = 16.71 (pure 18.07).</p>
+<p><span class="q">Ethanol + water, 298.15 K, x = 0.5:</span> V̄<sub>ethanol</sub> = 57.88 cm³/mol (pure 58.68); V̄<sub>water</sub> = 16.71 (pure 18.07).</p>
 <p>Mixing properties: ΔM = M − Σx<sub>i</sub>M<sub>i</sub>* = Σx<sub>i</sub>(M̄<sub>i</sub> − M<sub>i</sub>*). Here ΔV = V<sup>E</sup> because an ideal solution has ΔV = 0.</p>
 </div></div>
 </section>
@@ -249,7 +249,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <h2>The Gibbs–Duhem equation</h2>
 <div class="columns">
 <div class="column" style="width:54%;">
-<p><img data-src="figures/p05-vbar.svg" class="fig-pxy" alt="Partial molar volumes of ethanol and water minus their pure values against ethanol mole fraction, for 2, 3 and 5 Redlich–Kister terms. The fits agree in the middle and differ near both ends, where there are no data; the ethanol curve at x → 0 ranges from −5.6 to −6.7 cm3/mol"></p>
+<p><img data-src="figures/p05-vbar.svg" class="fig-pxy" alt="Partial molar volumes of ethanol and water minus their pure values against ethanol mole fraction, for 2, 3 and 5 Redlich–Kister terms. The fits agree in the middle and differ near both ends, where there are no data; the ethanol curve at x → 0 ranges from −5.6 to −6.7 cm³/mol"></p>
 </div><div class="column concept-notes" style="width:44%;">
 <p>At fixed T and P:</p>
 <p><span class="math display">\sum_i x_i\,d\bar M_i=0\qquad\text{(binary: } x_1d\bar M_1=-x_2d\bar M_2)</span></p>
@@ -263,8 +263,9 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Extending P4 to component i of a mixture:</p>
-<p><span class="math display">d\mu_i=RT\,d\ln\hat f_i\quad(T\text{ fixed}),\qquad \hat\varphi_i=\frac{\hat f_i}{y_iP}</span></p>
-<p><span class="math display">\ln\hat\varphi_i=\int_0^P(\bar Z_i-1)\frac{dP}{P},\qquad \bar Z_i=\frac{P\bar V_i}{RT}</span></p>
+<p><span class="math display">d\mu_i=RT\,d\ln\hat f_i\quad(T\text{ fixed})</span></p>
+<p><span class="math display">\ln\hat\varphi_i=\ln\frac{\hat f_i}{y_iP}=\int_0^P(\bar Z_i-1)\frac{dP}{P}</span></p>
+<p>with Z̄<sub>i</sub> = PV̄<sub>i</sub>/RT.</p>
 <p>Phase equilibrium of a mixture: <strong>f̂<sub>i</sub><sup>α</sup> = f̂<sub>i</sub><sup>β</sup></strong> for every component.</p>
 </div><div class="column rule-notes" style="width:48%;">
 <p>ln φ̂<sub>i</sub> is a partial molar quantity: ln φ̂<sub>i</sub> = ∂(nG<sup>R</sup>/RT)/∂n<sub>i</sub>. So Σy<sub>i</sub> ln φ̂<sub>i</sub> = G<sup>R</sup>/RT of the mixture.</p>
@@ -277,9 +278,10 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Ideal solution:</strong> each component’s fugacity is proportional to its mole fraction:</p>
-<p><span class="math display">\hat f_i^{id}=x_if_i\qquad\Rightarrow\qquad\hat\varphi_i^{id}=\varphi_i</span></p>
+<p><span class="math display">\hat f_i^{\text{id}}=x_if_i\qquad\Rightarrow\qquad\hat\varphi_i^{\text{id}}=\varphi_i</span></p>
 <p>Then ΔV<sub>mix</sub> = 0, ΔH<sub>mix</sub> = 0 and</p>
-<p><span class="math display">\Delta G_{mix}=RT\sum_ix_i\ln x_i,\quad\Delta S_{mix}=-R\sum_ix_i\ln x_i</span></p>
+<p><span class="math display">\frac{\Delta g_{\text{mix}}}{RT}=\sum_ix_i\ln x_i</span></p>
+<p><span class="math display">\frac{\Delta S_{\text{mix}}}{R}=-\sum_ix_i\ln x_i</span></p>
 </div><div class="column rule-notes" style="width:48%;">
 <p>f<sub>i</sub> is the fugacity of <strong>pure i</strong> at the T and P of the mixture. The rule f̂<sub>i</sub> = x<sub>i</sub>f<sub>i</sub> is the <strong>Lewis–Randall</strong> rule.</p>
 <p>It ignores the difference between unlike and like interactions. It is exact for mixtures of similar molecules, an ideal gas, and any component as x<sub>i</sub> → 1.</p>
@@ -287,15 +289,15 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div></div>
 </section>
 <section id="virial-mix" class="slide level2">
-<h2>Gas mixtures: the virial equation and B<sub>12</sub></h2>
+<h2>Gas mixtures: the virial equation and B₁₂</h2>
 <div class="columns">
 <div class="column" style="width:52%;">
-<p><img data-src="figures/p05-b12.svg" class="fig-pxy" alt="Cross second virial coefficients at 298.15 K for CO2 + methane, CO2 + ethane and methane + ethane: measured values −64.8, −121.8 and −92.9 cm3/mol, against the arithmetic mean, geometric mean, Pitzer–Prausnitz and Peng–Robinson rules, which are 10 to 37 percent too negative for the CO2 pairs"></p>
+<p><img data-src="figures/p05-b12.svg" class="fig-pxy" alt="Cross second virial coefficients at 298.15 K for CO2 + methane, CO2 + ethane and methane + ethane: measured values −64.8, −121.8 and −92.9 cm³/mol, against the arithmetic mean, geometric mean, Pitzer–Prausnitz and Peng–Robinson rules, which are 10 to 37 percent too negative for the CO2 pairs"></p>
 </div><div class="column concept-notes" style="width:46%;">
-<p><span class="math display">B_{mix}=\sum_i\sum_jy_iy_jB_{ij}</span></p>
+<p><span class="math display">B_{\text{mix}}=\sum_i\sum_jy_iy_jB_{ij}</span></p>
 <p><span class="math display">\ln\hat\varphi_1=\frac{P}{RT}\big(B_{11}+y_2^2\delta_{12}\big),\quad\delta_{12}=2B_{12}-B_{11}-B_{22}</span></p>
-<p>Lewis–Randall ⇔ δ<sub>12</sub> = 0 ⇔ B<sub>12</sub> = (B<sub>11</sub> + B<sub>22</sub>)/2.</p>
-<p><span class="q">Measured, 298.15 K</span> CO₂ + methane: B<sub>12</sub> = −64.8 against the mean −82.8, so δ<sub>12</sub> = +36.1 cm³/mol.</p>
+<p>Lewis–Randall ⇔ δ₁₂ = 0 ⇔ B₁₂ = (B₁₁ + B₂₂)/2.</p>
+<p><span class="q">Measured, 298.15 K</span> CO₂ + methane: B₁₂ = −64.8 against the mean −82.8, so δ₁₂ = +36.1 cm³/mol.</p>
 </div></div>
 </section>
 <section id="cubic-mix" class="slide level2">
@@ -305,7 +307,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:52%;">
 <div class="lever-box">
-<p><span class="label">k<sub>12</sub> that reproduces the measured B<sub>12</sub></span></p>
+<p><span class="label">k₁₂ that reproduces the measured B₁₂</span></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -335,7 +337,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div>
 </div><div class="column rule-notes" style="width:46%;">
 <p>k<sub>ij</sub> corrects the geometric mean for unlike attraction. One number per pair, usually fitted to mixture data.</p>
-<p>PR’s pure B are too negative (P2), so the k<sub>12</sub> that matches B<sub>12</sub> must also correct them. A k<sub>12</sub> fitted to B<sub>12</sub> is not the k<sub>12</sub> fitted to VLE.</p>
+<p>PR’s pure B are too negative (P2), so the k₁₂ that matches B₁₂ must also correct them. A k₁₂ fitted to B₁₂ is not the k₁₂ fitted to VLE.</p>
 </div></div>
 </section>
 <section id="lr-fails" class="slide level2">
@@ -344,9 +346,9 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="column" style="width:54%;">
 <p><img data-src="figures/p05-phi.svg" class="fig-pxy" alt="Fugacity coefficient of CO2 in methane at 298.15 K and 30 bar against CO2 mole fraction: with the measured B12 it falls from 0.90 to 0.86; Lewis–Randall is constant at 0.862; Pitzer–Prausnitz lies between; Peng–Robinson with k12 = 0 is lowest"></p>
 </div><div class="column concept-notes" style="width:44%;">
-<p>The error of Lewis–Randall is (P/RT)y<sub>2</sub>²δ<sub>12</sub> in ln φ̂<sub>1</sub>: largest for a <strong>dilute</strong> component at <strong>high pressure</strong>.</p>
+<p>The error of Lewis–Randall is (P/RT)y₂²δ₁₂ in ln φ̂₁: largest for a <strong>dilute</strong> component at <strong>high pressure</strong>.</p>
 <p><span class="q">2% CO₂ in methane, 298.15 K</span> Lewis–Randall is 4.1% low at 30 bar and 8.0% low at 60 bar.</p>
-<p>At y<sub>1</sub> → 1 every model meets pure CO₂. Combining rules with k<sub>12</sub> = 0 inherit the error of the mean.</p>
+<p>At y₁ → 1 every model meets pure CO₂. Combining rules with k₁₂ = 0 inherit the error of the mean.</p>
 </div></div>
 </section>
 <section id="activity-1" class="slide level2 activity">
@@ -354,7 +356,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="act-label">Activity 1 · 10 minutes · alone, then with a partner</span></p>
 <div class="prompt">
 <ol type="a">
-<li>Ethanol (1) + water (2), 298.15 K: V<sup>E</sup> = x<sub>1</sub>x<sub>2</sub>[A<sub>0</sub> + A<sub>1</sub>(x<sub>1</sub> − x<sub>2</sub>) + A<sub>2</sub>(x<sub>1</sub> − x<sub>2</sub>)²] with A = −4.313, 1.136, −1.274 cm³/mol. At x<sub>1</sub> = 0.5 compute V<sup>E</sup>, dV<sup>E</sup>/dx<sub>1</sub>, and V̄<sub>i</sub> − V<sub>i</sub>*. (b) 5% CO₂ in methane at 298.15 K and 30 bar: B<sub>11</sub> = −122.9, B<sub>22</sub> = −42.8, B<sub>12</sub> = −64.8 cm³/mol. Compute δ<sub>12</sub>, φ̂<sub>CO₂</sub> and the Lewis–Randall value.</li>
+<li>Ethanol (1) + water (2), 298.15 K: V<sup>E</sup> = x₁x₂[A₀ + A₁(x₁ − x₂) + A₂(x₁ − x₂)²] with A = −4.313, 1.136, −1.274 cm³/mol. At x₁ = 0.5 compute V<sup>E</sup>, dV<sup>E</sup>/dx₁, and V̄<sub>i</sub> − V<sub>i</sub>*. (b) 5% CO₂ in methane at 298.15 K and 30 bar: B₁₁ = −122.9, B₂₂ = −42.8, B₁₂ = −64.8 cm³/mol. Compute δ₁₂, φ̂<sub>CO₂</sub> and the Lewis–Randall value.</li>
 </ol>
 </div>
 <div class="selfstudy">
@@ -366,19 +368,19 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:50%;">
 <ol type="a">
-<li>At x<sub>1</sub> = 0.5, x<sub>1</sub> − x<sub>2</sub> = 0:</li>
+<li>At x₁ = 0.5, x₁ − x₂ = 0:</li>
 </ol>
-<p>V<sup>E</sup> = 0.25 A<sub>0</sub> = <strong>−1.078 cm³/mol</strong></p>
-<p>dV<sup>E</sup>/dx<sub>1</sub> = 0.25 × 2A<sub>1</sub> = <strong>0.568</strong></p>
-<p>V̄<sub>1</sub> − V<sub>1</sub>* = V<sup>E</sup> + x<sub>2</sub>dV<sup>E</sup>/dx<sub>1</sub> = <strong>−0.794</strong></p>
-<p>V̄<sub>2</sub> − V<sub>2</sub>* = V<sup>E</sup> − x<sub>1</sub>dV<sup>E</sup>/dx<sub>1</sub> = <strong>−1.362</strong></p>
+<p>V<sup>E</sup> = 0.25 A₀ = <strong>−1.078 cm³/mol</strong></p>
+<p>dV<sup>E</sup>/dx₁ = 0.25 × 2A₁ = <strong>0.568</strong></p>
+<p>V̄₁ − V₁* = V<sup>E</sup> + x₂dV<sup>E</sup>/dx₁ = <strong>−0.794</strong></p>
+<p>V̄₂ − V₂* = V<sup>E</sup> − x₁dV<sup>E</sup>/dx₁ = <strong>−1.362</strong></p>
 </div><div class="column" style="width:48%;">
 <div class="lever-box">
 <p><span class="label">(b) CO₂ in methane, 30 bar</span></p>
-<p>δ<sub>12</sub> = 2(−64.8) + 122.9 + 42.8 = <strong>+36.1 cm³/mol</strong></p>
+<p>δ₁₂ = 2(−64.8) + 122.9 + 42.8 = <strong>+36.1 cm³/mol</strong></p>
 <p>P/RT = 1.210 × 10⁻³ mol/cm³</p>
-<p>ln φ̂<sub>1</sub> = 1.210 × 10⁻³ × (−122.9 + 0.9025 × 36.1) = −0.1093</p>
-<p>φ̂<sub>1</sub> = <strong>0.896</strong>; Lewis–Randall exp(B<sub>11</sub>P/RT) = <strong>0.862</strong></p>
+<p>ln φ̂₁ = 1.210 × 10⁻³ × (−122.9 + 0.9025 × 36.1) = −0.1093</p>
+<p>φ̂₁ = <strong>0.896</strong>; Lewis–Randall exp(B₁₁P/RT) = <strong>0.862</strong></p>
 </div>
 </div></div>
 </section>
@@ -389,7 +391,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <ol type="1">
 <li><strong>Ethanol + water</strong>, three terms. Read the residuals and the partial molar volumes at x = 0.5.</li>
 <li>Change to 2 and 5 terms. Watch V̄<sup>∞</sup> and V̄ at x = 0.5.</li>
-<li><strong>CO₂ + methane</strong>, 30 bar, y₁ = 0.05. Compare the measured-B<sub>12</sub> row with Lewis–Randall and PR.</li>
+<li><strong>CO₂ + methane</strong>, 30 bar, y₁ = 0.05. Compare the measured-B₁₂ row with Lewis–Randall and PR.</li>
 <li>Graduate view, <strong>B</strong>: the three pairs against the combining rules.</li>
 </ol>
 <p><a href="../preview-2027/mixture.html?mode=graduate" class="lab-button" target="_blank">Open Lab P5 in the Graduate view →</a></p>
@@ -410,10 +412,10 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><strong>Reporting V̄<sup>∞</sup> from a fit as data.</strong> The densities end at x = 0.095. Across 2–5 terms V̄<sup>∞</sup> moves by 1.1 cm³/mol.</p>
 </div>
 <div>
-<p><strong>Lewis–Randall for a dilute gas component.</strong> For 2% CO₂ in methane at 60 bar it is 8% low. It needs δ<sub>12</sub>P/RT ≪ 1.</p>
+<p><strong>Lewis–Randall for a dilute gas component.</strong> For 2% CO₂ in methane at 60 bar it is 8% low. It needs δ₁₂P/RT ≪ 1.</p>
 </div>
 <div>
-<p><strong>Using a k<sub>ij</sub> outside the data it was fitted to.</strong> PR needs k<sub>12</sub> ≈ 0.2 to match B<sub>12</sub> of CO₂ + methane; that value is not a VLE parameter.</p>
+<p><strong>Using a k<sub>ij</sub> outside the data it was fitted to.</strong> PR needs k₁₂ ≈ 0.2 to match B₁₂ of CO₂ + methane; that value is not a VLE parameter.</p>
 </div>
 </div>
 </section>
@@ -425,17 +427,17 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div>
 </section>
 <section id="activity-2" class="slide level2 activity">
-<h2>Activity 2 · fit order, B<sub>12</sub> and Lewis–Randall</h2>
+<h2>Activity 2 · fit order, B₁₂ and Lewis–Randall</h2>
 <p><span class="act-label">Activity 2 · 70 minutes · in pairs: one drives Lab P5, one checks by hand, then swap</span></p>
 <div class="a2grid">
 <div>
 <p><span class="label">20 min · partial molar volumes</span> Lab P5 A: fits with 1–5 terms. Which numbers are fixed by the data, and which by the form of the fit?</p>
 </div>
 <div>
-<p><span class="label">15 min · cross coefficients</span> Lab P5 B: the three pairs against four rules. Find the k<sub>12</sub> each pair needs, and explain the pattern for CO₂.</p>
+<p><span class="label">15 min · cross coefficients</span> Lab P5 B: the three pairs against four rules. Find the k₁₂ each pair needs, and explain the pattern for CO₂.</p>
 </div>
 <div>
-<p><span class="label">20 min · component fugacity</span> Lab P5 C for CO₂ + methane: where is Lewis–Randall within 1%? Repeat with your k<sub>12</sub> in PR.</p>
+<p><span class="label">20 min · component fugacity</span> Lab P5 C for CO₂ + methane: where is Lewis–Randall within 1%? Repeat with your k₁₂ in PR.</p>
 </div>
 <div>
 <p><span class="label">15 min · explain</span> Two sentences with numbers answering the session question. Download the study file with your names and IDs.</p>
@@ -494,7 +496,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </tr>
 </tbody>
 </table>
-<p>B<sub>12</sub> rules with k<sub>12</sub> = 0: 11–37% too negative for the CO₂ pairs; Pitzer–Prausnitz within 2% for methane + ethane.</p>
+<p>B₁₂ rules with k₁₂ = 0: 11–37% too negative for the CO₂ pairs; Pitzer–Prausnitz within 2% for methane + ethane.</p>
 </div>
 </div></div>
 </section>
@@ -507,7 +509,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="q">Discuss in pairs, then with the class. On your own: write two or three sentences for each question.</span></p>
 <ol type="1">
 <li>Why do the fits agree on V̄ at x = 0.5 but not at infinite dilution? What would you measure?</li>
-<li>CO₂ + hydrocarbon pairs need k<sub>12</sub> &gt; 0, methane + ethane does not. What does that say about unlike interactions?</li>
+<li>CO₂ + hydrocarbon pairs need k₁₂ &gt; 0, methane + ethane does not. What does that say about unlike interactions?</li>
 <li>Where in a natural-gas plant would the Lewis–Randall rule be unsafe?</li>
 </ol>
 </div></div>
@@ -519,10 +521,10 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="label">Partial molar</span> M̄<sub>i</sub> = ∂(nM)/∂n<sub>i</sub>; M = Σx<sub>i</sub>M̄<sub>i</sub>; tangent-intercept; Σx<sub>i</sub>dM̄<sub>i</sub> = 0. μ<sub>i</sub> = Ḡ<sub>i</sub>.</p>
 </div>
 <div>
-<p><span class="label">Component fugacity</span> dμ<sub>i</sub> = RT d ln f̂<sub>i</sub>; φ̂<sub>i</sub> = f̂<sub>i</sub>/(y<sub>i</sub>P). Virial: one cross coefficient B<sub>12</sub>. Cubics: mixing rules with k<sub>ij</sub>.</p>
+<p><span class="label">Component fugacity</span> dμ<sub>i</sub> = RT d ln f̂<sub>i</sub>; φ̂<sub>i</sub> = f̂<sub>i</sub>/(y<sub>i</sub>P). Virial: one cross coefficient B₁₂. Cubics: mixing rules with k<sub>ij</sub>.</p>
 </div>
 <div>
-<p><span class="label">Reference</span> Ideal solution: f̂<sub>i</sub> = x<sub>i</sub>f<sub>i</sub> (Lewis–Randall). Fails for a dilute component with δ<sub>12</sub>P/RT not small: 4–8% for CO₂ in methane.</p>
+<p><span class="label">Reference</span> Ideal solution: f̂<sub>i</sub> = x<sub>i</sub>f<sub>i</sub> (Lewis–Randall). Fails for a dilute component with δ₁₂P/RT not small: 4–8% for CO₂ in methane.</p>
 </div>
 </div>
 <p><strong>Session question:</strong> a component contributes its partial molar property, which differs from the pure value whenever unlike interactions differ from like ones. Ethanol + water contract by 3.4%; for 2% CO₂ in methane at 60 bar the Lewis–Randall φ̂ is 8% low.</p>
@@ -534,7 +536,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:64%;">
 <div class="prompt">
-<p>For CO₂ + methane, B<sub>12</sub> = −64.8 cm³/mol while (B<sub>11</sub> + B<sub>22</sub>)/2 = −82.8 cm³/mol. Will the Lewis–Randall rule overestimate or underestimate the fugacity of dilute CO₂, and why does the error grow with pressure?</p>
+<p>For CO₂ + methane, B₁₂ = −64.8 cm³/mol while (B₁₁ + B₂₂)/2 = −82.8 cm³/mol. Will the Lewis–Randall rule overestimate or underestimate the fugacity of dilute CO₂, and why does the error grow with pressure?</p>
 </div>
 <p>Scan the code or open the link. The same form asks three short questions about today: pace, confidence and whether the lab worked.</p>
 <p>No name or student ID is recorded. Wait for <strong>“Response received.”</strong></p>

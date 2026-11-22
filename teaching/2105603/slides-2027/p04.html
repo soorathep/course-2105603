@@ -164,7 +164,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="label">Before the midterm · 7 sessions</span> <span class="cm">P1 · Framework</span> <span class="cm">P2 · PVT and equations of state</span> <span class="cm">P3 · Residual properties</span> <span class="cm now">P4 · Pure-component equilibrium and fugacity</span> <span class="cm">P5 · Mixtures</span> <span class="cm">P6 · Excess properties and activity</span> <span class="cm">P7 · Choosing a property model</span></p>
 </div>
 <div class="half">
-<p><span class="label">After the midterm · 7 sessions</span> <span class="cm">1 · VLE and flash</span> <span class="cm">2 · Experimental VLE</span> <span class="cm">3 · Liquid stability and LLE</span> <span class="cm">4 · Solids and adsorption</span> <span class="cm">5 · Chemical equilibrium</span> <span class="cm">6 · Electrochemical equilibrium</span> <span class="cm">7 · Choosing a model from evidence</span></p>
+<p><span class="label">After the midterm · 7 sessions</span> <span class="cm">1 · VLE and flash</span> <span class="cm">2 · Experimental VLE and consistency</span> <span class="cm">3 · Liquid stability and LLE</span> <span class="cm">4 · Solids and adsorption</span> <span class="cm">5 · Chemical equilibrium</span> <span class="cm">6 · Electrochemical equilibrium</span> <span class="cm">7 · Choosing a model from evidence</span></p>
 </div>
 </div>
 <div class="bridge">
@@ -210,7 +210,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="t">60–70</span> <strong>Break</strong></p>
 </div>
 <div class="seg act" style="flex:70">
-<p><span class="t">70–140</span> <strong>Activity 2 · pair investigation</strong> <span class="d">vapor pressure, ΔH<sub>vap</sub>, liquids</span></p>
+<p><span class="t">70–140</span> <strong>Activity 2 · pair investigation</strong> <span class="d">vapor pressure, Δ<sub>vap</sub>H, liquids</span></p>
 </div>
 <div class="seg wrap" style="flex:40">
 <p><span class="t">140–180</span> <strong>Discussion and exit ticket</strong> <span class="d">answer the session question</span></p>
@@ -236,8 +236,9 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>For an ideal gas at fixed T, dμ = RT d ln P. For any fluid, <strong>define</strong> f by</p>
-<p><span class="math display">d\mu=RT\,d\ln f\quad(T\text{ fixed}),\qquad \lim_{P\to0}\frac{f}{P}=1</span></p>
-<p><span class="math display">\varphi=\frac{f}{P},\qquad \ln\varphi=\frac{G^R}{RT}=\int_0^P(Z-1)\frac{dP}{P}</span></p>
+<p><span class="math display">d\mu=RT\,d\ln f\quad(T\text{ fixed})</span></p>
+<p>with f/P → 1 as P → 0. The fugacity coefficient φ = f/P:</p>
+<p><span class="math display">\ln\varphi=\frac{G^R}{RT}=\int_0^P(Z-1)\frac{dP}{P}</span></p>
 <p>f has units of pressure. For a pure fluid ln φ is the G<sup>R</sup>/RT of P3.</p>
 </div><div class="column" style="width:48%;">
 <div class="lever-box">
@@ -355,7 +356,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div><div class="column rule-notes" style="width:48%;">
 <p>SRK and PR fitted m(ω) to vapor pressures, and ω itself is defined at T<sub>r</sub> = 0.7. SRK is within 0.1% there for every fluid.</p>
 <p>Van der Waals keeps a constant: its attraction does not grow as T falls, so the liquid is too unstable and P<sup>sat</sup> far too high.</p>
-<p>A good P<sup>sat</sup> tests the fit. The liquid volume (P2) and ΔH<sub>vap</sub> (next slide) are independent tests.</p>
+<p>A good P<sup>sat</sup> tests the fit. The liquid volume (P2) and Δ<sub>vap</sub>H (next slide) are independent tests.</p>
 </div></div>
 </section>
 <section id="clapeyron" class="slide level2">
@@ -363,9 +364,9 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:48%;">
 <p>Along the coexistence curve dμ<sup>L</sup> = dμ<sup>V</sup>, so</p>
-<p><span class="math display">\frac{dP^{sat}}{dT}=\frac{\Delta H_{vap}}{T\,\Delta V}\quad\text{(exact)}</span></p>
+<p><span class="math display">\frac{dP^{\text{sat}}}{dT}=\frac{\Delta_{\text{vap}}H}{T\,\Delta V}\quad\text{(exact)}</span></p>
 <p>With V<sup>L</sup> ≪ V<sup>V</sup> = RT/P (ideal vapor), Clausius–Clapeyron:</p>
-<p><span class="math display">\frac{d\ln P^{sat}}{dT}\approx\frac{\Delta H_{vap}}{RT^2}</span></p>
+<p><span class="math display">\frac{d\ln P^{\text{sat}}}{dT}\approx\frac{\Delta_{\text{vap}}H}{RT^2}</span></p>
 </div><div class="column" style="width:50%;">
 <p><img data-src="figures/p04-dh.svg" class="fig-pxy" alt="Enthalpy of vaporization of propane from 210 K to the critical point: NIST falls from 19.6 to 0 kJ/mol; Peng–Robinson follows within a few percent; Clausius–Clapeyron stays near 19 kJ/mol and is more than twice the true value near the critical point"></p>
 <p><span class="howto">Clausius–Clapeyron error for propane: +3% at T<sub>r</sub> = 0.6, +16% at 0.75, +40% at 0.85, +122% at 0.95. Clapeyron with the NIST ΔV: within 0.01%.</span></p>
@@ -388,9 +389,10 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Integrate (∂ ln f/∂P)<sub>T</sub> = V<sup>L</sup>/RT from saturation:</p>
-<p><span class="math display">f^L(P)=\varphi^{sat}P^{sat}\exp\int_{P^{sat}}^{P}\frac{V^L}{RT}dP</span></p>
-<p><span class="math display">f^L(P)\approx\varphi^{sat}P^{sat}\exp\frac{V^L(P-P^{sat})}{RT}</span></p>
-<p>The exponential is the <strong>Poynting factor</strong>. For P − P<sup>sat</sup> = 1 bar at 300 K it is 1.0007 for water (18 cm³/mol) and 1.004 for a liquid of 100 cm³/mol.</p>
+<p><span class="math display">f^L(P)=\varphi^{\text{sat}}P^{\text{sat}}\,\mathcal{P}</span></p>
+<p><span class="math display">\mathcal{P}=\exp\int_{P^{\text{sat}}}^{P}\frac{V^L}{RT}dP</span></p>
+<p><span class="math display">\mathcal{P}\approx\exp\frac{V^L(P-P^{\text{sat}})}{RT}</span></p>
+<p><span class="math inline">\mathcal{P}</span> is the <strong>Poynting factor</strong>; Session 1 after the midterm writes it <span class="math inline">\mathcal{P}_i</span>. For P − P<sup>sat</sup> = 1 bar at 300 K it is 1.0007 for water (18 cm³/mol) and 1.004 for a liquid of 100 cm³/mol.</p>
 </div><div class="column" style="width:48%;">
 <div class="lever-box">
 <p><span class="label">Constant-V<sup>L</sup> Poynting against NIST</span></p>
@@ -445,16 +447,16 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Below the melting point T<sub>m</sub> the stable phase is the solid. Neglecting ΔC<sub>p</sub>:</p>
-<p><span class="math display">\ln\frac{f_s}{f_l}=-\frac{\Delta H_{fus}}{R}\Big(\frac{1}{T}-\frac{1}{T_m}\Big)</span></p>
+<p><span class="math display">\ln\frac{f^{\text{s}}}{f^{\text{l}}}=-\frac{\Delta_{\text{fus}}H}{R}\Big(\frac{1}{T}-\frac{1}{T_m}\Big)</span></p>
 <p>f<sub>l</sub> is the fugacity of the <strong>subcooled liquid</strong>, a metastable reference state. Session 4 after the midterm uses this for solubility and freezing.</p>
 </div><div class="column" style="width:48%;">
 <div class="lever-box">
-<p><span class="label">Ice against supercooled water, ΔH<sub>fus</sub> = 6.01 kJ/mol</span></p>
+<p><span class="label">Ice against supercooled water, Δ<sub>fus</sub>H = 6.01 kJ/mol</span></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: right;">T / K</th>
-<th style="text-align: right;">f<sub>s</sub>/f<sub>l</sub> measured</th>
+<th style="text-align: right;">f<sup>s</sup>/f<sup>l</sup> measured</th>
 <th style="text-align: right;">equation</th>
 <th style="text-align: right;">error</th>
 </tr>
@@ -528,7 +530,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:44%;">
 <ol type="1">
-<li><strong>CO₂, 280 K.</strong> Read the vapor pressure, volumes and ΔH<sub>vap</sub> of the three cubics.</li>
+<li><strong>CO₂, 280 K.</strong> Read the vapor pressure, volumes and Δ<sub>vap</sub>H of the three cubics.</li>
 <li>Paper check: the two ln φ values at the equation’s P<sup>sat</sup>.</li>
 <li>Fugacity view: the bend at 41.6 bar and the Poynting curve.</li>
 <li><strong>Propane at 200 K</strong> with van der Waals. Graduate view, <strong>A</strong>: the whole curve.</li>
@@ -537,7 +539,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div><div class="column" style="width:54%;">
 <p><img data-src="figures/p04-labp4.png" class="lab-shot" alt="Lab P4 saturation table for CO2 at 280 K: vapor pressure, liquid and vapor volumes, fugacity coefficient and enthalpy of vaporization from NIST, van der Waals, SRK and Peng–Robinson"></p>
 <div class="expect">
-<p><span class="label">Lab P4 should report</span> CO₂, 280 K: NIST 41.607 bar · PR 41.584 bar, V<sup>L</sup> 51.67 cm³/mol, φ<sup>sat</sup> 0.7365, ΔH<sub>vap</sub> 9156 J/mol (NIST 9182) · vdW 52.55 bar</p>
+<p><span class="label">Lab P4 should report</span> CO₂, 280 K: NIST 41.607 bar · PR 41.584 bar, V<sup>L</sup> 51.67 cm³/mol, φ<sup>sat</sup> 0.7365, Δ<sub>vap</sub>H 9156 J/mol (NIST 9182) · vdW 52.55 bar</p>
 </div>
 </div></div>
 </section>
@@ -551,7 +553,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><strong>φ<sup>sat</sup> = 1 at high pressure.</strong> For CO₂ at 280 K φ<sup>sat</sup> = 0.748. Setting it to 1 makes f<sup>sat</sup> 34% too high before any Poynting factor.</p>
 </div>
 <div>
-<p><strong>Clausius–Clapeyron near T<sub>c</sub>.</strong> It assumes an ideal vapor and negligible V<sup>L</sup>. For propane at T<sub>r</sub> = 0.95 it doubles ΔH<sub>vap</sub>. Use Clapeyron with ΔV.</p>
+<p><strong>Clausius–Clapeyron near T<sub>c</sub>.</strong> It assumes an ideal vapor and negligible V<sup>L</sup>. For propane at T<sub>r</sub> = 0.95 it doubles Δ<sub>vap</sub>H. Use Clapeyron with ΔV.</p>
 </div>
 <div>
 <p><strong>Poynting with P in place of P − P<sup>sat</sup>.</strong> The exponent starts at saturation. A constant V<sup>L</sup> fails for a compressible liquid near T<sub>c</sub>.</p>
@@ -566,14 +568,14 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div>
 </section>
 <section id="activity-2" class="slide level2 activity">
-<h2>Activity 2 · vapor pressure, ΔH<sub>vap</sub> and condensed phases</h2>
+<h2>Activity 2 · vapor pressure, Δ<sub>vap</sub>H and condensed phases</h2>
 <p><span class="act-label">Activity 2 · 70 minutes · in pairs: one drives Lab P4, one checks by hand, then swap</span></p>
 <div class="a2grid">
 <div>
 <p><span class="label">20 min · the vapor pressure</span> Four fluids with three cubics at their starting temperatures, then Lab P4 A: the whole curve. Where is each equation worst?</p>
 </div>
 <div>
-<p><span class="label">15 min · ΔH<sub>vap</sub></span> Lab P4 B: Clapeyron, Clausius–Clapeyron and the PR residuals against NIST. At what T<sub>r</sub> does Clausius–Clapeyron pass 10% error?</p>
+<p><span class="label">15 min · Δ<sub>vap</sub>H</span> Lab P4 B: Clapeyron, Clausius–Clapeyron and the PR residuals against NIST. At what T<sub>r</sub> does Clausius–Clapeyron pass 10% error?</p>
 </div>
 <div>
 <p><span class="label">20 min · liquids and solids</span> The fugacity view on the three isotherms, then Lab P4 C: Poynting and the ice/supercooled-water ratio.</p>
@@ -613,7 +615,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <th style="text-align: right;">NIST P<sup>sat</sup></th>
 <th style="text-align: right;">PR P<sup>sat</sup></th>
 <th style="text-align: right;">PR V<sup>L</sup></th>
-<th style="text-align: right;">PR ΔH<sub>vap</sub></th>
+<th style="text-align: right;">PR Δ<sub>vap</sub>H</th>
 </tr>
 </thead>
 <tbody>
@@ -675,10 +677,10 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="label">Vapor pressure</span> A cubic’s P<sup>sat</sup> is the crossing of ln φ of its two roots, between the spinodals. PR and SRK: within 1–6%; van der Waals: tens to hundreds of percent.</p>
 </div>
 <div>
-<p><span class="label">Condensed phases</span> f<sup>L</sup> = φ<sup>sat</sup>P<sup>sat</sup> × Poynting. A solid: f<sub>s</sub>/f<sub>l</sub> from ΔH<sub>fus</sub>. Clapeyron is exact; Clausius–Clapeyron only far from T<sub>c</sub>.</p>
+<p><span class="label">Condensed phases</span> f<sup>L</sup> = φ<sup>sat</sup>P<sup>sat</sup> × Poynting. A solid: f<sup>s</sup>/f<sup>l</sup> from Δ<sub>fus</sub>H. Clapeyron is exact; Clausius–Clapeyron only far from T<sub>c</sub>.</p>
 </div>
 </div>
-<p><strong>Session question:</strong> coexistence requires equal fugacity. PR reproduces the vapor pressures to about 1% because it was fitted to them; ΔH<sub>vap</sub> to 1–5% and the liquid volume to 4–23% test it independently.</p>
+<p><strong>Session question:</strong> coexistence requires equal fugacity. PR reproduces the vapor pressures to about 1% because it was fitted to them; Δ<sub>vap</sub>H to 1–5% and the liquid volume to 4–23% test it independently.</p>
 <p><span class="label">Next session</span> P5: mixtures, partial molar properties and the fugacity of a component in a mixture.</p>
 </section>
 <section id="exit-ticket" class="slide level2 activity">

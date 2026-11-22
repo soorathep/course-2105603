@@ -6,13 +6,13 @@
     "start": 0.25,
     "end": 3.75,
     "en": "Welcome to session P3: residual properties.",
-    "th": "ยินดีต้อนรับสู่คาบ P3 residual properties"
+    "th": "ยินดีต้อนรับสู่คาบ P3 สมบัติ residual"
    },
    {
     "start": 4.1,
     "end": 8.51,
     "en": "Today we go from Z to enthalpy, entropy and Gibbs energy.",
-    "th": "วันนี้เราจะไปจาก Z สู่เอนทัลปี เอนโทรปี และพลังงานกิบส์"
+    "th": "วันนี้เราจะไปจาก Z สู่เอนทาลปี เอนโทรปี และพลังงานกิบส์"
    }
   ]
  },
@@ -23,19 +23,19 @@
     "start": 0.25,
     "end": 4.52,
     "en": "Session P2 gave Z from an equation of state, with its error.",
-    "th": "คาบ P2 ให้ค่า Z จากสมการสภาวะ พร้อมความคลาดเคลื่อน"
+    "th": "คาบ P2 ให้ค่า Z จากสมการสถานะ พร้อมความคลาดเคลื่อน"
    },
    {
     "start": 4.87,
     "end": 14.89,
     "en": "An energy balance needs enthalpy and entropy. Today we compute the residual properties, which carry the real-fluid part of every change.",
-    "th": "แต่สมดุลพลังงานต้องใช้เอนทัลปีและเอนโทรปี วันนี้เราจะคำนวณ residual properties ซึ่งเป็นส่วนของของไหลจริงในทุกการเปลี่ยนแปลง"
+    "th": "แต่สมดุลพลังงานต้องใช้เอนทาลปีและเอนโทรปี วันนี้เราจะคำนวณสมบัติ residual ซึ่งเป็นส่วนของของไหลจริงในทุกการเปลี่ยนแปลง"
    },
    {
     "start": 15.24,
     "end": 20.17,
     "en": "The residual Gibbs energy becomes the fugacity in session P4.",
-    "th": "residual Gibbs energy จะกลายเป็น fugacity ในคาบ P4"
+    "th": "G^R จะกลายเป็น fugacity ในคาบ P4"
    }
   ]
  },
@@ -58,7 +58,7 @@
     "start": 20.79,
     "end": 28.94,
     "en": "Peng-Robinson gives 2851. The difference from the ideal gas is two residual enthalpies.",
-    "th": "Peng–Robinson ให้ 2851 ความต่างจากแก๊สอุดมคติคือ residual enthalpy สองค่า"
+    "th": "Peng–Robinson ให้ 2851 ความต่างจากแก๊สอุดมคติคือ H^R สองค่า"
    }
   ]
  },
@@ -75,7 +75,7 @@
     "start": 3.46,
     "end": 11.59,
     "en": "Define the residual properties, and write any change of H or S as an ideal-gas change plus two residuals.",
-    "th": "นิยาม residual properties และเขียนการเปลี่ยนแปลงของ H หรือ S เป็นการเปลี่ยนแปลงของแก๊สอุดมคติบวกกับ residual สองค่า"
+    "th": "นิยามสมบัติ residual และเขียนการเปลี่ยนแปลงของ H หรือ S เป็นการเปลี่ยนแปลงของแก๊สอุดมคติบวกกับ residual สองค่า"
    },
    {
     "start": 11.94,
@@ -110,7 +110,7 @@
     "start": 14.39,
     "end": 27.3,
     "en": "The session question: how do we get the enthalpy and entropy changes of a real fluid from an equation of state, and how much does the choice of equation change a process energy balance?",
-    "th": "คำถามของคาบนี้คือ เราจะหาการเปลี่ยนแปลงเอนทัลปีและเอนโทรปีของของไหลจริงจากสมการสภาวะได้อย่างไร และการเลือกสมการเปลี่ยนสมดุลพลังงานของกระบวนการมากเพียงใด"
+    "th": "คำถามของคาบนี้คือ เราจะหาการเปลี่ยนแปลงเอนทาลปีและเอนโทรปีของของไหลจริงจากสมการสถานะได้อย่างไร และการเลือกสมการเปลี่ยนสมดุลพลังงานของกระบวนการมากเพียงใด"
    }
   ]
  },
@@ -121,7 +121,7 @@
     "start": 0.25,
     "end": 7.29,
     "en": "A residual property is the real fluid minus the ideal gas, at the same temperature and pressure.",
-    "th": "residual property คือสมบัติของของไหลจริงลบด้วยของแก๊สอุดมคติ ที่อุณหภูมิและความดันเดียวกัน"
+    "th": "สมบัติ residual คือสมบัติของของไหลจริงลบด้วยของแก๊สอุดมคติ ที่อุณหภูมิและความดันเดียวกัน"
    },
    {
     "start": 7.64,
@@ -156,13 +156,13 @@
     "start": 5.04,
     "end": 13.17,
     "en": "The residual Gibbs energy needs only Z. The residual enthalpy also needs how Z changes with temperature.",
-    "th": "residual Gibbs energy ต้องการเพียง Z แต่ residual enthalpy ต้องการด้วยว่า Z เปลี่ยนตามอุณหภูมิอย่างไร"
+    "th": "G^R ต้องการเพียง Z แต่ H^R ต้องการด้วยว่า Z เปลี่ยนตามอุณหภูมิอย่างไร"
    },
    {
     "start": 13.52,
     "end": 32.1,
-    "en": "For methane at 300 kelvin and 100 bar, integrating the NIST Z gives minus 0.64295 for H R over RT, and the tabulated enthalpy gives minus 0.64291.",
-    "th": "สำหรับมีเทนที่ 300 เคลวิน และ 100 บาร์ การอินทิเกรต Z จาก NIST ให้ H^R/RT เท่ากับ ลบ 0.64295 และเอนทัลปีจากตารางให้ ลบ 0.64291"
+    "en": "For methane at 300 kelvin and 100 bar, integrating the NIST Z gives minus 0.64295 for H R over R T, and the tabulated enthalpy gives minus 0.64291.",
+    "th": "สำหรับมีเทนที่ 300 เคลวิน และ 100 บาร์ การอินทิเกรต Z จาก NIST ให้ H^R/RT เท่ากับ ลบ 0.64295 และเอนทาลปีจากตารางให้ ลบ 0.64291"
    },
    {
     "start": 32.45,
@@ -185,13 +185,13 @@
     "start": 6.0,
     "end": 16.37,
     "en": "The residual Gibbs energy needs B. The residual enthalpy and entropy need dB by dT, which no measurement at one temperature gives.",
-    "th": "residual Gibbs energy ต้องการ B แต่ residual enthalpy และ entropy ต้องการ dB/dT ซึ่งการวัดที่อุณหภูมิเดียวให้ไม่ได้"
+    "th": "G^R ต้องการ B แต่ H^R และ S^R ต้องการ dB/dT ซึ่งการวัดที่อุณหภูมิเดียวให้ไม่ได้"
    },
    {
     "start": 16.72,
     "end": 23.63,
     "en": "For most gases B is negative and increases with temperature, so the residual enthalpy is negative.",
-    "th": "สำหรับแก๊สส่วนใหญ่ B เป็นลบและเพิ่มขึ้นตามอุณหภูมิ residual enthalpy จึงเป็นลบ"
+    "th": "สำหรับแก๊สส่วนใหญ่ B เป็นลบและเพิ่มขึ้นตามอุณหภูมิ H^R จึงเป็นลบ"
    },
    {
     "start": 23.98,
@@ -214,19 +214,19 @@
     "start": 4.38,
     "end": 14.42,
     "en": "The residual enthalpy and entropy contain d ln alpha by d ln reduced temperature, the temperature slope of the attraction parameter.",
-    "th": "residual enthalpy และ entropy มีพจน์ d ln α/d ln Tr ซึ่งคือความชันของพารามิเตอร์แรงดึงดูดเทียบกับอุณหภูมิ"
+    "th": "H^R และ S^R มีพจน์ d ln α/d ln Tr ซึ่งคือความชันของพารามิเตอร์แรงดึงดูดเทียบกับอุณหภูมิ"
    },
    {
     "start": 14.77,
     "end": 17.23,
     "en": "That slope was never fitted to anything.",
-    "th": "ความชันนี้ไม่เคยถูกปรับให้เข้ากับข้อมูลใดเลย"
+    "th": "ความชันนี้ไม่เคยถูก fit กับข้อมูลใดเลย"
    },
    {
     "start": 17.58,
     "end": 31.79,
     "en": "For methane at 100 bar, Peng-Robinson gives Z within 2.5 percent but the residual enthalpy 9.6 percent too negative. SRK is within 2.2 percent.",
-    "th": "สำหรับมีเทนที่ 100 บาร์ Peng–Robinson ให้ Z คลาดไม่เกิน 2.5 เปอร์เซ็นต์ แต่ residual enthalpy เป็นลบมากเกินไป 9.6 เปอร์เซ็นต์ ส่วน SRK คลาดไม่เกิน 2.2 เปอร์เซ็นต์"
+    "th": "สำหรับมีเทนที่ 100 บาร์ Peng–Robinson ให้ Z คลาดไม่เกิน 2.5 เปอร์เซ็นต์ แต่ H^R เป็นลบมากเกินไป 9.6 เปอร์เซ็นต์ ส่วน SRK คลาดไม่เกิน 2.2 เปอร์เซ็นต์"
    }
   ]
  },
@@ -260,7 +260,7 @@
     "start": 0.25,
     "end": 11.26,
     "en": "Which property does an equation get right? For methane at 300 kelvin, SRK and the virial equation follow the reference residual enthalpy.",
-    "th": "สมการทำนายสมบัติใดได้ถูกต้อง สำหรับมีเทนที่ 300 เคลวิน SRK และสมการ virial ให้ residual enthalpy ตามข้อมูลอ้างอิง"
+    "th": "สมการทำนายสมบัติใดได้ถูกต้อง สำหรับมีเทนที่ 300 เคลวิน SRK และสมการ virial ให้ H^R ตามข้อมูลอ้างอิง"
    },
    {
     "start": 11.61,
@@ -295,13 +295,13 @@
     "start": 3.1,
     "end": 13.34,
     "en": "For a valve the enthalpy does not change, so the ideal-gas cooling equals the change of the residual. The ideal gas cannot cool at all.",
-    "th": "สำหรับวาล์ว เอนทัลปีไม่เปลี่ยน การเย็นลงของแก๊สอุดมคติจึงเท่ากับการเปลี่ยนแปลงของ residual และแก๊สอุดมคติจะไม่เย็นลงเลย"
+    "th": "สำหรับวาล์ว เอนทาลปีไม่เปลี่ยน การเย็นลงของแก๊สอุดมคติจึงเท่ากับการเปลี่ยนแปลงของ residual และแก๊สอุดมคติจะไม่เย็นลงเลย"
    },
    {
     "start": 13.69,
     "end": 21.17,
     "en": "For a reversible adiabatic compressor the entropy does not change, and the work is the enthalpy change.",
-    "th": "สำหรับคอมเพรสเซอร์แบบผันกลับได้และอะเดียแบติก เอนโทรปีไม่เปลี่ยน และงานคือการเปลี่ยนแปลงเอนทัลปี"
+    "th": "สำหรับคอมเพรสเซอร์แบบผันกลับได้และอะเดียแบติก เอนโทรปีไม่เปลี่ยน และงานคือการเปลี่ยนแปลงเอนทาลปี"
    },
    {
     "start": 21.52,
@@ -318,25 +318,25 @@
     "start": 0.25,
     "end": 14.52,
     "en": "For liquid carbon dioxide at 100 bar, the residual enthalpy is minus 10.85 kilojoules per mole and T times the residual entropy minus 9.07.",
-    "th": "สำหรับคาร์บอนไดออกไซด์เหลวที่ 100 บาร์ residual enthalpy เท่ากับ ลบ 10.85 กิโลจูลต่อโมล และ T คูณ residual entropy เท่ากับ ลบ 9.07"
+    "th": "สำหรับคาร์บอนไดออกไซด์เหลวที่ 100 บาร์ H^R เท่ากับ ลบ 10.85 กิโลจูลต่อโมล และ T คูณ S^R เท่ากับ ลบ 9.07"
    },
    {
     "start": 14.87,
     "end": 19.27,
     "en": "The residual Gibbs energy is only minus 1.78.",
-    "th": "residual Gibbs energy มีค่าเพียง ลบ 1.78"
+    "th": "G^R มีค่าเพียง ลบ 1.78"
    },
    {
     "start": 19.62,
     "end": 29.94,
     "en": "That near cancellation is why a liquid can coexist with its vapor: at the vapor pressure the two phases have equal residual Gibbs energy.",
-    "th": "การหักล้างกันเกือบหมดนี้คือเหตุที่ของเหลวอยู่ร่วมกับไอของมันได้ ที่ความดันไอ ทั้งสองเฟสมี residual Gibbs energy เท่ากัน"
+    "th": "การหักล้างกันเกือบหมดนี้คือเหตุที่ของเหลวอยู่ร่วมกับไอของมันได้ ที่ความดันไอ ทั้งสองเฟสมี G^R เท่ากัน"
    },
    {
     "start": 30.29,
     "end": 38.21,
-    "en": "For a pure fluid, G R over RT is the log of the fugacity coefficient: the subject of P4.",
-    "th": "สำหรับสารบริสุทธิ์ G^R/RT คือ ln ของ fugacity coefficient ซึ่งเป็นหัวข้อของคาบ P4"
+    "en": "For a pure fluid, G R over R T is the log of the fugacity coefficient: the subject of P4.",
+    "th": "สำหรับสารบริสุทธิ์ G^R/RT คือ ln ของสัมประสิทธิ์ fugacity ซึ่งเป็นหัวข้อของคาบ P4"
    }
   ]
  },
@@ -376,7 +376,7 @@
     "start": 10.61,
     "end": 27.82,
     "en": "The residual enthalpy is minus 308.5 joules per mole, against minus 314 from NIST, and the residual entropy minus 0.753, against minus 0.766.",
-    "th": "residual enthalpy เท่ากับ ลบ 308.5 จูลต่อโมล เทียบกับ ลบ 314 จาก NIST และ residual entropy เท่ากับ ลบ 0.753 เทียบกับ ลบ 0.766"
+    "th": "H^R เท่ากับ ลบ 308.5 จูลต่อโมล เทียบกับ ลบ 314 จาก NIST และ S^R เท่ากับ ลบ 0.753 เทียบกับ ลบ 0.766"
    },
    {
     "start": 28.17,
@@ -405,7 +405,7 @@
     "start": 10.1,
     "end": 17.53,
     "en": "The carbon dioxide compressor: compare the ideal-gas enthalpy change with the change of the residual.",
-    "th": "คอมเพรสเซอร์คาร์บอนไดออกไซด์ เทียบการเปลี่ยนแปลงเอนทัลปีของแก๊สอุดมคติกับการเปลี่ยนแปลงของ residual"
+    "th": "คอมเพรสเซอร์คาร์บอนไดออกไซด์ เทียบการเปลี่ยนแปลงเอนทาลปีของแก๊สอุดมคติกับการเปลี่ยนแปลงของ residual"
    },
    {
     "start": 17.88,
@@ -440,7 +440,7 @@
     "start": 15.66,
     "end": 22.76,
     "en": "Computing the residual enthalpy with a constant a, and using a heat-capacity fit outside its range.",
-    "th": "คำนวณ residual enthalpy โดยถือว่า a คงที่ และใช้สมการความจุความร้อนนอกช่วงที่ใช้ได้"
+    "th": "คำนวณ H^R โดยถือว่า a คงที่ และใช้สมการความจุความร้อนนอกช่วงที่ใช้ได้"
    }
   ]
  },
@@ -526,7 +526,7 @@
     "start": 2.26,
     "end": 7.0,
     "en": "Which part of Peng-Robinson sets the residual enthalpy but not Z?",
-    "th": "ส่วนใดของ Peng–Robinson ที่กำหนด residual enthalpy แต่ไม่กำหนด Z"
+    "th": "ส่วนใดของ Peng–Robinson ที่กำหนด H^R แต่ไม่กำหนด Z"
    },
    {
     "start": 7.35,
@@ -538,7 +538,7 @@
     "start": 15.1,
     "end": 21.33,
     "en": "And what does a small residual Gibbs energy of the liquid mean for computing its fugacity?",
-    "th": "และ residual Gibbs energy ที่มีค่าน้อยของของเหลวมีความหมายอย่างไรต่อการคำนวณ fugacity"
+    "th": "และ G^R ที่มีค่าน้อยของของเหลวมีความหมายอย่างไรต่อการคำนวณ fugacity"
    }
   ]
  },
@@ -549,13 +549,13 @@
     "start": 0.25,
     "end": 8.31,
     "en": "To summarize. A residual property is the real fluid minus the ideal gas at the same temperature and pressure.",
-    "th": "สรุป residual property คือสมบัติของของไหลจริงลบด้วยของแก๊สอุดมคติที่อุณหภูมิและความดันเดียวกัน"
+    "th": "สรุป สมบัติ residual คือสมบัติของของไหลจริงลบด้วยของแก๊สอุดมคติที่อุณหภูมิและความดันเดียวกัน"
    },
    {
     "start": 8.66,
     "end": 17.37,
     "en": "The residual Gibbs energy needs Z alone. The residual enthalpy and entropy also need the temperature slope of Z.",
-    "th": "residual Gibbs energy ต้องการเพียง Z ส่วน residual enthalpy และ entropy ต้องการความชันของ Z เทียบกับอุณหภูมิด้วย"
+    "th": "G^R ต้องการเพียง Z ส่วน H^R และ S^R ต้องการความชันของ Z เทียบกับอุณหภูมิด้วย"
    },
    {
     "start": 17.72,
@@ -567,7 +567,7 @@
     "start": 31.85,
     "end": 40.43,
     "en": "Next session, P4: the residual Gibbs energy becomes the fugacity, and equal fugacity gives the vapor pressure.",
-    "th": "คาบหน้า P4 residual Gibbs energy จะกลายเป็น fugacity และ fugacity ที่เท่ากันให้ความดันไอ"
+    "th": "คาบหน้า P4 G^R จะกลายเป็น fugacity และ fugacity ที่เท่ากันให้ความดันไอ"
    }
   ]
  },
@@ -578,7 +578,7 @@
     "start": 0.25,
     "end": 2.92,
     "en": "Exit ticket, five minutes, anonymous.",
-    "th": "Exit ticket ห้านาที ไม่ระบุชื่อ"
+    "th": "exit ticket ห้านาที ไม่ระบุชื่อ"
    },
    {
     "start": 3.27,
@@ -607,7 +607,7 @@
     "start": 6.15,
     "end": 10.52,
     "en": "Read the pre-class note for session P4, about twenty minutes.",
-    "th": "อ่าน pre-class note ของคาบ P4 ใช้เวลาประมาณยี่สิบนาที"
+    "th": "อ่านเอกสารก่อนเรียนของคาบ P4 ใช้เวลาประมาณยี่สิบนาที"
    },
    {
     "start": 10.87,

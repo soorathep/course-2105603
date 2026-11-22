@@ -164,7 +164,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="label">Before the midterm · 7 sessions</span> <span class="cm">P1 · Framework</span> <span class="cm now">P2 · PVT and equations of state</span> <span class="cm">P3 · Residual properties</span> <span class="cm">P4 · Pure-component equilibrium and fugacity</span> <span class="cm">P5 · Mixtures</span> <span class="cm">P6 · Excess properties and activity</span> <span class="cm">P7 · Choosing a property model</span></p>
 </div>
 <div class="half">
-<p><span class="label">After the midterm · 7 sessions</span> <span class="cm">1 · VLE and flash</span> <span class="cm">2 · Experimental VLE</span> <span class="cm">3 · Liquid stability and LLE</span> <span class="cm">4 · Solids and adsorption</span> <span class="cm">5 · Chemical equilibrium</span> <span class="cm">6 · Electrochemical equilibrium</span> <span class="cm">7 · Choosing a model from evidence</span></p>
+<p><span class="label">After the midterm · 7 sessions</span> <span class="cm">1 · VLE and flash</span> <span class="cm">2 · Experimental VLE and consistency</span> <span class="cm">3 · Liquid stability and LLE</span> <span class="cm">4 · Solids and adsorption</span> <span class="cm">5 · Chemical equilibrium</span> <span class="cm">6 · Electrochemical equilibrium</span> <span class="cm">7 · Choosing a model from evidence</span></p>
 </div>
 </div>
 <div class="bridge">
@@ -292,7 +292,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p>B⁰ = 0.083 − 0.422/T<sub>r</sub><sup>1.6</sup>, B¹ = 0.139 − 0.172/T<sub>r</sub><sup>4.2</sup></p>
 </div><div class="column rule-notes" style="width:46%;">
 <p><strong>Use the truncated form</strong> where BP/RT is small, roughly V<sub>r</sub> = V/V<sub>c</sub> &gt; 2. It has no liquid branch.</p>
-<p><span class="q">Methane, 300 K</span> Pitzer B = −41.3 cm³/mol; from the NIST data −42.2 (2% apart).</p>
+<p><span class="q">Methane, 300 K:</span> Pitzer B = −41.3 cm³/mol; from the NIST data −42.2 (2% apart).</p>
 <p>At 100 bar the truncated equation gives Z = 0.834 against 0.856 (−2.5%). Up to the critical density (about 211 bar) the mean error is 5.7%: the C/V² terms matter.</p>
 <p>The ideal gas is within 1% of Z only up to <strong>6 bar</strong> for methane at 300 K.</p>
 </div></div>
@@ -378,7 +378,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><img data-src="figures/p02-csp.svg" class="fig-pxy" alt="Compressibility factor against reduced pressure at reduced temperature 1.05 for methane, CO2, propane and water from NIST, and the single van der Waals curve. The three nonpolar fluids nearly coincide; water lies lower above P_r = 1.3; van der Waals lies well above all four at high pressure"></p>
 </div><div class="column concept-notes" style="width:42%;">
 <p>Two-parameter idea: at the same T<sub>r</sub> and P<sub>r</sub>, every fluid has the same Z. A cubic with Ω<sub>a</sub>, Ω<sub>b</sub> gives exactly one curve.</p>
-<p><strong>Acentric factor</strong> (Pitzer): ω = −1 − log<sub>10</sub>(P<sup>sat</sup><sub>r</sub>) at T<sub>r</sub> = 0.7.</p>
+<p><strong>Acentric factor</strong> (Pitzer): ω = −1 − log₁₀(P<sup>sat</sup><sub>r</sub>) at T<sub>r</sub> = 0.7.</p>
 <p><span class="q">At T<sub>r</sub> = 1.05, P<sub>r</sub> = 2</span> Methane, CO₂, propane: Z = 0.344, 0.336, 0.338. Water: <strong>0.267</strong>. Van der Waals: 0.440.</p>
 <p>For CO₂, 0.7T<sub>c</sub> is below the triple point: ω = 0.225 needs an extrapolated vapor pressure.</p>
 </div></div>
@@ -468,14 +468,14 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 </div><div class="column rule-notes" style="width:48%;">
 <p>α(T<sub>r</sub>, ω) was fitted to vapor pressures, so P<sup>sat</sup> is good. Densities were not in the fit.</p>
 <p><strong>Volume translation</strong> (Péneloux): V = V<sub>EOS</sub> − c.&nbsp;A constant c changes no phase equilibrium, because it shifts both phases equally.</p>
-<p><span class="q">Water, 500 K</span> c = 5.0 cm³/mol makes the saturated liquid exact and the liquid branch error 0.2%. For CO₂ the same correction raises the liquid error from 1.6% to 4.4%: c repairs one volume, not the compressibility.</p>
+<p><span class="q">Water, 500 K:</span> c = 5.0 cm³/mol makes the saturated liquid exact and the liquid branch error 0.2%. For CO₂ the same correction raises the liquid error from 1.6% to 4.4%: c repairs one volume, not the compressibility.</p>
 </div></div>
 </section>
 <section id="bdata" class="slide level2">
 <h2>B from the data: a sharper test</h2>
 <div class="columns">
 <div class="column" style="width:56%;">
-<p><img data-src="figures/p02-bfit.svg" class="fig-pxy" alt="(Z − 1)/ρ against density for methane at 300 K: the NIST points fall on a straight line with intercept −42.1 cm3/mol; the Pitzer value −41.3 is close; the Peng–Robinson value −54.3 is far below"></p>
+<p><img data-src="figures/p02-bfit.svg" class="fig-pxy" alt="(Z − 1)/ρ against density for methane at 300 K: the NIST points fall on a straight line with intercept −42.1 cm³/mol; the Pitzer value −41.3 is close; the Peng–Robinson value −54.3 is far below"></p>
 </div><div class="column concept-notes" style="width:42%;">
 <p>From Z = 1 + Bρ + Cρ²: (Z − 1)/ρ = B + Cρ. The intercept is B.</p>
 <p>A cubic implies B = b − a/RT.</p>

@@ -164,7 +164,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="label">Before the midterm · 7 sessions</span> <span class="cm">P1 · Framework</span> <span class="cm">P2 · PVT and equations of state</span> <span class="cm">P3 · Residual properties</span> <span class="cm">P4 · Pure-component equilibrium and fugacity</span> <span class="cm">P5 · Mixtures</span> <span class="cm now">P6 · Excess properties and activity</span> <span class="cm">P7 · Choosing a property model</span></p>
 </div>
 <div class="half">
-<p><span class="label">After the midterm · 7 sessions</span> <span class="cm">1 · VLE and flash</span> <span class="cm">2 · Experimental VLE</span> <span class="cm">3 · Liquid stability and LLE</span> <span class="cm">4 · Solids and adsorption</span> <span class="cm">5 · Chemical equilibrium</span> <span class="cm">6 · Electrochemical equilibrium</span> <span class="cm">7 · Choosing a model from evidence</span></p>
+<p><span class="label">After the midterm · 7 sessions</span> <span class="cm">1 · VLE and flash</span> <span class="cm">2 · Experimental VLE and consistency</span> <span class="cm">3 · Liquid stability and LLE</span> <span class="cm">4 · Solids and adsorption</span> <span class="cm">5 · Chemical equilibrium</span> <span class="cm">6 · Electrochemical equilibrium</span> <span class="cm">7 · Choosing a model from evidence</span></p>
 </div>
 </div>
 <div class="bridge">
@@ -235,12 +235,12 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>The departure from the ideal solution at the same T, P and x:</p>
-<p><span class="math display">M^E=M-M^{id},\qquad G^E=H^E-TS^E</span></p>
+<p><span class="math display">M^E=M-M^{\text{id}},\qquad G^E=H^E-TS^E</span></p>
 <p>For V and H the ideal-solution value is Σx<sub>i</sub>M<sub>i</sub>*, so V<sup>E</sup> = ΔV<sub>mix</sub> and H<sup>E</sup> = ΔH<sub>mix</sub>.</p>
-<p><span class="math display">\frac{\Delta g_{mix}}{RT}=\sum_ix_i\ln x_i+\frac{G^E}{RT}</span></p>
+<p><span class="math display">\frac{\Delta g_{\text{mix}}}{RT}=\sum_ix_i\ln x_i+\frac{G^E}{RT}</span></p>
 </div><div class="column rule-notes" style="width:48%;">
 <p>G<sup>E</sup> &gt; 0: positive deviation, the components prefer their own kind (2-propanol + water). G<sup>E</sup> &lt; 0: negative deviation, unlike pairs attract (acetone + chloroform).</p>
-<p><span class="q">Ethanol + water, 298 K (P5)</span> V<sup>E</sup> reaches −1.1 cm³/mol.</p>
+<p><span class="q">Ethanol + water, 298 K (P5):</span> V<sup>E</sup> reaches −1.1 cm³/mol.</p>
 <p>Temperature dependence: ∂(G<sup>E</sup>/RT)/∂T = −H<sup>E</sup>/RT². Constant parameters assume H<sup>E</sup> ≈ 0.</p>
 </div></div>
 </section>
@@ -249,14 +249,14 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><span class="math display">\gamma_i=\frac{\hat f_i}{x_if_i^\circ}</span></p>
-<p><span class="math display">\ln\gamma_i=\Big(\frac{\partial(nG^E/RT)}{\partial n_i}\Big)_{T,P,n_j}</span></p>
 <p><span class="math display">\frac{G^E}{RT}=\sum_ix_i\ln\gamma_i,\qquad \sum_ix_i\,d\ln\gamma_i=0</span></p>
-<p>At low pressure, with an ideal vapor (P4: φ̂ and Poynting within 1% at 60 kPa):</p>
-<p><span class="math display">y_iP=x_i\gamma_iP_i^{sat}(T)</span></p>
+<p>With the pure liquid as f<sub>i</sub>°, <span class="math inline">f_i^\circ=\varphi_i^{\text{sat}}P_i^{\text{sat}}\mathcal{P}_i</span> (P4). Equal fugacity with the vapor gives</p>
+<p><span class="math display">y_i\Phi_iP=x_i\gamma_iP_i^{\text{sat}},\qquad\Phi_i=\frac{\hat\varphi_i^{V}}{\varphi_i^{\text{sat}}\mathcal{P}_i}</span></p>
 </div><div class="column rule-notes" style="width:48%;">
-<p>ln γ<sub>i</sub> is the partial molar property of G<sup>E</sup>/RT (P5), so the two ln γ are linked by Gibbs–Duhem.</p>
-<p><span class="q">2-propanol + water, 60 kPa, x₁ = 0.14</span> y₁ = 0.477, T = 342.9 K, P₁<sup>sat</sup> = 60.1 kPa: γ₁ = 3.40, γ₂ = 1.18, G<sup>E</sup>/RT = 0.315.</p>
-<p>Session 1 adds φ̂<sub>i</sub> and Poynting back for the γ–φ form.</p>
+<p>ln γ<sub>i</sub> = [∂(nG<sup>E</sup>/RT)/∂n<sub>i</sub>]<sub>T,P,n<sub>j</sub></sub> is the partial molar property of G<sup>E</sup>/RT (P5), so the two ln γ are linked by Gibbs–Duhem.</p>
+<p>At 60 kPa Φ<sub>i</sub> ≈ 1 within about 1%: <strong>modified Raoult’s law</strong>, y<sub>i</sub>P = x<sub>i</sub>γ<sub>i</sub>P<sub>i</sub><sup>sat</sup>.</p>
+<p><span class="q">2-propanol + water, 60 kPa, x₁ = 0.14:</span> y₁ = 0.477, T = 342.9 K, P₁<sup>sat</sup> = 60.1 kPa: γ₁ = 3.40, γ₂ = 1.18, G<sup>E</sup>/RT = 0.315.</p>
+<p>Sessions 1 and 2 after the midterm use the same γ–φ form, with Φ<sub>i</sub> evaluated or set to 1.</p>
 </div></div>
 </section>
 <section id="standard" class="slide level2">
@@ -265,12 +265,12 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="column" style="width:50%;">
 <p><strong>Raoult</strong> (pure liquid): f<sub>i</sub>° = f<sub>i</sub>(T, P); γ<sub>i</sub> → 1 as x<sub>i</sub> → 1.</p>
 <p><strong>Henry</strong> (infinite dilution): f̂<sub>i</sub> → x<sub>i</sub>H<sub>i</sub> as x<sub>i</sub> → 0, with</p>
-<p><span class="math display">H_i=\gamma_i^\infty f_i\approx\gamma_i^\infty P_i^{sat}</span></p>
+<p><span class="math display">H_i=\gamma_i^\infty f_i\approx\gamma_i^\infty P_i^{\text{sat}}</span></p>
 <p><span class="math display">\gamma_i^*=\gamma_i/\gamma_i^\infty\to1\ \text{as}\ x_i\to0</span></p>
-<p><strong>Molality</strong> (electrolytes, Session 6): f̂<sub>i</sub> = m<sub>i</sub>γ<sub>i</sub><sup>□</sup>H<sub>i</sub><sup>□</sup>.</p>
+<p><strong>Molality</strong> (electrolytes, Session 6): a<sub>i</sub> = m<sub>i</sub>γ<sub>i</sub>/m°, m° = 1 mol/kg, with γ<sub>i</sub> → 1 as m → 0.</p>
 </div><div class="column rule-notes" style="width:48%;">
-<p>The standard state is a choice. f̂<sub>i</sub> does not depend on it; γ<sub>i</sub> and f<sub>i</sub>° change together.</p>
-<p><span class="q">2-propanol in water, 345 K</span> From the ln γ fits, γ₁∞ ≈ 7.6–7.9 and H₁ ≈ 500–520 kPa. From the G<sup>E</sup> fits, H₁ = 840–3100 kPa.</p>
+<p>The standard state is a choice. f̂<sub>i</sub> does not depend on it; the <strong>activity</strong> a<sub>i</sub> = f̂<sub>i</sub>/f<sub>i</sub>° = x<sub>i</sub>γ<sub>i</sub> changes with f<sub>i</sub>°. Sessions 5 and 6 work with activities.</p>
+<p><span class="q">2-propanol in water, 345 K:</span> From the ln γ fits, γ₁∞ ≈ 7.6–7.9 and H₁ ≈ 500–520 kPa. From the G<sup>E</sup> fits, H₁ = 840–3100 kPa.</p>
 <p>Henry’s law suits a dilute solute or a supercritical gas, which has no pure liquid at T.</p>
 </div></div>
 </section>
@@ -287,7 +287,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <thead>
 <tr class="header">
 <th>Model</th>
-<th>G<sup>E</sup>/RT or ln γ<sub>1</sub></th>
+<th>G<sup>E</sup>/RT or ln γ₁</th>
 <th>Parameters</th>
 <th>Can it split?</th>
 </tr>
@@ -295,26 +295,26 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <tbody>
 <tr class="odd">
 <td>Margules (1 or 2)</td>
-<td>G<sup>E</sup>/RT = x<sub>1</sub>x<sub>2</sub>(A<sub>21</sub>x<sub>1</sub> + A<sub>12</sub>x<sub>2</sub>); ln γ<sub>1</sub>∞ = A<sub>12</sub></td>
-<td>A<sub>12</sub>, A<sub>21</sub></td>
+<td>G<sup>E</sup>/RT = x₁x₂(A₂₁x₁ + A₁₂x₂); ln γ₁∞ = A₁₂</td>
+<td>A₁₂, A₂₁</td>
 <td>yes</td>
 </tr>
 <tr class="even">
 <td>van Laar</td>
-<td>ln γ<sub>1</sub> = A<sub>12</sub>(1 + A<sub>12</sub>x<sub>1</sub>/A<sub>21</sub>x<sub>2</sub>)<sup>−2</sup></td>
-<td>A<sub>12</sub>, A<sub>21</sub></td>
+<td>ln γ₁ = A₁₂(1 + A₁₂x₁/A₂₁x₂)<sup>−2</sup></td>
+<td>A₁₂, A₂₁</td>
 <td>yes</td>
 </tr>
 <tr class="odd">
 <td>Wilson</td>
 <td>G<sup>E</sup>/RT = −Σx<sub>i</sub> ln(Σx<sub>j</sub>Λ<sub>ij</sub>)</td>
-<td>Λ<sub>12</sub>, Λ<sub>21</sub> &gt; 0</td>
+<td>Λ₁₂, Λ₂₁ &gt; 0</td>
 <td><strong>no</strong></td>
 </tr>
 <tr class="even">
 <td>NRTL</td>
 <td>local compositions, G<sub>ij</sub> = exp(−ατ<sub>ij</sub>)</td>
-<td>τ<sub>12</sub>, τ<sub>21</sub>, α</td>
+<td>τ₁₂, τ₂₁, α</td>
 <td>yes</td>
 </tr>
 <tr class="odd">

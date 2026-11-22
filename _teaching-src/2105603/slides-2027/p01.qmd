@@ -15,7 +15,7 @@ title-slide-attributes:
 :::
 ::: {.half}
 [After the midterm · 7 sessions]{.label}
-[1 · VLE and flash]{.cm} [2 · Experimental VLE]{.cm} [3 · Liquid stability and LLE]{.cm} [4 · Solids and adsorption]{.cm} [5 · Chemical equilibrium]{.cm} [6 · Electrochemical equilibrium]{.cm} [7 · Choosing a model from evidence]{.cm}
+[1 · VLE and flash]{.cm} [2 · Experimental VLE and consistency]{.cm} [3 · Liquid stability and LLE]{.cm} [4 · Solids and adsorption]{.cm} [5 · Chemical equilibrium]{.cm} [6 · Electrochemical equilibrium]{.cm} [7 · Choosing a model from evidence]{.cm}
 :::
 :::
 
@@ -169,7 +169,9 @@ The last is the condition for every phase-equilibrium problem in this course (P4
 ::: {.column width="50%"}
 The mixed second derivatives of a potential are equal. From dG and dA:
 
-$$\Big(\frac{\partial S}{\partial P}\Big)_T=-\Big(\frac{\partial V}{\partial T}\Big)_P\qquad \Big(\frac{\partial S}{\partial V}\Big)_T=\Big(\frac{\partial P}{\partial T}\Big)_V$$
+$$\Big(\frac{\partial S}{\partial P}\Big)_T=-\Big(\frac{\partial V}{\partial T}\Big)_P$$
+
+$$\Big(\frac{\partial S}{\partial V}\Big)_T=\Big(\frac{\partial P}{\partial T}\Big)_V$$
 
 Entropy cannot be measured directly. These relations replace its derivatives by PVT derivatives.
 :::

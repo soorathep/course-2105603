@@ -6,7 +6,7 @@
     "start": 0.25,
     "end": 6.67,
     "en": "Welcome to session P7: choosing a property model, synthesis and midterm preparation.",
-    "th": "ยินดีต้อนรับสู่คาบ P7 การเลือกแบบจำลองสมบัติ การสังเคราะห์ความรู้ และการเตรียมสอบ midterm"
+    "th": "ยินดีต้อนรับสู่คาบ P7 การเลือกแบบจำลองสมบัติ การสังเคราะห์ความรู้ และการเตรียมสอบกลางภาค"
    }
   ]
  },
@@ -17,13 +17,13 @@
     "start": 0.25,
     "end": 9.42,
     "en": "Six sessions built one chain: measurable properties, an equation of state, residual properties, fugacity, mixtures and activity.",
-    "th": "หกคาบที่ผ่านมาสร้างห่วงโซ่เดียวกัน ได้แก่ สมบัติที่วัดได้ สมการสภาวะ residual properties, fugacity, ของผสม และ activity"
+    "th": "หกคาบที่ผ่านมาสร้างห่วงโซ่เดียวกัน ได้แก่ สมบัติที่วัดได้ สมการสถานะ สมบัติ residual, fugacity, ของผสม และ activity"
    },
    {
     "start": 9.77,
     "end": 19.39,
     "en": "Today we ask of every result: which model, and what evidence would make you trust it? Then we practice the kind of problem the midterm asks.",
-    "th": "วันนี้เราจะถามทุกผลลัพธ์ว่า ใช้แบบจำลองใด และหลักฐานใดจะทำให้เชื่อถือได้ แล้วฝึกทำโจทย์แบบที่จะออกสอบ midterm"
+    "th": "วันนี้เราจะถามทุกผลลัพธ์ว่า ใช้แบบจำลองใด และหลักฐานใดจะทำให้เชื่อถือได้ แล้วฝึกทำโจทย์แบบที่จะออกสอบกลางภาค"
    }
   ]
  },
@@ -39,14 +39,14 @@
    {
     "start": 3.99,
     "end": 20.78,
-    "en": "Peng-Robinson put the right mass of CO2 in the tank, and gave liquid water at 500 kelvin 23 percent off. Its propane vapor pressure was within 0.02 percent, because omega is fitted to vapor pressure.",
-    "th": "Peng–Robinson ให้มวล CO₂ ในถังถูกต้อง แต่ให้ค่าของน้ำเหลวที่ 500 เคลวินคลาดเคลื่อน 23 เปอร์เซ็นต์ ส่วนความดันไอของโพรเพนถูกต้องภายใน 0.02 เปอร์เซ็นต์ เพราะ ω ถูกปรับให้ตรงกับความดันไอ"
+    "en": "Peng-Robinson put the right mass of CO₂ in the tank, and gave liquid water at 500 kelvin 23 percent off. Its propane vapor pressure was within 0.02 percent, because omega is fitted to vapor pressure.",
+    "th": "Peng–Robinson ให้มวล CO₂ ในถังถูกต้อง แต่ให้ค่าของน้ำเหลวที่ 500 เคลวินคลาดเคลื่อน 23 เปอร์เซ็นต์ ส่วนความดันไอของโพรเพนถูกต้องภายใน 0.02 เปอร์เซ็นต์ เพราะ ω ถูก fit ให้ตรงกับความดันไอ"
    },
    {
     "start": 21.13,
     "end": 36.83,
-    "en": "The ideal-gas compressor work was 20 percent high, Lewis-Randall missed the CO2 fugacity by 8 percent, and an NRTL fit to G E gave gamma infinity of 21 instead of 7.7.",
-    "th": "งานของคอมเพรสเซอร์จากแก๊สอุดมคติสูงเกิน 20 เปอร์เซ็นต์ กฎ Lewis–Randall ให้ fugacity ของ CO₂ คลาดไป 8 เปอร์เซ็นต์ และ NRTL ที่ปรับกับ G^E ให้ γ∞ เท่ากับ 21 แทนที่จะเป็น 7.7"
+    "en": "The ideal-gas compressor work was 20 percent high, Lewis-Randall missed the CO₂ fugacity by 8 percent, and an NRTL fit to G E gave gamma infinity of 21 instead of 7.7.",
+    "th": "งานของคอมเพรสเซอร์จากแก๊สอุดมคติสูงเกิน 20 เปอร์เซ็นต์ กฎ Lewis–Randall ให้ fugacity ของ CO₂ คลาดไป 8 เปอร์เซ็นต์ และ NRTL ที่ fit กับ G^E ให้ γ∞ เท่ากับ 21 แทนที่จะเป็น 7.7"
    },
    {
     "start": 37.18,
@@ -115,13 +115,13 @@
     "start": 2.37,
     "end": 19.82,
     "en": "The framework turns PVT data and the ideal-gas heat capacity into any property. An equation of state supplies Z, residual properties turn Z into enthalpy and entropy, and the fugacity coefficient turns it into equilibrium.",
-    "th": "กรอบแนวคิดเปลี่ยนข้อมูล PVT และความจุความร้อนของแก๊สอุดมคติเป็นสมบัติใดก็ได้ สมการสภาวะให้ค่า Z, residual properties เปลี่ยน Z เป็นเอนทัลปีและเอนโทรปี และ fugacity coefficient เปลี่ยนเป็นสมดุล"
+    "th": "กรอบแนวคิดเปลี่ยนข้อมูล PVT และความจุความร้อนของแก๊สอุดมคติเป็นสมบัติใดก็ได้ สมการสถานะให้ค่า Z, สมบัติ residual เปลี่ยน Z เป็นเอนทาลปีและเอนโทรปี และสัมประสิทธิ์ fugacity เปลี่ยนเป็นสมดุล"
    },
    {
     "start": 20.17,
     "end": 29.49,
     "en": "Mixtures add composition through partial molar properties, and liquids add the activity coefficient. Each step uses the one before.",
-    "th": "ของผสมเพิ่มองค์ประกอบผ่าน partial molar properties และของเหลวเพิ่ม activity coefficient แต่ละขั้นใช้ขั้นก่อนหน้า"
+    "th": "ของผสมเพิ่มองค์ประกอบผ่านสมบัติโมลาร์ย่อย และของเหลวเพิ่มสัมประสิทธิ์แอกทิวิตี แต่ละขั้นใช้ขั้นก่อนหน้า"
    }
   ]
  },
@@ -138,13 +138,13 @@
     "start": 5.25,
     "end": 21.02,
     "en": "A gas at low density: the virial equation. A pure fluid with a reference equation: use it. Hydrocarbons at high pressure: a cubic with k i j. Polar liquids at low pressure: a gamma-phi model.",
-    "th": "แก๊สที่ความหนาแน่นต่ำ ใช้สมการ virial สารบริสุทธิ์ที่มีสมการสภาวะอ้างอิง ให้ใช้สมการนั้น ไฮโดรคาร์บอนที่ความดันสูง ใช้สมการกำลังสามพร้อม kij ของเหลวมีขั้วที่ความดันต่ำ ใช้แบบจำลอง γ–φ"
+    "th": "แก๊สที่ความหนาแน่นต่ำ ใช้สมการ virial สารบริสุทธิ์ที่มีสมการสถานะอ้างอิง ให้ใช้สมการนั้น ไฮโดรคาร์บอนที่ความดันสูง ใช้สมการกำลังสามพร้อม k_ij ของเหลวมีขั้วที่ความดันต่ำ ใช้แบบจำลอง γ–φ"
    },
    {
     "start": 21.37,
     "end": 37.0,
     "en": "If a liquid split is possible, use NRTL or UNIQUAC, not Wilson. For a dilute solute, Henry's law. Without mixture data, UNIFAC as a first estimate. The evidence for the case in hand decides.",
-    "th": "ถ้าอาจเกิดการแยกชั้นของของเหลว ใช้ NRTL หรือ UNIQUAC ไม่ใช่ Wilson สำหรับตัวถูกละลายที่เจือจาง ใช้กฎของ Henry ถ้าไม่มีข้อมูลของผสม ใช้ UNIFAC เป็นค่าประมาณเบื้องต้น หลักฐานของกรณีนั้นเป็นตัวตัดสิน"
+    "th": "ถ้าอาจเกิดการแยกเฟสของของเหลว ใช้ NRTL หรือ UNIQUAC ไม่ใช่ Wilson สำหรับตัวถูกละลายที่เจือจาง ใช้กฎของ Henry ถ้าไม่มีข้อมูลของผสม ใช้ UNIFAC เป็นค่าประมาณเบื้องต้น หลักฐานของกรณีนั้นเป็นตัวตัดสิน"
    }
   ]
  },
@@ -155,7 +155,7 @@
     "start": 0.25,
     "end": 9.32,
     "en": "The evidence ladder runs from calibration, through consistency and held-out data, to an independent property and a different method.",
-    "th": "บันไดหลักฐานเริ่มจาก calibration ผ่าน consistency และข้อมูลที่ไม่ได้ใช้ปรับ ไปจนถึงสมบัติอิสระและวิธีวัดที่ต่างกัน"
+    "th": "บันไดหลักฐานเริ่มจากการปรับเทียบ ผ่านความสอดคล้องภายใน และข้อมูลที่ไม่ได้ใช้ fit ไปจนถึงสมบัติอิสระและวิธีวัดที่ต่างกัน"
    },
    {
     "start": 9.67,
@@ -195,19 +195,19 @@
     "start": 0.25,
     "end": 13.73,
     "en": "Check your answer. The propane vapor pressure is close to calibration, because omega and alpha are built to reproduce it. The 80 kilopascal prediction and the B 1 2 rule are held-out.",
-    "th": "ตรวจคำตอบ ความดันไอของโพรเพนใกล้เคียงกับ calibration เพราะ ω และ α ถูกสร้างให้ตรงกับมัน การทำนายที่ 80 กิโลปาสกาลและกฎของ B12 เป็นข้อมูลที่ไม่ได้ใช้ปรับ"
+    "th": "ตรวจคำตอบ ความดันไอของโพรเพนใกล้เคียงกับการปรับเทียบ เพราะ ω และ α ถูกสร้างให้ตรงกับมัน การทำนายที่ 80 กิโลปาสคาลและกฎของ B₁₂ เป็นข้อมูลที่ไม่ได้ใช้ fit"
    },
    {
     "start": 14.08,
     "end": 26.37,
-    "en": "Gamma infinity of 7.7 is an extrapolation, and the volume shift is mostly calibration: the same shift makes CO2 at 280 kelvin worse.",
-    "th": "γ∞ เท่ากับ 7.7 เป็นการ extrapolate และ volume shift ส่วนใหญ่เป็น calibration เพราะการเลื่อนแบบเดียวกันทำให้ CO₂ ที่ 280 เคลวินแย่ลง"
+    "en": "Gamma infinity of 7.7 is an extrapolation, and the volume shift is mostly calibration: the same shift makes CO₂ at 280 kelvin worse.",
+    "th": "γ∞ เท่ากับ 7.7 เป็นการ extrapolate และ volume shift ส่วนใหญ่เป็นการปรับเทียบ เพราะการเลื่อนแบบเดียวกันทำให้ CO₂ ที่ 280 เคลวินแย่ลง"
    },
    {
     "start": 26.72,
     "end": 32.46,
     "en": "Four of six claims are calibration or extrapolation presented as results.",
-    "th": "สี่ในหกข้อเป็น calibration หรือการ extrapolate ที่ถูกนำเสนอเป็นผลลัพธ์"
+    "th": "สี่ในหกข้อเป็นการปรับเทียบ หรือการ extrapolate ที่ถูกนำเสนอเป็นผลลัพธ์"
    }
   ]
  },
@@ -229,8 +229,8 @@
    {
     "start": 20.19,
     "end": 34.36,
-    "en": "For CO2 at 280 kelvin the same shift raises the error from 1.6 to 4.4 percent. One number fitted at one state cannot correct the shape of an isotherm.",
-    "th": "สำหรับ CO₂ ที่ 280 เคลวิน การเลื่อนแบบเดียวกันเพิ่มความคลาดเคลื่อนจาก 1.6 เป็น 4.4 เปอร์เซ็นต์ ตัวเลขเดียวที่ปรับที่สภาวะเดียวไม่สามารถแก้รูปร่างของไอโซเทอร์มได้"
+    "en": "For CO₂ at 280 kelvin the same shift raises the error from 1.6 to 4.4 percent. One number fitted at one state cannot correct the shape of an isotherm.",
+    "th": "สำหรับ CO₂ ที่ 280 เคลวิน การเลื่อนแบบเดียวกันเพิ่มความคลาดเคลื่อนจาก 1.6 เป็น 4.4 เปอร์เซ็นต์ ตัวเลขเดียวที่ fit ที่สภาวะเดียวไม่สามารถแก้รูปร่างของไอโซเทอร์มได้"
    }
   ]
  },
@@ -264,7 +264,7 @@
     "start": 7.38,
     "end": 15.66,
     "en": "Compute its fugacity without and with the Poynting factor, and with Peng-Robinson, and decide which assumption matters most.",
-    "th": "คำนวณ fugacity ทั้งแบบไม่รวมและรวม Poynting factor และด้วย Peng–Robinson แล้วตัดสินว่าสมมติฐานใดสำคัญที่สุด"
+    "th": "คำนวณ fugacity ทั้งแบบไม่รวมและรวม แฟกเตอร์ Poynting และด้วย Peng–Robinson แล้วตัดสินว่าสมมติฐานใดสำคัญที่สุด"
    }
   ]
  },
@@ -281,7 +281,7 @@
     "start": 9.84,
     "end": 20.08,
     "en": "Estimate the partial pressure of 2-propanol with the ideal solution and with the fitted models, and decide what value and range to give the designer.",
-    "th": "ประมาณความดันย่อยของ 2-โพรพานอลด้วยสารละลายอุดมคติและด้วยแบบจำลองที่ปรับแล้ว และตัดสินว่าจะให้ค่าและช่วงใดแก่ผู้ออกแบบ"
+    "th": "ประมาณความดันย่อยของ 2-โพรพานอลด้วยสารละลายอุดมคติและด้วยแบบจำลองที่ fit แล้ว และตัดสินว่าจะให้ค่าและช่วงใดแก่ผู้ออกแบบ"
    }
   ]
  },
@@ -338,13 +338,13 @@
     "start": 17.82,
     "end": 26.65,
     "en": "For propane, leaving out the Poynting factor costs 13 percent; with it the fugacity is within 0.2 percent.",
-    "th": "สำหรับโพรเพน การละ Poynting factor ทำให้คลาด 13 เปอร์เซ็นต์ เมื่อรวมเข้าไป fugacity ถูกต้องภายใน 0.2 เปอร์เซ็นต์"
+    "th": "สำหรับโพรเพน การละ แฟกเตอร์ Poynting ทำให้คลาด 13 เปอร์เซ็นต์ เมื่อรวมเข้าไป fugacity ถูกต้องภายใน 0.2 เปอร์เซ็นต์"
    },
    {
     "start": 27.0,
     "end": 40.54,
     "en": "For 2-propanol, the ideal solution gives 0.33 kilopascal, the fits to ln gamma about 2.4 to 2.5, and the fits to G E 4 to 11.",
-    "th": "สำหรับ 2-โพรพานอล สารละลายอุดมคติให้ 0.33 กิโลปาสกาล การปรับกับ ln γ ให้ประมาณ 2.4 ถึง 2.5 และการปรับกับ G^E ให้ 4 ถึง 11"
+    "th": "สำหรับ 2-โพรพานอล สารละลายอุดมคติให้ 0.33 กิโลปาสคาล การ fit กับ ln γ ให้ประมาณ 2.4 ถึง 2.5 และการ fit กับ G^E ให้ 4 ถึง 11"
    }
   ]
  },
@@ -360,7 +360,7 @@
    {
     "start": 4.23,
     "end": 17.01,
-    "en": "A design note sizes a CO2 vessel and compressor with the ideal gas and a 10 percent margin. Quantify the errors, judge the margin, and say what you would use instead.",
+    "en": "A design note sizes a CO₂ vessel and compressor with the ideal gas and a 10 percent margin. Quantify the errors, judge the margin, and say what you would use instead.",
     "th": "บันทึกการออกแบบหนึ่งกำหนดขนาดถัง CO₂ และคอมเพรสเซอร์ด้วยแก๊สอุดมคติ โดยเผื่อไว้ 10 เปอร์เซ็นต์ จงคำนวณขนาดของความคลาดเคลื่อน ประเมินว่าการเผื่อนั้นพอหรือไม่ และบอกว่าจะใช้อะไรแทน"
    },
    {
@@ -383,8 +383,8 @@
    {
     "start": 15.55,
     "end": 30.89,
-    "en": "A 10 percent margin does not cover that. For pure CO2, use the reference equation of state. Peng-Robinson agrees at these two states, a held-out check, but its error rises near the critical point.",
-    "th": "การเผื่อ 10 เปอร์เซ็นต์ไม่ครอบคลุมความคลาดเคลื่อนนี้ สำหรับ CO₂ บริสุทธิ์ให้ใช้สมการสภาวะอ้างอิง Peng–Robinson ให้ค่าตรงกันที่สองสภาวะนี้ ซึ่งเป็นการตรวจสอบด้วยข้อมูลที่ไม่ได้ใช้ปรับ แต่ความคลาดเคลื่อนจะเพิ่มขึ้นใกล้จุดวิกฤต"
+    "en": "A 10 percent margin does not cover that. For pure CO₂, use the reference equation of state. Peng-Robinson agrees at these two states, a held-out check, but its error rises near the critical point.",
+    "th": "การเผื่อ 10 เปอร์เซ็นต์ไม่ครอบคลุมความคลาดเคลื่อนนี้ สำหรับ CO₂ บริสุทธิ์ให้ใช้สมการสถานะอ้างอิง Peng–Robinson ให้ค่าตรงกันที่สองสภาวะนี้ ซึ่งเป็นการตรวจสอบด้วยข้อมูลที่ไม่ได้ใช้ fit แต่ความคลาดเคลื่อนจะเพิ่มขึ้นใกล้จุดวิกฤต"
    }
   ]
  },
@@ -418,7 +418,7 @@
     "start": 0.25,
     "end": 12.5,
     "en": "To prepare for the midterm: review the six working relations with one worked number each, practice the problems again from a blank page, and bring a specific question to office hours.",
-    "th": "การเตรียมสอบ midterm ทบทวนความสัมพันธ์หลักหกข้อพร้อมตัวอย่างตัวเลขข้อละหนึ่งตัวอย่าง ฝึกทำโจทย์อีกครั้งจากกระดาษเปล่า และนำคำถามที่เจาะจงมาถามในชั่วโมงให้คำปรึกษา"
+    "th": "การเตรียมสอบกลางภาค ทบทวนความสัมพันธ์หลักหกข้อพร้อมตัวอย่างตัวเลขข้อละหนึ่งตัวอย่าง ฝึกทำโจทย์อีกครั้งจากกระดาษเปล่า และนำคำถามที่เจาะจงมาถามในชั่วโมงให้คำปรึกษา"
    },
    {
     "start": 12.85,
@@ -441,7 +441,7 @@
     "start": 5.08,
     "end": 19.82,
     "en": "Then test it on a property it was not built on: a liquid volume from an equation fitted to vapor pressure, 80 kilopascal data from a 60 kilopascal fit, a measured B 1 2 against a combining rule.",
-    "th": "จากนั้นทดสอบกับสมบัติที่ไม่ได้ใช้สร้างแบบจำลอง เช่น ปริมาตรของเหลวจากสมการที่ปรับกับความดันไอ ข้อมูลที่ 80 กิโลปาสกาลจากการปรับที่ 60 กิโลปาสกาล หรือ B12 ที่วัดได้เทียบกับกฎการรวม"
+    "th": "จากนั้นทดสอบกับสมบัติที่ไม่ได้ใช้สร้างแบบจำลอง เช่น ปริมาตรของเหลวจากสมการที่ fit กับความดันไอ ข้อมูลที่ 80 กิโลปาสคาลจากการ fit ที่ 60 กิโลปาสคาล หรือ B₁₂ ที่วัดได้เทียบกับกฎการรวม"
    },
    {
     "start": 20.17,
@@ -458,13 +458,13 @@
     "start": 0.25,
     "end": 2.87,
     "en": "Exit ticket, ten minutes, anonymous.",
-    "th": "Exit ticket สิบนาที ไม่ระบุชื่อ"
+    "th": "exit ticket สิบนาที ไม่ระบุชื่อ"
    },
    {
     "start": 3.22,
     "end": 14.15,
     "en": "Pick one result from your lab files, place it on the ladder, and name the evidence that would raise it. A second part of the form asks about the whole pre-midterm half.",
-    "th": "เลือกผลลัพธ์หนึ่งจากไฟล์ lab ของคุณ จัดตำแหน่งบนบันได และระบุหลักฐานที่จะยกระดับมัน ส่วนที่สองของแบบฟอร์มถามเกี่ยวกับช่วงก่อน midterm ทั้งหมด"
+    "th": "เลือกผลลัพธ์หนึ่งจากไฟล์ lab ของคุณ จัดตำแหน่งบนบันได และระบุหลักฐานที่จะยกระดับมัน ส่วนที่สองของแบบฟอร์มถามเกี่ยวกับช่วงก่อนสอบกลางภาค ทั้งหมด"
    }
   ]
  },
@@ -481,7 +481,7 @@
     "start": 4.8,
     "end": 12.89,
     "en": "Work the exam-style problem again without notes, and revisit the lab you found hardest. Good luck with the midterm.",
-    "th": "ทำโจทย์แบบข้อสอบอีกครั้งโดยไม่ดูโน้ต และทบทวน lab ที่คุณคิดว่ายากที่สุด ขอให้โชคดีกับการสอบ midterm"
+    "th": "ทำโจทย์แบบข้อสอบอีกครั้งโดยไม่ดูโน้ต และทบทวน lab ที่คุณคิดว่ายากที่สุด ขอให้โชคดีกับการสอบกลางภาค"
    }
   ]
  }

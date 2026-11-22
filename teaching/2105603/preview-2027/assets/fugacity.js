@@ -13,14 +13,14 @@ function interpLog(T, s) { // ln P linear in T between table rows
 }
 /** Reference saturation state at T from the NIST table. */
 export function satRef(data, f, T) { return interpLog(T, data.sat[f]); }
-/** The equation's own saturation state at T: equal ln φ in the two phases, with ΔH_vap = H^R(vapor) − H^R(liquid). */
+/** The equation's own saturation state at T: equal ln φ in the two phases, with Δ_vap H = H^R(vapor) − H^R(liquid). */
 export function satEos(model, fl, T) {
   const s = eosPsat(model, fl, T); if (!s) return null;
   const rs = roots(model, fl, T, s.P).roots, L = rs[0], V = rs[rs.length - 1];
   const hL = cubicResidual(model, fl, T, s.P, 'smallest').HR, hV = cubicResidual(model, fl, T, s.P, 'largest').HR;
   return { P: s.P, VL: L.V, VV: V.V, ZL: L.Z, ZV: V.Z, lnphiL: L.gR, lnphiV: V.gR, phi: Math.exp(V.gR), dH: hV - hL, spinodal: s.spinodal };
 }
-/** ΔH_vap from the reference vapor-pressure curve: Clapeyron with the reference ΔV, and Clausius–Clapeyron (ideal vapor, V^L neglected). */
+/** Δ_vap H from the reference vapor-pressure curve: Clapeyron with the reference ΔV, and Clausius–Clapeyron (ideal vapor, V^L neglected). */
 export function clapeyron(data, f, T) {
   const s = data.sat[f];
   let j = 1; for (let k = 1; k < s.T.length - 1; k++) if (Math.abs(s.T[k] - T) < Math.abs(s.T[j] - T)) j = k;
@@ -50,5 +50,5 @@ export function iceWater(T) {
   const liq = Math.exp(54.842763 - 6763.22 / T - 4.210 * Math.log(T) + 0.000367 * T + Math.tanh(0.0415 * (T - 218.8)) * (53.878 - 1331.22 / T - 9.44523 * Math.log(T) + 0.014025 * T));
   return { ice, liq, ratio: ice / liq };
 }
-/** Solid over subcooled liquid fugacity from the enthalpy of fusion, neglecting ΔC_p: ln(f_s/f_l) = −(ΔH_fus/R)(1/T − 1/T_m). */
+/** Solid over subcooled liquid fugacity from the enthalpy of fusion, neglecting ΔC_p: ln(f^s/f^l) = −(Δ_fus H/R)(1/T − 1/T_m). */
 export function solidRatio(T, dHfus, Tm) { return Math.exp(-dHfus / R * (1 / T - 1 / Tm)); }

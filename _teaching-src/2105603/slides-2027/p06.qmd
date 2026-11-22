@@ -15,7 +15,7 @@ title-slide-attributes:
 :::
 ::: {.half}
 [After the midterm · 7 sessions]{.label}
-[1 · VLE and flash]{.cm} [2 · Experimental VLE]{.cm} [3 · Liquid stability and LLE]{.cm} [4 · Solids and adsorption]{.cm} [5 · Chemical equilibrium]{.cm} [6 · Electrochemical equilibrium]{.cm} [7 · Choosing a model from evidence]{.cm}
+[1 · VLE and flash]{.cm} [2 · Experimental VLE and consistency]{.cm} [3 · Liquid stability and LLE]{.cm} [4 · Solids and adsorption]{.cm} [5 · Chemical equilibrium]{.cm} [6 · Electrochemical equilibrium]{.cm} [7 · Choosing a model from evidence]{.cm}
 :::
 :::
 
@@ -97,16 +97,16 @@ Finish Lab P6: the five models and both objectives, then A–C in the Graduate v
 ::: {.column width="50%"}
 The departure from the ideal solution at the same T, P and x:
 
-$$M^E=M-M^{id},\qquad G^E=H^E-TS^E$$
+$$M^E=M-M^{\text{id}},\qquad G^E=H^E-TS^E$$
 
 For V and H the ideal-solution value is Σx<sub>i</sub>M<sub>i</sub>*, so V<sup>E</sup> = ΔV<sub>mix</sub> and H<sup>E</sup> = ΔH<sub>mix</sub>.
 
-$$\frac{\Delta g_{mix}}{RT}=\sum_ix_i\ln x_i+\frac{G^E}{RT}$$
+$$\frac{\Delta g_{\text{mix}}}{RT}=\sum_ix_i\ln x_i+\frac{G^E}{RT}$$
 :::
 ::: {.column width="48%" .rule-notes}
 G<sup>E</sup> &gt; 0: positive deviation, the components prefer their own kind (2-propanol + water). G<sup>E</sup> &lt; 0: negative deviation, unlike pairs attract (acetone + chloroform).
 
-[Ethanol + water, 298 K (P5)]{.q} V<sup>E</sup> reaches −1.1 cm³/mol.
+[Ethanol + water, 298 K (P5):]{.q} V<sup>E</sup> reaches −1.1 cm³/mol.
 
 Temperature dependence: ∂(G<sup>E</sup>/RT)/∂T = −H<sup>E</sup>/RT². Constant parameters assume H<sup>E</sup> ≈ 0.
 :::
@@ -118,20 +118,20 @@ Temperature dependence: ∂(G<sup>E</sup>/RT)/∂T = −H<sup>E</sup>/RT². Cons
 ::: {.column width="50%"}
 $$\gamma_i=\frac{\hat f_i}{x_if_i^\circ}$$
 
-$$\ln\gamma_i=\Big(\frac{\partial(nG^E/RT)}{\partial n_i}\Big)_{T,P,n_j}$$
-
 $$\frac{G^E}{RT}=\sum_ix_i\ln\gamma_i,\qquad \sum_ix_i\,d\ln\gamma_i=0$$
 
-At low pressure, with an ideal vapor (P4: φ̂ and Poynting within 1% at 60 kPa):
+With the pure liquid as f<sub>i</sub>°, $f_i^\circ=\varphi_i^{\text{sat}}P_i^{\text{sat}}\mathcal{P}_i$ (P4). Equal fugacity with the vapor gives
 
-$$y_iP=x_i\gamma_iP_i^{sat}(T)$$
+$$y_i\Phi_iP=x_i\gamma_iP_i^{\text{sat}},\qquad\Phi_i=\frac{\hat\varphi_i^{V}}{\varphi_i^{\text{sat}}\mathcal{P}_i}$$
 :::
 ::: {.column width="48%" .rule-notes}
-ln γ<sub>i</sub> is the partial molar property of G<sup>E</sup>/RT (P5), so the two ln γ are linked by Gibbs–Duhem.
+ln γ<sub>i</sub> = [∂(nG<sup>E</sup>/RT)/∂n<sub>i</sub>]<sub>T,P,n<sub>j</sub></sub> is the partial molar property of G<sup>E</sup>/RT (P5), so the two ln γ are linked by Gibbs–Duhem.
 
-[2-propanol + water, 60 kPa, x₁ = 0.14]{.q} y₁ = 0.477, T = 342.9 K, P₁<sup>sat</sup> = 60.1 kPa: γ₁ = 3.40, γ₂ = 1.18, G<sup>E</sup>/RT = 0.315.
+At 60 kPa Φ<sub>i</sub> ≈ 1 within about 1%: **modified Raoult's law**, y<sub>i</sub>P = x<sub>i</sub>γ<sub>i</sub>P<sub>i</sub><sup>sat</sup>.
 
-Session 1 adds φ̂<sub>i</sub> and Poynting back for the γ–φ form.
+[2-propanol + water, 60 kPa, x₁ = 0.14:]{.q} y₁ = 0.477, T = 342.9 K, P₁<sup>sat</sup> = 60.1 kPa: γ₁ = 3.40, γ₂ = 1.18, G<sup>E</sup>/RT = 0.315.
+
+Sessions 1 and 2 after the midterm use the same γ–φ form, with Φ<sub>i</sub> evaluated or set to 1.
 :::
 ::::
 
@@ -143,16 +143,16 @@ Session 1 adds φ̂<sub>i</sub> and Poynting back for the γ–φ form.
 
 **Henry** (infinite dilution): f̂<sub>i</sub> → x<sub>i</sub>H<sub>i</sub> as x<sub>i</sub> → 0, with
 
-$$H_i=\gamma_i^\infty f_i\approx\gamma_i^\infty P_i^{sat}$$
+$$H_i=\gamma_i^\infty f_i\approx\gamma_i^\infty P_i^{\text{sat}}$$
 
 $$\gamma_i^*=\gamma_i/\gamma_i^\infty\to1\ \text{as}\ x_i\to0$$
 
-**Molality** (electrolytes, Session 6): f̂<sub>i</sub> = m<sub>i</sub>γ<sub>i</sub><sup>□</sup>H<sub>i</sub><sup>□</sup>.
+**Molality** (electrolytes, Session 6): a<sub>i</sub> = m<sub>i</sub>γ<sub>i</sub>/m°, m° = 1 mol/kg, with γ<sub>i</sub> → 1 as m → 0.
 :::
 ::: {.column width="48%" .rule-notes}
-The standard state is a choice. f̂<sub>i</sub> does not depend on it; γ<sub>i</sub> and f<sub>i</sub>° change together.
+The standard state is a choice. f̂<sub>i</sub> does not depend on it; the **activity** a<sub>i</sub> = f̂<sub>i</sub>/f<sub>i</sub>° = x<sub>i</sub>γ<sub>i</sub> changes with f<sub>i</sub>°. Sessions 5 and 6 work with activities.
 
-[2-propanol in water, 345 K]{.q} From the ln γ fits, γ₁∞ ≈ 7.6–7.9 and H₁ ≈ 500–520 kPa. From the G<sup>E</sup> fits, H₁ = 840–3100 kPa.
+[2-propanol in water, 345 K:]{.q} From the ln γ fits, γ₁∞ ≈ 7.6–7.9 and H₁ ≈ 500–520 kPa. From the G<sup>E</sup> fits, H₁ = 840–3100 kPa.
 
 Henry's law suits a dilute solute or a supercritical gas, which has no pure liquid at T.
 :::
@@ -161,12 +161,12 @@ Henry's law suits a dilute solute or a supercritical gas, which has no pure liqu
 ## Models for G<sup>E</sup> {#models}
 
 ::: {.lever-box}
-| Model | G<sup>E</sup>/RT or ln γ<sub>1</sub> | Parameters | Can it split? |
+| Model | G<sup>E</sup>/RT or ln γ₁ | Parameters | Can it split? |
 |---|---|---|---|
-| Margules (1 or 2) | G<sup>E</sup>/RT = x<sub>1</sub>x<sub>2</sub>(A<sub>21</sub>x<sub>1</sub> + A<sub>12</sub>x<sub>2</sub>); ln γ<sub>1</sub>∞ = A<sub>12</sub> | A<sub>12</sub>, A<sub>21</sub> | yes |
-| van Laar | ln γ<sub>1</sub> = A<sub>12</sub>(1 + A<sub>12</sub>x<sub>1</sub>/A<sub>21</sub>x<sub>2</sub>)<sup>−2</sup> | A<sub>12</sub>, A<sub>21</sub> | yes |
-| Wilson | G<sup>E</sup>/RT = −Σx<sub>i</sub> ln(Σx<sub>j</sub>Λ<sub>ij</sub>) | Λ<sub>12</sub>, Λ<sub>21</sub> &gt; 0 | **no** |
-| NRTL | local compositions, G<sub>ij</sub> = exp(−ατ<sub>ij</sub>) | τ<sub>12</sub>, τ<sub>21</sub>, α | yes |
+| Margules (1 or 2) | G<sup>E</sup>/RT = x₁x₂(A₂₁x₁ + A₁₂x₂); ln γ₁∞ = A₁₂ | A₁₂, A₂₁ | yes |
+| van Laar | ln γ₁ = A₁₂(1 + A₁₂x₁/A₂₁x₂)<sup>−2</sup> | A₁₂, A₂₁ | yes |
+| Wilson | G<sup>E</sup>/RT = −Σx<sub>i</sub> ln(Σx<sub>j</sub>Λ<sub>ij</sub>) | Λ₁₂, Λ₂₁ &gt; 0 | **no** |
+| NRTL | local compositions, G<sub>ij</sub> = exp(−ατ<sub>ij</sub>) | τ₁₂, τ₂₁, α | yes |
 | UNIQUAC, UNIFAC | combinatorial + residual; UNIFAC from groups | from structure | yes |
 :::
 

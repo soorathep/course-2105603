@@ -15,7 +15,7 @@ title-slide-attributes:
 :::
 ::: {.half}
 [After the midterm · 7 sessions]{.label}
-[1 · VLE and flash]{.cm} [2 · Experimental VLE]{.cm} [3 · Liquid stability and LLE]{.cm} [4 · Solids and adsorption]{.cm} [5 · Chemical equilibrium]{.cm} [6 · Electrochemical equilibrium]{.cm} [7 · Choosing a model from evidence]{.cm}
+[1 · VLE and flash]{.cm} [2 · Experimental VLE and consistency]{.cm} [3 · Liquid stability and LLE]{.cm} [4 · Solids and adsorption]{.cm} [5 · Chemical equilibrium]{.cm} [6 · Electrochemical equilibrium]{.cm} [7 · Choosing a model from evidence]{.cm}
 :::
 :::
 
@@ -142,7 +142,7 @@ B⁰ = 0.083 − 0.422/T<sub>r</sub><sup>1.6</sup>, B¹ = 0.139 − 0.172/T<sub>
 ::: {.column width="46%" .rule-notes}
 **Use the truncated form** where BP/RT is small, roughly V<sub>r</sub> = V/V<sub>c</sub> &gt; 2. It has no liquid branch.
 
-[Methane, 300 K]{.q} Pitzer B = −41.3 cm³/mol; from the NIST data −42.2 (2% apart).
+[Methane, 300 K:]{.q} Pitzer B = −41.3 cm³/mol; from the NIST data −42.2 (2% apart).
 
 At 100 bar the truncated equation gives Z = 0.834 against 0.856 (−2.5%). Up to the critical density (about 211 bar) the mean error is 5.7%: the C/V² terms matter.
 
@@ -193,7 +193,7 @@ The middle root has (∂P/∂V)<sub>T</sub> &gt; 0, so κ<sub>T</sub> &lt; 0: un
 ::: {.column width="42%" .concept-notes}
 Two-parameter idea: at the same T<sub>r</sub> and P<sub>r</sub>, every fluid has the same Z. A cubic with Ω<sub>a</sub>, Ω<sub>b</sub> gives exactly one curve.
 
-**Acentric factor** (Pitzer): ω = −1 − log<sub>10</sub>(P<sup>sat</sup><sub>r</sub>) at T<sub>r</sub> = 0.7.
+**Acentric factor** (Pitzer): ω = −1 − log₁₀(P<sup>sat</sup><sub>r</sub>) at T<sub>r</sub> = 0.7.
 
 [At T<sub>r</sub> = 1.05, P<sub>r</sub> = 2]{.q} Methane, CO₂, propane: Z = 0.344, 0.336, 0.338. Water: **0.267**. Van der Waals: 0.440.
 
@@ -245,7 +245,7 @@ The cubic has its own vapor pressure: the pressure where the liquid and vapor ro
 
 **Volume translation** (Péneloux): V = V<sub>EOS</sub> − c. A constant c changes no phase equilibrium, because it shifts both phases equally.
 
-[Water, 500 K]{.q} c = 5.0 cm³/mol makes the saturated liquid exact and the liquid branch error 0.2%. For CO₂ the same correction raises the liquid error from 1.6% to 4.4%: c repairs one volume, not the compressibility.
+[Water, 500 K:]{.q} c = 5.0 cm³/mol makes the saturated liquid exact and the liquid branch error 0.2%. For CO₂ the same correction raises the liquid error from 1.6% to 4.4%: c repairs one volume, not the compressibility.
 :::
 ::::
 
@@ -253,7 +253,7 @@ The cubic has its own vapor pressure: the pressure where the liquid and vapor ro
 
 :::: {.columns}
 ::: {.column width="56%"}
-![](figures/p02-bfit.svg){.fig-pxy fig-alt="(Z − 1)/ρ against density for methane at 300 K: the NIST points fall on a straight line with intercept −42.1 cm3/mol; the Pitzer value −41.3 is close; the Peng–Robinson value −54.3 is far below"}
+![](figures/p02-bfit.svg){.fig-pxy fig-alt="(Z − 1)/ρ against density for methane at 300 K: the NIST points fall on a straight line with intercept −42.1 cm³/mol; the Pitzer value −41.3 is close; the Peng–Robinson value −54.3 is far below"}
 :::
 ::: {.column width="42%" .concept-notes}
 From Z = 1 + Bρ + Cρ²: (Z − 1)/ρ = B + Cρ. The intercept is B.

@@ -164,7 +164,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><span class="label">Before the midterm · 7 sessions</span> <span class="cm">P1 · Framework</span> <span class="cm">P2 · PVT and equations of state</span> <span class="cm now">P3 · Residual properties</span> <span class="cm">P4 · Pure-component equilibrium and fugacity</span> <span class="cm">P5 · Mixtures</span> <span class="cm">P6 · Excess properties and activity</span> <span class="cm">P7 · Choosing a property model</span></p>
 </div>
 <div class="half">
-<p><span class="label">After the midterm · 7 sessions</span> <span class="cm">1 · VLE and flash</span> <span class="cm">2 · Experimental VLE</span> <span class="cm">3 · Liquid stability and LLE</span> <span class="cm">4 · Solids and adsorption</span> <span class="cm">5 · Chemical equilibrium</span> <span class="cm">6 · Electrochemical equilibrium</span> <span class="cm">7 · Choosing a model from evidence</span></p>
+<p><span class="label">After the midterm · 7 sessions</span> <span class="cm">1 · VLE and flash</span> <span class="cm">2 · Experimental VLE and consistency</span> <span class="cm">3 · Liquid stability and LLE</span> <span class="cm">4 · Solids and adsorption</span> <span class="cm">5 · Chemical equilibrium</span> <span class="cm">6 · Electrochemical equilibrium</span> <span class="cm">7 · Choosing a model from evidence</span></p>
 </div>
 </div>
 <div class="bridge">
@@ -238,11 +238,11 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <p><img data-src="figures/p03-path.svg" class="fig-pxy" alt="Waterfall of the enthalpy change of the CO2 compressor with Peng–Robinson: plus 1400 J/mol to turn the real inlet into an ideal gas, plus 4078 J/mol for the ideal-gas compression, minus 2627 J/mol to return to the real outlet, giving 2851 J/mol"></p>
 </div><div class="column rule-notes" style="width:46%;">
 <p>At the same T and P:</p>
-<p><span class="math display">M^R=M(T,P)-M^{ig}(T,P)</span></p>
+<p><span class="math display">M^R=M(T,P)-M^{\text{ig}}(T,P)</span></p>
 <p>for M = V, U, H, S or G.</p>
 <p>Any change follows a path through the ideal gas:</p>
-<p><span class="math display">\Delta H=H_2^R-H_1^R+\int_{T_1}^{T_2}C_p^{ig}\,dT</span></p>
-<p><span class="math display">\Delta S=S_2^R-S_1^R+\int_{T_1}^{T_2}\frac{C_p^{ig}}{T}\,dT-R\ln\frac{P_2}{P_1}</span></p>
+<p><span class="math display">\Delta H=H_2^R-H_1^R+\int_{T_1}^{T_2}C_p^{\text{ig}}\,dT</span></p>
+<p><span class="math display">\Delta S=S_2^R-S_1^R+\int_{T_1}^{T_2}\frac{C_p^{\text{ig}}}{T}\,dT-R\ln\frac{P_2}{P_1}</span></p>
 <p>The ideal-gas step needs C<sub>p</sub><sup>ig</sup>(T) only. The residual steps need only PVT data.</p>
 </div></div>
 </section>
@@ -323,9 +323,9 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Shomate form (NIST WebBook), t = T/1000:</p>
-<p><span class="math display">C_p^{ig}=A+Bt+Ct^2+Dt^3+E/t^2</span></p>
+<p><span class="math display">C_p^{\text{ig}}=A+Bt+Ct^2+Dt^3+E/t^2</span></p>
 <p>H<sup>ig</sup> and S°<sup>ig</sup> are its integrals; at pressure P:</p>
-<p><span class="math display">S^{ig}(T,P)=S^{\circ}(T)-R\ln\frac{P}{1\,\text{bar}}</span></p>
+<p><span class="math display">S^{\text{ig}}(T,P)=S^{\circ}(T)-R\ln\frac{P}{1\,\text{bar}}</span></p>
 </div><div class="column" style="width:48%;">
 <div class="lever-box">
 <p><span class="label">C<sub>p</sub><sup>ig</sup> / (J/(mol K)): Shomate against the NIST 0.001 bar isobar</span></p>
@@ -381,7 +381,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="column" style="width:54%;">
 <p><img data-src="figures/p03-outlets.svg" class="fig-pxy" alt="Outlet temperature error against NIST for the methane and nitrogen valves and the methane and CO2 compressors: the ideal gas is 31 to 34 K off for the valves and 7 to 12 K off for the compressors; virial, SRK and PR are within about 4 K except the virial for the nitrogen valve at −8.6 K"></p>
 </div><div class="column concept-notes" style="width:44%;">
-<p><strong>Valve</strong>, ΔH = 0: ΔH<sup>ig</sup> = −(H<sub>2</sub><sup>R</sup> − H<sub>1</sub><sup>R</sup>). The ideal gas cannot cool at all.</p>
+<p><strong>Valve</strong>, ΔH = 0: ΔH<sup>ig</sup> = −(H₂<sup>R</sup> − H₁<sup>R</sup>). The ideal gas cannot cool at all.</p>
 <p><strong>Compressor</strong>, ΔS = 0: the outlet T comes from S; the work is ΔH.</p>
 <p><span class="q">Methane valve, 100 → 20 bar</span> NIST 265.6 K; SRK 265.2; PR 262.9; virial 267.1.</p>
 <p><span class="q">CO₂ compressor</span> The ideal gas is 12 K low and its work 20% high.</p>
@@ -480,7 +480,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <div class="column" style="width:44%;">
 <ol type="1">
 <li><strong>Methane valve.</strong> Read the residual table at 100 bar and the outlet of each model.</li>
-<li><strong>CO₂ compressor.</strong> Compare ΔH<sup>ig</sup> with H<sub>2</sub><sup>R</sup> − H<sub>1</sub><sup>R</sup> for the ideal gas and PR.</li>
+<li><strong>CO₂ compressor.</strong> Compare ΔH<sup>ig</sup> with H₂<sup>R</sup> − H₁<sup>R</sup> for the ideal gas and PR.</li>
 <li>Switch the ideal gas from Shomate to the NIST 0.001 bar table. How much does the outlet move?</li>
 <li>Graduate view, <strong>A</strong>: residuals from the NIST isotherms alone.</li>
 </ol>
@@ -496,7 +496,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <h2>Four common mistakes</h2>
 <div class="mistakes">
 <div>
-<p><strong>Sign of the residual.</strong> M<sup>R</sup> = M − M<sup>ig</sup>. For an attracting gas H<sup>R</sup> &lt; 0. Leaving the real fluid adds −H<sub>1</sub><sup>R</sup>.</p>
+<p><strong>Sign of the residual.</strong> M<sup>R</sup> = M − M<sup>ig</sup>. For an attracting gas H<sup>R</sup> &lt; 0. Leaving the real fluid adds −H₁<sup>R</sup>.</p>
 </div>
 <div>
 <p><strong>Dropping the pressure term of S<sup>ig</sup>.</strong> S<sup>ig</sup>(T, P) = S°(T) − R ln(P/P°). Without it the CO₂ compressor outlet comes out at 348 K instead of 403 K (PR).</p>
@@ -618,7 +618,7 @@ Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermod
 <h2>Summary</h2>
 <div class="summary3">
 <div>
-<p><span class="label">Definition</span> M<sup>R</sup> = M − M<sup>ig</sup> at the same T and P. ΔM = M<sub>2</sub><sup>R</sup> − M<sub>1</sub><sup>R</sup> + ΔM<sup>ig</sup>, with ΔM<sup>ig</sup> from C<sub>p</sub><sup>ig</sup>(T).</p>
+<p><span class="label">Definition</span> M<sup>R</sup> = M − M<sup>ig</sup> at the same T and P. ΔM = M₂<sup>R</sup> − M₁<sup>R</sup> + ΔM<sup>ig</sup>, with ΔM<sup>ig</sup> from C<sub>p</sub><sup>ig</sup>(T).</p>
 </div>
 <div>
 <p><span class="label">Sources</span> G<sup>R</sup> from Z alone; H<sup>R</sup> and S<sup>R</sup> also need (∂Z/∂T)<sub>P</sub>: dB/dT for the virial equation, da/dT for a cubic.</p>

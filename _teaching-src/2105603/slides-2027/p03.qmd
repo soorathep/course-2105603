@@ -15,7 +15,7 @@ title-slide-attributes:
 :::
 ::: {.half}
 [After the midterm · 7 sessions]{.label}
-[1 · VLE and flash]{.cm} [2 · Experimental VLE]{.cm} [3 · Liquid stability and LLE]{.cm} [4 · Solids and adsorption]{.cm} [5 · Chemical equilibrium]{.cm} [6 · Electrochemical equilibrium]{.cm} [7 · Choosing a model from evidence]{.cm}
+[1 · VLE and flash]{.cm} [2 · Experimental VLE and consistency]{.cm} [3 · Liquid stability and LLE]{.cm} [4 · Solids and adsorption]{.cm} [5 · Chemical equilibrium]{.cm} [6 · Electrochemical equilibrium]{.cm} [7 · Choosing a model from evidence]{.cm}
 :::
 :::
 
@@ -102,15 +102,15 @@ Finish Lab P3: four processes and five states, then A–C in the Graduate view. 
 ::: {.column width="46%" .rule-notes}
 At the same T and P:
 
-$$M^R=M(T,P)-M^{ig}(T,P)$$
+$$M^R=M(T,P)-M^{\text{ig}}(T,P)$$
 
 for M = V, U, H, S or G.
 
 Any change follows a path through the ideal gas:
 
-$$\Delta H=H_2^R-H_1^R+\int_{T_1}^{T_2}C_p^{ig}\,dT$$
+$$\Delta H=H_2^R-H_1^R+\int_{T_1}^{T_2}C_p^{\text{ig}}\,dT$$
 
-$$\Delta S=S_2^R-S_1^R+\int_{T_1}^{T_2}\frac{C_p^{ig}}{T}\,dT-R\ln\frac{P_2}{P_1}$$
+$$\Delta S=S_2^R-S_1^R+\int_{T_1}^{T_2}\frac{C_p^{\text{ig}}}{T}\,dT-R\ln\frac{P_2}{P_1}$$
 
 The ideal-gas step needs C<sub>p</sub><sup>ig</sup>(T) only. The residual steps need only PVT data.
 :::
@@ -189,11 +189,11 @@ $$\frac{S^R}{R}=\ln(Z-\beta)+\frac{d\ln\alpha}{d\ln T_r}\,qI$$
 ::: {.column width="50%"}
 Shomate form (NIST WebBook), t = T/1000:
 
-$$C_p^{ig}=A+Bt+Ct^2+Dt^3+E/t^2$$
+$$C_p^{\text{ig}}=A+Bt+Ct^2+Dt^3+E/t^2$$
 
 H<sup>ig</sup> and S°<sup>ig</sup> are its integrals; at pressure P:
 
-$$S^{ig}(T,P)=S^{\circ}(T)-R\ln\frac{P}{1\,\text{bar}}$$
+$$S^{\text{ig}}(T,P)=S^{\circ}(T)-R\ln\frac{P}{1\,\text{bar}}$$
 :::
 ::: {.column width="48%"}
 ::: {.lever-box}
@@ -234,7 +234,7 @@ The best model changes with the property and the state. P2 tested Z; an energy b
 ![](figures/p03-outlets.svg){.fig-pxy fig-alt="Outlet temperature error against NIST for the methane and nitrogen valves and the methane and CO2 compressors: the ideal gas is 31 to 34 K off for the valves and 7 to 12 K off for the compressors; virial, SRK and PR are within about 4 K except the virial for the nitrogen valve at −8.6 K"}
 :::
 ::: {.column width="44%" .concept-notes}
-**Valve**, ΔH = 0: ΔH<sup>ig</sup> = −(H<sub>2</sub><sup>R</sup> − H<sub>1</sub><sup>R</sup>). The ideal gas cannot cool at all.
+**Valve**, ΔH = 0: ΔH<sup>ig</sup> = −(H₂<sup>R</sup> − H₁<sup>R</sup>). The ideal gas cannot cool at all.
 
 **Compressor**, ΔS = 0: the outlet T comes from S; the work is ΔH.
 
@@ -313,7 +313,7 @@ At 20 bar the virial equation is within 2%: this is its range.
 :::: {.columns}
 ::: {.column width="44%"}
 1. **Methane valve.** Read the residual table at 100 bar and the outlet of each model.
-2. **CO₂ compressor.** Compare ΔH<sup>ig</sup> with H<sub>2</sub><sup>R</sup> − H<sub>1</sub><sup>R</sup> for the ideal gas and PR.
+2. **CO₂ compressor.** Compare ΔH<sup>ig</sup> with H₂<sup>R</sup> − H₁<sup>R</sup> for the ideal gas and PR.
 3. Switch the ideal gas from Shomate to the NIST 0.001 bar table. How much does the outlet move?
 4. Graduate view, **A**: residuals from the NIST isotherms alone.
 
@@ -333,7 +333,7 @@ CO₂ compressor: NIST 399.66 K, 2865 J/mol · ideal gas 387.68 K, 3430 J/mol ·
 
 ::: {.mistakes}
 ::: {}
-**Sign of the residual.** M<sup>R</sup> = M − M<sup>ig</sup>. For an attracting gas H<sup>R</sup> &lt; 0. Leaving the real fluid adds −H<sub>1</sub><sup>R</sup>.
+**Sign of the residual.** M<sup>R</sup> = M − M<sup>ig</sup>. For an attracting gas H<sup>R</sup> &lt; 0. Leaving the real fluid adds −H₁<sup>R</sup>.
 :::
 ::: {}
 **Dropping the pressure term of S<sup>ig</sup>.** S<sup>ig</sup>(T, P) = S°(T) − R ln(P/P°). Without it the CO₂ compressor outlet comes out at 348 K instead of 403 K (PR).
@@ -429,7 +429,7 @@ Work, CO₂: NIST 2865, ideal 3430, PR 2851 J/mol. C<sub>p</sub><sup>ig</sup> mo
 ::: {.summary3}
 ::: {}
 [Definition]{.label}
-M<sup>R</sup> = M − M<sup>ig</sup> at the same T and P. ΔM = M<sub>2</sub><sup>R</sup> − M<sub>1</sub><sup>R</sup> + ΔM<sup>ig</sup>, with ΔM<sup>ig</sup> from C<sub>p</sub><sup>ig</sup>(T).
+M<sup>R</sup> = M − M<sup>ig</sup> at the same T and P. ΔM = M₂<sup>R</sup> − M₁<sup>R</sup> + ΔM<sup>ig</sup>, with ΔM<sup>ig</sup> from C<sub>p</sub><sup>ig</sup>(T).
 :::
 ::: {}
 [Sources]{.label}

@@ -15,7 +15,7 @@ title-slide-attributes:
 :::
 ::: {.half}
 [After the midterm · 7 sessions]{.label}
-[1 · VLE and flash]{.cm} [2 · Experimental VLE]{.cm} [3 · Liquid stability and LLE]{.cm} [4 · Solids and adsorption]{.cm} [5 · Chemical equilibrium]{.cm} [6 · Electrochemical equilibrium]{.cm} [7 · Choosing a model from evidence]{.cm}
+[1 · VLE and flash]{.cm} [2 · Experimental VLE and consistency]{.cm} [3 · Liquid stability and LLE]{.cm} [4 · Solids and adsorption]{.cm} [5 · Chemical equilibrium]{.cm} [6 · Electrochemical equilibrium]{.cm} [7 · Choosing a model from evidence]{.cm}
 :::
 :::
 
@@ -67,7 +67,7 @@ By the end of today you can compute it, and say what a correct vapor pressure do
 [60–70]{.t} **Break**
 :::
 ::: {.seg .act style="flex:70"}
-[70–140]{.t} **Activity 2 · pair investigation** [vapor pressure, ΔH<sub>vap</sub>, liquids]{.d}
+[70–140]{.t} **Activity 2 · pair investigation** [vapor pressure, Δ<sub>vap</sub>H, liquids]{.d}
 :::
 ::: {.seg .wrap style="flex:40"}
 [140–180]{.t} **Discussion and exit ticket** [answer the session question]{.d}
@@ -99,9 +99,11 @@ Finish Lab P4: four fluids and three isotherms, then A–C in the Graduate view.
 ::: {.column width="50%"}
 For an ideal gas at fixed T, dμ = RT d ln P. For any fluid, **define** f by
 
-$$d\mu=RT\,d\ln f\quad(T\text{ fixed}),\qquad \lim_{P\to0}\frac{f}{P}=1$$
+$$d\mu=RT\,d\ln f\quad(T\text{ fixed})$$
 
-$$\varphi=\frac{f}{P},\qquad \ln\varphi=\frac{G^R}{RT}=\int_0^P(Z-1)\frac{dP}{P}$$
+with f/P → 1 as P → 0. The fugacity coefficient φ = f/P:
+
+$$\ln\varphi=\frac{G^R}{RT}=\int_0^P(Z-1)\frac{dP}{P}$$
 
 f has units of pressure. For a pure fluid ln φ is the G<sup>R</sup>/RT of P3.
 :::
@@ -162,7 +164,7 @@ SRK and PR fitted m(ω) to vapor pressures, and ω itself is defined at T<sub>r<
 
 Van der Waals keeps a constant: its attraction does not grow as T falls, so the liquid is too unstable and P<sup>sat</sup> far too high.
 
-A good P<sup>sat</sup> tests the fit. The liquid volume (P2) and ΔH<sub>vap</sub> (next slide) are independent tests.
+A good P<sup>sat</sup> tests the fit. The liquid volume (P2) and Δ<sub>vap</sub>H (next slide) are independent tests.
 :::
 ::::
 
@@ -172,11 +174,11 @@ A good P<sup>sat</sup> tests the fit. The liquid volume (P2) and ΔH<sub>vap</su
 ::: {.column width="48%"}
 Along the coexistence curve dμ<sup>L</sup> = dμ<sup>V</sup>, so
 
-$$\frac{dP^{sat}}{dT}=\frac{\Delta H_{vap}}{T\,\Delta V}\quad\text{(exact)}$$
+$$\frac{dP^{\text{sat}}}{dT}=\frac{\Delta_{\text{vap}}H}{T\,\Delta V}\quad\text{(exact)}$$
 
 With V<sup>L</sup> ≪ V<sup>V</sup> = RT/P (ideal vapor), Clausius–Clapeyron:
 
-$$\frac{d\ln P^{sat}}{dT}\approx\frac{\Delta H_{vap}}{RT^2}$$
+$$\frac{d\ln P^{\text{sat}}}{dT}\approx\frac{\Delta_{\text{vap}}H}{RT^2}$$
 :::
 ::: {.column width="50%"}
 ![](figures/p04-dh.svg){.fig-pxy fig-alt="Enthalpy of vaporization of propane from 210 K to the critical point: NIST falls from 19.6 to 0 kJ/mol; Peng–Robinson follows within a few percent; Clausius–Clapeyron stays near 19 kJ/mol and is more than twice the true value near the critical point"}
@@ -208,11 +210,13 @@ Compressing the liquid fivefold raises its fugacity by 37%.
 ::: {.column width="50%"}
 Integrate (∂ ln f/∂P)<sub>T</sub> = V<sup>L</sup>/RT from saturation:
 
-$$f^L(P)=\varphi^{sat}P^{sat}\exp\int_{P^{sat}}^{P}\frac{V^L}{RT}dP$$
+$$f^L(P)=\varphi^{\text{sat}}P^{\text{sat}}\,\mathcal{P}$$
 
-$$f^L(P)\approx\varphi^{sat}P^{sat}\exp\frac{V^L(P-P^{sat})}{RT}$$
+$$\mathcal{P}=\exp\int_{P^{\text{sat}}}^{P}\frac{V^L}{RT}dP$$
 
-The exponential is the **Poynting factor**. For P − P<sup>sat</sup> = 1 bar at 300 K it is 1.0007 for water (18 cm³/mol) and 1.004 for a liquid of 100 cm³/mol.
+$$\mathcal{P}\approx\exp\frac{V^L(P-P^{\text{sat}})}{RT}$$
+
+$\mathcal{P}$ is the **Poynting factor**; Session 1 after the midterm writes it $\mathcal{P}_i$. For P − P<sup>sat</sup> = 1 bar at 300 K it is 1.0007 for water (18 cm³/mol) and 1.004 for a liquid of 100 cm³/mol.
 :::
 ::: {.column width="48%"}
 ::: {.lever-box}
@@ -237,15 +241,15 @@ Liquid CO₂ near its critical point is compressible, so a constant V<sup>L</sup
 ::: {.column width="50%"}
 Below the melting point T<sub>m</sub> the stable phase is the solid. Neglecting ΔC<sub>p</sub>:
 
-$$\ln\frac{f_s}{f_l}=-\frac{\Delta H_{fus}}{R}\Big(\frac{1}{T}-\frac{1}{T_m}\Big)$$
+$$\ln\frac{f^{\text{s}}}{f^{\text{l}}}=-\frac{\Delta_{\text{fus}}H}{R}\Big(\frac{1}{T}-\frac{1}{T_m}\Big)$$
 
 f<sub>l</sub> is the fugacity of the **subcooled liquid**, a metastable reference state. Session 4 after the midterm uses this for solubility and freezing.
 :::
 ::: {.column width="48%"}
 ::: {.lever-box}
-[Ice against supercooled water, ΔH<sub>fus</sub> = 6.01 kJ/mol]{.label}
+[Ice against supercooled water, Δ<sub>fus</sub>H = 6.01 kJ/mol]{.label}
 
-| T / K | f<sub>s</sub>/f<sub>l</sub> measured | equation | error |
+| T / K | f<sup>s</sup>/f<sup>l</sup> measured | equation | error |
 |---:|---:|---:|---:|
 | 268.15 | 0.9526 | 0.9519 | −0.08% |
 | 263.15 | 0.9073 | 0.9043 | −0.3% |
@@ -302,7 +306,7 @@ With φ = 1 as well, f<sup>L</sup> = P<sup>sat</sup> = 41.61 bar: +18%.
 
 :::: {.columns}
 ::: {.column width="44%"}
-1. **CO₂, 280 K.** Read the vapor pressure, volumes and ΔH<sub>vap</sub> of the three cubics.
+1. **CO₂, 280 K.** Read the vapor pressure, volumes and Δ<sub>vap</sub>H of the three cubics.
 2. Paper check: the two ln φ values at the equation's P<sup>sat</sup>.
 3. Fugacity view: the bend at 41.6 bar and the Poynting curve.
 4. **Propane at 200 K** with van der Waals. Graduate view, **A**: the whole curve.
@@ -314,7 +318,7 @@ With φ = 1 as well, f<sup>L</sup> = P<sup>sat</sup> = 41.61 bar: +18%.
 
 ::: {.expect}
 [Lab P4 should report]{.label}
-CO₂, 280 K: NIST 41.607 bar · PR 41.584 bar, V<sup>L</sup> 51.67 cm³/mol, φ<sup>sat</sup> 0.7365, ΔH<sub>vap</sub> 9156 J/mol (NIST 9182) · vdW 52.55 bar
+CO₂, 280 K: NIST 41.607 bar · PR 41.584 bar, V<sup>L</sup> 51.67 cm³/mol, φ<sup>sat</sup> 0.7365, Δ<sub>vap</sub>H 9156 J/mol (NIST 9182) · vdW 52.55 bar
 :::
 :::
 ::::
@@ -329,7 +333,7 @@ CO₂, 280 K: NIST 41.607 bar · PR 41.584 bar, V<sup>L</sup> 51.67 cm³/mol, φ
 **φ<sup>sat</sup> = 1 at high pressure.** For CO₂ at 280 K φ<sup>sat</sup> = 0.748. Setting it to 1 makes f<sup>sat</sup> 34% too high before any Poynting factor.
 :::
 ::: {}
-**Clausius–Clapeyron near T<sub>c</sub>.** It assumes an ideal vapor and negligible V<sup>L</sup>. For propane at T<sub>r</sub> = 0.95 it doubles ΔH<sub>vap</sub>. Use Clapeyron with ΔV.
+**Clausius–Clapeyron near T<sub>c</sub>.** It assumes an ideal vapor and negligible V<sup>L</sup>. For propane at T<sub>r</sub> = 0.95 it doubles Δ<sub>vap</sub>H. Use Clapeyron with ΔV.
 :::
 ::: {}
 **Poynting with P in place of P − P<sup>sat</sup>.** The exponent starts at saturation. A constant V<sup>L</sup> fails for a compressible liquid near T<sub>c</sub>.
@@ -345,7 +349,7 @@ Activity 2: a pair investigation in Lab P4, 70 minutes.
 Before you leave your seat, check that Lab P4 opens on your device and that the CO₂ case is saved.
 :::
 
-## Activity 2 · vapor pressure, ΔH<sub>vap</sub> and condensed phases {#activity-2 .activity}
+## Activity 2 · vapor pressure, Δ<sub>vap</sub>H and condensed phases {#activity-2 .activity}
 
 [Activity 2 · 70 minutes · in pairs: one drives Lab P4, one checks by hand, then swap]{.act-label}
 
@@ -355,7 +359,7 @@ Before you leave your seat, check that Lab P4 opens on your device and that the 
 Four fluids with three cubics at their starting temperatures, then Lab P4 A: the whole curve. Where is each equation worst?
 :::
 ::: {}
-[15 min · ΔH<sub>vap</sub>]{.label}
+[15 min · Δ<sub>vap</sub>H]{.label}
 Lab P4 B: Clapeyron, Clausius–Clapeyron and the PR residuals against NIST. At what T<sub>r</sub> does Clausius–Clapeyron pass 10% error?
 :::
 ::: {}
@@ -387,7 +391,7 @@ Lab P4 E: an equal-fugacity solver for propane written with an AI assistant, che
 ::: {.lever-box}
 [Check your results]{.label}
 
-| Starting state | NIST P<sup>sat</sup> | PR P<sup>sat</sup> | PR V<sup>L</sup> | PR ΔH<sub>vap</sub> |
+| Starting state | NIST P<sup>sat</sup> | PR P<sup>sat</sup> | PR V<sup>L</sup> | PR Δ<sub>vap</sub>H |
 |---|---:|---:|---:|---:|
 | CO₂, 280 K | 41.61 | −0.1% | +3.7% | −0.3% |
 | propane, 300 K | 9.977 | −0.0% | −3.8% | +0.7% |
@@ -427,11 +431,11 @@ A cubic's P<sup>sat</sup> is the crossing of ln φ of its two roots, between the
 :::
 ::: {}
 [Condensed phases]{.label}
-f<sup>L</sup> = φ<sup>sat</sup>P<sup>sat</sup> × Poynting. A solid: f<sub>s</sub>/f<sub>l</sub> from ΔH<sub>fus</sub>. Clapeyron is exact; Clausius–Clapeyron only far from T<sub>c</sub>.
+f<sup>L</sup> = φ<sup>sat</sup>P<sup>sat</sup> × Poynting. A solid: f<sup>s</sup>/f<sup>l</sup> from Δ<sub>fus</sub>H. Clapeyron is exact; Clausius–Clapeyron only far from T<sub>c</sub>.
 :::
 :::
 
-**Session question:** coexistence requires equal fugacity. PR reproduces the vapor pressures to about 1% because it was fitted to them; ΔH<sub>vap</sub> to 1–5% and the liquid volume to 4–23% test it independently.
+**Session question:** coexistence requires equal fugacity. PR reproduces the vapor pressures to about 1% because it was fitted to them; Δ<sub>vap</sub>H to 1–5% and the liquid volume to 4–23% test it independently.
 
 [Next session]{.label} P5: mixtures, partial molar properties and the fugacity of a component in a mixture.
 

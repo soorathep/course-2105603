@@ -110,21 +110,21 @@ window.Quarto = {
 <p>For propane at 300 K, Peng–Robinson gives P<sup>sat</sup> = 9.975 bar and φ<sup>sat</sup> = 0.843; NIST gives 9.977 bar and 0.846.</p>
 <h2 id="the-clapeyron-equation">3. The Clapeyron equation</h2>
 <p>Moving along the coexistence curve, dμ<sup>L</sup> = dμ<sup>V</sup>. With dμ = −S dT + V dP for each phase and ΔS = ΔH/T at equilibrium,</p>
-<p><span class="math display">\frac{dP^{sat}}{dT}=\frac{\Delta H_{vap}}{T\,\Delta V}.</span></p>
-<p>This is exact. With V<sup>L</sup> neglected and V<sup>V</sup> = RT/P it becomes the Clausius–Clapeyron equation, d ln P<sup>sat</sup>/dT = ΔH<sub>vap</sub>/RT². For propane at 300 K, NIST gives ΔH<sub>vap</sub> = 14.66 kJ/mol, V<sup>L</sup> = 90.1 and V<sup>V</sup> = 2039 cm³/mol, so dP<sup>sat</sup>/dT = 0.251 bar/K. Near T<sub>c</sub>, ΔV → 0 and the vapor is far from ideal; Clausius–Clapeyron then fails badly.</p>
+<p><span class="math display">\frac{dP^{\text{sat}}}{dT}=\frac{\Delta_{\text{vap}}H}{T\,\Delta V}.</span></p>
+<p>This is exact. With V<sup>L</sup> neglected and V<sup>V</sup> = RT/P it becomes the Clausius–Clapeyron equation, d ln P<sup>sat</sup>/dT = Δ<sub>vap</sub>H/RT². For propane at 300 K, NIST gives Δ<sub>vap</sub>H = 14.66 kJ/mol, V<sup>L</sup> = 90.1 and V<sup>V</sup> = 2039 cm³/mol, so dP<sup>sat</sup>/dT = 0.251 bar/K. Near T<sub>c</sub>, ΔV → 0 and the vapor is far from ideal; Clausius–Clapeyron then fails badly.</p>
 <h2 id="fugacity-of-a-compressed-liquid">4. Fugacity of a compressed liquid</h2>
 <p>From (∂ ln f/∂P)<sub>T</sub> = V/RT, integrated from saturation where f<sup>L</sup> = f<sup>V</sup> = φ<sup>sat</sup>P<sup>sat</sup>:</p>
-<p><span class="math display">f^L(P)=\varphi^{sat}P^{sat}\exp\int_{P^{sat}}^{P}\frac{V^L}{RT}\,dP\approx\varphi^{sat}P^{sat}\exp\frac{V^L(P-P^{sat})}{RT}.</span></p>
-<p>The exponential is the <strong>Poynting factor</strong>. Because V<sup>L</sup> is small it stays close to 1 unless P − P<sup>sat</sup> is tens of bar. This is the liquid-side expression used in the γ–φ form of VLE in Session 1 after the midterm.</p>
+<p><span class="math display">f^L(P)=\varphi^{\text{sat}}P^{\text{sat}}\,\mathcal{P},\qquad\mathcal{P}=\exp\int_{P^{\text{sat}}}^{P}\frac{V^L}{RT}\,dP\approx\exp\frac{V^L(P-P^{\text{sat}})}{RT}.</span></p>
+<p><span class="math inline">\mathcal{P}</span> is the <strong>Poynting factor</strong>. Because V<sup>L</sup> is small it stays close to 1 unless P − P<sup>sat</sup> is tens of bar. This is the liquid-side expression used in the γ–φ form of VLE in Session 1 after the midterm.</p>
 <h2 id="fugacity-of-a-solid">5. Fugacity of a solid</h2>
 <p>Below its melting temperature T<sub>m</sub>, a substance’s stable condensed phase is the solid. Its fugacity is written relative to the <strong>subcooled liquid</strong> at the same T, a metastable state that serves as a reference. Integrating the Gibbs–Helmholtz relation between T and T<sub>m</sub> and neglecting ΔC<sub>p</sub>,</p>
-<p><span class="math display">\ln\frac{f_s}{f_l}=-\frac{\Delta H_{fus}}{R}\Big(\frac{1}{T}-\frac{1}{T_m}\Big).</span></p>
+<p><span class="math display">\ln\frac{f^{\text{s}}}{f^{\text{l}}}=-\frac{\Delta_{\text{fus}}H}{R}\Big(\frac{1}{T}-\frac{1}{T_m}\Big).</span></p>
 <p>The ratio is less than 1 below T<sub>m</sub>, which is why the solid is stable there. Session 4 after the midterm uses this for solid solubility and freezing points.</p>
 <h2 id="before-session-p4">6. Before Session P4</h2>
 <p>Write short answers. We use them in the first 30 minutes.</p>
 <ol type="1">
 <li><strong>Vapor fugacity.</strong> For CO₂ at 280 K and 10 bar, compute φ and f from the truncated virial equation with B = −144.7 cm³/mol. Why is the correction smaller than at 30 bar?</li>
-<li><strong>Clapeyron.</strong> From the propane numbers in Section 3, estimate P<sup>sat</sup> at 302 K. Then compute ΔH<sub>vap</sub> from Clausius–Clapeyron with the same slope, and say which assumption causes the difference.</li>
+<li><strong>Clapeyron.</strong> From the propane numbers in Section 3, estimate P<sup>sat</sup> at 302 K. Then compute Δ<sub>vap</sub>H from Clausius–Clapeyron with the same slope, and say which assumption causes the difference.</li>
 <li><strong>Poynting.</strong> Liquid water at 373.15 K has P<sup>sat</sup> = 1.014 bar and V<sup>L</sup> = 18.80 cm³/mol. Compute the Poynting factor at 2, 10 and 100 bar. At which pressure would you stop setting it to 1?</li>
 </ol>
 <h2 id="references">References</h2>
