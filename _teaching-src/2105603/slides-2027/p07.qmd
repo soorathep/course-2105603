@@ -1,0 +1,470 @@
+---
+title: "Choosing a property model: synthesis and midterm preparation"
+subtitle: "Session P7 of 7 · before the midterm · 180 minutes"
+author: "Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics"
+title-slide-attributes:
+  data-background-color: "#1C242B"
+---
+
+## Where this session sits {#course-map}
+
+::: {.coursemap}
+::: {.half}
+[Before the midterm · 7 sessions]{.label}
+[P1 · Framework]{.cm .past} [P2 · PVT and equations of state]{.cm .past} [P3 · Residual properties]{.cm .past} [P4 · Pure-component equilibrium and fugacity]{.cm .past} [P5 · Mixtures]{.cm .past} [P6 · Excess properties and activity]{.cm .past} [P7 · Choosing a property model]{.cm .now}
+:::
+::: {.half}
+[After the midterm · 7 sessions]{.label}
+[1 · VLE and flash]{.cm} [2 · Experimental VLE]{.cm} [3 · Liquid stability and LLE]{.cm} [4 · Solids and adsorption]{.cm} [5 · Chemical equilibrium]{.cm} [6 · Electrochemical equilibrium]{.cm} [7 · Choosing a model from evidence]{.cm}
+:::
+:::
+
+::: {.bridge}
+Six sessions built one chain: measurable properties, an equation of state, residual properties, fugacity, mixtures, activity. Today we ask of every result: **which model, and what evidence would make you trust it?** Then we practice the kind of problem the midterm asks.
+:::
+
+## Why this matters: five results that looked right {#why}
+
+::: {.lever-box}
+[Each session had a result that passed the obvious test, and the evidence that decided it]{.label}
+
+| Session | Looked right | What decided |
+|---|---|---|
+| P2 · PVT | Peng–Robinson: CO₂ tank 939 kg against 938 | liquid water at 500 K: Z off by 23% with the same equation |
+| P3 · residuals | ideal-gas compressor work, 3430 J/mol | reference 2865 J/mol; outlet 387.7 K against 399.7 K |
+| P4 · fugacity | PR P<sup>sat</sup> of propane at 300 K, 9.975 bar against 9.977 | ω is fitted to P<sup>sat</sup>; the liquid volume is 3.8% low |
+| P5 · mixtures | Lewis–Randall for 2% CO₂ in methane at 60 bar | φ̂<sub>CO₂</sub> 8% from pure CO₂; k<sub>12</sub> = 0 rules 11–37% off in B<sub>12</sub> |
+| P6 · activity | NRTL fitted to G<sup>E</sup>/RT: best 80 kPa prediction | γ₁∞ = 21 against 7.7, and a liquid split that does not exist |
+:::
+
+In each case the model agreed with the data it was built on. The question was always which evidence the claim needed.
+
+## By the end of today you can {#outcomes}
+
+[Where you show it]{.where-head}
+
+1. **Choose** a property model for a stated fluid, phase and pressure, and say what to check first. [Concepts, Activity 2]{.where}
+2. **Place** a claim on the evidence ladder: calibration, consistency, held-out, independent property, different method. [Activity 1]{.where}
+3. **Combine** two sessions in one problem: an EOS with residual properties, fugacity with Poynting, activity with Henry's law. [Activity 2]{.where}
+4. **Write** an exam answer that states the equation, the assumptions with their size, the numbers and the limits. [Exam problem]{.where}
+5. **Name** the topic you are least ready for, and what you will do about it. [Exit ticket]{.where}
+
+## The 180-minute route {#route}
+
+::: {.route}
+::: {.seg .concept style="flex:30"}
+[0–30]{.t} **Synthesis** [one chain, choosing a model, the evidence ladder]{.d}
+:::
+::: {.seg .act style="flex:10"}
+[30–40]{.t} **Activity 1** [where does each claim sit?]{.d}
+:::
+::: {.seg .demo style="flex:20"}
+[40–60]{.t} **Demo** [one shift in Lab P2]{.d}
+:::
+::: {.seg .break style="flex:10"}
+[60–70]{.t} **Break**
+:::
+::: {.seg .act style="flex:70"}
+[70–140]{.t} **Activity 2 · pairs** [three problems and the ladder]{.d}
+:::
+::: {.seg .wrap style="flex:40"}
+[140–180]{.t} **Exam problem and exit ticket** [how answers are marked]{.d}
+:::
+:::
+
+::: {.route-question}
+[Session question]{.label} For a given fluid and state, which property model would you choose, and what is the strongest evidence that its result can be trusted?
+:::
+
+::: {.beforeafter}
+::: {}
+[Before class · 30 min]{.label}
+Read the [review guide](note-p07.html){target="_blank"}. Bring the topic you feel least ready for.
+:::
+::: {}
+[After class]{.label}
+Work the exam problem again without notes. Revisit the lab you found hardest.
+:::
+:::
+
+::: {.selfstudy}
+**Studying on your own?** Follow the same order. Turn on narration or captions at the bottom left, and pause at each activity slide.
+:::
+
+## One chain, six steps {#chain}
+
+| Session | Working relation | What it needs |
+|---|---|---|
+| P1 · framework | dG = −S dT + V dP; dH = C<sub>p</sub>dT + [V − T(∂V/∂T)<sub>P</sub>]dP | PVT data and C<sub>p</sub><sup>ig</sup> |
+| P2 · PVT | Z = PV/RT; P = RT/(V − b) − a(T)/[(V + εb)(V + σb)]; Z = 1 + BP/RT | T<sub>c</sub>, P<sub>c</sub>, ω, or B(T) |
+| P3 · residuals | H<sup>R</sup>/RT = −T∫₀<sup>P</sup>(∂Z/∂T)<sub>P</sub>dP/P; H = H<sup>ig</sup> + H<sup>R</sup> | Z(T, P) and C<sub>p</sub><sup>ig</sup> |
+| P4 · pure equilibrium | ln φ = ∫₀<sup>P</sup>(Z − 1)dP/P; f<sup>L</sup> = φ<sup>sat</sup>P<sup>sat</sup> exp[V<sup>L</sup>(P − P<sup>sat</sup>)/RT] | an EOS, or P<sup>sat</sup> and V<sup>L</sup> |
+| P5 · mixtures | M̄<sub>i</sub> = ∂(nM)/∂n<sub>i</sub>; Σx<sub>i</sub>dM̄<sub>i</sub> = 0; ln φ̂<sub>i</sub> = ∫₀<sup>P</sup>(Z̄<sub>i</sub> − 1)dP/P | B<sub>12</sub> or k<sub>ij</sub> |
+| P6 · activity | γ<sub>i</sub> = f̂<sub>i</sub>/(x<sub>i</sub>f<sub>i</sub>°); y<sub>i</sub>P = x<sub>i</sub>γ<sub>i</sub>P<sub>i</sub><sup>sat</sup> | a G<sup>E</sup> model and a standard state |
+
+Each step uses the one before. Session 1 after the midterm joins P4–P6 into the γ–φ and φ–φ forms of VLE.
+
+## Choosing a property model {#choosing}
+
+::: {.lever-box}
+| Situation | Start with | Check first |
+|---|---|---|
+| Gas or supercritical fluid, nonpolar, low density | virial, B(T) | ρ below about half of ρ<sub>c</sub> |
+| Pure fluid with a reference equation of state | the reference equation (NIST) | its stated uncertainty in this region |
+| Hydrocarbons and light gases, high pressure, both phases | cubic EOS (PR, SRK) with k<sub>ij</sub> | Z and P<sup>sat</sup> against data; liquid volume |
+| Polar or associating liquids, low pressure | γ–φ: Wilson, NRTL, UNIQUAC; a P<sup>sat</sup> correlation | VLE in range, γ∞, stability |
+| A liquid split is possible | NRTL or UNIQUAC, not Wilson | LLE data, not a VLE fit alone |
+| Dilute solute, or a gas above its T<sub>c</sub> in a liquid | Henry's law, γ<sub>i</sub>* | a measured H<sub>i</sub> or γ∞ |
+| No mixture data | UNIFAC or a predictive EOS | treat it as a first estimate; measure before design |
+:::
+
+[A table like this is a starting point (Carlson, 1996). The evidence for the case in hand decides.]{.howto}
+
+## The evidence ladder {#ladder}
+
+:::: {.columns}
+::: {.column width="52%"}
+::: {.lever-box}
+[Weakest to strongest]{.label}
+
+| Rung | Example before the midterm |
+|---|---|
+| 1 · calibration | B fitted up to 1 mol/L; NRTL fitted to G<sup>E</sup> |
+| 2 · consistency | Gibbs–Duhem on measured γ; a balance that closes |
+| 3 · held-out | fit at 60 kPa, predict 80 kPa: RMS y₁ 0.046 |
+| 4 · independent property | PR built on P<sup>sat</sup>, checked on V<sup>L</sup>: +23% for water at 500 K |
+| 5 · different method | B<sub>12</sub> measured, against a combining rule |
+:::
+:::
+::: {.column width="46%" .rule-notes}
+A claim is only as strong as the highest rung it reached.
+
+**Extrapolation reaches none:** γ₁∞ lies beyond the most dilute point, x₁ = 0.0063.
+
+**Some claims cannot be decided with the data in hand:** γ₁∞ of 2-propanol in water to better than tens of percent, when u(x) = 0.02.
+
+[Saying so is part of the answer. Session 7 after the midterm uses the same ladder.]{.q}
+:::
+::::
+
+## Where does each claim sit? {#activity-1 .activity}
+
+[Activity 1 · 10 minutes · alone, then with a partner]{.act-label}
+
+::: {.prompt}
+Place each claim on the ladder, or mark it as an extrapolation or not resolvable with these data:
+:::
+
+1. PR gives the vapor pressure of propane at 300 K within 0.02%.
+2. The virial B fitted up to 1 mol/L reproduces Z of methane at 300 K below 1 mol/L.
+3. NRTL fitted at 60 kPa predicts y₁ at 80 kPa with RMS 0.047.
+4. The Pitzer–Prausnitz B<sub>12</sub> for methane + ethane is within 2% of the measured value.
+5. 2-propanol at infinite dilution in water has γ∞ = 7.7.
+6. With a volume shift, PR describes liquid water at 500 K within 0.2%.
+
+::: {.selfstudy}
+**On your own:** pause here and write your answer. In place of a partner, compare it with the next slide and write one sentence on any difference and its cause.
+:::
+
+## Activity 1: check your answer {#activity-1-debrief}
+
+| Claim | Where it sits | Why |
+|---|---|---|
+| 1 · P<sup>sat</sup> of propane | close to calibration | ω and α(T) are built to reproduce P<sup>sat</sup>; it says nothing about V<sup>L</sup> (−3.8%) |
+| 2 · Z below 1 mol/L | calibration | the same data that fixed B |
+| 3 · y₁ at 80 kPa | held-out | a different pressure, not used in the fit |
+| 4 · B<sub>12</sub> within 2% | held-out | pure-component data predict a mixture measurement |
+| 5 · γ∞ = 7.7 | extrapolation | beyond x₁ = 0.0063; the G<sup>E</sup> fit gives 21 from the same data |
+| 6 · water within 0.2% | mostly calibration | c is set from the saturated liquid at 500 K; for CO₂ at 280 K the same shift raises the error from 1.6% to 4.4% |
+
+Four of six claims are calibration or extrapolation presented as results. Only two reached held-out data.
+
+## Demonstration · one shift in Lab P2 {#demo-lab}
+
+:::: {.columns}
+::: {.column width="46%"}
+1. Water at 500 K, Peng–Robinson. Read the dense-phase error.
+2. Volume translation: **shift c so that the saturated liquid at this T is exact**. Read it again, and the vapor pressure.
+3. Repeat for propane at 300 K and CO₂ at 280 K.
+4. Which rung did the shift reach, and for which fluid?
+
+[Open Lab P2 in the Graduate view →](../preview-2027/eos.html?mode=graduate){.lab-button target="_blank"}
+:::
+::: {.column width="52%"}
+::: {.lever-box}
+[Peng–Robinson, mean |error| in Z above ρ<sub>c</sub> / %]{.label}
+
+| Isotherm | c / (cm³/mol) | no shift | shifted |
+|---|---:|---:|---:|
+| water, 500 K | +4.98 | 23.0 | 0.2 |
+| propane, 300 K | −3.40 | 5.1 | 1.2 |
+| CO₂, 280 K | +1.86 | 1.6 | 4.4 |
+:::
+
+::: {.expect}
+[What to notice]{.label}
+The shift moves every volume by c and leaves P<sup>sat</sup> unchanged (Péneloux et al., 1982). One number fitted at one state cannot correct the shape of an isotherm.
+:::
+:::
+::::
+
+## Problem A · a high-pressure valve {#problem-a}
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.prompt}
+Nitrogen at 300 K and 200 bar is throttled to 1 bar. Predict the outlet temperature with the ideal gas, the two-term virial equation, SRK and Peng–Robinson, and compare with the reference. Why does the virial equation fail here when it worked for methane from 100 to 20 bar?
+:::
+
+Sessions P1, P2 and P3.
+:::
+::: {.column width="48%" .rule-notes}
+[Hints]{.label}
+
+1. H<sub>out</sub> = H<sub>in</sub>; H = H<sup>ig</sup> + H<sup>R</sup> at each end.
+2. Lab P3, nitrogen valve, all models.
+3. Inlet density from the reference Z = 1.057. Compare it with ρ<sub>c</sub> = 11.18 mol/L.
+:::
+::::
+
+## Problem B · pumping a liquid {#problem-b}
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.prompt}
+Liquid propane at 300 K is pumped from its vapor pressure to 50 bar. P<sup>sat</sup> = 9.977 bar, φ<sup>sat</sup> = 0.846 and V<sup>L</sup> = 90.09 cm³/mol (NIST). Compute f<sup>L</sup> at 50 bar (i) as φ<sup>sat</sup>P<sup>sat</sup>, (ii) with the Poynting factor, and (iii) with PR directly. The reference is 9.736 bar. Which assumption matters most?
+:::
+
+Session P4.
+:::
+::: {.column width="48%" .rule-notes}
+[Hints]{.label}
+
+1. Poynting: exp[V<sup>L</sup>(P − P<sup>sat</sup>)/RT], liquid taken as incompressible.
+2. Lab P4, propane at 300 K, for (iii).
+3. How much does the 3.8% error in the PR liquid volume change the Poynting factor?
+:::
+::::
+
+## Problem C · a dilute solute {#problem-c}
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.prompt}
+Water containing 0.5 mol% 2-propanol at 345 K feeds a stripping column. P<sub>1</sub><sup>sat</sup> = 65.8 kPa. Estimate the partial pressure of 2-propanol above the liquid with (i) the ideal solution, (ii) the models fitted to ln γ and (iii) the models fitted to G<sup>E</sup>/RT. What value and range would you give the designer?
+:::
+
+Sessions P5 and P6.
+:::
+::: {.column width="48%" .rule-notes}
+[Hints]{.label}
+
+1. p<sub>1</sub> = x<sub>1</sub>γ<sub>1</sub>P<sub>1</sub><sup>sat</sup>; at x<sub>1</sub> = 0.005, γ<sub>1</sub> is close to γ<sub>1</sub>∞.
+2. Lab P6 A, both objectives.
+3. Is the vapor ideal at this pressure? (Session P4)
+:::
+::::
+
+## Break · 10 minutes {#break .breakslide}
+
+::: {.break-next}
+[Next]{.label}
+Activity 2: three problems and the evidence ladder, 70 minutes in pairs.
+
+Before you leave your seat, open Labs P3, P4 and P6 on your device.
+:::
+
+## Activity 2 · problems and the ladder {#activity-2 .activity}
+
+[Activity 2 · 70 minutes · in pairs: one solves, one checks with the labs, then swap]{.act-label}
+
+::: {.a2grid}
+::: {}
+[40 min · problems A–C]{.label}
+By hand where you can, with the labs to check. Write each answer as equation, numbers, check, limit.
+:::
+::: {}
+[15 min · choose]{.label}
+For each problem, which model would you put in a design calculation, and what would you check first? Use the table of models.
+:::
+::: {}
+[15 min · the ladder]{.label}
+Place each of your three answers on the evidence ladder. What would raise it one rung?
+:::
+::: {}
+[Hand in]{.label}
+One page per pair: answers A–C, the model choice and the ladder statement for each. Names and IDs.
+:::
+:::
+
+::: {.selfstudy}
+**On your own:** do both roles yourself: work through the problems, then check one value by hand before you trust it. Pause the slides while you work; the next slide lists the answers.
+:::
+
+## Activity 2 · check your answers {#activity-2-check}
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.lever-box}
+[A · nitrogen, 300 K, 200 → 1 bar, outlet / K]{.label}
+
+NIST **269.2** · ideal 300.0 · virial 260.6 · SRK 271.6 · PR 265.4
+
+The inlet is at 7.6 mol/L, 0.68 ρ<sub>c</sub>. The virial gives Z = 0.957 where the gas has 1.057: two terms cannot describe a state where repulsion dominates. Methane at 100 bar is at 0.46 ρ<sub>c</sub> (Z = 0.856; virial 0.834).
+:::
+
+::: {.lever-box}
+[B · propane, 300 K, 50 bar, f<sup>L</sup> / bar]{.label}
+
+(i) 8.44 (−13%) · (ii) **9.75** (+0.2%) · (iii) PR 9.63 (−1.1%)
+
+Poynting factor 1.156. The PR volume changes it by 0.5%. f<sup>L</sup> ≈ P<sup>sat</sup> gives 9.98 (+2.5%) only because φ<sup>sat</sup> and Poynting nearly cancel.
+:::
+:::
+::: {.column width="48%"}
+::: {.lever-box}
+[C · 2-propanol, x₁ = 0.005, 345 K]{.label}
+
+| Model | γ₁ | p₁ / kPa |
+|---|---:|---:|
+| ideal solution | 1 | 0.33 |
+| Margules 2, ln γ | 7.32 | 2.41 |
+| NRTL, ln γ | 7.45 | 2.45 |
+| Wilson, ln γ | 7.54 | 2.48 |
+| Margules 2, G<sup>E</sup> | 12.2 | 4.0 |
+| NRTL, G<sup>E</sup> | 19.7 | 6.5 |
+| Wilson, G<sup>E</sup> | 34.4 | 11.3 |
+
+Report about 2.4–2.5 kPa from the fits that reproduce the dilute data, with an uncertainty of tens of percent, and recommend a direct γ∞ measurement.
+:::
+:::
+::::
+
+## Exam-style problem {#exam-problem}
+
+:::: {.columns}
+::: {.column width="58%"}
+::: {.prompt}
+A design note sizes a 1 m³ CO₂ buffer vessel at 280 K and 100 bar, and a compressor from 30 to 100 bar at 300 K inlet, with the ideal gas and "a 10% margin". (a) Quantify the error in the stored mass, the compressor work and the outlet temperature. (b) Is the margin adequate? (c) What would you use instead, and what evidence supports it?
+:::
+:::
+::: {.column width="40%" .rule-notes}
+[25 minutes · alone]{.label}
+
+Answer in this order: equation, assumptions with their size, numbers, check, conclusion and its limit.
+
+You may use the labs. State every number you take from them.
+:::
+::::
+
+## Exam-style problem: a model answer {#exam-answer}
+
+:::: {.columns}
+::: {.column width="52%"}
+**(a)** Mass m = PVM/(ZRT). The vessel holds compressed liquid: the reference gives 938 kg, the ideal gas 189 kg (−80%). Isentropic work W = ΔH with S<sub>out</sub> = S<sub>in</sub>, H = H<sup>ig</sup> + H<sup>R</sup>: reference 2865 J/mol and 399.7 K; ideal gas 3430 J/mol (+20%) and 387.7 K (12 K low).
+
+**(b)** No. The mass is low by a factor of 5, the unsafe direction for an inventory or release estimate. The work error is twice the margin and errs on the safe side; the outlet temperature errs on the unsafe side.
+:::
+::: {.column width="46%" .rule-notes}
+**(c)** For pure CO₂, use the reference equation of state (Span and Wagner), from which the NIST values come. If a cubic is needed, PR gives 939 kg, 2851 J/mol and 403.4 K. That agreement is a held-out check (rung 3) at two states: PR uses only T<sub>c</sub>, P<sub>c</sub> and ω. Near the critical point (T<sub>r</sub> = 1.05) its dense-phase Z error rises to 5.3%, so check it again if the conditions move.
+
+[A margin covers known, bounded uncertainty. It does not cover using a model outside the region where it holds.]{.q}
+:::
+::::
+
+## How answers are marked {#marking}
+
+::: {.mistakes}
+::: {}
+**Equation and reference state (25 %).** The right relation, with the reference state, units and path stated.
+:::
+::: {}
+**Assumptions with their size (20 %).** Not "assume an ideal vapor", but "φ̂ = 1 changes p₁ by about 1%".
+:::
+::: {}
+**Numbers that can be checked (25 %).** Intermediate values, units, and a balance or limit that closes.
+:::
+::: {}
+**Conclusion and its limit (30 %).** What the evidence supports, which rung it reached, what would raise it.
+:::
+:::
+
+A correct number with no limit stated earns less than a well-argued answer with an arithmetic slip.
+
+## Preparing for the midterm {#prepare}
+
+::: {.summary3}
+::: {}
+[Review]{.label}
+The six working relations, and one worked number for each, without notes.
+:::
+::: {}
+[Practice]{.label}
+Problems A–C again from a blank page. Then one lab step E with your own code, written from your own specification.
+:::
+::: {}
+[Ask]{.label}
+The topic you named in the exit ticket. Bring a specific question to office hours.
+:::
+:::
+
+The format, date and permitted materials of the midterm will be announced separately.
+
+## Summary {#summary}
+
+::: {.summary3}
+::: {}
+[One chain]{.label}
+PVT and C<sub>p</sub><sup>ig</sup> give Z, residual properties, fugacity; mixtures add composition, liquids add γ.
+:::
+::: {}
+[Choosing]{.label}
+Start from the fluid, the phase and the pressure. Then check the property the result depends on, in the region of use.
+:::
+::: {}
+[Evidence]{.label}
+Calibration, consistency, held-out, independent property, different method. A claim is only as strong as its highest rung.
+:::
+:::
+
+**Session question:** choose by fluid, phase and pressure, then test the model on a property it was not built on. The strongest evidence before the midterm was of that kind: the liquid volume against a P<sup>sat</sup>-fitted EOS, 80 kPa VLE against a 60 kPa fit, a measured B<sub>12</sub> against a combining rule.
+
+## Exit ticket · 10 minutes {#exit-ticket .activity}
+
+[Exit ticket and feedback · alone · 10 minutes · anonymous]{.act-label}
+
+:::: {.columns}
+::: {.column width="64%"}
+::: {.prompt}
+Pick one result from your Lab P2–P6 files. Which rung of the evidence ladder does it reach, and what one piece of evidence would raise it? Put the topic you feel least ready for in "What is still unclear?".
+:::
+
+Scan the code or open the link. The form first asks about today: pace, confidence and whether the lab worked. A second part asks about the **whole pre-midterm half**, Sessions P1–P7: pace, the quality of the slides, narration, captions and notes, and the quality of the labs.
+
+No name or student ID is recorded. Wait for **"Response received."**
+:::
+::: {.column width="32%" .qr-col}
+![](figures/exit-qr-p07.png){.qr fig-alt="QR code for the Session P7 exit ticket and feedback form"}
+
+[Open the Session P7 form](exit.html?p=7){target="_blank"}
+:::
+::::
+
+## After class {#after-class}
+
+::: {.summary3}
+::: {}
+[Hand in · this week]{.label}
+The one-page pair sheet: answers A–C, model choices, the ladder statements. Names and student IDs. Upload it to **myCourseVille** (Session P7).
+:::
+::: {}
+[Practice]{.label}
+The exam-style problem again, without notes. Then the lab you found hardest, from its first step.
+:::
+::: {}
+[Optional · graduate]{.label}
+Take one property model from your own research and place its key result on the ladder. What would it take to reach rung 4?
+:::
+:::
+
+[Review guide →](note-p07.html){.lab-button target="_blank"}

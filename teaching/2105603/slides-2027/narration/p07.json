@@ -1,0 +1,488 @@
+{
+ "title-slide": {
+  "audio": "narration/p07/title-slide.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 6.67,
+    "en": "Welcome to session P7: choosing a property model, synthesis and midterm preparation.",
+    "th": "ยินดีต้อนรับสู่คาบ P7 การเลือกแบบจำลองสมบัติ การสังเคราะห์ความรู้ และการเตรียมสอบ midterm"
+   }
+  ]
+ },
+ "course-map": {
+  "audio": "narration/p07/course-map.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.42,
+    "en": "Six sessions built one chain: measurable properties, an equation of state, residual properties, fugacity, mixtures and activity.",
+    "th": "หกคาบที่ผ่านมาสร้างห่วงโซ่เดียวกัน ได้แก่ สมบัติที่วัดได้ สมการสภาวะ residual properties, fugacity, ของผสม และ activity"
+   },
+   {
+    "start": 9.77,
+    "end": 19.39,
+    "en": "Today we ask of every result: which model, and what evidence would make you trust it? Then we practice the kind of problem the midterm asks.",
+    "th": "วันนี้เราจะถามทุกผลลัพธ์ว่า ใช้แบบจำลองใด และหลักฐานใดจะทำให้เชื่อถือได้ แล้วฝึกทำโจทย์แบบที่จะออกสอบ midterm"
+   }
+  ]
+ },
+ "why": {
+  "audio": "narration/p07/why.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.64,
+    "en": "Each session had a result that passed the obvious test.",
+    "th": "แต่ละคาบมีผลลัพธ์หนึ่งที่ผ่านการตรวจสอบแบบตรงไปตรงมา"
+   },
+   {
+    "start": 3.99,
+    "end": 20.78,
+    "en": "Peng-Robinson put the right mass of CO2 in the tank, and gave liquid water at 500 kelvin 23 percent off. Its propane vapor pressure was within 0.02 percent, because omega is fitted to vapor pressure.",
+    "th": "Peng–Robinson ให้มวล CO₂ ในถังถูกต้อง แต่ให้ค่าของน้ำเหลวที่ 500 เคลวินคลาดเคลื่อน 23 เปอร์เซ็นต์ ส่วนความดันไอของโพรเพนถูกต้องภายใน 0.02 เปอร์เซ็นต์ เพราะ ω ถูกปรับให้ตรงกับความดันไอ"
+   },
+   {
+    "start": 21.13,
+    "end": 36.83,
+    "en": "The ideal-gas compressor work was 20 percent high, Lewis-Randall missed the CO2 fugacity by 8 percent, and an NRTL fit to G E gave gamma infinity of 21 instead of 7.7.",
+    "th": "งานของคอมเพรสเซอร์จากแก๊สอุดมคติสูงเกิน 20 เปอร์เซ็นต์ กฎ Lewis–Randall ให้ fugacity ของ CO₂ คลาดไป 8 เปอร์เซ็นต์ และ NRTL ที่ปรับกับ G^E ให้ γ∞ เท่ากับ 21 แทนที่จะเป็น 7.7"
+   },
+   {
+    "start": 37.18,
+    "end": 41.3,
+    "en": "In each case the model agreed with the data it was built on.",
+    "th": "ในทุกกรณี แบบจำลองสอดคล้องกับข้อมูลที่ใช้สร้างมันขึ้นมา"
+   }
+  ]
+ },
+ "outcomes": {
+  "audio": "narration/p07/outcomes.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.04,
+    "en": "By the end of today you can do five things.",
+    "th": "เมื่อจบคาบนี้ คุณจะทำได้ห้าอย่าง"
+   },
+   {
+    "start": 3.39,
+    "end": 12.97,
+    "en": "Choose a property model for a stated fluid, phase and pressure. Place a claim on the evidence ladder. Combine two sessions in one problem.",
+    "th": "เลือกแบบจำลองสมบัติสำหรับสาร เฟส และความดันที่กำหนด จัดตำแหน่งข้อสรุปบนบันไดหลักฐาน และใช้ความรู้จากสองคาบในโจทย์เดียว"
+   },
+   {
+    "start": 13.32,
+    "end": 22.82,
+    "en": "Write an exam answer with the equation, the assumptions with their size, the numbers and the limits, and name the topic you are least ready for.",
+    "th": "เขียนคำตอบข้อสอบที่มีสมการ สมมติฐานพร้อมขนาดของผล ตัวเลข และขอบเขต และระบุหัวข้อที่คุณยังพร้อมน้อยที่สุด"
+   }
+  ]
+ },
+ "route": {
+  "audio": "narration/p07/route.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.15,
+    "en": "Here is the 180-minute route.",
+    "th": "นี่คือเส้นทางของคาบ 180 นาที"
+   },
+   {
+    "start": 3.5,
+    "end": 18.01,
+    "en": "A synthesis, a short activity on the evidence ladder, a demonstration in Lab P2, a break, and 70 minutes of problems in pairs. We finish with an exam-style problem and the exit ticket.",
+    "th": "การสังเคราะห์ความรู้ กิจกรรมสั้นเรื่องบันไดหลักฐาน การสาธิตใน Lab P2 พัก และทำโจทย์เป็นคู่ 70 นาที ปิดท้ายด้วยโจทย์แบบข้อสอบและ exit ticket"
+   },
+   {
+    "start": 18.36,
+    "end": 28.26,
+    "en": "The session question: for a given fluid and state, which property model would you choose, and what is the strongest evidence that its result can be trusted?",
+    "th": "คำถามของคาบนี้คือ สำหรับสารและสภาวะที่กำหนด คุณจะเลือกแบบจำลองสมบัติใด และหลักฐานที่แข็งแรงที่สุดว่าผลลัพธ์เชื่อถือได้คืออะไร"
+   }
+  ]
+ },
+ "chain": {
+  "audio": "narration/p07/chain.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.02,
+    "en": "One chain, six steps.",
+    "th": "ห่วงโซ่เดียว หกขั้น"
+   },
+   {
+    "start": 2.37,
+    "end": 19.82,
+    "en": "The framework turns PVT data and the ideal-gas heat capacity into any property. An equation of state supplies Z, residual properties turn Z into enthalpy and entropy, and the fugacity coefficient turns it into equilibrium.",
+    "th": "กรอบแนวคิดเปลี่ยนข้อมูล PVT และความจุความร้อนของแก๊สอุดมคติเป็นสมบัติใดก็ได้ สมการสภาวะให้ค่า Z, residual properties เปลี่ยน Z เป็นเอนทัลปีและเอนโทรปี และ fugacity coefficient เปลี่ยนเป็นสมดุล"
+   },
+   {
+    "start": 20.17,
+    "end": 29.49,
+    "en": "Mixtures add composition through partial molar properties, and liquids add the activity coefficient. Each step uses the one before.",
+    "th": "ของผสมเพิ่มองค์ประกอบผ่าน partial molar properties และของเหลวเพิ่ม activity coefficient แต่ละขั้นใช้ขั้นก่อนหน้า"
+   }
+  ]
+ },
+ "choosing": {
+  "audio": "narration/p07/choosing.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.9,
+    "en": "Choosing a property model starts from the fluid, the phase and the pressure.",
+    "th": "การเลือกแบบจำลองสมบัติเริ่มจากชนิดของสาร เฟส และความดัน"
+   },
+   {
+    "start": 5.25,
+    "end": 21.02,
+    "en": "A gas at low density: the virial equation. A pure fluid with a reference equation: use it. Hydrocarbons at high pressure: a cubic with k i j. Polar liquids at low pressure: a gamma-phi model.",
+    "th": "แก๊สที่ความหนาแน่นต่ำ ใช้สมการ virial สารบริสุทธิ์ที่มีสมการสภาวะอ้างอิง ให้ใช้สมการนั้น ไฮโดรคาร์บอนที่ความดันสูง ใช้สมการกำลังสามพร้อม kij ของเหลวมีขั้วที่ความดันต่ำ ใช้แบบจำลอง γ–φ"
+   },
+   {
+    "start": 21.37,
+    "end": 37.0,
+    "en": "If a liquid split is possible, use NRTL or UNIQUAC, not Wilson. For a dilute solute, Henry's law. Without mixture data, UNIFAC as a first estimate. The evidence for the case in hand decides.",
+    "th": "ถ้าอาจเกิดการแยกชั้นของของเหลว ใช้ NRTL หรือ UNIQUAC ไม่ใช่ Wilson สำหรับตัวถูกละลายที่เจือจาง ใช้กฎของ Henry ถ้าไม่มีข้อมูลของผสม ใช้ UNIFAC เป็นค่าประมาณเบื้องต้น หลักฐานของกรณีนั้นเป็นตัวตัดสิน"
+   }
+  ]
+ },
+ "ladder": {
+  "audio": "narration/p07/ladder.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.32,
+    "en": "The evidence ladder runs from calibration, through consistency and held-out data, to an independent property and a different method.",
+    "th": "บันไดหลักฐานเริ่มจาก calibration ผ่าน consistency และข้อมูลที่ไม่ได้ใช้ปรับ ไปจนถึงสมบัติอิสระและวิธีวัดที่ต่างกัน"
+   },
+   {
+    "start": 9.67,
+    "end": 20.16,
+    "en": "A claim is only as strong as the highest rung it reached. An extrapolation, such as gamma infinity beyond the most dilute point, reaches none.",
+    "th": "ข้อสรุปแข็งแรงเท่ากับขั้นสูงสุดที่มันไปถึง การ extrapolate เช่น γ∞ ที่เลยจุดเจือจางที่สุด ไม่ถึงขั้นใดเลย"
+   },
+   {
+    "start": 20.51,
+    "end": 26.46,
+    "en": "Some claims cannot be decided with the data in hand. Saying so is part of the answer.",
+    "th": "บางข้อสรุปไม่สามารถตัดสินได้ด้วยข้อมูลที่มี การบอกเช่นนั้นเป็นส่วนหนึ่งของคำตอบ"
+   }
+  ]
+ },
+ "activity-1": {
+  "audio": "narration/p07/activity-1.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 8.16,
+    "en": "Activity 1, ten minutes. Place six claims on the ladder, or mark them as extrapolation or not resolvable.",
+    "th": "กิจกรรมที่ 1 สิบนาที จัดตำแหน่งข้อสรุปหกข้อบนบันได หรือระบุว่าเป็นการ extrapolate หรือตัดสินไม่ได้"
+   },
+   {
+    "start": 8.51,
+    "end": 11.61,
+    "en": "Work alone first, then compare with a partner.",
+    "th": "ทำคนเดียวก่อน แล้วเทียบกับเพื่อน"
+   }
+  ]
+ },
+ "activity-1-debrief": {
+  "audio": "narration/p07/activity-1-debrief.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 13.73,
+    "en": "Check your answer. The propane vapor pressure is close to calibration, because omega and alpha are built to reproduce it. The 80 kilopascal prediction and the B 1 2 rule are held-out.",
+    "th": "ตรวจคำตอบ ความดันไอของโพรเพนใกล้เคียงกับ calibration เพราะ ω และ α ถูกสร้างให้ตรงกับมัน การทำนายที่ 80 กิโลปาสกาลและกฎของ B12 เป็นข้อมูลที่ไม่ได้ใช้ปรับ"
+   },
+   {
+    "start": 14.08,
+    "end": 26.37,
+    "en": "Gamma infinity of 7.7 is an extrapolation, and the volume shift is mostly calibration: the same shift makes CO2 at 280 kelvin worse.",
+    "th": "γ∞ เท่ากับ 7.7 เป็นการ extrapolate และ volume shift ส่วนใหญ่เป็น calibration เพราะการเลื่อนแบบเดียวกันทำให้ CO₂ ที่ 280 เคลวินแย่ลง"
+   },
+   {
+    "start": 26.72,
+    "end": 32.46,
+    "en": "Four of six claims are calibration or extrapolation presented as results.",
+    "th": "สี่ในหกข้อเป็น calibration หรือการ extrapolate ที่ถูกนำเสนอเป็นผลลัพธ์"
+   }
+  ]
+ },
+ "demo-lab": {
+  "audio": "narration/p07/demo-lab.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.75,
+    "en": "Now a demonstration in Lab P2.",
+    "th": "ต่อไปเป็นการสาธิตใน Lab P2"
+   },
+   {
+    "start": 3.1,
+    "end": 19.84,
+    "en": "Peng-Robinson for water at 500 kelvin has a dense-phase error of 23 percent. Shift the volume so that the saturated liquid is exact, and the error falls to 0.2 percent, with the vapor pressure unchanged.",
+    "th": "Peng–Robinson สำหรับน้ำที่ 500 เคลวินมีความคลาดเคลื่อนในเฟสหนาแน่น 23 เปอร์เซ็นต์ เมื่อเลื่อนปริมาตรให้ของเหลวอิ่มตัวถูกต้องพอดี ความคลาดเคลื่อนลดเหลือ 0.2 เปอร์เซ็นต์ โดยความดันไอไม่เปลี่ยน"
+   },
+   {
+    "start": 20.19,
+    "end": 34.36,
+    "en": "For CO2 at 280 kelvin the same shift raises the error from 1.6 to 4.4 percent. One number fitted at one state cannot correct the shape of an isotherm.",
+    "th": "สำหรับ CO₂ ที่ 280 เคลวิน การเลื่อนแบบเดียวกันเพิ่มความคลาดเคลื่อนจาก 1.6 เป็น 4.4 เปอร์เซ็นต์ ตัวเลขเดียวที่ปรับที่สภาวะเดียวไม่สามารถแก้รูปร่างของไอโซเทอร์มได้"
+   }
+  ]
+ },
+ "problem-a": {
+  "audio": "narration/p07/problem-a.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 6.91,
+    "en": "Problem A. Nitrogen at 300 kelvin and 200 bar is throttled to 1 bar.",
+    "th": "โจทย์ A ไนโตรเจนที่ 300 เคลวินและ 200 บาร์ ผ่านวาล์วลดความดันไปที่ 1 บาร์"
+   },
+   {
+    "start": 7.26,
+    "end": 14.91,
+    "en": "Predict the outlet temperature with each model, and explain why the virial equation fails here when it worked for methane.",
+    "th": "ทำนายอุณหภูมิขาออกด้วยแต่ละแบบจำลอง และอธิบายว่าทำไมสมการ virial ใช้ไม่ได้ในกรณีนี้ ทั้งที่ใช้ได้กับมีเทน"
+   }
+  ]
+ },
+ "problem-b": {
+  "audio": "narration/p07/problem-b.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.03,
+    "en": "Problem B. Liquid propane at 300 kelvin is pumped from its vapor pressure to 50 bar.",
+    "th": "โจทย์ B โพรเพนเหลวที่ 300 เคลวินถูกปั๊มจากความดันไอไปที่ 50 บาร์"
+   },
+   {
+    "start": 7.38,
+    "end": 15.66,
+    "en": "Compute its fugacity without and with the Poynting factor, and with Peng-Robinson, and decide which assumption matters most.",
+    "th": "คำนวณ fugacity ทั้งแบบไม่รวมและรวม Poynting factor และด้วย Peng–Robinson แล้วตัดสินว่าสมมติฐานใดสำคัญที่สุด"
+   }
+  ]
+ },
+ "problem-c": {
+  "audio": "narration/p07/problem-c.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.49,
+    "en": "Problem C. Water with 0.5 mole percent 2-propanol at 345 kelvin feeds a stripping column.",
+    "th": "โจทย์ C น้ำที่มี 2-โพรพานอล 0.5 โมลเปอร์เซ็นต์ ที่ 345 เคลวิน ป้อนเข้าหอ stripping"
+   },
+   {
+    "start": 9.84,
+    "end": 20.08,
+    "en": "Estimate the partial pressure of 2-propanol with the ideal solution and with the fitted models, and decide what value and range to give the designer.",
+    "th": "ประมาณความดันย่อยของ 2-โพรพานอลด้วยสารละลายอุดมคติและด้วยแบบจำลองที่ปรับแล้ว และตัดสินว่าจะให้ค่าและช่วงใดแก่ผู้ออกแบบ"
+   }
+  ]
+ },
+ "break": {
+  "audio": "narration/p07/break.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.02,
+    "en": "Take a ten-minute break.",
+    "th": "พักสิบนาที"
+   },
+   {
+    "start": 2.37,
+    "end": 10.67,
+    "en": "Next is 70 minutes of problems in pairs. Open Labs P3, P4 and P6 before you leave your seat.",
+    "th": "ต่อไปเป็นการทำโจทย์เป็นคู่ 70 นาที เปิด Lab P3, P4 และ P6 ไว้ก่อนลุกจากที่นั่ง"
+   }
+  ]
+ },
+ "activity-2": {
+  "audio": "narration/p07/activity-2.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.15,
+    "en": "Activity 2, seventy minutes, in pairs.",
+    "th": "กิจกรรมที่ 2 เจ็ดสิบนาที ทำเป็นคู่"
+   },
+   {
+    "start": 3.5,
+    "end": 8.92,
+    "en": "Forty minutes on problems A to C, by hand where you can and with the labs to check.",
+    "th": "สี่สิบนาทีสำหรับโจทย์ A ถึง C ทำด้วยมือเท่าที่ทำได้ และใช้ lab ตรวจสอบ"
+   },
+   {
+    "start": 9.27,
+    "end": 15.84,
+    "en": "Then choose the model you would put in a design calculation, and place each answer on the evidence ladder.",
+    "th": "จากนั้นเลือกแบบจำลองที่จะใช้ในการคำนวณออกแบบ และจัดตำแหน่งแต่ละคำตอบบนบันไดหลักฐาน"
+   }
+  ]
+ },
+ "activity-2-check": {
+  "audio": "narration/p07/activity-2-check.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 17.47,
+    "en": "Check your answers. For nitrogen the reference outlet is 269.2 kelvin. The virial gives 260.6, because at 0.68 of the critical density it puts Z below one where the gas is above one.",
+    "th": "ตรวจคำตอบ สำหรับไนโตรเจน อุณหภูมิขาออกอ้างอิงคือ 269.2 เคลวิน สมการ virial ให้ 260.6 เพราะที่ความหนาแน่น 0.68 เท่าของค่าวิกฤต มันให้ Z ต่ำกว่าหนึ่ง ขณะที่แก๊สจริงมี Z สูงกว่าหนึ่ง"
+   },
+   {
+    "start": 17.82,
+    "end": 26.65,
+    "en": "For propane, leaving out the Poynting factor costs 13 percent; with it the fugacity is within 0.2 percent.",
+    "th": "สำหรับโพรเพน การละ Poynting factor ทำให้คลาด 13 เปอร์เซ็นต์ เมื่อรวมเข้าไป fugacity ถูกต้องภายใน 0.2 เปอร์เซ็นต์"
+   },
+   {
+    "start": 27.0,
+    "end": 40.54,
+    "en": "For 2-propanol, the ideal solution gives 0.33 kilopascal, the fits to ln gamma about 2.4 to 2.5, and the fits to G E 4 to 11.",
+    "th": "สำหรับ 2-โพรพานอล สารละลายอุดมคติให้ 0.33 กิโลปาสกาล การปรับกับ ln γ ให้ประมาณ 2.4 ถึง 2.5 และการปรับกับ G^E ให้ 4 ถึง 11"
+   }
+  ]
+ },
+ "exam-problem": {
+  "audio": "narration/p07/exam-problem.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.88,
+    "en": "An exam-style problem, twenty-five minutes, alone.",
+    "th": "โจทย์แบบข้อสอบ ยี่สิบห้านาที ทำคนเดียว"
+   },
+   {
+    "start": 4.23,
+    "end": 17.01,
+    "en": "A design note sizes a CO2 vessel and compressor with the ideal gas and a 10 percent margin. Quantify the errors, judge the margin, and say what you would use instead.",
+    "th": "บันทึกการออกแบบหนึ่งกำหนดขนาดถัง CO₂ และคอมเพรสเซอร์ด้วยแก๊สอุดมคติ โดยเผื่อไว้ 10 เปอร์เซ็นต์ จงคำนวณขนาดของความคลาดเคลื่อน ประเมินว่าการเผื่อนั้นพอหรือไม่ และบอกว่าจะใช้อะไรแทน"
+   },
+   {
+    "start": 17.36,
+    "end": 24.25,
+    "en": "Answer in this order: equation, assumptions with their size, numbers, check, conclusion and its limit.",
+    "th": "ตอบตามลำดับนี้ สมการ สมมติฐานพร้อมขนาดของผล ตัวเลข การตรวจสอบ ข้อสรุปและขอบเขต"
+   }
+  ]
+ },
+ "exam-answer": {
+  "audio": "narration/p07/exam-answer.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 15.2,
+    "en": "A model answer. The ideal gas puts 189 kilograms in the vessel where the reference has 938, and asks for 20 percent more compressor work with an outlet 12 kelvin too cold.",
+    "th": "ตัวอย่างคำตอบ แก๊สอุดมคติให้มวลในถัง 189 กิโลกรัม ขณะที่ค่าอ้างอิงคือ 938 และให้งานของคอมเพรสเซอร์มากกว่า 20 เปอร์เซ็นต์ โดยอุณหภูมิขาออกต่ำเกินไป 12 เคลวิน"
+   },
+   {
+    "start": 15.55,
+    "end": 30.89,
+    "en": "A 10 percent margin does not cover that. For pure CO2, use the reference equation of state. Peng-Robinson agrees at these two states, a held-out check, but its error rises near the critical point.",
+    "th": "การเผื่อ 10 เปอร์เซ็นต์ไม่ครอบคลุมความคลาดเคลื่อนนี้ สำหรับ CO₂ บริสุทธิ์ให้ใช้สมการสภาวะอ้างอิง Peng–Robinson ให้ค่าตรงกันที่สองสภาวะนี้ ซึ่งเป็นการตรวจสอบด้วยข้อมูลที่ไม่ได้ใช้ปรับ แต่ความคลาดเคลื่อนจะเพิ่มขึ้นใกล้จุดวิกฤต"
+   }
+  ]
+ },
+ "marking": {
+  "audio": "narration/p07/marking.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.0,
+    "en": "How answers are marked.",
+    "th": "เกณฑ์การให้คะแนน"
+   },
+   {
+    "start": 2.35,
+    "end": 14.53,
+    "en": "Twenty-five percent for the equation and reference state, twenty for the assumptions with their size, twenty-five for numbers that can be checked, and thirty for the conclusion and its limit.",
+    "th": "ยี่สิบห้าเปอร์เซ็นต์สำหรับสมการและสถานะอ้างอิง ยี่สิบสำหรับสมมติฐานพร้อมขนาดของผล ยี่สิบห้าสำหรับตัวเลขที่ตรวจสอบได้ และสามสิบสำหรับข้อสรุปและขอบเขต"
+   },
+   {
+    "start": 14.88,
+    "end": 21.58,
+    "en": "A correct number with no limit stated earns less than a well-argued answer with an arithmetic slip.",
+    "th": "ตัวเลขที่ถูกต้องแต่ไม่ระบุขอบเขต ได้คะแนนน้อยกว่าคำตอบที่ให้เหตุผลดีแต่คำนวณพลาดเล็กน้อย"
+   }
+  ]
+ },
+ "prepare": {
+  "audio": "narration/p07/prepare.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 12.5,
+    "en": "To prepare for the midterm: review the six working relations with one worked number each, practice the problems again from a blank page, and bring a specific question to office hours.",
+    "th": "การเตรียมสอบ midterm ทบทวนความสัมพันธ์หลักหกข้อพร้อมตัวอย่างตัวเลขข้อละหนึ่งตัวอย่าง ฝึกทำโจทย์อีกครั้งจากกระดาษเปล่า และนำคำถามที่เจาะจงมาถามในชั่วโมงให้คำปรึกษา"
+   },
+   {
+    "start": 12.85,
+    "end": 17.18,
+    "en": "The format, date and permitted materials will be announced separately.",
+    "th": "รูปแบบ วันสอบ และสิ่งที่อนุญาตให้นำเข้าห้องสอบ จะประกาศแยกต่างหาก"
+   }
+  ]
+ },
+ "summary": {
+  "audio": "narration/p07/summary.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.73,
+    "en": "To summarize. Choose a model from the fluid, the phase and the pressure.",
+    "th": "สรุป เลือกแบบจำลองจากชนิดของสาร เฟส และความดัน"
+   },
+   {
+    "start": 5.08,
+    "end": 19.82,
+    "en": "Then test it on a property it was not built on: a liquid volume from an equation fitted to vapor pressure, 80 kilopascal data from a 60 kilopascal fit, a measured B 1 2 against a combining rule.",
+    "th": "จากนั้นทดสอบกับสมบัติที่ไม่ได้ใช้สร้างแบบจำลอง เช่น ปริมาตรของเหลวจากสมการที่ปรับกับความดันไอ ข้อมูลที่ 80 กิโลปาสกาลจากการปรับที่ 60 กิโลปาสกาล หรือ B12 ที่วัดได้เทียบกับกฎการรวม"
+   },
+   {
+    "start": 20.17,
+    "end": 23.73,
+    "en": "A claim is only as strong as the highest rung it reached.",
+    "th": "ข้อสรุปแข็งแรงเท่ากับขั้นสูงสุดที่มันไปถึง"
+   }
+  ]
+ },
+ "exit-ticket": {
+  "audio": "narration/p07/exit-ticket.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.87,
+    "en": "Exit ticket, ten minutes, anonymous.",
+    "th": "Exit ticket สิบนาที ไม่ระบุชื่อ"
+   },
+   {
+    "start": 3.22,
+    "end": 14.15,
+    "en": "Pick one result from your lab files, place it on the ladder, and name the evidence that would raise it. A second part of the form asks about the whole pre-midterm half.",
+    "th": "เลือกผลลัพธ์หนึ่งจากไฟล์ lab ของคุณ จัดตำแหน่งบนบันได และระบุหลักฐานที่จะยกระดับมัน ส่วนที่สองของแบบฟอร์มถามเกี่ยวกับช่วงก่อน midterm ทั้งหมด"
+   }
+  ]
+ },
+ "after-class": {
+  "audio": "narration/p07/after-class.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.45,
+    "en": "After class, upload the one-page pair sheet to myCourseVille.",
+    "th": "หลังเลิกเรียน อัปโหลดแผ่นคำตอบหนึ่งหน้าของคู่ไปที่ myCourseVille"
+   },
+   {
+    "start": 4.8,
+    "end": 12.89,
+    "en": "Work the exam-style problem again without notes, and revisit the lab you found hardest. Good luck with the midterm.",
+    "th": "ทำโจทย์แบบข้อสอบอีกครั้งโดยไม่ดูโน้ต และทบทวน lab ที่คุณคิดว่ายากที่สุด ขอให้โชคดีกับการสอบ midterm"
+   }
+  ]
+ }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics">
+
+<title>Excess properties and activity coefficients</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<meta name="robots" content="noindex">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="../site_libs/katex/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+
+<header id="title-block-header">
+<h1 class="title">Excess properties and activity coefficients</h1>
+<p class="subtitle">Pre-class note for Session P6 · about 20 minutes</p>
+<p class="author">Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics</p>
+
+</header>
+
+
+<div class="draft-note">
+<p>Draft for 2027. If you are taking the course this year, use the current course page.</p>
+</div>
+<div class="purpose">
+<p><strong>Why read this.</strong> Session P5 defined the ideal solution, f̂<sub>i</sub> = x<sub>i</sub>f<sub>i</sub>. Liquid mixtures depart from it, often by a factor of several at high dilution. This note defines the excess properties and the activity coefficient that measure the departure, the standard states the activity coefficient refers to, and the models used to represent it. Work the three questions at the end and bring one question of your own.</p>
+</div>
+<h2 id="excess-properties">1. Excess properties</h2>
+<p>An excess property is the difference between the real mixture and an ideal solution at the same T, P and composition:</p>
+<p><span class="math display">M^E=M-M^{id},\qquad G^E=H^E-TS^E.</span></p>
+<p>For V and H the ideal-solution value is Σx<sub>i</sub>M<sub>i</sub>*, so V<sup>E</sup> = ΔV<sub>mix</sub> and H<sup>E</sup> = ΔH<sub>mix</sub>. The Gibbs energy of mixing is the ideal term plus G<sup>E</sup>:</p>
+<p><span class="math display">\frac{\Delta g_{mix}}{RT}=\sum_ix_i\ln x_i+\frac{G^E}{RT}.</span></p>
+<p>G<sup>E</sup> &gt; 0 (positive deviation) means each component prefers its own kind; G<sup>E</sup> &lt; 0 means unlike pairs attract. The temperature dependence is set by the excess enthalpy, ∂(G<sup>E</sup>/RT)/∂T = −H<sup>E</sup>/RT². A model with constant parameters therefore assumes H<sup>E</sup> ≈ 0 over the range of use.</p>
+<h2 id="the-activity-coefficient">2. The activity coefficient</h2>
+<p>The activity coefficient compares the fugacity of a component with its ideal-solution value:</p>
+<p><span class="math display">\gamma_i=\frac{\hat f_i}{x_if_i^\circ},\qquad \ln\gamma_i=\Big(\frac{\partial(nG^E/RT)}{\partial n_i}\Big)_{T,P,n_j}.</span></p>
+<p>ln γ<sub>i</sub> is the partial molar property of G<sup>E</sup>/RT, so by Session P5</p>
+<p><span class="math display">\frac{G^E}{RT}=\sum_ix_i\ln\gamma_i,\qquad\sum_ix_i\,d\ln\gamma_i=0\quad(T,P\ \text{fixed}).</span></p>
+<p>At low pressure, with an ideal vapor and the Poynting factor neglected (both within 1% here, Session P4), the equilibrium condition becomes <strong>modified Raoult’s law</strong>:</p>
+<p><span class="math display">y_iP=x_i\gamma_iP_i^{sat}(T).</span></p>
+<p><strong>Worked example.</strong> 2-propanol (1) + water (2) at 60 kPa (Barbieri et al., 2024): x<sub>1</sub> = 0.1401, y<sub>1</sub> = 0.4769, T = 342.92 K. The Antoine equations give P<sub>1</sub><sup>sat</sup> = 60.12 and P<sub>2</sub><sup>sat</sup> = 30.87 kPa. Then</p>
+<p>γ<sub>1</sub> = 0.4769 × 60/(0.1401 × 60.12) = 3.397, γ<sub>2</sub> = 0.5231 × 60/(0.8599 × 30.87) = 1.182,</p>
+<p>G<sup>E</sup>/RT = 0.1401 ln 3.397 + 0.8599 ln 1.182 = 0.315.</p>
+<h2 id="standard-states">3. Standard states</h2>
+<p>The reference fugacity f<sub>i</sub>° is a choice; f̂<sub>i</sub> is not. Two conventions are common.</p>
+<ul>
+<li><strong>Raoult (symmetric).</strong> f<sub>i</sub>° is the fugacity of pure liquid i at T and P, and γ<sub>i</sub> → 1 as x<sub>i</sub> → 1. Natural for components that exist as liquids at T over the whole range.</li>
+<li><strong>Henry (unsymmetric).</strong> f̂<sub>i</sub> → x<sub>i</sub>H<sub>i</sub> as x<sub>i</sub> → 0, with Henry’s constant H<sub>i</sub> = γ<sub>i</sub>∞f<sub>i</sub> ≈ γ<sub>i</sub>∞P<sub>i</sub><sup>sat</sup>. The activity coefficient γ<sub>i</sub>* = γ<sub>i</sub>/γ<sub>i</sub>∞ tends to one at infinite dilution. Natural for a dilute solute, and necessary for a supercritical gas, which has no pure liquid at T.</li>
+</ul>
+<p>A third convention, on the molality scale, is used for electrolytes in Session 6 after the midterm. Whatever the convention, γ<sub>i</sub>f<sub>i</sub>° is the same, so mixing a γ from one convention with an f<sub>i</sub>° from another is an error of a factor γ<sub>i</sub>∞.</p>
+<h2 id="models-for-ge">4. Models for G<sup>E</sup></h2>
+<p>A model is an expression for G<sup>E</sup>/RT(x); the ln γ<sub>i</sub> follow by differentiation, so they satisfy Gibbs–Duhem by construction.</p>
+<ul>
+<li><strong>Margules.</strong> G<sup>E</sup>/RT = x<sub>1</sub>x<sub>2</sub>(A<sub>21</sub>x<sub>1</sub> + A<sub>12</sub>x<sub>2</sub>), so ln γ<sub>1</sub>∞ = A<sub>12</sub> and ln γ<sub>2</sub>∞ = A<sub>21</sub>. With A<sub>12</sub> = A<sub>21</sub> = A it has one parameter.</li>
+<li><strong>van Laar.</strong> ln γ<sub>1</sub> = A<sub>12</sub>(1 + A<sub>12</sub>x<sub>1</sub>/A<sub>21</sub>x<sub>2</sub>)<sup>−2</sup>, also with ln γ<sub>i</sub>∞ = A<sub>ij</sub>.</li>
+<li><strong>Wilson.</strong> G<sup>E</sup>/RT = −Σx<sub>i</sub> ln(Σx<sub>j</sub>Λ<sub>ij</sub>), with Λ<sub>ij</sub> &gt; 0. Good for miscible polar mixtures. It cannot predict a liquid–liquid split for any parameters.</li>
+<li><strong>NRTL.</strong> A local-composition model with τ<sub>12</sub>, τ<sub>21</sub> and a non-randomness parameter α, usually fixed between 0.2 and 0.47. It can represent both VLE and LLE.</li>
+<li><strong>UNIQUAC and UNIFAC.</strong> A combinatorial term for size and shape plus a residual term; UNIFAC builds the parameters from functional groups and is used when no mixture data exist.</li>
+</ul>
+<p><strong>One point is not enough.</strong> Fitting two-parameter Margules to the single point of Section 2 alone gives A<sub>12</sub> = 3.58 and A<sub>21</sub> = −3.30, that is γ<sub>2</sub>∞ = 0.04, which contradicts the positive deviation measured everywhere else. A fit to all 18 points at 60 kPa gives A<sub>12</sub> = 2.02 and A<sub>21</sub> = 0.78 (γ∞ = 7.6 and 2.2). The parameters are only as good as the range and accuracy of the data behind them.</p>
+<h2 id="stability-of-one-liquid-phase">5. Stability of one liquid phase</h2>
+<p>A binary liquid is locally stable when Δg<sub>mix</sub>/RT is convex in x<sub>1</sub>:</p>
+<p><span class="math display">1+x_1x_2\frac{\partial^2(G^E/RT)}{\partial x_1^2}&gt;0.</span></p>
+<p>A fitted model that violates this inside the composition range predicts two liquids. That is a property of the model and the fit, and it should be compared with what the mixture does. Session 3 after the midterm develops stability and liquid–liquid equilibrium in full.</p>
+<h2 id="before-session-p6">6. Before Session P6</h2>
+<p>Write short answers. We use them in the first 30 minutes.</p>
+<ol type="1">
+<li><strong>Infinite dilution.</strong> Show from the Margules expression for G<sup>E</sup>/RT that ln γ<sub>1</sub> = x<sub>2</sub>²[A<sub>12</sub> + 2(A<sub>21</sub> − A<sub>12</sub>)x<sub>1</sub>], and hence that ln γ<sub>1</sub>∞ = A<sub>12</sub>.</li>
+<li><strong>Henry’s constant.</strong> With γ<sub>1</sub>∞ = 7.56 and P<sub>1</sub><sup>sat</sup>(345 K) = 65.8 kPa, compute H<sub>1</sub> for 2-propanol in water. Estimate the partial pressure of 2-propanol above a 1 mol% solution at 345 K, and compare it with the ideal-solution value.</li>
+<li><strong>Stability.</strong> For one-parameter Margules, G<sup>E</sup>/RT = Ax<sub>1</sub>x<sub>2</sub>, show that the criterion of Section 5 becomes 1 − 2Ax<sub>1</sub>x<sub>2</sub> &gt; 0, so a split first appears at A = 2. Fitting A to the single point of Section 2 gives A = 2.62. What does that predict, and why should you doubt it?</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li>Barbieri, A. et al.&nbsp;(2024). Isobaric vapor–liquid equilibrium of 2-propanol + water. <em>J. Chem. Thermodyn.</em> 198, 107342.</li>
+<li>Smith, J. M., Van Ness, H. C., Abbott, M. M., Swihart, M. T. (2018). <em>Introduction to Chemical Engineering Thermodynamics</em>, 8th ed.&nbsp;McGraw-Hill. Chapters 13 and 15.</li>
+<li>Prausnitz, J. M., Lichtenthaler, R. N., de Azevedo, E. G. (1999). <em>Molecular Thermodynamics of Fluid-Phase Equilibria</em>, 3rd ed.&nbsp;Prentice Hall. Chapters 6 and 7.</li>
+<li>Renon, H., Prausnitz, J. M. (1968). Local compositions in thermodynamic excess functions for liquid mixtures. <em>AIChE J.</em> 14, 135–144.</li>
+</ul>
+<p><a href="p06.html" class="next-link">Session P6 slides →</a></p>
+
+
+
+
+
+</body></html>

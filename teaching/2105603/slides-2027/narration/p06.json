@@ -1,0 +1,466 @@
+{
+ "title-slide": {
+  "audio": "narration/p06/title-slide.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 5.26,
+    "en": "Welcome to session P6: excess properties and activity coefficients.",
+    "th": "ยินดีต้อนรับสู่คาบ P6 excess properties และ activity coefficient"
+   },
+   {
+    "start": 5.61,
+    "end": 11.16,
+    "en": "Today we measure and model how far a liquid mixture is from the ideal solution.",
+    "th": "วันนี้เราจะวัดและสร้างแบบจำลองว่าของผสมเหลวเบี่ยงเบนจากสารละลายอุดมคติมากเพียงใด"
+   }
+  ]
+ },
+ "course-map": {
+  "audio": "narration/p06/course-map.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.2,
+    "en": "Session P5 defined the ideal solution. Real liquids depart from it, often strongly.",
+    "th": "คาบ P5 นิยามสารละลายอุดมคติ แต่ของเหลวจริงเบี่ยงเบนจากมัน และมักเบี่ยงเบนมาก"
+   },
+   {
+    "start": 7.55,
+    "end": 18.88,
+    "en": "Today: excess properties, the activity coefficient, its standard states, and the models that represent it. Sessions 1 to 3 after the midterm use all of them.",
+    "th": "วันนี้เราจะดู excess properties, activity coefficient, standard state และแบบจำลองที่ใช้แทน ซึ่งคาบที่ 1 ถึง 3 หลัง midterm ใช้ทั้งหมด"
+   }
+  ]
+ },
+ "why": {
+  "audio": "narration/p06/why.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.55,
+    "en": "Why does this matter? Take 2-propanol and water at 60 kilopascal: one data set, one equation, two fitting objectives.",
+    "th": "ทำไมเรื่องนี้จึงสำคัญ ลองดู 2-โพรพานอลกับน้ำที่ 60 กิโลปาสกาล ข้อมูลชุดเดียว สมการเดียว แต่มีเป้าหมายการปรับค่าสองแบบ"
+   },
+   {
+    "start": 9.9,
+    "end": 26.65,
+    "en": "Fitted to ln gamma, 2-propanol at infinite dilution in water has gamma infinity of 7.7. Fitted to G E over RT, it has 21, and the model predicts a liquid split that does not exist.",
+    "th": "เมื่อปรับกับ ln γ ค่า γ∞ ของ 2-โพรพานอลในน้ำเท่ากับ 7.7 แต่เมื่อปรับกับ G^E/RT ได้ 21 และแบบจำลองทำนายการแยกชั้นของของเหลวที่ไม่มีอยู่จริง"
+   },
+   {
+    "start": 27.0,
+    "end": 32.54,
+    "en": "Henry's constant, stripping and the stability of the liquid all follow from that choice.",
+    "th": "ค่าคงที่ของ Henry การ stripping และความเสถียรของของเหลว ล้วนขึ้นกับการเลือกนี้"
+   }
+  ]
+ },
+ "outcomes": {
+  "audio": "narration/p06/outcomes.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.11,
+    "en": "By the end of today you can do four things.",
+    "th": "เมื่อจบคาบนี้ คุณจะทำได้สี่อย่าง"
+   },
+   {
+    "start": 3.46,
+    "end": 9.71,
+    "en": "Define excess properties and the activity coefficient, and compute them from measured VLE.",
+    "th": "นิยาม excess properties และ activity coefficient และคำนวณจากข้อมูล VLE ที่วัดได้"
+   },
+   {
+    "start": 10.06,
+    "end": 20.09,
+    "en": "Fit and compare the classical models, convert between standard states, and judge a model by held-out data, infinite dilution and stability.",
+    "th": "ปรับและเปรียบเทียบแบบจำลองดั้งเดิม แปลงระหว่าง standard state และประเมินแบบจำลองด้วยข้อมูลที่ไม่ได้ใช้ปรับ ค่าที่การเจือจางอนันต์ และความเสถียร"
+   }
+  ]
+ },
+ "route": {
+  "audio": "narration/p06/route.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.15,
+    "en": "Here is the 180-minute route.",
+    "th": "นี่คือเส้นทางของคาบ 180 นาที"
+   },
+   {
+    "start": 3.5,
+    "end": 15.0,
+    "en": "Concepts, activity coefficients from one VLE point by hand, a demonstration in Lab P6, a break, and a 70-minute pair investigation.",
+    "th": "แนวคิด การคำนวณ activity coefficient จากข้อมูล VLE หนึ่งจุดด้วยมือ สาธิต Lab P6 พัก และทำงานเป็นคู่ 70 นาที"
+   },
+   {
+    "start": 15.35,
+    "end": 25.7,
+    "en": "The session question: how do we measure and model the departure from the ideal solution, and what decides whether a fitted model can be trusted beyond its data?",
+    "th": "คำถามของคาบนี้คือ เราจะวัดและสร้างแบบจำลองการเบี่ยงเบนจากสารละลายอุดมคติอย่างไร และอะไรกำหนดว่าแบบจำลองที่ปรับแล้วเชื่อถือได้นอกขอบเขตข้อมูล"
+   }
+  ]
+ },
+ "excess": {
+  "audio": "narration/p06/excess.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.7,
+    "en": "An excess property is the departure from the ideal solution at the same temperature, pressure and composition.",
+    "th": "excess property คือการเบี่ยงเบนจากสารละลายอุดมคติที่อุณหภูมิ ความดัน และองค์ประกอบเดียวกัน"
+   },
+   {
+    "start": 8.05,
+    "end": 13.21,
+    "en": "The Gibbs energy of mixing is the ideal term plus G E over RT.",
+    "th": "พลังงานกิบส์ของการผสมเท่ากับพจน์อุดมคติบวก G^E/RT"
+   },
+   {
+    "start": 13.56,
+    "end": 24.67,
+    "en": "A positive G E means the components prefer their own kind, as 2-propanol and water do. Its temperature dependence is set by the excess enthalpy.",
+    "th": "G^E ที่เป็นบวกหมายความว่าองค์ประกอบชอบอยู่กับชนิดเดียวกัน เช่น 2-โพรพานอลกับน้ำ และการเปลี่ยนตามอุณหภูมิกำหนดโดย excess enthalpy"
+   }
+  ]
+ },
+ "gamma": {
+  "audio": "narration/p06/gamma.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 11.96,
+    "en": "The activity coefficient is the component fugacity divided by the ideal-solution value. Its log is the partial molar property of G E over RT.",
+    "th": "activity coefficient คือ fugacity ขององค์ประกอบหารด้วยค่าของสารละลายอุดมคติ และ ln ของมันคือ partial molar property ของ G^E/RT"
+   },
+   {
+    "start": 12.31,
+    "end": 21.19,
+    "en": "At low pressure with an ideal vapor, modified Raoult's law gives gamma directly from y, x, P and the vapor pressure.",
+    "th": "ที่ความดันต่ำและไอเป็นแก๊สอุดมคติ กฎของ Raoult แบบปรับปรุงให้ค่า γ โดยตรงจาก y, x, P และความดันไอ"
+   },
+   {
+    "start": 21.54,
+    "end": 30.37,
+    "en": "At x1 equal to 0.14, gamma 1 is 3.40 and gamma 2 is 1.18.",
+    "th": "ที่ x1 เท่ากับ 0.14 γ1 เท่ากับ 3.40 และ γ2 เท่ากับ 1.18"
+   }
+  ]
+ },
+ "standard": {
+  "audio": "narration/p06/standard.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 8.46,
+    "en": "The standard state is a choice. The fugacity does not depend on it; gamma and the reference fugacity change together.",
+    "th": "standard state เป็นสิ่งที่เราเลือก fugacity ไม่ขึ้นกับมัน แต่ γ และ fugacity อ้างอิงเปลี่ยนไปด้วยกัน"
+   },
+   {
+    "start": 8.81,
+    "end": 23.66,
+    "en": "In the Raoult convention gamma tends to one for the pure component. In the Henry convention gamma star tends to one at infinite dilution, and Henry's constant is gamma infinity times the vapor pressure.",
+    "th": "ในแบบ Raoult γ เข้าใกล้หนึ่งเมื่อเป็นสารบริสุทธิ์ ในแบบ Henry γ* เข้าใกล้หนึ่งที่การเจือจางอนันต์ และค่าคงที่ของ Henry เท่ากับ γ∞ คูณความดันไอ"
+   },
+   {
+    "start": 24.01,
+    "end": 39.24,
+    "en": "For 2-propanol in water at 345 kelvin, Henry's constant is about 510 kilopascal from the ln gamma fits, but 840 to 3100 from the G E fits.",
+    "th": "สำหรับ 2-โพรพานอลในน้ำที่ 345 เคลวิน ค่าคงที่ของ Henry ประมาณ 510 กิโลปาสกาลจากการปรับกับ ln γ แต่ได้ 840 ถึง 3100 จากการปรับกับ G^E"
+   }
+  ]
+ },
+ "models": {
+  "audio": "narration/p06/models.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.34,
+    "en": "The classical models are Margules, van Laar, Wilson and NRTL, with UNIQUAC and UNIFAC as group-based extensions.",
+    "th": "แบบจำลองดั้งเดิมได้แก่ Margules, van Laar, Wilson และ NRTL โดยมี UNIQUAC และ UNIFAC เป็นส่วนขยายที่อิงหมู่ฟังก์ชัน"
+   },
+   {
+    "start": 9.69,
+    "end": 16.83,
+    "en": "Every model gives activity coefficients that satisfy Gibbs-Duhem, because they come from one G E.",
+    "th": "ทุกแบบจำลองให้ activity coefficient ที่สอดคล้องกับ Gibbs–Duhem เพราะมาจาก G^E เดียวกัน"
+   },
+   {
+    "start": 17.18,
+    "end": 22.05,
+    "en": "Wilson cannot predict a liquid split for any parameters; the others can.",
+    "th": "Wilson ไม่สามารถทำนายการแยกชั้นของของเหลวได้ไม่ว่าพารามิเตอร์ใด ส่วนแบบจำลองอื่นทำได้"
+   }
+  ]
+ },
+ "objective": {
+  "audio": "narration/p06/objective.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 11.92,
+    "en": "What you fit decides what you predict. G E over RT vanishes at both ends, so a G E fit is decided by the middle and leaves the dilute ends free.",
+    "th": "สิ่งที่เราปรับกำหนดสิ่งที่เราทำนาย G^E/RT เป็นศูนย์ที่ปลายทั้งสอง การปรับกับ G^E จึงถูกกำหนดโดยช่วงกลาง และปล่อยปลายที่เจือจางให้เป็นอิสระ"
+   },
+   {
+    "start": 12.27,
+    "end": 20.61,
+    "en": "The G E fits predict the 80 kilopascal data slightly better, and are wrong about infinite dilution and stability.",
+    "th": "การปรับกับ G^E ทำนายข้อมูลที่ 80 กิโลปาสกาลได้ดีกว่าเล็กน้อย แต่ผิดเรื่องค่าที่การเจือจางอนันต์และความเสถียร"
+   },
+   {
+    "start": 20.96,
+    "end": 33.12,
+    "en": "With a composition uncertainty of 0.02 to 0.03, these data leave gamma infinity uncertain by tens of percent whatever the fit.",
+    "th": "เมื่อความไม่แน่นอนขององค์ประกอบคือ 0.02 ถึง 0.03 ข้อมูลนี้ทำให้ γ∞ มีความไม่แน่นอนหลายสิบเปอร์เซ็นต์ไม่ว่าจะปรับแบบใด"
+   }
+  ]
+ },
+ "stability": {
+  "audio": "narration/p06/stability.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.7,
+    "en": "One liquid is locally stable where one plus x1 x2 times the second derivative of G E over RT is positive.",
+    "th": "ของเหลวเฟสเดียวเสถียรเฉพาะที่ เมื่อ 1 + x1x2 ∂²(G^E/RT)/∂x1² มีค่าเป็นบวก"
+   },
+   {
+    "start": 10.05,
+    "end": 27.65,
+    "en": "NRTL fitted to ln gamma has a minimum of plus 0.20. Fitted to G E over RT, it reaches minus 0.11 near x1 equal to 0.2: a split the mixture does not show.",
+    "th": "NRTL ที่ปรับกับ ln γ มีค่าต่ำสุด บวก 0.20 แต่เมื่อปรับกับ G^E/RT ได้ ลบ 0.11 ใกล้ x1 เท่ากับ 0.2 ซึ่งเป็นการแยกชั้นที่ของผสมจริงไม่มี"
+   },
+   {
+    "start": 28.0,
+    "end": 31.76,
+    "en": "Session 3 after the midterm treats stability in full.",
+    "th": "คาบที่ 3 หลัง midterm จะกล่าวถึงความเสถียรอย่างครบถ้วน"
+   }
+  ]
+ },
+ "activity-1": {
+  "audio": "narration/p06/activity-1.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.65,
+    "en": "Activity 1, ten minutes. One VLE point of 2-propanol and water at 60 kilopascal.",
+    "th": "กิจกรรมที่ 1 สิบนาที ข้อมูล VLE หนึ่งจุดของ 2-โพรพานอลกับน้ำที่ 60 กิโลปาสกาล"
+   },
+   {
+    "start": 8.0,
+    "end": 17.2,
+    "en": "Compute the vapor pressures, both activity coefficients and G E over RT, then compare with the two-parameter Margules fit.",
+    "th": "คำนวณความดันไอ activity coefficient ทั้งสองค่า และ G^E/RT แล้วเทียบกับ Margules แบบสองพารามิเตอร์"
+   }
+  ]
+ },
+ "activity-1-debrief": {
+  "audio": "narration/p06/activity-1-debrief.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 17.32,
+    "en": "Check your answer. The vapor pressures are 56.3 and 28.9 kilopascal; gamma 1 is 1.38 and gamma 2 is 1.65, so G E over RT is 0.425.",
+    "th": "ตรวจคำตอบ ความดันไอคือ 56.3 และ 28.9 กิโลปาสกาล γ1 เท่ากับ 1.38 และ γ2 เท่ากับ 1.65 ดังนั้น G^E/RT เท่ากับ 0.425"
+   },
+   {
+    "start": 17.67,
+    "end": 25.43,
+    "en": "Margules gives gamma 1 equal to 1.41, two percent above the data and well within the measurement.",
+    "th": "Margules ให้ γ1 เท่ากับ 1.41 สูงกว่าข้อมูลสองเปอร์เซ็นต์ ซึ่งอยู่ภายในความไม่แน่นอนของการวัด"
+   }
+  ]
+ },
+ "demo-lab": {
+  "audio": "narration/p06/demo-lab.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.83,
+    "en": "Now a demonstration in Lab P6.",
+    "th": "ต่อไปเป็นการสาธิตใน Lab P6"
+   },
+   {
+    "start": 3.18,
+    "end": 15.9,
+    "en": "Two-parameter Margules fitted to ln gamma: read gamma infinity, the 80 kilopascal prediction and the curvature. Then switch the objective to G E over RT.",
+    "th": "Margules สองพารามิเตอร์ที่ปรับกับ ln γ อ่าน γ∞ การทำนายที่ 80 กิโลปาสกาล และค่าความโค้ง แล้วเปลี่ยนเป้าหมายเป็น G^E/RT"
+   },
+   {
+    "start": 16.25,
+    "end": 21.07,
+    "en": "In the Graduate view, investigation A fits every model both ways.",
+    "th": "ในมุมมอง Graduate การสืบค้น A ปรับทุกแบบจำลองทั้งสองวิธี"
+   }
+  ]
+ },
+ "mistakes": {
+  "audio": "narration/p06/mistakes.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 1.91,
+    "en": "Four common mistakes.",
+    "th": "ข้อผิดพลาดที่พบบ่อยสี่ข้อ"
+   },
+   {
+    "start": 2.26,
+    "end": 9.28,
+    "en": "Judging a model by its residuals alone, and reporting gamma infinity from a fit as if it were measured.",
+    "th": "ประเมินแบบจำลองจากค่าคลาดเคลื่อนตกค้างอย่างเดียว และรายงาน γ∞ จากการปรับเส้นเหมือนเป็นค่าที่วัดได้"
+   },
+   {
+    "start": 9.63,
+    "end": 15.33,
+    "en": "Mixing standard states, and using vapor pressures outside the range of their correlation.",
+    "th": "ใช้ standard state ปนกัน และใช้ความดันไอนอกช่วงของสหสัมพันธ์"
+   }
+  ]
+ },
+ "break": {
+  "audio": "narration/p06/break.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.02,
+    "en": "Take a ten-minute break.",
+    "th": "พักสิบนาที"
+   },
+   {
+    "start": 2.37,
+    "end": 6.57,
+    "en": "Next is a 70-minute pair investigation in Lab P6.",
+    "th": "ต่อไปเป็นการทำงานเป็นคู่ 70 นาทีใน Lab P6"
+   }
+  ]
+ },
+ "activity-2": {
+  "audio": "narration/p06/activity-2.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.15,
+    "en": "Activity 2, seventy minutes, in pairs.",
+    "th": "กิจกรรมที่ 2 เจ็ดสิบนาที ทำเป็นคู่"
+   },
+   {
+    "start": 3.5,
+    "end": 12.76,
+    "en": "Fit five models with two objectives, compare Henry's constants, and test the stability of NRTL with three values of alpha.",
+    "th": "ปรับห้าแบบจำลองด้วยสองเป้าหมาย เทียบค่าคงที่ของ Henry และทดสอบความเสถียรของ NRTL ด้วยค่า α สามค่า"
+   },
+   {
+    "start": 13.11,
+    "end": 17.57,
+    "en": "Finish with two sentences that answer the session question with numbers.",
+    "th": "ปิดท้ายด้วยสองประโยคที่ตอบคำถามของคาบพร้อมตัวเลข"
+   }
+  ]
+ },
+ "activity-2-check": {
+  "audio": "narration/p06/activity-2-check.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.0,
+    "en": "Here is what to hand in, and the numbers to check against.",
+    "th": "นี่คือสิ่งที่ต้องส่ง และตัวเลขสำหรับตรวจผล"
+   },
+   {
+    "start": 4.35,
+    "end": 19.42,
+    "en": "With the ln gamma objective, gamma infinity is 7.6 to 7.9 and no model splits. With the G E objective, it is 12.7 to 47 and three of four models split.",
+    "th": "ด้วยเป้าหมาย ln γ ค่า γ∞ อยู่ระหว่าง 7.6 ถึง 7.9 และไม่มีแบบจำลองใดแยกชั้น ด้วยเป้าหมาย G^E ได้ 12.7 ถึง 47 และสามในสี่แบบจำลองแยกชั้น"
+   }
+  ]
+ },
+ "discussion": {
+  "audio": "narration/p06/discussion.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 1.91,
+    "en": "Discuss three questions.",
+    "th": "อภิปรายสามคำถาม"
+   },
+   {
+    "start": 2.26,
+    "end": 11.14,
+    "en": "The G E fits predict 80 kilopascal better and stability worse. Which would you use for a column, and which for a decanter?",
+    "th": "การปรับกับ G^E ทำนายข้อมูลที่ 80 กิโลปาสกาลได้ดีกว่าแต่ทำนายความเสถียรแย่กว่า คุณจะใช้แบบใดกับหอกลั่น และแบบใดกับถังแยกชั้น"
+   },
+   {
+    "start": 11.49,
+    "end": 18.25,
+    "en": "Why can Wilson never predict a split, and what measurement would fix gamma infinity better than these data?",
+    "th": "ทำไม Wilson จึงทำนายการแยกชั้นไม่ได้ และการวัดแบบใดจะกำหนด γ∞ ได้ดีกว่าข้อมูลชุดนี้"
+   }
+  ]
+ },
+ "summary": {
+  "audio": "narration/p06/summary.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 10.66,
+    "en": "To summarize. The activity coefficient measures the departure from the ideal solution, and its log is the partial molar G E over RT.",
+    "th": "สรุป activity coefficient วัดการเบี่ยงเบนจากสารละลายอุดมคติ และ ln ของมันคือ partial molar G^E/RT"
+   },
+   {
+    "start": 11.01,
+    "end": 16.56,
+    "en": "The standard state is a choice: Raoult for a solvent, Henry for a dilute solute.",
+    "th": "standard state เป็นสิ่งที่เลือก แบบ Raoult สำหรับตัวทำละลาย และแบบ Henry สำหรับตัวถูกละลายที่เจือจาง"
+   },
+   {
+    "start": 16.91,
+    "end": 25.89,
+    "en": "Judge a model by held-out data, infinite dilution and stability: the objective alone can change gamma infinity threefold.",
+    "th": "ประเมินแบบจำลองด้วยข้อมูลที่ไม่ได้ใช้ปรับ ค่าที่การเจือจางอนันต์ และความเสถียร เพราะเป้าหมายการปรับเพียงอย่างเดียวเปลี่ยน γ∞ ได้สามเท่า"
+   },
+   {
+    "start": 26.24,
+    "end": 31.51,
+    "en": "Next session, P7: choosing a property model, and preparing for the midterm.",
+    "th": "คาบหน้า P7 การเลือกแบบจำลองสมบัติ และการเตรียมสอบ midterm"
+   }
+  ]
+ },
+ "exit-ticket": {
+  "audio": "narration/p06/exit-ticket.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.92,
+    "en": "Exit ticket, five minutes, anonymous.",
+    "th": "Exit ticket ห้านาที ไม่ระบุชื่อ"
+   },
+   {
+    "start": 3.27,
+    "end": 17.18,
+    "en": "Two NRTL fits to the same data give gamma infinity of 7.7 and 21. Explain how the objective causes this, and name one check that would tell you which fit to trust.",
+    "th": "NRTL สองชุดที่ปรับกับข้อมูลเดียวกันให้ γ∞ เท่ากับ 7.7 และ 21 อธิบายว่าเป้าหมายการปรับทำให้เกิดสิ่งนี้ได้อย่างไร และระบุการตรวจสอบหนึ่งอย่างที่บอกได้ว่าควรเชื่อชุดใด"
+   }
+  ]
+ },
+ "after-class": {
+  "audio": "narration/p06/after-class.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 5.73,
+    "en": "After class, finish Lab P6 and upload the study file to myCourseVille.",
+    "th": "หลังเลิกเรียน ทำ Lab P6 ให้เสร็จ และอัปโหลดไฟล์ study ไปที่ myCourseVille"
+   },
+   {
+    "start": 6.08,
+    "end": 10.41,
+    "en": "Read the review guide for session P7, about thirty minutes.",
+    "th": "อ่าน review guide ของคาบ P7 ใช้เวลาประมาณสามสิบนาที"
+   }
+  ]
+ }
+}

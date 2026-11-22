@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics">
+
+<title>Choosing a property model: review guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<meta name="robots" content="noindex">
+
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+
+<header id="title-block-header">
+<h1 class="title">Choosing a property model: review guide</h1>
+<p class="subtitle">Pre-class note for Session P7 · about 30 minutes</p>
+<p class="author">Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics</p>
+
+</header>
+
+
+<div class="draft-note">
+<p>Draft for 2027. If you are taking the course this year, use the current course page.</p>
+</div>
+<div class="purpose">
+<p><strong>Why read this.</strong> Sessions P1–P6 built one chain, from measurable properties to activity coefficients. Session P7 asks two questions of every result: which model would you choose, and what evidence would make you trust it? Use this guide to review, then bring the one topic you feel least ready for.</p>
+</div>
+<h2 id="one-chain-six-steps">1. One chain, six steps</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Session</th>
+<th>Working relation</th>
+<th>What it needs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P1 · framework</td>
+<td>dG = −S dT + V dP; dH = C<sub>p</sub>dT + [V − T(∂V/∂T)<sub>P</sub>]dP</td>
+<td>PVT data and C<sub>p</sub><sup>ig</sup></td>
+</tr>
+<tr class="even">
+<td>P2 · PVT</td>
+<td>Z = PV/RT; cubic EOS; Z = 1 + BP/RT</td>
+<td>T<sub>c</sub>, P<sub>c</sub>, ω, or B(T)</td>
+</tr>
+<tr class="odd">
+<td>P3 · residuals</td>
+<td>H<sup>R</sup>/RT = −T∫₀<sup>P</sup>(∂Z/∂T)<sub>P</sub>dP/P; H = H<sup>ig</sup> + H<sup>R</sup></td>
+<td>Z(T, P) and C<sub>p</sub><sup>ig</sup></td>
+</tr>
+<tr class="even">
+<td>P4 · pure equilibrium</td>
+<td>ln φ = ∫₀<sup>P</sup>(Z − 1)dP/P; f<sup>V</sup> = f<sup>L</sup> at P<sup>sat</sup>; Poynting</td>
+<td>an EOS, or P<sup>sat</sup> and V<sup>L</sup></td>
+</tr>
+<tr class="odd">
+<td>P5 · mixtures</td>
+<td>M̄<sub>i</sub>; Σx<sub>i</sub>dM̄<sub>i</sub> = 0; φ̂<sub>i</sub>; f̂<sub>i</sub><sup>id</sup> = x<sub>i</sub>f<sub>i</sub></td>
+<td>B<sub>12</sub> or k<sub>ij</sub></td>
+</tr>
+<tr class="even">
+<td>P6 · activity</td>
+<td>γ<sub>i</sub> = f̂<sub>i</sub>/(x<sub>i</sub>f<sub>i</sub>°); y<sub>i</sub>P = x<sub>i</sub>γ<sub>i</sub>P<sub>i</sub><sup>sat</sup>; H<sub>i</sub> = γ<sub>i</sub>∞f<sub>i</sub></td>
+<td>a G<sup>E</sup> model and a standard state</td>
+</tr>
+</tbody>
+</table>
+<p>Each step uses the one before. Session 1 after the midterm joins P4–P6 into the γ–φ and φ–φ forms of vapor–liquid equilibrium.</p>
+<h2 id="what-decided-each-answer">2. What decided each answer</h2>
+<p>Each session had a result that looked right, and the evidence that decided it.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Session</th>
+<th>Looked right</th>
+<th>Evidence that decided</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P1</td>
+<td>The inlet Joule–Thomson slope for a methane valve, 100 → 20 bar</td>
+<td>The enthalpy balance gives 265.6 K; the inlet slope 273.9 K; the ideal gas 300 K</td>
+</tr>
+<tr class="even">
+<td>P2</td>
+<td>Peng–Robinson: CO₂ tank 939 kg against 938</td>
+<td>Liquid water at 500 K: Z off by 23% with the same equation</td>
+</tr>
+<tr class="odd">
+<td>P3</td>
+<td>Ideal-gas compressor work, 3430 J/mol</td>
+<td>Reference 2865 J/mol; outlet 387.7 K against 399.7 K</td>
+</tr>
+<tr class="even">
+<td>P4</td>
+<td>PR vapor pressure of propane at 300 K within 0.02%</td>
+<td>ω is fitted to P<sup>sat</sup>; the liquid volume is 3.8% low</td>
+</tr>
+<tr class="odd">
+<td>P5</td>
+<td>Lewis–Randall for 2% CO₂ in methane at 60 bar</td>
+<td>φ̂<sub>CO₂</sub> 8% from pure CO₂; combining rules with k<sub>12</sub> = 0 are 11–37% off in B<sub>12</sub></td>
+</tr>
+<tr class="even">
+<td>P6</td>
+<td>NRTL fitted to G<sup>E</sup>/RT, best prediction at 80 kPa</td>
+<td>γ₁∞ = 21 against 7.7, and a liquid split that does not exist</td>
+</tr>
+</tbody>
+</table>
+<h2 id="choosing-a-property-model">3. Choosing a property model</h2>
+<p>Start from the fluid, the phase and the pressure (Carlson, 1996):</p>
+<ul>
+<li><strong>Gas at low density</strong> (below about half of ρ<sub>c</sub>): the virial equation with B(T). Beyond that, it fails: nitrogen at 300 K and 200 bar has Z = 1.057, and the two-term virial gives 0.957.</li>
+<li><strong>A pure fluid with a reference equation of state:</strong> use it. The NIST values in this course come from such equations.</li>
+<li><strong>Hydrocarbons and light gases at high pressure, either phase:</strong> a cubic EOS with k<sub>ij</sub>. Check the liquid volume separately; a volume shift corrects it at one state without changing P<sup>sat</sup> (Péneloux et al., 1982).</li>
+<li><strong>Polar or associating liquids at low pressure:</strong> the γ–φ approach with Wilson, NRTL or UNIQUAC and a P<sup>sat</sup> correlation. Check γ∞ and stability, not only the fit.</li>
+<li><strong>A possible liquid split:</strong> NRTL or UNIQUAC, never Wilson, and LLE data.</li>
+<li><strong>A dilute solute, or a gas above its T<sub>c</sub>:</strong> Henry’s law, with a measured H<sub>i</sub> or γ∞.</li>
+<li><strong>No mixture data:</strong> UNIFAC or a predictive EOS, as a first estimate before a measurement.</li>
+</ul>
+<h2 id="the-evidence-ladder">4. The evidence ladder</h2>
+<p>From weakest to strongest:</p>
+<ol type="1">
+<li><strong>Calibration:</strong> the model reproduces the data it was fitted to, such as B fitted up to 1 mol/L, or NRTL fitted to G<sup>E</sup>.</li>
+<li><strong>Internal consistency:</strong> Gibbs–Duhem on measured γ, a balance that closes, the same H from two paths.</li>
+<li><strong>Held-out data:</strong> the same kind of measurement at conditions the fit did not use, such as 80 kPa VLE from a 60 kPa fit.</li>
+<li><strong>Independent property:</strong> a different quantity the model also predicts, such as the liquid volume from an EOS whose ω was fitted to P<sup>sat</sup>.</li>
+<li><strong>Different method:</strong> a measured B<sub>12</sub> against a combining rule; a directly measured γ∞ against a VLE fit.</li>
+</ol>
+<p>A claim is only as strong as the highest rung it reached. An extrapolation, such as γ₁∞ beyond the most dilute measured point, reaches none. Some claims cannot be decided with the data in hand; saying so is part of the answer.</p>
+<h2 id="checking-code-you-did-not-write-line-by-line">5. Checking code you did not write line by line</h2>
+<p>From Session P2 you have used AI assistants to write code for step E of each lab. The checks that catch real errors are:</p>
+<ul>
+<li>a quantity recomputed independently (a Z, a P<sup>sat</sup>, a γ at one point);</li>
+<li>a limit the answer must satisfy (Z → 1 as P → 0, γ<sub>i</sub> → 1 as x<sub>i</sub> → 1, equal fugacity at P<sup>sat</sup>);</li>
+<li>the objective re-evaluated at the reported parameters;</li>
+<li>the lab’s reference values reproduced.</li>
+</ul>
+<p>Convergence and a small residual check the solver, not the thermodynamics.</p>
+<h2 id="before-session-p7">6. Before Session P7</h2>
+<ol type="1">
+<li>For each session P1–P6, write the one equation you would use first and the one assumption you would check first, with its size in one number.</li>
+<li>Pick one result from your own lab files and place it on the evidence ladder.</li>
+<li>Bring the topic you feel least ready for. The exit-ticket form has a field for it.</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li>Carlson, E. C. (1996). Don’t gamble with physical properties for simulations. <em>Chem. Eng. Prog.</em> 92(10), 35–46.</li>
+<li>Péneloux, A., Rauzy, E., Fréze, R. (1982). A consistent correction for Redlich–Kwong–Soave volumes. <em>Fluid Phase Equilib.</em> 8, 7–23.</li>
+<li>Smith, J. M., Van Ness, H. C., Abbott, M. M., Swihart, M. T. (2018). <em>Introduction to Chemical Engineering Thermodynamics</em>, 8th ed.&nbsp;McGraw-Hill.</li>
+<li>Poling, B. E., Prausnitz, J. M., O’Connell, J. P. (2001). <em>The Properties of Gases and Liquids</em>, 5th ed.&nbsp;McGraw-Hill.</li>
+</ul>
+<p><a href="p07.html" class="next-link">Session P7 slides →</a></p>
+
+
+
+
+
+</body></html>
