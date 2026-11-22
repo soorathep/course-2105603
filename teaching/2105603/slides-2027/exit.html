@@ -167,6 +167,8 @@ $('f').addEventListener('submit', async (e) => {
   const body = Object.fromEntries(fd.entries());
   body.course = COURSE; body.session = Number(body.session);
   if (body.session !== REVIEW_SESSION) for (const k of Object.keys(body)) if (k.startsWith('course_')) delete body[k];
+  if (Object.keys(body).some((k) => k.startsWith('course_') && body[k])) body.course_scope = PRE ? 'pre-midterm' : 'post-midterm';
+  body.edition = '2027';
   if (!body.exit_ticket.trim()) { status('Please answer the exit-ticket question first.', 'err'); $('exit_ticket').focus(); return; }
   if (!RELAY_URL) { status('This form is not connected yet. Please tell the instructor.', 'err'); return; }
   $('send').disabled = true; status('Sending…');

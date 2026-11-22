@@ -41,7 +41,13 @@ last session. The Worker ignores unknown fields and still saves the rest.
 
 ## Courses using this relay
 
-- 2105603, 7 sessions: `teaching/2105603/slides-2027/exit.html`
+- 2105603, 7 sessions: `teaching/2105603/slides-2027/exit.html?s=<n>`
+- 2105603P, sessions P1-P7 before the midterm: the same page with `?p=<n>` (added 22 Nov 2026).
+  The page sends the whole-half answers at P7 with `course_scope` = `pre-midterm`, and at
+  2105603 Session 7 with `post-midterm`; both send `edition` = `2027`.
+
+`worker.js` here is a copy of the deployed Worker as of 22 Nov 2026. Edit the deployed code
+line by line in Cloudflare; do not paste this file over it without comparing first.
 - 2105315, 14 sessions: `teaching/2105315/slides/exit.html` (added 15 Nov 2026; the deployed
   Worker must carry the `COURSES` line from this `worker.js`, or 2105315 answers are refused as "Unknown course.")
 
