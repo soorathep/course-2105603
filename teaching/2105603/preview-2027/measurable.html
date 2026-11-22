@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Measurable properties · Thermodynamics Labs 2027 preview</title>
+  <meta name="description" content="Lab P1: obtain α, κ_T, C_p − C_v, the Joule–Thomson coefficient and the internal pressure from tabulated PVT data and C_p, and judge the finite-difference error.">
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="assets/labs.css?v=r7">
+</head>
+<body data-mode="core">
+<div class="draft-banner" role="note">Draft for 2027. If you are taking 2105603 this year, use the <a href="../index.html">current course page</a>.</div>
+  <a class="skip-link" href="#experiment">Skip to the experiment</a>
+  <header class="site-header"><a class="brand" href="index.html">SKH <span>Thermodynamics Labs</span></a><nav aria-label="Course navigation"><a href="measurable.html">Lab P1</a><a href="index.html#sessions">All 2027 labs</a><a href="../slides-2027/index.html">Slides</a><a href="../">Course</a></nav></header>
+  <main class="page" id="experiment">
+    <div class="page-intro">
+      <div><p class="eyebrow">Lab P1 · Measurable properties from PVT data and C<sub>p</sub></p><h1>What can PVT data and C<sub>p</sub> tell you?</h1><p id="case-description" class="intro-copy">Six states of four fluids, tabulated from the NIST reference equations of state. The lab differentiates V(T, P) and S(T, P) along an isobar and an isotherm to obtain α, κ<sub>T</sub>, C<sub>p</sub> − C<sub>v</sub>, the Joule–Thomson coefficient μ<sub>JT</sub> and the internal pressure (∂U/∂V)<sub>T</sub>, and compares them with the tabulated C<sub>v</sub> and μ<sub>JT</sub>.</p><p class="task-question">Compute the properties by finite differences, compare them with the ideal gas and the reference values, and decide what the state of the fluid and the step size do to the result.</p></div>
+      <p class="preview-note">2027 prototype<br>Session P1</p>
+    </div>
+    <fieldset class="mode-switch"><legend>View</legend><div class="mode-options"><label><input type="radio" name="lab-mode" value="core" checked><span>Core concepts</span></label><label><input type="radio" name="lab-mode" value="graduate"><span>Graduate investigation</span></label></div><p class="core-only">Core: predict, calculate, compare with the ideal gas and the reference values, and explain. Steps 1–5.</p><p class="grad-only">Graduate: the core steps plus A (step size and scheme), B (a throttling valve) and C (the inversion curve against van der Waals), then D (a defended conclusion).</p></fieldset>
+    <p class="graduate-note grad-only"><strong>Graduate route.</strong> Complete Steps 1–3 for at least the dense methane and the near-critical CO₂ states, then run A–C in Step 4. <a href="#graduate-investigation">Go to the graduate investigation</a>.</p>
+
+    <section class="starter" aria-label="Starting problems">
+      <div class="starter-label"><strong>Choose a state</strong><span>All values come from the NIST reference equations of state.</span></div>
+      <div class="case-buttons"><button type="button" data-case="ch4_300_100" aria-pressed="true">Methane · 300 K, 100 bar</button><button type="button" data-case="ch4_300_1" aria-pressed="false">Methane · 300 K, 1 bar</button><button type="button" data-case="co2_300_10" aria-pressed="false">CO₂ · 300 K, 10 bar</button><button type="button" data-case="co2_310_80" aria-pressed="false">CO₂ · 310 K, 80 bar (near critical)</button><button type="button" data-case="n2_300_50" aria-pressed="false">Nitrogen · 300 K, 50 bar</button><button type="button" data-case="h2o_298_1" aria-pressed="false">Liquid water · 298.15 K, 1 bar</button></div>
+      <p id="case-source" class="source-note">Data: NIST Chemistry WebBook, SRD 69 (Lemmon, McLinden and Friend), from the reference equations of state of Setzmann and Wagner (methane), Span and Wagner (CO₂), Span et al. (nitrogen) and IAPWS-95 (water). These are computed values, consistent with one fundamental equation per fluid, not raw measurements.</p>
+    </section>
+
+    <figure class="panel phase-picture" aria-labelledby="picture-heading">
+      <div class="panel-heading"><h2 id="picture-heading">Every property from PVT and C<sub>p</sub></h2><span class="section-help">The bracket is zero for an ideal gas</span></div>
+      <div class="vlle-figures vr-figures">
+        <div>
+          <svg class="eq-sketch" viewBox="0 0 520 230" role="img" aria-labelledby="eq-title eq-description">
+            <title id="eq-title">The enthalpy differential in measurable variables</title>
+            <desc id="eq-description">dH equals C_p dT plus the bracket V minus T times the partial derivative of V with T at constant P, times dP. The first term needs C_p; the bracket needs only PVT data. For an ideal gas the bracket is zero, so H depends on T only.</desc>
+            <g class="eq-note"><text x="150" y="38">needs C<tspan baseline-shift="sub" font-size="70%">p</tspan></text><text x="360" y="38">needs PVT data only</text></g>
+            <path d="M150 46 V84" class="eq-lead eq-teal"/><path d="M360 46 V84" class="eq-lead eq-amber"/>
+            <g class="eq-main"><text x="60" y="114">dH</text><text x="100" y="114">=</text><text x="150" y="114" class="eq-teal-text">C<tspan baseline-shift="sub" font-size="70%">p</tspan> dT</text><text x="205" y="114">+</text><text x="360" y="114" class="eq-amber-text">[V − T(∂V/∂T)<tspan baseline-shift="sub" font-size="70%">P</tspan>] dP</text></g>
+            <g class="eq-caption"><text x="260" y="168">μ<tspan baseline-shift="sub" font-size="70%">JT</tspan> = (∂T/∂P)<tspan baseline-shift="sub" font-size="70%">H</tspan> = [T(∂V/∂T)<tspan baseline-shift="sub" font-size="70%">P</tspan> − V]/C<tspan baseline-shift="sub" font-size="70%">p</tspan> = V(Tα − 1)/C<tspan baseline-shift="sub" font-size="70%">p</tspan></text><text x="260" y="198">C<tspan baseline-shift="sub" font-size="70%">p</tspan> − C<tspan baseline-shift="sub" font-size="70%">v</tspan> = TVα²/κ<tspan baseline-shift="sub" font-size="70%">T</tspan> · (∂U/∂V)<tspan baseline-shift="sub" font-size="70%">T</tspan> = Tα/κ<tspan baseline-shift="sub" font-size="70%">T</tspan> − P</text></g>
+          </svg>
+          <p class="figure-caption">α = (1/V)(∂V/∂T)<sub>P</sub> and κ<sub>T</sub> = −(1/V)(∂V/∂P)<sub>T</sub>. Ideal gas: α = 1/T, κ<sub>T</sub> = 1/P, C<sub>p</sub> − C<sub>v</sub> = R, μ<sub>JT</sub> = 0.</p>
+        </div>
+        <div>
+          <svg class="energy-sketch" viewBox="0 0 440 230" role="img" aria-labelledby="fd-title fd-description">
+            <title id="fd-title">Central and forward differences on a curved isobar</title>
+            <desc id="fd-description">A curved volume-temperature isobar. The tangent at the state is the exact derivative. The central secant through T minus delta and T plus delta is nearly parallel to it. The forward secant from T to T plus delta has a larger slope error when the curve bends strongly, as near a critical point.</desc>
+            <path d="M40 200 V30 M40 200 H420" class="pxy-axis"/>
+            <path d="M60 185 C150 175 210 150 240 115 C265 85 300 55 400 40" class="eq-lead eq-teal" fill="none"/>
+            <circle cx="240" cy="115" r="5" fill="#1C242B"/>
+            <path d="M160 168 L330 64" class="eq-lead eq-amber" stroke-dasharray="6 4"/>
+            <path d="M240 115 L330 64" class="eq-lead eq-slate"/>
+            <g class="pxy-tick"><text x="240" y="218">T</text><text x="160" y="218">T − δT</text><text x="330" y="218">T + δT</text></g>
+            <g class="energy-text" style="text-anchor:start"><text x="252" y="135" style="text-anchor:start">state</text><text x="300" y="160" style="text-anchor:start">central (dashed)</text><text x="300" y="182" style="text-anchor:start">forward (solid)</text><text x="48" y="28" style="text-anchor:start">V</text></g>
+          </svg>
+          <p class="figure-caption">The error of a difference grows with the curvature of V(T). Near the critical point the curvature is large, and the step must be small.</p>
+        </div>
+      </div>
+      <figcaption>All quantities in Step 2 come from the tabulated V, S, C<sub>p</sub> and the state's T and P. The tabulated C<sub>v</sub> and μ<sub>JT</sub> are used only as references.</figcaption>
+    </figure>
+
+    <div class="experiment-grid vle-experiment-grid">
+      <section class="panel setup-panel" aria-labelledby="setup-heading">
+        <div class="panel-heading"><h2 id="setup-heading">1. Choose the state and the differences</h2><span class="condition">Basis · 1 mol</span></div>
+        <div id="form-error" class="error-summary" role="alert" tabindex="-1" hidden></div>
+        <form id="mp-form" novalidate>
+          <label for="state">State</label><select id="state"></select>
+          <label for="stepT">Temperature step δT for (∂V/∂T)<sub>P</sub></label><select id="stepT"></select>
+          <label for="stepP">Pressure step δP for (∂V/∂P)<sub>T</sub> and (∂S/∂P)<sub>T</sub></label><select id="stepP"></select>
+          <label for="scheme">Difference scheme</label><select id="scheme"><option value="central">Central: [y(x + δ) − y(x − δ)]/2δ</option><option value="forward">Forward: [y(x + δ) − y(x)]/δ</option></select>
+          <div class="prediction-row"><label for="prediction">Before calculating: how will C<sub>p</sub> − C<sub>v</sub> compare with the ideal-gas value R?</label><select id="prediction"><option value="">Not sure yet</option><option value="low">Less than R</option><option value="near">Within 10% of R</option><option value="high">More than 10% above R</option></select><p class="input-help">Optional. Your choice does not change the calculation.</p></div>
+          <button id="calculate" class="primary-button calculate-button" type="button">Calculate the properties</button>
+          <p class="input-help">Add a calculated result to the comparison before changing a setting.</p>
+          <details class="advanced"><summary>Data and method</summary><p>Each state carries 201 rows of an isobar (T ± 20 K in steps of 0.2 K) and an isotherm around P. Derivatives use the rows δ away from the state. The tables carry twelve significant digits. With fewer digits, a very small step loses accuracy to cancellation: try it in your own code. 1 L bar = 100 J converts the PV terms to J.</p></details>
+        </form>
+      </section>
+
+      <section class="panel result-panel" aria-labelledby="result-heading">
+        <div class="panel-heading"><h2 id="result-heading">2. Compare with the ideal gas and the reference</h2></div>
+        <div id="result-placeholder" class="result-placeholder"><p>Calculate to see the properties from your differences next to the ideal gas and the tabulated reference.</p></div>
+        <div id="results" hidden>
+          <p id="result-phase" class="phase-result"></p><p id="phase-interpretation" class="section-help"></p><p id="prediction-feedback" class="prediction-feedback" aria-live="polite"></p>
+          <div class="table-scroll" role="region" aria-label="Properties at this state" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">Quantity</th><th scope="col">From your differences</th><th scope="col">Reference (NIST)</th><th scope="col">Ideal gas</th></tr></thead><tbody id="prop-body"></tbody></table></div>
+          <div class="balance-readout"><strong>Maxwell check</strong><output id="result-maxwell">—</output><span>(∂S/∂P)<sub>T</sub> from the isotherm against −(∂V/∂T)<sub>P</sub> from the isobar, J/(mol K bar)</span></div>
+          <div class="calculation-check"><h3>Check the calculation on paper</h3><ol id="calc-steps"></ol></div>
+        </div>
+        <div class="save-case-row"><label for="case-name">Name this case</label><input id="case-name" type="text" value="Methane · 300 K, 100 bar" maxlength="80"><button id="save-case" class="secondary-button" type="button" disabled>Add result to comparison</button></div>
+      </section>
+    </div>
+
+    <section id="diagram-panel" class="panel diagram-panel" aria-labelledby="diagram-heading" hidden>
+      <div class="panel-heading"><h2 id="diagram-heading">3. Read the isobar</h2><span class="section-help">The tabulated rows around the state</span></div>
+      <div class="chart-toolbar"><label for="view">View</label><select id="view"><option value="V">Molar volume V and the ideal-gas line</option><option value="mu">μ<sub>JT</sub> along the isobar</option></select></div>
+      <div id="mp-chart" class="vle-chart" role="img" aria-label="Isobar plot. Numbers are listed in Step 2."></div>
+      <div id="chart-legend" class="plot-legend"></div>
+      <p id="chart-note" class="chart-note"></p>
+    </section>
+
+    <section id="concept-check" class="panel core-only" aria-labelledby="concept-heading">
+      <div class="panel-heading"><h2 id="concept-heading">4. Check your understanding</h2><span class="section-help">Write first, then compare</span></div>
+      <p class="section-help">Use Steps 1–3 to answer each question in your own words. Then open the explanation and compare. Your answers are saved with your study.</p>
+      <div class="concept-question"><h3>A. Why is C<sub>p</sub> − C<sub>v</sub> of methane at 100 bar more than twice R?</h3><p>Calculate the dense methane state and compare α, κ<sub>T</sub> and V with the ideal gas.</p><label for="note-concept1" class="visually-hidden">Your answer to question A</label><textarea id="note-concept1" rows="3" maxlength="10000" placeholder="Write C_p − C_v = TVα²/κ_T and say which factor moves most."></textarea><details><summary>Compare with the explanation</summary><div class="concept-answer"><p>At 300 K and 100 bar, α = 5.79 × 10⁻³ K⁻¹ against 1/T = 3.33 × 10⁻³ K⁻¹ for the ideal gas (1.74 times), κ<sub>T</sub> = 0.0112 bar⁻¹ against 1/P = 0.0100 bar⁻¹ (1.12 times), and Z = 0.856. C<sub>p</sub> − C<sub>v</sub> scales as Zα²/κ<sub>T</sub>: 0.856 × 1.74²/1.12 = 2.31, so 19.2 J/(mol K) instead of R = 8.31.</p><p>The dense gas expands more on heating than an ideal gas because attraction is weakened as the molecules separate. That extra expansion work is what C<sub>p</sub> pays for and C<sub>v</sub> does not.</p></div></details></div>
+      <div class="concept-question"><h3>B. Why does liquid water warm up when it is throttled?</h3><p>Calculate liquid water and read the sign of μ<sub>JT</sub> and of Tα − 1.</p><label for="note-concept2" class="visually-hidden">Your answer to question B</label><textarea id="note-concept2" rows="3" maxlength="10000" placeholder="Use μ_JT = V(Tα − 1)/C_p."></textarea><details><summary>Compare with the explanation</summary><div class="concept-answer"><p>For water at 298.15 K, Tα = 298.15 × 2.57 × 10⁻⁴ = 0.077, far below 1. With μ<sub>JT</sub> = V(Tα − 1)/C<sub>p</sub> = 0.0181 L/mol × (−0.923) × 100/(75.3 J/(mol K)) = −0.0221 K/bar, a drop of 100 bar warms the water by about 2.2 K.</p><p>A gas cools on throttling only where Tα &gt; 1, that is, where it expands more on heating than the ideal gas would at the same T. A liquid barely expands, so the flow work dominates and it warms.</p></div></details></div>
+      <div class="concept-question"><h3>C. Why does a forward difference fail near the critical point?</h3><p>Calculate CO₂ at 310 K and 80 bar with δT = 1 K, first central and then forward. Repeat with δT = 0.2 K.</p><label for="note-concept3" class="visually-hidden">Your answer to question C</label><textarea id="note-concept3" rows="3" maxlength="10000" placeholder="Quote the errors in μ_JT and relate them to the curvature of V(T)."></textarea><details><summary>Compare with the explanation</summary><div class="concept-answer"><p>With δT = 1 K the central difference gives μ<sub>JT</sub> = 0.763 K/bar (+4.0%) and the forward difference 0.644 K/bar (−12.2%). With δT = 0.2 K the central result is within 0.2%. For dense methane, δT = 1 K is already within 0.01%.</p><p>The forward error is proportional to δT × V″, the central error to δT² × V‴. Near the critical point V(T) bends sharply, so both grow, the forward one fastest. A step that is safe in one state is not safe in another.</p></div></details></div>
+    </section>
+
+    <section id="graduate-investigation" class="panel graduate-section grad-only" aria-labelledby="graduate-heading">
+      <div class="panel-heading"><h2 id="graduate-heading">4. Investigate what the tables can support</h2><span class="condition">Graduate work</span></div>
+      <p id="graduate-baseline" class="graduate-note">Calculate a state in Step 1 before running an investigation.</p>
+      <aside class="graduate-limits" aria-labelledby="mp-limits-heading"><h3 id="mp-limits-heading">What these results can and cannot show</h3><ul><li>The tables come from one fundamental equation per fluid, so Maxwell relations hold by construction. Agreement here tests your arithmetic, not the data. Measurements from different sources would not agree this well.</li><li>The reference μ<sub>JT</sub> and C<sub>v</sub> come from the same equation of state. The comparison measures finite-difference error, not the accuracy of the equation of state.</li><li>Throttling is treated as adiabatic and steady with negligible change in kinetic energy: H<sub>in</sub> = H<sub>out</sub>.</li></ul></aside>
+
+      <section class="graduate-step" aria-labelledby="step-heading"><h3 id="step-heading">A. Step size and scheme</h3>
+        <ol class="graduate-checklist"><li>Run the study for the current state: μ<sub>JT</sub> and C<sub>p</sub> − C<sub>v</sub> for δT from 0.2 to 20 K, central and forward.</li><li>Repeat for dense methane and for CO₂ near the critical point.</li><li>State the largest step that keeps μ<sub>JT</sub> within 1% for each, and explain the difference.</li></ol>
+        <div class="graduate-actions"><button id="run-step" class="primary-button" type="button" disabled>Run the step-size study</button></div>
+        <p id="step-status" class="graduate-status" role="status"></p>
+        <div id="step-wrap" class="table-scroll graduate-table" role="region" aria-label="Step-size study" tabindex="0" hidden><table><thead><tr><th scope="col">Scheme</th><th scope="col">δT / K</th><th scope="col">μ<sub>JT</sub> / (K/bar)</th><th scope="col">Error / %</th><th scope="col">C<sub>p</sub> − C<sub>v</sub> / (J/(mol K))</th><th scope="col">Error / %</th></tr></thead><tbody id="step-body"></tbody></table></div>
+        <label for="note-step">Claim 1 · the step a state allows</label><textarea id="note-step" rows="3" maxlength="10000" placeholder="Quote the largest safe δT for both states and the reason."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="thr-heading"><h3 id="thr-heading">B. A throttling valve</h3>
+        <ol class="graduate-checklist"><li>Compare four outlet temperatures: the ideal gas, a constant inlet μ<sub>JT</sub>, μ<sub>JT</sub> integrated along the pressure drop, and the enthalpy balance H(T<sub>2</sub>, P<sub>2</sub>) = H(T<sub>1</sub>, P<sub>1</sub>) from the tables.</li><li>Do it for the methane valve and for nitrogen.</li><li>Explain why the constant-μ<sub>JT</sub> estimate misses, and how many integration steps are needed.</li></ol>
+        <div class="graduate-actions"><button id="run-thr" class="primary-button" type="button" disabled>Compare the outlet temperatures</button></div>
+        <p id="thr-status" class="graduate-status" role="status"></p>
+        <div id="thr-wrap" class="table-scroll graduate-table" role="region" aria-label="Throttling predictions" tabindex="0" hidden><table><thead><tr><th scope="col">Valve</th><th scope="col">Ideal gas / K</th><th scope="col">Constant inlet μ<sub>JT</sub> / K</th><th scope="col">μ<sub>JT</sub> integrated, 1 step / K</th><th scope="col">μ<sub>JT</sub> integrated, all steps / K</th><th scope="col">Enthalpy balance / K</th></tr></thead><tbody id="thr-body"></tbody></table></div>
+        <label for="note-thr">Claim 2 · the outlet temperature</label><textarea id="note-thr" rows="3" maxlength="10000" placeholder="Quote the four outlet temperatures for methane and the size of each error."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="inv-heading"><h3 id="inv-heading">C. The inversion curve against van der Waals</h3>
+        <ol class="graduate-checklist"><li>Find the temperatures where μ<sub>JT</sub> of nitrogen changes sign at 1 to 400 bar.</li><li>Compare them with the van der Waals inversion curve, P<sub>r</sub> = 24(3T<sub>r</sub>)<sup>1/2</sup> − 12T<sub>r</sub> − 27, using T<sub>c</sub> = 126.19 K and P<sub>c</sub> = 33.96 bar.</li><li>Say what the comparison tells you about a two-parameter cubic equation of state (Session P2).</li></ol>
+        <div class="graduate-actions"><button id="run-inv" class="primary-button" type="button" disabled>Find the inversion temperatures</button></div>
+        <p id="inv-status" class="graduate-status" role="status"></p>
+        <div id="inv-wrap" class="table-scroll graduate-table" role="region" aria-label="Inversion temperatures" tabindex="0" hidden><table><thead><tr><th scope="col">P / bar</th><th scope="col">NIST: lower, upper / K</th><th scope="col">Van der Waals: lower, upper / K</th><th scope="col">Upper branch error / %</th></tr></thead><tbody id="inv-body"></tbody></table></div>
+        <label for="note-inv">Claim 3 · what van der Waals gets wrong</label><textarea id="note-inv" rows="3" maxlength="10000" placeholder="Quote the low-pressure inversion temperature and the highest inversion pressure, NIST against van der Waals."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="argument-heading"><h3 id="argument-heading">D. Defend a limited conclusion</h3>
+        <label for="note-decision">Decision and next evidence</label><textarea id="note-decision" rows="3" maxlength="10000" placeholder="State when an ideal gas is acceptable for these properties, which step you would use and why, and what data would test the equation of state itself."></textarea>
+        <div class="graduate-actions"><button id="check-evidence" type="button" class="secondary-button">Check my evidence record</button></div><p id="evidence-status" class="graduate-status" role="status"></p>
+        <p class="graduate-note">The record check only confirms that the sections and calculations are present. It is a completeness reminder, not a grade.</p>
+      </section>
+    </section>
+
+    <section class="panel comparison-panel" aria-labelledby="comparison-heading">
+      <div class="panel-heading"><h2 id="comparison-heading">5. Compare and save</h2></div>
+      <ol class="investigation-steps core-only"><li>Calculate and save all six states with central differences and δT = 1 K.</li><li>Save CO₂ near the critical point again with a forward difference and with δT = 0.2 K.</li><li>Answer questions A–C in Step 4 using the saved comparison.</li><li>Download the complete study, reopen it, and reproduce a saved case.</li></ol>
+      <ol class="investigation-steps grad-only"><li>Calculate and save all six states with central differences and δT = 1 K.</li><li>Complete investigations A–C and write the graduate claims.</li><li>Download the complete study, reopen it, and reproduce a saved case and its investigation record.</li></ol>
+      <p id="comparison-empty" class="empty-state">Your calculated cases will appear here after you add them.</p>
+      <div id="comparison-table-wrap" class="table-scroll" role="region" aria-label="Saved cases" tabindex="0" hidden><table><thead><tr><th scope="col">Case</th><th scope="col">State</th><th scope="col">δT, δP, scheme</th><th scope="col">C<sub>p</sub> − C<sub>v</sub> yours / NIST</th><th scope="col">μ<sub>JT</sub> yours / NIST</th><th scope="col">Reopen</th></tr></thead><tbody id="comparison-body"></tbody></table></div>
+      <label for="reflection" class="reflection-label">Optional additional note</label><textarea id="reflection" rows="3" maxlength="10000" placeholder="Add an optional note."></textarea>
+      <fieldset class="student-fields"><legend>Your details <span>(optional)</span></legend><p class="input-help">Saved in the downloaded file so your instructor can identify it. You can download without them.</p><div class="student-grid"><div><label for="student-first-name">First name</label><input id="student-first-name" type="text" maxlength="80" autocomplete="given-name"></div><div><label for="student-last-name">Last name</label><input id="student-last-name" type="text" maxlength="80" autocomplete="family-name"></div><div><label for="student-id">Student ID</label><input id="student-id" type="text" maxlength="20" inputmode="numeric" autocomplete="off"></div></div></fieldset>
+        <div class="study-actions"><button id="export-study" class="primary-button" type="button" disabled>Download my study</button><div class="file-control"><label for="import-study">Open a saved study</label><input id="import-study" type="file" accept=".json,application/json"></div></div>
+        <p class="submit-note"><strong>To submit:</strong> upload the downloaded .json file to <strong>myCourseVille</strong>, in the assignment for Lab P1. Keep the file name: it carries your name and student ID.</p>
+      <p id="status" class="study-status" role="status" aria-live="polite">Loading the property tables…</p><p class="privacy-note">Your inputs, comparisons and explanations are kept in this open page. Download one study file to keep the complete record and reopen it later. Results are recalculated on restore.</p>
+    </section>
+    <noscript><p class="error-summary">Enable JavaScript to calculate. The figures and questions remain available to read.</p></noscript>
+  </main>
+  <footer class="site-footer"><span>2105603 · Advanced Chemical Engineering Thermodynamics</span><a href="index.html#sessions">All 2027 labs</a></footer>
+  <script src="../labs/assets/plotly.min.js" defer></script>
+  <script type="module" src="assets/mode.js?v=mode-3"></script>
+  <script type="module" src="assets/measurable-lab.js?v=p1-1"></script>
+</body>
+</html>

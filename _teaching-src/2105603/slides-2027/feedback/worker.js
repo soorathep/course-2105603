@@ -9,7 +9,7 @@
 // No name, ID, e-mail or IP address is stored.
 
 const ALLOWED_ORIGINS = ['https://www.skhgroup.net', 'https://skhgroup.net', 'https://soorathep.github.io'];
-const COURSES = { '2105603': 8, '2105315': 15, '2105601': 8, '2105620': 15, '2105623': 15, '2105717': 8, '2182209': 8 };        // course code -> number of sessions
+const COURSES = { '2105603': 8, '2105603P': 7, '2105315': 15, '2105601': 8, '2105620': 15, '2105623': 15, '2105717': 8, '2182209': 8 };        // course code -> number of sessions
 const CHOICES = {
   mode: ['In class', 'On my own'],
   pace: ['Too slow', 'About right', 'Too fast'],
@@ -25,7 +25,8 @@ const CHOICES = {
   course_labs_work: ['Always', 'Mostly', 'Often not'],
 };
 // Session that carries the whole-course questions when it is not the course's last allowed session.
-// 2105603 (2027): Session 7 closes the post-midterm half.
+// 2105603 (2027): Session 7 closes the post-midterm half. 2105603P (sessions P1-P7 before the midterm)
+// keeps them at its last session, P7.
 const WHOLE_AT = { '2105603': 7 };
 const TEXT_LIMIT = 3000;
 

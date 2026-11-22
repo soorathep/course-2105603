@@ -80,8 +80,8 @@ form > .status.err { background: #fbeee9; border-left: 4px solid #BE654C; paddin
       <textarea id="change" name="change" maxlength="3000"></textarea>
     </div>
     <section id="review" hidden>
-      <h2>After the midterm, overall: Sessions 1–7 <span class="th">ภาพรวมทั้งช่วงหลัง midterm (คาบที่ 1–7)</span></h2>
-      <p class="lede">The questions above are about today. These are about the whole second half: the sessions, the slides with narration and captions, the notes, and the labs.</p>
+      <h2 id="review-title">After the midterm, overall: Sessions 1–7 <span class="th">ภาพรวมทั้งช่วงหลัง midterm (คาบที่ 1–7)</span></h2>
+      <p class="lede" id="review-lede">The questions above are about today. These are about the whole second half: the sessions, the slides with narration and captions, the notes, and the labs.</p>
       <fieldset>
         <legend>Overall pace of Sessions 1–7 <span class="th">ความเร็วโดยรวมของคาบที่ 1–7</span></legend>
         <div class="opts"><label><input type="radio" name="course_pace" value="Too slow"> Too slow</label><label><input type="radio" name="course_pace" value="About right"> About right</label><label><input type="radio" name="course_pace" value="Too fast"> Too fast</label></div>
@@ -107,7 +107,7 @@ form > .status.err { background: #fbeee9; border-left: 4px solid #BE654C; paddin
         <textarea id="course_labs_comment" name="course_labs_comment" maxlength="3000"></textarea>
       </div>
       <div>
-        <label class="q" for="course_improve">One change for next year's second half <span class="optional">optional</span> <span class="th">อยากให้ปรับอะไรหนึ่งอย่างสำหรับช่วงหลัง midterm ปีหน้า</span></label>
+        <label class="q" for="course_improve">One change for next year's <span id="half-name">second half</span> <span class="optional">optional</span> <span class="th">อยากให้ปรับอะไรหนึ่งอย่างสำหรับช่วงนี้ในปีหน้า</span></label>
         <textarea id="course_improve" name="course_improve" maxlength="3000"></textarea>
       </div>
     </section>
@@ -120,8 +120,14 @@ form > .status.err { background: #fbeee9; border-left: 4px solid #BE654C; paddin
 <script>
 // Set this to the Cloudflare Worker address once it is deployed (see feedback/README.md).
 const RELAY_URL = 'https://course-feedback-relay.ecs-thailand-election.workers.dev/';
-const COURSE = '2105603';
-const PROMPTS = {
+// ?s=1..7: the sessions after the midterm (course 2105603). ?p=1..7: the sessions before the midterm,
+// stored apart as course 2105603P so the two halves never mix in the responses.
+const PRE = new URLSearchParams(location.search).has('p');
+const COURSE = PRE ? '2105603P' : '2105603';
+const PROMPTS_PRE = {
+  1: 'Methane leaves a valve 34 K colder than it entered, but an ideal gas would leave at the same temperature. Which term of dH carries the difference, and which two measured properties do you need to evaluate it?',
+};
+const PROMPTS_POST = {
   1: 'A Rachford–Rice solve returns β = −0.064. What does this mean, and what must you check before accepting it for a nonideal mixture?',
   2: 'Weighting the residuals moved τ₂₁ from 1.75 to 2.85 with the same data. What does this say about the parameters, and what would you report with them?',
   3: 'A liquid feed has positive curvature of Δg_mix. Is that enough to call it stable? Which test would you run, and what result would show that it splits?',
@@ -130,11 +136,18 @@ const PROMPTS = {
   6: 'A KCl concentration cell between 0.01 and 1.0 mol/kg measures 0.216 V; the ideal value is 0.237 V. What does the 21 mV tell you, and what would it take to turn it into a temperature derivative of γ±?',
   7: 'Pick one result from your own lab files. Which rung of the evidence ladder does it reach, and what one piece of evidence would raise it? Put the topic you feel least ready for in "What is still unclear?".',
 };
+const PROMPTS = PRE ? PROMPTS_PRE : PROMPTS_POST;
 const TOTAL = 7;
 const $ = (id) => document.getElementById(id);
-const s = Math.min(TOTAL, Math.max(1, parseInt(new URLSearchParams(location.search).get('s'), 10) || 1));
-for (let i = 1; i <= TOTAL; i++) $('session').add(new Option('Session ' + i, i, i === s, i === s));
-const REVIEW_SESSION = TOTAL;   // the last session also asks about the whole post-midterm half
+const s = Math.min(TOTAL, Math.max(1, parseInt(new URLSearchParams(location.search).get(PRE ? 'p' : 's'), 10) || 1));
+for (let i = 1; i <= TOTAL; i++) $('session').add(new Option('Session ' + (PRE ? 'P' : '') + i, i, i === s, i === s));
+if (PRE) {
+  $('review-title').innerHTML = 'Before the midterm, overall: Sessions P1–P7 <span class="th">ภาพรวมทั้งช่วงก่อน midterm (คาบ P1–P7)</span>';
+  $('review-lede').textContent = 'The questions above are about today. These are about the whole first half: the sessions, the slides with narration and captions, the notes, and the labs.';
+  $('half-name').textContent = 'first half';
+  for (const el of document.querySelectorAll('#review legend, #review label.q')) el.innerHTML = el.innerHTML.replace('Sessions 1–7', 'Sessions P1–P7').replace('คาบที่ 1–7', 'คาบ P1–P7');
+}
+const REVIEW_SESSION = TOTAL;   // the last session of each half also asks about that whole half
 const setPrompt = () => {
   $('prompt').textContent = PROMPTS[$('session').value] || 'Answer the exit-ticket question shown on the last slide of the session.';
   $('review').hidden = Number($('session').value) !== REVIEW_SESSION;

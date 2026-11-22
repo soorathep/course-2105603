@@ -1,0 +1,666 @@
+{
+ "title-slide": {
+  "audio": "narration/p01/title-slide.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.54,
+    "en": "Welcome to session P1, the first session before the midterm.",
+    "th": "ยินดีต้อนรับสู่คาบ P1 ซึ่งเป็นคาบแรกของช่วงก่อน midterm"
+   },
+   {
+    "start": 4.89,
+    "end": 11.93,
+    "en": "Today we build the framework that every later session uses: how any property follows from what can be measured.",
+    "th": "วันนี้เราจะวางกรอบแนวคิดที่ทุกคาบต่อจากนี้ใช้ คือสมบัติใด ๆ ได้มาจากสิ่งที่วัดได้อย่างไร"
+   }
+  ]
+ },
+ "course-map": {
+  "audio": "narration/p01/course-map.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 5.18,
+    "en": "The course has fourteen sessions: seven before the midterm and seven after.",
+    "th": "วิชานี้มีสิบสี่คาบ เจ็ดคาบก่อน midterm และเจ็ดคาบหลัง midterm"
+   },
+   {
+    "start": 5.53,
+    "end": 15.53,
+    "en": "Every later session needs properties that nobody measures directly: enthalpy, entropy, Gibbs energy, chemical potential and fugacity.",
+    "th": "ทุกคาบต่อจากนี้ต้องใช้สมบัติที่ไม่มีใครวัดได้โดยตรง ได้แก่ เอนทัลปี เอนโทรปี พลังงานกิบส์ ศักย์เคมี และ fugacity"
+   },
+   {
+    "start": 15.88,
+    "end": 27.25,
+    "en": "Today we show how all of them follow from PVT data and the heat capacity, and why equilibrium at fixed temperature and pressure means minimum Gibbs energy.",
+    "th": "วันนี้เราจะแสดงว่าสมบัติเหล่านี้ทั้งหมดได้มาจากข้อมูล PVT และความจุความร้อน และทำไมสมดุลที่อุณหภูมิและความดันคงที่จึงหมายถึงพลังงานกิบส์ต่ำสุด"
+   }
+  ]
+ },
+ "why": {
+  "audio": "narration/p01/why.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.24,
+    "en": "Why does this matter? Look at a valve on a natural gas line.",
+    "th": "ทำไมเรื่องนี้จึงสำคัญ ลองดูวาล์วบนท่อก๊าซธรรมชาติ"
+   },
+   {
+    "start": 4.59,
+    "end": 15.04,
+    "en": "Methane at 300 kelvin and 100 bar passes the valve to 20 bar. There is no heat and no work, so the enthalpy does not change.",
+    "th": "มีเทนที่ 300 เคลวิน และ 100 บาร์ ไหลผ่านวาล์วลงไปที่ 20 บาร์ ไม่มีความร้อนและไม่มีงาน เอนทัลปีจึงไม่เปลี่ยน"
+   },
+   {
+    "start": 15.39,
+    "end": 25.68,
+    "en": "An ideal gas would leave at 300 kelvin. The real gas leaves at 265.6 kelvin, 34 kelvin colder.",
+    "th": "ถ้าเป็นแก๊สอุดมคติจะออกมาที่ 300 เคลวิน แต่แก๊สจริงออกมาที่ 265.6 เคลวิน เย็นลง 34 เคลวิน"
+   },
+   {
+    "start": 26.03,
+    "end": 37.05,
+    "en": "Using the slope at the inlet all the way gives 273.9 kelvin, still 8 kelvin off. By the end of today you can compute all three.",
+    "th": "ถ้าใช้ความชันที่ทางเข้าตลอดทาง จะได้ 273.9 เคลวิน ยังคลาดไป 8 เคลวิน เมื่อจบคาบนี้คุณจะคำนวณได้ทั้งสามค่า"
+   }
+  ]
+ },
+ "outcomes": {
+  "audio": "narration/p01/outcomes.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.11,
+    "en": "By the end of today you can do four things.",
+    "th": "เมื่อจบคาบนี้ คุณจะทำได้สี่อย่าง"
+   },
+   {
+    "start": 3.46,
+    "end": 13.14,
+    "en": "Write the fundamental relation, its Legendre transforms and the Gibbs-Duhem equation, and say which potential is minimal under which constraints.",
+    "th": "เขียน fundamental relation, Legendre transform และสมการ Gibbs–Duhem ได้ และบอกได้ว่าศักย์ใดมีค่าต่ำสุดภายใต้เงื่อนไขใด"
+   },
+   {
+    "start": 13.49,
+    "end": 19.04,
+    "en": "Derive Maxwell relations and express any derivative in measurable coefficients.",
+    "th": "พิสูจน์ Maxwell relations และเขียนอนุพันธ์ใด ๆ ในรูปสัมประสิทธิ์ที่วัดได้"
+   },
+   {
+    "start": 19.39,
+    "end": 26.03,
+    "en": "Compute properties from tabulated data and judge the error, and predict a throttling temperature.",
+    "th": "คำนวณสมบัติจากข้อมูลในตารางและประเมินความคลาดเคลื่อนได้ และทำนายอุณหภูมิหลังการลดความดันผ่านวาล์วได้"
+   }
+  ]
+ },
+ "route": {
+  "audio": "narration/p01/route.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.15,
+    "en": "Here is the 180-minute route.",
+    "th": "นี่คือเส้นทางของคาบ 180 นาที"
+   },
+   {
+    "start": 3.5,
+    "end": 9.75,
+    "en": "Thirty minutes of concepts: the potentials, Maxwell relations and the measurable coefficients.",
+    "th": "สามสิบนาทีแรกเป็นแนวคิด ได้แก่ ศักย์ทางเทอร์โมไดนามิกส์ Maxwell relations และสัมประสิทธิ์ที่วัดได้"
+   },
+   {
+    "start": 10.1,
+    "end": 17.7,
+    "en": "Then a short activity, a demonstration in Lab P1, a break, and a 70-minute pair investigation.",
+    "th": "จากนั้นเป็นกิจกรรมสั้น การสาธิตใน Lab P1 พัก และการทำงานเป็นคู่ 70 นาที"
+   },
+   {
+    "start": 18.05,
+    "end": 26.62,
+    "en": "The session question: how do we obtain the properties a process needs from what can be measured, and what does equilibrium require?",
+    "th": "คำถามของคาบนี้คือ เราจะหาสมบัติที่กระบวนการต้องใช้จากสิ่งที่วัดได้อย่างไร และสมดุลต้องการเงื่อนไขอะไร"
+   }
+  ]
+ },
+ "fundamental": {
+  "audio": "narration/p01/fundamental.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 6.59,
+    "en": "Start from the first and second laws for a reversible change of an open, single-phase system.",
+    "th": "เริ่มจากกฎข้อที่หนึ่งและข้อที่สองสำหรับการเปลี่ยนแปลงแบบผันกลับได้ของระบบเปิดที่มีเฟสเดียว"
+   },
+   {
+    "start": 6.94,
+    "end": 15.51,
+    "en": "U as a function of S, V and the amounts is a fundamental relation: it contains every equilibrium property.",
+    "th": "U ที่เป็นฟังก์ชันของ S, V และปริมาณสาร เป็น fundamental relation ซึ่งมีข้อมูลสมบัติสมดุลทุกตัวอยู่ในนั้น"
+   },
+   {
+    "start": 15.86,
+    "end": 24.61,
+    "en": "Integrating at a fixed intensive state gives the Euler form. Subtracting its differential gives the Gibbs-Duhem equation.",
+    "th": "การอินทิเกรตที่สภาวะ intensive คงที่ให้รูปแบบ Euler และเมื่อลบด้วยดิฟเฟอเรนเชียลของมัน จะได้สมการ Gibbs–Duhem"
+   },
+   {
+    "start": 24.96,
+    "end": 36.65,
+    "en": "Gibbs-Duhem says that temperature, pressure and the chemical potentials of a phase are not independent. Session 2 uses it to test measured activity coefficients.",
+    "th": "Gibbs–Duhem บอกว่าอุณหภูมิ ความดัน และศักย์เคมีของเฟสหนึ่งไม่เป็นอิสระต่อกัน คาบที่ 2 หลัง midterm ใช้สมการนี้ทดสอบสัมประสิทธิ์แอกทิวิตีที่วัดได้"
+   }
+  ]
+ },
+ "legendre": {
+  "audio": "narration/p01/legendre.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 6.5,
+    "en": "A Legendre transform swaps one variable for its conjugate without losing information.",
+    "th": "Legendre transform สลับตัวแปรหนึ่งกับตัวแปรคู่ของมันโดยไม่สูญเสียข้อมูล"
+   },
+   {
+    "start": 6.85,
+    "end": 14.96,
+    "en": "Enthalpy uses S and P, the Helmholtz energy uses T and V, and the Gibbs energy uses T and P.",
+    "th": "เอนทัลปีใช้ S กับ P พลังงาน Helmholtz ใช้ T กับ V และพลังงานกิบส์ใช้ T กับ P"
+   },
+   {
+    "start": 15.31,
+    "end": 22.54,
+    "en": "In a laboratory or a plant we fix temperature and pressure, so the Gibbs energy is the useful potential.",
+    "th": "ในห้องปฏิบัติการหรือในโรงงาน เราควบคุมอุณหภูมิและความดัน พลังงานกิบส์จึงเป็นศักย์ที่ใช้ประโยชน์ได้"
+   },
+   {
+    "start": 22.89,
+    "end": 35.35,
+    "en": "The chemical potential is the partial derivative of G with respect to the amount of i at fixed T, P and the other amounts. For a pure substance it is the molar Gibbs energy.",
+    "th": "ศักย์เคมีคืออนุพันธ์ย่อยของ G เทียบกับปริมาณของ i ที่ T, P และปริมาณของสารอื่นคงที่ สำหรับสารบริสุทธิ์ มันคือพลังงานกิบส์ต่อโมล"
+   }
+  ]
+ },
+ "equilibrium": {
+  "audio": "narration/p01/equilibrium.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.6,
+    "en": "Why does equilibrium mean minimum Gibbs energy?",
+    "th": "ทำไมสมดุลจึงหมายถึงพลังงานกิบส์ต่ำสุด"
+   },
+   {
+    "start": 3.95,
+    "end": 15.87,
+    "en": "The Clausius inequality, with the first law at fixed T and P, gives d G less than or equal to zero. G can only fall, and at equilibrium it is a minimum.",
+    "th": "อสมการ Clausius ร่วมกับกฎข้อที่หนึ่งที่ T และ P คงที่ ให้ dG น้อยกว่าหรือเท่ากับศูนย์ G จึงลดลงได้อย่างเดียว และที่สมดุล G มีค่าต่ำสุด"
+   },
+   {
+    "start": 16.22,
+    "end": 27.36,
+    "en": "For two phases in contact, temperature, pressure and every chemical potential are equal. That is the condition for every phase-equilibrium problem in this course.",
+    "th": "สำหรับสองเฟสที่สัมผัสกัน อุณหภูมิ ความดัน และศักย์เคมีของทุกองค์ประกอบมีค่าเท่ากัน นี่คือเงื่อนไขของปัญหาสมดุลเฟสทุกข้อในวิชานี้"
+   },
+   {
+    "start": 27.71,
+    "end": 42.37,
+    "en": "A single phase is stable only if the heat capacity at constant volume and the isothermal compressibility are positive. A loop of an equation of state where the compressibility is negative is unstable.",
+    "th": "เฟสเดียวจะเสถียรได้ก็ต่อเมื่อความจุความร้อนที่ปริมาตรคงที่ และ isothermal compressibility เป็นบวก ส่วนของสมการสภาวะที่ compressibility เป็นลบจึงไม่เสถียร"
+   }
+  ]
+ },
+ "maxwell": {
+  "audio": "narration/p01/maxwell.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 5.9,
+    "en": "The mixed second derivatives of a potential are equal. That gives the Maxwell relations.",
+    "th": "อนุพันธ์อันดับสองแบบผสมของศักย์มีค่าเท่ากัน จึงได้ Maxwell relations"
+   },
+   {
+    "start": 6.25,
+    "end": 13.14,
+    "en": "Entropy cannot be measured directly. Maxwell replaces its derivatives with PVT derivatives.",
+    "th": "เอนโทรปีวัดโดยตรงไม่ได้ Maxwell relations จึงแทนอนุพันธ์ของเอนโทรปีด้วยอนุพันธ์ของ PVT"
+   },
+   {
+    "start": 13.49,
+    "end": 20.79,
+    "en": "For methane at 300 kelvin and 100 bar, both sides agree to six digits in the NIST tables.",
+    "th": "สำหรับมีเทนที่ 300 เคลวิน และ 100 บาร์ ทั้งสองข้างตรงกันถึงหกหลักในตารางของ NIST"
+   },
+   {
+    "start": 21.14,
+    "end": 29.91,
+    "en": "That is by construction: the tables come from one fundamental equation. Data from two laboratories would not agree this well.",
+    "th": "ความตรงกันนี้เกิดจากการสร้างตาราง เพราะตารางได้มาจากสมการพื้นฐานสมการเดียว ข้อมูลจากสองห้องปฏิบัติการจะไม่ตรงกันได้ขนาดนี้"
+   }
+  ]
+ },
+ "toolkit": {
+  "audio": "narration/p01/toolkit.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 5.37,
+    "en": "Two rules handle most derivatives: the triple product rule and the chain rule.",
+    "th": "กฎสองข้อใช้จัดการอนุพันธ์ได้เกือบทั้งหมด คือ triple product rule และ chain rule"
+   },
+   {
+    "start": 5.72,
+    "end": 18.93,
+    "en": "To express a derivative in measurables, bring in temperature and pressure as the variables, remove entropy derivatives with Maxwell and the heat capacity, and write what remains as alpha and kappa.",
+    "th": "การเขียนอนุพันธ์ในรูปที่วัดได้ ให้ใช้อุณหภูมิและความดันเป็นตัวแปร กำจัดอนุพันธ์ของเอนโทรปีด้วย Maxwell และความจุความร้อน แล้วเขียนส่วนที่เหลือเป็น alpha และ kappa"
+   },
+   {
+    "start": 19.28,
+    "end": 24.63,
+    "en": "For example, the pressure derivative at constant volume is alpha over kappa.",
+    "th": "ตัวอย่างเช่น อนุพันธ์ของความดันเทียบกับอุณหภูมิที่ปริมาตรคงที่ เท่ากับ alpha หารด้วย kappa"
+   }
+  ]
+ },
+ "measurables": {
+  "audio": "narration/p01/measurables.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.66,
+    "en": "Three coefficients can be measured: the thermal expansion coefficient alpha, the isothermal compressibility kappa, and the heat capacity.",
+    "th": "มีสัมประสิทธิ์สามตัวที่วัดได้ คือสัมประสิทธิ์การขยายตัวทางความร้อน alpha, isothermal compressibility kappa และความจุความร้อน"
+   },
+   {
+    "start": 10.01,
+    "end": 17.41,
+    "en": "From them, C p minus C v equals T V alpha squared over kappa. For an ideal gas it is R.",
+    "th": "จากค่าเหล่านี้ Cp ลบ Cv เท่ากับ T คูณ V คูณ alpha กำลังสอง หารด้วย kappa สำหรับแก๊สอุดมคติมีค่าเท่ากับ R"
+   },
+   {
+    "start": 17.76,
+    "end": 27.0,
+    "en": "Methane at 1 bar is close to ideal. At 100 bar it expands 74 percent more on heating than an ideal gas.",
+    "th": "มีเทนที่ 1 บาร์ใกล้เคียงแก๊สอุดมคติ แต่ที่ 100 บาร์ มันขยายตัวเมื่อได้รับความร้อนมากกว่าแก๊สอุดมคติ 74 เปอร์เซ็นต์"
+   },
+   {
+    "start": 27.35,
+    "end": 34.62,
+    "en": "So C p minus C v is 19.2 joules per mole kelvin instead of 8.3.",
+    "th": "Cp ลบ Cv จึงเท่ากับ 19.2 จูลต่อโมลต่อเคลวิน แทนที่จะเป็น 8.3"
+   }
+  ]
+ },
+ "any-property": {
+  "audio": "narration/p01/any-property.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.36,
+    "en": "With temperature and pressure as the variables, Maxwell gives d H and d S in terms of the heat capacity and PVT data.",
+    "th": "เมื่อใช้อุณหภูมิและความดันเป็นตัวแปร Maxwell ให้ dH และ dS ในรูปของความจุความร้อนและข้อมูล PVT"
+   },
+   {
+    "start": 9.71,
+    "end": 19.82,
+    "en": "The brackets need only PVT data. For an ideal gas the pressure term of d H is zero, so the enthalpy depends on temperature alone.",
+    "th": "ส่วนในวงเล็บใช้แค่ข้อมูล PVT สำหรับแก๊สอุดมคติ พจน์ความดันของ dH เป็นศูนย์ เอนทัลปีจึงขึ้นกับอุณหภูมิอย่างเดียว"
+   },
+   {
+    "start": 20.17,
+    "end": 33.59,
+    "en": "The plan for P2 and P3: integrate at low pressure where the gas is ideal, then along the real isotherm with an equation of state. The second step is the residual property.",
+    "th": "แผนของ P2 และ P3 คือ อินทิเกรตที่ความดันต่ำซึ่งแก๊สเป็นอุดมคติ แล้วอินทิเกรตตาม isotherm จริงด้วยสมการสภาวะ ขั้นที่สองนี้คือ residual property"
+   }
+  ]
+ },
+ "jt": {
+  "audio": "narration/p01/jt.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 6.05,
+    "en": "At constant enthalpy, d H is zero. That gives the Joule-Thomson coefficient.",
+    "th": "ที่เอนทัลปีคงที่ dH เท่ากับศูนย์ จึงได้สัมประสิทธิ์ Joule–Thomson"
+   },
+   {
+    "start": 6.4,
+    "end": 18.75,
+    "en": "It equals V times T alpha minus 1, over C p. A pressure drop cools the fluid where T alpha is greater than 1, and warms it where T alpha is less than 1.",
+    "th": "มันเท่ากับ V คูณ (T alpha ลบ 1) หารด้วย Cp การลดความดันทำให้ของไหลเย็นลงเมื่อ T alpha มากกว่า 1 และอุ่นขึ้นเมื่อ T alpha น้อยกว่า 1"
+   },
+   {
+    "start": 19.1,
+    "end": 24.4,
+    "en": "For an ideal gas T alpha is exactly 1, so the coefficient is zero.",
+    "th": "สำหรับแก๊สอุดมคติ T alpha เท่ากับ 1 พอดี สัมประสิทธิ์จึงเป็นศูนย์"
+   },
+   {
+    "start": 24.75,
+    "end": 35.86,
+    "en": "Liquid water has T alpha of 0.077, so it warms on throttling: a 100 bar drop warms it by 2.2 kelvin.",
+    "th": "น้ำของเหลวมีค่า T alpha เท่ากับ 0.077 จึงอุ่นขึ้นเมื่อผ่านวาล์ว การลดความดัน 100 บาร์ทำให้น้ำอุ่นขึ้น 2.2 เคลวิน"
+   }
+  ]
+ },
+ "inversion": {
+  "audio": "narration/p01/inversion.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 8.61,
+    "en": "Inside the inversion curve, throttling cools. Nitrogen at 1 bar stops cooling above 607 kelvin.",
+    "th": "ภายในเส้น inversion การลดความดันทำให้เย็นลง ไนโตรเจนที่ 1 บาร์จะไม่เย็นลงอีกเมื่ออุณหภูมิสูงกว่า 607 เคลวิน"
+   },
+   {
+    "start": 8.96,
+    "end": 20.89,
+    "en": "Van der Waals, from the critical temperature and pressure alone, predicts 852 kelvin, 40 percent too high, and no inversion above 306 bar.",
+    "th": "สมการ van der Waals ที่ใช้แค่อุณหภูมิและความดันวิกฤต ทำนายได้ 852 เคลวิน สูงเกินไป 40 เปอร์เซ็นต์ และทำนายว่าไม่มี inversion เหนือ 306 บาร์"
+   },
+   {
+    "start": 21.24,
+    "end": 29.49,
+    "en": "The tables show inversion up to about 390 bar. A two-parameter cubic gets the shape and misses the numbers.",
+    "th": "ตารางแสดงว่ามี inversion ถึงประมาณ 390 บาร์ สมการ cubic แบบสองพารามิเตอร์ได้รูปร่างที่ถูก แต่ตัวเลขผิด"
+   }
+  ]
+ },
+ "differences": {
+  "audio": "narration/p01/differences.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.81,
+    "en": "When you take derivatives from a table, the step matters.",
+    "th": "เมื่อหาอนุพันธ์จากตาราง ขนาดของช่วงมีความสำคัญ"
+   },
+   {
+    "start": 4.16,
+    "end": 10.9,
+    "en": "For dense methane, a central difference with a 10 kelvin step is within 0.3 percent.",
+    "th": "สำหรับมีเทนความหนาแน่นสูง ผลต่างกลางที่ช่วง 10 เคลวิน คลาดเคลื่อนไม่เกิน 0.3 เปอร์เซ็นต์"
+   },
+   {
+    "start": 11.25,
+    "end": 22.77,
+    "en": "For carbon dioxide close to its critical point, the volume bends sharply. A 1 kelvin step gives plus 4 percent central and minus 12 percent forward.",
+    "th": "สำหรับคาร์บอนไดออกไซด์ที่ใกล้จุดวิกฤต ปริมาตรโค้งอย่างรุนแรง ช่วง 1 เคลวิน ให้ความคลาดเคลื่อนบวก 4 เปอร์เซ็นต์สำหรับผลต่างกลาง และลบ 12 เปอร์เซ็นต์สำหรับผลต่างไปข้างหน้า"
+   },
+   {
+    "start": 23.12,
+    "end": 27.45,
+    "en": "A step that is safe in one state is not safe in another. Check it.",
+    "th": "ช่วงที่ปลอดภัยในสภาวะหนึ่ง อาจไม่ปลอดภัยในอีกสภาวะ ต้องตรวจสอบเสมอ"
+   }
+  ]
+ },
+ "activity-1": {
+  "audio": "narration/p01/activity-1.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 4.13,
+    "en": "Activity 1. Ten minutes, alone, then with a partner.",
+    "th": "กิจกรรมที่ 1 สิบนาที ทำคนเดียวก่อน แล้วค่อยทำกับคู่"
+   },
+   {
+    "start": 4.48,
+    "end": 13.85,
+    "en": "Express the internal pressure, d U d V at constant T, and d H d P at constant T, in measurable coefficients.",
+    "th": "เขียน internal pressure คือ dU/dV ที่ T คงที่ และ dH/dP ที่ T คงที่ ในรูปสัมประสิทธิ์ที่วัดได้"
+   },
+   {
+    "start": 14.2,
+    "end": 22.75,
+    "en": "Evaluate both for an ideal gas and for liquid water at 298.15 kelvin and 1 bar.",
+    "th": "คำนวณทั้งสองค่าสำหรับแก๊สอุดมคติ และสำหรับน้ำของเหลวที่ 298.15 เคลวิน และ 1 บาร์"
+   }
+  ]
+ },
+ "activity-1-debrief": {
+  "audio": "narration/p01/activity-1-debrief.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.59,
+    "en": "Check your answer. The internal pressure is T alpha over kappa minus P, and d H d P is V times one minus T alpha.",
+    "th": "ตรวจคำตอบ internal pressure เท่ากับ T alpha หารด้วย kappa ลบ P และ dH/dP เท่ากับ V คูณ (1 ลบ T alpha)"
+   },
+   {
+    "start": 9.94,
+    "end": 12.25,
+    "en": "For an ideal gas both are zero.",
+    "th": "สำหรับแก๊สอุดมคติ ทั้งสองค่าเป็นศูนย์"
+   },
+   {
+    "start": 12.6,
+    "end": 30.56,
+    "en": "For water the internal pressure is about 1694 bar, and d H d P is 1.668 joules per mole bar, which gives the Joule-Thomson coefficient of minus 0.0221 kelvin per bar.",
+    "th": "สำหรับน้ำ internal pressure ประมาณ 1694 บาร์ และ dH/dP เท่ากับ 1.668 จูลต่อโมลต่อบาร์ ซึ่งให้สัมประสิทธิ์ Joule–Thomson เท่ากับ −0.0221 เคลวินต่อบาร์"
+   }
+  ]
+ },
+ "demo-lab": {
+  "audio": "narration/p01/demo-lab.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.83,
+    "en": "Now a demonstration in Lab P1.",
+    "th": "ต่อไปเป็นการสาธิตใน Lab P1"
+   },
+   {
+    "start": 3.18,
+    "end": 10.65,
+    "en": "Calculate methane at 300 kelvin and 100 bar, and compare with the ideal gas and the reference.",
+    "th": "คำนวณมีเทนที่ 300 เคลวิน และ 100 บาร์ แล้วเปรียบเทียบกับแก๊สอุดมคติและค่าอ้างอิง"
+   },
+   {
+    "start": 11.0,
+    "end": 18.4,
+    "en": "Then liquid water, then carbon dioxide near the critical point with a forward and a small central step.",
+    "th": "จากนั้นน้ำของเหลว แล้วคาร์บอนไดออกไซด์ใกล้จุดวิกฤต ด้วยผลต่างไปข้างหน้าและผลต่างกลางที่ช่วงเล็ก"
+   },
+   {
+    "start": 18.75,
+    "end": 23.98,
+    "en": "In the graduate view, compare the four outlet temperatures of the methane valve.",
+    "th": "ในมุมมอง Graduate ให้เปรียบเทียบอุณหภูมิขาออกสี่ค่าของวาล์วมีเทน"
+   }
+  ]
+ },
+ "mistakes": {
+  "audio": "narration/p01/mistakes.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 1.91,
+    "en": "Four common mistakes.",
+    "th": "ข้อผิดพลาดที่พบบ่อยสี่ข้อ"
+   },
+   {
+    "start": 2.26,
+    "end": 11.78,
+    "en": "One: using C p minus C v equals R for a dense gas. Two: one Joule-Thomson coefficient for a large pressure drop.",
+    "th": "หนึ่ง ใช้ Cp ลบ Cv เท่ากับ R กับแก๊สความหนาแน่นสูง สอง ใช้สัมประสิทธิ์ Joule–Thomson ค่าเดียวกับการลดความดันมาก ๆ"
+   },
+   {
+    "start": 12.13,
+    "end": 21.41,
+    "en": "Three: a forward difference near the critical point. Four: mixing units in P V terms. One litre bar is 100 joules.",
+    "th": "สาม ใช้ผลต่างไปข้างหน้าใกล้จุดวิกฤต สี่ ใช้หน่วยปนกันในพจน์ PV หนึ่งลิตรบาร์เท่ากับ 100 จูล"
+   }
+  ]
+ },
+ "break": {
+  "audio": "narration/p01/break.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.02,
+    "en": "Take a ten-minute break.",
+    "th": "พักสิบนาที"
+   },
+   {
+    "start": 2.37,
+    "end": 9.39,
+    "en": "Before you leave your seat, check that Lab P1 opens on your device and that the methane case is saved.",
+    "th": "ก่อนลุกจากที่นั่ง ตรวจว่า Lab P1 เปิดได้บนเครื่องของคุณ และบันทึกกรณีมีเทนไว้แล้ว"
+   }
+  ]
+ },
+ "activity-2": {
+  "audio": "narration/p01/activity-2.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.82,
+    "en": "Activity 2. Seventy minutes in pairs: one drives Lab P1, one checks by hand, then swap.",
+    "th": "กิจกรรมที่ 2 เจ็ดสิบนาที ทำเป็นคู่ คนหนึ่งใช้ Lab P1 อีกคนตรวจด้วยมือ แล้วสลับกัน"
+   },
+   {
+    "start": 8.17,
+    "end": 17.13,
+    "en": "First, by hand, compute the four methane properties from the table rows, and estimate the valve outlet with a constant coefficient.",
+    "th": "ขั้นแรก คำนวณสมบัติสี่ค่าของมีเทนด้วยมือจากแถวในตาราง และประมาณอุณหภูมิขาออกของวาล์วด้วยสัมประสิทธิ์คงที่"
+   },
+   {
+    "start": 17.48,
+    "end": 26.93,
+    "en": "Then compare the four outlet temperatures in the lab, and find the largest step that keeps the coefficient within one percent near the critical point.",
+    "th": "จากนั้นเปรียบเทียบอุณหภูมิขาออกสี่ค่าใน lab และหาช่วงที่ใหญ่ที่สุดที่ทำให้สัมประสิทธิ์คลาดเคลื่อนไม่เกินหนึ่งเปอร์เซ็นต์ใกล้จุดวิกฤต"
+   },
+   {
+    "start": 27.28,
+    "end": 31.74,
+    "en": "Finish with two sentences that answer the session question with numbers.",
+    "th": "ปิดท้ายด้วยสองประโยคที่ตอบคำถามของคาบด้วยตัวเลข"
+   }
+  ]
+ },
+ "activity-2-check": {
+  "audio": "narration/p01/activity-2-check.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 7.01,
+    "en": "Hand in the Lab P1 study file, your hand calculation, and two sentences with numbers.",
+    "th": "ส่ง study file ของ Lab P1 การคำนวณด้วยมือ และสองประโยคที่มีตัวเลข"
+   },
+   {
+    "start": 7.36,
+    "end": 20.85,
+    "en": "The enthalpy balance gives 265.6 kelvin for methane and 269.2 kelvin for nitrogen. One integration step is already within about one kelvin.",
+    "th": "สมดุลเอนทัลปีให้ 265.6 เคลวินสำหรับมีเทน และ 269.2 เคลวินสำหรับไนโตรเจน การอินทิเกรตเพียงหนึ่งขั้นก็คลาดไม่เกินประมาณหนึ่งเคลวินแล้ว"
+   },
+   {
+    "start": 21.2,
+    "end": 28.77,
+    "en": "Near the critical point, a central difference needs a step of 0.4 kelvin or less for one percent.",
+    "th": "ใกล้จุดวิกฤต ผลต่างกลางต้องใช้ช่วงไม่เกิน 0.4 เคลวิน จึงจะคลาดเคลื่อนไม่เกินหนึ่งเปอร์เซ็นต์"
+   }
+  ]
+ },
+ "discussion": {
+  "audio": "narration/p01/discussion.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 2.72,
+    "en": "Discuss in pairs, then with the class.",
+    "th": "อภิปรายเป็นคู่ แล้วอภิปรายร่วมกันทั้งห้อง"
+   },
+   {
+    "start": 3.07,
+    "end": 15.15,
+    "en": "Methane at 1 bar has Z of 0.998 but a Joule-Thomson coefficient of 0.43 kelvin per bar. Why is Z close to 1 not enough?",
+    "th": "มีเทนที่ 1 บาร์มีค่า Z เท่ากับ 0.998 แต่มีสัมประสิทธิ์ Joule–Thomson เท่ากับ 0.43 เคลวินต่อบาร์ ทำไม Z ที่ใกล้ 1 จึงยังไม่พอ"
+   },
+   {
+    "start": 15.5,
+    "end": 24.37,
+    "en": "The Maxwell check agreed to six digits. What does that prove, and what does it not? And which data would you need if no table existed?",
+    "th": "การตรวจด้วย Maxwell ตรงกันถึงหกหลัก สิ่งนี้พิสูจน์อะไร และไม่ได้พิสูจน์อะไร และถ้าไม่มีตาราง คุณต้องใช้ข้อมูลอะไร"
+   }
+  ]
+ },
+ "summary": {
+  "audio": "narration/p01/summary.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 1.4,
+    "en": "To summarize.",
+    "th": "สรุป"
+   },
+   {
+    "start": 1.75,
+    "end": 13.7,
+    "en": "The fundamental relation and its Legendre transforms give H, A and G. At fixed T and P, G is minimal and each chemical potential is equal in every phase.",
+    "th": "fundamental relation และ Legendre transform ให้ H, A และ G ที่ T และ P คงที่ G มีค่าต่ำสุด และศักย์เคมีของแต่ละองค์ประกอบเท่ากันในทุกเฟส"
+   },
+   {
+    "start": 14.05,
+    "end": 26.87,
+    "en": "Maxwell relations turn entropy derivatives into PVT derivatives, so alpha, kappa and C p give every property. A derivative from a table is only as good as its step.",
+    "th": "Maxwell relations เปลี่ยนอนุพันธ์ของเอนโทรปีเป็นอนุพันธ์ของ PVT ดังนั้น alpha, kappa และ Cp ให้สมบัติได้ทุกตัว และอนุพันธ์จากตารางจะดีได้เท่ากับขนาดช่วงที่เลือกใช้"
+   },
+   {
+    "start": 27.22,
+    "end": 34.24,
+    "en": "Next session, P2: where the PVT data come from when there is no table, the equations of state.",
+    "th": "คาบหน้า P2 ข้อมูล PVT มาจากไหนเมื่อไม่มีตาราง นั่นคือสมการสภาวะ"
+   }
+  ]
+ },
+ "exit-ticket": {
+  "audio": "narration/p01/exit-ticket.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 3.9,
+    "en": "Exit ticket and feedback. Five minutes, on your own.",
+    "th": "ตอบคำถามท้ายคาบและให้ความเห็น ห้านาที ทำคนเดียว"
+   },
+   {
+    "start": 4.25,
+    "end": 17.92,
+    "en": "Methane leaves a valve 34 kelvin colder than it entered, but an ideal gas would not change temperature. Which term of d H carries the difference, and which two measured properties do you need?",
+    "th": "มีเทนออกจากวาล์วเย็นกว่าตอนเข้า 34 เคลวิน แต่แก๊สอุดมคติจะไม่เปลี่ยนอุณหภูมิ พจน์ใดของ dH ทำให้เกิดความต่างนี้ และคุณต้องใช้สมบัติที่วัดได้สองตัวใด"
+   },
+   {
+    "start": 18.27,
+    "end": 25.29,
+    "en": "Scan the QR code or open the link. It is anonymous. Wait until you see Response received.",
+    "th": "สแกน QR code หรือเปิดลิงก์ แบบฟอร์มไม่ระบุตัวตน รอจนเห็นข้อความ Response received"
+   }
+  ]
+ },
+ "after-class": {
+  "audio": "narration/p01/after-class.mp3",
+  "cues": [
+   {
+    "start": 0.25,
+    "end": 9.42,
+    "en": "After class, finish Lab P1: the six states, then A and B in the graduate view. Upload the study file to myCourseVille.",
+    "th": "หลังคาบ ทำ Lab P1 ให้เสร็จ ได้แก่ หกสภาวะ แล้วข้อ A และ B ในมุมมอง Graduate จากนั้นอัปโหลด study file ไปที่ myCourseVille"
+   },
+   {
+    "start": 9.77,
+    "end": 13.95,
+    "en": "Read the session P2 pre-class note before the next session.",
+    "th": "อ่าน pre-class note ของคาบ P2 ก่อนคาบหน้า"
+   },
+   {
+    "start": 14.3,
+    "end": 22.43,
+    "en": "Graduate students can compare the nitrogen inversion curve with van der Waals in Lab P1 C. See you next session.",
+    "th": "นิสิตที่ต้องการทำงานเสริมระดับ graduate ทำ Lab P1 ข้อ C เปรียบเทียบเส้น inversion ของไนโตรเจนกับ van der Waals ได้ แล้วพบกันคาบหน้า"
+   }
+  ]
+ }
+}
