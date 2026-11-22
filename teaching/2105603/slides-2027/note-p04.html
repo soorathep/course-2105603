@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics">
+
+<title>Fugacity and the equilibrium of a pure fluid</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<meta name="robots" content="noindex">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="../site_libs/katex/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+
+<header id="title-block-header">
+<h1 class="title">Fugacity and the equilibrium of a pure fluid</h1>
+<p class="subtitle">Pre-class note for Session P4 · about 20 minutes</p>
+<p class="author">Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics</p>
+
+</header>
+
+
+<div class="draft-note">
+<p>Draft for 2027. If you are taking the course this year, use the current course page.</p>
+</div>
+<div class="purpose">
+<p><strong>Why read this.</strong> Session P1 showed that two phases in equilibrium have equal chemical potentials. The chemical potential has no absolute value and tends to −∞ as P → 0, which makes it awkward to compute with. The <strong>fugacity</strong> replaces it with a quantity in pressure units that behaves well. This note defines it, shows how to compute it from the residual Gibbs energy of Session P3, and uses it for the vapor pressure, the Clapeyron equation and the fugacity of liquids and solids. Work the three questions at the end and bring one question of your own.</p>
+</div>
+<h2 id="definition">1. Definition</h2>
+<p>For an ideal gas at fixed T, dμ = V dP = RT d ln P. For any fluid, the fugacity f is <strong>defined</strong> so that the same form holds:</p>
+<p><span class="math display">d\mu=RT\,d\ln f\quad(T\ \text{fixed}),\qquad \lim_{P\to0}\frac{f}{P}=1.</span></p>
+<p>The fugacity coefficient is φ = f/P. Integrating dμ − dμ<sup>ig</sup> from P = 0 at fixed T gives, for a pure fluid,</p>
+<p><span class="math display">\ln\varphi=\frac{G^R}{RT}=\int_0^P(Z-1)\frac{dP}{P}.</span></p>
+<p>So ln φ is the G<sup>R</sup>/RT of Session P3. From the truncated virial equation ln φ = BP/RT; from a cubic, ln φ = Z − 1 − ln(Z − β) − qI for the chosen root.</p>
+<p><strong>Worked example.</strong> CO₂ vapor at 280 K and 30 bar. The NIST reference gives Z = 0.779 and φ = 0.819, so f = 24.6 bar. With the Pitzer B = −144.7 cm³/mol, ln φ = −0.186 and f = 24.9 bar. For phase equilibrium the gas behaves as an ideal gas at 24.6 bar, not 30.</p>
+<h2 id="equal-fugacity-and-the-vapor-pressure">2. Equal fugacity and the vapor pressure</h2>
+<p>Two phases of a pure fluid at the same T and P are in equilibrium when μ<sup>L</sup> = μ<sup>V</sup>, that is</p>
+<p><span class="math display">f^L=f^V\qquad\Leftrightarrow\qquad\ln\varphi^L=\ln\varphi^V.</span></p>
+<p>Below T<sub>c</sub> a cubic has two outer roots between its two spinodal pressures (Session P2). Its vapor pressure is the pressure in that window where the two roots have equal ln φ. A practical algorithm:</p>
+<ol type="1">
+<li>find the spinodal pressures P<sub>min</sub> and P<sub>max</sub> from (∂P/∂V)<sub>T</sub> = 0, using max(P<sub>min</sub>, a small positive pressure) as the lower bound;</li>
+<li>at each trial P, take the smallest and largest real roots with Z &gt; β and compute ln φ<sup>L</sup> − ln φ<sup>V</sup>;</li>
+<li>find the zero by bisection or the secant method.</li>
+</ol>
+<p>Outside the window there is only one root, and ln φ<sup>L</sup> = ln φ<sup>V</sup> is satisfied trivially by that single root. A solver started outside the window can return this meaningless answer.</p>
+<p>For propane at 300 K, Peng–Robinson gives P<sup>sat</sup> = 9.975 bar and φ<sup>sat</sup> = 0.843; NIST gives 9.977 bar and 0.846.</p>
+<h2 id="the-clapeyron-equation">3. The Clapeyron equation</h2>
+<p>Moving along the coexistence curve, dμ<sup>L</sup> = dμ<sup>V</sup>. With dμ = −S dT + V dP for each phase and ΔS = ΔH/T at equilibrium,</p>
+<p><span class="math display">\frac{dP^{sat}}{dT}=\frac{\Delta H_{vap}}{T\,\Delta V}.</span></p>
+<p>This is exact. With V<sup>L</sup> neglected and V<sup>V</sup> = RT/P it becomes the Clausius–Clapeyron equation, d ln P<sup>sat</sup>/dT = ΔH<sub>vap</sub>/RT². For propane at 300 K, NIST gives ΔH<sub>vap</sub> = 14.66 kJ/mol, V<sup>L</sup> = 90.1 and V<sup>V</sup> = 2039 cm³/mol, so dP<sup>sat</sup>/dT = 0.251 bar/K. Near T<sub>c</sub>, ΔV → 0 and the vapor is far from ideal; Clausius–Clapeyron then fails badly.</p>
+<h2 id="fugacity-of-a-compressed-liquid">4. Fugacity of a compressed liquid</h2>
+<p>From (∂ ln f/∂P)<sub>T</sub> = V/RT, integrated from saturation where f<sup>L</sup> = f<sup>V</sup> = φ<sup>sat</sup>P<sup>sat</sup>:</p>
+<p><span class="math display">f^L(P)=\varphi^{sat}P^{sat}\exp\int_{P^{sat}}^{P}\frac{V^L}{RT}\,dP\approx\varphi^{sat}P^{sat}\exp\frac{V^L(P-P^{sat})}{RT}.</span></p>
+<p>The exponential is the <strong>Poynting factor</strong>. Because V<sup>L</sup> is small it stays close to 1 unless P − P<sup>sat</sup> is tens of bar. This is the liquid-side expression used in the γ–φ form of VLE in Session 1 after the midterm.</p>
+<h2 id="fugacity-of-a-solid">5. Fugacity of a solid</h2>
+<p>Below its melting temperature T<sub>m</sub>, a substance’s stable condensed phase is the solid. Its fugacity is written relative to the <strong>subcooled liquid</strong> at the same T, a metastable state that serves as a reference. Integrating the Gibbs–Helmholtz relation between T and T<sub>m</sub> and neglecting ΔC<sub>p</sub>,</p>
+<p><span class="math display">\ln\frac{f_s}{f_l}=-\frac{\Delta H_{fus}}{R}\Big(\frac{1}{T}-\frac{1}{T_m}\Big).</span></p>
+<p>The ratio is less than 1 below T<sub>m</sub>, which is why the solid is stable there. Session 4 after the midterm uses this for solid solubility and freezing points.</p>
+<h2 id="before-session-p4">6. Before Session P4</h2>
+<p>Write short answers. We use them in the first 30 minutes.</p>
+<ol type="1">
+<li><strong>Vapor fugacity.</strong> For CO₂ at 280 K and 10 bar, compute φ and f from the truncated virial equation with B = −144.7 cm³/mol. Why is the correction smaller than at 30 bar?</li>
+<li><strong>Clapeyron.</strong> From the propane numbers in Section 3, estimate P<sup>sat</sup> at 302 K. Then compute ΔH<sub>vap</sub> from Clausius–Clapeyron with the same slope, and say which assumption causes the difference.</li>
+<li><strong>Poynting.</strong> Liquid water at 373.15 K has P<sup>sat</sup> = 1.014 bar and V<sup>L</sup> = 18.80 cm³/mol. Compute the Poynting factor at 2, 10 and 100 bar. At which pressure would you stop setting it to 1?</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li>Smith, J. M., Van Ness, H. C., Abbott, M. M., Swihart, M. T. (2018). <em>Introduction to Chemical Engineering Thermodynamics</em>, 8th ed.&nbsp;McGraw-Hill. Chapters 4, 6 and 10.</li>
+<li>Prausnitz, J. M., Lichtenthaler, R. N., de Azevedo, E. G. (1999). <em>Molecular Thermodynamics of Fluid-Phase Equilibria</em>, 3rd ed.&nbsp;Prentice Hall. Chapters 2 and 3.</li>
+<li>Murphy, D. M., Koop, T. (2005). Review of the vapour pressures of ice and supercooled water for atmospheric applications. <em>Q. J. R. Meteorol. Soc.</em> 131, 1539–1565.</li>
+<li>Lemmon, E. W., McLinden, M. O., Wagner, W. (2009). Thermodynamic properties of propane. III. <em>J. Chem. Eng. Data</em> 54, 3141–3180.</li>
+</ul>
+<p><a href="p04.html" class="next-link">Session P4 slides →</a></p>
+
+
+
+
+
+</body></html>

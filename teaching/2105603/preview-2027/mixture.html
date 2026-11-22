@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Mixtures · Thermodynamics Labs 2027 preview</title>
+  <meta name="description" content="Lab P5: partial molar volumes of ethanol and water from measured densities, the Gibbs–Duhem equation, and component fugacity coefficients in gas mixtures from measured cross virial coefficients, combining rules, Peng–Robinson and the Lewis–Randall rule.">
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="assets/labs.css?v=r8">
+</head>
+<body data-mode="core">
+<div class="draft-banner" role="note">Draft for 2027. If you are taking 2105603 this year, use the <a href="../index.html">current course page</a>.</div>
+  <a class="skip-link" href="#experiment">Skip to the experiment</a>
+  <header class="site-header"><a class="brand" href="index.html">SKH <span>Thermodynamics Labs</span></a><nav aria-label="Course navigation"><a href="mixture.html">Lab P5</a><a href="index.html#sessions">All 2027 labs</a><a href="../slides-2027/index.html">Slides</a><a href="../">Course</a></nav></header>
+  <main class="page" id="experiment">
+    <div class="page-intro">
+      <div><p class="eyebrow">Lab P5 · Mixtures: partial molar properties and component fugacity</p><h1>What does a component contribute to a mixture?</h1><p id="case-description" class="intro-copy">Two measured data sets. Densities of ethanol + water at 298.15 K give the excess volume and, by the tangent-intercept rule, the partial molar volume of each component. Measured cross second virial coefficients of three gas pairs at 298.15 K give the fugacity coefficient of each component in a gas mixture, against combining rules, Peng–Robinson and the Lewis–Randall rule.</p></div>
+      <p class="preview-note">2027 prototype<br>Session P5</p>
+    </div>
+    <fieldset class="mode-switch"><legend>View</legend><div class="mode-options"><label><input type="radio" name="lab-mode" value="core" checked><span>Core concepts</span></label><label><input type="radio" name="lab-mode" value="graduate"><span>Graduate investigation</span></label></div><p class="core-only">Core: predict, fit the excess volume, read the partial molar volumes and the component fugacity coefficients, and check both on paper.</p><p class="grad-only">Graduate: test how infinite-dilution values depend on the fit, compare combining rules with measured cross coefficients, map where the Lewis–Randall rule fails, and check code written with an AI assistant.</p></fieldset>
+    <p class="graduate-note grad-only"><strong>Graduate route.</strong> Complete Steps 1–3 for the liquid and for the three gas pairs, then run A–C and E in Step 4. <a href="#graduate-investigation">Go to the graduate investigation</a>.</p>
+
+    <section class="starter" aria-label="Starting problems">
+      <div class="starter-label"><strong>Choose a starting point</strong><span>Both parts are calculated together.</span></div>
+      <div class="case-buttons"><button type="button" data-case="co2-methane" aria-pressed="true">CO₂ + methane</button><button type="button" data-case="co2-ethane" aria-pressed="false">CO₂ + ethane</button><button type="button" data-case="methane-ethane" aria-pressed="false">Methane + ethane</button></div>
+      <p id="case-source" class="source-note">Liquid: densities of ethanol + water at 298.15 K, Pires, Costa, Ferreira and Fonseca, J. Chem. Eng. Data 52 (2007) 1240–1245. Gas: measured interaction second virial coefficients at 25 °C, Katayama, Ohgaki and Ohmori, J. Chem. Eng. Jpn. 13 (1980) 257–262 (CO₂ + methane −64.8 ± 0.4, CO₂ + ethane −121.8 ± 0.7, methane + ethane −92.9 ± 0.4 cm³/mol). Pure B<sub>ii</sub> fitted to NIST WebBook isotherms at 298.15 K.</p>
+    </section>
+
+    <figure class="panel phase-picture" aria-labelledby="picture-heading">
+      <div class="panel-heading"><h2 id="picture-heading">Partial molar properties and component fugacity</h2><span class="section-help">What one more mole of i changes</span></div>
+      <div class="vlle-figures vr-figures">
+        <div>
+          <svg class="energy-sketch" viewBox="0 0 440 230" role="img" aria-labelledby="ti-title ti-description">
+            <title id="ti-title">The tangent-intercept rule</title>
+            <desc id="ti-description">The molar volume of a binary mixture against the mole fraction of component 1. The tangent at a composition meets the vertical axis at x1 equal to 0 at the partial molar volume of component 2, and at x1 equal to 1 at the partial molar volume of component 1.</desc>
+            <path d="M40 200 V20 M400 200 V20 M40 200 H400" class="pxy-axis"/>
+            <path d="M40 160 C140 150 260 90 400 52" class="eq-lead eq-teal" fill="none"/>
+            <path d="M40 166 L400 70" class="eq-lead eq-amber" stroke-dasharray="6 4"/>
+            <circle cx="220" cy="118" r="5" fill="#1C242B"/>
+            <circle cx="40" cy="166" r="4" fill="#E29A2D"/><circle cx="400" cy="70" r="4" fill="#E29A2D"/>
+            <g class="energy-text" style="text-anchor:start"><text x="48" y="186" style="text-anchor:start">V̄₂</text><text x="356" y="88" style="text-anchor:start">V̄₁</text><text x="226" y="138" style="text-anchor:start">x₁</text><text x="46" y="18" style="text-anchor:start">V</text><text x="300" y="218" style="text-anchor:start">x₁ →</text></g>
+          </svg>
+          <p class="figure-caption">V̄<sub>1</sub> = V + x<sub>2</sub>dV/dx<sub>1</sub> and V̄<sub>2</sub> = V − x<sub>1</sub>dV/dx<sub>1</sub>. Gibbs–Duhem: x<sub>1</sub>dV̄<sub>1</sub> + x<sub>2</sub>dV̄<sub>2</sub> = 0 at fixed T and P.</p>
+        </div>
+        <div>
+          <svg class="eq-sketch" viewBox="0 0 520 230" role="img" aria-labelledby="phi-title phi-description">
+            <title id="phi-title">Component fugacity coefficients from the virial equation</title>
+            <desc id="phi-description">In a binary gas mixture, ln phi hat 1 equals P over RT times B11 plus y2 squared delta12, with delta12 equal to 2 B12 minus B11 minus B22. The Lewis–Randall rule sets delta12 to zero, so phi hat 1 equals the pure-component phi 1.</desc>
+            <g class="eq-main" style="font-size:20px"><text x="260" y="62">ln φ̂<tspan baseline-shift="sub" font-size="70%">1</tspan> = (P/RT)[B<tspan baseline-shift="sub" font-size="70%">11</tspan> + y<tspan baseline-shift="sub" font-size="70%">2</tspan>²δ<tspan baseline-shift="sub" font-size="70%">12</tspan>]</text><text x="260" y="108">δ<tspan baseline-shift="sub" font-size="70%">12</tspan> = 2B<tspan baseline-shift="sub" font-size="70%">12</tspan> − B<tspan baseline-shift="sub" font-size="70%">11</tspan> − B<tspan baseline-shift="sub" font-size="70%">22</tspan></text><text x="260" y="158" class="eq-amber-text">Lewis–Randall: f̂<tspan baseline-shift="sub" font-size="70%">i</tspan> = y<tspan baseline-shift="sub" font-size="70%">i</tspan>f<tspan baseline-shift="sub" font-size="70%">i</tspan>, i.e. δ<tspan baseline-shift="sub" font-size="70%">12</tspan> = 0</text></g>
+            <g class="eq-caption"><text x="260" y="204">B<tspan baseline-shift="sub" font-size="70%">12</tspan> is the only mixture information the virial equation needs</text></g>
+          </svg>
+          <p class="figure-caption">f̂<sub>i</sub> = y<sub>i</sub>φ̂<sub>i</sub>P. An ideal solution of real gases follows Lewis–Randall exactly; a real mixture does not.</p>
+        </div>
+      </div>
+      <figcaption>Redlich–Kister: V<sup>E</sup> = x<sub>1</sub>x<sub>2</sub>Σ A<sub>k</sub>(x<sub>1</sub> − x<sub>2</sub>)<sup>k</sup>, with component 1 = ethanol. Peng–Robinson mixture: a = ΣΣ y<sub>i</sub>y<sub>j</sub>√(a<sub>i</sub>a<sub>j</sub>)(1 − k<sub>ij</sub>), b = Σ y<sub>i</sub>b<sub>i</sub>.</figcaption>
+    </figure>
+
+    <div class="experiment-grid vle-experiment-grid">
+      <section class="panel setup-panel" aria-labelledby="setup-heading">
+        <div class="panel-heading"><h2 id="setup-heading">1. Choose the fit and the gas mixture</h2><span class="condition">298.15 K</span></div>
+        <div id="form-error" class="error-summary" role="alert" tabindex="-1" hidden></div>
+        <form id="mix-form" novalidate>
+          <label for="order">Redlich–Kister terms for V<sup>E</sup></label><select id="order"><option value="1">1 (A₀)</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option></select>
+          <label for="xeth">Ethanol mole fraction for the tangent</label><input id="xeth" type="number" min="0.001" max="0.999" step="any" value="0.5">
+          <label for="pair">Gas pair (component 1 first)</label><select id="pair"><option value="co2-methane">CO₂ (1) + methane (2)</option><option value="co2-ethane">CO₂ (1) + ethane (2)</option><option value="methane-ethane">Methane (1) + ethane (2)</option></select>
+          <label for="rule">B<sub>12</sub> to compare with the measured value</label><select id="rule"><option value="arith">Arithmetic mean (B₁₁ + B₂₂)/2</option><option value="geom">Geometric mean −√(B₁₁B₂₂)</option><option value="pitzer">Pitzer with Prausnitz combining rules</option><option value="pr">Implied by Peng–Robinson, b₁₂ − a₁₂/RT</option></select>
+          <label for="k12">Binary parameter k<sub>12</sub> (Pitzer T<sub>c12</sub> and PR a<sub>12</sub>)</label><input id="k12" type="number" min="-0.3" max="0.5" step="any" value="0">
+          <label for="pres">Pressure / bar</label><input id="pres" type="number" min="0.1" max="60" step="any" value="30">
+          <label for="y1">Mole fraction of component 1 in the gas</label><input id="y1" type="number" min="0" max="1" step="any" value="0.05">
+          <div class="prediction-row"><label for="prediction">Before calculating: for 5% CO₂ in methane at 30 bar, how will φ̂ of CO₂ compare with φ of pure CO₂ at the same T and P?</label><select id="prediction"><option value="">Not sure yet</option><option value="lower">Lower</option><option value="same">Within 1%</option><option value="higher">Higher</option></select></div>
+          <button id="calculate" class="primary-button calculate-button" type="button">Calculate both parts</button>
+          <p class="input-help">Add a calculated result to the comparison before changing a setting.</p>
+          <details class="advanced"><summary>Data and method</summary><p>V<sup>E</sup> = V − x<sub>1</sub>V<sub>1</sub>* − x<sub>2</sub>V<sub>2</sub>* from the measured densities and the pure densities used by the authors; it reproduces their reported V<sup>E</sup> to 0.001 cm³/mol. The fit is linear least squares, unweighted. Pure B<sub>ii</sub> at 298.15 K: methane −42.78, CO₂ −122.89, ethane −184.96 cm³/mol (NIST isotherms, gas points up to 0.6 mol/L). The virial equation is truncated after B, so use it up to about half the dew pressure; the lab allows up to 60 bar for comparison with Peng–Robinson.</p></details>
+        </form>
+      </section>
+
+      <section class="panel result-panel" aria-labelledby="result-heading">
+        <div class="panel-heading"><h2 id="result-heading">2. Read the two parts</h2></div>
+        <div id="result-placeholder" class="result-placeholder"><p>Calculate to see the partial molar volumes and the component fugacity coefficients.</p></div>
+        <div id="results" hidden>
+          <p id="result-phase" class="phase-result"></p><p id="phase-interpretation" class="section-help"></p><p id="prediction-feedback" class="prediction-feedback" aria-live="polite"></p>
+          <h3 class="table-title">Ethanol + water: excess volume and partial molar volumes</h3>
+          <div class="table-scroll" role="region" aria-label="Excess volume data and fit" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">x ethanol</th><th scope="col">V<sup>E</sup> measured / (cm³/mol)</th><th scope="col">V<sup>E</sup> fit</th><th scope="col">Residual</th></tr></thead><tbody id="ve-body"></tbody></table></div>
+          <div class="balance-readout"><strong>Partial molar volumes</strong><output id="result-partials">—</output><span>V̄ ethanol, V̄ water at the chosen x; infinite dilution; pure V*</span></div>
+          <h3 class="table-title" id="gas-title">Gas mixture: component fugacity coefficients</h3>
+          <div class="table-scroll" role="region" aria-label="Component fugacity coefficients" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">Model</th><th scope="col">B<sub>12</sub> / (cm³/mol)</th><th scope="col">δ<sub>12</sub> / (cm³/mol)</th><th scope="col">φ̂<sub>1</sub></th><th scope="col">φ̂<sub>2</sub></th><th scope="col">Z</th></tr></thead><tbody id="gas-body"></tbody></table></div>
+          <div class="calculation-check"><h3>Check the calculation on paper</h3><ol id="calc-steps"></ol></div>
+        </div>
+        <div class="save-case-row"><label for="case-name">Name this case</label><input id="case-name" type="text" value="CO₂ + methane" maxlength="80"><button id="save-case" class="secondary-button" type="button" disabled>Add result to comparison</button></div>
+      </section>
+    </div>
+
+    <section id="diagram-panel" class="panel diagram-panel" aria-labelledby="diagram-heading" hidden>
+      <div class="panel-heading"><h2 id="diagram-heading">3. Read the curves</h2><span class="section-help">Data, fit and models</span></div>
+      <div class="chart-toolbar"><label for="view">Show</label><select id="view"><option value="ve">V<sup>E</sup> and the tangent at x</option><option value="vbar">Partial molar volumes against x</option><option value="phi">φ̂<sub>1</sub> against y<sub>1</sub></option></select></div>
+      <div id="mix-chart" class="vle-chart" role="img" aria-label="Mixture plot. Numbers are listed in Step 2."></div>
+      <div id="chart-legend" class="plot-legend"></div>
+      <p id="chart-note" class="chart-note"></p>
+    </section>
+
+    <section id="concept-check" class="panel core-only" aria-labelledby="concept-heading">
+      <div class="panel-heading"><h2 id="concept-heading">4. Check your understanding</h2><span class="section-help">Write first, then compare</span></div>
+      <p class="section-help">Use Steps 1–3 to answer each question in your own words. Then open the explanation and compare. Your answers are saved with your study.</p>
+      <div class="concept-question"><h3>A. Why is a mole of ethanol in water smaller than a mole of pure ethanol?</h3><p>Compare V̄ of ethanol at infinite dilution with its pure molar volume, 58.68 cm³/mol.</p><label for="note-concept1" class="visually-hidden">Your answer to question A</label><textarea id="note-concept1" rows="3" maxlength="10000" placeholder="Quote the two values and the sign of V^E."></textarea><details><summary>Compare with an explanation</summary><p>With three Redlich–Kister terms, V̄ of ethanol at infinite dilution is about 52 cm³/mol, 6–7 cm³/mol less than pure ethanol. V<sup>E</sup> is negative across the whole range, with a minimum of −1.1 cm³/mol near x = 0.38: water and ethanol pack more tightly together than apart, through hydrogen bonding and the hydration of the ethyl group. A partial molar volume is a derivative of the mixture volume, not the size of a molecule.</p></details></div>
+      <div class="concept-question"><h3>B. Why do V̄<sub>1</sub> and V̄<sub>2</sub> move in opposite directions?</h3><p>Use the partial-molar-volume view and read the slopes at x = 0.3.</p><label for="note-concept2" class="visually-hidden">Your answer to question B</label><textarea id="note-concept2" rows="3" maxlength="10000" placeholder="Use the Gibbs–Duhem check in the paper steps."></textarea><details><summary>Compare with an explanation</summary><p>Gibbs–Duhem at fixed T and P: x<sub>1</sub>dV̄<sub>1</sub> + x<sub>2</sub>dV̄<sub>2</sub> = 0. If one partial molar volume rises with x<sub>1</sub>, the other must fall, weighted by the mole fractions. The lab's check gives about 10⁻⁹ cm³/mol for any fit, because partial molar volumes from one V(x) satisfy it by construction. Measured activity coefficients do not, which is why Session 2 after the midterm uses Gibbs–Duhem to test data.</p></details></div>
+      <div class="concept-question"><h3>C. When does the Lewis–Randall rule fail?</h3><p>CO₂ + methane at 30 bar: compare φ̂ of CO₂ from the measured B<sub>12</sub> with the Lewis–Randall value at y<sub>1</sub> = 0.05 and 0.95.</p><label for="note-concept3" class="visually-hidden">Your answer to question C</label><textarea id="note-concept3" rows="3" maxlength="10000" placeholder="Quote the two φ̂ values and δ12."></textarea><details><summary>Compare with an explanation</summary><p>Lewis–Randall sets δ<sub>12</sub> = 0. The measured B<sub>12</sub> = −64.8 cm³/mol gives δ<sub>12</sub> = +36.1 cm³/mol: CO₂ and methane attract each other less than the average of the pure pairs. At y<sub>1</sub> = 0.05 the measured φ̂ of CO₂ is 0.896 against 0.862 from Lewis–Randall (4% apart). At y<sub>1</sub> = 0.95 the y<sub>2</sub>² factor is 0.0025 and the two agree. The rule fails for a dilute component whose unlike interactions differ from the like ones.</p></details></div>
+    </section>
+
+    <section id="graduate-investigation" class="panel graduate-section grad-only" aria-labelledby="graduate-heading">
+      <div class="panel-heading"><h2 id="graduate-heading">4. Investigate what mixture data can support</h2><span class="condition">Graduate work</span></div>
+      <p id="graduate-baseline" class="graduate-note">Calculate in Step 1 before running an investigation.</p>
+      <aside class="graduate-limits" aria-labelledby="mix-limits-heading"><h3 id="mix-limits-heading">What these results can and cannot show</h3><ul><li>Nine density points cover water mole fractions from 0.10 to 0.91. Below a mole fraction of about 0.09 of either component nothing is measured, so infinite-dilution values are extrapolations of the fitted form.</li><li>The cross virial coefficients are single measurements with stated uncertainty, at one temperature. A k<sub>12</sub> fitted to one B<sub>12</sub> is not validated at other T or P.</li><li>The truncated virial equation is a low-density model. Peng–Robinson at 60 bar is an extrapolation of the same information plus k<sub>12</sub>.</li></ul></aside>
+
+      <section class="graduate-step" aria-labelledby="ord-heading"><h3 id="ord-heading">A. Fit order and infinite dilution</h3>
+        <ol class="graduate-checklist"><li>Fit 1 to 5 Redlich–Kister terms. Record the RMS residual, V̄ at x = 0.5 and both infinite-dilution values.</li><li>Find which quantities are stable and which depend on the order.</li><li>State what you would need to measure to fix V̄ of ethanol at infinite dilution.</li></ol>
+        <div class="graduate-actions"><button id="run-ord" class="primary-button" type="button" disabled>Compare fit orders</button></div>
+        <p id="ord-status" class="graduate-status" role="status"></p>
+        <div id="ord-wrap" class="table-scroll graduate-table" role="region" aria-label="Fit order study" tabindex="0" hidden><table><thead><tr><th scope="col">Terms</th><th scope="col">Degrees of freedom</th><th scope="col">RMS residual / (cm³/mol)</th><th scope="col">V̄ ethanol, water at x = 0.5</th><th scope="col">V̄<sup>∞</sup> ethanol in water</th><th scope="col">V̄<sup>∞</sup> water in ethanol</th></tr></thead><tbody id="ord-body"></tbody></table></div>
+        <label for="note-ord">Claim 1 · what the densities fix</label><textarea id="note-ord" rows="3" maxlength="10000" placeholder="Quote the spread of V̄ at x = 0.5 and of V̄∞ across the fits."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="b12-heading"><h3 id="b12-heading">B. Combining rules against measured B<sub>12</sub></h3>
+        <ol class="graduate-checklist"><li>For the three pairs, compare the measured B<sub>12</sub> with the arithmetic mean (Lewis–Randall), the geometric mean, Pitzer–Prausnitz and Peng–Robinson with k<sub>12</sub> = 0.</li><li>Find the k<sub>12</sub> that reproduces each measured value for Pitzer and for PR.</li><li>Explain why the PR k<sub>12</sub> is larger.</li></ol>
+        <div class="graduate-actions"><button id="run-b12" class="primary-button" type="button" disabled>Compare the rules</button></div>
+        <p id="b12-status" class="graduate-status" role="status"></p>
+        <div id="b12-wrap" class="table-scroll graduate-table" role="region" aria-label="Cross virial coefficients" tabindex="0" hidden><table><thead><tr><th scope="col">Pair</th><th scope="col">Measured</th><th scope="col">Arithmetic</th><th scope="col">Geometric</th><th scope="col">Pitzer, k₁₂ = 0</th><th scope="col">PR, k₁₂ = 0</th><th scope="col">k₁₂ fitted: Pitzer, PR</th></tr></thead><tbody id="b12-body"></tbody></table></div>
+        <label for="note-b12">Claim 2 · cross interactions</label><textarea id="note-b12" rows="3" maxlength="10000" placeholder="Quote the measured and rule values for the CO₂ pairs and for methane + ethane, and the fitted k12."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="lr-heading"><h3 id="lr-heading">C. Where Lewis–Randall fails</h3>
+        <ol class="graduate-checklist"><li>For the current pair, compute φ̂ of each component across y<sub>1</sub> at 10, 30 and 60 bar: virial with the measured B<sub>12</sub>, Lewis–Randall, and PR with k<sub>12</sub> = 0 and with your k<sub>12</sub>.</li><li>Find where Lewis–Randall is within 1% of the measured-B<sub>12</sub> virial value.</li><li>State the condition in terms of y and δ<sub>12</sub>P/RT.</li></ol>
+        <div class="graduate-actions"><button id="run-lr" class="primary-button" type="button" disabled>Map the component fugacity</button></div>
+        <p id="lr-status" class="graduate-status" role="status"></p>
+        <div id="lr-wrap" class="table-scroll graduate-table" role="region" aria-label="Lewis–Randall map" tabindex="0" hidden><table><thead><tr><th scope="col">P / bar</th><th scope="col">y₁</th><th scope="col">φ̂₁ virial, measured B₁₂</th><th scope="col">Lewis–Randall / %</th><th scope="col">PR k₁₂ = 0 / %</th><th scope="col">PR, your k₁₂ / %</th></tr></thead><tbody id="lr-body"></tbody></table></div>
+        <label for="note-lr">Claim 3 · when Lewis–Randall holds</label><textarea id="note-lr" rows="3" maxlength="10000" placeholder="Quote the largest Lewis–Randall error and where it occurs."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="argument-heading"><h3 id="argument-heading">D. Defend a limited conclusion</h3>
+        <label for="note-decision">Decision and next evidence</label><textarea id="note-decision" rows="3" maxlength="10000" placeholder="State the value of V̄∞ of ethanol you would report and its uncertainty, or the B12 rule you would use for a natural-gas mixture with CO₂, and the measurement that would test it."></textarea>
+        <div class="graduate-actions"><button id="check-evidence" type="button" class="secondary-button">Check my evidence record</button></div><p id="evidence-status" class="graduate-status" role="status"></p>
+        <p class="graduate-note">The record check only confirms that the sections and calculations are present. It is a completeness reminder, not a grade.</p>
+      </section>
+
+      <section class="graduate-step" id="ai-code" aria-labelledby="ai-heading">
+        <h3 id="ai-heading">E. Check code that an AI assistant helped you write</h3>
+        <p>You may use an AI assistant to <strong>write code</strong>. You decide everything else: how V<sup>E</sup> is computed from densities, the fitted form and its variable, the partial molar volume formulas, and how you will know a result is right. Do not ask the assistant for numbers or conclusions.</p>
+        <ol class="graduate-checklist"><li>Write your specification first, in your own words, before you open the assistant.</li><li>Download the densities. Ask the assistant to write Python that: (a) computes V<sup>E</sup> from the densities with x<sub>1</sub> = ethanol; (b) fits three Redlich–Kister terms A<sub>0</sub>, A<sub>1</sub>, A<sub>2</sub> in (x<sub>1</sub> − x<sub>2</sub>)<sup>k</sup> by least squares; (c) computes V̄ of both components at x<sub>1</sub> = 0.5 and V̄ of ethanol at infinite dilution. Run it yourself.</li><li>Enter the outputs and run the checks. When a check disagrees, find the cause in the code, fix it, and rerun. Record what you changed.</li></ol>
+        <div class="graduate-actions"><button id="ai-csv" type="button" class="secondary-button" disabled>Download the densities (CSV)</button></div>
+        <label for="ai-spec">Your specification, written before you used the assistant</label><textarea id="ai-spec" rows="5" maxlength="10000" placeholder="Molar masses and pure densities; V^E from densities; which mole fraction is x1; the basis functions; least squares; tangent-intercept formulas; the infinite-dilution limit; how you check each result."></textarea>
+        <div class="graduate-grid"><div><label for="ai-tool">Assistant and version</label><input id="ai-tool" type="text" maxlength="200" placeholder="for example, the name and model"></div></div>
+        <label for="ai-prompt">The prompt or prompts you used</label><textarea id="ai-prompt" rows="4" maxlength="20000"></textarea>
+        <label for="ai-codetext">Final code that produced the outputs below</label><textarea id="ai-codetext" rows="8" maxlength="60000" spellcheck="false" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.78rem"></textarea>
+        <h4>Outputs from your code</h4>
+        <div class="graduate-grid">
+          <div><label for="ai-a0">A₀ / (cm³/mol)</label><input id="ai-a0" type="number" step="any"></div>
+          <div><label for="ai-a1">A₁</label><input id="ai-a1" type="number" step="any"></div>
+          <div><label for="ai-a2">A₂</label><input id="ai-a2" type="number" step="any"></div>
+          <div><label for="ai-v1">V̄ ethanol at x₁ = 0.5 / (cm³/mol)</label><input id="ai-v1" type="number" step="any"></div>
+          <div><label for="ai-v2">V̄ water at x₁ = 0.5 / (cm³/mol)</label><input id="ai-v2" type="number" step="any"></div>
+          <div><label for="ai-vinf">V̄<sup>∞</sup> ethanol in water / (cm³/mol)</label><input id="ai-vinf" type="number" step="any"></div>
+        </div>
+        <div class="graduate-actions"><button id="ai-run" type="button" class="primary-button" disabled>Check my outputs</button></div>
+        <p id="ai-status" class="graduate-status" role="status">Enter the outputs from your code, then run the checks.</p>
+        <div id="ai-results" hidden>
+          <div class="table-scroll graduate-table" role="region" aria-label="Checks of your code outputs against the lab" tabindex="0"><table><thead><tr><th scope="col">Check</th><th scope="col">Lab</th><th scope="col">Your code</th><th scope="col">Result</th><th scope="col">Likely cause</th></tr></thead><tbody id="ai-out"></tbody></table></div>
+          <p class="graduate-note">Agreement with the lab shows that your code solves the problem you specified. It does not show that three terms are the right model or that the infinite-dilution value is right: that is what A tests. The "likely cause" lists common errors; your code may have another.</p>
+        </div>
+        <label for="ai-found">What disagreed, what was wrong in the code, and how you fixed it</label><textarea id="ai-found" rows="3" maxlength="10000" placeholder="Name the check, the line of code, and the fix. If every check agreed at once, say which check you would trust least and why."></textarea>
+        <label for="ai-own">What you decided yourself, and one thing the checks cannot establish</label><textarea id="ai-own" rows="3" maxlength="10000" placeholder="For example: the sign convention of (x1 − x2), unweighted fitting. Then one limit."></textarea>
+      </section>
+    </section>
+
+    <section class="panel comparison-panel" aria-labelledby="comparison-heading">
+      <div class="panel-heading"><h2 id="comparison-heading">5. Compare and save</h2></div>
+      <ol class="investigation-steps core-only"><li>Calculate and save the three gas pairs with three Redlich–Kister terms.</li><li>Save CO₂ + methane again at y₁ = 0.95 and with the Pitzer rule.</li><li>Answer questions A–C in Step 4 using the saved comparison.</li><li>Download the complete study, reopen it, and reproduce a saved case.</li></ol>
+      <ol class="investigation-steps grad-only"><li>Calculate and save the three gas pairs with three Redlich–Kister terms.</li><li>Complete investigations A–C and E and write the graduate claims.</li><li>Download the complete study, reopen it, and reproduce a saved case and its investigation record.</li></ol>
+      <p id="comparison-empty" class="empty-state">Your calculated cases will appear here after you add them.</p>
+      <div id="comparison-table-wrap" class="table-scroll" role="region" aria-label="Saved cases" tabindex="0" hidden><table><thead><tr><th scope="col">Case</th><th scope="col">Fit, V̄<sup>∞</sup> ethanol</th><th scope="col">Pair, P, y₁</th><th scope="col">φ̂₁ measured B₁₂ / Lewis–Randall</th><th scope="col">B₁₂ rule / measured</th><th scope="col">Reopen</th></tr></thead><tbody id="comparison-body"></tbody></table></div>
+      <label for="reflection" class="reflection-label">Optional additional note</label><textarea id="reflection" rows="3" maxlength="10000" placeholder="Add an optional note."></textarea>
+      <fieldset class="student-fields"><legend>Your details <span>(optional)</span></legend><p class="input-help">Saved in the downloaded file so your instructor can identify it. You can download without them.</p><div class="student-grid"><div><label for="student-first-name">First name</label><input id="student-first-name" type="text" maxlength="80" autocomplete="given-name"></div><div><label for="student-last-name">Last name</label><input id="student-last-name" type="text" maxlength="80" autocomplete="family-name"></div><div><label for="student-id">Student ID</label><input id="student-id" type="text" maxlength="20" inputmode="numeric" autocomplete="off"></div></div></fieldset>
+        <div class="study-actions"><button id="export-study" class="primary-button" type="button" disabled>Download my study</button><div class="file-control"><label for="import-study">Open a saved study</label><input id="import-study" type="file" accept=".json,application/json"></div></div>
+        <p class="submit-note"><strong>To submit:</strong> upload the downloaded .json file to <strong>myCourseVille</strong>, in the assignment for Lab P5. Keep the file name: it carries your name and student ID.</p>
+      <p id="status" class="study-status" role="status" aria-live="polite">Loading the data…</p><p class="privacy-note">Your inputs, comparisons and explanations are kept in this open page. Download one study file to keep the complete record and reopen it later. Results are recalculated on restore.</p>
+    </section>
+    <noscript><p class="error-summary">Enable JavaScript to calculate. The figures and questions remain available to read.</p></noscript>
+  </main>
+  <footer class="site-footer"><span>2105603 · Advanced Chemical Engineering Thermodynamics</span><a href="index.html#sessions">All 2027 labs</a></footer>
+  <script src="../labs/assets/plotly.min.js" defer></script>
+  <script type="module" src="assets/mode.js?v=mode-3"></script>
+  <script type="module" src="assets/mixture-lab.js?v=p5-1"></script>
+  <script type="module" src="assets/mixcode.js?v=p5-1"></script>
+</body>
+</html>

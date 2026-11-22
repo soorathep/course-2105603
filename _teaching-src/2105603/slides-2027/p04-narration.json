@@ -1,0 +1,404 @@
+{
+ "session": "p04",
+ "voice": "am_michael",
+ "slides": {
+  "title-slide": [
+   {
+    "en": "Welcome to session P4: pure-component equilibrium and fugacity.",
+    "th": "ยินดีต้อนรับสู่คาบ P4 สมดุลของสารบริสุทธิ์และ fugacity",
+    "say": "Welcome to session P four: pure-component equilibrium and fugacity."
+   },
+   {
+    "en": "Today we ask when two phases of a pure fluid coexist.",
+    "th": "วันนี้เราจะถามว่าสองเฟสของสารบริสุทธิ์อยู่ร่วมกันได้เมื่อใด"
+   }
+  ],
+  "course-map": [
+   {
+    "en": "Session P1 showed that at equilibrium the chemical potential is equal in every phase. Session P3 gave the residual Gibbs energy.",
+    "th": "คาบ P1 แสดงว่าที่สมดุล ศักย์เคมีเท่ากันในทุกเฟส และคาบ P3 ให้ residual Gibbs energy",
+    "say": "Session P one showed that at equilibrium the chemical potential is equal in every phase. Session P three gave the residual Gibbs energy."
+   },
+   {
+    "en": "Today the two meet in the fugacity: the vapor pressure from equal fugacity, the Clapeyron equation, and the fugacity of a compressed liquid and of a solid.",
+    "th": "วันนี้ทั้งสองเรื่องมาพบกันที่ fugacity คือความดันไอจาก fugacity ที่เท่ากัน สมการ Clapeyron และ fugacity ของของเหลวอัดและของแข็ง"
+   },
+   {
+    "en": "Session 1 after the midterm starts from these.",
+    "th": "คาบที่ 1 หลัง midterm เริ่มจากเรื่องเหล่านี้",
+    "say": "Session one after the midterm starts from these."
+   }
+  ],
+  "why": [
+   {
+    "en": "Why does this matter? A propane tank sits at 300 kelvin. Liquid and vapor coexist, so the pressure is the vapor pressure.",
+    "th": "ทำไมเรื่องนี้จึงสำคัญ ถังโพรเพนอยู่ที่ 300 เคลวิน ของเหลวและไออยู่ร่วมกัน ความดันในถังจึงเป็นความดันไอ",
+    "say": "Why does this matter? A propane tank sits at three hundred kelvin. Liquid and vapor coexist, so the pressure is the vapor pressure."
+   },
+   {
+    "en": "The reference gives 9.98 bar. Van der Waals gives 17.4 bar, 74 percent too high. SRK and Peng-Robinson are within one percent.",
+    "th": "ข้อมูลอ้างอิงให้ 9.98 บาร์ van der Waals ให้ 17.4 บาร์ สูงไป 74 เปอร์เซ็นต์ ส่วน SRK และ Peng–Robinson คลาดไม่เกินหนึ่งเปอร์เซ็นต์",
+    "say": "The reference gives nine point nine eight bar. Van der Waals gives seventeen point four bar, seventy four percent too high. S R K and Peng Robinson are within one percent."
+   },
+   {
+    "en": "Each equation finds its own vapor pressure from one condition: equal fugacity in the two phases.",
+    "th": "แต่ละสมการหาความดันไอของตัวเองจากเงื่อนไขเดียว คือ fugacity ในสองเฟสต้องเท่ากัน"
+   }
+  ],
+  "outcomes": [
+   {
+    "en": "By the end of today you can do four things.",
+    "th": "เมื่อจบคาบนี้ คุณจะทำได้สี่อย่าง"
+   },
+   {
+    "en": "Define fugacity and the fugacity coefficient, and compute them from data, the virial equation or a cubic.",
+    "th": "นิยาม fugacity และ fugacity coefficient และคำนวณจากข้อมูล สมการ virial หรือสมการกำลังสาม"
+   },
+   {
+    "en": "Find the vapor pressure of an equation of state from equal fugacity, and use the Clapeyron equation.",
+    "th": "หาความดันไอของสมการสภาวะจาก fugacity ที่เท่ากัน และใช้สมการ Clapeyron"
+   },
+   {
+    "en": "Compute the fugacity of a compressed liquid and of a solid.",
+    "th": "คำนวณ fugacity ของของเหลวอัดและของแข็ง"
+   }
+  ],
+  "route": [
+   {
+    "en": "Here is the 180-minute route.",
+    "th": "นี่คือเส้นทางของคาบ 180 นาที",
+    "say": "Here is the one hundred eighty minute route."
+   },
+   {
+    "en": "Thirty minutes of concepts, fugacity by hand, a demonstration in Lab P4, a break, and a 70-minute pair investigation.",
+    "th": "สามสิบนาทีแรกเป็นแนวคิด คำนวณ fugacity ด้วยมือ สาธิต Lab P4 พัก และทำงานเป็นคู่ 70 นาที",
+    "say": "Thirty minutes of concepts, fugacity by hand, a demonstration in Lab P four, a break, and a seventy minute pair investigation."
+   },
+   {
+    "en": "The session question: what decides when two phases of a pure fluid coexist, and how well do an equation of state and the classical approximations reproduce what we measure?",
+    "th": "คำถามของคาบนี้คือ อะไรกำหนดว่าสองเฟสของสารบริสุทธิ์อยู่ร่วมกันได้ และสมการสภาวะกับการประมาณแบบดั้งเดิมทำนายสิ่งที่วัดได้ดีเพียงใด"
+   }
+  ],
+  "fugacity": [
+   {
+    "en": "For an ideal gas at fixed temperature, d mu equals RT d ln P. For any fluid we define the fugacity by the same equation, with f equal to P at zero pressure.",
+    "th": "สำหรับแก๊สอุดมคติที่อุณหภูมิคงที่ dμ = RT d ln P สำหรับของไหลใด ๆ เรานิยาม fugacity ด้วยสมการเดียวกัน โดย f เท่ากับ P ที่ความดันศูนย์",
+    "say": "For an ideal gas at fixed temperature, d mu equals R T d ln P. For any fluid we define the fugacity by the same equation, with f equal to P at zero pressure."
+   },
+   {
+    "en": "The fugacity coefficient is f over P, and for a pure fluid its log is the residual Gibbs energy over RT.",
+    "th": "fugacity coefficient คือ f/P และสำหรับสารบริสุทธิ์ ln ของมันคือ residual Gibbs energy หารด้วย RT",
+    "say": "The fugacity coefficient is f over P, and for a pure fluid its log is the residual Gibbs energy over R T."
+   },
+   {
+    "en": "For carbon dioxide vapor at 280 kelvin and 30 bar, NIST gives phi equal to 0.819 and f equal to 24.6 bar.",
+    "th": "สำหรับไอคาร์บอนไดออกไซด์ที่ 280 เคลวิน และ 30 บาร์ NIST ให้ φ เท่ากับ 0.819 และ f เท่ากับ 24.6 บาร์",
+    "say": "For carbon dioxide vapor at two hundred eighty kelvin and thirty bar, N I S T gives phi equal to zero point eight one nine and f equal to twenty four point six bar."
+   },
+   {
+    "en": "For equilibrium, the real gas behaves as an ideal gas at 24.6 bar.",
+    "th": "ในแง่ของสมดุล แก๊สจริงนี้มีพฤติกรรมเหมือนแก๊สอุดมคติที่ 24.6 บาร์",
+    "say": "For equilibrium, the real gas behaves as an ideal gas at twenty four point six bar."
+   }
+  ],
+  "equal-f": [
+   {
+    "en": "Equal chemical potential at the same temperature and pressure is the same as equal fugacity, or equal ln phi.",
+    "th": "ศักย์เคมีที่เท่ากันที่อุณหภูมิและความดันเดียวกัน เทียบเท่ากับ fugacity ที่เท่ากัน หรือ ln φ ที่เท่ากัน"
+   },
+   {
+    "en": "The plot shows ln phi of the two Peng-Robinson roots for carbon dioxide at 280 kelvin. The phase with the lower ln phi is stable.",
+    "th": "กราฟแสดง ln φ ของรากทั้งสองของ Peng–Robinson สำหรับคาร์บอนไดออกไซด์ที่ 280 เคลวิน เฟสที่มี ln φ ต่ำกว่าคือเฟสที่เสถียร",
+    "say": "The plot shows l n phi of the two Peng Robinson roots for carbon dioxide at two hundred eighty kelvin. The phase with the lower l n phi is stable."
+   },
+   {
+    "en": "They cross at 41.58 bar, the vapor pressure of the equation. NIST gives 41.61.",
+    "th": "สองเส้นตัดกันที่ 41.58 บาร์ ซึ่งคือความดันไอของสมการ ขณะที่ NIST ให้ 41.61",
+    "say": "They cross at forty one point five eight bar, the vapor pressure of the equation. N I S T gives forty one point six one."
+   },
+   {
+    "en": "Search between the spinodal pressures. Outside them there is one root, and the condition holds trivially.",
+    "th": "ให้ค้นหาระหว่างความดัน spinodal เพราะนอกช่วงนั้นมีเพียงรากเดียว และเงื่อนไขจะเป็นจริงแบบไม่มีความหมาย"
+   }
+  ],
+  "psat": [
+   {
+    "en": "Across the vapor-pressure curve, SRK and Peng-Robinson stay within about one percent for the nonpolar fluids, and within six percent for water at low temperature.",
+    "th": "ตลอดเส้นความดันไอ SRK และ Peng–Robinson คลาดเคลื่อนประมาณหนึ่งเปอร์เซ็นต์สำหรับของไหลไม่มีขั้ว และไม่เกินหกเปอร์เซ็นต์สำหรับน้ำที่อุณหภูมิต่ำ"
+   },
+   {
+    "en": "Van der Waals is tens to hundreds of percent too high, because its attraction does not grow as the temperature falls.",
+    "th": "van der Waals สูงเกินไปหลายสิบถึงหลายร้อยเปอร์เซ็นต์ เพราะแรงดึงดูดของมันไม่เพิ่มขึ้นเมื่ออุณหภูมิลดลง"
+   },
+   {
+    "en": "SRK and Peng-Robinson were fitted to vapor pressures, so a good vapor pressure tests the fit. The liquid volume and the enthalpy of vaporization are independent tests.",
+    "th": "SRK และ Peng–Robinson ถูกปรับให้เข้ากับความดันไอ ความดันไอที่ถูกต้องจึงทดสอบเพียงการปรับค่า ส่วนปริมาตรของเหลวและเอนทัลปีการกลายเป็นไอเป็นการทดสอบที่เป็นอิสระ",
+    "say": "S R K and Peng Robinson were fitted to vapor pressures, so a good vapor pressure tests the fit. The liquid volume and the enthalpy of vaporization are independent tests."
+   }
+  ],
+  "clapeyron": [
+   {
+    "en": "Along the coexistence curve the two chemical potentials change together. That gives the Clapeyron equation, which is exact.",
+    "th": "ตามเส้นการอยู่ร่วมกัน ศักย์เคมีของสองเฟสเปลี่ยนไปพร้อมกัน ซึ่งให้สมการ Clapeyron ที่เป็นสมการแม่นตรง"
+   },
+   {
+    "en": "Clausius-Clapeyron adds two approximations: an ideal vapor and a negligible liquid volume.",
+    "th": "Clausius–Clapeyron เพิ่มการประมาณสองข้อ คือไอเป็นแก๊สอุดมคติ และปริมาตรของเหลวน้อยจนละได้",
+    "say": "Clausius Clapeyron adds two approximations: an ideal vapor and a negligible liquid volume."
+   },
+   {
+    "en": "For propane its error is 3 percent at a reduced temperature of 0.6, 40 percent at 0.85, and 122 percent at 0.95.",
+    "th": "สำหรับโพรเพน ความคลาดเคลื่อนคือ 3 เปอร์เซ็นต์ที่อุณหภูมิลดรูป 0.6, 40 เปอร์เซ็นต์ที่ 0.85 และ 122 เปอร์เซ็นต์ที่ 0.95",
+    "say": "For propane its error is three percent at a reduced temperature of zero point six, forty percent at zero point eight five, and one hundred twenty two percent at zero point nine five."
+   },
+   {
+    "en": "The Clapeyron equation with the NIST volume change agrees within 0.01 percent.",
+    "th": "สมการ Clapeyron ที่ใช้การเปลี่ยนแปลงปริมาตรจาก NIST ตรงกันภายใน 0.01 เปอร์เซ็นต์",
+    "say": "The Clapeyron equation with the N I S T volume change agrees within zero point zero one percent."
+   }
+  ],
+  "isotherm": [
+   {
+    "en": "Along an isotherm, d ln f by dP equals V over RT.",
+    "th": "ตามไอโซเทอร์ม d ln f/dP เท่ากับ V/RT"
+   },
+   {
+    "en": "The fugacity is continuous at the vapor pressure because mu is, but its slope drops from the vapor volume to the liquid volume.",
+    "th": "fugacity ต่อเนื่องที่ความดันไอเพราะ μ ต่อเนื่อง แต่ความชันลดลงจากปริมาตรไอเป็นปริมาตรของเหลว"
+   },
+   {
+    "en": "For carbon dioxide at 280 kelvin, f is 31.1 bar at saturation, 35.1 bar at 100 bar and 42.7 bar at 200 bar.",
+    "th": "สำหรับคาร์บอนไดออกไซด์ที่ 280 เคลวิน f เท่ากับ 31.1 บาร์ที่จุดอิ่มตัว 35.1 บาร์ที่ 100 บาร์ และ 42.7 บาร์ที่ 200 บาร์",
+    "say": "For carbon dioxide at two hundred eighty kelvin, f is thirty one point one bar at saturation, thirty five point one bar at one hundred bar and forty two point seven bar at two hundred bar."
+   }
+  ],
+  "poynting": [
+   {
+    "en": "Integrating from saturation gives the fugacity of a compressed liquid: phi sat times P sat times the Poynting factor.",
+    "th": "การอินทิเกรตจากจุดอิ่มตัวให้ fugacity ของของเหลวอัด คือ φsat × Psat × Poynting factor",
+    "say": "Integrating from saturation gives the fugacity of a compressed liquid: phi sat times P sat times the Poynting factor."
+   },
+   {
+    "en": "With a constant liquid volume the factor is 1.039 for water at 500 kelvin and 100 bar, and 1.40 for carbon dioxide at 280 kelvin and 200 bar.",
+    "th": "เมื่อถือว่าปริมาตรของเหลวคงที่ ค่านี้เท่ากับ 1.039 สำหรับน้ำที่ 500 เคลวิน และ 100 บาร์ และ 1.40 สำหรับคาร์บอนไดออกไซด์ที่ 280 เคลวิน และ 200 บาร์",
+    "say": "With a constant liquid volume the factor is one point zero three nine for water at five hundred kelvin and one hundred bar, and one point four zero for carbon dioxide at two hundred eighty kelvin and two hundred bar."
+   },
+   {
+    "en": "For water the estimate is within 0.1 percent. For carbon dioxide at 200 bar it is 2.3 percent high, because the liquid near its critical point is compressible.",
+    "th": "สำหรับน้ำ ค่าประมาณคลาดไม่เกิน 0.1 เปอร์เซ็นต์ แต่สำหรับคาร์บอนไดออกไซด์ที่ 200 บาร์ สูงไป 2.3 เปอร์เซ็นต์ เพราะของเหลวใกล้จุดวิกฤตอัดตัวได้",
+    "say": "For water the estimate is within zero point one percent. For carbon dioxide at two hundred bar it is two point three percent high, because the liquid near its critical point is compressible."
+   }
+  ],
+  "solid": [
+   {
+    "en": "Below the melting point the solid is stable. Its fugacity relative to the subcooled liquid follows from the enthalpy of fusion.",
+    "th": "ที่อุณหภูมิต่ำกว่าจุดหลอมเหลว ของแข็งเป็นเฟสที่เสถียร fugacity ของมันเทียบกับของเหลวที่เย็นยิ่งยวดได้จากเอนทัลปีการหลอมเหลว"
+   },
+   {
+    "en": "For ice at 263 kelvin the equation gives 0.904. The measured vapor pressures of ice and supercooled water give 0.907.",
+    "th": "สำหรับน้ำแข็งที่ 263 เคลวิน สมการให้ 0.904 ส่วนความดันไอที่วัดได้ของน้ำแข็งและน้ำเย็นยิ่งยวดให้ 0.907",
+    "say": "For ice at two hundred sixty three kelvin the equation gives zero point nine zero four. The measured vapor pressures of ice and supercooled water give zero point nine zero seven."
+   },
+   {
+    "en": "The error grows at lower temperature because the heat-capacity difference was neglected. Session 4 after the midterm uses this for solubility and freezing.",
+    "th": "ความคลาดเคลื่อนเพิ่มขึ้นที่อุณหภูมิต่ำลง เพราะละเลยผลต่างของความจุความร้อน คาบที่ 4 หลัง midterm ใช้ความสัมพันธ์นี้กับการละลายและการเยือกแข็ง",
+    "say": "The error grows at lower temperature because the heat-capacity difference was neglected. Session four after the midterm uses this for solubility and freezing."
+   }
+  ],
+  "activity-1": [
+   {
+    "en": "Activity 1, ten minutes. Carbon dioxide at 280 kelvin.",
+    "th": "กิจกรรมที่ 1 สิบนาที คาร์บอนไดออกไซด์ที่ 280 เคลวิน",
+    "say": "Activity one, ten minutes. Carbon dioxide at two hundred eighty kelvin."
+   },
+   {
+    "en": "First the vapor at 30 bar from the virial equation, then the liquid at 100 bar with the Poynting factor.",
+    "th": "ส่วนแรกคือไอที่ 30 บาร์จากสมการ virial จากนั้นคือของเหลวที่ 100 บาร์ด้วย Poynting factor",
+    "say": "First the vapor at thirty bar from the virial equation, then the liquid at one hundred bar with the Poynting factor."
+   },
+   {
+    "en": "Work in SI units and compare with the NIST values on the slide.",
+    "th": "ใช้หน่วย SI และเทียบกับค่าจาก NIST บนสไลด์",
+    "say": "Work in S I units and compare with the N I S T values on the slide."
+   }
+  ],
+  "activity-1-debrief": [
+   {
+    "en": "Check your answer. For the vapor, ln phi is minus 0.1865, so f is 24.9 bar, 1.3 percent above NIST.",
+    "th": "ตรวจคำตอบ สำหรับไอ ln φ เท่ากับ ลบ 0.1865 ดังนั้น f เท่ากับ 24.9 บาร์ สูงกว่า NIST 1.3 เปอร์เซ็นต์",
+    "say": "Check your answer. For the vapor, l n phi is minus zero point one eight six five, so f is twenty four point nine bar, one point three percent above N I S T."
+   },
+   {
+    "en": "For the liquid, the Poynting factor is 1.133 and f is 35.26 bar, 0.4 percent above NIST.",
+    "th": "สำหรับของเหลว Poynting factor เท่ากับ 1.133 และ f เท่ากับ 35.26 บาร์ สูงกว่า NIST 0.4 เปอร์เซ็นต์",
+    "say": "For the liquid, the Poynting factor is one point one three three and f is thirty five point two six bar, zero point four percent above N I S T."
+   },
+   {
+    "en": "Without the Poynting factor the liquid fugacity is 11 percent low; with phi equal to one as well, it is 18 percent high.",
+    "th": "ถ้าไม่ใช้ Poynting factor fugacity ของของเหลวจะต่ำไป 11 เปอร์เซ็นต์ และถ้าให้ φ เท่ากับหนึ่งด้วย จะสูงไป 18 เปอร์เซ็นต์",
+    "say": "Without the Poynting factor the liquid fugacity is eleven percent low; with phi equal to one as well, it is eighteen percent high."
+   }
+  ],
+  "demo-lab": [
+   {
+    "en": "Now a demonstration in Lab P4.",
+    "th": "ต่อไปเป็นการสาธิตใน Lab P4",
+    "say": "Now a demonstration in Lab P four."
+   },
+   {
+    "en": "Carbon dioxide at 280 kelvin: read the vapor pressure, the volumes and the enthalpy of vaporization of the three cubics.",
+    "th": "คาร์บอนไดออกไซด์ที่ 280 เคลวิน อ่านความดันไอ ปริมาตร และเอนทัลปีการกลายเป็นไอของสมการกำลังสามทั้งสาม",
+    "say": "Carbon dioxide at two hundred eighty kelvin: read the vapor pressure, the volumes and the enthalpy of vaporization of the three cubics."
+   },
+   {
+    "en": "The paper check shows the two equal values of ln phi. The fugacity view shows the bend at the vapor pressure.",
+    "th": "การตรวจบนกระดาษแสดงค่า ln φ สองค่าที่เท่ากัน และมุมมอง fugacity แสดงจุดหักที่ความดันไอ"
+   },
+   {
+    "en": "Then propane at 200 kelvin with van der Waals, and investigation A over the whole curve.",
+    "th": "จากนั้นดูโพรเพนที่ 200 เคลวินด้วย van der Waals และการสืบค้น A ตลอดเส้นความดันไอ",
+    "say": "Then propane at two hundred kelvin with van der Waals, and investigation A over the whole curve."
+   }
+  ],
+  "mistakes": [
+   {
+    "en": "Four common mistakes.",
+    "th": "ข้อผิดพลาดที่พบบ่อยสี่ข้อ"
+   },
+   {
+    "en": "The trivial solution: outside the spinodals there is one root, so equal ln phi holds for the same root.",
+    "th": "คำตอบที่ไม่มีความหมาย นอกช่วง spinodal มีเพียงรากเดียว ln φ จึงเท่ากันเพราะเป็นรากเดียวกัน"
+   },
+   {
+    "en": "Setting phi sat to one at high pressure, and using Clausius-Clapeyron near the critical point.",
+    "th": "การให้ φsat เท่ากับหนึ่งที่ความดันสูง และการใช้ Clausius–Clapeyron ใกล้จุดวิกฤต",
+    "say": "Setting phi sat to one at high pressure, and using Clausius Clapeyron near the critical point."
+   },
+   {
+    "en": "And a Poynting exponent that starts from zero pressure instead of from saturation.",
+    "th": "และการเริ่มเลขชี้กำลังของ Poynting จากความดันศูนย์ แทนที่จะเริ่มจากจุดอิ่มตัว"
+   }
+  ],
+  "break": [
+   {
+    "en": "Take a ten-minute break.",
+    "th": "พักสิบนาที"
+   },
+   {
+    "en": "Next is a 70-minute pair investigation in Lab P4. Check that the lab opens on your device.",
+    "th": "ต่อไปเป็นการทำงานเป็นคู่ 70 นาทีใน Lab P4 ตรวจสอบว่าแล็บเปิดได้บนอุปกรณ์ของคุณ",
+    "say": "Next is a seventy minute pair investigation in Lab P four. Check that the lab opens on your device."
+   }
+  ],
+  "activity-2": [
+   {
+    "en": "Activity 2, seventy minutes, in pairs.",
+    "th": "กิจกรรมที่ 2 เจ็ดสิบนาที ทำเป็นคู่",
+    "say": "Activity two, seventy minutes, in pairs."
+   },
+   {
+    "en": "First the vapor pressure of four fluids and the whole curve, then three routes to the enthalpy of vaporization.",
+    "th": "ส่วนแรกคือความดันไอของสี่ของไหลและตลอดเส้นความดันไอ จากนั้นคือสามวิธีหาเอนทัลปีการกลายเป็นไอ"
+   },
+   {
+    "en": "Then the fugacity of liquids and solids in investigation C.",
+    "th": "จากนั้นคือ fugacity ของของเหลวและของแข็งในการสืบค้น C"
+   },
+   {
+    "en": "Finish with two sentences that answer the session question with numbers.",
+    "th": "ปิดท้ายด้วยสองประโยคที่ตอบคำถามของคาบพร้อมตัวเลข"
+   }
+  ],
+  "activity-2-check": [
+   {
+    "en": "Here is what to hand in, and the numbers to check against.",
+    "th": "นี่คือสิ่งที่ต้องส่ง และตัวเลขสำหรับตรวจผล"
+   },
+   {
+    "en": "Peng-Robinson gives the four vapor pressures within one percent, but the saturated liquid volume of water 23 percent too large.",
+    "th": "Peng–Robinson ให้ความดันไอของทั้งสี่สารคลาดไม่เกินหนึ่งเปอร์เซ็นต์ แต่ปริมาตรของน้ำเหลวอิ่มตัวมากเกินไป 23 เปอร์เซ็นต์",
+    "say": "Peng Robinson gives the four vapor pressures within one percent, but the saturated liquid volume of water twenty three percent too large."
+   },
+   {
+    "en": "Clausius-Clapeyron passes ten percent error near a reduced temperature of 0.7.",
+    "th": "Clausius–Clapeyron มีความคลาดเคลื่อนเกินสิบเปอร์เซ็นต์ที่อุณหภูมิลดรูปประมาณ 0.7",
+    "say": "Clausius Clapeyron passes ten percent error near a reduced temperature of zero point seven."
+   }
+  ],
+  "discussion": [
+   {
+    "en": "Discuss three questions.",
+    "th": "อภิปรายสามคำถาม"
+   },
+   {
+    "en": "How can Peng-Robinson give the right vapor pressure of water with a liquid volume 23 percent too large?",
+    "th": "Peng–Robinson ให้ความดันไอของน้ำถูกต้องได้อย่างไร ทั้งที่ปริมาตรของเหลวมากเกินไป 23 เปอร์เซ็นต์",
+    "say": "How can Peng Robinson give the right vapor pressure of water with a liquid volume twenty three percent too large?"
+   },
+   {
+    "en": "Why does Clausius-Clapeyron fail near the critical point while Clapeyron does not?",
+    "th": "ทำไม Clausius–Clapeyron จึงใช้ไม่ได้ใกล้จุดวิกฤต ขณะที่ Clapeyron ยังใช้ได้",
+    "say": "Why does Clausius Clapeyron fail near the critical point while Clapeyron does not?"
+   },
+   {
+    "en": "And in a flash at one bar, which corrections can you set to one?",
+    "th": "และในการคำนวณ flash ที่หนึ่งบาร์ การแก้ค่าใดบ้างที่ให้เท่ากับหนึ่งได้"
+   }
+  ],
+  "summary": [
+   {
+    "en": "To summarize. Fugacity is defined by d mu equals RT d ln f, and two phases coexist when their fugacities are equal.",
+    "th": "สรุป fugacity นิยามโดย dμ = RT d ln f และสองเฟสอยู่ร่วมกันได้เมื่อ fugacity เท่ากัน",
+    "say": "To summarize. Fugacity is defined by d mu equals R T d ln f, and two phases coexist when their fugacities are equal."
+   },
+   {
+    "en": "The vapor pressure of a cubic is the crossing of ln phi of its two roots, between the spinodals.",
+    "th": "ความดันไอของสมการกำลังสามคือจุดตัดของ ln φ ของรากทั้งสอง ระหว่างความดัน spinodal",
+    "say": "The vapor pressure of a cubic is the crossing of l n phi of its two roots, between the spinodals."
+   },
+   {
+    "en": "A liquid has phi sat times P sat times the Poynting factor; a solid follows from the enthalpy of fusion.",
+    "th": "ของเหลวมี fugacity เท่ากับ φsat × Psat × Poynting factor ส่วนของแข็งได้จากเอนทัลปีการหลอมเหลว",
+    "say": "A liquid has phi sat times P sat times the Poynting factor; a solid follows from the enthalpy of fusion."
+   },
+   {
+    "en": "Next session, P5: mixtures, partial molar properties and the fugacity of a component in a mixture.",
+    "th": "คาบหน้า P5 ของผสม partial molar properties และ fugacity ขององค์ประกอบในของผสม",
+    "say": "Next session, P five: mixtures, partial molar properties and the fugacity of a component in a mixture."
+   }
+  ],
+  "exit-ticket": [
+   {
+    "en": "Exit ticket, five minutes, anonymous.",
+    "th": "Exit ticket ห้านาที ไม่ระบุชื่อ"
+   },
+   {
+    "en": "At 280 kelvin, carbon dioxide vapor and liquid coexist at 41.6 bar, with molar volumes that differ by a factor of seven.",
+    "th": "ที่ 280 เคลวิน ไอและของเหลวคาร์บอนไดออกไซด์อยู่ร่วมกันที่ 41.6 บาร์ โดยมีปริมาตรต่อโมลต่างกันเจ็ดเท่า",
+    "say": "At two hundred eighty kelvin, carbon dioxide vapor and liquid coexist at forty one point six bar, with molar volumes that differ by a factor of seven."
+   },
+   {
+    "en": "Name three quantities that are equal in the two phases, and give the fugacity at saturation if phi sat is 0.748.",
+    "th": "ระบุปริมาณสามอย่างที่เท่ากันในสองเฟส และหา fugacity ที่จุดอิ่มตัวถ้า φsat เท่ากับ 0.748",
+    "say": "Name three quantities that are equal in the two phases, and give the fugacity at saturation if phi sat is zero point seven four eight."
+   }
+  ],
+  "after-class": [
+   {
+    "en": "After class, finish Lab P4 and upload the study file to myCourseVille.",
+    "th": "หลังเลิกเรียน ทำ Lab P4 ให้เสร็จ และอัปโหลดไฟล์ study ไปที่ myCourseVille",
+    "say": "After class, finish Lab P four and upload the study file to my course ville."
+   },
+   {
+    "en": "Read the pre-class note for session P5, about twenty minutes.",
+    "th": "อ่าน pre-class note ของคาบ P5 ใช้เวลาประมาณยี่สิบนาที",
+    "say": "Read the pre-class note for session P five, about twenty minutes."
+   },
+   {
+    "en": "Graduate students can write an equal-fugacity solver with an AI assistant and check it in step E.",
+    "th": "นิสิตระดับบัณฑิตศึกษาสามารถเขียนโปรแกรมแก้เงื่อนไข fugacity เท่ากันด้วยผู้ช่วย AI แล้วตรวจสอบในขั้นตอน E",
+    "say": "Graduate students can write an equal-fugacity solver with an A I assistant and check it in step E."
+   }
+  ]
+ }
+}
