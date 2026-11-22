@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Fugacity and vapor pressure · Thermodynamics Labs 2027 preview</title>
+  <meta name="description" content="Lab P4: compute the fugacity of a pure fluid from an equation of state and from reference data, find the vapor pressure of a cubic by equal fugacity, test the Clapeyron equation and the Poynting correction.">
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="assets/labs.css?v=r8">
+</head>
+<body data-mode="core">
+<div class="draft-banner" role="note">Draft for 2027. If you are taking 2105603 this year, use the <a href="../index.html">current course page</a>.</div>
+  <a class="skip-link" href="#experiment">Skip to the experiment</a>
+  <header class="site-header"><a class="brand" href="index.html">SKH <span>Thermodynamics Labs</span></a><nav aria-label="Course navigation"><a href="fugacity.html">Lab P4</a><a href="index.html#sessions">All 2027 labs</a><a href="../slides-2027/index.html">Slides</a><a href="../">Course</a></nav></header>
+  <main class="page" id="experiment">
+    <div class="page-intro">
+      <div><p class="eyebrow">Lab P4 · Fugacity and the vapor pressure of a pure fluid</p><h1>When do liquid and vapor coexist, and what is the fugacity of each?</h1><p id="case-description" class="intro-copy">Two phases of a pure fluid coexist when their fugacities are equal. The lab finds the vapor pressure of the van der Waals, SRK and Peng–Robinson equations from that condition, compares it with the NIST saturation tables of four fluids, and follows the fugacity along three isotherms through the phase change.</p></div>
+      <p class="preview-note">2027 prototype<br>Session P4</p>
+    </div>
+    <fieldset class="mode-switch"><legend>View</legend><div class="mode-options"><label><input type="radio" name="lab-mode" value="core" checked><span>Core concepts</span></label><label><input type="radio" name="lab-mode" value="graduate"><span>Graduate investigation</span></label></div><p class="core-only">Core: predict, find the vapor pressure, read the fugacity along an isotherm and check the equal-fugacity condition on paper.</p><p class="grad-only">Graduate: test a cubic over the whole vapor-pressure curve, compare three routes to the enthalpy of vaporization, test the Poynting correction and the solid–liquid fugacity ratio, and check code written with an AI assistant.</p></fieldset>
+    <p class="graduate-note grad-only"><strong>Graduate route.</strong> Complete Steps 1–3 for the four fluids and the three isotherms, then run A–C and E in Step 4. <a href="#graduate-investigation">Go to the graduate investigation</a>.</p>
+
+    <section class="starter" aria-label="Starting problems">
+      <div class="starter-label"><strong>Choose a state</strong><span>Each sets the fluid, the temperature and the isotherm.</span></div>
+      <div class="case-buttons"><button type="button" data-case="co2" aria-pressed="true">CO₂ · 280 K</button><button type="button" data-case="propane" aria-pressed="false">Propane · 300 K</button><button type="button" data-case="water" aria-pressed="false">Water · 500 K</button><button type="button" data-case="methane" aria-pressed="false">Methane · 150 K</button></div>
+      <p id="case-source" class="source-note">Data: NIST Chemistry WebBook, SRD 69 (Lemmon, McLinden and Friend), saturation tables and isotherms from the reference equations of state of Setzmann and Wagner (methane), Span and Wagner (CO₂), Lemmon, McLinden and Wagner (propane) and IAPWS-95 (water). Reference ln φ = [G(T, P) − G(T, 0.001 bar)]/RT − ln(P/0.001 bar) with G = H − TS from the tables. Ice and supercooled water: Murphy and Koop (2005).</p>
+    </section>
+
+    <figure class="panel phase-picture" aria-labelledby="picture-heading">
+      <div class="panel-heading"><h2 id="picture-heading">Equal fugacity, equal Gibbs energy</h2><span class="section-help">The condition for two phases of a pure fluid</span></div>
+      <div class="vlle-figures vr-figures">
+        <div>
+          <svg class="eq-sketch" viewBox="0 0 520 230" role="img" aria-labelledby="eq-title eq-description">
+            <title id="eq-title">Fugacity and the fugacity coefficient</title>
+            <desc id="eq-description">At constant temperature d mu equals RT d ln f, with f tending to P as P tends to zero. The fugacity coefficient phi equals f over P, and ln phi equals G R over RT. Two phases coexist when f liquid equals f vapor, which is the same as equal ln phi at the same T and P.</desc>
+            <g class="eq-main" style="font-size:20px"><text x="260" y="58">dμ = RT d ln f  (T fixed),  f → P as P → 0</text><text x="260" y="108">φ = f/P,  ln φ = G<tspan baseline-shift="super" font-size="70%">R</tspan>/RT = ∫₀<tspan baseline-shift="super" font-size="70%">P</tspan>(Z − 1) dP/P</text><text x="260" y="158" class="eq-amber-text">f<tspan baseline-shift="super" font-size="70%">L</tspan> = f<tspan baseline-shift="super" font-size="70%">V</tspan>  ⇔  ln φ<tspan baseline-shift="super" font-size="70%">L</tspan> = ln φ<tspan baseline-shift="super" font-size="70%">V</tspan> at P<tspan baseline-shift="super" font-size="70%">sat</tspan></text></g>
+            <g class="eq-caption"><text x="260" y="206">the vapor pressure of a cubic: the P where its two outer roots have equal ln φ</text></g>
+          </svg>
+          <p class="figure-caption">f has the units of pressure. It is the pressure an ideal gas would need to have the same chemical potential.</p>
+        </div>
+        <div>
+          <svg class="eq-sketch" viewBox="0 0 520 230" role="img" aria-labelledby="poy-title poy-description">
+            <title id="poy-title">The fugacity of a compressed liquid</title>
+            <desc id="poy-description">The liquid fugacity at pressure P equals phi sat times P sat times the Poynting factor, the exponential of the integral of V liquid over RT from P sat to P. With constant liquid volume this is the exponential of V L times P minus P sat over RT.</desc>
+            <g class="eq-main" style="font-size:20px"><text x="260" y="68">f<tspan baseline-shift="super" font-size="70%">L</tspan>(P) = φ<tspan baseline-shift="super" font-size="70%">sat</tspan>P<tspan baseline-shift="super" font-size="70%">sat</tspan> exp∫ V<tspan baseline-shift="super" font-size="70%">L</tspan>dP/RT</text><text x="260" y="122" class="eq-teal-text">≈ φ<tspan baseline-shift="super" font-size="70%">sat</tspan>P<tspan baseline-shift="super" font-size="70%">sat</tspan> exp[V<tspan baseline-shift="super" font-size="70%">L</tspan>(P − P<tspan baseline-shift="super" font-size="70%">sat</tspan>)/RT]</text></g>
+            <g class="eq-caption"><text x="260" y="176">the exponential is the Poynting factor</text><text x="260" y="204">solid: ln(f<tspan baseline-shift="sub" font-size="70%">s</tspan>/f<tspan baseline-shift="sub" font-size="70%">l</tspan>) ≈ −(ΔH<tspan baseline-shift="sub" font-size="70%">fus</tspan>/R)(1/T − 1/T<tspan baseline-shift="sub" font-size="70%">m</tspan>)</text></g>
+          </svg>
+          <p class="figure-caption">A liquid's fugacity changes slowly with pressure because V<sup>L</sup> is small. Post-midterm Sessions 1 and 4 use these two forms.</p>
+        </div>
+      </div>
+      <figcaption>Cubic: ln φ = Z − 1 − ln(Z − β) − qI for each root (Lab P3). The equation's vapor pressure is found by bisection between its two spinodal pressures.</figcaption>
+    </figure>
+
+    <div class="experiment-grid vle-experiment-grid">
+      <section class="panel setup-panel" aria-labelledby="setup-heading">
+        <div class="panel-heading"><h2 id="setup-heading">1. Choose the fluid, the temperature and the isotherm</h2><span class="condition">Basis · 1 mol</span></div>
+        <div id="form-error" class="error-summary" role="alert" tabindex="-1" hidden></div>
+        <form id="fug-form" novalidate>
+          <label for="fluid">Fluid for the vapor pressure</label><select id="fluid"><option value="co2">Carbon dioxide</option><option value="propane">Propane</option><option value="water">Water</option><option value="methane">Methane</option></select>
+          <label for="temp">Temperature / K</label><input id="temp" type="number" step="any" value="280">
+          <label for="iso">Isotherm for the fugacity</label><select id="iso"></select>
+          <label for="model">Cubic for the fugacity and the paper check</label><select id="model"><option value="pr">Peng–Robinson</option><option value="srk">Soave–Redlich–Kwong</option><option value="vdw">van der Waals</option></select>
+          <div class="prediction-row"><label for="prediction">Before calculating: by how much does compressing liquid CO₂ at 280 K from its vapor pressure to 200 bar raise its fugacity?</label><select id="prediction"><option value="">Not sure yet</option><option value="low">Less than 10%</option><option value="mid">10–30%</option><option value="high">More than 30%</option></select></div>
+          <button id="calculate" class="primary-button calculate-button" type="button">Find the vapor pressure and the fugacity</button>
+          <p class="input-help">Add a calculated result to the comparison before changing a setting.</p>
+          <details class="advanced"><summary>Data and method</summary><p>The reference vapor pressure is interpolated in ln P between rows of the NIST saturation table (300 rows from the triple point or the table start to T<sub>c</sub>). The cubic's vapor pressure is the pressure between its spinodals where ln φ of the liquid and vapor roots are equal, to about 10⁻¹² in ln φ. ΔH<sub>vap</sub> of the cubic is H<sup>R</sup>(vapor) − H<sup>R</sup>(liquid) at that pressure. The Poynting estimate uses the reference saturated liquid volume and φ<sup>sat</sup>.</p></details>
+        </form>
+      </section>
+
+      <section class="panel result-panel" aria-labelledby="result-heading">
+        <div class="panel-heading"><h2 id="result-heading">2. Compare with the reference</h2></div>
+        <div id="result-placeholder" class="result-placeholder"><p>Calculate to see the vapor pressure of each cubic and the fugacity along the isotherm.</p></div>
+        <div id="results" hidden>
+          <p id="result-phase" class="phase-result"></p><p id="phase-interpretation" class="section-help"></p><p id="prediction-feedback" class="prediction-feedback" aria-live="polite"></p>
+          <h3 class="table-title" id="sat-title">Saturation at this temperature</h3>
+          <div class="table-scroll" role="region" aria-label="Saturation state from each model" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">Model</th><th scope="col">P<sup>sat</sup> / bar</th><th scope="col">V<sup>L</sup> / (cm³/mol)</th><th scope="col">V<sup>V</sup> / (cm³/mol)</th><th scope="col">φ<sup>sat</sup></th><th scope="col">ΔH<sub>vap</sub> / (J/mol)</th></tr></thead><tbody id="sat-body"></tbody></table></div>
+          <h3 class="table-title" id="fug-title">Fugacity along the isotherm</h3>
+          <div class="table-scroll" role="region" aria-label="Fugacity along the isotherm" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">P / bar</th><th scope="col">Phase</th><th scope="col">f reference / bar</th><th scope="col">φ reference</th><th scope="col">f cubic / bar</th><th scope="col">f Poynting / bar</th><th scope="col">Poynting factor</th></tr></thead><tbody id="fug-body"></tbody></table></div>
+          <div class="calculation-check"><h3>Check the calculation on paper</h3><ol id="calc-steps"></ol></div>
+        </div>
+        <div class="save-case-row"><label for="case-name">Name this case</label><input id="case-name" type="text" value="CO₂ · 280 K" maxlength="80"><button id="save-case" class="secondary-button" type="button" disabled>Add result to comparison</button></div>
+      </section>
+    </div>
+
+    <section id="diagram-panel" class="panel diagram-panel" aria-labelledby="diagram-heading" hidden>
+      <div class="panel-heading"><h2 id="diagram-heading">3. Read the fugacity and the vapor-pressure curve</h2><span class="section-help">Reference points and model curves</span></div>
+      <div class="chart-toolbar"><label for="view">Show</label><select id="view"><option value="f">Fugacity against P on the isotherm</option><option value="psat">ln P<sup>sat</sup> against 1/T</option></select></div>
+      <div id="fug-chart" class="vle-chart" role="img" aria-label="Fugacity or vapor-pressure plot. Numbers are listed in Step 2."></div>
+      <div id="chart-legend" class="plot-legend"></div>
+      <p id="chart-note" class="chart-note"></p>
+    </section>
+
+    <section id="concept-check" class="panel core-only" aria-labelledby="concept-heading">
+      <div class="panel-heading"><h2 id="concept-heading">4. Check your understanding</h2><span class="section-help">Write first, then compare</span></div>
+      <p class="section-help">Use Steps 1–3 to answer each question in your own words. Then open the explanation and compare. Your answers are saved with your study.</p>
+      <div class="concept-question"><h3>A. Why does the fugacity bend at the vapor pressure?</h3><p>Choose the CO₂ isotherm at 280 K and the fugacity view. Compare the slope of f(P) below and above 41.6 bar.</p><label for="note-concept1" class="visually-hidden">Your answer to question A</label><textarea id="note-concept1" rows="3" maxlength="10000" placeholder="Use (∂ ln f/∂P)_T = V/RT and the two molar volumes."></textarea><details><summary>Compare with an explanation</summary><p>(∂ ln f/∂P)<sub>T</sub> = V/RT. In the vapor V ≈ 360–600 cm³/mol and f rises almost as fast as P; at 41.6 bar f = 31.1 bar in both phases. In the liquid V ≈ 50 cm³/mol, so f grows slowly: 35.1 bar at 100 bar and 42.7 bar at 200 bar. f is continuous at P<sup>sat</sup> because μ is; its slope jumps because V jumps.</p></details></div>
+      <div class="concept-question"><h3>B. Why does van der Waals predict a vapor pressure that is far too high?</h3><p>Find the vapor pressure of propane at 300 K with the three cubics, and repeat at 200 K.</p><label for="note-concept2" class="visually-hidden">Your answer to question B</label><textarea id="note-concept2" rows="3" maxlength="10000" placeholder="Quote the three vapor pressures against NIST at both temperatures."></textarea><details><summary>Compare with an explanation</summary><p>Van der Waals has a constant a, so its attraction does not grow as T falls and the liquid is not stable enough: at 300 K it gives 17.4 bar against 9.98, and the error grows at lower T. SRK and PR make a grow as T falls through α(T<sub>r</sub>, ω), with m(ω) fitted to vapor pressures, and are within about 1%.</p></details></div>
+      <div class="concept-question"><h3>C. When can the Poynting factor be set to 1?</h3><p>Compare the Poynting factor for liquid water at 500 K and liquid CO₂ at 280 K, at 100 and 200 bar.</p><label for="note-concept3" class="visually-hidden">Your answer to question C</label><textarea id="note-concept3" rows="3" maxlength="10000" placeholder="Quote the factors and the size of V^L(P − P^sat)/RT."></textarea><details><summary>Compare with an explanation</summary><p>The factor is exp[V<sup>L</sup>(P − P<sup>sat</sup>)/RT]. Water at 500 K: 1.039 at 100 bar and 1.095 at 200 bar. CO₂ at 280 K: 1.133 and 1.403, because its liquid volume is larger and RT smaller. Near 1 bar total pressure, as in most of Session 1, the factor is within 0.1% of 1. At 200 bar the constant-V<sup>L</sup> form overestimates the CO₂ fugacity by 2.3%: liquid CO₂ near its critical point is compressible.</p></details></div>
+    </section>
+
+    <section id="graduate-investigation" class="panel graduate-section grad-only" aria-labelledby="graduate-heading">
+      <div class="panel-heading"><h2 id="graduate-heading">4. Investigate what the equal-fugacity condition can support</h2><span class="condition">Graduate work</span></div>
+      <p id="graduate-baseline" class="graduate-note">Calculate a state in Step 1 before running an investigation.</p>
+      <aside class="graduate-limits" aria-labelledby="fug-limits-heading"><h3 id="fug-limits-heading">What these results can and cannot show</h3><ul><li>The reference ln φ and P<sup>sat</sup> come from one fundamental equation per fluid, so they satisfy equal fugacity exactly. They serve as data with uncertainties far below the model errors here.</li><li>SRK and PR were fitted to vapor pressures, so a good P<sup>sat</sup> tests the fit, not the physics. The enthalpy of vaporization and the liquid volume are independent tests.</li><li>The ice and supercooled-water pressures are a correlation of measurements (Murphy and Koop, 2005); below about 235 K supercooled water is not measured.</li></ul></aside>
+
+      <section class="graduate-step" aria-labelledby="curve-heading"><h3 id="curve-heading">A. The whole vapor-pressure curve</h3>
+        <ol class="graduate-checklist"><li>Compute the vapor pressure of vdW, SRK and PR at T<sub>r</sub> = 0.6, 0.7, 0.8, 0.9, 0.95 and 0.99 for the four fluids.</li><li>Find where each equation is best and worst, and why T<sub>r</sub> = 0.7 is special.</li><li>Say what a good vapor pressure does and does not establish.</li></ol>
+        <div class="graduate-actions"><button id="run-curve" class="primary-button" type="button" disabled>Test the vapor-pressure curves</button></div>
+        <p id="curve-status" class="graduate-status" role="status"></p>
+        <div id="curve-wrap" class="table-scroll graduate-table" role="region" aria-label="Vapor pressure errors" tabindex="0" hidden><table><thead><tr><th scope="col">Fluid</th><th scope="col">T<sub>r</sub></th><th scope="col">T / K</th><th scope="col">P<sup>sat</sup> NIST / bar</th><th scope="col">vdW / %</th><th scope="col">SRK / %</th><th scope="col">PR / %</th></tr></thead><tbody id="curve-body"></tbody></table></div>
+        <label for="note-curve">Claim 1 · the vapor-pressure curve</label><textarea id="note-curve" rows="3" maxlength="10000" placeholder="Quote the PR and SRK errors at T_r = 0.6 and 0.9 for water and one nonpolar fluid, and explain T_r = 0.7."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="dh-heading"><h3 id="dh-heading">B. Three routes to the enthalpy of vaporization</h3>
+        <ol class="graduate-checklist"><li>Compare ΔH<sub>vap</sub> from the Clapeyron equation with the reference ΔV, from the Clausius–Clapeyron approximation, and from PR as H<sup>R</sup>(V) − H<sup>R</sup>(L), with the tabulated H<sup>V</sup> − H<sup>L</sup>.</li><li>Do it at the table rows nearest T<sub>r</sub> = 0.6, 0.75, 0.85 and 0.95 for three fluids.</li><li>Explain why Clausius–Clapeyron fails near T<sub>c</sub> while Clapeyron does not.</li></ol>
+        <div class="graduate-actions"><button id="run-dh" class="primary-button" type="button" disabled>Compare the routes</button></div>
+        <p id="dh-status" class="graduate-status" role="status"></p>
+        <div id="dh-wrap" class="table-scroll graduate-table" role="region" aria-label="Enthalpy of vaporization" tabindex="0" hidden><table><thead><tr><th scope="col">Fluid</th><th scope="col">T / K</th><th scope="col">NIST H<sup>V</sup> − H<sup>L</sup> / (J/mol)</th><th scope="col">Clapeyron / %</th><th scope="col">Clausius–Clapeyron / %</th><th scope="col">PR residuals / %</th></tr></thead><tbody id="dh-body"></tbody></table></div>
+        <label for="note-dh">Claim 2 · the enthalpy of vaporization</label><textarea id="note-dh" rows="3" maxlength="10000" placeholder="Quote the Clausius–Clapeyron error at T_r = 0.75 and 0.95, and the PR error, for one fluid."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="liq-heading"><h3 id="liq-heading">C. Condensed-phase fugacity: compressed liquid and solid</h3>
+        <ol class="graduate-checklist"><li>Along the liquid branch of the three isotherms, compare the Poynting estimate with the reference fugacity.</li><li>For ice and supercooled water between 240 and 273 K, compare f<sub>s</sub>/f<sub>l</sub> from ΔH<sub>fus</sub> = 6.01 kJ/mol with the ratio of measured vapor pressures.</li><li>State when each approximation holds, with numbers.</li></ol>
+        <div class="graduate-actions"><button id="run-liq" class="primary-button" type="button" disabled>Test the condensed-phase forms</button></div>
+        <p id="liq-status" class="graduate-status" role="status"></p>
+        <div id="liq-wrap" class="table-scroll graduate-table" role="region" aria-label="Condensed-phase fugacity" tabindex="0" hidden><table><thead><tr><th scope="col">Case</th><th scope="col">Condition</th><th scope="col">Reference</th><th scope="col">Approximation</th><th scope="col">Error / %</th></tr></thead><tbody id="liq-body"></tbody></table></div>
+        <label for="note-liq">Claim 3 · when the condensed-phase forms hold</label><textarea id="note-liq" rows="3" maxlength="10000" placeholder="Quote the Poynting error for CO₂ at 200 bar and for water, and the ice/liquid ratio at 263 K."></textarea>
+      </section>
+
+      <section class="graduate-step" aria-labelledby="argument-heading"><h3 id="argument-heading">D. Defend a limited conclusion</h3>
+        <label for="note-decision">Decision and next evidence</label><textarea id="note-decision" rows="3" maxlength="10000" placeholder="For one use (a vapor pressure for a flash, a ΔH_vap for a reboiler, a liquid fugacity at high pressure), state the method you would use, the error you expect, and the measurement that would test it."></textarea>
+        <div class="graduate-actions"><button id="check-evidence" type="button" class="secondary-button">Check my evidence record</button></div><p id="evidence-status" class="graduate-status" role="status"></p>
+        <p class="graduate-note">The record check only confirms that the sections and calculations are present. It is a completeness reminder, not a grade.</p>
+      </section>
+
+      <section class="graduate-step" id="ai-code" aria-labelledby="ai-heading">
+        <h3 id="ai-heading">E. Check code that an AI assistant helped you write</h3>
+        <p>You may use an AI assistant to <strong>write code</strong>. You decide everything else: the equations, the bracket and the convergence test of the solver, which root is which, and how you will know a result is right. Do not ask the assistant for numbers or conclusions.</p>
+        <ol class="graduate-checklist"><li>Write your specification first, in your own words, before you open the assistant.</li><li>Ask the assistant to write Python that, for propane at 300 K with Peng–Robinson: (a) finds the vapor pressure by equal ln φ of the liquid and vapor roots; (b) reports φ<sup>sat</sup> and the saturated liquid volume; (c) estimates the liquid fugacity at 50 bar with the Poynting factor and the equation's own V<sup>L</sup> and φ<sup>sat</sup>. Run it yourself.</li><li>Enter the outputs and run the checks. When a check disagrees, find the cause in the code, fix it, and rerun. Record what you changed.</li></ol>
+        <p class="graduate-note">Propane: T<sub>c</sub> = 369.89 K, P<sub>c</sub> = 42.512 bar, ω = <span id="ai-omega">0.1522</span>. R = 8.31446261815324 J/(mol K).</p>
+        <label for="ai-spec">Your specification, written before you used the assistant</label><textarea id="ai-spec" rows="5" maxlength="10000" placeholder="ln φ of a root; how the bracket for P^sat is chosen (the spinodals or a safe interval); the convergence test; the Poynting factor and the volume it uses; units; how you check each result."></textarea>
+        <div class="graduate-grid"><div><label for="ai-tool">Assistant and version</label><input id="ai-tool" type="text" maxlength="200" placeholder="for example, the name and model"></div></div>
+        <label for="ai-prompt">The prompt or prompts you used</label><textarea id="ai-prompt" rows="4" maxlength="20000"></textarea>
+        <label for="ai-codetext">Final code that produced the outputs below</label><textarea id="ai-codetext" rows="8" maxlength="60000" spellcheck="false" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.78rem"></textarea>
+        <h4>Outputs from your code</h4>
+        <div class="graduate-grid">
+          <div><label for="ai-psat">P<sup>sat</sup> of PR at 300 K / bar</label><input id="ai-psat" type="number" step="any"></div>
+          <div><label for="ai-phi">φ<sup>sat</sup></label><input id="ai-phi" type="number" step="any"></div>
+          <div><label for="ai-vl">V<sup>L</sup> saturated / (cm³/mol)</label><input id="ai-vl" type="number" step="any"></div>
+          <div><label for="ai-f50">f<sup>L</sup> at 50 bar, Poynting / bar</label><input id="ai-f50" type="number" step="any"></div>
+        </div>
+        <div class="graduate-actions"><button id="ai-run" type="button" class="primary-button" disabled>Check my outputs</button></div>
+        <p id="ai-status" class="graduate-status" role="status">Enter the outputs from your code, then run the checks.</p>
+        <div id="ai-results" hidden>
+          <div class="table-scroll graduate-table" role="region" aria-label="Checks of your code outputs against the lab" tabindex="0"><table><thead><tr><th scope="col">Check</th><th scope="col">Lab</th><th scope="col">Your code</th><th scope="col">Result</th><th scope="col">Likely cause</th></tr></thead><tbody id="ai-out"></tbody></table></div>
+          <p class="graduate-note">Agreement with the lab shows that your code solves the problem you specified. It does not show that Peng–Robinson gives propane's vapor pressure or liquid fugacity: compare with the reference in Step 2. The "likely cause" lists common errors; your code may have another.</p>
+        </div>
+        <label for="ai-found">What disagreed, what was wrong in the code, and how you fixed it</label><textarea id="ai-found" rows="3" maxlength="10000" placeholder="Name the check, the line of code, and the fix. If every check agreed at once, say which check you would trust least and why."></textarea>
+        <label for="ai-own">What you decided yourself, and one thing the checks cannot establish</label><textarea id="ai-own" rows="3" maxlength="10000" placeholder="For example: the bracket, the convergence tolerance. Then one limit."></textarea>
+      </section>
+    </section>
+
+    <section class="panel comparison-panel" aria-labelledby="comparison-heading">
+      <div class="panel-heading"><h2 id="comparison-heading">5. Compare and save</h2></div>
+      <ol class="investigation-steps core-only"><li>Calculate and save the four starting states with Peng–Robinson.</li><li>Save propane at 200 K and water at 400 K with van der Waals and PR.</li><li>Answer questions A–C in Step 4 using the saved comparison.</li><li>Download the complete study, reopen it, and reproduce a saved case.</li></ol>
+      <ol class="investigation-steps grad-only"><li>Calculate and save the four starting states with Peng–Robinson.</li><li>Complete investigations A–C and E and write the graduate claims.</li><li>Download the complete study, reopen it, and reproduce a saved case and its investigation record.</li></ol>
+      <p id="comparison-empty" class="empty-state">Your calculated cases will appear here after you add them.</p>
+      <div id="comparison-table-wrap" class="table-scroll" role="region" aria-label="Saved cases" tabindex="0" hidden><table><thead><tr><th scope="col">Case</th><th scope="col">Fluid, T</th><th scope="col">Cubic</th><th scope="col">P<sup>sat</sup> cubic / NIST / bar</th><th scope="col">ΔH<sub>vap</sub> cubic / NIST / (J/mol)</th><th scope="col">Reopen</th></tr></thead><tbody id="comparison-body"></tbody></table></div>
+      <label for="reflection" class="reflection-label">Optional additional note</label><textarea id="reflection" rows="3" maxlength="10000" placeholder="Add an optional note."></textarea>
+      <fieldset class="student-fields"><legend>Your details <span>(optional)</span></legend><p class="input-help">Saved in the downloaded file so your instructor can identify it. You can download without them.</p><div class="student-grid"><div><label for="student-first-name">First name</label><input id="student-first-name" type="text" maxlength="80" autocomplete="given-name"></div><div><label for="student-last-name">Last name</label><input id="student-last-name" type="text" maxlength="80" autocomplete="family-name"></div><div><label for="student-id">Student ID</label><input id="student-id" type="text" maxlength="20" inputmode="numeric" autocomplete="off"></div></div></fieldset>
+        <div class="study-actions"><button id="export-study" class="primary-button" type="button" disabled>Download my study</button><div class="file-control"><label for="import-study">Open a saved study</label><input id="import-study" type="file" accept=".json,application/json"></div></div>
+        <p class="submit-note"><strong>To submit:</strong> upload the downloaded .json file to <strong>myCourseVille</strong>, in the assignment for Lab P4. Keep the file name: it carries your name and student ID.</p>
+      <p id="status" class="study-status" role="status" aria-live="polite">Loading the reference tables…</p><p class="privacy-note">Your inputs, comparisons and explanations are kept in this open page. Download one study file to keep the complete record and reopen it later. Results are recalculated on restore.</p>
+    </section>
+    <noscript><p class="error-summary">Enable JavaScript to calculate. The figures and questions remain available to read.</p></noscript>
+  </main>
+  <footer class="site-footer"><span>2105603 · Advanced Chemical Engineering Thermodynamics</span><a href="index.html#sessions">All 2027 labs</a></footer>
+  <script src="../labs/assets/plotly.min.js" defer></script>
+  <script type="module" src="assets/mode.js?v=mode-3"></script>
+  <script type="module" src="assets/fugacity-lab.js?v=p4-1"></script>
+  <script type="module" src="assets/fugcode.js?v=p4-1"></script>
+</body>
+</html>

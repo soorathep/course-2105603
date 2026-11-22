@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics">
+
+<title>Residual properties: the real-fluid part of H, S and G</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<meta name="robots" content="noindex">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../site_libs/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="../site_libs/katex/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+
+<header id="title-block-header">
+<h1 class="title">Residual properties: the real-fluid part of H, S and G</h1>
+<p class="subtitle">Pre-class note for Session P3 · about 20 minutes</p>
+<p class="author">Soorathep Kheawhom, Ph.D., FRSC · 2105603 Advanced Chemical Engineering Thermodynamics</p>
+
+</header>
+
+
+<div class="draft-note">
+<p>Draft for 2027. If you are taking the course this year, use the current course page.</p>
+</div>
+<div class="purpose">
+<p><strong>Why read this.</strong> Session P2 compared equations of state on Z. A compressor, a valve or a heat exchanger needs H and S, and phase equilibrium needs G. This note shows how all three follow from an equation of state through the <strong>residual properties</strong>, and why an equation that predicts Z well can still predict H poorly. Work the three questions at the end and bring one question of your own.</p>
+</div>
+<h2 id="definition-and-the-ideal-gas-path">1. Definition and the ideal-gas path</h2>
+<p>A residual property is the difference between the real fluid and an ideal gas at the <strong>same T and P</strong>:</p>
+<p><span class="math display">M^R(T,P)=M(T,P)-M^{ig}(T,P),\qquad M=V,\,U,\,H,\,S,\,A,\,G.</span></p>
+<p>Because H and S are state functions, any change between two states can follow a path through the ideal gas: convert the real fluid at state 1 into an ideal gas (−M<sub>1</sub><sup>R</sup>), change the ideal gas from state 1 to state 2, and convert back (+M<sub>2</sub><sup>R</sup>):</p>
+<p><span class="math display">\Delta H=H_2^R-H_1^R+\int_{T_1}^{T_2}C_p^{ig}\,dT,\qquad \Delta S=S_2^R-S_1^R+\int_{T_1}^{T_2}\frac{C_p^{ig}}{T}\,dT-R\ln\frac{P_2}{P_1}.</span></p>
+<p>The ideal-gas terms need only C<sub>p</sub><sup>ig</sup>(T), which comes from spectroscopy or tables. The residual terms need only PVT data or an equation of state. This is the plan announced in Session P1.</p>
+<h2 id="residuals-from-pvt-data">2. Residuals from PVT data</h2>
+<p>At constant T, (∂G/∂P)<sub>T</sub> = V for both the real fluid and the ideal gas, so</p>
+<p><span class="math display">G^R=\int_0^P\Big(V-\frac{RT}{P}\Big)dP\quad\Rightarrow\quad\frac{G^R}{RT}=\int_0^P(Z-1)\frac{dP}{P}.</span></p>
+<p>The lower limit is P = 0, where every fluid is ideal and all residuals vanish. Differentiating G<sup>R</sup>/RT with respect to T (the Gibbs–Helmholtz relation, H = −T²[∂(G/T)/∂T]<sub>P</sub>) gives</p>
+<p><span class="math display">\frac{H^R}{RT}=-T\int_0^P\Big(\frac{\partial Z}{\partial T}\Big)_P\frac{dP}{P},\qquad \frac{S^R}{R}=\frac{H^R}{RT}-\frac{G^R}{RT}.</span></p>
+<p>The key point: <strong>G<sup>R</sup> needs Z along one isotherm; H<sup>R</sup> and S<sup>R</sup> also need how Z changes with T.</strong> For pressure-explicit equations such as the cubics the same results are written as integrals over density.</p>
+<h2 id="the-virial-equation">3. The virial equation</h2>
+<p>With Z = 1 + BP/RT the integrals are exact:</p>
+<p><span class="math display">\frac{G^R}{RT}=\frac{BP}{RT},\qquad \frac{H^R}{RT}=\frac{P}{R}\Big(\frac{B}{T}-\frac{dB}{dT}\Big),\qquad \frac{S^R}{R}=-\frac{P}{R}\frac{dB}{dT}.</span></p>
+<p>With the Pitzer correlation, d(BP<sub>c</sub>/RT<sub>c</sub>)/dT<sub>r</sub> = 0.675/T<sub>r</sub><sup>2.6</sup> + ω × 0.722/T<sub>r</sub><sup>5.2</sup>.</p>
+<p><strong>Worked example.</strong> CO₂ at 300 K and 10 bar: T<sub>r</sub> = 0.9864, B = −122.7 cm³/mol and dB/dT = 0.985 cm³/(mol K). Then G<sup>R</sup> = BP = −122.7 J/mol, H<sup>R</sup> = P(B − T dB/dT) = 10⁶ Pa × (−122.7 − 295.4) × 10⁻⁶ m³/mol = −418.2 J/mol, and S<sup>R</sup> = −0.985 J/(mol K). The NIST reference gives −418.3 J/mol and −0.983 J/(mol K). At 10 bar the gas is dilute enough for the truncated form.</p>
+<h2 id="cubic-equations-of-state">4. Cubic equations of state</h2>
+<p>For the generic cubic of Session P2, with β = bP/RT, q = a(T)/(bRT) and I = ln[(Z + σβ)/(Z + εβ)]/(σ − ε):</p>
+<p><span class="math display">\frac{G^R}{RT}=Z-1-\ln(Z-\beta)-qI,\qquad \frac{H^R}{RT}=Z-1+\Big[\frac{d\ln\alpha}{d\ln T_r}-1\Big]qI,\qquad \frac{S^R}{R}=\ln(Z-\beta)+\frac{d\ln\alpha}{d\ln T_r}\,qI.</span></p>
+<p>For van der Waals I = β/Z and d ln α/d ln T<sub>r</sub> = 0. For SRK and PR, d ln α/d ln T<sub>r</sub> = −m√T<sub>r</sub>/[1 + m(1 − √T<sub>r</sub>)]. Use the same root Z for all three. The derivative of α was never part of the fit that set m(ω), so H<sup>R</sup> and S<sup>R</sup> test the equation in a way that Z does not.</p>
+<h2 id="the-ideal-gas-part">5. The ideal-gas part</h2>
+<p>NIST gives C<sub>p</sub><sup>ig</sup> in the Shomate form, with t = T/1000:</p>
+<p><span class="math display">C_p^{ig}=A+Bt+Ct^2+Dt^3+E/t^2,</span></p>
+<p>and its integrals for H and S° at 1 bar. At pressure P, S<sup>ig</sup>(T, P) = S°(T) − R ln(P/1 bar). For CO₂ between 300 and 350 K the ideal-gas changes are ΔH<sup>ig</sup> = 1917 J/mol and ΔS°<sup>ig</sup> = 5.91 J/(mol K). Each Shomate fit has a stated temperature range; for methane and CO₂ it starts at 298 K.</p>
+<h2 id="before-session-p3">6. Before Session P3</h2>
+<p>Write short answers. We use them in the first 30 minutes.</p>
+<ol type="1">
+<li><strong>Signs.</strong> For CO₂ at 300 K and 10 bar, H<sup>R</sup> &lt; 0 and S<sup>R</sup> &lt; 0. Explain both in terms of molecular attraction. Then say why G<sup>R</sup> = H<sup>R</sup> − TS<sup>R</sup> is much smaller in magnitude than H<sup>R</sup>.</li>
+<li><strong>A valve.</strong> A gas passes a valve with no heat or work. Write the enthalpy balance with residuals and show that an ideal gas leaves at its inlet temperature.</li>
+<li><strong>Where the error enters.</strong> Two cubic equations give the same Z at 300 K and 100 bar but different α(T) slopes. Which of G<sup>R</sup>, H<sup>R</sup> and S<sup>R</sup> will differ between them?</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li>Smith, J. M., Van Ness, H. C., Abbott, M. M., Swihart, M. T. (2018). <em>Introduction to Chemical Engineering Thermodynamics</em>, 8th ed.&nbsp;McGraw-Hill. Chapter 6.</li>
+<li>Poling, B. E., Prausnitz, J. M., O’Connell, J. P. (2001). <em>The Properties of Gases and Liquids</em>, 5th ed.&nbsp;McGraw-Hill. Chapter 6.</li>
+<li>Chase, M. W. (1998). NIST-JANAF Thermochemical Tables, 4th ed.&nbsp;<em>J. Phys. Chem. Ref. Data</em>, Monograph 9. The Shomate coefficients in Lab P3.</li>
+<li>Span, R., Wagner, W. (1996). A new equation of state for carbon dioxide. <em>J. Phys. Chem. Ref. Data</em> 25, 1509–1596.</li>
+</ul>
+<p><a href="p03.html" class="next-link">Session P3 slides →</a></p>
+
+
+
+
+
+</body></html>

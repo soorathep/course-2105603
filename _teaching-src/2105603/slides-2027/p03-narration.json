@@ -1,0 +1,434 @@
+{
+ "session": "p03",
+ "voice": "am_michael",
+ "slides": {
+  "title-slide": [
+   {
+    "en": "Welcome to session P3: residual properties.",
+    "th": "ยินดีต้อนรับสู่คาบ P3 residual properties",
+    "say": "Welcome to session P three: residual properties."
+   },
+   {
+    "en": "Today we go from Z to enthalpy, entropy and Gibbs energy.",
+    "th": "วันนี้เราจะไปจาก Z สู่เอนทัลปี เอนโทรปี และพลังงานกิบส์"
+   }
+  ],
+  "course-map": [
+   {
+    "en": "Session P2 gave Z from an equation of state, with its error.",
+    "th": "คาบ P2 ให้ค่า Z จากสมการสภาวะ พร้อมความคลาดเคลื่อน",
+    "say": "Session P two gave Z from an equation of state, with its error."
+   },
+   {
+    "en": "An energy balance needs enthalpy and entropy. Today we compute the residual properties, which carry the real-fluid part of every change.",
+    "th": "แต่สมดุลพลังงานต้องใช้เอนทัลปีและเอนโทรปี วันนี้เราจะคำนวณ residual properties ซึ่งเป็นส่วนของของไหลจริงในทุกการเปลี่ยนแปลง"
+   },
+   {
+    "en": "The residual Gibbs energy becomes the fugacity in session P4.",
+    "th": "residual Gibbs energy จะกลายเป็น fugacity ในคาบ P4",
+    "say": "The residual Gibbs energy becomes the fugacity in session P four."
+   }
+  ],
+  "why": [
+   {
+    "en": "Why does this matter? Carbon dioxide at 300 kelvin is compressed from 30 to 100 bar, as in a capture and storage train.",
+    "th": "ทำไมเรื่องนี้จึงสำคัญ คาร์บอนไดออกไซด์ที่ 300 เคลวิน ถูกอัดจาก 30 เป็น 100 บาร์ เหมือนในระบบดักจับและกักเก็บคาร์บอน",
+    "say": "Why does this matter? Carbon dioxide at three hundred kelvin is compressed from thirty to one hundred bar, as in a capture and storage train."
+   },
+   {
+    "en": "The reference work is 2865 joules per mole. The ideal gas asks for 3430, twenty percent more.",
+    "th": "งานจากข้อมูลอ้างอิงคือ 2865 จูลต่อโมล แต่แก๊สอุดมคติต้องการ 3430 มากกว่ายี่สิบเปอร์เซ็นต์",
+    "say": "The reference work is two thousand eight hundred sixty five joules per mole. The ideal gas asks for three thousand four hundred thirty, twenty percent more."
+   },
+   {
+    "en": "Peng-Robinson gives 2851. The difference from the ideal gas is two residual enthalpies.",
+    "th": "Peng–Robinson ให้ 2851 ความต่างจากแก๊สอุดมคติคือ residual enthalpy สองค่า",
+    "say": "Peng Robinson gives two thousand eight hundred fifty one. The difference from the ideal gas is two residual enthalpies."
+   }
+  ],
+  "outcomes": [
+   {
+    "en": "By the end of today you can do four things.",
+    "th": "เมื่อจบคาบนี้ คุณจะทำได้สี่อย่าง"
+   },
+   {
+    "en": "Define the residual properties, and write any change of H or S as an ideal-gas change plus two residuals.",
+    "th": "นิยาม residual properties และเขียนการเปลี่ยนแปลงของ H หรือ S เป็นการเปลี่ยนแปลงของแก๊สอุดมคติบวกกับ residual สองค่า"
+   },
+   {
+    "en": "Derive residuals from PVT data, from the virial equation and from a cubic equation.",
+    "th": "หา residual จากข้อมูล PVT จากสมการ virial และจากสมการกำลังสาม",
+    "say": "Derive residuals from P V T data, from the virial equation and from a cubic equation."
+   },
+   {
+    "en": "Compute a valve outlet and a compressor work, and judge which property an equation predicts well.",
+    "th": "คำนวณอุณหภูมิทางออกของวาล์วและงานของคอมเพรสเซอร์ และประเมินว่าสมการทำนายสมบัติใดได้ดี"
+   }
+  ],
+  "route": [
+   {
+    "en": "Here is the 180-minute route.",
+    "th": "นี่คือเส้นทางของคาบ 180 นาที",
+    "say": "Here is the one hundred eighty minute route."
+   },
+   {
+    "en": "Thirty minutes of concepts, virial residuals by hand, a demonstration in Lab P3, a break, and a 70-minute pair investigation.",
+    "th": "สามสิบนาทีแรกเป็นแนวคิด คำนวณ residual จาก virial ด้วยมือ สาธิต Lab P3 พัก และทำงานเป็นคู่ 70 นาที",
+    "say": "Thirty minutes of concepts, virial residuals by hand, a demonstration in Lab P three, a break, and a seventy minute pair investigation."
+   },
+   {
+    "en": "The session question: how do we get the enthalpy and entropy changes of a real fluid from an equation of state, and how much does the choice of equation change a process energy balance?",
+    "th": "คำถามของคาบนี้คือ เราจะหาการเปลี่ยนแปลงเอนทัลปีและเอนโทรปีของของไหลจริงจากสมการสภาวะได้อย่างไร และการเลือกสมการเปลี่ยนสมดุลพลังงานของกระบวนการมากเพียงใด"
+   }
+  ],
+  "residual": [
+   {
+    "en": "A residual property is the real fluid minus the ideal gas, at the same temperature and pressure.",
+    "th": "residual property คือสมบัติของของไหลจริงลบด้วยของแก๊สอุดมคติ ที่อุณหภูมิและความดันเดียวกัน"
+   },
+   {
+    "en": "Any change follows a path through the ideal gas: leave the real fluid, change the ideal gas, then return.",
+    "th": "การเปลี่ยนแปลงใด ๆ ทำได้ผ่านเส้นทางของแก๊สอุดมคติ คือออกจากของไหลจริง เปลี่ยนสถานะของแก๊สอุดมคติ แล้วกลับเป็นของไหลจริง"
+   },
+   {
+    "en": "For the carbon dioxide compressor with Peng-Robinson: plus 1400, plus 4078, minus 2627, which gives 2851 joules per mole.",
+    "th": "สำหรับคอมเพรสเซอร์คาร์บอนไดออกไซด์ด้วย Peng–Robinson คือ บวก 1400 บวก 4078 ลบ 2627 ได้ 2851 จูลต่อโมล",
+    "say": "For the carbon dioxide compressor with Peng Robinson: plus one thousand four hundred, plus four thousand seventy eight, minus two thousand six hundred twenty seven, which gives two thousand eight hundred fifty one joules per mole."
+   },
+   {
+    "en": "The ideal-gas step needs only the ideal-gas heat capacity. The residual steps need only PVT data.",
+    "th": "ขั้นแก๊สอุดมคติต้องการเพียงความจุความร้อนของแก๊สอุดมคติ ส่วนขั้น residual ต้องการเพียงข้อมูล PVT",
+    "say": "The ideal-gas step needs only the ideal-gas heat capacity. The residual steps need only P V T data."
+   }
+  ],
+  "from-pvt": [
+   {
+    "en": "At constant temperature the residuals are integrals over pressure.",
+    "th": "ที่อุณหภูมิคงที่ residual เป็นอินทิกรัลเทียบกับความดัน"
+   },
+   {
+    "en": "The residual Gibbs energy needs only Z. The residual enthalpy also needs how Z changes with temperature.",
+    "th": "residual Gibbs energy ต้องการเพียง Z แต่ residual enthalpy ต้องการด้วยว่า Z เปลี่ยนตามอุณหภูมิอย่างไร"
+   },
+   {
+    "en": "For methane at 300 kelvin and 100 bar, integrating the NIST Z gives minus 0.64295 for H R over RT, and the tabulated enthalpy gives minus 0.64291.",
+    "th": "สำหรับมีเทนที่ 300 เคลวิน และ 100 บาร์ การอินทิเกรต Z จาก NIST ให้ H^R/RT เท่ากับ ลบ 0.64295 และเอนทัลปีจากตารางให้ ลบ 0.64291",
+    "say": "For methane at three hundred kelvin and one hundred bar, integrating the N I S T Z gives minus zero point six four two nine five for H R over R T, and the tabulated enthalpy gives minus zero point six four two nine one."
+   },
+   {
+    "en": "PVT data really are enough.",
+    "th": "ข้อมูล PVT เพียงพอจริง",
+    "say": "P V T data really are enough."
+   }
+  ],
+  "virial": [
+   {
+    "en": "With the truncated virial equation the integrals are exact and fit in one line.",
+    "th": "เมื่อใช้สมการ virial แบบตัดพจน์ อินทิกรัลหาได้แม่นยำและเขียนได้ในบรรทัดเดียว"
+   },
+   {
+    "en": "The residual Gibbs energy needs B. The residual enthalpy and entropy need dB by dT, which no measurement at one temperature gives.",
+    "th": "residual Gibbs energy ต้องการ B แต่ residual enthalpy และ entropy ต้องการ dB/dT ซึ่งการวัดที่อุณหภูมิเดียวให้ไม่ได้",
+    "say": "The residual Gibbs energy needs B. The residual enthalpy and entropy need d B by d T, which no measurement at one temperature gives."
+   },
+   {
+    "en": "For most gases B is negative and increases with temperature, so the residual enthalpy is negative.",
+    "th": "สำหรับแก๊สส่วนใหญ่ B เป็นลบและเพิ่มขึ้นตามอุณหภูมิ residual enthalpy จึงเป็นลบ"
+   },
+   {
+    "en": "The same density limit as in P2 applies: no dense fluids and no liquids.",
+    "th": "ข้อจำกัดเรื่องความหนาแน่นเหมือนในคาบ P2 ยังใช้อยู่ คือใช้ไม่ได้กับของไหลหนาแน่นและของเหลว",
+    "say": "The same density limit as in P two applies: no dense fluids and no liquids."
+   }
+  ],
+  "cubic": [
+   {
+    "en": "For a cubic equation the integrals have closed forms.",
+    "th": "สำหรับสมการกำลังสาม อินทิกรัลมีรูปปิด"
+   },
+   {
+    "en": "The residual enthalpy and entropy contain d ln alpha by d ln reduced temperature, the temperature slope of the attraction parameter.",
+    "th": "residual enthalpy และ entropy มีพจน์ d ln α/d ln Tr ซึ่งคือความชันของพารามิเตอร์แรงดึงดูดเทียบกับอุณหภูมิ",
+    "say": "The residual enthalpy and entropy contain d ln alpha by d ln reduced temperature, the temperature slope of the attraction parameter."
+   },
+   {
+    "en": "That slope was never fitted to anything.",
+    "th": "ความชันนี้ไม่เคยถูกปรับให้เข้ากับข้อมูลใดเลย"
+   },
+   {
+    "en": "For methane at 100 bar, Peng-Robinson gives Z within 2.5 percent but the residual enthalpy 9.6 percent too negative. SRK is within 2.2 percent.",
+    "th": "สำหรับมีเทนที่ 100 บาร์ Peng–Robinson ให้ Z คลาดไม่เกิน 2.5 เปอร์เซ็นต์ แต่ residual enthalpy เป็นลบมากเกินไป 9.6 เปอร์เซ็นต์ ส่วน SRK คลาดไม่เกิน 2.2 เปอร์เซ็นต์",
+    "say": "For methane at one hundred bar, Peng Robinson gives Z within two point five percent but the residual enthalpy nine point six percent too negative. S R K is within two point two percent."
+   }
+  ],
+  "ideal-gas": [
+   {
+    "en": "The ideal-gas part needs the ideal-gas heat capacity as a function of temperature, here in the Shomate form from NIST.",
+    "th": "ส่วนของแก๊สอุดมคติต้องการความจุความร้อนของแก๊สอุดมคติเป็นฟังก์ชันของอุณหภูมิ ในที่นี้ใช้รูปแบบ Shomate จาก NIST",
+    "say": "The ideal-gas part needs the ideal-gas heat capacity as a function of temperature, here in the Shomate form from N I S T."
+   },
+   {
+    "en": "Do not forget the pressure term of the ideal-gas entropy: minus R ln P over one bar.",
+    "th": "อย่าลืมพจน์ความดันของเอนโทรปีแก๊สอุดมคติ คือ ลบ R ln(P/1 บาร์)",
+    "say": "Do not forget the pressure term of the ideal-gas entropy: minus R l n P over one bar."
+   },
+   {
+    "en": "The methane and carbon dioxide fits start at 298 kelvin. At 250 kelvin they are extrapolated, and methane is 1.3 percent high.",
+    "th": "สมการสำหรับมีเทนและคาร์บอนไดออกไซด์เริ่มที่ 298 เคลวิน ที่ 250 เคลวินจึงเป็นการประมาณนอกช่วง และค่าของมีเทนสูงไป 1.3 เปอร์เซ็นต์",
+    "say": "The methane and carbon dioxide fits start at two hundred ninety eight kelvin. At two hundred fifty kelvin they are extrapolated, and methane is one point three percent high."
+   }
+  ],
+  "how-good": [
+   {
+    "en": "Which property does an equation get right? For methane at 300 kelvin, SRK and the virial equation follow the reference residual enthalpy.",
+    "th": "สมการทำนายสมบัติใดได้ถูกต้อง สำหรับมีเทนที่ 300 เคลวิน SRK และสมการ virial ให้ residual enthalpy ตามข้อมูลอ้างอิง",
+    "say": "Which property does an equation get right? For methane at three hundred kelvin, S R K and the virial equation follow the reference residual enthalpy."
+   },
+   {
+    "en": "Peng-Robinson is about ten percent too negative, the same bias as its B in P2.",
+    "th": "Peng–Robinson เป็นลบมากเกินไปประมาณสิบเปอร์เซ็นต์ ซึ่งเป็นความเอนเอียงแบบเดียวกับค่า B ในคาบ P2",
+    "say": "Peng Robinson is about ten percent too negative, the same bias as its B in P two."
+   },
+   {
+    "en": "For carbon dioxide at 30 bar, Peng-Robinson is almost exact. For the liquid at 100 bar, the virial equation is 62 percent off.",
+    "th": "สำหรับคาร์บอนไดออกไซด์ที่ 30 บาร์ Peng–Robinson แทบตรงกับข้อมูล แต่สำหรับของเหลวที่ 100 บาร์ สมการ virial คลาดไป 62 เปอร์เซ็นต์",
+    "say": "For carbon dioxide at thirty bar, Peng Robinson is almost exact. For the liquid at one hundred bar, the virial equation is sixty two percent off."
+   },
+   {
+    "en": "The best model changes with the property and the state.",
+    "th": "แบบจำลองที่ดีที่สุดเปลี่ยนไปตามสมบัติและสถานะ"
+   }
+  ],
+  "processes": [
+   {
+    "en": "The same method gives every process.",
+    "th": "วิธีเดียวกันนี้ใช้ได้กับทุกกระบวนการ"
+   },
+   {
+    "en": "For a valve the enthalpy does not change, so the ideal-gas cooling equals the change of the residual. The ideal gas cannot cool at all.",
+    "th": "สำหรับวาล์ว เอนทัลปีไม่เปลี่ยน การเย็นลงของแก๊สอุดมคติจึงเท่ากับการเปลี่ยนแปลงของ residual และแก๊สอุดมคติจะไม่เย็นลงเลย"
+   },
+   {
+    "en": "For a reversible adiabatic compressor the entropy does not change, and the work is the enthalpy change.",
+    "th": "สำหรับคอมเพรสเซอร์แบบผันกลับได้และอะเดียแบติก เอนโทรปีไม่เปลี่ยน และงานคือการเปลี่ยนแปลงเอนทัลปี"
+   },
+   {
+    "en": "Across four processes, the virial equation, SRK and Peng-Robinson stay within about four kelvin, except the virial equation for the nitrogen valve.",
+    "th": "จากสี่กระบวนการ สมการ virial, SRK และ Peng–Robinson คลาดไม่เกินประมาณสี่เคลวิน ยกเว้นสมการ virial สำหรับวาล์วไนโตรเจน",
+    "say": "Across four processes, the virial equation, S R K and Peng Robinson stay within about four kelvin, except the virial equation for the nitrogen valve."
+   }
+  ],
+  "gr": [
+   {
+    "en": "For liquid carbon dioxide at 100 bar, the residual enthalpy is minus 10.85 kilojoules per mole and T times the residual entropy minus 9.07.",
+    "th": "สำหรับคาร์บอนไดออกไซด์เหลวที่ 100 บาร์ residual enthalpy เท่ากับ ลบ 10.85 กิโลจูลต่อโมล และ T คูณ residual entropy เท่ากับ ลบ 9.07",
+    "say": "For liquid carbon dioxide at one hundred bar, the residual enthalpy is minus ten point eight five kilojoules per mole and T times the residual entropy minus nine point zero seven."
+   },
+   {
+    "en": "The residual Gibbs energy is only minus 1.78.",
+    "th": "residual Gibbs energy มีค่าเพียง ลบ 1.78",
+    "say": "The residual Gibbs energy is only minus one point seven eight."
+   },
+   {
+    "en": "That near cancellation is why a liquid can coexist with its vapor: at the vapor pressure the two phases have equal residual Gibbs energy.",
+    "th": "การหักล้างกันเกือบหมดนี้คือเหตุที่ของเหลวอยู่ร่วมกับไอของมันได้ ที่ความดันไอ ทั้งสองเฟสมี residual Gibbs energy เท่ากัน"
+   },
+   {
+    "en": "For a pure fluid, G R over RT is the log of the fugacity coefficient: the subject of P4.",
+    "th": "สำหรับสารบริสุทธิ์ G^R/RT คือ ln ของ fugacity coefficient ซึ่งเป็นหัวข้อของคาบ P4",
+    "say": "For a pure fluid, G R over R T is the log of the fugacity coefficient: the subject of P four."
+   }
+  ],
+  "activity-1": [
+   {
+    "en": "Activity 1, ten minutes. Methane at 300 kelvin and 20 bar.",
+    "th": "กิจกรรมที่ 1 สิบนาที มีเทนที่ 300 เคลวิน และ 20 บาร์",
+    "say": "Activity one, ten minutes. Methane at three hundred kelvin and twenty bar."
+   },
+   {
+    "en": "With the Pitzer correlation, compute B and dB by dT, then the three residuals.",
+    "th": "ใช้สหสัมพันธ์ของ Pitzer คำนวณ B และ dB/dT แล้วคำนวณ residual ทั้งสามค่า",
+    "say": "With the Pitzer correlation, compute B and d B by d T, then the three residuals."
+   },
+   {
+    "en": "Work in SI units, and check that G R equals H R minus T S R.",
+    "th": "ใช้หน่วย SI และตรวจว่า G^R เท่ากับ H^R − TS^R",
+    "say": "Work in S I units, and check that G R equals H R minus T S R."
+   }
+  ],
+  "activity-1-debrief": [
+   {
+    "en": "Check your answer. B is minus 41.3 cubic centimetres per mole and dB by dT is 0.376.",
+    "th": "ตรวจคำตอบ B เท่ากับ ลบ 41.3 ลูกบาศก์เซนติเมตรต่อโมล และ dB/dT เท่ากับ 0.376",
+    "say": "Check your answer. B is minus forty one point three cubic centimetres per mole and d B by d T is zero point three seven six."
+   },
+   {
+    "en": "The residual enthalpy is minus 308.5 joules per mole, against minus 314 from NIST, and the residual entropy minus 0.753, against minus 0.766.",
+    "th": "residual enthalpy เท่ากับ ลบ 308.5 จูลต่อโมล เทียบกับ ลบ 314 จาก NIST และ residual entropy เท่ากับ ลบ 0.753 เทียบกับ ลบ 0.766",
+    "say": "The residual enthalpy is minus three hundred eight point five joules per mole, against minus three hundred fourteen from N I S T, and the residual entropy minus zero point seven five three, against minus zero point seven six six."
+   },
+   {
+    "en": "At 20 bar the virial equation is within two percent: this is its range.",
+    "th": "ที่ 20 บาร์ สมการ virial คลาดไม่เกินสองเปอร์เซ็นต์ นี่คือช่วงที่ใช้ได้ของมัน",
+    "say": "At twenty bar the virial equation is within two percent: this is its range."
+   }
+  ],
+  "demo-lab": [
+   {
+    "en": "Now a demonstration in Lab P3.",
+    "th": "ต่อไปเป็นการสาธิตใน Lab P3",
+    "say": "Now a demonstration in Lab P three."
+   },
+   {
+    "en": "The methane valve: read the residual table at 100 bar and the outlet of each model.",
+    "th": "วาล์วมีเทน อ่านตาราง residual ที่ 100 บาร์ และอุณหภูมิทางออกของแต่ละแบบจำลอง"
+   },
+   {
+    "en": "The carbon dioxide compressor: compare the ideal-gas enthalpy change with the change of the residual.",
+    "th": "คอมเพรสเซอร์คาร์บอนไดออกไซด์ เทียบการเปลี่ยนแปลงเอนทัลปีของแก๊สอุดมคติกับการเปลี่ยนแปลงของ residual"
+   },
+   {
+    "en": "Then switch the ideal gas from Shomate to the NIST table, and see how little the outlet moves.",
+    "th": "จากนั้นเปลี่ยนแหล่งข้อมูลแก๊สอุดมคติจาก Shomate เป็นตาราง NIST แล้วดูว่าอุณหภูมิทางออกเปลี่ยนไปน้อยเพียงใด",
+    "say": "Then switch the ideal gas from Shomate to the N I S T table, and see how little the outlet moves."
+   }
+  ],
+  "mistakes": [
+   {
+    "en": "Four common mistakes.",
+    "th": "ข้อผิดพลาดที่พบบ่อยสี่ข้อ"
+   },
+   {
+    "en": "The sign of the residual, and dropping the pressure term of the ideal-gas entropy.",
+    "th": "เครื่องหมายของ residual และการลืมพจน์ความดันของเอนโทรปีแก๊สอุดมคติ"
+   },
+   {
+    "en": "Without that term the compressor outlet is 348 kelvin instead of 403.",
+    "th": "ถ้าไม่มีพจน์นี้ อุณหภูมิทางออกของคอมเพรสเซอร์จะเป็น 348 เคลวิน แทนที่จะเป็น 403",
+    "say": "Without that term the compressor outlet is three hundred forty eight kelvin instead of four hundred three."
+   },
+   {
+    "en": "Computing the residual enthalpy with a constant a, and using a heat-capacity fit outside its range.",
+    "th": "คำนวณ residual enthalpy โดยถือว่า a คงที่ และใช้สมการความจุความร้อนนอกช่วงที่ใช้ได้"
+   }
+  ],
+  "break": [
+   {
+    "en": "Take a ten-minute break.",
+    "th": "พักสิบนาที"
+   },
+   {
+    "en": "Next is a 70-minute pair investigation in Lab P3. Check that the lab opens on your device.",
+    "th": "ต่อไปเป็นการทำงานเป็นคู่ 70 นาทีใน Lab P3 ตรวจสอบว่าแล็บเปิดได้บนอุปกรณ์ของคุณ",
+    "say": "Next is a seventy minute pair investigation in Lab P three. Check that the lab opens on your device."
+   }
+  ],
+  "activity-2": [
+   {
+    "en": "Activity 2, seventy minutes, in pairs.",
+    "th": "กิจกรรมที่ 2 เจ็ดสิบนาที ทำเป็นคู่",
+    "say": "Activity two, seventy minutes, in pairs."
+   },
+   {
+    "en": "First the four processes, then the residuals at five states.",
+    "th": "ส่วนแรกคำนวณสี่กระบวนการ แล้วคำนวณ residual ที่ห้าสถานะ"
+   },
+   {
+    "en": "Then investigations A and B: residuals from the NIST isotherms, and how much of each outlet error comes from the ideal-gas heat capacity.",
+    "th": "จากนั้นทำการสืบค้น A และ B คือ residual จากไอโซเทอร์มของ NIST และสัดส่วนของความคลาดเคลื่อนที่มาจากความจุความร้อนของแก๊สอุดมคติ",
+    "say": "Then investigations A and B: residuals from the N I S T isotherms, and how much of each outlet error comes from the ideal-gas heat capacity."
+   },
+   {
+    "en": "Finish with two sentences that answer the session question with numbers.",
+    "th": "ปิดท้ายด้วยสองประโยคที่ตอบคำถามของคาบพร้อมตัวเลข"
+   }
+  ],
+  "activity-2-check": [
+   {
+    "en": "Here is what to hand in, and the outlet temperatures to check against.",
+    "th": "นี่คือสิ่งที่ต้องส่ง และอุณหภูมิทางออกสำหรับตรวจผล"
+   },
+   {
+    "en": "The ideal gas misses the valves by more than 30 kelvin and the compressors by 7 to 12 kelvin.",
+    "th": "แก๊สอุดมคติคลาดอุณหภูมิทางออกของวาล์วมากกว่า 30 เคลวิน และของคอมเพรสเซอร์ 7 ถึง 12 เคลวิน",
+    "say": "The ideal gas misses the valves by more than thirty kelvin and the compressors by seven to twelve kelvin."
+   },
+   {
+    "en": "The ideal-gas heat capacity moves any outlet by 0.4 kelvin or less, so the residual model carries the error.",
+    "th": "ความจุความร้อนของแก๊สอุดมคติทำให้อุณหภูมิทางออกเปลี่ยนไม่เกิน 0.4 เคลวิน ความคลาดเคลื่อนจึงมาจากแบบจำลอง residual",
+    "say": "The ideal-gas heat capacity moves any outlet by zero point four kelvin or less, so the residual model carries the error."
+   }
+  ],
+  "discussion": [
+   {
+    "en": "Discuss three questions.",
+    "th": "อภิปรายสามคำถาม"
+   },
+   {
+    "en": "Which part of Peng-Robinson sets the residual enthalpy but not Z?",
+    "th": "ส่วนใดของ Peng–Robinson ที่กำหนด residual enthalpy แต่ไม่กำหนด Z",
+    "say": "Which part of Peng Robinson sets the residual enthalpy but not Z?"
+   },
+   {
+    "en": "Why does the ideal gas miss the valves by over 30 kelvin but the compressors by only 7 to 12?",
+    "th": "ทำไมแก๊สอุดมคติคลาดสำหรับวาล์วมากกว่า 30 เคลวิน แต่สำหรับคอมเพรสเซอร์เพียง 7 ถึง 12 เคลวิน",
+    "say": "Why does the ideal gas miss the valves by over thirty kelvin but the compressors by only seven to twelve?"
+   },
+   {
+    "en": "And what does a small residual Gibbs energy of the liquid mean for computing its fugacity?",
+    "th": "และ residual Gibbs energy ที่มีค่าน้อยของของเหลวมีความหมายอย่างไรต่อการคำนวณ fugacity"
+   }
+  ],
+  "summary": [
+   {
+    "en": "To summarize. A residual property is the real fluid minus the ideal gas at the same temperature and pressure.",
+    "th": "สรุป residual property คือสมบัติของของไหลจริงลบด้วยของแก๊สอุดมคติที่อุณหภูมิและความดันเดียวกัน"
+   },
+   {
+    "en": "The residual Gibbs energy needs Z alone. The residual enthalpy and entropy also need the temperature slope of Z.",
+    "th": "residual Gibbs energy ต้องการเพียง Z ส่วน residual enthalpy และ entropy ต้องการความชันของ Z เทียบกับอุณหภูมิด้วย"
+   },
+   {
+    "en": "For the carbon dioxide compressor the residuals take the work from 3430 to 2851 joules per mole; the reference is 2865.",
+    "th": "สำหรับคอมเพรสเซอร์คาร์บอนไดออกไซด์ residual ทำให้งานลดจาก 3430 เป็น 2851 จูลต่อโมล โดยค่าอ้างอิงคือ 2865",
+    "say": "For the carbon dioxide compressor the residuals take the work from three thousand four hundred thirty to two thousand eight hundred fifty one joules per mole; the reference is two thousand eight hundred sixty five."
+   },
+   {
+    "en": "Next session, P4: the residual Gibbs energy becomes the fugacity, and equal fugacity gives the vapor pressure.",
+    "th": "คาบหน้า P4 residual Gibbs energy จะกลายเป็น fugacity และ fugacity ที่เท่ากันให้ความดันไอ",
+    "say": "Next session, P four: the residual Gibbs energy becomes the fugacity, and equal fugacity gives the vapor pressure."
+   }
+  ],
+  "exit-ticket": [
+   {
+    "en": "Exit ticket, five minutes, anonymous.",
+    "th": "Exit ticket ห้านาที ไม่ระบุชื่อ"
+   },
+   {
+    "en": "An ideal-gas calculation overestimates the work of the carbon dioxide compressor by twenty percent.",
+    "th": "การคำนวณแบบแก๊สอุดมคติประมาณงานของคอมเพรสเซอร์คาร์บอนไดออกไซด์สูงเกินไปยี่สิบเปอร์เซ็นต์"
+   },
+   {
+    "en": "Write the work as an ideal-gas term plus residuals, and say why the residual correction lowers the work.",
+    "th": "เขียนงานในรูปพจน์แก๊สอุดมคติบวก residual และอธิบายว่าทำไมการแก้ด้วย residual จึงทำให้งานลดลง"
+   }
+  ],
+  "after-class": [
+   {
+    "en": "After class, finish Lab P3 and upload the study file to myCourseVille.",
+    "th": "หลังเลิกเรียน ทำ Lab P3 ให้เสร็จ และอัปโหลดไฟล์ study ไปที่ myCourseVille",
+    "say": "After class, finish Lab P three and upload the study file to my course ville."
+   },
+   {
+    "en": "Read the pre-class note for session P4, about twenty minutes.",
+    "th": "อ่าน pre-class note ของคาบ P4 ใช้เวลาประมาณยี่สิบนาที",
+    "say": "Read the pre-class note for session P four, about twenty minutes."
+   },
+   {
+    "en": "Graduate students can write the compressor calculation with an AI assistant and check it in step E.",
+    "th": "นิสิตระดับบัณฑิตศึกษาสามารถเขียนโปรแกรมคำนวณคอมเพรสเซอร์ด้วยผู้ช่วย AI แล้วตรวจสอบในขั้นตอน E",
+    "say": "Graduate students can write the compressor calculation with an A I assistant and check it in step E."
+   }
+  ]
+ }
+}
